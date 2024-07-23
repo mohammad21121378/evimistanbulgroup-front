@@ -85,6 +85,10 @@
         align-items: center;
     }
 
+    .button {
+        display: none;
+    }
+
     .nav_links {
         display: flex;
         flex-direction: column;
