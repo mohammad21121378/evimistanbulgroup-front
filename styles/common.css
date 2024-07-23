@@ -1,0 +1,60 @@
+html {
+    background-color: var(--white);
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    background-color: var(--white);
+    font-size: 16px;
+    color: var(--n1);
+    min-width: 375px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+    background: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.index {
+    position: sticky;
+    background-color: var(--white);
+    z-index: 2;
+}
+
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+    pointer-events: none;
+}
+
+@media (max-width: 430px) {
+    html {
+        background-color: var(--n8);
+    }
+}

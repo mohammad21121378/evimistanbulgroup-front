@@ -1,0 +1,34 @@
+.container {
+  position: relative;
+}
+
+.container svg {
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  stroke: var(--black);
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.select {
+  width: 100%;
+  min-width: 320px;
+  appearance: none;
+  height: 56px;
+  background-color: var(--slate-100);
+  border: 1.5px solid var(--slate-200);
+  border-radius: 12px;
+  color: var(--black);
+  padding: 16px;
+  transition: border-color 0.2s;
+}
+
+.select:focus {
+  border-color: var(--black);
+}
+
+.select:hover {
+  border-color: var(--black);
+}

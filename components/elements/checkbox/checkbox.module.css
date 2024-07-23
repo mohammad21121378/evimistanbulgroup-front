@@ -1,0 +1,37 @@
+.checkbox {
+  position: relative;
+  width: 21px;
+  height: 21px;
+  border: 1.5px solid var(--slate-200);
+  border-radius: 6px;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+  flex-shrink: 0;
+}
+
+.checkbox:not(.checked):hover {
+  background-color: var(--slate-100);
+}
+
+.checked {
+  background-color: var(--success-600);
+  border-color: var(--success-600);
+}
+
+.checkbox.checked svg {
+  opacity: 1;
+  visibility: visible;
+}
+
+.checkbox svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s, visibility 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+  width: 14px;
+  height: 14px;
+  stroke: var(--white);
+}

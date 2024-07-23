@@ -1,0 +1,21 @@
+.range {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+}
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--black);
+  cursor: pointer;
+  border-radius: 50%;
+  margin-top: -6px;
+}
+
+.range::-webkit-slider-runnable-track {
+  height: 8px;
+  background: var(--slate-100);
+  border-radius: 4px;
+}
