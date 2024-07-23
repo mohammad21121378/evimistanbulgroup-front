@@ -16,8 +16,8 @@
 .title {
     position: absolute;
     bottom: 80px;
-    left: 80px;
     color: var(--white);
+    text-align: center;
 }
 
 .content {
