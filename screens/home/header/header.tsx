@@ -19,7 +19,8 @@ export default function Header() {
         <div className={styles.overlay} />
 
         <Hero size="hero-lg" className={styles.title}>
-          Find Your Next Home Sweet Home.
+          Find Your Next <br />
+          Home Sweet Home.
         </Hero>
 
         <SearchBar placeholder="Enter an address, neighborhood, city or ZIP code" />
