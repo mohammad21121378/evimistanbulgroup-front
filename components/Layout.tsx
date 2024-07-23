@@ -1,3 +1,4 @@
+import Curtain from "./curtain";
 import Navigation from "./navigation";
 
 type LayoutProps = {
@@ -7,6 +8,7 @@ type LayoutProps = {
 export default function Layout({ children }: LayoutProps) {
   return (
     <>
+      <Curtain />
       <Navigation />
       {children}
     </>
