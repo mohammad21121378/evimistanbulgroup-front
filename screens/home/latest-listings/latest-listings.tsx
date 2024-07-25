@@ -1,118 +1,15 @@
+"use client";
+
+import React from "react";
 import cn from "classnames";
 import styles from "./latest-listings.module.css";
 import { Heading } from "@/components/typography";
-import { Building } from "@/constants/icons";
 import Image from "next/image";
-
-const listings = [
-  {
-    id: 1,
-    category: "Houses",
-    items: [
-      {
-        id: 1,
-        title: "123 Serenity Lane",
-        description:
-          "A spacious and modern home with an open floor plan, large windows, and a beautifully landscaped garden, perfect for those seeking peace and tranquility.",
-        price: "$850,000",
-        image: "/images/properties/123-serenity-lane.webp",
-        address: "123 Serenity Lane, Los Angeles, CA",
-        features: [
-          {
-            id: 1,
-            icon: Building,
-            name: "Beds",
-            value: 3,
-          },
-          {
-            id: 2,
-            icon: Building,
-            name: "Baths",
-            value: 2,
-          },
-          {
-            id: 3,
-            icon: Building,
-            name: "Area",
-            value: "2,500 sqft",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 2,
-    category: "Townhouses",
-    items: [
-      {
-        id: 1,
-        title: "123 Serenity Lane",
-        description:
-          "A spacious and modern home with an open floor plan, large windows, and a beautifully landscaped garden, perfect for those seeking peace and tranquility.",
-        price: "$850,000",
-        image: "/images/header-background.webp",
-        address: "123 Serenity Lane, Los Angeles, CA",
-        features: [
-          {
-            id: 1,
-            icon: Building,
-            name: "Beds",
-            value: 3,
-          },
-          {
-            id: 2,
-            icon: Building,
-            name: "Baths",
-            value: 2,
-          },
-          {
-            id: 3,
-            icon: Building,
-            name: "Area",
-            value: "2,500 sqft",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 3,
-    category: "Apartments",
-    items: [
-      {
-        id: 1,
-        title: "123 Serenity Lane",
-        description:
-          "A spacious and modern home with an open floor plan, large windows, and a beautifully landscaped garden, perfect for those seeking peace and tranquility.",
-        price: "$850,000",
-        image: "/images/header-background.webp",
-        address: "123 Serenity Lane, Los Angeles, CA",
-        features: [
-          {
-            id: 1,
-            icon: Building,
-            name: "Beds",
-            value: 3,
-          },
-          {
-            id: 2,
-            icon: Building,
-            name: "Baths",
-            value: 2,
-          },
-          {
-            id: 3,
-            icon: Building,
-            name: "Area",
-            value: "2,500 sqft",
-          },
-        ],
-      },
-    ],
-  },
-];
+import { Listings, Tabs } from "@/constants/mock";
 
 export default function LatestListings() {
+  const [selectedCategory, setSelectedCategory] = React.useState(Tabs[0].name);
+
   return (
     <section className={cn("section")}>
       <div className={cn("container")}>
@@ -133,11 +30,26 @@ export default function LatestListings() {
         </div>
 
         <div className={styles.wrapper}>
-          {/* <div>Tabs</div> */}
+          <div className={styles.tabs}>
+            {Tabs.map((tab) => (
+              <div
+                key={tab.id}
+                className={cn("label-medium", styles.tab, {
+                  [styles.active]: tab.name === selectedCategory,
+                })}
+                onClick={() => setSelectedCategory(tab.name)}
+              >
+                {tab.name}
+              </div>
+            ))}
+          </div>
+
           <div className={styles.listings}>
-            {listings.flatMap((listing) =>
+            {Listings.filter(
+              (listing) => listing.category === selectedCategory,
+            ).flatMap((listing) =>
               listing.items.map((item) => (
-                <div key={listing.id} className={styles.listing}>
+                <div key={item.id} className={styles.listing}>
                   <div className={styles.img_holder}>
                     <Image
                       src={item.image}

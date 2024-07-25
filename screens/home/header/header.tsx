@@ -44,7 +44,7 @@ export default function Header() {
 
               <div className={styles.card}>
                 <Image
-                  src="/images/header-background.webp"
+                  src="/images/intro.webp"
                   alt="Picture of the author"
                   layout="fill"
                   objectFit="cover"

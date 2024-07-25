@@ -62,6 +62,23 @@
     border-radius: 8px;
 }
 
+.tabs {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--slate-200);
+}
+
+.tab {
+    padding: 16px 24px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: var(--slate-400);
+}
+
+.tab.active {
+    color: var(--black);
+}
+
 @media (max-width: 768px) {
     .content {
         flex-direction: column;
