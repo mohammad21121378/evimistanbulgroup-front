@@ -6,9 +6,15 @@ import styles from "./latest-listings.module.css";
 import { Heading } from "@/components/typography";
 import Image from "next/image";
 import { Listings, Tabs } from "@/constants/mock";
+import { Dropdown } from "@/components/elements";
 
 export default function LatestListings() {
   const [selectedCategory, setSelectedCategory] = React.useState(Tabs[0].name);
+
+  const dropdownOptions = Tabs.map((tab) => ({
+    value: tab.name,
+    label: tab.name,
+  }));
 
   return (
     <section className={cn("section")}>
@@ -30,6 +36,10 @@ export default function LatestListings() {
         </div>
 
         <div className={styles.wrapper}>
+          <Dropdown
+            options={dropdownOptions}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+          />
           <div className={styles.tabs}>
             {Tabs.map((tab) => (
               <div

@@ -92,6 +92,10 @@
 }
 
 @media (max-width: 480px) {
+    .tabs {
+        display: none;
+    }
+
     .listings {
         grid-template-columns: 1fr;
     }

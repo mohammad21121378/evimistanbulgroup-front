@@ -11,15 +11,11 @@ const Tabs = [
   },
   {
     id: 3,
-    name: "Apartments",
-  },
-  {
-    id: 4,
     name: "Condos",
   },
   {
     id: 5,
-    name: "Land",
+    name: "Villas",
   },
   {
     id: 6,
@@ -216,22 +212,22 @@ const Listings = [
   },
   {
     id: 3,
-    category: "Apartments",
+    category: "Condos",
     items: [
       {
         id: 1,
-        title: "123 Serenity Lane",
+        title: "456 City Apartment",
         description:
-          "A spacious and modern home with an open floor plan, large windows, and a beautifully landscaped garden, perfect for those seeking peace and tranquility.",
-        price: "$850,000",
-        image: "/images/header-background.webp",
-        address: "123 Serenity Lane, Los Angeles, CA",
+          "A modern apartment in the city center with high ceilings, large windows, and a private balcony, ideal for urban living.",
+        price: "$750,000",
+        image: "/images/properties/apartments/456-city-apartment.webp",
+        address: "456 City Apartment, San Francisco, CA",
         features: [
           {
             id: 1,
             icon: Building,
             name: "Beds",
-            value: 3,
+            value: 2,
           },
           {
             id: 2,
@@ -243,7 +239,251 @@ const Listings = [
             id: 3,
             icon: Building,
             name: "Area",
-            value: "2,500 sqft",
+            value: "1,500 sqft",
+          },
+        ],
+      },
+      {
+        id: 2,
+        title: "789 Downtown Loft",
+        description:
+          "A chic loft in the heart of downtown, featuring an open floor plan, exposed brick, and modern finishes, perfect for trendy city living.",
+        price: "$670,000",
+        image: "/images/properties/apartments/789-downtown-loft.webp",
+        address: "789 Downtown Loft, New York, NY",
+        features: [
+          {
+            id: 1,
+            icon: Building,
+            name: "Beds",
+            value: 1,
+          },
+          {
+            id: 2,
+            icon: Building,
+            name: "Baths",
+            value: 1,
+          },
+          {
+            id: 3,
+            icon: Building,
+            name: "Area",
+            value: "1,200 sqft",
+          },
+        ],
+      },
+      {
+        id: 3,
+        title: "321 Suburban Apartment",
+        description:
+          "A cozy apartment in a quiet suburb, featuring a modern kitchen, spacious living area, and a private balcony.",
+        price: "$500,000",
+        image: "/images/properties/apartments/321-suburban-apartment.webp",
+        address: "321 Suburban Apartment, Chicago, IL",
+        features: [
+          {
+            id: 1,
+            icon: Building,
+            name: "Beds",
+            value: 2,
+          },
+          {
+            id: 2,
+            icon: Building,
+            name: "Baths",
+            value: 1.5,
+          },
+          {
+            id: 3,
+            icon: Building,
+            name: "Area",
+            value: "1,300 sqft",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 4,
+    category: "Commercial",
+    items: [
+      {
+        id: 1,
+        title: "Downtown Office",
+        description:
+          "A prime office space located in the heart of downtown, featuring modern amenities, high-speed internet, and stunning city views.",
+        price: "$2,500/month",
+        image: "/images/properties/commercial/downtown-office.webp",
+        address: "123 Main Street, Los Angeles, CA",
+        features: [
+          {
+            id: 1,
+            icon: Building,
+            name: "Area",
+            value: "5,000 sqft",
+          },
+          {
+            id: 2,
+            icon: Building,
+            name: "Floors",
+            value: 2,
+          },
+          {
+            id: 3,
+            icon: Building,
+            name: "Parking",
+            value: "Yes",
+          },
+        ],
+      },
+      {
+        id: 2,
+        title: "Industrial Warehouse",
+        description:
+          "A spacious industrial warehouse with high ceilings, loading docks, and easy access to major highways, perfect for storage and distribution.",
+        price: "$8,000/month",
+        image: "/images/properties/commercial/industrial-warehouse.webp",
+        address: "456 Industrial Road, San Francisco, CA",
+        features: [
+          {
+            id: 1,
+            icon: Building,
+            name: "Area",
+            value: "20,000 sqft",
+          },
+          {
+            id: 2,
+            icon: Building,
+            name: "Dock Doors",
+            value: 4,
+          },
+          {
+            id: 3,
+            icon: Building,
+            name: "Parking",
+            value: "Yes",
+          },
+        ],
+      },
+      {
+        id: 3,
+        title: "Retail Space",
+        description:
+          "A retail space located in a busy shopping center, offering high foot traffic, ample parking, and a vibrant commercial environment.",
+        price: "$4,500/month",
+        image: "/images/properties/commercial/retail-space.webp",
+        address: "789 Shopping Center Blvd, New York, NY",
+        features: [
+          {
+            id: 1,
+            icon: Building,
+            name: "Area",
+            value: "3,000 sqft",
+          },
+          {
+            id: 2,
+            icon: Building,
+            name: "Foot Traffic",
+            value: "High",
+          },
+          {
+            id: 3,
+            icon: Building,
+            name: "Parking",
+            value: "Yes",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 5,
+    category: "Villas",
+    items: [
+      {
+        id: 1,
+        title: "Ocean View Villa",
+        description:
+          "A luxurious villa with stunning ocean views, private pool, and spacious outdoor areas.",
+        price: "$1,200,000",
+        image: "/images/properties/villas/ocean-view-villa.webp",
+        address: "123 Ocean Drive, Miami, FL",
+        features: [
+          {
+            id: 1,
+            icon: Building,
+            name: "Beds",
+            value: 5,
+          },
+          {
+            id: 2,
+            icon: Building,
+            name: "Baths",
+            value: 4,
+          },
+          {
+            id: 3,
+            icon: Building,
+            name: "Area",
+            value: "4,500 sqft",
+          },
+        ],
+      },
+      {
+        id: 2,
+        title: "Mountain Retreat",
+        description:
+          "A serene villa nestled in the mountains, featuring modern amenities and breathtaking views.",
+        price: "$950,000",
+        image: "/images/properties/villas/mountain-retreat.webp",
+        address: "456 Alpine Road, Aspen, CO",
+        features: [
+          {
+            id: 1,
+            icon: Building,
+            name: "Beds",
+            value: 4,
+          },
+          {
+            id: 2,
+            icon: Building,
+            name: "Baths",
+            value: 3,
+          },
+          {
+            id: 3,
+            icon: Building,
+            name: "Area",
+            value: "3,800 sqft",
+          },
+        ],
+      },
+      {
+        id: 3,
+        title: "Luxury Estate",
+        description:
+          "An expansive estate with elegant interiors, a large garden, and state-of-the-art facilities.",
+        price: "$2,500,000",
+        image: "/images/properties/villas/luxury-estate-villa.webp",
+        address: "789 Estate Drive, Beverly Hills, CA",
+        features: [
+          {
+            id: 1,
+            icon: Building,
+            name: "Beds",
+            value: 6,
+          },
+          {
+            id: 2,
+            icon: Building,
+            name: "Baths",
+            value: 5,
+          },
+          {
+            id: 3,
+            icon: Building,
+            name: "Area",
+            value: "7,200 sqft",
           },
         ],
       },

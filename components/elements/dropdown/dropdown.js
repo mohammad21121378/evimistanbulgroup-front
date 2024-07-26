@@ -3,7 +3,7 @@
 import React from "react";
 import cn from "classnames";
 import styles from "./dropdown.module.css";
-import icons from "../../../constants/icons";
+import icons, { ChevronDown } from "../../../constants/icons";
 
 export default function Dropdown({ options, ...props }) {
   return (
@@ -15,10 +15,10 @@ export default function Dropdown({ options, ...props }) {
           </option>
         ))}
 
-        {icons.ChevronDown}
+        {ChevronDown}
       </select>
 
-      {icons.ChevronDown}
+      {ChevronDown}
     </div>
   );
 }
