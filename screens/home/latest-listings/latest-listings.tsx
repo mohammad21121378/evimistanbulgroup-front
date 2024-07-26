@@ -7,6 +7,7 @@ import { Heading } from "@/components/typography";
 import Image from "next/image";
 import { Listings, Tabs } from "@/constants/mock";
 import { Dropdown } from "@/components/elements";
+import PropertyListing from "@/components/property-listing";
 
 export default function LatestListings() {
   const [selectedCategory, setSelectedCategory] = React.useState(Tabs[0].name);
@@ -41,6 +42,7 @@ export default function LatestListings() {
 
         <div className={styles.wrapper}>
           <Dropdown
+            className={styles.dropdown}
             options={dropdownOptions}
             value={selectedCategory}
             onChange={handleDropdownChange}
@@ -64,36 +66,7 @@ export default function LatestListings() {
               (listing) => listing.category === selectedCategory,
             ).flatMap((listing) =>
               listing.items.map((item) => (
-                <div key={item.id} className={styles.listing}>
-                  <div className={styles.img_holder}>
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      layout="fill"
-                      objectFit="cover"
-                      objectPosition="center"
-                    />
-
-                    <div
-                      className={cn("paragraph-small", styles.listing_price)}
-                    >
-                      {item.price}
-                    </div>
-                  </div>
-                  <div className={styles.listing_wrapper}>
-                    <div className={cn("heading-6", styles.listing_title)}>
-                      {item.title}
-                    </div>
-                    <div
-                      className={cn(
-                        "paragraph-medium",
-                        styles.listing_description,
-                      )}
-                    >
-                      {item.description}
-                    </div>
-                  </div>
-                </div>
+                <PropertyListing key={item.id} item={item} />
               )),
             )}
           </div>

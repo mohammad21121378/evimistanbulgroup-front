@@ -20,46 +20,8 @@
     gap: 24px;
 }
 
-.listing {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.img_holder {
-    position: relative;
-    height: 300px;
-    border-radius: 24px;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.img_holder img {
-    transition: all 0.3s;
-}
-
-.img_holder:hover img {
-    transform: scale(1.1);
-}
-
-.listing_wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.listing_description {
-    color: var(--slate-500);
-}
-
-.listing_price {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    background-color: var(--orange-600);
-    color: var(--white);
-    padding: 8px 16px;
-    border-radius: 8px;
+.dropdown {
+    display: none;
 }
 
 .tabs {
@@ -92,6 +54,10 @@
 }
 
 @media (max-width: 480px) {
+    .dropdown {
+        display: block;
+    }
+
     .tabs {
         display: none;
     }
