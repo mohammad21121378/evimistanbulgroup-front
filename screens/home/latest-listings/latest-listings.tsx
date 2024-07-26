@@ -4,7 +4,6 @@ import React from "react";
 import cn from "classnames";
 import styles from "./latest-listings.module.css";
 import { Heading } from "@/components/typography";
-import Image from "next/image";
 import { Listings, Tabs } from "@/constants/mock";
 import { Dropdown } from "@/components/elements";
 import PropertyListing from "@/components/property-listing";

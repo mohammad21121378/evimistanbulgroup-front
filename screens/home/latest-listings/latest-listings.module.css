@@ -64,5 +64,6 @@
 
     .listings {
         grid-template-columns: 1fr;
+        gap: 48px;
     }
 }
