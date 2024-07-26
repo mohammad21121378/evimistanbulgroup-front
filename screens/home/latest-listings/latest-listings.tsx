@@ -16,6 +16,10 @@ export default function LatestListings() {
     label: tab.name,
   }));
 
+  const handleDropdownChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedCategory(e.target.value);
+  };
+
   return (
     <section className={cn("section")}>
       <div className={cn("container")}>
@@ -38,7 +42,8 @@ export default function LatestListings() {
         <div className={styles.wrapper}>
           <Dropdown
             options={dropdownOptions}
-            onChange={(e) => setSelectedCategory(e.target.value)}
+            value={selectedCategory}
+            onChange={handleDropdownChange}
           />
           <div className={styles.tabs}>
             {Tabs.map((tab) => (
