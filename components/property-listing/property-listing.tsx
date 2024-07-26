@@ -4,16 +4,16 @@ import styles from "./property-listing.module.css";
 
 type PropertyListingProps = {
   item: {
-    id: string;
+    id: number;
     image: string;
     title: string;
     price: string;
     description: string;
     features: {
-      id: string;
+      id: number;
       icon: React.ReactNode;
       name: string;
-      value: string;
+      value: string | number;
     }[];
   };
 };
