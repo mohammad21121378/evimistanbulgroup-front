@@ -63,7 +63,31 @@
     height: 45vw;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 1024px) {
+    .video_wrapper {
+        margin-top: 64px;
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .subtitle {
+        max-width: 100%;
+    }
+
+    .video_wrapper {
+        margin-top: 48px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
     .video iframe {
         width: 90vw;
         height: 50vw;
