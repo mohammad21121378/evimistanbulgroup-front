@@ -7,6 +7,7 @@ import { Heading } from "@/components/typography";
 import Image from "next/image";
 import { Play } from "@/constants/icons";
 import Modal from "@/components/modal";
+import VideoPlayer from "@/components/video-player";
 
 export default function Showcase() {
   const [visible, setVisible] = React.useState(false);
@@ -37,16 +38,7 @@ export default function Showcase() {
           </div>
 
           <Modal visible={visible} onClose={() => setVisible(false)}>
-            <div className={styles.video}>
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/e0qNKnwV40E?si=n93FTEud-6g2LhAH"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
+            <VideoPlayer src="https://www.youtube.com/embed/e0qNKnwV40E?si=n93FTEud-6g2LhAH" />
           </Modal>
         </div>
       </div>
