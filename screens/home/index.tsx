@@ -4,6 +4,7 @@ import LatestListings from "./latest-listings";
 import Benefits from "./benefits";
 import Showcase from "./showcase";
 import Offices from "./offices";
+import Categories from "./categories";
 
 export default function HomePage() {
   return (
@@ -13,6 +14,7 @@ export default function HomePage() {
       <Benefits />
       <Showcase />
       <Offices />
+      <Categories />
     </Layout>
   );
 }

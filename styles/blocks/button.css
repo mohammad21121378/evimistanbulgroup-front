@@ -24,6 +24,7 @@
     transition: all 0.2s;
     gap: 8px;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 [class^="button"]:hover {
