@@ -11,3 +11,17 @@
 .marquee_text {
     margin-right: 48px;
 }
+
+@media (max-width: 1024px) {
+    .marquees {
+        margin-top: 64px;
+        gap: 64px;
+    }
+}
+
+@media (max-width: 768px) {
+    .marquees {
+        margin-top: 48px;
+        gap: 48px;
+    }
+}

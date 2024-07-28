@@ -21,7 +21,7 @@ export default function TextMarquee({
       autoFill={true}
       speed={100}
     >
-      <div className={styles.marquee}>{children}</div>
+      {children}
     </Marquee>
   );
 }
