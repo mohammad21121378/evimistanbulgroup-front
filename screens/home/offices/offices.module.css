@@ -1,0 +1,13 @@
+.marquees {
+    margin-top: 80px;
+    display: grid;
+    gap: 80px;
+}
+
+.title {
+    text-transform: uppercase;
+}
+
+.marquee_text {
+    margin-right: 48px;
+}

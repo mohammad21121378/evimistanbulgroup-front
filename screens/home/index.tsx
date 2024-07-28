@@ -3,6 +3,7 @@ import Header from "./header";
 import LatestListings from "./latest-listings";
 import Benefits from "./benefits";
 import Showcase from "./showcase";
+import Offices from "./offices";
 
 export default function HomePage() {
   return (
@@ -11,6 +12,7 @@ export default function HomePage() {
       <LatestListings />
       <Benefits />
       <Showcase />
+      <Offices />
     </Layout>
   );
 }

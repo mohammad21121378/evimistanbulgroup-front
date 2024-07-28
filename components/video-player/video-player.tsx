@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./video-player.module.css";
-import cn from "classnames";
 
 type VideoPlayerProps = {
   src: string;
