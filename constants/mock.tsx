@@ -2,7 +2,10 @@ import {
   Bath,
   DockDoor,
   DoubleBed,
+  Facebook,
   Floor,
+  Instagram,
+  Linkedin,
   Parking,
   Ruler,
   Walk,
@@ -499,4 +502,76 @@ const Listings = [
   },
 ];
 
-export { Tabs, Listings };
+const TeamMembers = [
+  {
+    id: 1,
+    image: "/images/team/emily-davis.webp",
+    name: "Emily Davis",
+    title: "Real Estate Agent",
+    socials: [
+      {
+        id: 1,
+        icon: Instagram,
+        link: "#",
+      },
+      {
+        id: 2,
+        icon: Facebook,
+        link: "#",
+      },
+      {
+        id: 3,
+        icon: Linkedin,
+        link: "#",
+      },
+    ],
+  },
+  {
+    id: 2,
+    image: "/images/team/michael-brown.webp",
+    name: "Michael Brown",
+    title: "Real Estate Specialist",
+    socials: [
+      {
+        id: 1,
+        icon: Instagram,
+        link: "#",
+      },
+      {
+        id: 2,
+        icon: Facebook,
+        link: "#",
+      },
+      {
+        id: 3,
+        icon: Linkedin,
+        link: "#",
+      },
+    ],
+  },
+  {
+    id: 3,
+    image: "/images/team/david-lee.webp",
+    name: "David Lee",
+    title: "Real Estate Agent",
+    socials: [
+      {
+        id: 1,
+        icon: Instagram,
+        link: "#",
+      },
+      {
+        id: 2,
+        icon: Facebook,
+        link: "#",
+      },
+      {
+        id: 3,
+        icon: Linkedin,
+        link: "#",
+      },
+    ],
+  },
+];
+
+export { Tabs, Listings, TeamMembers };
