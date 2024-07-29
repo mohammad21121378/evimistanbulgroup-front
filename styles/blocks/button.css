@@ -87,16 +87,17 @@
     font-size: 14px;
     line-height: 20px;
     letter-spacing: -0.08px;
+    flex-shrink: 0;
 }
 
 .button-stroke-small svg {
-    stroke: var(--black);
+    stroke: var(--orange-600);
 }
 
 .button-stroke-small:hover,
 .button-stroke-small:active {
-    background: var(--black);
-    box-shadow: 0 0 0 2px var(--black) inset;
+    background: var(--orange-600);
+    box-shadow: 0 0 0 2px var(--orange-600) inset;
     color: var(--white);
 }
 

@@ -9,6 +9,7 @@ import Facts from "./facts";
 import Team from "./team";
 import Services from "./services";
 import Partners from "./partners";
+import Testimonials from "./testimonials";
 
 export default function HomePage() {
   return (
@@ -23,6 +24,7 @@ export default function HomePage() {
       <Team />
       <Services />
       <Partners />
+      <Testimonials />
     </Layout>
   );
 }
