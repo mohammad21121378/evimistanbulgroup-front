@@ -5,6 +5,7 @@ import Benefits from "./benefits";
 import Showcase from "./showcase";
 import Offices from "./offices";
 import Categories from "./categories";
+import Facts from "./facts";
 
 export default function HomePage() {
   return (
@@ -15,6 +16,7 @@ export default function HomePage() {
       <Showcase />
       <Offices />
       <Categories />
+      <Facts />
     </Layout>
   );
 }
