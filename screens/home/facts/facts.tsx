@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "./facts.module.css";
 import cn from "classnames";
-import { Building } from "@/constants/icons";
+import { Building, HappyHeart, Medal } from "@/constants/icons";
 import { Heading } from "@/components/typography";
 
 const facts = [
   {
     id: 1,
-    icon: Building,
+    icon: HappyHeart,
     title: "98%",
     description:
       "With a client satisfaction rate of 98%, our commitment to exceptional service and personalized support is evident in every interaction.",
@@ -21,7 +21,7 @@ const facts = [
   },
   {
     id: 3,
-    icon: Building,
+    icon: Medal,
     title: 15,
     description:
       "Our team of 15 experts is dedicated to providing the highest quality service and support to our clients.",
