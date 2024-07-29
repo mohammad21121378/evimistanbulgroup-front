@@ -513,6 +513,160 @@ const Linkedin = (
   </svg>
 );
 
+const House = (
+  <svg
+    id="Home"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M20.5502 17.9076C20.5404 19.6249 19.1393 21.0094 17.4221 20.9997H6.57635C4.85809 21.0085 3.45896 19.622 3.45117 17.9047V10.0625C3.45798 9.38731 3.77809 8.75488 4.31614 8.34817L10.2133 3.61662C11.2534 2.79446 12.7226 2.79446 13.7627 3.61662L19.6842 8.34428C20.2203 8.75098 20.5394 9.38147 20.5502 10.0538V17.9076Z"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M9.41602 20.9995V15.2619C9.41991 14.5565 9.99201 13.9863 10.6974 13.9844H13.2952C14.0036 13.9815 14.5815 14.5536 14.5844 15.2619V20.9995"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+);
+
+const TrendUp = (
+  <svg
+    id="trend up"
+    width="24"
+    height="24"
+    viewBox="0 0 25 25"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M16.5913 7.20947H21.4999L21.4999 12.1181"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M21.4999 7.2085L13.7269 14.9815L9.63651 10.8902L3.5 17.0267"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+);
+
+const Bag = (
+  <svg
+    id="bag"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M6.79459 6.28711H17.2044C19.5435 6.28711 21 7.93824 21 10.2753V16.5821C21 18.9192 19.5435 20.5704 17.2035 20.5704H6.79459C4.45557 20.5704 3 18.9192 3 16.5821V10.2753C3 7.93824 4.46238 6.28711 6.79459 6.28711Z"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M8.64062 6.27125V5.64904C8.64062 4.42309 9.63403 3.42969 10.86 3.42969H13.1406C14.3666 3.42969 15.36 4.42309 15.36 5.64904V6.27734"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M7.71094 20.5508V6.28711"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M16.2891 20.5508V6.28711"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+);
+
+const BubbleChart = (
+  <svg
+    id="Bubble chart"
+    width="24"
+    height="24"
+    viewBox="0 0 25 25"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <ellipse
+      cx="19.5986"
+      cy="5.79871"
+      rx="1.90134"
+      ry="1.90369"
+      stroke-width="1.5"
+    />
+    <path
+      d="M19.5986 10.4023V10.4123"
+      stroke-width="1.5"
+      stroke-linecap="round"
+    />
+    <path
+      d="M19.5986 13.7124V13.7224"
+      stroke-width="1.5"
+      stroke-linecap="round"
+    />
+    <path
+      d="M19.5986 17.0225V17.0325"
+      stroke-width="1.5"
+      stroke-linecap="round"
+    />
+    <path
+      d="M19.5986 20.332V20.342"
+      stroke-width="1.5"
+      stroke-linecap="round"
+    />
+    <ellipse
+      cx="5.40134"
+      cy="9.10876"
+      rx="1.90134"
+      ry="1.90369"
+      stroke-width="1.5"
+    />
+    <path
+      d="M5.40137 13.7119V13.7219"
+      stroke-width="1.5"
+      stroke-linecap="round"
+    />
+    <path
+      d="M5.40137 17.0225V17.0325"
+      stroke-width="1.5"
+      stroke-linecap="round"
+    />
+    <path
+      d="M5.40137 20.332V20.342"
+      stroke-width="1.5"
+      stroke-linecap="round"
+    />
+    <ellipse
+      cx="12.5"
+      cy="12.4183"
+      rx="1.90134"
+      ry="1.90369"
+      stroke-width="1.5"
+    />
+    <path d="M12.5 17.0225V17.0325" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M12.5 20.332V20.342" stroke-width="1.5" stroke-linecap="round" />
+  </svg>
+);
+
 export {
   Building,
   Filter,
@@ -531,4 +685,8 @@ export {
   Facebook,
   Linkedin,
   Instagram,
+  House,
+  TrendUp,
+  Bag,
+  BubbleChart,
 };
