@@ -3,6 +3,7 @@ import cn from "classnames";
 import styles from "./text-field.module.css";
 
 type TextFieldProps = {
+  type?: string;
   placeholder: string;
   className?: string;
   show?: boolean;

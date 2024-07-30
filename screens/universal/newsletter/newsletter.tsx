@@ -47,6 +47,7 @@ export default function Newsletter() {
 
             <div className={styles.wrapper}>
               <TextField
+                type="email"
                 placeholder="Enter your email"
                 className={styles.input}
               />
