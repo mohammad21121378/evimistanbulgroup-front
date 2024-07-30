@@ -1,7 +1,15 @@
 import React from "react";
 import cn from "classnames";
 import styles from "./text-field.module.css";
-import icons from "../../../constants/icons";
+
+type TextFieldProps = {
+  placeholder: string;
+  className?: string;
+  show?: boolean;
+  showPassword?: boolean;
+  togglePasswordVisibility?: () => void;
+  error?: boolean;
+};
 
 export default function TextField({
   placeholder,
@@ -11,7 +19,7 @@ export default function TextField({
   togglePasswordVisibility,
   error,
   ...props
-}) {
+}: TextFieldProps) {
   return (
     <div
       className={cn(styles.container, className, {
