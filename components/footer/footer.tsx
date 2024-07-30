@@ -4,7 +4,7 @@ import cn from "classnames";
 import Logo from "../logo";
 import { Heading } from "../typography";
 import Link from "next/link";
-import { Facebook, Instagram, Linkedin } from "@/constants/icons";
+import { Facebook, Instagram, Linkedin, Youtube } from "@/constants/icons";
 
 const links = [
   {
@@ -54,6 +54,33 @@ const links = [
   },
 ];
 
+const socials = [
+  {
+    id: 1,
+    icon: Instagram,
+    title: "Instagram",
+    url: "#",
+  },
+  {
+    id: 2,
+    icon: Facebook,
+    title: "Facebook",
+    url: "#",
+  },
+  {
+    id: 3,
+    icon: Linkedin,
+    title: "Linkedin",
+    url: "#",
+  },
+  {
+    id: 4,
+    icon: Youtube,
+    title: "Youtube",
+    url: "#",
+  },
+];
+
 export default function Footer() {
   return (
     <footer className={cn("section", styles.section)}>
@@ -85,9 +112,17 @@ export default function Footer() {
             </div>
 
             <div className={styles.socials}>
-              <a className={styles.social}>{Instagram}</a>
-              <a className={styles.social}>{Facebook}</a>
-              <a className={styles.social}>{Linkedin}</a>
+              {socials.map((social) => (
+                <a
+                  key={social.id}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.social}
+                >
+                  {social.icon}
+                </a>
+              ))}
             </div>
 
             <div className={cn("paragraph-small", styles.copyright)}>

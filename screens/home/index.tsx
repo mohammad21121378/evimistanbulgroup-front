@@ -1,5 +1,4 @@
 import Layout from "@/components/Layout";
-import Header from "./header";
 import LatestListings from "./latest-listings";
 import Benefits from "./benefits";
 import Showcase from "./showcase";
@@ -11,11 +10,12 @@ import Services from "./services";
 import Partners from "./partners";
 import Testimonials from "./testimonials";
 import Newsletter from "../universal/newsletter";
+import Hero from "./hero";
 
 export default function HomePage() {
   return (
     <Layout>
-      <Header />
+      <Hero />
       <LatestListings />
       <Benefits />
       <Showcase />

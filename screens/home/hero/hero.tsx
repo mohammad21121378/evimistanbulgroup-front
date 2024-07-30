@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "./header.module.css";
+import styles from "./hero.module.css";
 import cn from "classnames";
-import { Heading, Hero } from "@/components/typography";
+import { Heading, Hero as HeroTitle } from "@/components/typography";
 import Image from "next/image";
 import SearchBar from "@/components/search-bar";
 
-export default function Header() {
+export default function Hero() {
   return (
     <>
       <div className={styles.img_container}>
@@ -18,10 +18,10 @@ export default function Header() {
 
         <div className={styles.overlay} />
 
-        <Hero size="hero-lg" className={styles.title}>
+        <HeroTitle size="hero-lg" className={styles.title}>
           Find Your Next <br />
           Home Sweet Home.
-        </Hero>
+        </HeroTitle>
 
         <SearchBar placeholder="Enter an address, neighborhood, city or ZIP code" />
       </div>
