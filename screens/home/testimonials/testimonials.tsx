@@ -5,6 +5,7 @@ import styles from "./testimonials.module.css";
 import cn from "classnames";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "@/constants/icons";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -55,6 +56,7 @@ export default function Testimonials() {
               objectFit="cover"
             />
           </div>
+
           <div className={styles.testimonial_info}>
             <div>
               <div className={cn("heading-6", styles.text)}>

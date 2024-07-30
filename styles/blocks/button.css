@@ -33,7 +33,6 @@
         var(--orange-500) 0%,
         var(--orange-600) 100%
     );
-    border: 1.5px solid var(--orange-500);
 }
 
 [class^="button"][disabled],

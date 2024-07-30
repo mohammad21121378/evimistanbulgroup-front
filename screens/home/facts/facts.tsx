@@ -37,7 +37,7 @@ export default function Facts() {
         <div className={styles.facts}>
           {facts.map((fact) => (
             <div key={fact.id} className={styles.fact}>
-              <div className={styles.fact_icon}>{fact.icon}</div>
+              <div className={cn("gradient-bubble")}>{fact.icon}</div>
               <Heading type="heading-3" className={styles.fact_title}>
                 {fact.title}
               </Heading>

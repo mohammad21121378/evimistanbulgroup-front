@@ -10,7 +10,7 @@ import Team from "./team";
 import Services from "./services";
 import Partners from "./partners";
 import Testimonials from "./testimonials";
-import Newsletter from "./newsletter";
+import Newsletter from "../universal/newsletter";
 
 export default function HomePage() {
   return (

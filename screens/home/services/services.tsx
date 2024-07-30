@@ -64,7 +64,7 @@ export default function Services() {
         <div className={styles.services}>
           {services.map((service) => (
             <div key={service.id} className={styles.service}>
-              <div className={styles.service_icon}>{service.icon}</div>
+              <div className={cn("gradient-bubble")}>{service.icon}</div>
               <div className={cn("heading-6", styles.service_title)}>
                 {service.title}
               </div>
