@@ -1,4 +1,5 @@
 import Curtain from "./curtain";
+import Footer from "./footer";
 import Navigation from "./navigation";
 
 type LayoutProps = {
@@ -11,6 +12,7 @@ export default function Layout({ children }: LayoutProps) {
       {/* <Curtain /> */}
       <Navigation />
       {children}
+      <Footer />
     </>
   );
 }
