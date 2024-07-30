@@ -48,3 +48,39 @@
 .btn svg {
     flex-shrink: 0;
 }
+
+@media (max-width: 1024px) {
+    .testimonials {
+        margin-top: 64px;
+    }
+
+    .testimonial {
+        gap: 64px;
+    }
+
+    .testimonial_image {
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonial {
+        margin-top: 48px;
+        gap: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonial {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .testimonial_image {
+        height: 300px;
+    }
+
+    .btns {
+        margin-top: 32px;
+    }
+}

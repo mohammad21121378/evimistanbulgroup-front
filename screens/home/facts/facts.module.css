@@ -48,12 +48,20 @@
 }
 
 @media (max-width: 1024px) {
+    .facts {
+        margin-top: 64px;
+    }
+
     .fact_title {
         padding-left: 96px;
     }
 }
 
 @media (max-width: 768px) {
+    .fact {
+        margin-top: 48px;
+    }
+
     .fact_title {
         padding-left: 76px;
     }
