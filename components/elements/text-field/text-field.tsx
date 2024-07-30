@@ -1,6 +1,7 @@
 import React from "react";
 import cn from "classnames";
 import styles from "./text-field.module.css";
+import { Hide, Show } from "@/constants/icons";
 
 type TextFieldProps = {
   type?: string;
@@ -42,7 +43,7 @@ export default function TextField({
           className={styles.button}
           onClick={togglePasswordVisibility}
         >
-          {showPassword ? icons.Hide : icons.Eye}
+          {showPassword ? Hide : Show}
         </button>
       )}
     </div>
