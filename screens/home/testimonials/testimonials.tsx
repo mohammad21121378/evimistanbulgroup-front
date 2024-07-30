@@ -46,47 +46,43 @@ export default function Testimonials() {
       <div className={cn("container")}>
         <div className={cn("subheading-small", styles.title)}>Testimonials</div>
 
-        <div className={styles.testimonials}>
-          <div className={styles.testimonial}>
-            <div className={styles.testimonial_image}>
-              <Image
-                src={testimonials[current].image}
-                alt={testimonials[current].name}
-                layout="fill"
-                objectFit="cover"
-              />
+        <div className={styles.testimonial}>
+          <div className={styles.testimonial_image}>
+            <Image
+              src={testimonials[current].image}
+              alt={testimonials[current].name}
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
+          <div className={styles.testimonial_info}>
+            <div>
+              <div className={cn("heading-6", styles.text)}>
+                {testimonials[current].text}
+              </div>
+
+              <div className={cn("paragraph-medium", styles.testimonial_name)}>
+                {testimonials[current].name},&nbsp;
+                <span className={styles.span}>
+                  {testimonials[current].span}
+                </span>
+              </div>
             </div>
-            <div className={styles.testimonial_info}>
-              <div>
-                <div className={cn("heading-6", styles.text)}>
-                  {testimonials[current].text}
-                </div>
 
-                <div
-                  className={cn("paragraph-medium", styles.testimonial_name)}
-                >
-                  {testimonials[current].name},&nbsp;
-                  <span className={styles.span}>
-                    {testimonials[current].span}
-                  </span>
-                </div>
-              </div>
+            <div className={styles.btns}>
+              <button
+                className={cn("button-stroke-small", styles.btn)}
+                onClick={prevSlide}
+              >
+                {ChevronLeft}
+              </button>
 
-              <div className={styles.btns}>
-                <button
-                  className={cn("button-stroke-small", styles.btn)}
-                  onClick={prevSlide}
-                >
-                  {ChevronLeft}
-                </button>
-
-                <button
-                  className={cn("button-stroke-small", styles.btn)}
-                  onClick={nextSlide}
-                >
-                  {ChevronRight}
-                </button>
-              </div>
+              <button
+                className={cn("button-stroke-small", styles.btn)}
+                onClick={nextSlide}
+              >
+                {ChevronRight}
+              </button>
             </div>
           </div>
         </div>

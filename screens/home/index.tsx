@@ -10,6 +10,7 @@ import Team from "./team";
 import Services from "./services";
 import Partners from "./partners";
 import Testimonials from "./testimonials";
+import Newsletter from "./newsletter";
 
 export default function HomePage() {
   return (
@@ -25,6 +26,7 @@ export default function HomePage() {
       <Services />
       <Partners />
       <Testimonials />
+      <Newsletter />
     </Layout>
   );
 }

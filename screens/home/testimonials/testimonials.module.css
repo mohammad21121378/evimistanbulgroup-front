@@ -2,11 +2,8 @@
     text-transform: uppercase;
 }
 
-.testimonials {
-    margin-top: 80px;
-}
-
 .testimonial {
+    margin-top: 80px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 80px;
@@ -50,7 +47,7 @@
 }
 
 @media (max-width: 1024px) {
-    .testimonials {
+    .testimonial {
         margin-top: 64px;
     }
 
@@ -66,14 +63,13 @@
 @media (max-width: 768px) {
     .testimonial {
         margin-top: 48px;
-        gap: 48px;
+        gap: 32px;
     }
 }
 
 @media (max-width: 480px) {
     .testimonial {
         grid-template-columns: 1fr;
-        gap: 32px;
     }
 
     .testimonial_image {
