@@ -4,6 +4,9 @@ import Hero from "./hero";
 import Mission from "./mission";
 import Values from "./values";
 import Leadership from "./leadership";
+import Offices from "../universal/offices";
+import Facts from "../universal/facts";
+import Gallery from "./gallery";
 
 export default function AboutPage() {
   return (
@@ -12,6 +15,9 @@ export default function AboutPage() {
       <Mission />
       <Values />
       <Leadership />
+      <Offices />
+      <Facts />
+      <Gallery />
     </Layout>
   );
 }
