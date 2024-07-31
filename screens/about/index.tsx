@@ -7,6 +7,7 @@ import Leadership from "./leadership";
 import Offices from "../universal/offices";
 import Facts from "../universal/facts";
 import Gallery from "./gallery";
+import Newsletter from "../universal/newsletter";
 
 export default function AboutPage() {
   return (
@@ -18,6 +19,7 @@ export default function AboutPage() {
       <Offices />
       <Facts />
       <Gallery />
+      <Newsletter />
     </Layout>
   );
 }
