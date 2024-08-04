@@ -7,18 +7,20 @@ import Logo from "../logo";
 import Burger from "../burger";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const nav_links = [
   { title: "Home", href: "/" },
   { title: "About us", href: "/about" },
-  { title: "Listings", href: "#listings" },
-  { title: "Agents", href: "#agents" },
+  { title: "Listings", href: "/listings" },
+  { title: "Agents", href: "/agents" },
 ];
 
 export default function Header() {
   const [visibleNav, setVisibleNav] = React.useState(false);
   const [mobile, setMobile] = React.useState(false);
   const [sticky, setSticky] = React.useState(false);
+  const pathname = usePathname();
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -87,7 +89,11 @@ export default function Header() {
       })}
     >
       <div className={cn("container", styles.container)}>
-        <Logo />
+        <Logo
+          className={cn(styles.logo, {
+            [styles.black_logo]: pathname === "/listings",
+          })}
+        />
 
         <motion.nav
           className={cn(styles.nav, {
@@ -103,7 +109,8 @@ export default function Header() {
                 key={index}
                 href={link.href}
                 className={cn("label-small", styles.nav_link, {
-                  [styles.active]: visibleNav,
+                  [styles.active]: pathname === link.href,
+                  [styles.black_link]: pathname === "/listings",
                 })}
               >
                 {link.title}
@@ -114,7 +121,9 @@ export default function Header() {
 
         <div className={styles.button_wrapper}>
           <button
-            className={cn("button-stroke-small", styles.button)}
+            className={cn("button-stroke-small", styles.button, {
+              [styles.black_button]: pathname === "/listings",
+            })}
             onClick={(e) => handleScrollSection(e, "#contact")}
           >
             Get In Touch

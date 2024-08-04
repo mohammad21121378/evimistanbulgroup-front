@@ -7,6 +7,9 @@ type TextFieldProps = {
   type?: string;
   placeholder: string;
   className?: string;
+  inputClassName?: string;
+  withIcon?: boolean;
+  icon?: React.ReactNode;
   show?: boolean;
   showPassword?: boolean;
   togglePasswordVisibility?: () => void;
@@ -16,6 +19,9 @@ type TextFieldProps = {
 export default function TextField({
   placeholder,
   className,
+  inputClassName,
+  withIcon = false,
+  icon,
   show,
   showPassword,
   togglePasswordVisibility,
@@ -28,9 +34,10 @@ export default function TextField({
         [styles.show]: show,
       })}
     >
+      {withIcon && <div className={styles.icon}>{icon}</div>}
       <input
         type={props.type || "text"}
-        className={cn("label-medium", styles.input, {
+        className={cn("label-medium", styles.input, inputClassName, {
           [styles.error]: error,
         })}
         placeholder={placeholder}

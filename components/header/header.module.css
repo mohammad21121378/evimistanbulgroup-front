@@ -56,6 +56,10 @@
     width: 100%;
 }
 
+.nav_link.active::before {
+    width: 100%;
+}
+
 .button {
     z-index: 99;
     background-color: transparent;
@@ -64,6 +68,22 @@
 
 .button_wrapper .burger {
     display: none;
+}
+
+.black_link {
+    color: var(--black);
+}
+
+.black_link::before {
+    background-color: var(--black);
+}
+
+.black_button {
+    color: var(--black);
+}
+
+.container .black_logo {
+    color: var(--black);
 }
 
 @media (max-width: 768px) {

@@ -1,9 +1,14 @@
 import Link from "next/link";
 import styles from "./logo.module.css";
+import cn from "classnames";
 
-export default function Logo() {
+type LogoProps = {
+  className?: string;
+};
+
+export default function Logo({ className }: LogoProps) {
   return (
-    <Link href="/" className={styles.logo}>
+    <Link href="/" className={cn(styles.logo, className)}>
       HeavenHomes™
     </Link>
   );
