@@ -95,7 +95,9 @@ export default function Header() {
       <div className={cn("container", styles.container)}>
         <Logo
           className={cn(styles.logo, {
-            [styles.black_logo]: isBlackHeader && !(mobile && visibleNav),
+            [styles.black_logo]:
+              (isBlackHeader && !(mobile && visibleNav)) || sticky,
+            [styles.sticky_logo]: sticky,
           })}
         />
 
@@ -137,6 +139,7 @@ export default function Header() {
             className={styles.burger}
             burgerClassName={cn(styles.burger, {
               [styles.black_burger]: isBlackHeader && !(mobile && visibleNav),
+              [styles.sticky_burger]: sticky,
             })}
             visibleNav={visibleNav}
             setVisibleNav={setVisibleNav}

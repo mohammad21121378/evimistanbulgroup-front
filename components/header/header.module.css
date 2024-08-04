@@ -91,6 +91,15 @@
     background: var(--black);
 }
 
+.container .sticky_burger:before,
+.container .sticky_burger:after {
+    background: var(--white);
+}
+
+.container .sticky_logo {
+    color: var(--white);
+}
+
 @media (max-width: 768px) {
     .nav {
         display: none;
