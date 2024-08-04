@@ -86,8 +86,8 @@ const bathroomOptions = [
 ];
 
 export default function Hero() {
-  const [keyword, setKeyword] = React.useState<string | null>(null);
-  const [address, setAddress] = React.useState<string | null>(null);
+  const [keyword, setKeyword] = React.useState<string>("");
+  const [address, setAddress] = React.useState<string>("");
   const [propertyType, setPropertyType] = React.useState<string | null>(null);
   const [bedrooms, setBedrooms] = React.useState<string | null>(null);
   const [bathrooms, setBathrooms] = React.useState<string | null>(null);
@@ -166,7 +166,7 @@ export default function Hero() {
               className={styles.textfield}
               withIcon
               icon={Ruler}
-              value={keyword ?? ""}
+              value={keyword}
               onChange={handleKeywordChange}
             />
             <TextField
@@ -174,7 +174,7 @@ export default function Hero() {
               className={styles.textfield}
               withIcon
               icon={Building}
-              value={address ?? ""}
+              value={address}
               onChange={handleAddressChange}
             />
             <Dropdown
