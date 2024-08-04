@@ -588,6 +588,75 @@ const TeamMembers = [
       },
     ],
   },
+  {
+    id: 4,
+    image: "/images/team/ryan-cooper.webp",
+    name: "Ryan Cooper",
+    title: "Real Estate Agent",
+    socials: [
+      {
+        id: 1,
+        icon: Instagram,
+        link: "#",
+      },
+      {
+        id: 2,
+        icon: Facebook,
+        link: "#",
+      },
+      {
+        id: 3,
+        icon: Linkedin,
+        link: "#",
+      },
+    ],
+  },
+  {
+    id: 5,
+    image: "/images/team/olivia-hernandez.webp",
+    name: "Olivia Hernandez",
+    title: "Real Estate Agent",
+    socials: [
+      {
+        id: 1,
+        icon: Instagram,
+        link: "#",
+      },
+      {
+        id: 2,
+        icon: Facebook,
+        link: "#",
+      },
+      {
+        id: 3,
+        icon: Linkedin,
+        link: "#",
+      },
+    ],
+  },
+  {
+    id: 6,
+    image: "/images/team/ethan-brooks.webp",
+    name: "Ethan Brooks",
+    title: "Real Estate Agent",
+    socials: [
+      {
+        id: 1,
+        icon: Instagram,
+        link: "#",
+      },
+      {
+        id: 2,
+        icon: Facebook,
+        link: "#",
+      },
+      {
+        id: 3,
+        icon: Linkedin,
+        link: "#",
+      },
+    ],
+  },
 ];
 
 export { Tabs, Listings, TeamMembers };
