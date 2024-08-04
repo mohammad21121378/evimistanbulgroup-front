@@ -178,7 +178,6 @@ export default function Hero() {
               onChange={handleAddressChange}
             />
             <Dropdown
-              placeholder="All Types"
               className={styles.dropdown}
               options={propertyTypesOptions}
               value={propertyType ?? ""}
@@ -187,7 +186,6 @@ export default function Hero() {
               icon={Building}
             />
             <Dropdown
-              placeholder="Bedrooms"
               className={styles.dropdown}
               options={bedroomsOptions}
               value={bedrooms ?? ""}
@@ -196,7 +194,6 @@ export default function Hero() {
               icon={Location}
             />
             <Dropdown
-              placeholder="Bathrooms"
               className={styles.dropdown}
               options={bathroomOptions}
               value={bathrooms ?? ""}
