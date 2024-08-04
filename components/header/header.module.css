@@ -86,6 +86,11 @@
     color: var(--black);
 }
 
+.container .black_burger:before,
+.container .black_burger:after {
+    background: var(--black);
+}
+
 @media (max-width: 768px) {
     .nav {
         display: none;

@@ -16,6 +16,8 @@ const nav_links = [
   { title: "Agents", href: "/agents" },
 ];
 
+const blackHeaderPages = ["/listings", "/agents"];
+
 export default function Header() {
   const [visibleNav, setVisibleNav] = React.useState(false);
   const [mobile, setMobile] = React.useState(false);
@@ -82,6 +84,8 @@ export default function Header() {
     }
   };
 
+  const isBlackHeader = blackHeaderPages.includes(pathname);
+
   return (
     <header
       className={cn(styles.header, {
@@ -91,7 +95,7 @@ export default function Header() {
       <div className={cn("container", styles.container)}>
         <Logo
           className={cn(styles.logo, {
-            [styles.black_logo]: pathname === "/listings",
+            [styles.black_logo]: isBlackHeader && !(mobile && visibleNav),
           })}
         />
 
@@ -110,7 +114,7 @@ export default function Header() {
                 href={link.href}
                 className={cn("label-small", styles.nav_link, {
                   [styles.active]: pathname === link.href,
-                  [styles.black_link]: pathname === "/listings",
+                  [styles.black_link]: isBlackHeader && !(mobile && visibleNav),
                 })}
               >
                 {link.title}
@@ -122,7 +126,7 @@ export default function Header() {
         <div className={styles.button_wrapper}>
           <button
             className={cn("button-stroke-small", styles.button, {
-              [styles.black_button]: pathname === "/listings",
+              [styles.black_button]: isBlackHeader && !(mobile && visibleNav),
             })}
             onClick={(e) => handleScrollSection(e, "#contact")}
           >
@@ -131,6 +135,9 @@ export default function Header() {
 
           <Burger
             className={styles.burger}
+            burgerClassName={cn(styles.burger, {
+              [styles.black_burger]: isBlackHeader && !(mobile && visibleNav),
+            })}
             visibleNav={visibleNav}
             setVisibleNav={setVisibleNav}
           />

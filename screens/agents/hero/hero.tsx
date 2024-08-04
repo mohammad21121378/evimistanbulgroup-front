@@ -7,7 +7,7 @@ import TeamMember from "@/components/team-member";
 
 export default function Hero() {
   return (
-    <section className={cn("section")}>
+    <section className={cn("section", styles.section)}>
       <div className={cn("container")}>
         <div className={styles.content}>
           <HeroTitle size="hero-lg">Meet Our Agents</HeroTitle>
