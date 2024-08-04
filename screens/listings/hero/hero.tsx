@@ -11,22 +11,26 @@ import { Listings } from "@/constants/mock";
 const propertyTypes = [
   {
     id: 1,
-    name: "Houses",
+    name: "All Types",
   },
   {
     id: 2,
-    name: "Townhouses",
+    name: "Houses",
   },
   {
     id: 3,
-    name: "Condos",
+    name: "Townhouses",
   },
   {
     id: 4,
-    name: "Villas",
+    name: "Condos",
   },
   {
     id: 5,
+    name: "Villas",
+  },
+  {
+    id: 6,
     name: "Commercial",
   },
 ];
@@ -34,22 +38,26 @@ const propertyTypes = [
 const bedroomsOptions = [
   {
     value: 1,
-    label: "1+",
+    label: "Bedrooms",
   },
   {
     value: 2,
-    label: "2+",
+    label: "1+",
   },
   {
     value: 3,
-    label: "3+",
+    label: "2+",
   },
   {
     value: 4,
-    label: "4+",
+    label: "3+",
   },
   {
     value: 5,
+    label: "4+",
+  },
+  {
+    value: 6,
     label: "5+",
   },
 ];
@@ -57,27 +65,29 @@ const bedroomsOptions = [
 const bathroomOptions = [
   {
     value: 1,
-    label: "1+",
+    label: "Bathrooms",
   },
   {
     value: 2,
-    label: "2+",
+    label: "1+",
   },
   {
     value: 3,
-    label: "3+",
+    label: "2+",
   },
   {
     value: 4,
-    label: "4+",
+    label: "3+",
   },
   {
     value: 5,
-    label: "5+",
+    label: "4+",
   },
 ];
 
 export default function Hero() {
+  const [keyword, setKeyword] = React.useState<string | null>(null);
+  const [address, setAddress] = React.useState<string | null>(null);
   const [propertyType, setPropertyType] = React.useState<string | null>(null);
   const [bedrooms, setBedrooms] = React.useState<string | null>(null);
   const [bathrooms, setBathrooms] = React.useState<string | null>(null);
@@ -87,6 +97,14 @@ export default function Hero() {
     value: propertyType.name,
     label: propertyType.name,
   }));
+
+  const handleKeywordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setKeyword(e.target.value);
+  };
+
+  const handleAddressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setAddress(e.target.value);
+  };
 
   const handlePropertyTypeChange = (
     e: React.ChangeEvent<HTMLSelectElement>,
@@ -109,9 +127,16 @@ export default function Hero() {
   const filteredListings = applyFilters
     ? Listings.flatMap((listingCategory) =>
         listingCategory.items.filter((item) => {
-          const matchesPropertyType = propertyType
-            ? item.category === propertyType
+          const matchesKeyword = keyword
+            ? item.description.toLowerCase().includes(keyword.toLowerCase())
             : true;
+          const matchesAddress = address
+            ? item.address.toLowerCase().includes(address.toLowerCase())
+            : true;
+          const matchesPropertyType =
+            propertyType === "All Types" || propertyType === null
+              ? true
+              : item.category === propertyType;
           const matchesBedrooms = bedrooms
             ? item.features.some((f) => f.name === "bd" && f.value >= bedrooms)
             : true;
@@ -119,7 +144,13 @@ export default function Hero() {
             ? item.features.some((f) => f.name === "ba" && f.value >= bathrooms)
             : true;
 
-          return matchesPropertyType && matchesBedrooms && matchesBathrooms;
+          return (
+            matchesKeyword &&
+            matchesAddress &&
+            matchesPropertyType &&
+            matchesBedrooms &&
+            matchesBathrooms
+          );
         }),
       )
     : Listings.flatMap((listingCategory) => listingCategory.items);
@@ -135,12 +166,16 @@ export default function Hero() {
               className={styles.textfield}
               withIcon
               icon={Ruler}
+              value={keyword ?? ""}
+              onChange={handleKeywordChange}
             />
             <TextField
               placeholder="Enter your address"
               className={styles.textfield}
               withIcon
               icon={Building}
+              value={address ?? ""}
+              onChange={handleAddressChange}
             />
             <Dropdown
               placeholder="All Types"

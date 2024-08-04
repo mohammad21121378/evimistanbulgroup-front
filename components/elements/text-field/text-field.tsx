@@ -6,6 +6,8 @@ import { Hide, Show } from "@/constants/icons";
 type TextFieldProps = {
   type?: string;
   placeholder: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   className?: string;
   inputClassName?: string;
   withIcon?: boolean;
@@ -18,6 +20,8 @@ type TextFieldProps = {
 
 export default function TextField({
   placeholder,
+  value,
+  onChange,
   className,
   inputClassName,
   withIcon = false,
@@ -37,6 +41,8 @@ export default function TextField({
       {withIcon && <div className={styles.icon}>{icon}</div>}
       <input
         type={props.type || "text"}
+        value={value}
+        onChange={onChange}
         className={cn("label-medium", styles.input, inputClassName, {
           [styles.error]: error,
         })}

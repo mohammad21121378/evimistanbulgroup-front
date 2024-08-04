@@ -15,7 +15,6 @@ type DropdownProps = {
   className?: string;
   withIcon?: boolean;
   icon?: React.ReactNode;
-  placeholder: string;
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   value: string;
 };
@@ -25,7 +24,6 @@ export default function Dropdown({
   className,
   withIcon = false,
   icon,
-  placeholder,
   ...props
 }: DropdownProps) {
   return (
@@ -38,9 +36,6 @@ export default function Dropdown({
         className={cn("label-medium", styles.select)}
         defaultValue=""
       >
-        <option value="" disabled hidden>
-          {placeholder}
-        </option>
         {options.map((option) => (
           <option key={option.value} value={option.value}>
             {option.label}
