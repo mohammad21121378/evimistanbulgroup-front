@@ -78,8 +78,20 @@
     background-color: var(--black);
 }
 
+.sticky_link {
+    color: var(--white);
+}
+
+.sticky_link::before {
+    background-color: var(--white);
+}
+
 .black_button {
     color: var(--black);
+}
+
+.sticky_button {
+    color: var(--white);
 }
 
 .container .black_logo {

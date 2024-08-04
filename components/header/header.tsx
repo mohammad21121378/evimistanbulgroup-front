@@ -117,6 +117,7 @@ export default function Header() {
                 className={cn("label-small", styles.nav_link, {
                   [styles.active]: pathname === link.href,
                   [styles.black_link]: isBlackHeader && !(mobile && visibleNav),
+                  [styles.sticky_link]: sticky,
                 })}
               >
                 {link.title}
@@ -129,6 +130,7 @@ export default function Header() {
           <button
             className={cn("button-stroke-small", styles.button, {
               [styles.black_button]: isBlackHeader && !(mobile && visibleNav),
+              [styles.sticky_button]: sticky,
             })}
             onClick={(e) => handleScrollSection(e, "#contact")}
           >
