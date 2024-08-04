@@ -103,7 +103,7 @@ export default function Header() {
 
         <motion.nav
           className={cn(styles.nav, {
-            [styles.visible]: setVisibleNav,
+            [styles.visible]: visibleNav,
           })}
           initial={mobile ? "hidden" : false}
           animate={mobile && visibleNav ? "visible" : "hidden"}
