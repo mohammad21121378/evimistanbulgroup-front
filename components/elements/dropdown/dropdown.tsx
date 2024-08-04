@@ -13,6 +13,7 @@ type Option = {
 type DropdownProps = {
   options: Option[];
   className?: string;
+  selectClassName?: string;
   withIcon?: boolean;
   icon?: React.ReactNode;
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
@@ -22,18 +23,17 @@ type DropdownProps = {
 export default function Dropdown({
   options,
   className,
+  selectClassName,
   withIcon = false,
   icon,
   ...props
 }: DropdownProps) {
   return (
     <div className={cn(styles.container, className)}>
-      {withIcon && <div className={styles.icon}>{icon}</div>}
-
       <select
         required
         {...props}
-        className={cn("label-medium", styles.select)}
+        className={cn("label-medium", styles.select, selectClassName)}
         defaultValue=""
       >
         {options.map((option) => (

@@ -1,16 +1,5 @@
 .container {
     position: relative;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background-color: var(--slate-100);
-    border: 1.5px solid var(--slate-200);
-    min-width: 320px;
-    width: 100%;
-    height: 56px;
-    transition: border-color 0.2s;
-    border-radius: 12px;
-    padding-left: 16px;
 }
 
 .icon svg {
@@ -28,12 +17,16 @@
 }
 
 .select {
-    flex: 1;
-    height: 100%;
     appearance: none;
-    border: none;
-    background-color: transparent;
+    background-color: var(--slate-100);
+    border: 1.5px solid var(--slate-200);
     color: var(--black);
+    width: 100%;
+    min-width: 320px;
+    height: 56px;
+    transition: border-color 0.2s;
+    padding: 16px;
+    border-radius: 12px;
 }
 
 .container:focus {
@@ -45,7 +38,7 @@
 }
 
 @media (max-width: 480px) {
-    .container {
+    .select {
         min-width: 100%;
     }
 }
