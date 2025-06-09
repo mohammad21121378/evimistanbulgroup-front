@@ -8,33 +8,27 @@ import Link from "next/link";
 const categories = [
   {
     id: 1,
-    title: "Houses",
-    image: "/images/properties/houses/123-serenity-lane.webp",
+    title: "Apartment",
   },
   {
     id: 2,
-    title: "Townhouses",
-    image: "/images/properties/townhouses/123-modern-townhouse.webp",
+    title: "Villa",
   },
   {
     id: 3,
-    title: "Condos",
-    image: "/images/properties/apartments/321-suburban-apartment.webp",
+    title: "Commercial",
   },
   {
     id: 4,
-    title: "Villas",
-    image: "/images/properties/villas/luxury-estate-villa.webp",
+    title: "Penthouse",
   },
   {
     id: 5,
-    title: "Commercial",
-    image: "/images/properties/commercial/downtown-office.webp",
+    title: "Land for Sale",
   },
   {
     id: 6,
-    title: "Apartments",
-    image: "/images/properties/apartments/789-downtown-loft.webp",
+    title: "Hotel for Sale",
   },
 ];
 
@@ -44,16 +38,16 @@ export default function Categories() {
       <div className={cn("container")}>
         <div className={styles.content}>
           <div className={styles.title_container}>
-            <Heading type="heading-3">Explore Our Categories</Heading>
+            <Heading type="heading-3">Browse Property Types in Turkey</Heading>
             <div className={cn("paragraph-large", styles.subtitle)}>
               {
-                "Whether you're looking for a luxurious home, a cozy apartment, or a prime commercial space, we have something for everyone."
+                "From modern apartments to luxury villas, commercial spaces to hotel investments — explore curated property types across Turkey’s top cities."
               }
             </div>
           </div>
 
           <Link href="/listings" className={cn("button button-primary")}>
-            View All Categories
+          View All Types 
           </Link>
         </div>
 
@@ -62,7 +56,7 @@ export default function Categories() {
             <div key={category.id} className={styles.category}>
               <div className={styles.image_container}>
                 <Image
-                  src={category.image}
+                  src={`/images/categories/${category.title}.jpg`}
                   alt={category.title}
                   layout="fill"
                   objectFit="cover"

@@ -13,28 +13,13 @@ const links = [
     url: "#",
   },
   {
-    id: 2,
-    title: "Ofices",
-    url: "#",
-  },
-  {
-    id: 3,
-    title: "Services",
-    url: "#",
-  },
-  {
-    id: 4,
-    title: "Testimonials",
-    url: "#",
-  },
-  {
-    id: 5,
-    title: "Newsletter",
-    url: "#",
-  },
-  {
     id: 6,
     title: "Home",
+    url: "#",
+  },
+  {
+    id: 2,
+    title: "Ofices",
     url: "#",
   },
   {
@@ -43,13 +28,28 @@ const links = [
     url: "#",
   },
   {
+    id: 3,
+    title: "Services",
+    url: "#",
+  },
+  {
     id: 8,
     title: "Listings",
     url: "#",
   },
   {
+    id: 4,
+    title: "Testimonials",
+    url: "#",
+  },
+  {
     id: 9,
     title: "Agents",
+    url: "#",
+  },
+  {
+    id: 5,
+    title: "Newsletter",
     url: "#",
   },
 ];
@@ -86,7 +86,7 @@ export default function Footer() {
     <footer className={cn("section", styles.section)}>
       <div className={cn("container", styles.container)}>
         <div className={styles.content}>
-          <Logo />
+          <Logo className="!text-white" />
 
           <div>
             <Heading type="heading-3" className={styles.title}>

@@ -11,20 +11,21 @@ import Newsletter from "../universal/newsletter";
 import Hero from "./hero";
 import Offices from "../universal/offices";
 import Facts from "../universal/facts";
+import HighlightsAndFeatures from "./highlights-and-features";
+import GuidesAndInsights from "./guides-and-Insights";
 
 export default function HomePage() {
   return (
     <Layout>
       <Hero />
-      <LatestListings />
-      <Benefits />
-      <Showcase />
       <Offices />
+      <LatestListings />
       <Categories />
-      <Facts />
-      <Team />
+      <HighlightsAndFeatures />
       <Services />
+      <GuidesAndInsights />
       <Partners />
+      <Benefits />
       <Testimonials />
       <Newsletter />
     </Layout>

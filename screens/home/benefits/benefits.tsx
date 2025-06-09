@@ -9,43 +9,43 @@ import Link from "next/link";
 const benefits = [
   {
     id: 1,
-    title: "Why choose us?",
+    title: "Why Choose EvimIstanbul?",
     description:
-      "We are committed to providing exceptional service and unparallaled expertise in the real estate market. Our features are designed to ensure a smooth and rewarding experience for our clients, whether you are buying, selling, or investing.",
+      "EvimIstanbul empowers international clients to confidently buy property in Turkey — including Istanbul, Antalya, and İzmir — by providing verified listings, expert guidance, and full-service support. From legal contracts to residence permits or Turkish citizenship by investment, we ensure a secure and seamless experience.",
     image: "/images/benefit-1.webp",
     items: [
       {
         id: 1,
-        title: "Expert agents",
+        title: "Verified properties across Turkey",
       },
       {
         id: 2,
-        title: "Comprehensive listings",
+        title: "Expert legal & relocation support for foreign buyers",
       },
       {
         id: 3,
-        title: "Personalized service",
+        title: "Citizenship & residency guidance for eligible clients",
       },
     ],
   },
   {
     id: 2,
-    title: "Benefits of choosing HeavenHomes",
+    title: "Benefits of Choosing EvimIstanbul",
     description:
-      "We offer a range of benefits that set us apart from other real estate agencies. Our team of experts will guide you through the process, ensuring you get the best deal possible.",
+      "Whether you're investing for citizenship, relocating as a family, or studying in Turkey, EvimIstanbul offers personalized, transparent, and secure real estate solutions in top Turkish cities.",
     image: "/images/benefit-2.webp",
     items: [
       {
         id: 1,
-        title: "Tailored approach",
+        title: "Citizenship-eligible properties",
       },
       {
         id: 2,
-        title: "Extensive network",
+        title: "Legal and financial transparency — no hidden costs",
       },
       {
         id: 3,
-        title: "Proven track record",
+        title: "$ 500M+ in successful transactions with global clients",
       },
     ],
   },

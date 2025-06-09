@@ -7,6 +7,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 80px;
+    align-items: stretch;
 }
 
 .column {
@@ -14,6 +15,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 48px;
+    height: 100%;
 }
 
 .subtitle {
@@ -26,6 +28,7 @@
     align-items: center;
     gap: 8px;
     width: 100%;
+    margin-top: auto;
 }
 
 @media (max-width: 1024px) {

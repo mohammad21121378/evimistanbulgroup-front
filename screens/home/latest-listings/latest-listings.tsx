@@ -27,16 +27,15 @@ export default function LatestListings() {
         <div className={styles.content}>
           <div>
             <Heading type="heading-3" className={styles.title}>
-              Latest Property Listings
+            Latest Property Listings
             </Heading>
             <div className={cn("paragraph-large", styles.subtitle)}>
-              Discover the newest additions to our exclusive real estate
-              portfolio.
+            Explore the newest homes, investments, and opportunities added to our curated portfolio.
             </div>
           </div>
 
           <Link href="/listings" className={cn("button", styles.button)}>
-            View All Listings
+          View All Properties
           </Link>
         </div>
 
@@ -47,7 +46,7 @@ export default function LatestListings() {
             value={selectedCategory}
             onChange={handleDropdownChange}
           />
-          <div className={styles.tabs}>
+          {/* <div className={styles.tabs}>
             {Tabs.map((tab) => (
               <div
                 key={tab.id}
@@ -59,7 +58,7 @@ export default function LatestListings() {
                 {tab.name}
               </div>
             ))}
-          </div>
+          </div> */}
 
           <div className={styles.listings}>
             {Listings.filter(

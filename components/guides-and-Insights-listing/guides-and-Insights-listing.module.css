@@ -1,0 +1,17 @@
+.item{
+  border: 1px solid #1111111A;
+}
+
+.item img{
+  border-bottom: 1px solid #1111111A;
+}
+
+.button{
+  border: 1px solid var(--orange-600);
+  transition: .5s;
+}
+
+.button:hover{
+  background-color: var(--orange-600);
+  color: #fff;
+}

@@ -3,26 +3,35 @@ import cn from "classnames";
 import styles from "./offices.module.css";
 import TextMarquee from "@/components/text-marquee";
 import { Heading } from "@/components/typography";
+import Image from "next/image";
 
 const top_cities = [
-  "Los Angeles",
+  "KUZU GRUP",
   "・",
-  "New York",
+  "Ağaoğlu YAPI MİMAR",
   "・",
-  "San Francisco",
+  "SINPAS",
   "・",
-  "London",
+  "AVRUPA",
+  "・",
+  "ÖZAK HAYAT DEĞER",
+  "・",
+  "EMLAKKONUT",
   "・",
 ];
 
 const bottom_cities = [
-  "Berlin",
+  "TAHİNCİOĞLU",
   "・",
-  "Paris",
+  "nural GYO",
   "・",
-  "Tokyo",
+  "dumankaya",
   "・",
-  "Sydney",
+  "SURYAPI",
+  "・",
+  "fuzul GYO",
+  "・",
+  "kiler GYO",
   "・",
 ];
 
@@ -30,31 +39,48 @@ export default function Offices() {
   return (
     <section className={cn("section")}>
       <div className={cn("container")}>
-        <div className={cn("subheading-small", styles.title)}>Offices</div>
+      <div className={styles.title_container}>
+            <Heading type="heading-3">Our Network in Real Estate</Heading>
+            <div className={cn("paragraph-large", styles.subtitle)}>
+              {
+                "Access properties developed by Turkey’s most reputable construction and real estate brands"
+              }
+            </div>
+          </div>
       </div>
 
       <div className={styles.marquees}>
         <TextMarquee>
-          {top_cities.map((city) => (
+          {top_cities.map((item) => (
+            item === "・" ?
             <Heading
-              key={city}
+              key={item}
               type="heading-3"
               className={styles.marquee_text}
             >
-              {city}
+              {item}
             </Heading>
+            :
+            <div className="relative">
+              <img src={`/images/realestate/${item}.png`} alt={item} className="w-full max-h-20" />
+            </div>
           ))}
         </TextMarquee>
 
         <TextMarquee direction="right">
-          {bottom_cities.map((city) => (
+          {bottom_cities.map((item) => (
+            item === "・" ?
             <Heading
-              key={city}
+              key={item}
               type="heading-3"
               className={styles.marquee_text}
             >
-              {city}
+              {item}
             </Heading>
+            :
+            <div className="relative">
+              <img src={`/images/realestate/${item}.png`} alt={item} className="w-full max-h-20" />
+            </div>
           ))}
         </TextMarquee>
       </div>

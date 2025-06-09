@@ -9,11 +9,11 @@
     margin-top: 80px;
 }
 
-.container:nth-child(even) {
+.container:nth-child(odd) {
     grid-template-areas: "image content";
 }
 
-.container:nth-child(odd) {
+.container:nth-child(even) {
     grid-template-areas: "content image";
 }
 
@@ -39,6 +39,7 @@
     margin-top: 32px;
     display: grid;
     gap: 16px;
+    font-weight: 500;
 }
 
 .item {

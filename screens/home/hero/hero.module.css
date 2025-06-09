@@ -16,9 +16,20 @@
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-.title {
+.title_box{
+    
     position: absolute;
-    bottom: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.title {
+    color: var(--white);
+    text-align: center;
+}
+
+.sub_title {
+    margin-top: 32px;
     color: var(--white);
     text-align: center;
 }
@@ -28,7 +39,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    gap: 80px;
+    gap: 32px;
 }
 
 .stack {
@@ -48,11 +59,15 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 24px;
+    padding: 24px ;
     gap: 8px;
 }
 
 .card_subtitle {
+    color: var(--slate-500);
+}
+
+.sub_title_input{
     color: var(--slate-500);
 }
 

@@ -1028,6 +1028,20 @@ const Location = (
   </svg>
 );
 
+const Ques = (
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.3925 13.25C13.7647 12.1918 14.4995 11.2995 15.4666 10.7311C16.4337 10.1628 17.5707 9.95501 18.6764 10.1446C19.782 10.3343 20.7848 10.9091 21.5072 11.7673C22.2296 12.6254 22.625 13.7116 22.6233 14.8334C22.6233 18 17.8733 19.5834 17.8733 19.5834M18 25.9167H18.0158M33.8333 18C33.8333 26.7445 26.7445 33.8334 18 33.8334C9.25548 33.8334 2.16666 26.7445 2.16666 18C2.16666 9.25551 9.25548 2.16669 18 2.16669C26.7445 2.16669 33.8333 9.25551 33.8333 18Z" stroke="#1E1E1E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+);
+
+const Location2 = (
+<svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.5 8.50051C11.5 7.11924 10.3808 6 9.00051 6C7.61924 6 6.5 7.11924 6.5 8.50051C6.5 9.88076 7.61924 11 9.00051 11C10.3808 11 11.5 9.88076 11.5 8.50051Z" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.99951 19C7.80104 19 1.5 13.8984 1.5 8.56329C1.5 4.38664 4.8571 1 8.99951 1C13.1419 1 16.5 4.38664 16.5 8.56329C16.5 13.8984 10.198 19 8.99951 19Z" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+)
+
+
 export {
   Building,
   Filter,
@@ -1062,4 +1076,6 @@ export {
   Location,
   Plus,
   Star,
+  Ques,
+  Location2
 };

@@ -1,5 +1,7 @@
 "use client";
 
+import '@/styles/globals.css'
+
 import React from "react";
 import Curtain from "./curtain";
 import Footer from "./footer";

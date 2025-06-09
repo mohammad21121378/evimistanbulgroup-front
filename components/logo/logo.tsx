@@ -9,7 +9,7 @@ type LogoProps = {
 export default function Logo({ className }: LogoProps) {
   return (
     <Link href="/" className={cn(styles.logo, className)}>
-      HeavenHomes™
+      Evimistanbul
     </Link>
   );
 }

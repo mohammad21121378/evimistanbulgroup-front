@@ -11,9 +11,10 @@ import { usePathname } from "next/navigation";
 
 const nav_links = [
   { title: "Home", href: "/" },
-  { title: "About us", href: "/about" },
-  { title: "Listings", href: "/listings" },
-  { title: "Agents", href: "/agents" },
+  { title: "Properties", href: "/Properties" },
+  { title: "Our Services", href: "/Our Services" },
+  { title: "Our Insights", href: "/agents" },
+  { title: "About Us", href: "/agents" },
 ];
 
 const blackHeaderPages = [
@@ -141,7 +142,7 @@ export default function Header() {
               [styles.sticky_button]: sticky,
             })}
           >
-            Get In Touch
+            Contact Us
           </Link>
 
           <Burger
