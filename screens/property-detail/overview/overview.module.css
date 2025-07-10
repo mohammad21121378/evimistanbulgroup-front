@@ -36,7 +36,7 @@
 }
 
 .detail_head svg {
-    stroke: var(--black);
+    stroke: #002DD1;
     position: absolute;
     right: 0;
     top: 50%;
@@ -67,14 +67,19 @@
     color: var(--slate-500);
 }
 
-.agent {
-    padding: 48px;
-    background-color: var(--slate-100);
+.agentAndTabelOfContents {
+    /* padding: 48px; */
+    /* background-color: var(--slate-100);
     border: 1px solid var(--slate-200);
-    border-radius: 24px;
+    border-radius: 24px; */
     display: flex;
     flex-direction: column;
     gap: 24px;
+}
+
+.agent{
+    border: 1px solid #EA580C;
+    border-radius: 12px;
 }
 
 .profile {
@@ -90,6 +95,8 @@
     height: 80px;
     border-radius: 50%;
     overflow: hidden;
+    border: 3px solid #002DD1;
+    padding: 3px;
 }
 
 .name {
@@ -119,7 +126,7 @@
 }
 
 @media (max-width: 480px) {
-    .agent {
+    .agentAndTabelOfContents {
         padding: 24px;
     }
 }

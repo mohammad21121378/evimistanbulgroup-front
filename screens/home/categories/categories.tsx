@@ -1,53 +1,39 @@
+'use client';
+
 import React from "react";
 import cn from "classnames";
 import styles from "./categories.module.css";
 import { Heading } from "@/components/typography";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { ArrowRight } from "@/constants/icons";
 
 const categories = [
-  {
-    id: 1,
-    title: "Apartment",
-  },
-  {
-    id: 2,
-    title: "Villa",
-  },
-  {
-    id: 3,
-    title: "Commercial",
-  },
-  {
-    id: 4,
-    title: "Penthouse",
-  },
-  {
-    id: 5,
-    title: "Land for Sale",
-  },
-  {
-    id: 6,
-    title: "Hotel for Sale",
-  },
+  { id: 1, key: "apartment" },
+  { id: 2, key: "villa" },
+  { id: 3, key: "commercial" },
+  { id: 4, key: "penthouse" },
+  { id: 5, key: "landForSale" },
+  { id: 6, key: "hotelForSale" },
 ];
 
 export default function Categories() {
+  const t = useTranslations("Categories");
+
   return (
-    <section className={cn("section")}>
-      <div className={cn("container")}>
+    <section className="section">
+      <div className="container">
         <div className={styles.content}>
           <div className={styles.title_container}>
-            <Heading type="heading-3">Browse Property Types in Turkey</Heading>
+            <Heading type="heading-3">{t("heading")}</Heading>
             <div className={cn("paragraph-large", styles.subtitle)}>
-              {
-                "From modern apartments to luxury villas, commercial spaces to hotel investments — explore curated property types across Turkey’s top cities."
-              }
+              {t("subtitle")}
             </div>
           </div>
 
-          <Link href="/listings" className={cn("button button-primary")}>
-          View All Types 
+          <Link href="/listings" className="button button-primary">
+            {t("viewAll")} {ArrowRight}
           </Link>
         </div>
 
@@ -56,8 +42,8 @@ export default function Categories() {
             <div key={category.id} className={styles.category}>
               <div className={styles.image_container}>
                 <Image
-                  src={`/images/categories/${category.title}.jpg`}
-                  alt={category.title}
+                  src={`/images/categories/${category.key}.jpg`}
+                  alt={t(`types.${category.key}`)}
                   layout="fill"
                   objectFit="cover"
                 />
@@ -65,7 +51,7 @@ export default function Categories() {
 
               <div className={styles.overlay}>
                 <div className={cn("heading-6", styles.category_title)}>
-                  {category.title}
+                  {t(`types.${category.key}`)}
                 </div>
               </div>
             </div>

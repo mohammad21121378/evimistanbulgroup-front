@@ -4,6 +4,8 @@ import cn from "classnames";
 import { Heading } from "@/components/typography";
 import { Listings } from "@/constants/mock";
 import PropertyListing from "@/components/property-listing";
+import { ArrowRight } from "@/constants/icons";
+import Link from "next/link";
 
 interface RelatedPropertiesProps {
   item: any;
@@ -25,12 +27,13 @@ export default function RelatedProperties({ item }: RelatedPropertiesProps) {
     <section className={cn("section")}>
       <div className={cn("container")}>
         <div className={styles.content}>
-          <Heading type="heading-3">Related Properties</Heading>
+          <h2>
+          <Heading type="heading-3">Similar Properties</Heading>
+          </h2>
 
-          <div className={cn("paragraph-large", styles.subtitle)}>
-            Explore other exceptional properties within our network that share
-            the same serene environment and modern design philosophy.
-          </div>
+          <Link href="/listings" className={cn("button button-primary")}>
+          View All Similar Properties {ArrowRight}
+          </Link>
         </div>
 
         <div className={styles.properties}>

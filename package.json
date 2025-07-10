@@ -5,19 +5,23 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 8332",
     "lint": "next lint"
   },
   "dependencies": {
+    "@babel/runtime": "^7.27.6",
     "@react-google-maps/api": "^2.19.3",
     "@vis.gl/react-google-maps": "^1.1.0",
     "classnames": "^2.5.1",
     "framer-motion": "^11.3.12",
+    "lucide-react": "^0.523.0",
     "next": "14.2.5",
+    "next-intl": "^4.1.0",
     "react": "^18",
     "react-dom": "^18",
     "react-fast-marquee": "^1.6.5",
-    "react-outside-click-handler": "^1.3.0"
+    "react-outside-click-handler": "^1.3.0",
+    "react-slider": "^2.0.6"
   },
   "devDependencies": {
     "@types/node": "^20",

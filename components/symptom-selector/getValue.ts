@@ -1,0 +1,1 @@
+export const getValue = (id:string, parentId?:string|false) => parentId ? `${parentId}.${id}` : `${id}`;

@@ -5,83 +5,30 @@ import Logo from "../logo";
 import { Heading } from "../typography";
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin, Youtube } from "@/constants/icons";
-
-const links = [
-  {
-    id: 1,
-    title: "Benefits",
-    url: "#",
-  },
-  {
-    id: 6,
-    title: "Home",
-    url: "#",
-  },
-  {
-    id: 2,
-    title: "Ofices",
-    url: "#",
-  },
-  {
-    id: 7,
-    title: "About us",
-    url: "#",
-  },
-  {
-    id: 3,
-    title: "Services",
-    url: "#",
-  },
-  {
-    id: 8,
-    title: "Listings",
-    url: "#",
-  },
-  {
-    id: 4,
-    title: "Testimonials",
-    url: "#",
-  },
-  {
-    id: 9,
-    title: "Agents",
-    url: "#",
-  },
-  {
-    id: 5,
-    title: "Newsletter",
-    url: "#",
-  },
-];
-
-const socials = [
-  {
-    id: 1,
-    icon: Instagram,
-    title: "Instagram",
-    url: "#",
-  },
-  {
-    id: 2,
-    icon: Facebook,
-    title: "Facebook",
-    url: "#",
-  },
-  {
-    id: 3,
-    icon: Linkedin,
-    title: "Linkedin",
-    url: "#",
-  },
-  {
-    id: 4,
-    icon: Youtube,
-    title: "Youtube",
-    url: "#",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+  const t = useTranslations("Footer");
+
+  const links = [
+    { id: 1, title: t("links.benefits"), url: "#" },
+    { id: 6, title: t("links.home"), url: "#" },
+    { id: 2, title: t("links.offices"), url: "#" },
+    { id: 7, title: t("links.aboutUs"), url: "#" },
+    { id: 3, title: t("links.services"), url: "#" },
+    { id: 8, title: t("links.listings"), url: "#" },
+    { id: 4, title: t("links.testimonials"), url: "#" },
+    { id: 9, title: t("links.agents"), url: "#" },
+    { id: 5, title: t("links.newsletter"), url: "#" },
+  ];
+
+  const socials = [
+    { id: 1, icon: Instagram, title: t("socials.instagram"), url: "#" },
+    { id: 2, icon: Facebook, title: t("socials.facebook"), url: "#" },
+    { id: 3, icon: Linkedin, title: t("socials.linkedin"), url: "#" },
+    { id: 4, icon: Youtube, title: t("socials.youtube"), url: "#" },
+  ];
+
   return (
     <footer className={cn("section", styles.section)}>
       <div className={cn("container", styles.container)}>
@@ -90,7 +37,7 @@ export default function Footer() {
 
           <div>
             <Heading type="heading-3" className={styles.title}>
-              Building Dreams, One Home at a Time.
+              {t("slogan")}
             </Heading>
             <div className={cn("subheading-small", styles.email)}>
               HEAVENHOMES@INFO.COM
@@ -104,10 +51,10 @@ export default function Footer() {
           <div className={styles.business_info}>
             <div>
               <div className={cn("paragraph-small", styles.address)}>
-                123 Main Street, Hometown, USA
+                {t("address")}
               </div>
               <div className={cn("paragraph-small", styles.phone)}>
-                (123) 456-7890
+                {t("phone")}
               </div>
             </div>
 
@@ -119,6 +66,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.social}
+                  aria-label={social.title}
                 >
                   {social.icon}
                 </a>
@@ -126,7 +74,7 @@ export default function Footer() {
             </div>
 
             <div className={cn("paragraph-small", styles.copyright)}>
-              © 2024 Elektra. All rights reserved.
+              {t("copyright")}
             </div>
           </div>
 

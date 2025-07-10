@@ -4,10 +4,12 @@ import React from "react";
 import styles from "./testimonials.module.css";
 import cn from "classnames";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "@/constants/icons";
+import { ArrowRight, ChevronLeft, ChevronRight } from "@/constants/icons";
 import { motion } from "framer-motion";
 import { Heading } from "@/components/typography";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
+
 
 const testimonials = [
   {
@@ -41,6 +43,8 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  const t = useTranslations("testimonials");
+
   const [current, setCurrent] = React.useState(0);
 
   const nextSlide = () => {
@@ -55,7 +59,8 @@ export default function Testimonials() {
     <section className={cn("section")}>
       <div className={cn("container")}>
         
-        <Heading type="heading-3">Testimonials</Heading>
+      <Heading type="heading-3">{t("title")}</Heading>
+
 
         <div className={styles.testimonial}>
           <div className={styles.testimonial_image}>
@@ -70,11 +75,11 @@ export default function Testimonials() {
           <div className={styles.testimonial_info}>
             <div>
               <div className={cn("heading-6", styles.text)}>
-                {testimonials[current].text}
+              {t("list." + current + ".text")}
               </div>
 
               <div className={cn("paragraph-medium", styles.testimonial_name)}>
-                ––– {testimonials[current].name}
+                ––– {t("list." + current + ".name")}
                 {/* ,&nbsp;
                 <span className={styles.span}>
                   {testimonials[current].span}
@@ -100,7 +105,7 @@ export default function Testimonials() {
               </div>
 
               <Link href="/about" className={cn("button ")}>
-                View All Testimonials
+                {t("viewAll")} {ArrowRight}
               </Link>
             </div>
           </div>

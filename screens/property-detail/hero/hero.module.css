@@ -11,6 +11,10 @@
 .address {
     margin-top: 4px;
     color: var(--slate-500);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: underline;
 }
 
 .images {
@@ -19,6 +23,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+    position: relative;
 }
 
 .image {

@@ -1,8 +1,11 @@
+"use client";
+
 import React from "react";
 import cn from "classnames";
 import styles from "./search-bar.module.css";
 import { Ques, Filter } from "@/constants/icons";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 type SearchBarProps = {
   placeholder: string;
@@ -16,21 +19,21 @@ export default function SearchBar({
   onSearchTermChange,
 }: SearchBarProps) {
   const [loading, setLoading] = React.useState(false);
-
+  const t = useTranslations("searchBar");
 
   const propertyOptions = [
-    { value: "", label: "Buy Property in Turkey" },
-    { value: "Buy Property in Turkey", label: "Buy Property in Turkey" },
-    { value: "Start a Company in Turkey", label: "Start a Company in Turkey" },
-    { value: "Apply for Turkish Citizenship", label: "Apply for Turkish Citizenship" },
-    { value: "Get a Turkish Residence Permit", label: "Get a Turkish Residence Permit" },
-    { value: "Study in Turkey as an International Student", label: "Study in Turkey as an International Student" },
-    { value: "Move to Turkey With My Family", label: "Move to Turkey With My Family" },
-    { value: "Open a Bank Account in Turkey", label: "Open a Bank Account in Turkey" },
-    { value: "Work Legally in Turkey", label: "Work Legally in Turkey" },
-    { value: "Receive Medical Treatment in Turkey", label: "Receive Medical Treatment in Turkey" },
-    { value: "Transfer and Exchange Foreign Income", label: "Transfer and Exchange Foreign Income" },
-    { value: "Explore Turkey Through Tours and Leisure Activities", label: "Explore Turkey Through Tours and Leisure Activities" },
+    { value: "", label: t("options.default") },
+    { value: "Buy Property in Turkey", label: t("options.buyProperty") },
+    { value: "Start a Company in Turkey", label: t("options.startCompany") },
+    { value: "Apply for Turkish Citizenship", label: t("options.applyCitizenship") },
+    { value: "Get a Turkish Residence Permit", label: t("options.getResidence") },
+    { value: "Study in Turkey as an International Student", label: t("options.study") },
+    { value: "Move to Turkey With My Family", label: t("options.moveFamily") },
+    { value: "Open a Bank Account in Turkey", label: t("options.openBank") },
+    { value: "Work Legally in Turkey", label: t("options.work") },
+    { value: "Receive Medical Treatment in Turkey", label: t("options.medical") },
+    { value: "Transfer and Exchange Foreign Income", label: t("options.transferIncome") },
+    { value: "Explore Turkey Through Tours and Leisure Activities", label: t("options.explore") }
   ];
 
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -38,11 +41,9 @@ export default function SearchBar({
     onSearchTermChange(newValue);
 
     setLoading(true);
-
-    // شبیه‌سازی عملیات جستجو با تایمر
     setTimeout(() => {
       setLoading(false);
-    }, 1000); // شبیه‌سازی زمان بارگذاری 1 ثانیه
+    }, 1000);
   };
 
   return (
@@ -50,11 +51,11 @@ export default function SearchBar({
       <div className={styles.input_group}>
         <div className={styles.icon}>{Ques}</div>
         <div className="relative">
-          <h6 className={'text-slate-500 font-normal -mt-3 mb-1 pl-1'}>
-            I want to
+          <h6 className="text-slate-500 font-normal -mt-3 mb-1 pl-1">
+            {t("label")}
           </h6>
           <select
-            className={cn("label-medium", styles.input, '!max-w-xs w-full')}
+            className={cn("label-medium", styles.input, "!max-w-xs w-full")}
             value={searchTerm}
             onChange={handleSelectChange}
           >
@@ -65,13 +66,6 @@ export default function SearchBar({
             ))}
           </select>
         </div>
-
-        {/* <div className={styles.divider} /> */}
-        {/* {loading ? (
-          <div className={styles.spinner} />
-        ) : (
-          <div className={styles.icon}>{Filter}</div>
-        )} */}
       </div>
 
       <div className={styles.breakline} />
@@ -83,7 +77,7 @@ export default function SearchBar({
         }}
         className={cn("button", styles.button)}
       >
-        Book A Free Consultation
+        {t("consultationButton")}
       </Link>
     </div>
   );

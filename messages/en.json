@@ -1,0 +1,262 @@
+{
+  "home": {
+    "hero": {
+      "title": "Invest. Grow. Succeed.",
+      "subtitle": "Invest in Turkey with Confidence — Whether you're buying property, seeking citizenship, starting a business, studying, relocating with family, or receiving medical care — EvimIstanbul® handles every step of your journey from A to Z.",
+      "searchPlaceholder": "Buy Property in Turkey",
+      "sectionTitle": "Looking for Something Else?",
+      "sectionHeading": "Discover the best opportunities in Turkey — trusted by global investors, backed by over $500M in investments.",
+      "cardSubtitle": "Assets Under Management",
+      "cardValue": "$500M+"
+    }
+  },
+  "searchBar": {
+    "label": "I want to",
+    "consultationButton": "Book A Free Consultation",
+    "options": {
+      "default": "Buy Property in Turkey",
+      "buyProperty": "Buy Property in Turkey",
+      "startCompany": "Start a Company in Turkey",
+      "applyCitizenship": "Apply for Turkish Citizenship",
+      "getResidence": "Get a Turkish Residence Permit",
+      "study": "Study in Turkey as an International Student",
+      "moveFamily": "Move to Turkey With My Family",
+      "openBank": "Open a Bank Account in Turkey",
+      "work": "Work Legally in Turkey",
+      "medical": "Receive Medical Treatment in Turkey",
+      "transferIncome": "Transfer and Exchange Foreign Income",
+      "explore": "Explore Turkey Through Tours and Leisure Activities"
+    }
+  },
+  "Offices": {
+    "heading": "Our Network in Real Estate",
+    "subheading": "Access properties developed by Turkey’s most reputable construction and real estate brands"
+  },
+  "LatestListings": {
+    "heading": "Latest Property Listings",
+    "subheading": "Explore the newest homes, investments, and opportunities added to our curated portfolio.",
+    "viewAll": "View All Properties"
+  },
+  "Categories": {
+    "heading": "Browse Property Types in Turkey",
+    "subtitle": "From modern apartments to luxury villas, commercial spaces to hotel investments — explore curated property types across Turkey’s top cities.",
+    "viewAll": "View All Types",
+    "types": {
+      "apartment": "Apartment",
+      "villa": "Villa",
+      "commercial": "Commercial",
+      "penthouse": "Penthouse",
+      "landForSale": "Land for Sale",
+      "hotelForSale": "Hotel for Sale"
+    }
+  },
+  "HighlightsAndFeatures": {
+    "title": "Property Highlights & Special Features",
+    "description": "Easily discover properties based on what matters most to you — from high-return investments and citizenship eligibility to luxury finishes, lifestyle benefits, and urgent offers. Use these tags to explore real estate tailored to your goals.",
+    "viewAll": "View All Highlights"
+  },
+  "Services": {
+    "title": "Our Services",
+    "subtitle": "EvimIstanbul offers a full range of services — from buying property, gaining Turkish citizenship, and starting a company, to student and family relocation, residence permits, bank accounts, medical tourism, lifestyle experiences, and more — all backed by expert guidance and global trust.",
+    "button": "View All Services",
+
+    "real_estate": {
+      "title": "Real Estate Acquisition",
+      "description": "Buy residential or commercial properties in Turkey with verified listings and legal guidance."
+    },
+    "citizenship": {
+      "title": "Citizenship by Investment",
+      "description": "Invest in property to qualify for Turkish citizenship — fully supported from A to Z."
+    },
+    "residence_permit": {
+      "title": "Residence Permit Application",
+      "description": "Get expert help applying for Turkish residence permits: touristic, family, student, or investor."
+    },
+    "company_formation": {
+      "title": "Company Formation in Turkey",
+      "description": "Start your business with complete legal setup, tax registration, and compliance support."
+    },
+    "student_support": {
+      "title": "Student Immigration Support",
+      "description": "Secure university placement, student visa, and housing — study in Turkey with full assistance."
+    },
+    "family_relocation": {
+      "title": "Family Relocation Services",
+      "description": "We manage school search, housing, and legal processes to relocate your family with ease."
+    },
+    "bank_account": {
+      "title": "Bank Account Opening",
+      "description": "Open a personal or business bank account in Turkey — even without a residence permit."
+    },
+    "work_permit": {
+      "title": "Work Permit Assistance",
+      "description": "Apply for a legal work permit and get documentation support for employment in Turkey."
+    },
+    "medical_tourism": {
+      "title": "Medical Tourism Coordination",
+      "description": "Arrange safe, affordable treatment at trusted Turkish hospitals and clinics with local support."
+    },
+    "money_transfer": {
+      "title": "Foreign Money Transfer",
+      "description": "Legally transfer and convert foreign currency in Turkey through secure channels."
+    },
+    "leisure_lifestyle": {
+      "title": "Leisure & Lifestyle Experiences",
+      "description": "City tours, boat trips, shopping, adventures, and unforgettable experiences across Turkey."
+    },
+
+    "custom": {
+      "title": "Let’s Talk About Your Needs",
+      "description": "Didn’t find the exact service you’re looking for? Our team is ready to assist with personalized solutions tailored to your needs. Contact us to discuss your goals. <link>Book A Free Consultation</link>"
+    }
+  },
+  "GuidesAndInsights": {
+    "title": "Our Guides & Insights",
+    "description": "Get trusted and updated information on buying property, gaining citizenship, relocating to Turkey, and more — written for international buyers, investors, students, and families.",
+    "button": "View All Insights"
+  },
+  "Partners": {
+    "title": "Who We Are?",
+    "subtitle": "EvimIstanbul® is a trusted bridge between global clients and Opportunities in Turkey.",
+    "description": "We help individuals and families invest, settle, and thrive by offering tailored solutions — from real estate to citizenship and legal pathways to education, healthcare, and lifestyle services. With multilingual support and a deep local network, we deliver clarity, safety, and long-term value every step of the way.",
+    "button": "Company Milestones"
+  },
+  "Benefits": {
+    "section1": {
+      "title": "Why Choose EvimIstanbul?",
+      "description": "EvimIstanbul empowers international clients to confidently buy property in Turkey — including Istanbul, Antalya, and İzmir — by providing verified listings, expert guidance, and full-service support. From legal contracts to residence permits or Turkish citizenship by investment, we ensure a secure and seamless experience.",
+      "items": [
+        "Verified properties across Turkey",
+        "Expert legal & relocation support for foreign buyers",
+        "Citizenship & residency guidance for eligible clients"
+      ]
+    },
+    "section2": {
+      "title": "Benefits of Choosing EvimIstanbul",
+      "description": "Whether you're investing for citizenship, relocating as a family, or studying in Turkey, EvimIstanbul offers personalized, transparent, and secure real estate solutions in top Turkish cities.",
+      "items": [
+        "Citizenship-eligible properties",
+        "Legal and financial transparency — no hidden costs",
+        "$ 500M+ in successful transactions with global clients"
+      ]
+    },
+    "learnMore": "Learn more"
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "viewAll": "View All Testimonials",
+    "list": [
+      {
+        "name": "Ahmed S., UAE Investor",
+        "span": "Happy Homeowners",
+        "text": "“EvimIstanbul made my property purchase in Istanbul fast, legal, and stress-free. Their team helped me qualify for Turkish citizenship through real estate investment, and the process was smoother than I ever imagined. Highly recommended for serious international investors.”"
+      },
+      {
+        "name": "Sarah D., UK Relocation Client",
+        "span": "Happy Homeowners",
+        "text": "“We moved to Turkey with our two kids, and EvimIstanbul guided us from start to finish — school placement, residence permits, and finding the perfect home in Antalya. Their family relocation services are the best we’ve experienced abroad.”"
+      },
+      {
+        "name": "Khaled M., Investor from Qatar",
+        "span": "Happy Homeowners",
+        "text": "“I applied for Turkish citizenship by investing in property, and EvimIstanbul handled everything — from finding a legal project to managing the paperwork and translating documents. Their local expertise and transparent process gave me full confidence. I now own a luxury apartment in Istanbul and hold my Turkish passport.”"
+      },
+      {
+        "name": "Mohammad R., International Student from Pakistan",
+        "span": "Happy Homeowners",
+        "text": "“Thanks to EvimIstanbul, I was accepted into a Turkish university, secured student housing, and received my visa support without hassle. If you're planning to study in Turkey, trust them — they know exactly what to do.”"
+      }
+    ]
+  },
+  "newsletter": {
+    "title": "Also we We’ll Guide You if",
+    "items": [
+      {
+        "title": "Thinking of Starting a Business in Turkey?",
+        "description": "As a foreigner, you can legally establish a company in Turkey in just a few days. We handle all paperwork, tax registration, office place and business setup from A to Z.",
+        "button": "Learn how it works"
+      },
+      {
+        "title": "Want to Study in Turkey?",
+        "description": "We don’t just help you get into a university — we handle your student visa, residence permit, bank account, and housing setup so you can legally live and study in Turkey from day one.",
+        "button": "Learn how it works"
+      },
+      {
+        "title": "Need Medical Treatment in Turkey?",
+        "description": "From advanced treatments and cosmetic procedures to check-ups and surgeries — we handle it all. You’ll get fast-track access to Turkey’s best hospitals, translation support, accommodation, and even a residence permit if needed. Travel for health, return with peace of mind.",
+        "button": "Learn how it works"
+      },
+      {
+        "title": "Relocating to Turkey With Your Family?",
+        "description": "We turn relocation into a smooth, guided journey — from finding your dream home to enrolling your children in school, getting your family residence permits, and settling into a safe, welcoming community. You focus on your future, we handle the rest.",
+        "button": "Learn how it works"
+      }
+    ]
+  },
+  "Insights": {
+    "item1": {
+      "category": "Treatments",
+      "timeToRead": "5 min read",
+      "title": "A beginner’s guide to blockchain for engineers",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      "date": "August 5, 2024"
+    },
+    "item2": {
+      "category": "Destinations",
+      "timeToRead": "5 min read",
+      "title": "How to secure have your crypto wallet",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      "date": "August 5, 2024"
+    },
+    "item3": {
+      "category": "Health Providers",
+      "timeToRead": "5 min read",
+      "title": "New NFT projects to watch : December 2022",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      "date": "August 5, 2024"
+    }
+  },
+  "guidesAndInsightsListing": {
+    "readMore": "Read more"
+  } ,
+  "Footer": {
+    "slogan": "Building Dreams, One Home at a Time.",
+    "address": "123 Main Street, Hometown, USA",
+    "phone": "(123) 456-7890",
+    "copyright": "© 2024 Elektra. All rights reserved.",
+    "links": {
+      "benefits": "Benefits",
+      "home": "Home",
+      "offices": "Ofices",
+      "aboutUs": "About us",
+      "services": "Services",
+      "listings": "Listings",
+      "testimonials": "Testimonials",
+      "agents": "Agents",
+      "newsletter": "Newsletter"
+    },
+    "socials": {
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "linkedin": "Linkedin",
+      "youtube": "Youtube"
+    }
+  },
+  "Header": {
+    "home": "Home",
+    "properties": "Properties",
+    "ourServices": "Our Services",
+    "ourInsights": "Our Insights",
+    "aboutUs": "About Us",
+    "contactUs": "Contact Us"
+  },
+  "Logo": {
+    "brandName": "Evimistanbul"
+  },
+  "Highlights": {
+    "investment": "Best for Investment",
+    "installment": "Installment Available",
+    "citizenship": "Approved for Citizenship",
+    "earlyStage": "Early-Stage Project"
+  }
+}

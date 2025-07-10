@@ -8,14 +8,7 @@ import Burger from "../burger";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-const nav_links = [
-  { title: "Home", href: "/" },
-  { title: "Properties", href: "/Properties" },
-  { title: "Our Services", href: "/Our Services" },
-  { title: "Our Insights", href: "/agents" },
-  { title: "About Us", href: "/agents" },
-];
+import { useTranslations } from "next-intl";
 
 const blackHeaderPages = [
   "/listings",
@@ -26,6 +19,16 @@ const blackHeaderPages = [
 ];
 
 export default function Header() {
+  const t = useTranslations("Header");
+
+  const nav_links = [
+    { title: t("home"), href: "/" },
+    { title: t("properties"), href: "/Properties" },
+    { title: t("ourServices"), href: "/Our Services" },
+    { title: t("ourInsights"), href: "/agents" },
+    { title: t("aboutUs"), href: "/agents" },
+  ];
+
   const [visibleNav, setVisibleNav] = React.useState(false);
   const [mobile, setMobile] = React.useState(false);
   const [sticky, setSticky] = React.useState(false);
@@ -38,10 +41,7 @@ export default function Header() {
 
     handleScroll();
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   React.useEffect(() => {
@@ -51,10 +51,7 @@ export default function Header() {
 
     handleResize();
     window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const navVariants = {
@@ -71,26 +68,6 @@ export default function Header() {
     },
   };
 
-  const handleScrollSection = (
-    e:
-      | React.MouseEvent<HTMLAnchorElement>
-      | React.MouseEvent<HTMLButtonElement>,
-    href: string,
-  ) => {
-    e.preventDefault();
-    const target = document.querySelector(href);
-    if (target) {
-      const offset = mobile ? 0 : 100;
-      const y = target.getBoundingClientRect().top + window.scrollY - offset;
-
-      window.scrollTo({ top: y, behavior: "smooth" });
-
-      if (mobile) {
-        setVisibleNav(false);
-      }
-    }
-  };
-
   const isBlackHeader = blackHeaderPages.includes(pathname);
 
   return (
@@ -103,8 +80,7 @@ export default function Header() {
       <div className={cn("container", styles.container)}>
         <Logo
           className={cn(styles.logo, {
-            [styles.black_logo]:
-              (isBlackHeader && !(mobile && visibleNav)) || sticky,
+            [styles.black_logo]: (isBlackHeader && !(mobile && visibleNav)) || sticky,
             [styles.sticky_logo]: sticky,
           })}
         />
@@ -142,7 +118,7 @@ export default function Header() {
               [styles.sticky_button]: sticky,
             })}
           >
-            Contact Us
+            {t("contactUs")}
           </Link>
 
           <Burger

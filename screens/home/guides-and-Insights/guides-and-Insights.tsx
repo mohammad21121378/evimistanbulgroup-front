@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import cn from "classnames";
 import styles from "./guides-and-Insights.module.css";
@@ -5,29 +7,33 @@ import { Heading } from "@/components/typography";
 import Image from "next/image";
 import Link from "next/link";
 import GuidesAndInsightsIisting from "@/components/guides-and-Insights-listing";
-import { Insights } from "@/constants/guides-and-Insights.constants";
+import { useInsights } from "@/constants/guides-and-Insights.constants";
+import { useTranslations } from "next-intl";
+import { ArrowRight } from "@/constants/icons";
 
 export default function GuidesAndInsights() {
+  const t = useTranslations("GuidesAndInsights");
+
   return (
     <section className={cn("section")}>
       <div className={cn("container")}>
         <div className={styles.content}>
           <div className={styles.title_container}>
-            <Heading type="heading-3">Our Guides & Insights</Heading>
+            <Heading type="heading-3">{t("title")}</Heading>
             <div className={cn("paragraph-large", styles.subtitle)}>
-              {
-                "Get trusted and updated information on buying property, gaining citizenship, relocating to Turkey, and more — written for international buyers, investors, students, and families."
-              }
+              {t("description")}
             </div>
           </div>
 
           <Link href="/listings" className={cn("button button-primary")}>
-          View All  Insights
+            {t("button")} {ArrowRight}
           </Link>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-20">
-          {Insights.map((item, index) => (<GuidesAndInsightsIisting {...item} />))}
+          {useInsights()?.map((item, index) => (
+            <GuidesAndInsightsIisting key={index} {...item} />
+          ))}
         </div>
       </div>
     </section>

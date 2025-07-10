@@ -2,73 +2,45 @@ import React from "react";
 import styles from "./hero.module.css";
 import cn from "classnames";
 import Image from "next/image";
+import { Breadcrumb } from "@/components/breadcrumb/Breadcrumb";
+import Gallery from "./Gallery";
+import { Location2 } from "@/constants/icons";
 
 type HeroProps = {
   item: {
     title: string;
-    address: string;
+    location: string;
     images: string[];
     price: string;
   };
 };
 
 export default function Hero({ item }: HeroProps) {
-  console.log("Item:", item);
 
   return (
     <section className={cn("section", styles.section)}>
       <div className={cn("container")}>
+      <Breadcrumb
+          items={[
+            { label: 'Property for Sale in Turkey', href: '/listing' },
+            {label: 'Istanbul', href: '/'},
+            { label: 'Beylikdüzü', href: '/' },
+            {label: '123 Serenity Lane' }
+          ]}
+        />
         <div className={styles.content}>
           <div>
             <div className={cn("heading-6")}>{item.title}</div>
             <div className={cn("paragraph-medium", styles.address)}>
-              {item.address}
+              {Location2}
+              {item.location}
             </div>
           </div>
 
           <div className={cn("heading-6", styles.price)}>{item.price}</div>
         </div>
 
-        <div className={styles.images}>
-          <div className={styles.image}>
-            <Image
-              src={item.images[0]}
-              alt={item.title}
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
-
-          <div className={styles.grid_images}>
-            <div className={styles.row_images}>
-              <div className={styles.image}>
-                <Image
-                  src={item.images[1]}
-                  alt={item.title}
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </div>
-              <div className={styles.image}>
-                <Image
-                  src={item.images[2]}
-                  alt={item.title}
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </div>
-            </div>
-
-            <div className={styles.image}>
-              <Image
-                src={item.images[3]}
-                alt={item.title}
-                layout="fill"
-                objectFit="cover"
-              />
-            </div>
-          </div>
-        </div>
+        <Gallery  images={item.images} title={item.title} />
       </div>
     </section>
   );

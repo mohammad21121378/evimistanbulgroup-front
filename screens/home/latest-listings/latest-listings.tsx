@@ -8,8 +8,11 @@ import { Listings, Tabs } from "@/constants/mock";
 import { Dropdown } from "@/components/elements";
 import PropertyListing from "@/components/property-listing";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { ArrowRight } from "@/constants/icons";
 
 export default function LatestListings() {
+  const t = useTranslations("LatestListings");
   const [selectedCategory, setSelectedCategory] = React.useState(Tabs[0].name);
 
   const dropdownOptions = Tabs.map((tab) => ({
@@ -27,15 +30,15 @@ export default function LatestListings() {
         <div className={styles.content}>
           <div>
             <Heading type="heading-3" className={styles.title}>
-            Latest Property Listings
+              {t("heading")}
             </Heading>
             <div className={cn("paragraph-large", styles.subtitle)}>
-            Explore the newest homes, investments, and opportunities added to our curated portfolio.
+              {t("subheading")}
             </div>
           </div>
 
           <Link href="/listings" className={cn("button", styles.button)}>
-          View All Properties
+            {t("viewAll")} {ArrowRight}
           </Link>
         </div>
 
@@ -46,27 +49,13 @@ export default function LatestListings() {
             value={selectedCategory}
             onChange={handleDropdownChange}
           />
-          {/* <div className={styles.tabs}>
-            {Tabs.map((tab) => (
-              <div
-                key={tab.id}
-                className={cn("label-medium", styles.tab, {
-                  [styles.active]: tab.name === selectedCategory,
-                })}
-                onClick={() => setSelectedCategory(tab.name)}
-              >
-                {tab.name}
-              </div>
-            ))}
-          </div> */}
-
           <div className={styles.listings}>
             {Listings.filter(
-              (listing) => listing.category === selectedCategory,
+              (listing) => listing.category === selectedCategory
             ).flatMap((listing) =>
               listing.items.map((item) => (
                 <PropertyListing key={item.id} item={item} />
-              )),
+              ))
             )}
           </div>
         </div>

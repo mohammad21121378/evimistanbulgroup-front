@@ -1,27 +1,32 @@
+"use client";
+
 import React from "react";
 import styles from "./partners.module.css";
 import cn from "classnames";
 import Image from "next/image";
 import { Heading } from "@/components/typography";
-import { Bankrate, Corning, Flexport } from "@/constants/icons";
+import { ArrowRight, Bankrate, Corning, Flexport } from "@/constants/icons";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function Partners() {
+  const t = useTranslations("Partners");
+
   return (
     <section className={cn("section")}>
       <div className={cn("container", styles.container)}>
         <div className={styles.content}>
           <Heading type="heading-3" className={cn("h2", styles.title)}>
-          Who We Are?
+            {t("title")}
           </Heading>
           <p className={cn("paragraph-2x-large font-bold", styles.text)}>
-          EvimIstanbul® is a trusted bridge between global clients and Opportunities in Turkey.
+            {t("subtitle")}
           </p>
           <p className={cn("paragraph-large", styles.text)}>
-          We help individuals and families invest, settle, and thrive by offering tailored solutions — from real estate to citizenship and legal pathways to education, healthcare, and lifestyle services. With multilingual support and a deep local network, we deliver clarity, safety, and long-term value every step of the way.
+            {t("description")}
           </p>
           <Link href="/about" className={cn("button", styles.button)}>
-          Company Milestones
+            {t("button")} {ArrowRight}
           </Link>
         </div>
         <div className={styles.partners}>

@@ -2,6 +2,7 @@
     position: relative;
     flex-shrink: 0;
     display: inline-flex;
+    gap: 12px;
     justify-content: center;
     align-items: center;
     height: 56px;
@@ -43,8 +44,6 @@
 
 [class^="button"] svg {
     stroke: var(--white);
-    width: 24px;
-    height: 24px;
 }
 
 [class^="button"]:hover svg {
@@ -203,4 +202,13 @@
     flex: 0 0 40px;
     width: 40px;
     height: 40px;
+}
+
+
+.button-red{
+    background: #FF0000 !important;
+}
+
+.button-red:hover{
+    background: #d40000 !important;
 }
