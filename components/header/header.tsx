@@ -9,13 +9,15 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
+import Properties from "../Menu/Items/Properties";
+import OurServices from "../Menu/Items/OurServices";
+import OurInsights from "../Menu/Items/OurInsights";
+import AboutUs from "../Menu/Items/AboutUs";
+import TemplateItemWithItems from "../Menu/TemplateItemWithItems";
+import ContactUs from "../Menu/Items/ContactUs";
 
 const blackHeaderPages = [
-  "/listings",
-  "/agents",
-  "/contact",
-  "/property-detail",
-  "/agent",
+  "/en/listings",
 ];
 
 export default function Header() {
@@ -23,10 +25,6 @@ export default function Header() {
 
   const nav_links = [
     { title: t("home"), href: "/" },
-    { title: t("properties"), href: "/Properties" },
-    { title: t("ourServices"), href: "/Our Services" },
-    { title: t("ourInsights"), href: "/agents" },
-    { title: t("aboutUs"), href: "/agents" },
   ];
 
   const [visibleNav, setVisibleNav] = React.useState(false);
@@ -93,7 +91,7 @@ export default function Header() {
           animate={mobile && visibleNav ? "visible" : "hidden"}
           variants={mobile ? navVariants : {}}
         >
-          <div className={styles.nav_links}>
+          <div className={cn(styles.nav_links, 'text-white')}>
             {nav_links.map((link, index) => (
               <Link
                 key={index}
@@ -107,11 +105,16 @@ export default function Header() {
                 {link.title}
               </Link>
             ))}
+            <Properties />
+            <OurServices />
+            <OurInsights />
+            <AboutUs/>
           </div>
         </motion.nav>
 
         <div className={styles.button_wrapper}>
-          <Link
+
+          <ContactUs title={<Link
             href="/contact"
             className={cn("button-stroke-small", styles.button, {
               [styles.black_button]: isBlackHeader && !(mobile && visibleNav),
@@ -119,7 +122,7 @@ export default function Header() {
             })}
           >
             {t("contactUs")}
-          </Link>
+          </Link>} />
 
           <Burger
             className={styles.burger}
