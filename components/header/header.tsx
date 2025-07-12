@@ -8,7 +8,7 @@ import Burger from "../burger";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Properties from "../Menu/Items/Properties";
 import OurServices from "../Menu/Items/OurServices";
 import OurInsights from "../Menu/Items/OurInsights";
@@ -19,12 +19,15 @@ const blackHeaderPages = [
   '/'
 ];
 
-const lightHeaderPages = [
-  '/en'
-];
 
 export default function Header() {
   const t = useTranslations("Header");
+  
+  const locale = useLocale();
+  
+  const lightHeaderPages = [
+    `/${locale}`
+  ];
 
   const nav_links = [
     { title: t("home"), href: "/" },
@@ -104,7 +107,7 @@ export default function Header() {
               <Link
                 key={index}
                 href={link.href}
-                className={cn("label-small", {
+                className={cn("label-small", styles.nav_link, {
                   [styles.active]: pathname === link.href,
                 })}
               >
