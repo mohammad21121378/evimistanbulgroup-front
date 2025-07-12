@@ -373,7 +373,7 @@ export const MenuData = {
                     href: '/FAQs'
                 },
                 {
-                    title: <div className="flex items-center gap-2.5 pt-2 -mb-4"> {socialMedia} </div>,
+                    title: <div className="flex items-center gap-2.5 pt-2 -mb-3.5"> {socialMedia} </div>,
                     href: '/'
                 },
             ]

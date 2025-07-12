@@ -13,11 +13,14 @@ import Properties from "../Menu/Items/Properties";
 import OurServices from "../Menu/Items/OurServices";
 import OurInsights from "../Menu/Items/OurInsights";
 import AboutUs from "../Menu/Items/AboutUs";
-import TemplateItemWithItems from "../Menu/TemplateItemWithItems";
 import ContactUs from "../Menu/Items/ContactUs";
 
 const blackHeaderPages = [
-  "/en/listings",
+  '/'
+];
+
+const lightHeaderPages = [
+  '/en'
 ];
 
 export default function Header() {
@@ -67,6 +70,7 @@ export default function Header() {
   };
 
   const isBlackHeader = blackHeaderPages.includes(pathname);
+  const islightHeader = lightHeaderPages.includes(pathname);
 
   return (
     <header
@@ -93,16 +97,15 @@ export default function Header() {
         >
           <div className={cn(styles.nav_links, '', {
             [styles.black_link]: isBlackHeader && !(mobile && visibleNav),
-            [styles.sticky_link]: sticky,
+            '!text-white' : islightHeader || sticky,
+            '!text-black' : !sticky && !islightHeader,
             })}>
             {nav_links.map((link, index) => (
               <Link
                 key={index}
                 href={link.href}
-                className={cn("label-small", styles.nav_link, {
+                className={cn("label-small", {
                   [styles.active]: pathname === link.href,
-                  [styles.black_link]: isBlackHeader && !(mobile && visibleNav),
-                  [styles.sticky_link]: sticky,
                 })}
               >
                 {link.title}
@@ -122,6 +125,8 @@ export default function Header() {
             className={cn("button-stroke-small", styles.button, {
               [styles.black_button]: isBlackHeader && !(mobile && visibleNav),
               [styles.sticky_button]: sticky,
+              '!text-white' : islightHeader || sticky,
+            '!text-black hover:!text-white' : !sticky && !islightHeader,
             })}
           >
             {t("contactUs")}
@@ -132,6 +137,7 @@ export default function Header() {
             burgerClassName={cn(styles.burger, {
               [styles.black_burger]: isBlackHeader && !(mobile && visibleNav),
               [styles.sticky_burger]: sticky,
+              
             })}
             visibleNav={visibleNav}
             setVisibleNav={setVisibleNav}
