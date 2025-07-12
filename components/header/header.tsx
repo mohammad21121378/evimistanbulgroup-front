@@ -91,7 +91,10 @@ export default function Header() {
           animate={mobile && visibleNav ? "visible" : "hidden"}
           variants={mobile ? navVariants : {}}
         >
-          <div className={cn(styles.nav_links, 'text-white')}>
+          <div className={cn(styles.nav_links, '', {
+            [styles.black_link]: isBlackHeader && !(mobile && visibleNav),
+            [styles.sticky_link]: sticky,
+            })}>
             {nav_links.map((link, index) => (
               <Link
                 key={index}
