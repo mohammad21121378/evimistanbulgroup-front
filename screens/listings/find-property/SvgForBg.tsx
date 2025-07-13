@@ -1,6 +1,6 @@
 export default function SvgForBg({className}: {className?:string}) {
     return(
-        <svg className={className} width="231" height="343" viewBox="0 0 231 343" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className={className} width="14rem" viewBox="0 0 231 343" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="5.46924" y="124.469" width="88.3051" height="88.3051" rx="44.1525" stroke="black" stroke-width="9.06152" />
                 <g clip-path="url(#clip0_6178_10290)">
                     <g filter="url(#filter0_dd_6178_10290)">

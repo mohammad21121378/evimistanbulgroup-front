@@ -11,7 +11,7 @@ export default function FindProperty() {
                 Can’t Find the Right Property?
             </h5>
 
-            <p className="paragraph-medium container mx-auto px-20">
+            <p className="paragraph-medium container mx-auto px-20 relative z-10">
                 Not all of our properties are listed online — and some of the best offers go fast. If you’re looking for something specific, contact us directly and our team will handpick options tailored to your needs, budget, and goals.
             </p>
 
@@ -19,8 +19,8 @@ export default function FindProperty() {
                 Book A Free Consultation
             </button>
 
-            <SvgForBg className="absolute left-6 top-1/2 -translate-y-1/2" />
-            <SvgForBg className="absolute right-6 top-1/2 -translate-y-1/2 -scale-x-100" />
+            <SvgForBg className="md:block hidden absolute left-6 top-1/2 -translate-y-[56%]" />
+            <SvgForBg className="md:block hidden absolute right-6 top-1/2 -translate-y-[56%] -scale-x-100" />
 
         </div>
     );

@@ -42,7 +42,7 @@ export default function RangeSlider({
 
             <ReactSlider
                 className="h-2 relative"
-                thumbClassName="h-4 w-4 -translate-y-1 rounded bg-white cursor-grab active:cursor-grabbing shadow-lg active:ring-orange-500 active:ring-5 ring-1 ring-gray-200"
+                thumbClassName="h-4 w-4 -translate-y-1 rounded bg-white cursor-grab active:cursor-grabbing shadow-lg active:outline-orange-500 active:outline-5 outline outline-gray-200"
                 renderTrack={(props, state) => {
                     const isActiveRange =
                         state.index === 1

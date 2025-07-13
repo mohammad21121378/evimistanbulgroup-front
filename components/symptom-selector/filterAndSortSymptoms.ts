@@ -4,7 +4,7 @@ export function filterAndSortSymptoms(
   symptoms: Symptom[],
   searchTerm: string
 ): Symptom[] {
-  const term = searchTerm.toLowerCase();
+  const term = searchTerm.trim().toLowerCase();
 
   return symptoms
     .reduce<Symptom[]>((acc, symptom) => {

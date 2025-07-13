@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import styles from "./hero.module.css";
 import cn from "classnames";
 import PropertyListing from "@/components/property-listing";
@@ -11,11 +11,20 @@ import { featureItems, propertyTypes, bedrooms as bedroomsOptions, bathrooms as 
 import RangeSlider from "@/components/range-slider/RangeSlider";
 import DropdownWithChildren from "@/components/dropdown-with-children/DropdownWithChildren";
 import { Breadcrumb } from "@/components/breadcrumb/Breadcrumb";
+import SortDropdown from "@/components/sort-dropdown/SortDropdown";
+import { usePagination } from "@/hooks/usePagination";
+import LoadMoreButton from "@/components/ui/LoadMoreButton";
+import Pagination from "@/components/ui/Pagination";
+import { useNumberedPagination } from "@/hooks/useNumberedPagination";
 
 const turkiye = originalTurkiye.map((province) => ({
   ...province,
   children: province.districts,
 }));
+
+const ITEMS_PER_PAGE = 6
+
+const defaultListing = Listings.flatMap((listingCategory) => listingCategory.items)
 
 export default function Hero() {
 
@@ -31,59 +40,128 @@ export default function Hero() {
   const [featureSelected, setFeatureSelected] = useState<string[]>([]);
   const [bedroomsSelected, setBedroomsSelected] = useState<string[]>([]);
   const [bathroomsSelected, setBathroomsSelected] = useState<string[]>([]);
+  const [sortOption, setSortOption] = useState<string>("newest");
+  const [filteredListings, setFilteredListings]= useState(defaultListing)
 
   const handleApplyFilters = () => {
     setApplyFilters(true);
+    setFilteredListings(() => {
+      return Listings.flatMap((listingCategory) =>
+        listingCategory.items.filter((item) => {
+  
+          const matchesLocation = locationsSelected.length
+            ? locationsSelected.includes(item.location.toLowerCase())
+            : true;
+  
+          const matchesPropertyType = propertyTypesSelected.length
+            ? propertyTypesSelected.includes(item.category)
+            : true;
+  
+  
+          return (
+            matchesLocation &&
+            matchesPropertyType
+          );
+        })
+      )
+    })
   };
 
-  const filteredListings = applyFilters
-    ? Listings.flatMap((listingCategory) =>
-    listingCategory.items.filter((item) => {
+  const handleReset = () => {
+    setApplyFilters(false);
+    setFilteredListings(defaultListing)
+  }
 
-      const matchesLocation = locationsSelected.length
-        ? locationsSelected.includes(item.location.toLowerCase())
-        : true;
+  // const filteredListings = applyFilters
+  //   ? Listings.flatMap((listingCategory) =>
+  //     listingCategory.items.filter((item) => {
 
-      const matchesPropertyType = propertyTypesSelected.length
-        ? propertyTypesSelected.includes(item.category)
-        : true;
+  //       const matchesLocation = locationsSelected.length
+  //         ? locationsSelected.includes(item.location.toLowerCase())
+  //         : true;
 
-        
-      return (
-        matchesLocation &&
-        matchesPropertyType
-      );
+  //       const matchesPropertyType = propertyTypesSelected.length
+  //         ? propertyTypesSelected.includes(item.category)
+  //         : true;
+
+
+  //       return (
+  //         matchesLocation &&
+  //         matchesPropertyType
+  //       );
+  //     })
+  //   )
+  //   : Listings.flatMap((listingCategory) => listingCategory.items);
+
+  // const filteredListings = useMemo(() => {
+  //   if (!applyFilters) {
+  //     return Listings.flatMap((listingCategory) => listingCategory.items);
+  //   }
+
+  //   return Listings.flatMap((listingCategory) =>
+  //       listingCategory.items.filter((item) => {
+  
+  //         const matchesLocation = locationsSelected.length
+  //           ? locationsSelected.includes(item.location.toLowerCase())
+  //           : true;
+  
+  //         const matchesPropertyType = propertyTypesSelected.length
+  //           ? propertyTypesSelected.includes(item.category)
+  //           : true;
+  
+  
+  //         return (
+  //           matchesLocation &&
+  //           matchesPropertyType
+  //         );
+  //       })
+  //     )
+  // }, [applyFilters, Listings, locationsSelected, propertyTypesSelected]);
+
+  const sortedListings = useMemo(() => {
+    return [...filteredListings].sort((a, b) => {
+      if (sortOption === "price-asc") return a.price - b.price;
+      if (sortOption === "price-desc") return b.price - a.price;
+      if (sortOption === "newest") return new Date(b.id).getTime() - new Date(a.id).getTime();
+      return 0;
     })
-    )
-    : Listings.flatMap((listingCategory) => listingCategory.items);
+  }, [sortOption, filteredListings]);
 
 
-    // const matchesAddress = address
-        //   ? item.address.toLowerCase().includes(address.toLowerCase())
-        //   : true;
-        // const matchesPropertyType =
-        //   propertyType === "Type of Property" || propertyType === null
-        //     ? true
-        //     : item.category === propertyType;
-        // const matchesBedrooms = bedrooms
-        //   ? item.features.some((f) => f.name === "bd" && f.value >= bedrooms)
-        //   : true;
-        // const matchesBathrooms = bathrooms
-        //   ? item.features.some((f) => f.name === "ba" && f.value >= bathrooms)
-        //   : true;
-    
+  // const matchesAddress = address
+  //   ? item.address.toLowerCase().includes(address.toLowerCase())
+  //   : true;
+  // const matchesPropertyType =
+  //   propertyType === "Type of Property" || propertyType === null
+  //     ? true
+  //     : item.category === propertyType;
+  // const matchesBedrooms = bedrooms
+  //   ? item.features.some((f) => f.name === "bd" && f.value >= bedrooms)
+  //   : true;
+  // const matchesBathrooms = bathrooms
+  //   ? item.features.some((f) => f.name === "ba" && f.value >= bathrooms)
+  //   : true;
+
+  const { currentPage, totalPages, items: paginatedListings, goToPage } = useNumberedPagination({
+    limit: 6,
+    initialData: sortedListings,
+  });
 
   return (
     <section className={cn("section", styles.section)}>
       <div className={cn("container")}>
-        <Breadcrumb
-          items={[
-            { label: 'Property for Sale in Turkey' },
-          ]}
-        />
+        <div className="sm:flex grid justify-between items-center mb-4">
+          <Breadcrumb
+            items={[{ label: 'Property for Sale in Turkey' }]}
+          />
+          <div className="md:block hidden">
+            <SortDropdown value={sortOption} onChange={setSortOption} />
+          </div>
+        </div>
       </div>
       <div className={cn("container", styles.container)}>
-        <div className={styles.filters}>
+
+        <div className={cn('scrollbar-sm mb-10', styles.filters)}>
           <div className={cn("label-large")}>
             Find Properties for Sale in Turkey
           </div>
@@ -169,22 +247,39 @@ export default function Hero() {
           </div>
           {
             applyFilters &&
-          <button className={cn("label-medium text-orange-600", styles.textButton)} onClick={() => setApplyFilters(false)}>
-            Reset
-          </button>
+            <button className={cn("label-medium text-orange-600", styles.textButton)} onClick={handleReset}>
+              Reset
+            </button>
           }
           <button
-            className={cn("button", styles.button)}
+            className={cn("button sticky -bottom-6", styles.button)}
             onClick={handleApplyFilters}
           >
             Find Now
           </button>
         </div>
 
-        <div className={styles.listings}>
-          {filteredListings.map((listing) => (
+        <div className="md:hidden block mb-5">
+          <SortDropdown value={sortOption} onChange={setSortOption} />
+        </div>
+
+        <div className={cn(styles.listings, 'grid sm:grid-cols-2 grid-cols-1 gap-6')}>
+
+          {paginatedListings.map((listing) => (
+            <div>
             <PropertyListing key={listing.id} item={listing} />
+            </div>
           ))}
+
+          <div className="sm:col-span-2 mt-10">
+            {totalPages > 1 && (
+              <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={goToPage}
+            />
+            )}
+          </div>
         </div>
       </div>
     </section>

@@ -2,16 +2,18 @@
 
 import { FC } from 'react'
 import Loading from './Loading'
+import classNames from 'classnames'
 
 interface LoadMoreButtonProps {
     onClick: () => void,
-    loading?: boolean
+    loading?: boolean,
+    className?: string
 }
 
-const LoadMoreButton: FC<LoadMoreButtonProps> = ({ onClick, loading = false }) => {
+const LoadMoreButton: FC<LoadMoreButtonProps> = ({ onClick, loading = false, className }) => {
     return (
         <button
-            className="text-orange-600 flex justify-center mx-auto font-semibold items-center text-center cursor-pointer"
+            className={classNames("text-orange-600 flex justify-center mx-auto font-semibold items-center text-center cursor-pointer", className)}
             onClick={onClick}>
 
             {

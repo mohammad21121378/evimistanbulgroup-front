@@ -1,7 +1,11 @@
+import classNames from "classnames";
+
+import styles from './benefits.module.css'
+
 export default function Benefits() {
   return (
     <div className="container">
-    <div className="ring-2 ring-neutral-200 p-10 rounded-xl">
+    <div className={classNames("p-10 rounded-xl", styles.box)}>
       <h1 className="heading-4">
         Why Invest In Real Estate In Turkey?
       </h1>

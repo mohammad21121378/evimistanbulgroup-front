@@ -34,7 +34,7 @@ const Listings = [
         category: "Houses",
         description:
           "A spacious and modern home with an open floor plan, large windows, and a beautifully landscaped garden, perfect for those seeking peace and tranquility.",
-        price: "$850,000",
+        price: 850000,
         images: [
           "/images/properties/houses/123-serenity-lane.webp",
           "/images/properties/houses/123-serenity-lane-kitchen.webp",
@@ -80,7 +80,7 @@ const Listings = [
         category: "Houses",
         description:
           "A beautiful and spacious home with a large garden, swimming pool, and stunning views of the city, perfect for those who love to entertain.",
-        price: "$550,000",
+        price: 550000,
         images: [
           "/images/properties/houses/456-harmony-drive.webp",
           "/images/properties/houses/123-serenity-lane-kitchen.webp",
@@ -126,7 +126,7 @@ const Listings = [
         category: "Houses",
         description:
           "A stunning and luxurious home with a large garden, swimming pool, and breathtaking views of the ocean, perfect for those who love the finer things in life.",
-        price: "$650,000",
+        price: 650000,
         images: [
           "/images/properties/houses/989-bliss-boulevard.webp",
           "/images/properties/houses/123-serenity-lane-kitchen.webp",
@@ -180,7 +180,7 @@ const Listings = [
         category: "Townhouses",
         description:
           "A stylish townhouse with contemporary design, featuring a rooftop terrace, open living spaces, and modern amenities.",
-        price: "$450,000",
+        price: 450000,
         images: [
           "/images/properties/townhouses/123-modern-townhouse.webp",
           "/images/properties/houses/123-serenity-lane-kitchen.webp",
@@ -226,7 +226,7 @@ const Listings = [
         category: "Townhouses",
         description:
           "An urban townhome located in the heart of the city, offering convenient access to shopping, dining, and entertainment.",
-        price: "$375,000",
+        price: 375000,
         images: [
           "/images/properties/townhouses/456-urban-townhouse.webp",
           "/images/properties/houses/123-serenity-lane-kitchen.webp",
@@ -272,7 +272,7 @@ const Listings = [
         category: "Townhouses",
         description:
           "A charming townhouse located in a quiet suburb, featuring a spacious layout, modern kitchen, and private backyard.",
-        price: "$420,000",
+        price: 420000,
         images: [
           "/images/properties/townhouses/789-suburban-townhouse.webp",
           "/images/properties/houses/123-serenity-lane-kitchen.webp",
@@ -325,7 +325,7 @@ const Listings = [
         category: "Condos",
         description:
           "A modern apartment in the city center with high ceilings, large windows, and a private balcony, ideal for urban living.",
-        price: "$750,000",
+        price: 750000,
         images: [
           "/images/properties/apartments/456-city-apartment.webp",
           "/images/properties/houses/123-serenity-lane-kitchen.webp",
@@ -371,7 +371,7 @@ const Listings = [
         category: "Condos",
         description:
           "A chic loft in the heart of downtown, featuring an open floor plan, exposed brick, and modern finishes, perfect for trendy city living.",
-        price: "$670,000",
+        price: 670000,
         images: [
           "/images/properties/apartments/789-downtown-loft.webp",
           "/images/properties/houses/123-serenity-lane-kitchen.webp",
@@ -417,7 +417,7 @@ const Listings = [
         category: "Condos",
         description:
           "A cozy apartment in a quiet suburb, featuring a modern kitchen, spacious living area, and a private balcony.",
-        price: "$500,000",
+        price: 500000,
         images: [
           "/images/properties/apartments/321-suburban-apartment.webp",
           "/images/properties/houses/123-serenity-lane-kitchen.webp",
@@ -463,52 +463,6 @@ const Listings = [
     status: 'active',
     items: [
       {
-        id: 10,
-        title: "Downtown Office",
-        status: 'active',
-        location: 'Sariyer, Istanbul',
-        category: "Commercial",
-        description:
-          "A prime office space located in the heart of downtown, featuring modern amenities, high-speed internet, and stunning city views.",
-        price: "$2,500/month",
-        images: [
-          "/images/properties/commercial/downtown-office.webp",
-          "/images/properties/houses/123-serenity-lane-kitchen.webp",
-          "/images/properties/houses/123-serenity-lane-bathroom.webp",
-          "/images/properties/houses/123-serenity-lane-living-room.webp",
-          "/images/properties/houses/123-serenity-lane-bedroom.webp",
-          "/images/properties/houses/123-serenity-lane-backview.webp",
-          "/images/properties/houses/123-serenity-lane-playground.webp",
-        ],
-        address: "123 Main Street, Los Angeles, CA",
-        agent: {
-          name: "Emily Davis",
-          image: "/images/team/emily-davis.webp",
-          email: "emilydavis@support.com",
-          phone: "(123) 456-7890",
-        },
-        features: [
-          {
-            id: 1,
-            icon: "ruler",
-            name: "m²",
-            value: "5,000",
-          },
-          {
-            id: 2,
-            icon: "floor",
-            name: "Floors",
-            value: 2,
-          },
-          {
-            id: 3,
-            icon: "parking",
-            name: "Parking",
-            value: "Yes",
-          },
-        ],
-      },
-      {
         id: 11,
         title: "Industrial Warehouse",
         status: 'active',
@@ -516,7 +470,7 @@ const Listings = [
         category: "Commercial",
         description:
           "A spacious industrial warehouse with high ceilings, loading docks, and easy access to major highways, perfect for storage and distribution.",
-        price: "$8,000/month",
+        price: 8000,
         images: [
           "/images/properties/commercial/industrial-warehouse.webp",
           "/images/properties/houses/123-serenity-lane-kitchen.webp",
@@ -562,7 +516,7 @@ const Listings = [
         category: "Commercial",
         description:
           "A retail space located in a busy shopping center, offering high foot traffic, ample parking, and a vibrant commercial environment.",
-        price: "$4,500/month",
+        price: 4500,
         images: [
           "/images/properties/commercial/retail-space.webp",
           "/images/properties/houses/123-serenity-lane-kitchen.webp",
@@ -615,7 +569,7 @@ const Listings = [
         category: "Villas",
         description:
           "A luxurious villa with stunning ocean views, private pool, and spacious outdoor areas.",
-        price: "$1,200,000",
+        price: 1200000,
         images: [
           "/images/properties/villas/ocean-view-villa.webp",
           "/images/properties/houses/123-serenity-lane-kitchen.webp",
@@ -661,7 +615,7 @@ const Listings = [
         category: "Villas",
         description:
           "A serene villa nestled in the mountains, featuring modern amenities and breathtaking views.",
-        price: "$950,000",
+        price: 950000,
         images: [
           "/images/properties/villas/mountain-retreat.webp",
           "/images/properties/houses/123-serenity-lane-kitchen.webp",
@@ -707,7 +661,7 @@ const Listings = [
         category: "Villas",
         description:
           "An expansive estate with elegant interiors, a large garden, and state-of-the-art facilities.",
-        price: "$2,500,000",
+        price: 2500000,
         images: [
           "/images/properties/villas/luxury-estate-villa.webp",
           "/images/properties/houses/123-serenity-lane-kitchen.webp",

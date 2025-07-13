@@ -5,13 +5,14 @@ import Image from "next/image";
 import { Breadcrumb } from "@/components/breadcrumb/Breadcrumb";
 import Gallery from "./Gallery";
 import { Location2 } from "@/constants/icons";
+import { formatNumber } from "@/utils/formatNumber";
 
 type HeroProps = {
   item: {
     title: string;
     location: string;
     images: string[];
-    price: string;
+    price: number;
   };
 };
 
@@ -37,7 +38,7 @@ export default function Hero({ item }: HeroProps) {
             </div>
           </div>
 
-          <div className={cn("heading-6", styles.price)}>{item.price}</div>
+          <div className={cn("heading-6", styles.price)}>{formatNumber(item.price)} MIN – {formatNumber(item.price)} MAX</div>
         </div>
 
         <Gallery  images={item.images} title={item.title} />

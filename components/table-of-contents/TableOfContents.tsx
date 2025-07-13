@@ -63,7 +63,7 @@ export default function TableOfContents({ className }: TableOfContentsProps) {
   return (
     <div
       className={classNames(
-        "bg-slate-100 ring-1 ring-slate-200 rounded-md shadow p-6 sticky top-10",
+        "bg-slate-100  outline outline-1 outline-slate-200 rounded-md shadow p-6 sticky top-10",
         className
       )}
     >
