@@ -86,7 +86,7 @@
 @media (max-width: 768px) {
     .search_bar {
         flex-direction: column;
-        padding: 0 16px 16px;
+        padding: 16px;
         bottom: -96px;
     }
 
