@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import TemplateMobile from './Templates/TemplateMobile';
-import TemplateDesktop from './Templates/TemplateDesktop';
+import TemplateDesktop from './templates/TemplateDesktop';
+import TemplateMobile from './templates/TemplateMobile';
 import { Template } from './types';
 
 export default function TemplateItem(props: Template) {

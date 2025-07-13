@@ -31,13 +31,13 @@ type Props = {
     menuItemClassName?: string;
 };
 
-export default function TemplateItemWithItems({ items, title, width = 540, contentClassName, sectionClassName, arrow=true, menuItemClassName }: Props) {
+export default function TemplateItemWithItems({ items, title, width = 33.75, contentClassName, sectionClassName, arrow=true, menuItemClassName }: Props) {
 
     return (
         <TemplateItem title={title} arrow={arrow}>
             <div
                 className={classNames(contentClassName, 'grid sm:grid-cols-2 grid-cols-1')}
-                style={{ width: width }}
+                style={{ width: `${width}rem` }}
             >
                 {Object.values(items).map((item, idx) => (
 

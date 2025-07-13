@@ -112,6 +112,10 @@
     font-size: 18px;
 }
 
+.itemContent a{
+    @apply hover:!text-orange-500 transition-all duration-300;
+}
+
 @media (max-width: 1150px) {
     .content>div{
         overflow: hidden;
@@ -126,3 +130,4 @@
         width: 100% !important;
     }
 }
+

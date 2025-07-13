@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 export interface Template {
-    title: string; 
+    title: string | JSX.Element; 
     children:ReactNode; 
     li?: boolean; 
     arrow?: boolean
