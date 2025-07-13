@@ -8,38 +8,46 @@ export default function TemplateItem(props: Template) {
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
-        // مرحله اول: سعی کن loaded رو true کنی
-        setLoaded(true);
+        console.log('[TemplateItem] ✅ useEffect mounted');
 
-        // مرحله دوم: اگر به هر دلیلی تا 2 ثانیه loaded تغییر نکرد، به‌زور تغییر بده
+        setLoaded(true);
+        console.log('[TemplateItem] 🚀 setLoaded(true) called');
+
         const timeoutId = setTimeout(() => {
             setLoaded(prev => {
                 if (!prev) {
-                    console.warn('💡 forced setLoaded(true) after delay');
+                    console.warn('[TemplateItem] ⚠️ Fallback: loaded still false after 2s. Forcing setLoaded(true)');
                     return true;
+                } else {
+                    console.log('[TemplateItem] ✅ Fallback not needed, already loaded');
+                    return prev;
                 }
-                return prev;
             });
-        }, 1600); // 2 ثانیه صبر می‌کنیم
+        }, 2000);
 
         return () => clearTimeout(timeoutId);
     }, []);
 
     useEffect(() => {
         const handleResize = () => {
-            setIsDesktop(window.innerWidth > 992);
+            const isDesktopNow = window.innerWidth > 992;
+            console.log('[TemplateItem] 📏 handleResize:', isDesktopNow ? 'Desktop' : 'Mobile');
+            setIsDesktop(isDesktopNow);
         };
 
         handleResize();
 
         window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
+        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    if (!loaded) return null;
+    console.log('[TemplateItem] 🔍 loaded =', loaded, '| isDesktop =', isDesktop);
 
+    if (!loaded) {
+        console.log('[TemplateItem] 💤 Not loaded yet, returning null...');
+        return null;
+    }
+
+    console.log('[TemplateItem] 🎉 Rendering:', isDesktop ? 'TemplateDesktop' : 'TemplateMobile');
     return isDesktop ? <TemplateDesktop {...props} /> : <TemplateMobile {...props} />;
 }
