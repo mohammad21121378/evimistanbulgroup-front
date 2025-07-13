@@ -38,7 +38,7 @@ export default function Hero({ category }: HeroProps) {
 
                 <Breadcrumb items={breadCrumb} />
 
-                <Heading type="heading-2" className="text-center mb-8 capitalize" >
+                <Heading type="heading-3" className="text-center mb-10 mt-3 capitalize" >
                     {category ? category : ROOT_TITLE}
                 </Heading>
 

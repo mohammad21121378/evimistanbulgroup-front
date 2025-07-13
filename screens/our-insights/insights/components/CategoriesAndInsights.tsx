@@ -8,7 +8,7 @@ type Props = {
 export default function CategoriesAndInsights({ category }: Props) {
     return (
         <div className="container py-10">
-            <div className="grid md:!grid-cols-12 grid-cols-1">
+            <div className="grid md:grid-cols-12 grid-cols-1 gap-10">
                 <div className="md:col-span-4">
                     <Categories category={category} />
                 </div>

@@ -58,36 +58,38 @@ export default function InsightDetails() {
 
         <Breadcrumb items={breadCrumb} />
 
-          <div id="scrollbar">
-            <div id="scrollbar-inner"></div>
-          </div>
+        <div id="scrollbar">
+          <div id="scrollbar-inner"></div>
+        </div>
 
-          <div className="relative">
-            <ArticleHeader
+        <div className="relative">
+          <ArticleHeader
+            article={article}
+            readingTime={readingTime}
+          />
+
+          <hr className="text-slate-700 my-8" />
+
+          <div className="grid grid-cols-12 gap-5 overflow-auto h-full relative">
+
+
+            <ArticleContent
               article={article}
-              readingTime={readingTime}
+              showResourceBox={showResourceBox}
+              setShowResourceBox={setShowResourceBox}
+              resourceRef={resourceRef}
             />
 
-            <hr className="text-slate-700 my-8" />
+            <ArticleSidebar
+              article={article}
+            />
 
-            <div className="grid grid-cols-12 gap-5 overflow-auto h-full relative">
-
-
-              <ArticleContent
-                article={article}
-                showResourceBox={showResourceBox}
-                setShowResourceBox={setShowResourceBox}
-                resourceRef={resourceRef}
-              />
-
-              <ArticleSidebar
-                article={article}
-              />
-
-            </div>
           </div>
+        </div>
       </div>
+      <div className="mb-14">
       <RealatedInsights />
+      </div>
     </Layout>
   );
 }

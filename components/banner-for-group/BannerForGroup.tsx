@@ -3,7 +3,7 @@ import Link from "../ui/Link";
 
 export default function BannerForGroup() {
     return (
-        <div className="ring-1 ring-orange-500 rounded-lg py-4 px-6 grid grid-cols-4 items-center gap-2 mt-8 bg-slate-100 mb-1">
+        <div className=" outline outline-1 outline-orange-500 rounded-lg py-4 px-6 grid grid-cols-4 items-center gap-2 mt-8 bg-slate-100 mb-1">
             <div>
                 <img src="/images/logo/logo-circle.webp" alt="EvimIstanbul Group"/>
             </div>

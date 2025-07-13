@@ -1,27 +1,25 @@
 .sortItems{
     background: #fff;
-    /* padding: 6px; */
-    /* border-radius: 8px; */
     display: grid;
     width: 100%;
     margin: auto;
     justify-content: space-between;
     z-index: 1;
     overflow-x: auto;
-    position: sticky;
-    top: 5px;
     scrollbar-width: thin;
+    
 }
 
 .sortItem{
     background: #fff;
     padding: 10px 15px;
-    font-size: 14px;
+    font-size: 20px;
     border-radius: 8px;
     transition: .3s;
     text-wrap: nowrap;
-    font-weight: 600;
+    font-weight: 400;
     margin: 2px 0;
+
 }
 
 .sortMobile{
@@ -34,6 +32,7 @@
 .sortBox{
     position: relative;
     z-index: 1;
+    width: 100%;
 
 }
 
@@ -59,79 +58,6 @@
 
 .categoryBox a{
     line-height: 33px;
-}
-@media (max-width: 768px) {
-    /*.sortMobile{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
-    }
-    !*.sortMobile:nth-child(2){
-        background-color: #fff;
-        width: 50%;
-
-    }*!
-    .sortItems{
-        position: absolute;
-        top: 100%;
-        display: none !important;
-        gap: 10px;
-        width: 100%;
-        opacity: 0;
-        transition: opacity .3s;
-    }
-
-    .sortMobile div:nth-child(2){
-        padding: 10px 0;
-        border-radius: 8px;
-        font-weight: bold;
-        text-align: center;
-    }
-
-    .sortBox:hover .sortItems{
-        display: block !important;
-        justify-content: center;
-        width: 100%;
-        opacity: 1;
-    }
-    .sortItem{
-        width: 100%;
-        text-align: center;
-        margin-top: 6px;
-    }*/
-
-    .sortItem{
-        font-size: 13px;
-        width: 100%;
-        min-width: 145px;
-        padding-left: 0px!important;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding-right: 0px!important;
-    }
-
-    .titleBig{
-        font-size: 28px;
-    }
-
-    .titleSm{
-        font-size: 20px;
-    }
-    .imgBig{
-        border-width:0 !important;
-        border-bottom-width: 1px !important;
-    }
-    .categoryBox{
-        height: 30px;
-    }
-
-    .categoryBox a{
-        line-height: 31px;
-    }
-
 }
 
 .rightBox{
