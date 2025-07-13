@@ -9,11 +9,12 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
-import Properties from "../menu/items/Properties";
-import OurServices from "../menu/items/OurServices";
-import OurInsights from "../menu/items/OurInsights";
-import AboutUs from "../menu/items/AboutUs";
-import ContactUs from "../menu/items/ContactUs";
+
+import Properties from "@/components/menu/items/Properties";
+import OurServices from "@/components/menu/items/OurServices";
+import OurInsights from "@/components/menu/items/OurInsights";
+import AboutUs from "@/components/menu/items/AboutUs";
+import ContactUs from "@/components/menu/items/ContactUs";
 
 const blackHeaderPages = [
   '/'
