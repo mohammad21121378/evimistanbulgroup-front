@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    font-size: 16px !important;
+  }
+  
+  @media (max-width: 1650px) {
+    html {
+      font-size: 14px !important;
+    }
+  }
+
 .scrollbar-sm{
     scrollbar-width: thin !important;
     scrollbar-gutter: stable;

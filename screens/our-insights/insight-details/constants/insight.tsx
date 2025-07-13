@@ -9,7 +9,7 @@ export const insight = {
       },
       category: [{ title: "Teknoloji", url: "/kategori/teknoloji" }],
       author: { name: "Ali", last_name: "Yılmaz", url: "/yazar/ali-yilmaz" },
-      created_at: "2025-06-30",
+      created_at: "August 5, 2024",
       reading_time: null,
       subCatName: { title: "Yapay Zeka", url: "/kategori/yapay-zeka" },
       resource: "<ul><li>www.example.com</li></ul>",

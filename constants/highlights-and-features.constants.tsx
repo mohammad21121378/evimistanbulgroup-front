@@ -7,22 +7,22 @@ export function useHighlights() {
     {
       title: t("investment"),
       image: "3.jpg",
-      bgColor: "bg-pink-600",
+      bgColor: "bg-[#CC2D4A]",
     },
     {
       title: t("installment"),
       image: "2.jpg",
-      bgColor: "bg-fuchsia-600",
+      bgColor: "bg-[#BC1A6E]",
     },
     {
       title: t("citizenship"),
       image: "1.jpg",
-      bgColor: "bg-rose-600",
+      bgColor: "bg-[#DE3151]",
     },
     {
       title: t("earlyStage"),
       image: "4.jpg",
-      bgColor: "bg-red-500",
+      bgColor: "bg-[#D93B30]",
     },
   ];
 }

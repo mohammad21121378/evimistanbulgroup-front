@@ -1,28 +1,27 @@
 .sortItems{
     background: #fff;
-    padding: 6px;
-    border-radius: 8px;
-    display: flex;
+    /* padding: 6px; */
+    /* border-radius: 8px; */
+    display: grid;
     width: 100%;
     margin: auto;
     justify-content: space-between;
     z-index: 1;
-    /*position: relative;*/
     overflow-x: auto;
     position: sticky;
     top: 5px;
-    border: 1px solid #dee2e6;
     scrollbar-width: thin;
 }
 
 .sortItem{
     background: #fff;
-    padding: 8px 15px;
+    padding: 10px 15px;
     font-size: 14px;
     border-radius: 8px;
     transition: .3s;
     text-wrap: nowrap;
     font-weight: 600;
+    margin: 2px 0;
 }
 
 .sortMobile{

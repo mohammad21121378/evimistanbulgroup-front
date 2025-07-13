@@ -1,10 +1,9 @@
-import { useEffect } from "react";
+import { Article } from "@/types/Article";
 import classes from "./styles.module.css";
-import { slugifyHeading } from "../utils/slugify";
-import { useScrollHighlight } from "../hooks/useScrollHighlight";
+import BannerForGroup from "@/components/banner-for-group";
 
 interface Props {
-    article: any;
+    article: Article;
     showResourceBox: boolean;
     setShowResourceBox: (v: boolean) => void;
     resourceRef: any;
@@ -17,10 +16,8 @@ export default function Content({
     resourceRef,
 }: Props) {
 
-    // useScrollHighlight(article.content)
-
     return (
-        <div className="col-span-6 order-1 order-md-2">
+        <div className="col-span-7 order-1 order-md-2">
             <div  className={classes.article_content}>
                 <div id="article_content" className="customTypography" dangerouslySetInnerHTML={{ __html: article.content }} />
             </div>
@@ -51,6 +48,8 @@ export default function Content({
                     />
                 </div>
             )}
+
+            <BannerForGroup />
         </div>
     );
 }

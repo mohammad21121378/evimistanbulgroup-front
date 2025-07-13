@@ -4,15 +4,14 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import GuidesAndInsightsView from "@/components/guides-and-Insights-view";
 
-export default function GuidesAndInsights() {
+export default function RealatedInsights() {
   const t = useTranslations("GuidesAndInsights");
 
   return <GuidesAndInsightsView
-    title={t("title")}
-    description={t("description")}
+    title={"Related Guides and Insights"}
     button={{
       href: '/listings',
-      text: t("button")
+      text: "View All  Similar Guides and Insights"
     }} />
     ;
 }

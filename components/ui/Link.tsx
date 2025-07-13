@@ -4,6 +4,7 @@ import NextLink, { LinkProps as NextLinkProps } from 'next/link';
 import { useLocale } from 'next-intl';
 import { AnchorHTMLAttributes, HTMLAttributes, ReactNode } from 'react';
 import { UrlObject } from 'url';
+import classNames from 'classnames';
 
 type Href = string | UrlObject;
 
@@ -54,10 +55,10 @@ const Link = ({
       ? href.startsWith('/')
         ? `/${locale}${href === '/' ? '' : href}`
         : `/${locale}/${href}`
-      : href; // اگر UrlObject باشد، نمی‌توان string manipulation کرد
+      : href;
 
   return (
-    <NextLink href={resolvedHref} className={className} {...props}>
+    <NextLink href={resolvedHref} className={classNames('transition-all duration-500', className)} {...props}>
       {children}
     </NextLink>
   );

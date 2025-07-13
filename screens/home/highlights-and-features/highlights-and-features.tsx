@@ -18,6 +18,7 @@ export default function HighlightsAndFeatures() {
         <div className={styles.content}>
           <div className={styles.title_container}>
             <Heading type="heading-3">{t("title")}</Heading>
+            
             <div className={cn("paragraph-large", styles.subtitle)}>
               {t("description")}
             </div>

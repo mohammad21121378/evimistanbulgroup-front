@@ -5,6 +5,7 @@ import Link from "next/link";
 import PropertyFeatures from "../property-features";
 import { Location, Location2 } from "@/constants/icons";
 import classNames from "classnames";
+import { useLocale } from "next-intl";
 
 type PropertyListingProps = {
   item: {
@@ -25,11 +26,12 @@ type PropertyListingProps = {
 };
 
 export default function PropertyListing({ item }: PropertyListingProps) {
+  const locale = useLocale()
   return (
     <div key={item.id} className={styles.listing}>
       <Link
         href={{
-          pathname: "/property-detail",
+          pathname: `/${locale}/property-detail`,
           query: { item: JSON.stringify(item) },
         }}
         className={styles.img_holder}

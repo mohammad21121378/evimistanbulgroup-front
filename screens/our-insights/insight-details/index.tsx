@@ -5,24 +5,19 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import ArticleHeader from "./components/Header";
 import ArticleContent from "./components/Content";
 import ArticleSidebar from "./components/Sidebar";
-// import RelatedArticles from "./components/RelatedArticles";
-// import NotifModal from "@/components/Layout/NotifModal";
 
 import { useReadingTime } from "./hooks/useReadingTime";
-import { useScrollHighlight } from "./hooks/useScrollHighlight";
 import { useScrollbarTracker } from "./hooks/useScrollbarTracker";
-import { useLikeTimer } from "./hooks/useLikeTimer";
 
 import { insight as fakeArticleData } from "./constants/insight";
 import { Breadcrumb } from "@/components/breadcrumb/Breadcrumb";
 import Layout from "@/components/Layout";
-import { slugifyHeading } from "./utils/slugify";
+import RealatedInsights from "./components/RealatedInsights";
 
 export default function InsightDetails() {
-  const article = fakeArticleData.article;
-  const related_articles = fakeArticleData.related_articles;
 
-  const [showClipboardMessage, setShowClipboardMessage] = useState(false);
+  const article = fakeArticleData.article;
+
   const [showResourceBox, setShowResourceBox] = useState(false);
   const resourceRef = useRef(null);
 
@@ -49,7 +44,6 @@ export default function InsightDetails() {
 
   const readingTime = useReadingTime(textContent);
   useScrollbarTracker();
-  const isLikeDisabled = useLikeTimer(readingTime);
 
   const breadCrumb = [
     { label: "Basin Merkezi", link: "/basin-merkezi" },
@@ -72,7 +66,6 @@ export default function InsightDetails() {
             <ArticleHeader
               article={article}
               readingTime={readingTime}
-              setShowClipboardMessage={setShowClipboardMessage}
             />
 
             <hr className="text-slate-700 my-8" />
@@ -89,21 +82,12 @@ export default function InsightDetails() {
 
               <ArticleSidebar
                 article={article}
-                showResourceBox={showResourceBox}
-                setShowClipboardMessage={setShowClipboardMessage}
-                isLikeDisabled={isLikeDisabled}
               />
+
             </div>
-
-            {/* <RelatedArticles articles={related_articles} /> */}
           </div>
-
-        {/* <NotifModal
-        text="Bağlantı kopyalandı."
-        isInfoModalOpen={showClipboardMessage}
-        setIsInfoModalOpen={setShowClipboardMessage}
-      /> */}
       </div>
+      <RealatedInsights />
     </Layout>
   );
 }

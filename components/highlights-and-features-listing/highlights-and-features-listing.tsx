@@ -14,7 +14,7 @@ export default function HighlightsAndFeaturesListing({item}: HighlightsAndFeatur
     return (
 
         <div className="rounded-md overflow-hidden">
-            <div className="relative w-full h-40">
+            <div className="relative w-full h-48">
                 <Image
                     src={`/images/highlights/${item.image}`}
                     alt={item.title}
@@ -22,9 +22,11 @@ export default function HighlightsAndFeaturesListing({item}: HighlightsAndFeatur
                     className="object-cover"
                 />
             </div>
-            <div className={`${item.bgColor} text-white py-4 px-3 text-3xl truncate line-clamp-2 text-wrap font-medium`}>
+
+            <div className={`${item.bgColor} text-white py-4 px-3 text-4xl truncate line-clamp-2 text-wrap font-medium leading-[2.8rem] h-[7.8rem] overflow-hidden`}>
                 {item.title}
             </div>
+
         </div>
     );
 }

@@ -315,7 +315,7 @@ width: 100%;
 
 }
 .share a{
-    color: #7a7a7a;cursor: pointer;
+    @apply hover:text-orange-500 transition-all duration-300
 }
 
 .resources_box{

@@ -5,7 +5,7 @@ import GuidesAndInsightsListing from '@/components/guides-and-Insights-listing'
 import LoadMoreButton from '@/components/ui/LoadMoreButton'
 import { useMockInsights } from '../hooks/useMockInsights'
 
-const LIMIT = 9
+const LIMIT = 8
 
 export default function Insights() {
   
@@ -26,9 +26,8 @@ export default function Insights() {
   
 
   return (
-    <section className="section pt-10">
-      <div className="container">
-        <div className="grid lg:grid-cols-3 grid-cols-2 gap-5">
+    <section>
+        <div className="grid sm:grid-cols-2 grid-cols-1 gap-5">
           {visibleInsights.map((item, index) => (
             <GuidesAndInsightsListing key={index} {...item} />
           ))}
@@ -39,7 +38,6 @@ export default function Insights() {
             <LoadMoreButton onClick={handleLoadMore} loading={loading} />
           </div>
         )}
-      </div>
     </section>
   )
 }

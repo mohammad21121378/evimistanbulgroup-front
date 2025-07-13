@@ -1,14 +1,12 @@
 import Layout from "@/components/Layout";
 import Hero from "../hero";
-import Categories from "../categories/Categories";
-import Insights from "../insights/components/Insights";
+import CategoriesAndInsights from "../insights/components/CategoriesAndInsights";
 
 export default function OurInsights() {
   return (
     <Layout>
       <Hero />
-      <Categories />
-      <Insights />
+      <CategoriesAndInsights />
     </Layout>
   );
 }
