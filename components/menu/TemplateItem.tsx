@@ -8,8 +8,22 @@ export default function TemplateItem(props: Template) {
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
-        setLoaded(true)
-    }, [])
+        // مرحله اول: سعی کن loaded رو true کنی
+        setLoaded(true);
+
+        // مرحله دوم: اگر به هر دلیلی تا 2 ثانیه loaded تغییر نکرد، به‌زور تغییر بده
+        const timeoutId = setTimeout(() => {
+            setLoaded(prev => {
+                if (!prev) {
+                    console.warn('💡 forced setLoaded(true) after delay');
+                    return true;
+                }
+                return prev;
+            });
+        }, 1600); // 2 ثانیه صبر می‌کنیم
+
+        return () => clearTimeout(timeoutId);
+    }, []);
 
     useEffect(() => {
         const handleResize = () => {
@@ -25,6 +39,7 @@ export default function TemplateItem(props: Template) {
         };
     }, []);
 
-    if (!loaded) return;
+    if (!loaded) return null;
+
     return isDesktop ? <TemplateDesktop {...props} /> : <TemplateMobile {...props} />;
 }

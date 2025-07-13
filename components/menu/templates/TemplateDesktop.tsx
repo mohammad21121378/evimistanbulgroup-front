@@ -28,7 +28,7 @@ export default function TemplateDesktop({ title, children, li = true, arrow = fa
 
     const calculateTitlePosition = () => {
 
-        if (titleRef && titleRef.current) {
+        if (titleRef.current) {
             setTimeout(() => {
                 const rect = titleRef.current!.getBoundingClientRect();
 
