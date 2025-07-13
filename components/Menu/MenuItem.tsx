@@ -5,7 +5,7 @@ import Link from 'next/link'
 type Props = {
     icon?: ReactNode;
     title: string | JSX.Element;
-    href?: string | false;
+    href?: string | boolean;
     description?: string;
     external?: boolean;
     active?: boolean;
@@ -27,7 +27,7 @@ export default function MenuItem({ icon, external = false, title, description, a
         </div>
     );
 
-    if (external && href) {
+    if (external && typeof href === 'string') {
         return (
             <a href={href} target="_blank" rel="noopener noreferrer" className="svgNotHover transition-all duration-500 text-[#111B29] hover:!fill-orange-500 hover:text-orange-500">
                 {content}
@@ -36,7 +36,7 @@ export default function MenuItem({ icon, external = false, title, description, a
     }
 
     return (
-        href ?
+        typeof href === 'string' ?
             <Link href={href} className="svgNotHover duration-500 text-[#111B29] hover:!fill-orange-500 hover:text-orange-500">
                 {content}
             </Link>

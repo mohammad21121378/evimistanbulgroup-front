@@ -5,27 +5,9 @@ import PropertyFeatures from "../property-features";
 import { Location2 } from "@/constants/icons";
 import Link from "../ui/Link";
 import { formatNumber } from "@/utils/formatNumber";
+import { PropertyType } from "@/types/Property";
 
-type PropertyListingProps = {
-  item: {
-    id: number;
-    images: string[];
-    title: string;
-    price: number;
-    description: string;
-    category: string;
-    location: string;
-    status: 'sold_out' | 'active';
-    features: {
-      id: number;
-      icon: string;
-      name: string;
-      value: string | number;
-    }[];
-  };
-};
-
-export default function PropertyListing({ item }: PropertyListingProps) {
+export default function PropertyListing({ item }: PropertyType) {
   return (
     <div key={item.id} className={styles.listing}>
       <Link

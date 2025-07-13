@@ -7,8 +7,8 @@ import classNames from 'classnames';
 
 type MenuChildItem = {
     icon?: JSX.Element;
-    title: string;
-    href: string;
+    title: string | JSX.Element;
+    href: string | boolean;
 };
 
 type MenuSection = {
@@ -41,9 +41,9 @@ export default function TemplateItemWithItems({ items, title, width = 33.75, con
             >
                 {Object.values(items).map((item, idx) => (
 
-                    <Section title={item.title} childrenClassName={sectionClassName}>
+                    <Section key={idx} title={item.title} childrenClassName={sectionClassName}>
                         {item.items.map((child, idx2) => (
-                            <div key={idx2}>
+                            <div key={idx + ' || ' + idx2 + child.title}>
                                 <MenuItem className={menuItemClassName} {...child} />
                             </div>
                         ))}

@@ -16,6 +16,7 @@ import { usePagination } from "@/hooks/usePagination";
 import LoadMoreButton from "@/components/ui/LoadMoreButton";
 import Pagination from "@/components/ui/Pagination";
 import { useNumberedPagination } from "@/hooks/useNumberedPagination";
+import { PropertyType } from "@/types/Property";
 
 const turkiye = originalTurkiye.map((province) => ({
   ...province,
