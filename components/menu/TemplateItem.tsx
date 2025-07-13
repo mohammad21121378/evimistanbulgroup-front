@@ -4,50 +4,46 @@ import TemplateMobile from './templates/TemplateMobile';
 import { Template } from './types';
 
 export default function TemplateItem(props: Template) {
+
     const [isDesktop, setIsDesktop] = useState(false);
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
-        console.log('[TemplateItem] ✅ useEffect mounted');
-
+        console.log('[TemplateItem] Mounting effect triggered');
         setLoaded(true);
-        console.log('[TemplateItem] 🚀 setLoaded(true) called');
 
-        const timeoutId = setTimeout(() => {
+        requestAnimationFrame(() => {
+            window.dispatchEvent(new Event('mousemove'));
+        });
+
+        const fallback = setTimeout(() => {
             setLoaded(prev => {
                 if (!prev) {
-                    console.warn('[TemplateItem] ⚠️ Fallback: loaded still false after 2s. Forcing setLoaded(true)');
+                    console.warn('⚠️ Fallback forced setLoaded(true)');
                     return true;
-                } else {
-                    console.log('[TemplateItem] ✅ Fallback not needed, already loaded');
-                    return prev;
                 }
+                return prev;
             });
-        }, 2000);
+        }, 1800);
 
-        return () => clearTimeout(timeoutId);
+        return () => clearTimeout(fallback);
     }, []);
+
 
     useEffect(() => {
         const handleResize = () => {
-            const isDesktopNow = window.innerWidth > 992;
-            console.log('[TemplateItem] 📏 handleResize:', isDesktopNow ? 'Desktop' : 'Mobile');
-            setIsDesktop(isDesktopNow);
+            setIsDesktop(window.innerWidth > 992);
         };
 
         handleResize();
 
         window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
 
-    console.log('[TemplateItem] 🔍 loaded =', loaded, '| isDesktop =', isDesktop);
-
-    if (!loaded) {
-        console.log('[TemplateItem] 💤 Not loaded yet, returning null...');
-        return null;
-    }
-
-    console.log('[TemplateItem] 🎉 Rendering:', isDesktop ? 'TemplateDesktop' : 'TemplateMobile');
+    if (!loaded) return;
     return isDesktop ? <TemplateDesktop {...props} /> : <TemplateMobile {...props} />;
 }
