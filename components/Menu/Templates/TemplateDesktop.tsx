@@ -1,16 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
 import MenuModal from '../MenuModal';
-import { ArrowDown, ArrowUpDown } from 'lucide-react';
+import { Template, TitlePos } from '../types';
 
-export default function TemplateDesktop({ title, children, li = true, arrow = false }) {
+export default function TemplateDesktop({ title, children, li = true, arrow = false }: Template) {
 
-    const wrapperRef = useRef(null);
-    const titleRef = useRef(null);
+    const wrapperRef = useRef<HTMLDivElement | null>(null);
+    const titleRef = useRef<HTMLDivElement | null>(null);
 
     const [show, setShow] = useState(false);
     const [loadded, setLoadded] = useState(false);
-    const [titleCenter, setTitleCenter] = useState(null);
-    const [titlePos, setTitlePos] = useState(null);
+    const [titleCenter, setTitleCenter] = useState<number | null>(null);
+    const [titlePos, setTitlePos] = useState<TitlePos>(null);
 
     useEffect(() => {
         setTimeout(() => {
@@ -28,9 +28,9 @@ export default function TemplateDesktop({ title, children, li = true, arrow = fa
 
     const calculateTitlePosition = () => {
 
-        if (titleRef.current) {
+        if (titleRef && titleRef.current) {
             setTimeout(() => {
-                const rect = titleRef.current.getBoundingClientRect();
+                const rect = titleRef.current!.getBoundingClientRect();
 
                 setTitlePos({
                     left: rect.left,
@@ -66,7 +66,7 @@ export default function TemplateDesktop({ title, children, li = true, arrow = fa
     }, []);
 
     useEffect(() => {
-        const handleMouseMove = (e) => {
+        const handleMouseMove = (e: MouseEvent | globalThis.MouseEvent) => {
             if (wrapperRef.current && wrapperRef.current.matches(':hover')) {
                 return;
             }
@@ -93,7 +93,7 @@ export default function TemplateDesktop({ title, children, li = true, arrow = fa
     }, [show]);
 
 
-    const handleMouseLeave = (e) => { };
+    const handleMouseLeave = () => { };
 
     const handleMouseEnter = () => {
         if (!loadded) {

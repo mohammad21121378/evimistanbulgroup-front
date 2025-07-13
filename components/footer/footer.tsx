@@ -33,15 +33,15 @@ export default function Footer() {
     <footer className={cn("section", styles.section)}>
       <div className={cn("container", styles.container)}>
         <div className={styles.content}>
-          <Logo className="!text-white" />
+          <Logo className="!text-white !text-3xl" />
 
           <div>
             <Heading type="heading-3" className={styles.title}>
               {t("slogan")}
             </Heading>
-            <div className={cn("subheading-small", styles.email)}>
-              HEAVENHOMES@INFO.COM
-            </div>
+            <a href="mailto:HEAVESHOMES@INFO.COM" className={cn("subheading-small block", styles.email)}>
+              HEAVESHOMES@INFO.COM
+            </a>
           </div>
         </div>
 

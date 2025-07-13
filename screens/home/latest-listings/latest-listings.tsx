@@ -7,9 +7,9 @@ import { Heading } from "@/components/typography";
 import { Listings, Tabs } from "@/constants/mock";
 import { Dropdown } from "@/components/elements";
 import PropertyListing from "@/components/property-listing";
-import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "@/constants/icons";
+import Link from "@/components/ui/Link";
 
 export default function LatestListings() {
   const t = useTranslations("LatestListings");
@@ -37,8 +37,10 @@ export default function LatestListings() {
             </div>
           </div>
 
-          <Link href="/listings" className={cn("button", styles.button)}>
+          <Link href="/listings">
+            <button className={cn("button", styles.button)}>
             {t("viewAll")} {ArrowRight}
+            </button>
           </Link>
         </div>
 

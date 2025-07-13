@@ -13,7 +13,7 @@ export default function Section({ title, children, className, titleClassName, ch
         <div className={classNames(className, 'mb-3')}>
             {
                 title &&
-                <h6 className={`text-orange-500 font-bold uppercase text-xs`}>{title}</h6>
+                <h6 className={`text-orange-500 font-bold text-left uppercase text-xs`}>{title}</h6>
             }
 
             <div className={` ${childrenClassName}`}>

@@ -2,7 +2,7 @@
   "home": {
     "hero": {
       "title": "Invest. Grow. Succeed.",
-      "subtitle": "Invest in Turkey with Confidence — Whether you're buying property, seeking citizenship, starting a business, studying, relocating with family, or receiving medical care — EvimIstanbul® handles every step of your journey from A to Z.",
+      "subtitle": "<strong>Invest in Turkey</strong> with Confidence — Whether you're <strong> buying property </strong>, seeking <strong>citizenship</strong>, starting a <strong>business</strong>, <strong>studying</strong>, relocating with <strong>family</strong>, or receiving <strong>medical care — EvimIstanbul Group®</strong> handles every step of your journey from <strong>A to Z</strong>.",
       "searchPlaceholder": "Buy Property in Turkey",
       "sectionTitle": "Looking for Something Else?",
       "sectionHeading": "Discover the best opportunities in Turkey — trusted by global investors, backed by over $500M in investments.",
@@ -57,7 +57,7 @@
   },
   "Services": {
     "title": "Our Services",
-    "subtitle": "EvimIstanbul offers a full range of services — from buying property, gaining Turkish citizenship, and starting a company, to student and family relocation, residence permits, bank accounts, medical tourism, lifestyle experiences, and more — all backed by expert guidance and global trust.",
+    "subtitle": "EvimIstanbul Group offers a full range of services — from buying property, gaining Turkish citizenship, and starting a company, to student and family relocation, residence permits, bank accounts, medical tourism, lifestyle experiences, and more — all backed by expert guidance and global trust.",
     "button": "View All Services",
 
     "real_estate": {
@@ -101,7 +101,7 @@
       "description": "Legally transfer and convert foreign currency in Turkey through secure channels."
     },
     "leisure_lifestyle": {
-      "title": "Leisure & Lifestyle Experiences",
+      "title": "Tours & Leisure",
       "description": "City tours, boat trips, shopping, adventures, and unforgettable experiences across Turkey."
     },
 
@@ -117,13 +117,13 @@
   },
   "Partners": {
     "title": "Who We Are?",
-    "subtitle": "EvimIstanbul® is a trusted bridge between global clients and Opportunities in Turkey.",
+    "subtitle": "EvimIstanbul Group ® is a trusted bridge between global clients and Opportunities in Turkey.",
     "description": "We help individuals and families invest, settle, and thrive by offering tailored solutions — from real estate to citizenship and legal pathways to education, healthcare, and lifestyle services. With multilingual support and a deep local network, we deliver clarity, safety, and long-term value every step of the way.",
-    "button": "Company Milestones"
+    "button": "About Us"
   },
   "Benefits": {
     "section1": {
-      "title": "Why Choose EvimIstanbul?",
+      "title": "Why Choose EvimIstanbul Group?",
       "description": "EvimIstanbul empowers international clients to confidently buy property in Turkey — including Istanbul, Antalya, and İzmir — by providing verified listings, expert guidance, and full-service support. From legal contracts to residence permits or Turkish citizenship by investment, we ensure a secure and seamless experience.",
       "items": [
         "Verified properties across Turkey",
@@ -140,16 +140,17 @@
         "$ 500M+ in successful transactions with global clients"
       ]
     },
-    "learnMore": "Learn more"
+    "learnMore": "Learn More"
   },
   "testimonials": {
-    "title": "Testimonials",
+    "title": "Client Stories and Testimonials",
+    "description": "Real experiences from global clients who’ve invested, relocated, or started a new life in Turkey with EvimIstanbul Group.",
     "viewAll": "View All Testimonials",
     "list": [
       {
         "name": "Ahmed S., UAE Investor",
         "span": "Happy Homeowners",
-        "text": "“EvimIstanbul made my property purchase in Istanbul fast, legal, and stress-free. Their team helped me qualify for Turkish citizenship through real estate investment, and the process was smoother than I ever imagined. Highly recommended for serious international investors.”"
+        "text": "“EvimIstanbul  Group made my property purchase in Istanbul fast, legal, and stress-free. Their team helped me qualify for Turkish citizenship through real estate investment, and the process was smoother than I ever imagined. Highly recommended for serious international investors.”"
       },
       {
         "name": "Sarah D., UK Relocation Client",

@@ -1,4 +1,3 @@
-// app/components/highlights-and-features-listing.tsx
 
 import Image from "next/image";
 
@@ -14,7 +13,7 @@ export default function HighlightsAndFeaturesListing({item}: HighlightsAndFeatur
     return (
 
         <div className="rounded-md overflow-hidden">
-            <div className="relative w-full h-48">
+            <div className="relative w-full h-52">
                 <Image
                     src={`/images/highlights/${item.image}`}
                     alt={item.title}
@@ -23,7 +22,7 @@ export default function HighlightsAndFeaturesListing({item}: HighlightsAndFeatur
                 />
             </div>
 
-            <div className={`${item.bgColor} text-white py-4 px-3 text-4xl truncate line-clamp-2 text-wrap font-medium leading-[2.8rem] h-[7.8rem] overflow-hidden`}>
+            <div className={`${item.bgColor} text-white py-4 px-3 text-4xl truncate line-clamp-2 text-wrap font-medium leading-[2.8rem] h-[8.5rem] overflow-hidden`}>
                 {item.title}
             </div>
 

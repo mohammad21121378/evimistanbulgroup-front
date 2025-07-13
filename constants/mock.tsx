@@ -29,6 +29,7 @@ const Listings = [
       {
         id: 1,
         title: "123 Serenity Lane",
+        status: 'sold_out',
         location: 'Sariyer, Istanbul',
         category: "Houses",
         description:
@@ -66,7 +67,7 @@ const Listings = [
           {
             id: 3,
             icon: "ruler",
-            name: "sqft",
+            name: "m²",
             value: "2,500",
           },
         ],
@@ -74,6 +75,7 @@ const Listings = [
       {
         id: 2,
         title: "456 Harmony Drive",
+        status: 'active',
         location: 'Sariyer, Istanbul',
         category: "Houses",
         description:
@@ -111,7 +113,7 @@ const Listings = [
           {
             id: 3,
             icon: "ruler",
-            name: "sqft",
+            name: "m²",
             value: "4,500",
           },
         ],
@@ -119,6 +121,7 @@ const Listings = [
       {
         id: 3,
         title: "789 Bliss Boulevard",
+        status: 'active',
         location: 'Sariyer, Istanbul',
         category: "Houses",
         description:
@@ -156,7 +159,7 @@ const Listings = [
           {
             id: 3,
             icon: "ruler",
-            name: "sqft",
+            name: "m²",
             value: "3,200",
           },
         ],
@@ -166,11 +169,13 @@ const Listings = [
   {
     id: 2,
     category: "Townhouses",
-
+    
+    status: 'active',
     items: [
       {
         id: 4,
         title: "123 Modern Townhouse",
+        status: 'active',
         location: 'Sariyer, Istanbul',
         category: "Townhouses",
         description:
@@ -208,7 +213,7 @@ const Listings = [
           {
             id: 3,
             icon: "ruler",
-            name: "sqft",
+            name: "m²",
             value: "1,800",
           },
         ],
@@ -216,6 +221,7 @@ const Listings = [
       {
         id: 5,
         title: "456 Urban Townhome",
+        status: 'active',
         location: 'Sariyer, Istanbul',
         category: "Townhouses",
         description:
@@ -253,7 +259,7 @@ const Listings = [
           {
             id: 3,
             icon: "ruler",
-            name: "sqft",
+            name: "m²",
             value: "2,000",
           },
         ],
@@ -261,6 +267,7 @@ const Listings = [
       {
         id: 6,
         title: "789 Suburban Townhouse",
+        status: 'active',
         location: 'Sariyer, Istanbul',
         category: "Townhouses",
         description:
@@ -298,7 +305,7 @@ const Listings = [
           {
             id: 3,
             icon: "ruler",
-            name: "sqft",
+            name: "m²",
             value: "2,200",
           },
         ],
@@ -308,10 +315,12 @@ const Listings = [
   {
     id: 3,
     category: "Condos",
+    status: 'active',
     items: [
       {
         id: 7,
         title: "456 City Apartment",
+        status: 'active',
         location: 'Sariyer, Istanbul',
         category: "Condos",
         description:
@@ -349,7 +358,7 @@ const Listings = [
           {
             id: 3,
             icon: "ruler",
-            name: "sqft",
+            name: "m²",
             value: "1,500",
           },
         ],
@@ -357,6 +366,7 @@ const Listings = [
       {
         id: 8,
         title: "789 Downtown Loft",
+        status: 'active',
         location: 'Sariyer, Istanbul',
         category: "Condos",
         description:
@@ -394,7 +404,7 @@ const Listings = [
           {
             id: 3,
             icon: "ruler",
-            name: "sqft",
+            name: "m²",
             value: "1,200",
           },
         ],
@@ -402,6 +412,7 @@ const Listings = [
       {
         id: 9,
         title: "321 Suburban Apartment",
+        status: 'active',
         location: 'Sariyer, Istanbul',
         category: "Condos",
         description:
@@ -439,7 +450,7 @@ const Listings = [
           {
             id: 3,
             icon: "ruler",
-            name: "sqft",
+            name: "m²",
             value: "1,300",
           },
         ],
@@ -449,10 +460,12 @@ const Listings = [
   {
     id: 4,
     category: "Commercial",
+    status: 'active',
     items: [
       {
         id: 10,
         title: "Downtown Office",
+        status: 'active',
         location: 'Sariyer, Istanbul',
         category: "Commercial",
         description:
@@ -478,7 +491,7 @@ const Listings = [
           {
             id: 1,
             icon: "ruler",
-            name: "sqft",
+            name: "m²",
             value: "5,000",
           },
           {
@@ -498,6 +511,7 @@ const Listings = [
       {
         id: 11,
         title: "Industrial Warehouse",
+        status: 'active',
         location: 'Sariyer, Istanbul',
         category: "Commercial",
         description:
@@ -523,7 +537,7 @@ const Listings = [
           {
             id: 1,
             icon: "ruler",
-            name: "sqft",
+            name: "m²",
             value: "20,000",
           },
           {
@@ -543,6 +557,7 @@ const Listings = [
       {
         id: 12,
         title: "Retail Space",
+        status: 'active',
         location: 'Sariyer, Istanbul',
         category: "Commercial",
         description:
@@ -568,7 +583,7 @@ const Listings = [
           {
             id: 1,
             icon: "ruler",
-            name: "sqft",
+            name: "m²",
             value: "3,000",
           },
           {
@@ -590,10 +605,12 @@ const Listings = [
   {
     id: 5,
     category: "Villas",
+    status: 'active',
     items: [
       {
         id: 13,
         title: "Ocean View Villa",
+        status: 'active',
         location: 'Sariyer, Istanbul',
         category: "Villas",
         description:
@@ -631,7 +648,7 @@ const Listings = [
           {
             id: 3,
             icon: "parking",
-            name: "sqft",
+            name: "m²",
             value: "4,500",
           },
         ],
@@ -639,6 +656,7 @@ const Listings = [
       {
         id: 14,
         title: "Mountain Retreat",
+        status: 'active',
         location: 'Sariyer, Istanbul',
         category: "Villas",
         description:
@@ -676,7 +694,7 @@ const Listings = [
           {
             id: 3,
             icon: "ruler",
-            name: "sqft",
+            name: "m²",
             value: "3,800",
           },
         ],
@@ -684,6 +702,7 @@ const Listings = [
       {
         id: 15,
         title: "Luxury Estate",
+        status: 'active',
         location: 'Sariyer, Istanbul',
         category: "Villas",
         description:
@@ -721,7 +740,7 @@ const Listings = [
           {
             id: 3,
             icon: "ruler",
-            name: "sqft",
+            name: "m²",
             value: "7,200",
           },
         ],

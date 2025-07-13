@@ -28,6 +28,15 @@ const Link = ({
 }: CustomLinkProps) => {
   const currentLocale = useLocale();
 
+  const resolveHref = (href: string | null | undefined) => {
+    if (!href) {
+      return '/';
+    }
+    return href.startsWith('/')
+      ? `/${locale}${href === '/' ? '' : href}`
+      : `/${locale}/${href}`;
+  }
+
   if (noLink) {
     return (
       <div className={className} {...(props as HTMLAttributes<HTMLDivElement>)}>
@@ -50,12 +59,15 @@ const Link = ({
       : 'en'
     : currentLocale;
 
-  const resolvedHref =
-    typeof href === 'string'
-      ? href.startsWith('/')
-        ? `/${locale}${href === '/' ? '' : href}`
-        : `/${locale}/${href}`
-      : href;
+  let resolvedHref;
+
+  if (typeof href === 'string') {
+    resolvedHref = resolveHref(href)
+  } else if (typeof href === 'object') {
+    resolvedHref = { ...href, pathname: resolveHref(href.pathname) }
+  } else {
+    resolvedHref = href;
+  }
 
   return (
     <NextLink href={resolvedHref} className={classNames('transition-all duration-500', className)} {...props}>

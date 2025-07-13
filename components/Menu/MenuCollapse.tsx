@@ -1,13 +1,19 @@
-import { useRef, useEffect, useState } from 'react';
+import { ReactNode } from 'react';
 import styles from './MenuModal.module.css';
 
-const MenuCollapse = ({ show, children }) => {
+type Props = {
+    show:boolean; 
+    children: ReactNode;
+}
+
+const MenuCollapse = ({ show, children }: Props) => {
 
     return (
         <div
             className={`
                 ${styles.mobileContent} 
                 ${show ? styles.show : styles.hide}
+                rounded-xl
             `}
         >
             {children}

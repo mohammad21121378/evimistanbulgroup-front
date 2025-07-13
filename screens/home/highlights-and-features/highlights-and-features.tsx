@@ -2,7 +2,6 @@ import React from "react";
 import cn from "classnames";
 import styles from "./highlights-and-features.module.css";
 import { Heading } from "@/components/typography";
-import Image from "next/image";
 import Link from "next/link";
 import HighlightsAndFeaturesListing from "@/components/highlights-and-features-listing";
 import {  useHighlights } from "@/constants/highlights-and-features.constants";

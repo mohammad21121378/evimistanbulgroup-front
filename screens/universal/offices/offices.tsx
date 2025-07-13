@@ -52,41 +52,45 @@ export default function Offices() {
       </div>
 
       <div className={styles.marquees}>
-        <TextMarquee>
-          {top_cities.map((item, index) =>
-            item === "・" ? (
-              <Heading key={index} type="heading-3" className={styles.marquee_text}>
-                {item}
-              </Heading>
-            ) : (
-              <div key={index} className="relative">
-                <img
-                  src={`/images/realestate/${item}.png`}
-                  alt={item}
-                  className="w-full max-h-20"
-                />
-              </div>
-            )
-          )}
-        </TextMarquee>
+        <div className={styles.marquee}>
+          <TextMarquee>
+            {top_cities.map((item, index) =>
+              item === "・" ? (
+                <Heading key={index} type="heading-3" className={styles.marquee_text}>
+                  {item}
+                </Heading>
+              ) : (
+                <div key={index} className="relative">
+                  <img
+                    src={`/images/realestate/${item}.png`}
+                    alt={item}
+                    className="w-full max-h-20"
+                  />
+                </div>
+              )
+            )}
+          </TextMarquee>
+        </div>
 
-        <TextMarquee direction="right">
-          {bottom_cities.map((item, index) =>
-            item === "・" ? (
-              <Heading key={index} type="heading-3" className={styles.marquee_text}>
-                {item}
-              </Heading>
-            ) : (
-              <div key={index} className="relative">
-                <img
-                  src={`/images/realestate/${item}.png`}
-                  alt={item}
-                  className="w-full max-h-20"
-                />
-              </div>
-            )
-          )}
-        </TextMarquee>
+        <div className={styles.marquee}>
+          <TextMarquee direction="right">
+            {bottom_cities.map((item, index) =>
+              item === "・" ? (
+                <Heading key={index} type="heading-3" className={styles.marquee_text}>
+                  {item}
+                </Heading>
+              ) : (
+                <div key={index} className="relative">
+                  <img
+                    src={`/images/realestate/${item}.png`}
+                    alt={item}
+                    className="w-full max-h-20"
+                  />
+                </div>
+              )
+            )}
+          </TextMarquee>
+        </div>
       </div>
     </section>
   );

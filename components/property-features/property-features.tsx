@@ -65,8 +65,8 @@ export default function PropertyFeatures({
             {features.map((feature) => (
               <div key={feature.id} className={styles.feature}>
                 {iconMap[feature.icon]}
-                <div className={cn("paragraph-small", styles.feature_name)}>
-                  {feature.value}
+                <div className={cn("paragraph-small text-gray-500", styles.feature_name)}>
+                 {feature.value} {feature.name}
                 </div>
               </div>
             ))}

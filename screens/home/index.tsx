@@ -13,6 +13,7 @@ import Offices from "../universal/offices";
 import Facts from "../universal/facts";
 import HighlightsAndFeatures from "./highlights-and-features";
 import GuidesAndInsights from "./guides-and-Insights";
+import SuggestedServices from "./suggested-services/SuggestedServices";
 
 export default function HomePage() {
   return (

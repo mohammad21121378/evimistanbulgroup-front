@@ -1,11 +1,9 @@
 import cn from "classnames";
 import Image from "next/image";
 import styles from "./property-listing.module.css";
-import Link from "next/link";
 import PropertyFeatures from "../property-features";
-import { Location, Location2 } from "@/constants/icons";
-import classNames from "classnames";
-import { useLocale } from "next-intl";
+import { Location2 } from "@/constants/icons";
+import Link from "../ui/Link";
 
 type PropertyListingProps = {
   item: {
@@ -16,6 +14,7 @@ type PropertyListingProps = {
     description: string;
     category: string;
     location: string;
+    status: 'sold_out' | 'active';
     features: {
       id: number;
       icon: string;
@@ -26,12 +25,11 @@ type PropertyListingProps = {
 };
 
 export default function PropertyListing({ item }: PropertyListingProps) {
-  const locale = useLocale()
   return (
     <div key={item.id} className={styles.listing}>
       <Link
         href={{
-          pathname: `/${locale}/property-detail`,
+          pathname: `/property-detail`,
           query: { item: JSON.stringify(item) },
         }}
         className={styles.img_holder}
@@ -47,6 +45,13 @@ export default function PropertyListing({ item }: PropertyListingProps) {
         <div className={cn("paragraph-small", styles.listing_price)}>
           {item.category}
         </div>
+
+        {
+          item.status === 'sold_out' ?
+            <div className={cn("paragraph-small uppercase", styles.listing_status)}>
+              ALREADY SOLD
+            </div> : ''
+        }
       </Link>
 
       <div className="absolute -left-2.5 w-40 bg-[#002DD1] py-2 pl-3 rounded-md flex items-center text-white text-xs font-bold top-[12.5rem] !rounded-es-none">
@@ -73,9 +78,13 @@ export default function PropertyListing({ item }: PropertyListingProps) {
       </div>
 
       <div className={styles.listing_wrapper}>
-        <div className={cn("heading-6", styles.listing_title)}>
+        <Link
+          href={{
+            pathname: `/property-detail`,
+            query: { item: JSON.stringify(item) },
+          }} className={cn("heading-6 hover:text-orange-500", styles.listing_title)}>
           {item.title}
-        </div>
+        </Link>
         <div className={cn("paragraph-medium font-medium flex items-center gap-2.5 underline", styles.listing_description)}>
           {Location2}
           {item.location}
@@ -91,7 +100,7 @@ export default function PropertyListing({ item }: PropertyListingProps) {
             features={item.features}
             className={styles.features}
           />
-          <div className={cn("paragraph-medium !text-sm pt-3.5 !font-bold text-gray-500")}>
+          <div className={cn("text-sm pt-3.5 font-normal text-gray-500")}>
             12h ago
           </div>
         </div>

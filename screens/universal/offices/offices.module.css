@@ -1,7 +1,17 @@
 .marquees {
     margin-top: 80px;
     display: grid;
-    gap: 80px;
+    /* gap: 80px; */
+}
+
+.marquee{
+    padding: 2.5rem 0;
+    display: grid;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.marquee:first-child{
+    border-top: 1px solid #E2E8F0;
 }
 
 .title {

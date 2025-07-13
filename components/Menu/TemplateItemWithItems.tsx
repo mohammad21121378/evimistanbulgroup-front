@@ -36,7 +36,7 @@ export default function TemplateItemWithItems({ items, title, width = 540, conte
     return (
         <TemplateItem title={title} arrow={arrow}>
             <div
-                className={classNames('grid grid-cols-2', contentClassName)}
+                className={classNames(contentClassName, 'grid sm:grid-cols-2 grid-cols-1')}
                 style={{ width: width }}
             >
                 {Object.values(items).map((item, idx) => (

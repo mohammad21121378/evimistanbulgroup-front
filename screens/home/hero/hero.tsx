@@ -7,6 +7,8 @@ import { Heading, Hero as HeroTitle } from "@/components/typography";
 import Image from "next/image";
 import SearchBar from "@/components/search-bar";
 import { useTranslations } from "next-intl";
+import SuggestedServices from "../suggested-services/SuggestedServices";
+import classNames from "classnames";
 
 export default function Hero() {
   const t = useTranslations("home.hero");
@@ -29,8 +31,10 @@ export default function Hero() {
             {t("title")}
           </HeroTitle>
 
-          <Heading type="heading-5" className={styles.sub_title}>
-            {t("subtitle")}
+          <Heading type="heading-5" className={classNames(styles.sub_title, '!font-normal !leading-[2.85rem]')}>
+            {t.rich('subtitle', {
+              strong: (chunks) => <strong>{chunks}</strong>
+            })}
           </Heading>
         </div>
 
@@ -41,11 +45,10 @@ export default function Hero() {
         />
       </div>
 
-      <section className={cn("section", styles.section)}>
+      <SuggestedServices />
+
+      <section className={cn("section !pt-10", styles.section)}>
         <div className={cn("container", styles.container)}>
-          <div className="text-center text-sm font-medium mb-14">
-            {t("sectionTitle")}
-          </div>
           <div className={styles.content}>
             <Heading type="heading-4">{t("sectionHeading")}</Heading>
 

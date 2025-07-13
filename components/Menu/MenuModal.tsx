@@ -1,11 +1,20 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, ReactNode } from 'react';
 import styles from './MenuModal.module.css';
+import { Adjust, TitlePos } from './types';
 
-const MenuModal = ({ show: showProps, children, titleCenter, titlePos, onClick }) => {
+type Props = {
+    show: boolean;
+    children: ReactNode;
+    titleCenter?: number | null;
+    titlePos: TitlePos;
+    onClick?: () => void;
+  };
 
-    const modalRef = useRef(null);
-    const [adjust, setAdjust] = useState(false);
-    const [svgLeft, setSvgLeft] = useState(null);
+const MenuModal = ({ show: showProps, children, titleCenter, titlePos, onClick }: Props) => {
+
+    const modalRef = useRef<HTMLDivElement | null>(null);
+    const [adjust, setAdjust] = useState<Adjust>(false);
+    const [svgLeft, setSvgLeft] = useState<null | string>(null);
     const [show, setShow] = useState(false)
 
     useEffect(() => {
@@ -15,17 +24,20 @@ const MenuModal = ({ show: showProps, children, titleCenter, titlePos, onClick }
     }, [showProps]);
 
     const getModalRect = () => {
-        return modalRef.current && modalRef.current.getBoundingClientRect();
+        if (modalRef.current) {
+            return modalRef.current.getBoundingClientRect();
+        }
     }
 
     const calculate = () => {
-        if (modalRef.current && showProps) {
+        if (modalRef.current && showProps && titlePos) {
 
             const modalRect = getModalRect();
-            const overflowsRight = titlePos.left+modalRect.width > (window.innerWidth + 12);
+            const modalRectWidth = modalRect?.width ?? 0
+            const overflowsRight = titlePos.left+modalRectWidth > (window.innerWidth + 12);
 
 
-            const overflowsLeft = titlePos.left - (modalRect.width / 2) < 12;
+            const overflowsLeft = titlePos.left - (modalRectWidth / 2) < 12;
 
             if (overflowsLeft) {
                 setAdjust('left');
@@ -51,13 +63,13 @@ const MenuModal = ({ show: showProps, children, titleCenter, titlePos, onClick }
 
     useEffect(() => {
         setTimeout(() => {
-            if (titleCenter) {
+            if (titleCenter && modalRef.current) {
                 const modalRect = modalRef.current.getBoundingClientRect();
                 const svgPos = titleCenter - (modalRect.left);
                 setSvgLeft(`${svgPos}px`);
             }
         }, 200)
-    }, [titleCenter, showProps, titlePos])
+    }, [titleCenter, showProps, titlePos, modalRef.current])
 
     return (
         <div
@@ -70,7 +82,7 @@ const MenuModal = ({ show: showProps, children, titleCenter, titlePos, onClick }
             `}
             style={{
                 left: adjust === 'left' ? 300 : ((adjust === 'right') ? (-60) : ''),
-                transform: adjust && `none !imporatnt`
+                transform: adjust ? `none !imporatnt` : ''
             }}
             onClick={onClick}
         >

@@ -22,6 +22,8 @@
             padding-left 0.2s 0.4s,
             padding-right 0.2s 0.4s;
     overflow: hidden;
+    /* z-index: 99; */
+    position: relative;
 }
 
 .mobileContent.show{
@@ -35,8 +37,11 @@
     transition: .3s;
 }
 
-.itemMobile.show svg{
+.itemMobile svg{
     transform: rotate(90deg);
+}
+.itemMobile.show svg{
+    transform: rotate(-90deg);
 }
 
 .modal.hide{
@@ -103,7 +108,6 @@
 }
 
 .itemMobile{
-    color: rgba(61, 63, 66, 1) !important;
     font-weight: bold;
     font-size: 18px;
 }
@@ -112,5 +116,13 @@
     .content>div{
         overflow: hidden;
         max-width: 850px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .content>div{
+        
+        max-width: none !important;
+        width: 100% !important;
     }
 }
