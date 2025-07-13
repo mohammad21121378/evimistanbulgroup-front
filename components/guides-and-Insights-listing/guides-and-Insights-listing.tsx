@@ -50,7 +50,7 @@ const GuidesAndInsightsListing: FC<GuidesAndInsightsListingProps> = ({
 
                 <div className="mt-auto flex items-center justify-between">
                     <Link href={`/our-insights/${category}/${title}`} className={cn("text-sm text-black font-medium rounded-md pt-2 pb-2.5 px-4 flex items-center gap-1 border", styles.button)}>
-                        {t("readMore")} <span><svg className='mt-1 ml-1' width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        {t("readMore")} <span className='mt-0.5 ml-1 pr-px'><svg  width="0.4rem" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M5.79369 4.85072C5.97431 5.03134 5.97431 5.32413 5.79369 5.50474L1.07842 10.22C0.8978 10.4006 0.605011 10.4006 0.424391 10.22L0.206341 10.002C0.0257223 9.82137 0.0257223 9.52854 0.206341 9.34792L4.37655 5.17773L0.206341 1.00752C0.0257219 0.8269 0.0257219 0.53411 0.206341 0.353492L0.424391 0.135442C0.60501 -0.0451775 0.8978 -0.0451775 1.07842 0.135442L5.79369 4.85072Z" fill="currentColor" />
                         </svg>
                         </span>

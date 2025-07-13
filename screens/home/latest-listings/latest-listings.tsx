@@ -45,12 +45,12 @@ export default function LatestListings() {
         </div>
 
         <div className={styles.wrapper}>
-          <Dropdown
+          {/* <Dropdown
             className={styles.dropdown}
             options={dropdownOptions}
             value={selectedCategory}
             onChange={handleDropdownChange}
-          />
+          /> */}
           <div className={styles.listings}>
             {Listings.filter(
               (listing) => listing.category === selectedCategory
