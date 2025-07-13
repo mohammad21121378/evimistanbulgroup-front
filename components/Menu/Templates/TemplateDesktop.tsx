@@ -15,7 +15,7 @@ export default function TemplateDesktop({ title, children, li = true, arrow = fa
     useEffect(() => {
         setTimeout(() => {
             setLoadded(true);
-        }, 600)
+        }, 400)
     }, []);
 
 

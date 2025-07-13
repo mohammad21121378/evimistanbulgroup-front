@@ -100,7 +100,7 @@ export default function Header() {
         >
           <div className={cn(styles.nav_links, '', {
             [styles.black_link]: isBlackHeader && !(mobile && visibleNav),
-            '!text-white' : islightHeader || sticky,
+            '!text-white' : islightHeader || sticky || visibleNav,
             '!text-black' : !sticky && !islightHeader,
             })}>
             {nav_links.map((link, index) => (
@@ -128,7 +128,7 @@ export default function Header() {
             className={cn("button-stroke-small", styles.button, {
               [styles.black_button]: isBlackHeader && !(mobile && visibleNav),
               [styles.sticky_button]: sticky,
-              '!text-white' : islightHeader || sticky,
+              '!text-white' : islightHeader || sticky || visibleNav,
             '!text-black hover:!text-white' : !sticky && !islightHeader,
             })}
           >
@@ -140,6 +140,8 @@ export default function Header() {
             burgerClassName={cn(styles.burger, {
               [styles.black_burger]: isBlackHeader && !(mobile && visibleNav),
               [styles.sticky_burger]: sticky,
+              '!text-white' : islightHeader || sticky || visibleNav,
+            '!text-black' : !sticky && !islightHeader,
               
             })}
             visibleNav={visibleNav}
