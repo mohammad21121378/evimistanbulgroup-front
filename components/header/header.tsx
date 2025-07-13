@@ -49,7 +49,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  React.useEffect(() => {
+  React.useEffect(() => { 
     const handleResize = () => {
       setMobile(window.innerWidth <= 768);
     };
