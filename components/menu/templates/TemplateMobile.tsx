@@ -37,5 +37,5 @@ export default function TemplateMobile({ title, children, li = false, arrow = tr
         </>
     );
 
-    return li ? <li ref={containerRef}>{content}</li> : <div className='w-full' ref={containerRef}>{content}</div>;
+    return li ? <li ref={containerRef}>{content}</li> : <div className='md:w-fit w-full' ref={containerRef}>{content}</div>;
 }

@@ -1,0 +1,27 @@
+@keyframes successPulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+      outline-offset: 2px;
+    }
+    40% {
+      transform: scale(1.4);
+      opacity: 0.8;
+      outline-offset: 2px;
+    }
+    80% {
+      transform: scale(0.5);
+      opacity: 0.5;
+      outline-offset: 1px;
+    }
+    100% {
+      transform: scale(0.2);
+      opacity: 0;
+      outline-offset: 0px;
+    }
+  }
+  
+  .animateSuccessPulse {
+    animation: successPulse 2.5s ease-in-out forwards;
+  }
+  

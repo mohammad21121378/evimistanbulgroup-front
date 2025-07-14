@@ -55,7 +55,7 @@ const GuidesAndInsightsListing: FC<GuidesAndInsightsListingProps> = ({
                         </svg>
                         </span>
                     </Link>
-                    <span className="text-xs text-gray-500 font-medium">{date}</span>
+                    <span className="text-sm text-gray-500 font-medium">{date}</span>
                 </div>
             </div>
         </div>

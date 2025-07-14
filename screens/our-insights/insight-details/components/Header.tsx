@@ -22,13 +22,14 @@ export default function Header({ article, readingTime }: Props) {
                     className="w-100 rounded-xl"
                 />
             </div>
-            <h2 className={classNames(classes.titleBig, '')}>{article.title}</h2>
-            <div className="flex justify-between items-center mt-5 ">
+            <h1 className={classNames(classes.titleBig, '')}>{article.title}</h1>
 
-                <ul className="sm:inline-flex list-disc items-center gap-8 text-sm">
+            <div className="md:flex md:justify-between items-center md:mt-5 mt-7 ">
+
+                <ul className="inline-flex flex-wrap sm:list-disc items-center md:gap-8 gap-3 text-sm">
                     <Link
                         href={`/our-insights/${article.category[0]?.url}`}
-                        className={`px-2 py-1 rounded font-medium text-white bg-blue-700 text-base`}
+                        className={`px-2 py-1 rounded font-medium text-white bg-blue-700 text-base w-fit`}
                     >
                         {article.category[0]?.title}
                     </Link>

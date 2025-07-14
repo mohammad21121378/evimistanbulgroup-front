@@ -27,8 +27,10 @@ export default function GuidesAndInsightsView({
   const t = useTranslations("GuidesAndInsights");
 
   return (
-      <section className={cn("container mt-12")}>
+    <section className={cn("section")}>
+      <div className="container">
         <div className={styles.content}>
+          
           <div className={styles.title_container}>
             <Heading type="heading-3">{title}</Heading>
             <div className={cn("paragraph-large", styles.subtitle)}>
@@ -39,13 +41,15 @@ export default function GuidesAndInsightsView({
           <Link href={button?.href ? button?.href : '#'} className={cn("button button-primary")}>
             {button?.text} {ArrowRight}
           </Link>
+
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-12">
           {useInsights()?.map((item, index) => (
             <GuidesAndInsightsIisting key={index} {...item} />
           ))}
         </div>
-      </section>
+      </div>
+    </section>
   );
 }

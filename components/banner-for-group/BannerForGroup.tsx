@@ -17,7 +17,7 @@ export default function BannerForGroup() {
                     At EvimIstanbul Group, our team consists of trusted industry experts,  advisors, and market researchers dedicated to delivering accurate, practical, and up-to-date insights across real estate, immigration, business, education, healthcare, tourism  and lifestyle in Turkey.
                 </p>
 
-                <Link className="flex justify-end items-center text-xs font-medium gap-1 text-orange-500 [&>svg]:!w-[13px]" href={'/'}>
+                <Link className="flex justify-end items-center text-sm font-medium gap-1 text-orange-500 [&>svg]:!w-[.75rem] [&>svg]:mt-0.5" href={'/'}>
                     About Us
                     {ArrowRight}
                 </Link>

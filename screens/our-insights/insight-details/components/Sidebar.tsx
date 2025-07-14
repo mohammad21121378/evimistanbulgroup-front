@@ -4,6 +4,7 @@ import classNames from "classnames";
 import { slugifyHeading } from "../utils/slugify";
 import { useScrollHighlight } from "../hooks/useScrollHighlight";
 import { Article } from "@/types/Article";
+import TableOfContents from "@/components/table-of-contents";
 
 interface Props {
     article: Article;
@@ -13,27 +14,10 @@ export default function ArticleSidebar({
     article,
 }: Props) {
 
-    const { activeSection } = useScrollHighlight(article.content);
-    
-
-    const scrollToSection = (heading: string) => {
-        const id = slugifyHeading(heading)
-        const section = document.getElementById(id);
-
-
-        if (section) {
-            window.scrollTo({
-                top: section.getBoundingClientRect().top + window.scrollY - 110,
-                behavior: "smooth",
-            });
-        }
-    };
-
     return (
-        <div className="col-span-3 overflow-auto sticky top-4">
-            <div className="sticky top-4 ">
-
-                {article.table_of_content ? article.table_of_content.length > 0 && (
+        <div className="md:col-span-3 col-span-1 overflow-visible relative md:pt-10">
+            <div className="sticky top-20 ">
+                {/* {article.table_of_content ? article.table_of_content.length > 0 && (
                     <div className="hidden md:block mb-4 sticky top-4">
                         <h2 className="font-bold text-lg text-gray-600">Table Of Content</h2>
                         <div className="steps-article mt-4 sticky top-4">
@@ -75,7 +59,11 @@ export default function ArticleSidebar({
                             })}
                         </div>
                     </div>
-                ) : ''}
+                ) : ''} */}
+
+                <div className="md:block hidden">
+                    <TableOfContents hasActiveIcon={false} transparent />
+                </div>
 
             </div>
         </div>
