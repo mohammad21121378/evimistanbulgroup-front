@@ -6,6 +6,13 @@ export default function AboutUs() {
     const { aboutUs } = MenuData;
 
     return (
-        <TemplateItemWithItems contentClassName="!grid-cols-1" title="About Us" items={aboutUs} width={14.375} />
+        <TemplateItemWithItems
+            title="About Us"
+            items={aboutUs}
+            width={14.375}
+            singleColumn
+            sectionClassName='!pt-0 !px-2 !pb-1'
+        />
+
     );
 }

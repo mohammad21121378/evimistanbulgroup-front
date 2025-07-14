@@ -10,6 +10,6 @@ export default function ContactUs({title}: Props) {
     const { contactUs } = MenuData;
 
     return (
-        <TemplateItemWithItems menuItemClassName={'justify-center text-center !px-0'} arrow={false} contentClassName="!grid-cols-1" title={title} items={contactUs} width={14} />
+        <TemplateItemWithItems sectionClassName='!p-0' menuItemClassName={'justify-center text-center !px-0 mt-1.5'} singleColumn arrow={false} title={title} items={contactUs} width={14} />
     );
 }

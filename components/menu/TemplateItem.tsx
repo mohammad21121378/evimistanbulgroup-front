@@ -9,7 +9,6 @@ export default function TemplateItem(props: Template) {
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
-        console.log('[TemplateItem] Mounting effect triggered');
         setLoaded(true);
 
         requestAnimationFrame(() => {
@@ -19,7 +18,6 @@ export default function TemplateItem(props: Template) {
         const fallback = setTimeout(() => {
             setLoaded(prev => {
                 if (!prev) {
-                    console.warn('⚠️ Fallback forced setLoaded(true)');
                     return true;
                 }
                 return prev;
@@ -44,6 +42,6 @@ export default function TemplateItem(props: Template) {
         };
     }, []);
 
-    if (!loaded) return;
+    if (!loaded) return null;
     return isDesktop ? <TemplateDesktop {...props} /> : <TemplateMobile {...props} />;
 }

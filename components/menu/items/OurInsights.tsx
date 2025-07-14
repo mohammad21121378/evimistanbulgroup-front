@@ -7,6 +7,6 @@ export default function OurInsights() {
     const { ourInsights } = MenuData;
 
     return (
-        <TemplateItemWithItems contentClassName="!grid-cols-1" sectionClassName='grid sm:grid-cols-2 grid-cols-1' title="Our Insights" items={ourInsights}  />
+        <TemplateItemWithItems title="Our Insights" seeAllRight items={ourInsights} width={37.5}  />
     );
 }

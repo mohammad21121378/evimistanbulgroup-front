@@ -117,14 +117,14 @@
 }
 
 @media (max-width: 1150px) {
-    .content>div{
+    .contentContainer{
         overflow: hidden;
         max-width: 850px !important;
     }
 }
 
 @media (max-width: 768px) {
-    .content>div{
+    .contentContainer{
         
         max-width: none !important;
         width: 100% !important;

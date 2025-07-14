@@ -253,7 +253,7 @@ export default function Hero() {
             </button>
           }
           <button
-            className={cn("button sticky -bottom-6", styles.button)}
+            className={cn("button sticky -bottom-6 z-10", styles.button)}
             onClick={handleApplyFilters}
           >
             Find Now

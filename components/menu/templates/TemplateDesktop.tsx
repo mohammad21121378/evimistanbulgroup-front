@@ -8,13 +8,13 @@ export default function TemplateDesktop({ title, children, li = true, arrow = fa
     const titleRef = useRef<HTMLDivElement | null>(null);
 
     const [show, setShow] = useState(false);
-    const [loadded, setLoadded] = useState(false);
+    const [loaded, setLoaded] = useState(false);
     const [titleCenter, setTitleCenter] = useState<number | null>(null);
     const [titlePos, setTitlePos] = useState<TitlePos>(null);
 
     useEffect(() => {
         setTimeout(() => {
-            setLoadded(true);
+            setLoaded(true);
         }, 400)
     }, []);
 
@@ -46,7 +46,7 @@ export default function TemplateDesktop({ title, children, li = true, arrow = fa
 
     useEffect(() => {
         calculateTitlePosition();
-    }, [show, titleRef.current]);
+    }, [show, titleRef]);
 
     useEffect(() => {
         setTimeout(() => {
@@ -96,7 +96,7 @@ export default function TemplateDesktop({ title, children, li = true, arrow = fa
     const handleMouseLeave = () => { };
 
     const handleMouseEnter = () => {
-        if (!loadded) {
+        if (!loaded) {
             setTimeout(() => {
                 setShow(true);
             }, 500);
