@@ -8,7 +8,7 @@ type Props = {
 
 export default function ContentTopPage({ title, subTitle, description }: Props) {
     return (
-        <section className="section !pt-10 !pb-6 text-center">
+        <section className="section !pt-8 !pb-6 text-center">
             <Heading type="heading-1">
                 {title}
             </Heading>
