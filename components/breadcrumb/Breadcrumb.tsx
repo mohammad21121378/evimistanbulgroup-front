@@ -2,11 +2,10 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { ReactNode } from 'react'
 
 type BreadcrumbItem = {
   label: string
-  href?: string // اگر null باشد یعنی غیرقابل کلیک (آیتم آخر)
+  href?: string
 }
 
 type BreadcrumbProps = {

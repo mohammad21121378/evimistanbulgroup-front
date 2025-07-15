@@ -9,7 +9,7 @@ import classNames from 'classnames';
 type Href = string | UrlObject;
 
 interface CustomLinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> {
-  href: Href;
+  href?: Href | boolean;
   children: ReactNode;
   className?: string;
   isExternal?: boolean;
@@ -70,9 +70,18 @@ const Link = ({
   }
 
   return (
-    <NextLink href={resolvedHref} className={classNames('transition-all duration-500', className)} {...props}>
-      {children}
-    </NextLink>
+    <>
+      {
+        noLink || !resolvedHref || typeof resolvedHref === 'boolean' ?
+          <div className={classNames('transition-all duration-500', className)} >
+            {children}
+          </div>
+          :
+          <NextLink href={resolvedHref!} className={classNames('transition-all duration-500', className)} {...props}>
+            {children}
+          </NextLink>
+      }
+    </>
   );
 };
 
