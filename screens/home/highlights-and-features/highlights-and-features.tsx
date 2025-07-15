@@ -16,7 +16,8 @@ export default function HighlightsAndFeatures() {
       <div className={cn("container")}>
         <div className={styles.content}>
           <div className={styles.title_container}>
-            <Heading type="heading-3">{t("title")}</Heading>
+
+            <Heading type="heading-3" className="xl:text-nowrap">{t("title")}</Heading>
             
             <div className={cn("paragraph-large", styles.subtitle)}>
               {t("description")}

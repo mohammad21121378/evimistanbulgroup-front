@@ -4,7 +4,6 @@ import { useState } from 'react';
 import styles from './Categories.module.css';
 import { categories as categoriesData } from './constants'
 import Link from '@/components/ui/Link';
-import classNames from 'classnames';
 
 export default function Categories({ category = "View all", categories = categoriesData }) {
 

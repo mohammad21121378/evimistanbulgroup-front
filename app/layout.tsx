@@ -3,9 +3,9 @@ import { ReactNode } from "react";
 import { Providers } from "./providers";
 
 export const metadata = {
-  title: "HeavenHomes - Real Estate Website Template",
+  title: "EvimIstanbul",
   description:
-    "HeavenHomes is a real estate website template that helps you find the best property for you.",
+    "EvimIstanbul Group®",
 };
 
 type RootLayoutProps = {

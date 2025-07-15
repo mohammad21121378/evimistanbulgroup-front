@@ -11,7 +11,7 @@ interface HeroProps {
 
 export default function Hero({ category }: HeroProps) {
 
-    let breadCrumb: {label: string, href?: string}[] ;
+    let breadCrumb: { label: string, href?: string }[];
 
     if (category) {
         breadCrumb = [

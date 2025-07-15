@@ -4,11 +4,13 @@ import { useSearchParams, useRouter } from "next/navigation";
 interface UsePaginationOptions<T> {
     limit: number;
     initialData: T[];
+    scrollTo?: {desktop: number; mobile: number;}
 }
 
 export function useNumberedPagination<T>({
     limit,
     initialData,
+    scrollTo={desktop: 90, mobile:450}
 }: UsePaginationOptions<T>) {
 
     const router = useRouter();
@@ -38,13 +40,14 @@ export function useNumberedPagination<T>({
 
         requestAnimationFrame(() => {
             if (loadedPage) {
-                const scrollTarget = window.innerWidth < 768 ? 450 : 100;
+                const scrollTarget = window.innerWidth < 768 ? scrollTo.mobile : scrollTo.desktop;
                 window.scrollTo({
                     top: scrollTarget,
                     behavior: "smooth",
                 });
             }
         });
+
     }, [currentPage]);
 
     const totalPages = Math.ceil(initialData.length / limit);

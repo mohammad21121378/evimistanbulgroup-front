@@ -22,7 +22,6 @@ export default function SearchBar({
   const t = useTranslations("searchBar");
 
   const propertyOptions = [
-    { value: "", label: t("options.default") },
     { value: "Buy Property in Turkey", label: t("options.buyProperty") },
     { value: "Start a Company in Turkey", label: t("options.startCompany") },
     { value: "Apply for Turkish Citizenship", label: t("options.applyCitizenship") },

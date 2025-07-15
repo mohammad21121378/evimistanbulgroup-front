@@ -11,8 +11,6 @@ export default function PropertyDetailPage({ item }: any) {
     <Layout>
       <Hero item={item} />
       <Overview item={item} />
-      {/* <AdditionalGallery images={item.images} /> */}
-      {/* <Location /> */}
       <RelatedProperties item={item} />
       <RelatedInsights />
     </Layout>

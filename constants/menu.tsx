@@ -289,7 +289,7 @@ export const MenuData = {
         },
         ourInsights2: {
             title: '',
-            seeAllHref: '/',
+            seeAllHref: '/our-insights',
             items: [
                 {
                     icon: <svg width="1.5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

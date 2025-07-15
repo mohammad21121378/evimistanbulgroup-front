@@ -1,29 +1,27 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
-import styles from "./hero.module.css";
 import cn from "classnames";
+
+import styles from "./hero.module.css";
+
 import PropertyListing from "@/components/property-listing";
 import { Listings } from "@/constants/mock";
 import originalTurkiye from "@/constants/turkiye.json";
 import SymptomSelector from "@/components/symptom-selector/symptom-selector";
-import { featureItems, propertyTypes, bedrooms as bedroomsOptions, bathrooms as bathroomsOptions } from "./constants";
 import RangeSlider from "@/components/range-slider/RangeSlider";
 import DropdownWithChildren from "@/components/dropdown-with-children/DropdownWithChildren";
 import { Breadcrumb } from "@/components/breadcrumb/Breadcrumb";
-import SortDropdown from "@/components/sort-dropdown/SortDropdown";
-import { usePagination } from "@/hooks/usePagination";
-import LoadMoreButton from "@/components/ui/LoadMoreButton";
+import SortDropdown from "@/components/sort-dropdown";
 import Pagination from "@/components/ui/Pagination";
 import { useNumberedPagination } from "@/hooks/useNumberedPagination";
-import { PropertyType } from "@/types/Property";
+
+import { featureItems, propertyTypes, bedrooms as bedroomsOptions, bathrooms as bathroomsOptions } from "./constants";
 
 const turkiye = originalTurkiye.map((province) => ({
   ...province,
   children: province.districts,
 }));
-
-const ITEMS_PER_PAGE = 6
 
 const defaultListing = Listings.flatMap((listingCategory) => listingCategory.items)
 
@@ -73,52 +71,6 @@ export default function Hero() {
     setFilteredListings(defaultListing)
   }
 
-  // const filteredListings = applyFilters
-  //   ? Listings.flatMap((listingCategory) =>
-  //     listingCategory.items.filter((item) => {
-
-  //       const matchesLocation = locationsSelected.length
-  //         ? locationsSelected.includes(item.location.toLowerCase())
-  //         : true;
-
-  //       const matchesPropertyType = propertyTypesSelected.length
-  //         ? propertyTypesSelected.includes(item.category)
-  //         : true;
-
-
-  //       return (
-  //         matchesLocation &&
-  //         matchesPropertyType
-  //       );
-  //     })
-  //   )
-  //   : Listings.flatMap((listingCategory) => listingCategory.items);
-
-  // const filteredListings = useMemo(() => {
-  //   if (!applyFilters) {
-  //     return Listings.flatMap((listingCategory) => listingCategory.items);
-  //   }
-
-  //   return Listings.flatMap((listingCategory) =>
-  //       listingCategory.items.filter((item) => {
-  
-  //         const matchesLocation = locationsSelected.length
-  //           ? locationsSelected.includes(item.location.toLowerCase())
-  //           : true;
-  
-  //         const matchesPropertyType = propertyTypesSelected.length
-  //           ? propertyTypesSelected.includes(item.category)
-  //           : true;
-  
-  
-  //         return (
-  //           matchesLocation &&
-  //           matchesPropertyType
-  //         );
-  //       })
-  //     )
-  // }, [applyFilters, Listings, locationsSelected, propertyTypesSelected]);
-
   const sortedListings = useMemo(() => {
     return [...filteredListings].sort((a, b) => {
       if (sortOption === "price-asc") return a.price - b.price;
@@ -127,21 +79,6 @@ export default function Hero() {
       return 0;
     })
   }, [sortOption, filteredListings]);
-
-
-  // const matchesAddress = address
-  //   ? item.address.toLowerCase().includes(address.toLowerCase())
-  //   : true;
-  // const matchesPropertyType =
-  //   propertyType === "Type of Property" || propertyType === null
-  //     ? true
-  //     : item.category === propertyType;
-  // const matchesBedrooms = bedrooms
-  //   ? item.features.some((f) => f.name === "bd" && f.value >= bedrooms)
-  //   : true;
-  // const matchesBathrooms = bathrooms
-  //   ? item.features.some((f) => f.name === "ba" && f.value >= bathrooms)
-  //   : true;
 
   const { currentPage, totalPages, items: paginatedListings, goToPage } = useNumberedPagination({
     limit: 6,

@@ -1,8 +1,5 @@
 "use client";
 
-import classNames from "classnames";
-import { slugifyHeading } from "../utils/slugify";
-import { useScrollHighlight } from "../hooks/useScrollHighlight";
 import { Article } from "@/types/Article";
 import TableOfContents from "@/components/table-of-contents";
 

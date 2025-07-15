@@ -72,7 +72,7 @@ export default function TableOfContents({ className, transparent=false, hasActiv
       )}
     >
       <Heading type="heading-6" className="mb-3">Table of Contents</Heading>
-      <ul className="space-y-2 text-lg pl-6">
+      <ul className="space-y-2 text-lg">
         {items.map((item) => {
           const isActive = item.id === activeId;
           return (
@@ -80,14 +80,14 @@ export default function TableOfContents({ className, transparent=false, hasActiv
               <a
                 href={`#${item.id}`}
                 className={classNames(
-                  "flex items-center gap-0 transition truncate",
+                  "flex items-center gap-0 transition truncate pl-6",
                   {
                     "text-blue-600 font-bold": isActive,
                     "text-gray-700 hover:text-blue-600 font-normal": !isActive,
                   }
                 )}
               >
-                {hasActiveIcon && isActive && <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" className="bi bi-arrow-right-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>}
+                <div className="w-7">{hasActiveIcon && isActive && <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-arrow-right-short w-7" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>}</div>
                 <span>{item.text}</span>
               </a>
             </li>

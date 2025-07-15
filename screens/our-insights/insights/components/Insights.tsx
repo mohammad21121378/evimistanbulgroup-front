@@ -1,18 +1,18 @@
 'use client';
 
-import { usePagination } from '@/hooks/usePagination';
 import GuidesAndInsightsListing from '@/components/guides-and-Insights-listing';
-import LoadMoreButton from '@/components/ui/LoadMoreButton';
-import { useMockInsights } from '../hooks/useMockInsights';
+import { useNumberedPagination } from '@/hooks/useNumberedPagination';
+import Pagination from '@/components/ui/Pagination';
 
-const LIMIT = 8;
+import { useMockInsights } from '../hooks/useMockInsights';
 
 export default function Insights() {
   const mockData = useMockInsights(25);
 
-  const { items, loadMore, loading, hasMore } = usePagination({
-    limit: LIMIT,
+  const { currentPage, totalPages, items, goToPage } = useNumberedPagination({
+    limit: 12,
     initialData: mockData,
+    scrollTo: {desktop: 450, mobile:925}
   });
 
   return (
@@ -23,11 +23,15 @@ export default function Insights() {
         ))}
       </div>
 
-      {hasMore && (
-        <div className="text-center mt-10">
-          <LoadMoreButton onClick={loadMore} loading={loading} />
-        </div>
-      )}
+      <div className="sm:col-span-2 mt-10">
+        {totalPages > 1 && (
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={goToPage}
+          />
+        )}
+      </div>
     </section>
   );
 }

@@ -27,9 +27,9 @@ const authorSemibold = localFont({
 });
 
 export const metadata = {
-  title: "HeavenHomes - Real Estate Website Template",
+  title: "EvimIstanbul",
   description:
-    "HeavenHomes is a real estate website template that helps you find the best property for you.",
+    "EvimIstanbul Group®",
 };
 
 type LocaleLayoutProps = {
@@ -51,7 +51,7 @@ export default async function LocaleLayout({ children, params: { locale } }: Loc
   const isRTL = locale === "fa" || locale === "ar";
 
   return (
-    <html lang={locale} dir="ltr"> {/* dir={isRTL ? "rtl" : "ltr"} */}
+    <html lang={locale} dir={isRTL ? "rtl" : "ltr"}>
       <body
         className={cn(
           inter.variable,
