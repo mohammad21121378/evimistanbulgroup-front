@@ -80,7 +80,7 @@ export default function TableOfContents({ className, transparent=false, hasActiv
               <a
                 href={`#${item.id}`}
                 className={classNames(
-                  "flex items-center gap-0 transition truncate pl-6",
+                  "flex items-center gap-0 transition truncate",
                   {
                     "text-blue-600 font-bold": isActive,
                     "text-gray-700 hover:text-blue-600 font-normal": !isActive,
