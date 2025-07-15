@@ -1,8 +1,6 @@
 import Layout from "@/components/Layout";
 import Hero from "./hero";
-import Location from "./location";
 import Overview from "./overview";
-import AdditionalGallery from "./additional-gallery";
 import RelatedProperties from "./related-properties";
 import RelatedInsights from "./related-insights";
 

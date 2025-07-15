@@ -6,8 +6,8 @@ import cn from "classnames";
 import Image from "next/image";
 import { Heading } from "@/components/typography";
 import { ArrowRight, Bankrate, Corning, Flexport } from "@/constants/icons";
-import Link from "next/link";
 import { useTranslations } from "next-intl";
+import Link from "@/components/ui/Link";
 
 export default function Partners() {
   const t = useTranslations("Partners");
@@ -25,7 +25,7 @@ export default function Partners() {
           <p className={cn("paragraph-large", styles.text)}>
             {t("description")}
           </p>
-          <Link href="/about" className={cn("button", styles.button)}>
+          <Link href="/about-us" className={cn("button", styles.button)}>
             {t("button")} {ArrowRight}
           </Link>
         </div>

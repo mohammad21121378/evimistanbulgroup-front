@@ -22,7 +22,7 @@ export default function RelatedInsights() {
           </Link>
         </div>
 
-        <div className="grid sm:grid-cols-2 grid-cols-1 md:grid-cols-3 gap-4 mt-20">
+        <div className="grid sm:grid-cols-2 grid-cols-1 md:grid-cols-3 gap-4 mt-14">
           {useInsights()?.map((item, index) => (
             <GuidesAndInsightsIisting key={index} {...item} />
           ))}

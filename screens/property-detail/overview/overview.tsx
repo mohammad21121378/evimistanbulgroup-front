@@ -8,45 +8,9 @@ import PropertyFeatures from "@/components/property-features";
 import { Plus, Print, Share } from "@/constants/icons";
 import classNames from "classnames";
 import TableOfContents from "@/components/table-of-contents";
+import { details } from "../contsants";
 
-const details = [
-  {
-    id: 1,
-    title: "General Information",
-    features: [
-      {
-        id: 1,
-        text: "This beautifully priced home offers a fantastic value for a serene and spacious living environment in the desirable HeavenHomes community.",
-      },
-      {
-        id: 2,
-        text: "The home features a light and bright floor plan with a large living room, dining area, and a spacious kitchen with a breakfast bar and plenty of cabinet and counter space.",
-      },
-      {
-        id: 3,
-        text: "The master bedroom is large and comfortable, and the master bath features a large tub/shower combo.",
-      },
-      {
-        id: 4,
-        text: "The second bedroom is also spacious and comfortable, and the second bath features a large tub/shower combo.",
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: "Interior Details",
-    features: [
-      {
-        id: 1,
-        text: "This beautifully priced home offers a fantastic value for a serene and spacious living environment in the desirable HeavenHomes community.",
-      },
-      {
-        id: 2,
-        text: "The home features a light and bright floor plan with a large living room, dining area, and a spacious kitchen with a breakfast bar and plenty of cabinet and counter space.",
-      },
-    ],
-  },
-];
+
 
 type OverviewProps = {
   item: {
@@ -120,7 +84,7 @@ export default function Overview({ item }: OverviewProps) {
           </div>
 
           <div className={cn("paragraph-medium", styles.description)}>
-            {item.description}
+            A spacious and modern home with an open floor plan, large windows, and a beautifully landscaped garden. Perfect for those seeking peace and tranquility.A spacious and modern home with an open floor A spacious and modern home with an open floor plan, large windows, and a beautifully landscaped garden. Perfect for those seeking peace and tranquility.A spacious and modern home with an open floor
           </div>
 
           <div className={styles.details}>
@@ -188,30 +152,32 @@ export default function Overview({ item }: OverviewProps) {
             </div>
           </div>
 
-          <div className="md:block hidden">
-            <TableOfContents />
-          </div>
+          <div className="md:grid hidden overflow-visible h-full">
+            <div className="sticky ">
+              <TableOfContents hasCustomizeIcon />
+              <div className="flex justify-around mt-5 lg:px-10">
+                {
+                  [
+                    {
+                      title: 'Print',
+                      svg: Print,
+                    },
+                    {
+                      title: 'Share',
+                      svg: Share
+                    }
+                  ].map(item =>
+                    <div className="flex gap-1 font-semibold items-center">
+                      {item.svg}
+                      {item.title}
+                    </div>
+                  )
 
-          <div className="flex justify-around lg:px-10">
-            {
-              [
-                {
-                  title: 'Print',
-                  svg: Print,
-                },
-                {
-                  title: 'Share',
-                  svg: Share
                 }
-              ].map(item =>
-                <div className="flex gap-1 font-semibold items-center">
-                  {item.svg}
-                  {item.title}
-                </div>
-              )
-
-            }
+              </div>
+            </div>
           </div>
+
 
         </div>
       </div>
