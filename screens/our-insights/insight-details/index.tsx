@@ -75,9 +75,7 @@ export default function InsightDetails() {
         </div>
       </div>
 
-      <div className="mb-14">
         <RealatedInsights />
-      </div>
 
     </Layout>
   );
