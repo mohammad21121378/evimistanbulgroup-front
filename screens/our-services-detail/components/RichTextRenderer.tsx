@@ -39,7 +39,7 @@ export default function RichTextRenderer({ content, className }: Props) {
       currentLine.push(
         <Comp
           key={i}
-          className={classNames(item.classes, 'px-0.5 text-lg', {"font-normal": item.type === "normal"})}
+          className={classNames(item.classes, 'pr-1 text-lg', {"font-normal": item.type === "normal"})}
           style={{ color: item.color || undefined }}
         >
           {item.value}

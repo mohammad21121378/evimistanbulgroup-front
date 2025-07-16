@@ -33,3 +33,17 @@ export type DataType = {
 };
 
 export type ComponentsType = typeof components
+
+export interface NestedListItem {
+    title: string;
+    subItems: string[];
+    description?: string | RichContent;
+  }
+  
+  export interface ListBlock {
+    type: "list" | "olList";
+    value: (string | NestedListItem)[];
+    classNames?: string;
+    subClassNames?: string;
+    parentClassNames?: string;
+  }

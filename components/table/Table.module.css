@@ -1,5 +1,5 @@
 .wrapper{
-    border-radius: 12px;
+    border-radius: 8px;
     border: 2px solid #E2E8F0;
 }
 
@@ -7,14 +7,14 @@
     border-collapse: separate;
     border-spacing: 0;
     overflow: hidden;
-    border-radius: 6px;
+    border-radius: 8px;
 }
 
 .table th,
 .table td {
     border: none;
     border-bottom: 2px solid #E2E8F0;
-    padding: 16px 12px;
+    padding: 16px 8px;
     text-align: center;
     border-right: 2px solid #E2E8F0;
 }  

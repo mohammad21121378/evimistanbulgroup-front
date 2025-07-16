@@ -32,7 +32,7 @@ export default function UserInfo({
 
                 <div>
                     <h2 className="text-xl font-medium">{fullName}</h2>
-                    <p className="text-slate-500 mt-1 font-normal text-base">{role}</p>
+                    <p className="text-slate-500 mt-1 font-medium text-base">{role}</p>
                 </div>
             </div>
 
