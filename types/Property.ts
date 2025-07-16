@@ -15,4 +15,5 @@ export type PropertyType = {
         value: string | number;
       }[];
     };
+    className?: string
   };

@@ -1,13 +1,12 @@
-import React, { useState, useEffect, ReactNode, useMemo } from "react";
+import React, { useEffect } from "react";
 import styles from "./symptom-selector.module.css"
 import SymptomSelectorItem from "./symptom-selector-item";
 import { Symptom, SymptomItem, SymptomSelectorProps } from "./types";
-import { filterAndSortSymptoms } from "./filterAndSortSymptoms";
 import { useSymptom } from "./useSymptom";
 import DropdownWithChildren from "../dropdown-with-children/DropdownWithChildren";
 
 
-const SymptomSelector = ({ symptoms, search = true, multiple = true, title = "Klinik Belirtilen", setSelected, selected = false, defaultIsOpen = false, placeholder = 'Search...', allowForSelectAllChildren = false, parentIsLabel = false, svgtitle }: SymptomSelectorProps) => {
+const SymptomSelector = ({ symptoms, search = true, multiple = true, title = "Klinik Belirtilen", setSelected, selected = false, defaultIsOpen = false, placeholder = 'Search...', allowForSelectAllChildren = false, parentIsLabel = false, svgtitle, svgArrow=true }: SymptomSelectorProps) => {
 
     const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value.toLowerCase());
@@ -29,7 +28,7 @@ const SymptomSelector = ({ symptoms, search = true, multiple = true, title = "Kl
     }, []);
 
     return (
-        <DropdownWithChildren title={title} svg={svgtitle} key={title}>
+        <DropdownWithChildren svgArrow={svgArrow} title={title} svg={svgtitle} key={title}>
                     {search && <div className={styles["input-wrapper"]}>
                         <input
                             type="text"

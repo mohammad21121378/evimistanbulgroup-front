@@ -21,7 +21,8 @@ export type SymptomSelectorProps = {
     placeholder?: string;
     allowForSelectAllChildren?: boolean;
     parentIsLabel?: boolean;
-    svgtitle?: ReactNode
+    svgtitle?: ReactNode;
+    svgArrow?: boolean
 };
 
 export interface SymptomSelectorItemProps {

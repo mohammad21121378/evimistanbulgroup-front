@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import cn from "classnames";
 import "@/styles/index.css";
+import "tippy.js/dist/tippy.css";
 import { Providers } from "../providers";
 import { routing } from '@/i18n/routing';
 import { ReactNode } from "react";

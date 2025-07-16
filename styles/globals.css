@@ -7,6 +7,10 @@ html {
   scroll-behavior: smooth;
 }
 
+html, body {
+  overflow-x: clip;
+}
+
 @media (max-width: 1650px) {
   html {
     font-size: 14px;
@@ -32,4 +36,22 @@ html {
 .scrollbar-sm {
   scrollbar-width: thin !important;
   scrollbar-gutter: stable;
+}
+
+.gm-style-iw button[aria-label="Close"] {
+  display: none !important;
+}
+
+.fade-in-animate {
+  animation: FadeInAnimate .5s ease-in-out forwards;
+}
+
+@keyframes FadeInAnimate {
+  0% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
+  }
 }
