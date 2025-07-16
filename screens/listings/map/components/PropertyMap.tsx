@@ -58,7 +58,9 @@ export default function PropertyMap() {
 
   return (
     <GoogleMap
-      onLoad={(map) => (mapRef.current = map)}
+      onLoad={(map) => {
+        mapRef.current = map;
+      }}
       mapContainerStyle={containerStyle}
       center={center}
       zoom={11}
