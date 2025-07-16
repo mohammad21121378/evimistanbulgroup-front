@@ -20,7 +20,7 @@ const containerStyle = {
 export default function PropertyMap() {
 
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: undefined,
+    googleMapsApiKey: "AIzaSyDMrYr9uVDCqL-7okyHX3RAIHvO5QUHSFI",
   });
 
   const { properties } = useProperties();
