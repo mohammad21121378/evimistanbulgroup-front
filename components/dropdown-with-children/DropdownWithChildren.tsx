@@ -18,7 +18,7 @@ export default function DropdownWithChildren({
     const [open, setOpen] = useState(false)
 
     return (
-        <div className="bg-white rounded-xl">
+        <div className="bg-white rounded-xl pointer-events-auto">
 
             <div className="flex justify-between items-center cursor-pointer py-3 px-4 z-10" onClick={() => setOpen(!open)}>
 

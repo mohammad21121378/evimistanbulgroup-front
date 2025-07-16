@@ -50,7 +50,7 @@ export default function FieldsFilter({
 }: Props) {
     return (
         <>
-            <div>
+            <div className="">
                 <SymptomSelector
                     title={"Location"}
                     svgtitle={iconsforFilters["Location"]}
