@@ -1,0 +1,34 @@
+.wrapper{
+    border-radius: 12px;
+    border: 2px solid #E2E8F0;
+}
+
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.table th,
+.table td {
+    border: none;
+    border-bottom: 2px solid #E2E8F0;
+    padding: 16px 12px;
+    text-align: center;
+    border-right: 2px solid #E2E8F0;
+}  
+
+.table th{
+    color: #64748B !important;
+    font-weight: bold;
+}
+
+.table th:last-child,
+.table td:last-child {
+    border-right: none;
+}
+
+.table tbody tr:last-child td {
+    border-bottom: none;
+}

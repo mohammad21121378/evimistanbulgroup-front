@@ -25,6 +25,10 @@ html {
   }
 }
 
+.border-r{
+  border-right-width: 1px solid #E2E8F0 !important;
+}
+
 .scrollbar-sm {
   scrollbar-width: thin !important;
   scrollbar-gutter: stable;
