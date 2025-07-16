@@ -22,7 +22,7 @@ export default function DropdownWithChildren({
 
             <div className="flex justify-between items-center cursor-pointer py-3 px-4 z-10" onClick={() => setOpen(!open)}>
 
-                <div className="flex items-center gap-2 text-slate-500 font-semibold text-lg truncate">
+                <div className="flex items-center gap-2 text-slate-500 font-semibold text-base truncate">
                     <div>
                         {svg}
                     </div>

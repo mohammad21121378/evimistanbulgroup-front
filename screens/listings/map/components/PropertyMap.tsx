@@ -13,7 +13,7 @@ import { Loader } from "lucide-react";
 
 const containerStyle = {
   width: "100%",
-  height: "33rem",
+  height: "36rem",
   borderRadius: 16
 };
 
