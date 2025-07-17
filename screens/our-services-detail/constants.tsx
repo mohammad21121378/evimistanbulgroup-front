@@ -118,7 +118,7 @@ export const servicesData = [
       },
 
       {
-        type: 'checkOptions'
+        type: 'contactForm'
       },
 
       {
@@ -562,7 +562,7 @@ export const servicesData = [
       },
 
       {
-        type: 'checkOptions'
+        type: 'contactForm'
       },
 
       {
@@ -824,7 +824,7 @@ export const servicesData = [
       },
 
       {
-        type: 'checkOptions'
+        type: 'contactForm'
       },
 
       {

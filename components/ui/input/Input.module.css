@@ -1,0 +1,38 @@
+
+.box select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: none;
+    cursor: pointer;
+}
+
+.label{
+    transition: all .2s;
+    cursor: text;
+}
+
+.input:focus ~ .label,
+.input:not(:placeholder-shown) ~ .label
+{
+    top: 0 !important;
+    font-size: .8rem !important;
+}
+
+.input:focus ~ .label:before,
+.input:not(:placeholder-shown) ~ .label:before
+{
+    content: '';
+    position: absolute;
+    top: calc(50% - .4rem);
+    height: calc(6px + .065rem);
+    width: calc(100% + 10px);
+    background-color: #fff;
+    left: -5px;
+    z-index: 8;
+}
+
+.label div {
+    z-index: 9;
+    position: relative;
+}

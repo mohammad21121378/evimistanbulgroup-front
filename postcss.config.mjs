@@ -10,7 +10,7 @@ const config = {
       propList: ['*', '!letter-spacing'],
       replace: true,
       mediaQuery: false,
-      minPixelValue: 1,
+      minPixelValue: 2,
       exclude: /node_modules/i,
       selectorBlackList: [
         /\.container/,

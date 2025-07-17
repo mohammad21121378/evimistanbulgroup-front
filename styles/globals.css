@@ -55,3 +55,70 @@ html, body {
       opacity: 1;
   }
 }
+
+.selected-flag .flag .arrow {
+  display: none !important; /* حذف آیکن پیش‌فرض */
+}
+.flag-dropdown .search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+}
+.flag-dropdown .search .search-emoji {
+  display: none;
+}
+.flag-dropdown .search .search-box {
+  width: 100%;
+  padding: 12px 8px !important;
+  border-radius: 8px !important;
+  margin-left: 0 !important;
+}
+.flag-dropdown .search .search-box:focus {
+  border-color: #3b82f6 !important;
+}
+.flag-dropdown .search .search-box::placeholder {
+  text-transform: capitalize !important;
+}
+
+.react-tel-input .flag-dropdown,
+.react-tel-input .flag-dropdown:hover,
+.react-tel-input .flag-dropdown:focus,
+.react-tel-input .selected-flag:hover, 
+.react-tel-input .selected-flag:focus{
+  background-color: #F1F5F9 !important;
+  border-radius: 11px 0 0 11px !important;
+  /* padding-left: 5px !important; */
+}
+
+.flag-dropdown {
+  border-radius: 10px 0 0 10px !important;
+
+}
+
+.react-tel-input .form-control{
+  border: 0 !important;
+  border-radius: 10px !important;
+}
+
+.selected-flag .flag{
+  transform: scale(1.1) !important;
+  margin-left: -2px;
+  margin-top: -1px;
+}
+
+.bg-gradient-custom {
+  background: linear-gradient(
+        90deg,
+        var(--orange-600) 0%,
+        var(--orange-500) 100%
+    );
+}
+
+.bg-gradient-custom:hover {
+  background: linear-gradient(
+        90deg,
+        var(--orange-500) 0%,
+        var(--orange-600) 100%
+    );
+}
