@@ -31,14 +31,17 @@ export const serviceSections = [
       {
         title: "Buy Property in Turkey",
         description: "Verified listings for investment, lifestyle, and citizenship anywhere in Turkey.",
+
       },
       {
         title: "Sell Your Property",
         description: "We list, market, and manage the entire sales process for foreign property owners.",
+        href: '/sell-your-property-in-turkey'
       },
       {
         title: "Rental Services",
         description: "Residential & commercial rentals with tenant vetting, contracts, and income management.",
+        href: '/rental-services-in-turkey'
       },
     ],
   },
