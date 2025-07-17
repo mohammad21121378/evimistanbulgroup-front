@@ -1,4 +1,5 @@
 import { Heading } from "../typography";
+import Markdown from "markdown-to-jsx";
 
 type Props = {
     title?: string;
@@ -13,13 +14,17 @@ export default function ContentTopPage({ title, subTitle, description }: Props) 
                 {title}
             </Heading>
 
-            <Heading type="heading-5" className="mt-12 text-gray-500">
+            <Heading type="heading-5" className="mt-12 text-gray-500 whitespace-pre-line">
                 {subTitle}
             </Heading>
 
-            <p className="text-lg text-gray-500 mt-6 whitespace-pre-line">
-                {description}
-            </p>
+            {description &&
+                <p className="text-lg text-gray-500 mt-6 whitespace-pre-line">
+                    <Markdown options={{ forceInline: true }}>
+                        {description}
+                    </Markdown>
+                </p>
+            }
         </section>
     );
 }

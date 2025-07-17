@@ -8,7 +8,7 @@ export const servicesData = [
         data: {
           title: "Turkish Citizenship by Investment",
           subTitle: "Secure Your Turkish Passport in Just 3–6 Months with EvimIstanbul Group",
-          description: "Fast. Legal. Profitable. Gain second citizenship through property or financial investment in Turkey — backed by government approvals, zero residency requirements, and full family inclusion. EvimIstanbul Group is your one-stop solution for acquiring Turkish citizenship smoothly and securely.",
+          description: `**Fast. Legal. Profitable.** Gain second citizenship through property or financial investment in Turkey — backed by government approvals, zero residency requirements, and full family inclusion. EvimIstanbul Group is your one-stop solution for acquiring Turkish citizenship smoothly and securely.`,
         },
       },
 
@@ -154,45 +154,6 @@ export const servicesData = [
             value: [
               {
                 type: 'bold', value: 'Timeline: Entire process takes 3 to 6 months. Our legal team handles everything on your behalf — no need to live in Turkey or attend any interview.'
-              },
-            ]
-          },
-        ]
-      },
-
-      {
-        type: 'content',
-        data: [
-          {
-            type: 'title',
-            value: 'Required Documents (Main Applicant + Family)'
-          },
-          {
-            type: 'richText',
-            value: [
-              {
-                type: 'bold', value: 'To apply for Turkish Citizenship, the following documents are needed for both the main applicant and all included family members:'
-              },
-            ]
-          },
-          {
-            type: 'list',
-            value: [
-              'Passport copies',
-              'Birth certificates',
-              'Marriage certificate (if applicable)',
-              'Police clearance',
-              'Proof of funds & investment',
-              'Biometric photos',
-              'Health insurance',
-              'Notarized power of attorney (if applying remotely)',
-            ]
-          },
-          {
-            type: 'richText',
-            value: [
-              {
-                type: 'bold', value: 'EvimIstanbul Group handles all translations, notarizations, and apostilles for a smooth and stress-free process.'
               },
             ]
           },
