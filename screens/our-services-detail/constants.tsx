@@ -296,7 +296,6 @@ export const servicesData = [
 
       {
         type: 'faq',
-        title: 'FAQ Highlights',
         data: [
           {
             Q: "Can I include my spouse and children?",
@@ -609,7 +608,6 @@ export const servicesData = [
 
       {
         type: 'faq',
-        title: 'FAQ Highlights',
         data: [
 
           {
@@ -858,7 +856,7 @@ export const servicesData = [
           },
         ],
       },
-      
+
       {
         type: 'alert',
         data: [
@@ -877,7 +875,6 @@ export const servicesData = [
 
       {
         type: 'faq',
-        title: 'FAQ Highlights',
         data: [
           {
             Q: "Who can apply for a work permit in Turkey?",
@@ -910,6 +907,467 @@ export const servicesData = [
         type: 'usHelp',
         data: {
           description: "EvimIstanbul is more than a consultancy — we are your legal partner in working and living in Turkey. Join hundreds of professionals, remote workers, and entrepreneurs who’ve trusted us for smooth, compliant work permit approvals.",
+          buttonHref: '/'
+        }
+      }
+    ],
+    sidebar: {
+      usefulLinks: {},
+      counseling: {},
+    }
+  },
+
+  {
+    slug: "sell-your-property-in-turkey",
+    sections: [
+
+      {
+        type: "introduction",
+        data: {
+          title: "Sell Your Property in Turkey",
+          subTitle: "Sell with Confidence. Maximize Your Return. Leave the Hassle to Us.",
+          description: "If you’re a foreign property owner in Turkey and ready to sell, EvimIstanbul Group makes the process simple, secure, and profitable. Whether it's an apartment in Istanbul, a villa in Bodrum, or a commercial unit in Antalya, we help you market and sell your property fast — with full legal support, expert valuation, and access to international buyers.",
+        },
+      },
+
+      {
+        type: "userInfo",
+        data: {
+          fullName: "Mohamad Aziz Sultan",
+          role: "Executive Board Member & CMO",
+          avatar: "Mohamad-Aziz-Sultan.jpg",
+          description: `“Selling real estate as a foreigner in Turkey can be overwhelming. At EvimIstanbul, we’ve built a system designed for speed, security, and results — giving you the power to sell your property confidently and from anywhere in the world.”`,
+        },
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Why Sell with EvimIstanbul Group?',
+          },
+          {
+            type: 'list',
+            value: [
+
+              {
+                title: 'Global Network of Buyers',
+                description: 'We actively promote your property to thousands of vetted investors, homebuyers, and relocation clients across Europe, the Gulf, Russia, Central Asia, and beyond.'
+              },
+
+              {
+                title: 'Strategic Marketing Across Multiple Channels',
+                description: 'Your listing is featured on top real estate platforms, search-optimized Google Ads, and our own property marketplace. We also leverage:',
+                subItems: [
+                  'Broadcast groups and forums',
+                  'Multilingual social media pages',
+                  'Real estate influencer partnerships',
+                  'Paid advertising campaigns',
+                ]
+              },
+              {
+                title: 'Partnered Sales Teams & Broker Network',
+                description: 'We collaborate with Turkey’s leading real estate agencies, licensed brokers, and relocation companies to increase visibility and boost conversions — with full commission management.'
+              },
+
+              {
+                title: 'Expert Pricing & Sales Strategy',
+                description: 'We analyze real-time market data to set the right price and position your property for a fast sale with maximum ROI.'
+              },
+
+              {
+                title: 'All Legal & Tax Formalities Handled',
+                description: 'From drafting the sale agreement and preparing the Tapu transfer to coordinating Power of Attorney (POA), notary translation, and capital gains tax — our legal team handles it all.'
+              },
+
+              {
+                title: 'Remote Selling Made Easy',
+                description: 'You don’t have to be in Turkey to sell your property. With POA and secure document sharing, we can represent you throughout the process.'
+              },
+            ],
+          }
+        ],
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Who We Help',
+          },
+          {
+            type: 'list',
+            classNames: 'ml-7',
+            value: [
+              'Foreign property owners looking to liquidate investments',
+              'Expats relocating and selling second homes',
+              'Developers with completed units to offload',
+              'Landowners looking to sell parcels or plots',
+              'After getting released from citizenship program',
+            ],
+          },
+          {
+            type: 'richText',
+            value: 'No matter your reason, we provide fast, transparent, and full-service support.'
+          }
+        ],
+      },
+
+      {
+        type: 'contactForm',
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Our Selling Process',
+          },
+          {
+            type: 'list',
+            classNames: '!ml-7 !list-[lower-alpha] !list-outside !pl-6',
+            value: [
+              'Free Property Evaluation – Get expert pricing based on market conditions',
+              'Listing & Marketing Launch – We photograph, write descriptions, and publish across networks',
+              'Buyer Screening & Negotiation – Only serious leads are presented; we handle all negotiations',
+              'Secure Contracting – Sales agreement and buyer due diligence',
+              'Tapu Transfer & Closing – Legal finalization with the Land Registry or remotely via POA',
+            ],
+          },
+          {
+            type: 'richText',
+            value: [
+              { type: 'bold', value: 'Your dedicated property advisor will guide you from the first consultation to final sale — with zero stress and maximum clarity.' }
+            ]
+          }
+        ],
+      },
+
+      {
+        type: 'alert',
+        data: [
+          { type: 'normal', value: '"I had no idea where to start. The team at EvimIstanbul found a buyer, negotiated a great price, and managed all the paperwork for me. Couldn’t be happier." – ', classes: 'italic' },
+          { type: 'bold', value: 'Khalid R., UAE', classes: 'italic' }
+        ]
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Why Foreigners Trust Us to Sell Their Property',
+          },
+
+          {
+            type: 'list',
+            value: [
+              'Verified Buyer Database',
+              '100% Legal Protection',
+              'Market-Driven Pricing',
+              'No Hidden Fees',
+              'Transparent Commission Terms',
+              'Remote POA Support',
+              'Results-Oriented, Not Listing-Oriented',
+            ],
+          },
+
+        ],
+      },
+
+      {
+        type: 'alert',
+        data: [
+          { type: 'normal', value: '"EvimIstanbul sold my property in Istanbul in just under 4 weeks. They handled everything, including the legal part, while I stayed abroad. Excellent service!" – ', classes: 'italic' },
+          { type: 'bold', value: 'Maria K., Germany', classes: 'italic' }
+        ]
+      },
+
+      {
+        type: 'faq',
+        data: [
+
+          {
+            Q: "Can I sell my property if I'm not in Turkey?",
+            A: "Yes. With Power of Attorney (POA), we can manage the entire sale process on your behalf.",
+          },
+          {
+            Q: "Will I need to pay taxes on the sale?",
+            A: "Possibly. Capital gains tax may apply depending on how long you've owned the property. Our legal team helps minimize liability.",
+          },
+          {
+            Q: "How long does it take to sell?",
+            A: "Typically 4–12 weeks, depending on market demand and property location. (If there is en emergency situation, faster)",
+          },
+          {
+            Q: "Who handles the paperwork?",
+            A: "EvimIstanbul manages the full legal process — including title checks, contracts, notary steps, and Tapu transfer.",
+          },
+          {
+            Q: "What are your commission rates?",
+            A: "Our fees are transparent, competitive, and based on the property type and sale value. No hidden charges.",
+          },
+        ]
+      },
+
+      {
+        type: 'usHelp',
+        data: {
+          description: "Sell Your Property in Turkey — Fast, Secure & Profitable — whether it’s a luxury villa, a city apartment, or a commercial unit — we make sure your property reaches the right buyer. Let our team take care of the paperwork, promotion, and negotiation — so you can sell with zero stress and full satisfaction.",
+          buttonHref: '/'
+        }
+      }
+    ],
+    sidebar: {
+      usefulLinks: {},
+      counseling: {},
+    }
+  },
+
+  {
+    slug: "rental-services-in-turkey",
+    sections: [
+
+      {
+        type: "introduction",
+        data: {
+          title: "Rental Services in Turkey",
+          subTitle: "Secure Rentals. Verified Tenants. Professional Property Management.",
+          description: "Whether you're looking to rent a home in Istanbul, lease a commercial space in Izmir, or manage rental income from your investment property in Bodrum — EvimIstanbul Group makes the entire rental process smooth, legal, and profitable. \n We offer end-to-end rental solutions for both tenants and landlords, combining legal protection, market expertise, and tailored rental strategies.",
+        },
+      },
+
+      {
+        type: "userInfo",
+        data: {
+          fullName: "OMID GHAFOURI",
+          role: "Director of Client Relations",
+          avatar: "OMID-GHAFOURI.jpg",
+          description: `“Renting out your property in Turkey — whether short-term or long-term — comes with legal, financial, and tenant-related challenges. At EvimIstanbul, we simplify the entire rental process for international landlords, from tenant vetting and contracts to income tracking and remote management. You earn — we handle the rest.”`,
+        },
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Residential Rentals for Foreign Tenants',
+          },
+          {
+            type: 'richText',
+            value: [
+              { type: 'bold', value: 'Looking for a home in Turkey?' },
+              { type: 'newline', value: 'Looking for a home in Turkey?' },
+              { type: 'normal', value: 'We help foreign nationals find and rent fully verified apartments, villas, and houses across Istanbul, Antalya, Izmir, and beyond — all with official contracts and multilingual support.' },
+            ]
+          },
+          {
+            type: 'list',
+            classNames: 'ml-2.5',
+            value: [
+              'Short-term & long-term rental options',
+              'Verified listings only — no scams or illegal properties',
+              'Assistance with residence permit-compatible rentals',
+              'Contracts reviewed by our legal team',
+              'Help with utility setup, DASK insurance, and move-in checklist',
+            ]
+          }
+        ],
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Commercial Rentals for Business Owners',
+          },
+          {
+            type: 'richText',
+            value: [
+              { type: 'normal', value: 'From retail shops and office units to medical clinics and coworking spaces, we assist foreign investors and entrepreneurs in securing legally compliant commercial properties.' },
+            ]
+          },
+          {
+            type: 'list',
+            classNames: 'ml-2.5',
+            value: [
+              'Business-ready locations in major Turkish cities',
+              'Legal lease contracts in Turkish & English',
+              'Guidance on zoning laws, approvals, and business permits',
+              'Contract negotiation & renewal tracking',
+              'Support with business address registration for company formation',
+            ]
+          }
+        ],
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Landlords: Let Us Manage Your Rental',
+          },
+          {
+            type: 'richText',
+            value: [
+              { type: 'bold', value: 'Do you own property in Turkey and want to generate rental income without the hassle?' },
+              { type: 'newline' },
+              { type: 'normal', value: 'We provide professional property management services for international landlords, including:' },
+            ]
+          },
+          {
+            type: 'list',
+            classNames: 'ml-2.5',
+            value: [
+              'Tenant screening & contract signing',
+              'Rent collection & income reporting',
+              'Legal contract preparation & notarization',
+              'Property maintenance coordination',
+              'Power of Attorney-based full rental management',
+              'Remote owner support (you don’t need to be in Turkey)',
+            ]
+          },
+          {
+            type: 'richText',
+            value: [
+              { type: 'normal', value: '“Our goal is to protect your property, secure your income, and eliminate stress — whether you live in Turkey or abroad.”' },
+            ]
+          },
+        ],
+      },
+
+      {
+        type: 'contactForm'
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Who We Help',
+          },
+          {
+            type: 'list',
+            classNames: '!ml-7 !list-[lower-alpha] !list-outside !pl-6',
+            value: [
+              'Foreign expats seeking rental homes',
+              'International students looking for affordable apartments near universities',
+              'Business owners needing official office or retail space',
+              'Investors who want to earn income from their Turkish property',
+              'Landlords seeking full-service rental and property management',
+            ],
+          }
+        ],
+      },
+
+      {
+        type: 'alert',
+        data: [
+          {
+            type: 'normal', value: '“I found my dream flat in Istanbul thanks to EvimIstanbul. The process was fast, legal, and all documents were in Arabic. They even helped me register my residence.”  – ', classes: 'italic'
+          },
+          {
+            type: 'bold', value: 'Ali K., UAE'
+          }
+        ]
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'How Our Rental Process Works',
+          },
+          {
+            type: 'list',
+            classNames: '!ml-1',
+            value: [
+              'Tell Us What You Need – Location, budget, type of property',
+              'Property Search & Viewings – Virtual or in-person tours arranged',
+              'Lease Contract & Legal Checks – Full transparency and legal review',
+              'Move-In Support – Utilities, internet, and more',
+              'Ongoing Support or Management – For long-term tenants and property owners',
+            ],
+          }
+        ],
+      },
+
+      {
+        type: 'alert',
+        data: [
+          {
+            type: 'normal', value: '“As a property owner living in Germany, I trust EvimIstanbul to manage my apartment in Antalya. They found great tenants and handle everything.” – ', classes: 'italic'
+          },
+          {
+            type: 'bold', value: 'Mariam L., Germany'
+          }
+        ]
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Our Rental Network',
+          },
+          {
+            type: 'richText',
+            value: [
+              { type: 'normal', value: 'We partner with top developers, landlords, and legal advisors to provide access to:' }
+            ]
+          },
+          {
+            type: 'list',
+            classNames: '!ml-6',
+            value: [
+              'Furnished and unfurnished residential units',
+              'Rental properties suitable for students, families, and professionals',
+              'Office and retail space with zoning compliance',
+              'Luxury rentals in Istanbul, Bodrum, Antalya, and more',
+              'Rental units approved for residence permit usage',
+            ],
+          },
+        ],
+      },
+
+      {
+        type: 'faq',
+        data: [
+          {
+            Q: "Can I rent a property and use it for a residence permit?",
+            A: "Yes, we help you find rental properties that meet all legal criteria for residence permit applications.",
+          },
+
+          {
+            Q: "What documents do I need to rent a property in Turkey?",
+            A: "Passport, residence permit (if available), proof of income or employment (if available), and contact details. Our team helps you with every step.",
+          },
+
+          {
+            Q: "I don’t speak Turkish — can I still rent legally?",
+            A: "Yes. Our team provides multilingual assistance, and all contracts can be prepared in both Turkish and English or any other language.",
+          },
+
+          {
+            Q: "Can you manage my rental property while I live abroad?",
+            A: "Absolutely. With a notarized Power of Attorney, we can manage your entire rental process on your behalf.",
+          },
+        ]
+      },
+
+      {
+        type: 'usHelp',
+        data: {
+          description: "Let Us Help You Rent or Earn with Confidence.\n EvimIstanbul is your reliable partner in navigating Turkey’s rental market — whether you're leasing a new home or earning from your investment.",
           buttonHref: '/'
         }
       }

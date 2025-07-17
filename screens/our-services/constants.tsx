@@ -6,14 +6,17 @@ export const serviceSections = [
       {
         title: "Turkish Citizenship by Investment",
         description: "Secure citizenship through real estate or capital investment programs with full support.",
+        href: '/turkish-citizenship-investment'
       },
       {
         title: "Residence Permit Application",
         description: "Short-term or long-term — we manage your permit process from A to Z.",
+        href: '/residence-permit-application-in-turkey'
       },
       {
         title: "Work Permit for Foreign Professionals",
         description: "Whether you're employed or an entrepreneur, we ensure your legal right to work in Turkey.",
+        href: '/work-permit-for-foreigners-in-turkey'
       },
       {
         title: "Study Permit & Student Residency",

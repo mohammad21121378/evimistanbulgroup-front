@@ -21,7 +21,7 @@ export default function UserInfo({
         <ServiceCard className="!text-black">
             <div className="flex gap-4 items-center">
                 <Image
-                    className="size-24 outline outline-2 outline-slate-200 rounded-full"
+                    className="size-24 outline outline-2 outline-slate-200 rounded-full object-cover object-top"
                     objectFit="cover"
                     objectPosition="top center"
                     src={`/images/owners/${avatar}`}

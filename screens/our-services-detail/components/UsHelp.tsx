@@ -18,7 +18,7 @@ export default function UsHelp({ data }: Props) {
                         Let Us Help.
                     </h2>
 
-                    <p className="font-medium text-xl text-white">
+                    <p className="font-medium text-xl text-white whitespace-pre-line">
                         {data.description}
                     </p>
 

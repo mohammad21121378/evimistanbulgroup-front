@@ -51,7 +51,7 @@ export default function ListBlockRenderer({ block }: Props) {
                 block.subClassNames
               )}
             >
-              {subItems.map((sub, subIdx) => (
+              {subItems?.map((sub, subIdx) => (
                 <li key={subIdx}>{sub}</li>
               ))}
             </ul>

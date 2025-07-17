@@ -17,7 +17,7 @@ export default function ContentTopPage({ title, subTitle, description }: Props) 
                 {subTitle}
             </Heading>
 
-            <p className="text-lg text-gray-500 mt-6">
+            <p className="text-lg text-gray-500 mt-6 whitespace-pre-line">
                 {description}
             </p>
         </section>

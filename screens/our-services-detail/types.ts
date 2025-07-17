@@ -36,7 +36,7 @@ export type ComponentsType = typeof components
 
 export interface NestedListItem {
     title: string;
-    subItems: string[];
+    subItems?: string[];
     description?: string | RichContent;
   }
   

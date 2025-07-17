@@ -7,7 +7,7 @@ type Props = {
 
 export default function Alert({ data }: Props) {
     return (
-        <div className="text-center">
+        <div className="grid justify-center md:px-14">
             <RichTextRenderer content={data} className="text-lg font-medium" />
         </div>
     )

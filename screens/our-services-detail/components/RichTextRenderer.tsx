@@ -28,6 +28,7 @@ export default function RichTextRenderer({ content, className }: Props) {
   const lines: React.ReactNode[][] = [];
 
   content.forEach((item, i) => {
+
     if (item.type === "newline") {
       lines.push([...currentLine]);
       currentLine = [];
@@ -51,7 +52,7 @@ export default function RichTextRenderer({ content, className }: Props) {
   if (currentLine.length) lines.push(currentLine);
 
   return (
-    <div className={classNames(className, "space-y-2 leading-relaxed text-lg")}>
+    <div className={classNames(className, "space-y-0.5 leading-relaxed text-lg")}>
       {lines.map((line, idx) => (
         <p key={idx}>{line}</p>
       ))}

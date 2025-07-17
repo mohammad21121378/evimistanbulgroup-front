@@ -33,7 +33,7 @@ interface Props {
     data: FAQEntry[];
 }
 
-export default function FAQ({ title, data }: Props) {
+export default function FAQ({ title="FAQ Highlights", data }: Props) {
     return (
         <ServiceCard className="text-gray-700 text-lg">
             {title && <TitleServiceCard>{title}</TitleServiceCard>}
