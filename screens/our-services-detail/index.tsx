@@ -38,7 +38,7 @@ export default function OurServicesDetails({ data }: Props) {
 
             </div>
 
-            <aside className="hidden md:block">
+            <aside className="">
 
               <ServiceSidebar
                 showConsultationBox={!!data.sidebar?.counseling}

@@ -62,7 +62,7 @@ const PhoneInput = <T extends Record<string, any>>({
                 onFocus={() => setIsFocused(true)}
                 onBlur={() => setIsFocused(false)}
             />
-            <div className="absolute left-10 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
+            <div className="absolute md:left-10 left-12 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
                 <ChevronDown size={16} />
             </div>
         </div>

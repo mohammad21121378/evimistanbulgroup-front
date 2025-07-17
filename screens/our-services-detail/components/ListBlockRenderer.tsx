@@ -13,7 +13,7 @@ export default function ListBlockRenderer({ block }: Props) {
   return (
     <ListWrapper
       className={classNames(
-        "list-inside space-y-1.5 pl-2 text-lg",
+        "list-inside space-y-1.5 pl-2 text-lg" ,
         block.type === "olList"
           ? "list-decimal "
           : "list-disc",
