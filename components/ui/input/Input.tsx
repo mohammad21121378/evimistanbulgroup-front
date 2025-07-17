@@ -151,4 +151,6 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElem
   }
 );
 
+Input.displayName = 'Input'
+
 export default Input;
