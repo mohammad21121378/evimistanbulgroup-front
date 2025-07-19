@@ -1750,4 +1750,284 @@ export const servicesData = [
       counseling: {},
     }
   },
+
+  {
+    slug: "buy-property-in-turkey",
+    sections: [
+
+      {
+        type: "introduction",
+        data: {
+          title: "Buy Property in Turkey",
+          subTitle: "Invest Securely. Live Confidently. Unlock Your Future in Turkey.",
+          description: "Turkey has become one of the most attractive destinations for international real estate buyers thanks to its strategic location, affordable property prices, strong rental yields, and citizenship opportunities. Whether you're looking for a holiday home, a rental investment, or a permanent residence, EvimIstanbul Group provides you with end-to-end support to buy the right property with zero hassle.",
+        },
+      },
+
+      {
+        type: "marquee",
+        data: {
+          topItems: [
+            { name: "accor", src: "accor.png" },
+            { name: "・", src: "" },
+            { name: "kuzu", src: "kuzu.png" },
+            { name: "・", src: "" },
+            { name: "yasam", src: "yasam.png" },
+            { name: "・", src: "" },
+            { name: "sinpas", src: "sinpas.png" },
+            { name: "・", src: "" },
+            { name: "vrupa", src: "vrupa.png" },
+            { name: "・", src: "" },
+            { name: "ozak gyo", src: "ozak-gyo.png" },
+            { name: "・", src: "" },
+            { name: "emlak konut", src: "emlak.png" },
+            { name: "・", src: "" },
+          ],
+
+          bottomItems: [
+            { name: "kiler gyo", src: "kiler-gyo.png" },
+            { name: "・", src: "" },
+            { name: "Tahincioglu", src: "tahincioglu.png" },
+            { name: "・", src: "" },
+            { name: "nurol gyo", src: "nurol-gyo.png" },
+            { name: "・", src: "" },
+            { name: "Dumankaya", src: "dumankaya.png" },
+            { name: "・", src: "" },
+            { name: "suryapi", src: "suryapi.png" },
+            { name: "・", src: "" },
+            { name: "fuzul gyo", src: "fuzul-gyo.png" },
+            { name: "・", src: "" },
+          ],
+        },
+      },
+
+      {
+        type: "userInfo",
+        data: {
+          fullName: "REZA ABBASZADEH",
+          role: "Executive Board Member & CTO",
+          avatar: "REZA-ABBASZADEH-2.png",
+          description: `"At EvimIstanbul Group, we empower international buyers to invest in Turkey with complete confidence. From verifying properties and handling legal due diligence to navigating citizenship pathways, our team ensures that your real estate journey is transparent, secure, and rewarding — every step of the way"`,
+        },
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Why Buy Property in Turkey?',
+          },
+          {
+            type: 'list',
+            value: [
+              'Affordable Prices Compared to Europe & the Gulf',
+              'Foreign Ownership 100% Allowed',
+              'Eligibility for Turkish Citizenship (min. $400K)',
+              'High Rental Income in Tourist Zones',
+              'Strong Capital Appreciation in Major Cities',
+              'Residency Permit with Any Property Purchase',
+            ],
+          },
+        ],
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Where to Buy Property in Turkey?',
+          },
+          {
+            type: 'richText',
+            value: [{
+              type: 'normal',
+              value: "We offer verified listings across Turkey's most desirable cities:"
+            }]
+          },
+
+          {
+            type: 'paragraph',
+            value: `
+**Istanbul** <br>
+The economic and cultural capital of Turkey. Perfect for rental income, capital growth, and lifestyle living. Explore modern apartments, Bosphorus-view homes, and commercial offices.
+<br><br>
+**Antalya** <br>
+Top choice for holiday homes and sea-view properties. Known for its Mediterranean charm, warm climate, and tourism demand.
+<br><br>
+**Bodrum** <br>
+Luxury villas and boutique resorts by the Aegean Sea. A favorite for high-net-worth investors and summer retreats.
+<br><br>
+**Bursa, Izmir, Ankara, Sapanca, Alanya** <br>
+Affordable options, student rentals, and second-home escapes. Ideal for capital growth and peaceful living.
+`
+          }
+        ],
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Types of Properties We Offer in Turkey',
+          },
+          {
+            type: 'list',
+            value: [
+              'Apartments (1+1, 2+1, 3+1, penthouse)',
+              'Luxury Villas with Private Pools',
+              'Commercial Offices & Shops',
+              'Land & Plots for Development',
+              'Citizenship-Eligible Properties',
+              'Sea View or Lake View Residences',
+              'Smart Homes & New Developments',
+              'Limited-Time Offers',
+              'Investment Opportunities (Short-Term & Long-Term)',
+              'Hotels & Resorts',
+            ]
+          }
+        ],
+      },
+
+      {
+        type: 'contactForm'
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Full Legal Support & Due Diligence',
+          },
+          {
+            type: 'list',
+            parentClassNames: '!font-normal',
+            value: [
+              {
+                title: 'At EvimIstanbul Group, we handle every legal and administrative step:',
+                subItems: [
+                  'Title deed (Tapu) checks',
+                  'Municipality & zoning approval',
+                  'Legal translation & notarization',
+                  'Sales contract preparation',
+                  'Currency exchange compliance (DAB)',
+                  'Land Registry appointment & final transfer',
+                ]
+
+              }
+            ]
+          },
+          {
+            type: 'paragraph',
+            value: 'Our lawyers ensure the property is legally clean, free of debt, and compliant with foreign ownership laws.'
+          },
+          {
+            type: 'paragraph',
+            value: '**Need Citizenship? We’ve Got You Covered**'
+          },
+          {
+            type: 'paragraph',
+            value: 'Buy a property (or multiple units) worth $400,000+ and get eligible for Turkish Citizenship by Investment.'
+          },
+          {
+            type: 'list',
+            value: [
+              'Installment is available',
+              'Family included',
+              'No residency required',
+              'Citizenship in 3–6 months',
+              'Real estate investment retained or resold after 3 years',
+              'High return on your investment (High ROI)',
+            ]
+          },
+          {
+            type: 'paragraph',
+            value: '**Financing & Installment Options**'
+          },
+          {
+            type: 'paragraph',
+            value: 'Can’t pay all at once? We offer projects with:'
+          },
+          {
+            type: 'list',
+            value: [
+              'Interest-free installment plans (up to 36 months)',
+              'Only 35%–50% down payment required',
+              'Pay while you gain property appreciation',
+            ]
+          },
+          {
+            type: 'paragraph',
+            value: 'Start with a partial payment. Citizenship eligibility begins from the day one.'
+          },
+          {
+            type: 'link',
+            value: {
+              title: 'Contact Us for More Details',
+              link: '/contact-us',
+            }
+          },
+        ],
+      },
+
+      {
+        type: 'alert',
+        data: [
+          {
+            type: 'normal', value: '“The EvimIstanbul helped me purchase a water-view apartment in Istanbul without any stress. Everything from the property visit to title deed transfer was flawless.” – ', classes: 'italic'
+          },
+          {
+            type: 'bold', value: 'Andrei P., Romania', classes: 'italic'
+          }
+        ]
+      },
+
+      {
+        type: 'faq',
+        data: [
+          {
+            Q: "Can foreigners buy property in Turkey?",
+            A: "Yes. Citizens of most countries can legally buy property in Turkey with full ownership rights. Our legal team handles all necessary documentation and compliance.",
+          },
+
+          {
+            Q: "Is it possible to get Turkish citizenship by buying property?",
+            A: "Yes. If you purchase property worth $400,000 or more, you can apply for Turkish citizenship for yourself and your family. We guide you through the full legal process.",
+          },
+
+          {
+            Q: "Do I need to live in Turkey to buy property?",
+            A: "No. You can buy remotely through Power of Attorney (POA), and our team will handle every step — including property tours, contracts, and title deed transfer.",
+          },
+
+          {
+            Q: "Can I pay in installments?",
+            A: "Yes. We offer interest-free installment plans for selected projects, allowing you to pay gradually and still qualify for citizenship from the first day.",
+          },
+
+          {
+            Q: "What are the taxes and fees involved in buying property?",
+            A: "On average, expect around 0–10% of the property price for taxes, title deed fees, notary costs, legal services, and DAB compliance. We provide a clear breakdown upfront according to the type of property (commercial or residential).",
+          },
+        ]
+      },
+
+      {
+        type: 'usHelp',
+        data: {
+          description: "EvimIstanbul is more than a real estate consultancy — we’re your trusted partner in building a life and future in Turkey. Whether you're buying for lifestyle, investment, or citizenship, our expert team handles everything — from the first consultation to the final key handover.",
+          buttonHref: '/',
+          buttonLabel: 'Buy  Property  Today  –  Book a Free Consultation Now',
+        }
+      }
+    ],
+    sidebar: {
+      usefulLinks: {},
+      counseling: {},
+      search: {},
+    }
+  },
 ]

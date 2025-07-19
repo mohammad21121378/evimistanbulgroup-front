@@ -4,6 +4,7 @@ type Props = {
     data: {
         description: string;
         buttonHref: string;
+        buttonLabel?: string;
     }
 }
 
@@ -24,7 +25,12 @@ export default function UsHelp({ data }: Props) {
 
                     <Link href={data.buttonHref}>
                         <button className="button mt-14 !text-base">
-                            Start Your Citizenship Journey Today – Request a Free Consultation
+                            {
+                                data.buttonLabel ? data.buttonLabel :
+                                    <>
+                                        Start Your Citizenship Journey Today – Request a Free Consultation
+                                    </>
+                            }
                         </button>
                     </Link>
                 </div>
