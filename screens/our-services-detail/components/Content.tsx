@@ -7,7 +7,7 @@ import { AfterTextBlock, RichTextBlock } from "../types";
 import ListBlockRenderer from "./ListBlockRenderer";
 import Paragraph from "./Paragraph";
 import Link from "@/components/ui/Link";
-import { ArrowRight } from "@/constants/icons";
+import { ArrowRight2 } from "@/constants/icons";
 
 interface TitleBlock {
     type: "title";
@@ -95,8 +95,21 @@ export default function Content({ data }: Props) {
                         return <RichTextRenderer key={i} content={block.value} />;
                     case "paragraph":
                         return <div><Paragraph key={i} data={block} /></div>;
-                    case "link":
-                        return <Link href={block.value.link} isExternal={block.value.isExternal} className="text-orange-500 hover:text-orange-600 text-lg font-bold flex items-center gap-2 w-fit">{block.value.title} {ArrowRight}</Link>;
+                    // case "link":
+                    //     return <Link href={block.value.link} isExternal={block.value.isExternal} className="text-orange-500 hover:text-orange-600 text-lg font-bold flex items-center gap-2 w-fit">{block.value.title} {ArrowRight2}</Link>;
+                    case "link": {
+                        const isPrevLink = data[i - 1]?.type === "link";
+                        return (
+                            <Link
+                                key={i}
+                                href={block.value.link}
+                                isExternal={block.value.isExternal}
+                                className={`text-orange-500 hover:text-orange-600 text-lg font-bold flex items-center gap-2 w-fit ${isPrevLink ? "!mt-1" : ""}`}
+                            >
+                                {block.value.title} {ArrowRight2}
+                            </Link>
+                        );
+                    }
                     default:
                         return null;
                 }

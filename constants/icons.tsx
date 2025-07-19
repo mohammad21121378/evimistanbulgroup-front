@@ -1045,6 +1045,9 @@ const ArrowRight = (<svg width="1rem" viewBox="0 0 16 14" fill="none" xmlns="htt
 <path d="M1 7H15M15 7L9 1M15 7L9 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 )
+const ArrowRight2 = (<svg width="1.5rem" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.0007 14.6663L14.6673 10.9997M14.6673 10.9997L11.0007 7.33301M14.6673 10.9997H7.33398M20.1673 10.9997C20.1673 16.0623 16.0633 20.1663 11.0007 20.1663C5.93804 20.1663 1.83398 16.0623 1.83398 10.9997C1.83398 5.93706 5.93804 1.83301 11.0007 1.83301C16.0633 1.83301 20.1673 5.93706 20.1673 10.9997Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>)
 
 const Print = <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-printer" viewBox="0 0 16 16">
 <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1"/>
@@ -1098,6 +1101,7 @@ export {
   Ques,
   Location2,
   ArrowRight,
+  ArrowRight2,
   Share,
   Print,
   Maximize

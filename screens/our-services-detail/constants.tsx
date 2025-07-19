@@ -2547,7 +2547,7 @@ Affordable options, student rentals, and second-home escapes. Ideal for capital 
       counseling: {},
     }
   },
-  
+
   {
     slug: "bank-account-opening-in-turkey",
     sections: [
@@ -2767,6 +2767,311 @@ Affordable options, student rentals, and second-home escapes. Ideal for capital 
           buttonLabel: 'Open  Bank Account Today –  Book a Free Consultation Now',
         }
       }
+    ],
+    sidebar: {
+      usefulLinks: {},
+      counseling: {},
+    }
+  },
+
+
+
+
+  {
+    slug: "investment-opportunities-in-turkey",
+    sections: [
+
+      {
+        type: "introduction",
+        data: {
+          title: "Investment Opportunities in Turkey",
+          subTitle: "High‑Return Real Estate, Startups, and Business Ventures",
+          description: "Looking to grow your wealth in Turkey? EvimIstanbul Group offers exclusive investment programs spanning real estate, startups, and thriving businesses — all thoroughly vetted and tailored to global investors seeking strong returns, citizenship eligibility, or long-term growth.",
+        },
+      },
+
+      {
+        type: "userInfo",
+        data: {
+          fullName: "OMID GHAFOURI",
+          role: "Director of Client Relations",
+          avatar: "OMID-GHAFOURI.png",
+          description: `“At EvimIstanbul, we understand that investment is more than numbers — it’s about trust, timing, and strategy. Our team is obsessed with one thing: your success. Whether you’re investing $50,000 or $500,000, you’ll get the same rigorous due diligence, full transparency, and personalized support. We've helped countless international investors — from the Gulf to Europe to Central Asia — unlock life-changing opportunities here in Turkey.”`,
+        },
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Why Invest in Turkey?',
+          },
+          {
+            type: 'list',
+            classNames: '!pl-7 !list-outside',
+            value: [
+              'Strategic gateway between Europe, Asia, and MENA',
+              'Large, young consumer market (~85M population)',
+              'FDI reaching ~$5.6 bn in 2023',
+              'Government-backed incentives in real estate, manufacturing, energy, and agriculture',
+              'FDI reached $11.3 billion in 2024, up 5.6% year-on-year — one of Turkey’s strongest inflows in recent years',
+              'Early 2025 momentum: January inflows were $1.414 billion—a 65% YoY jump',
+              'Strategic location between three continents, an 85-million domestic market, and full EU Customs Union access',
+              'Targeted government incentives under the 2024–2028 FDI strategy, aiming to double global share to 1.5%',
+            ],
+          },
+        ],
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Real Estate Investment Profitable & Citizenship‑Eligible',
+          },
+          {
+            type: 'list',
+            classNames: '!list-outside !pl-6',
+            value: [
+              'Pre‑approved developments with properties over $400,000 — qualify for Turkish citizenship.',
+              'Luxury apartments, villas, commercial units, and land plots in Istanbul, Antalya, Izmir & Bodrum.',
+              'Exclusive pre‑launch offers, early bird discounts, and structured payment plans.',
+              'Rental yield analysis, resale potential, anticipated capital gains.',
+              'Partnered with top developers — projects built to legal standards and completion guarantees.',
+            ]
+          },
+          {
+            type: 'link',
+            value: {
+              title: 'Turkish Citizenship by Investment',
+              link: '/our-services/turkish-citizenship-investment'
+            }
+          },
+          {
+            type: 'link',
+            value: {
+              title: 'Buy Property in Turkey',
+              link: '/our-services/buy-property-in-turkey'
+            }
+          },
+        ],
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Startup & Business Venture Investment',
+          },
+          {
+            type: 'list',
+            classNames: '!list-outside !pl-6',
+            value: [
+              'Pre‑screened startups in fintech, healthtech, tourism, and renewable energy.',
+              'Equity or debt investment structures, with focus on scalable traction and growth potential.',
+              'Corporate advisory: Entity setup, governance, and funding rounds.',
+              'Access to Turkish incubators and accelerators, along with local mentorship.',
+            ]
+          },
+          {
+            type: 'link',
+            value: {
+              title: 'Company Formation in Turkey',
+              link: '/our-services/company-formation-in-turkey'
+            }
+          },
+        ],
+      },
+
+      {
+        type: 'contactForm'
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Top Investment Options in Turkey | 2025',
+          },
+          {
+            type: 'olList',
+            subClassNames: '!list-outside !pl-10',
+            value: [
+              {
+                title: 'Real Estate & Construction',
+                subItems: [
+
+                  'Residential, commercial, and resort developments, including citizenship-eligible properties',
+                  'REITs & Real Estate Funds offering passive income and market access',
+                  'Urban renewal and construction finance deals for institutional investors ',
+                ]
+              },
+              {
+                title: 'Renewable Energy & Utilities',
+                subItems: [
+
+                  'Over 13 GW of wind power installed (2024), targeting 30 GW by 2035 ',
+                  'Solar, hydro, geothermal, biogas, and hybrid energy projects supported by state procurement',
+                  'AIIB $5 billion green infrastructure fund allocated for Turkish energy & utilities ',
+                ]
+              },
+              {
+                title: 'Manufacturing & Exports',
+                subItems: [
+
+                  'FDI in manufacturing reached $2.3 billion in 2024—34.5% of total inflow ',
+                  'Competitive automotive, electronics, textiles, defense (now exporting $7 b+), and aerospace sectors ',
+                  'Large-scale M&A activity: $10.1 billion total deals in 2024',
+                ]
+              },
+              {
+                title: 'Technology & Startups',
+                subItems: [
+
+                  'Booming ecosystems in Istanbul, Ankara, Izmir—supported by FDI Strategy and innovation incentives',
+                  'Focused funds in fintech, healthtech, renewables, AI, industry 4.0',
+                  'Access to Turkish incubators, accelerators, and EU export-ready tech networks',
+                ]
+              },
+              {
+                title: 'Agriculture & Agribusiness',
+                subItems: [
+
+                  'High-yield farmland investments (olive, pistachio, greenhouse) with export potential and government support',
+                  'Agro-processing facilities in GAP and Aegean regions',
+                ]
+              },
+              {
+                title: 'Tourism & Hospitality',
+                subItems: [
+
+                  'Nearly 55 million tourists in 2023, generating over $60 billion tourism revenue',
+                  'Opportunities in luxury resorts, boutique hotels, medical & wellness tourism',
+                ]
+              },
+              {
+                title: 'Finance & Local Debt Markets',
+                subItems: [
+
+                  'Foreign bond inflows surged: $1.9 billion in government bonds in early 2025 ',
+                  'Fintech, digital banking, SME credit programs, and cross-border financial platforms',
+                ]
+              },
+              {
+                title: 'Infrastructure & Logistics',
+                subItems: [
+
+                  'Massive infrastructure spending: high-speed rail, new ports, airport expansion, industrial zones',
+                  'AIIB financing, EU trade corridors, nearshoring benefits',
+                ]
+              },
+            ]
+          },
+        ],
+      },
+
+      {
+        type: 'alert',
+        data: [
+          {
+            type: 'normal', value: "“Thanks to their help, our logistics and tech startup portfolio is in final licensing stages.” – ", classes: 'italic'
+          },
+          {
+            type: 'bold', value: 'Mohammad R., UAE'
+          }
+        ]
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Why Investment with EvimIstanbul Group?',
+          },
+          {
+            type: 'list',
+            classNames: '!list-outside !pl-6',
+            value: [
+              "**Rigorous Due Diligence:** Legal, financial, and market checks on each project.",
+              "**Multidisciplinary Advisory:** Real estate, legal, tax, and business experts.",
+              "**Integrated Services:** From investment to bank setup, permits, and post-investment support.",
+              "**Transparency from Day One:** Clear terms, no hidden fees, compliance with all regulations.",
+              "**Tailored to Your Goals:** Whether you're aiming for citizenship, rental income, or business diversification.",
+            ]
+          },
+        ],
+      },
+
+      {
+        type: 'alert',
+        data: [
+          {
+            type: 'normal', value: "“I invested in a tech startup with their guidance — they helped set up the company and connect with local accelerators. Great return.” – ", classes: 'italic'
+          },
+          {
+            type: 'bold', value: 'Elena V., Russia'
+          }
+        ]
+      },
+
+      {
+        type: 'faq',
+        data: [
+          {
+            Q: "What’s the minimum investment?",
+            A: "There is no minimum or maximum, we can discuss and evaluate your case to make sure your investment is secure with the highest ROI."
+          },
+
+          {
+            Q: "Are investments protected legally?",
+            A: "Yes—we structure contracts, escrow, and compliance per Turkish law and international best practices."
+          },
+
+          {
+            Q: "Can I invest remotely?",
+            A: "Fully remote options via POA and digital infrastructure."
+          },
+
+          {
+            Q: "Can my investment lead to Turkish residency or citizenship?",
+            A: "Yes."
+          },
+
+          {
+            list: {
+              classNames: '!list-outside !pl-12 -mt-5',
+              value: [
+                'If your real estate investment is below $400,000, you may become eligible for Turkish citizenship after 5 years through naturalization, provided you maintain legal residency during that time.',
+                'If you invest $400,000 or more in real estate, you can apply for Turkish citizenship immediately under the Citizenship by Investment (CBI) program — no waiting period required.',
+                'Business investments may qualify you for a Turkish residence permit, which can lead to citizenship after 5 years of continuous legal residency.',
+                'Or even Study Permit can lead to citizenship after 4 or 5 years of continuous legal residency.',
+              ]
+            }
+          },
+          {
+            richText: [{
+              type: 'normal',
+              value: 'Our experts help you choose the best path based on your budget, timeline, and future goals.'
+            }]
+          },
+
+        ]
+      },
+
+      {
+        type: 'usHelp',
+        data: {
+          description: "Let us be your trusted gateway to Turkey’s most rewarding investment opportunities.\n Whether you're looking to earn high returns through real estate, gain equity in fast-growing startups, or launch a profitable business, EvimIstanbul provides the expertise, network, and legal structure you need to invest with clarity and confidence.",
+          buttonHref: '/',
+          buttonLabel: 'Invest Now  or Never –  Book a Free Consultation Now',
+        },
+      },
+
     ],
     sidebar: {
       usefulLinks: {},
