@@ -103,8 +103,11 @@ export default function Overview({ item }: OverviewProps) {
                   {Plus}
                 </div>
 
-                {open === detail.id && (
-                  <ul className={styles.list}>
+                
+                  <ul className={cn(
+                    styles.list,
+                    { [styles.listOpen]: open === detail.id}
+                    )}>
                     {detail.features.map((feature) => (
                       <li
                         key={feature.id}
@@ -114,7 +117,7 @@ export default function Overview({ item }: OverviewProps) {
                       </li>
                     ))}
                   </ul>
-                )}
+                  
               </div>
             ))}
           </div>

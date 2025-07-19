@@ -53,14 +53,21 @@
     font-weight: 500;
 }
 
-.list {
-    padding-bottom: 32px;
-    padding-left: 32px;
+
+.list{
+    max-height: .1px;
+    transition: all 0.5s;
     display: flex;
     flex-direction: column;
     gap: 16px;
     list-style-type: disc;
-    transition: all 0.3s;
+    overflow: hidden;
+}
+
+.list.listOpen {
+    padding-bottom: 32px;
+    padding-left: 32px;    
+    max-height: 120rem;
 }
 
 .list_item {
