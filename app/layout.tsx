@@ -7,6 +7,7 @@ import Toast from "@/components/ui/toast";
 
 export const metadata = {
   title: "EvimIstanbul",
+  
   description:
     "EvimIstanbul Group®",
 };

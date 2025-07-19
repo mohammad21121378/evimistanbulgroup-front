@@ -3307,4 +3307,257 @@ Affordable options, student rentals, and second-home escapes. Ideal for capital 
       counseling: {},
     }
   },
+  
+  {
+    slug: "tours-leisure-experiences-in-turkey",
+    sections: [
+
+      {
+        type: "introduction",
+        data: {
+          title: "Tours & Leisure Experiences in Turkey",
+          subTitle: "Enjoy Curated Cultural, Luxury, and Holiday Experiences",
+          description: "Whether you’re visiting Turkey for the first time or living here as an expat, EvimIstanbul Group offers handpicked travel and leisure experiences designed for international clients seeking comfort, authenticity, and exclusivity.\n From private Bosphorus cruises and historical walking tours to luxury getaways in Bodrum and cultural excursions in Cappadocia, we create unforgettable moments — with multilingual guides, premium service, and full itinerary planning.",
+        },
+      },
+
+      {
+        type: "userInfo",
+        data: {
+          fullName: "MEISAM KHERADMAND",
+          role: "Chairman of the Board & CEO",
+          avatar: "MEISAM-KHERADMAND-3.png",
+          description: `“At EvimIstanbul, we believe that exploring Turkey should be more than just sightseeing — it should be an unforgettable journey into culture, beauty, and connection. Our curated tours and leisure experiences are designed to help you feel at home while discovering the best of this incredible country. Whether you're here to relax, invest, or relocate, we make sure you experience Turkey the way it deserves to be experienced — with style and comfort."`,
+        },
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Why Choose EvimIstanbul for Tours & Leisure?',
+          },
+          {
+            type: 'list',
+            classNames: '!pl-7 !list-outside',
+            subClassNames: '!pb-0',
+            value: [
+              {
+                title: "Customizable Itineraries",
+                description: "Solo traveler? Couple? Family? Corporate group? We tailor every detail to your preferences — activities, pace, and budget."
+              },
+              {
+                title: "Multilingual Tour Experts",
+                description: "English, Arabic, Russian, French, Persian, and more — our licensed guides ensure smooth, insightful experiences."
+              },
+              {
+                title: "Luxury & Comfort Focused",
+                description: "Stay in handpicked hotels, ride in chauffeured vehicles, and enjoy VIP access to top attractions."
+              },
+              {
+                title: "Cultural Depth & Authenticity",
+                description: "We go beyond tourist traps. Our tours uncover real stories, local life, and hidden gems across Turkey."
+              },
+              {
+                title: "24/7 Support While You Travel",
+                description: " Need changes on the go? Our local concierge team is just a WhatsApp away."
+              },
+            ],
+          },
+        ],
+      },
+
+      {
+        type: 'alert',
+        data: [
+          {
+            type: 'normal',
+            value: '“The Antalya trip arranged by EvimIstanbul was beyond expectations. Private villa, boat, transfers, everything top-notch.” — ',
+            classes: 'italic'
+          },
+          {
+            type: 'bold',
+            value: 'Ahmad S., Kuwait',
+          },
+        ]
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Popular Experiences We Offer',
+          },
+          {
+            type: 'list',
+            classNames: '!pl-7 !list-outside',
+            subClassNames: '!pb-1 !list-outside',
+            value: [
+              {
+                title: "Istanbul City Tours",
+                subItems: [
+
+                  "Hagia Sophia, Blue Mosque & Topkapi Palace",
+                  "Bosphorus yacht cruise with sunset dinner",
+                  "Grand Bazaar & Spice Market shopping with private guide",
+                ]
+              },
+              {
+                title: "Coastal Luxury Escapes",
+                subItems: [
+
+                  "Bodrum, Antalya, Fethiye: Stay in beachfront resorts or private villas",
+                  "Gulet yacht charters and island hopping tours",
+                  "Wellness retreats with spa, detox, and yoga",
+                ]
+              },
+              {
+                title: "Cappadocia Magic",
+                subItems: [
+
+                  "Hot air balloon ride over fairy chimneys",
+                  "Cave hotel stays with guided valley hikes",
+                  "Pottery, carpet weaving, and cultural workshops",
+                ]
+              },
+              {
+                title: "Winter Adventures",
+                subItems: [
+
+                  "Ski resorts in Uludağ, Kartepe, and Erzurum",
+                  "Snowmobile, spa & thermal experiences",
+                  "Cozy lodge stays with family activities",
+                ]
+              },
+              {
+                title: "slamic & Cultural Heritage",
+                subItems: [
+
+                  "Halal-friendly city tours",
+                  "Visits to important Islamic sites: Eyüp Sultan, Mevlana, Ephesus",
+                  "Prayer-friendly schedules and guides",
+                ]
+              },
+            ],
+          },
+        ],
+      },
+
+      {
+        type: 'alert',
+        data: [
+          {
+            type: 'normal',
+            value: '“The private yacht dinner on the Bosphorus was breathtaking. We booked through EvimIstanbul and everything from pickup to food was 5-star.” – ',
+            classes: 'italic'
+          },
+          {
+            type: 'bold',
+            value: 'Sara A., Qatar',
+          },
+        ]
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Who We Serve',
+          },
+          {
+            type: 'list',
+            classNames: '!list-outside !pl-6',
+            value: [
+              "Tourists seeking guided comfort and safety",
+              "Expats exploring Turkey beyond their city",
+              "Families planning school holidays",
+              "Investors or clients visiting for property purposes",
+              "Students & patients wanting weekend getaways",
+              "Honeymooners, retirees, and luxury lifestyle seekers",
+            ]
+          }
+        ],
+      },
+
+      {
+        type: 'contactForm'
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Travel With Confidence & Enjoy Customized Tours',
+          },
+          {
+            type: 'paragraph',
+            value: "We don’t just sell tours — we create experiences that are safe, insightful, and worth every moment.<br> Every tour is legally registered, fully insured, and operated by licensed professionals."
+          },
+        ]
+      },
+
+      {
+        type: 'alert',
+        data: [
+          {
+            type: 'normal',
+            value: '“They created a custom 7-day Cappadocia and Antalya trip for our family. We had a guide who spoke perfect Persian. It was smooth, relaxing, and unforgettable.” – ',
+            classes: 'italic'
+          },
+          {
+            type: 'bold',
+            value: 'Pouya K., Iran',
+          },
+        ]
+      },
+
+      {
+        type: 'faq',
+        data: [
+          {
+            Q: "Are your tours customizable?",
+            A: "Yes! Every tour is fully customized based on your group size, preferences, language, and budget.",
+          },
+
+          {
+            Q: "Can we book without being in Turkey?",
+            A: "Absolutely. Most of our clients arrange their travel before arrival. We manage everything remotely and meet you at your destination.",
+          },
+
+          {
+            Q: "Are your guides multilingual?",
+            A: "Yes. All guides speak at least two international languages.",
+          },
+
+          {
+            Q: "Do you offer Islamic-friendly or halal tours?",
+            A: "Yes. We have prayer-friendly itineraries, halal meals, and cultural experiences that respect Islamic values.",
+          },
+
+          {
+            Q: "Can I include a leisure tour while applying for real estate or medical services?",
+            A: "Definitely. Many of our clients combine property viewings, health treatments, or university visits with relaxing tours.",
+          },
+        ]
+      },
+
+      {
+        type: 'usHelp',
+        data: {
+          description: "EvimIstanbul is more than a real estate consultancy — we’re your full-service lifestyle partner in Turkey.\n Our multilingual travel advisors help you explore, relax, and enjoy Turkey with curated experiences built around your life.",
+          buttonHref: '/',
+          buttonLabel: 'Ready to Experience Turkey Like Never Before–  Book a Free Consultation Now',
+        },
+      },
+
+    ],
+    sidebar: {
+      usefulLinks: {},
+      counseling: {},
+    }
+  },
 ]
