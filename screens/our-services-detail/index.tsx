@@ -19,6 +19,7 @@ export default function OurServicesDetails({ data }: Props) {
     introductionSection,
     usHelpSection,
     mainSections,
+    marqueeSection,
     components
   } = useComponentExtraction({ data })
 
@@ -27,6 +28,9 @@ export default function OurServicesDetails({ data }: Props) {
 
       {introductionSection && (
         <components.introduction key="intro" data={introductionSection.data} />
+      )}
+      {marqueeSection && (
+        <components.marquee key="marquee" data={marqueeSection.data} />
       )}
 
       <section className="section">

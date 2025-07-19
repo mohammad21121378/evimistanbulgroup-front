@@ -2,6 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import RichTextRenderer from "./RichTextRenderer";
 import type { ListBlock, NestedListItem } from "../types";
+import Markdown from "markdown-to-jsx";
 
 type Props = {
   block: ListBlock;
@@ -13,7 +14,7 @@ export default function ListBlockRenderer({ block }: Props) {
   return (
     <ListWrapper
       className={classNames(
-        "list-inside space-y-1.5 pl-2 text-lg" ,
+        "list-inside space-y-1.5 pl-2 text-lg",
         block.type === "olList"
           ? "list-decimal "
           : "list-disc",
@@ -23,27 +24,31 @@ export default function ListBlockRenderer({ block }: Props) {
       {block.value.map((item, idx) => {
 
         if (typeof item === "string") {
-          return <li key={idx}>{item}</li>;
+          return <li key={idx}>
+            <Markdown options={{ forceInline: true }}>
+              {item}
+            </Markdown>
+          </li>;
         }
 
         const { title, subItems, description } = item as NestedListItem;
 
         return (
           <li key={idx} className="space-y-1">
-                
-              <span className={classNames("font-bold", block.parentClassNames)}>
-                {title}
-              </span>
 
-              {description && (
-                <div className="mt-1">
-                  {typeof description === "string" ? (
-                    <RichTextRenderer content={[{type: "normal", value: description}]} />
-                  ) : (
-                    <RichTextRenderer content={description} />
-                  )}
-                </div>
-              )}
+            <span className={classNames("font-bold", block.parentClassNames)}>
+              {title}
+            </span>
+
+            {description && (
+              <div className="mt-1">
+                {typeof description === "string" ? (
+                  <RichTextRenderer content={[{ type: "normal", value: description }]} />
+                ) : (
+                  <RichTextRenderer content={description} />
+                )}
+              </div>
+            )}
 
             <ul
               className={classNames(
@@ -52,7 +57,11 @@ export default function ListBlockRenderer({ block }: Props) {
               )}
             >
               {subItems?.map((sub, subIdx) => (
-                <li key={subIdx}>{sub}</li>
+                <li key={subIdx}>
+                  <Markdown options={{ forceInline: true }}>
+                    {sub}
+                  </Markdown>
+                </li>
               ))}
             </ul>
           </li>

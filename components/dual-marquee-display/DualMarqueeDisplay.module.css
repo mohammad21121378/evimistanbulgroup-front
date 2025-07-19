@@ -1,0 +1,42 @@
+.marquees {
+  /* margin-top: 60px; */
+  display: grid;
+  /* gap: 0 80px; */
+}
+
+.marquee{
+  padding: 2.5rem 0;
+  display: grid;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.marquee:first-child{
+  border-top: 1px solid #E2E8F0;
+}
+
+.title {
+  text-transform: uppercase;
+}
+
+.marquee_text {
+  margin: 0 48px;
+}
+
+.subtitle{
+  margin-top: 16px;
+  color: var(--slate-500);
+}
+
+@media (max-width: 1024px) {
+  .marquees {
+      margin-top: 64px;
+      gap: 64px;
+  }
+}
+
+@media (max-width: 768px) {
+  .marquees {
+      margin-top: 48px;
+      gap: 48px;
+  }
+}

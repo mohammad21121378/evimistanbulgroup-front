@@ -31,8 +31,10 @@ export const useProperties = () => {
           email: "davidlee@support.com",
           phone: "(123) 456-7890",
         },
+
         lat: 40.7 + Math.random() * 0.2,
         lng: 29 + Math.random() * 0.2,
+        
         features: [
           {
             id: 1,

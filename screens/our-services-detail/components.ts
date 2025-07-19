@@ -5,6 +5,8 @@ import FAQ from './components/FAQ';
 import Alert from './components/Alert'
 import UsHelp from './components/UsHelp'
 import ContactForm from './contact-form'
+import Marquee from './components/Marquee';
+import Paragraph from './components/Paragraph';
 
 export const components = {
     introduction: Introduction,
@@ -14,4 +16,6 @@ export const components = {
     faq: FAQ,
     usHelp: UsHelp,
     contactForm: ContactForm,
+    marquee: Marquee,
+    paragraph: Paragraph
   };

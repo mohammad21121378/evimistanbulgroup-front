@@ -1338,4 +1338,416 @@ export const servicesData = [
       counseling: {},
     }
   },
+
+  {
+    slug: "study-permit-student-residency-in-turkey",
+    sections: [
+
+      {
+        type: "introduction",
+        data: {
+          title: "Study Permit & Student Residency in Turkey",
+          subTitle: "Start Your Academic Journey in Turkey with Confidence",
+          description: "Turkey is one of the top destinations for international students — offering world-class universities, affordable tuition, a vibrant culture, and a strategic location between Europe and Asia. At EvimIstanbul Group, we provide expert support for obtaining your Study Permit and Student Residency in Turkey, helping you focus on your education while we handle the bureaucracy.",
+        },
+      },
+
+      {
+        type: "marquee",
+        data: {
+          topItems: [
+            { name: "bau", src: "bau.png" },
+            { name: "・", src: "" },
+            { name: "isu", src: "isu.png" },
+            { name: "・", src: "" },
+            { name: "medipul", src: "medipul.png" },
+            { name: "・", src: "" },
+            { name: "acibadem", src: "acibadem.png" },
+            { name: "・", src: "" },
+            { name: "atlas", src: "atlas.png" },
+            { name: "・", src: "" },
+          ],
+
+          bottomItems: [
+            { name: "bezmialem", src: "bezmialem.png" },
+            { name: "・", src: "" },
+            { name: "aydin", src: "aydin.png" },
+            { name: "・", src: "" },
+            { name: "yeditepe", src: "yeditepe.png" },
+            { name: "・", src: "" },
+            { name: "biruni", src: "biruni.png" },
+            { name: "・", src: "" },
+            { name: "altinbas", src: "altinbas.png" },
+            { name: "・", src: "" },
+            { name: "okan", src: "okan.png" },
+            { name: "・", src: "" },
+          ],
+        },
+      },
+
+      {
+        type: "userInfo",
+        data: {
+          fullName: "Mohamad Aziz Sultan",
+          role: "Executive Board Member & CMO",
+          avatar: "Mohamad-Aziz-Sultan.jpg",
+          description: `“At EvimIstanbul Group, we understand how overwhelming international relocation can be — especially for students navigating a new education system and legal environment. That’s why we’ve built a dedicated service for student permits and residency that’s fast, clear, and fully compliant. From university admission to address registration, our multilingual team supports your entire academic journey in Turkey with confidence and care.”`,
+        },
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Why Study in Turkey?',
+          },
+          {
+            type: 'list',
+            value: [
+              'Over 200 globally recognized universities',
+              `**No Entrance Exam Required Programs**`,
+              'English-taught programs in medicine, engineering, business, and more',
+              'Affordable tuition fees and living costs **(Contact Us For Our Exclusive Tuition Fees)**',
+              'Our Available **Exclusive Scholarships**',
+              'Strategic location for global mobility',
+            ],
+          },
+          {
+            type: 'richText',
+            value: [{
+              type: 'normal',
+              value: 'We guide you through every legal and logistical step of studying in Turkey.'
+            }]
+          }
+        ],
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Most Popular Fields of Study in Turkey',
+          },
+          {
+            type: 'richText',
+            value: [{
+              type: 'normal',
+              value: 'Turkey attracts a diverse international student body with its high‑quality education and affordable tuition. The most sought-after disciplines among foreign students include:'
+            }]
+          },
+
+          {
+            type: 'olList',
+            subClassNames: '!list-outside',
+            value: [
+              {
+                title: 'Medicine & Health Sciences',
+                subItems: [
+                  'Medicine & Dentistry → Most popular due to excellent clinical training, career stability, and accredited degrees. **No Entry Exam Required Programs!**',
+                  'Pharmacy & Physiotherapy → Shorter degree paths with strong job opportunities'
+                ]
+              }
+              ,
+
+              {
+                title: 'Engineering & IT',
+                subItems: [
+                  'Computer Science, Software Engineering, Electrical & Civil Engineering → High employment rates (90%+ within 6 months) and alignment with Turkey’s infrastructure growth '
+                ]
+              }
+              ,
+
+              {
+                title: 'Business, Finance & Economics',
+                subItems: [
+                  'MBA, Finance, International Business → Renowned programs at universities like Koç, METU, Boğaziçi and strong ROI'
+                ]
+              }
+              ,
+
+              {
+                title: 'Social Sciences & Humanities',
+                subItems: [
+                  'Psychology, International Relations, Law → Widely pursued by global students looking for accredited English tracks '
+                ]
+              }
+              ,
+
+              {
+                title: 'Architecture, Design & Media',
+                subItems: [
+                  'Architecture, Urban Planning, Film, Graphic Design → Flourishing creative programs attracting students from Europe and the Middle East'
+                ]
+              }
+              ,
+            ],
+          }
+        ],
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Top Universities in Turkey | 2025',
+          },
+          {
+            type: 'richText',
+            value: 'Turkey is home to several globally ranked universities offering high-quality education in English and Turkish. Here are the most popular choices among international students:',
+          },
+          {
+            type: 'paragraph',
+            value: `
+            **Koç University (Istanbul)** <br>
+            Ranked among the top Turkish institutions, Koç University consistently appears in the QS 2025 (351–400) and THE rankings. Known for its strong programs in business, engineering, and social sciences, it also offers accredited graduate and undergraduate English-taught courses.
+            <br><br>
+            **Middle East Technical University (METU, Ankara)** <br>
+            METU is Turkey’s highest-ranked public university, securing a shared position in QS 2025 (351–400) and top spot in Emerging Europe & Central Asia . It boasts a rigorous engineering curriculum and a vast, English-speaking campus attracting top students.
+            <br><br>
+            **Boğaziçi University (Istanbul)**<br>
+            Celebrated for its liberal arts culture and English-based education, Boğaziçi ranks prominently in the EECA top 10. Its prestigious legacy draws students from around the world.
+            <br><br>
+            **Bilkent University (Ankara)**<br>
+            A pioneering private non-profit university, Bilkent holds strong positions in QS and Times rankings (601–800). It features outstanding engineering and business faculties with AACSB accreditation.
+            <br><br>
+            **Sabancı University (Istanbul)**<br>
+            Also ranked among Turkey’s top 3 private universities (351–400). Sabancı is prized for its interdisciplinary programs in engineering, management, arts, and social sciences.`
+          }
+        ],
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Easy‑Entry Medicine, Dentistry & Pharmacy',
+          },
+          {
+            type: 'paragraph',
+            value: `
+            **No Entrance Exams at Top Private Universities** <br>
+            Private institutions like Istinye University, Istanbul Medipol University, Acibadem University, Istanbul Gedik, and Istanbul Okan offer direct entry into medicine, dentistry, pharmacy, and physiotherapy programs — without the YÖS exam or national entrance tests so international students can directly apply with high school certificates.
+            <br><br>
+            **Affordable Tuition & English‑Taught Programs** <br>
+            Tuition ranges from $15,000 to $30,000 per year with fully English-track curriculums and recognized Turkish Diplomas valid across Europe and beyond.
+            <br><br>
+            **Recognition and Career Potential**<br>
+            Degrees from these universities are accredited by Turkey’s Higher Education Council and often recognized internationally, offering global mobility for careers in Turkey, the EU, and the Middle East.`
+          },
+          {
+            type: 'title',
+            value: 'Popular Private Universities in Turkey (No Entrance Exam Required for International Students)',
+          },
+          {
+            type: 'richText',
+            value: 'These universities are among the most popular choices for international students, especially those pursuing Medicine, Dentistry, and Pharmacy. Many offer English-taught programs and do not require an entrance exam for admission:'
+          },
+          {
+            type: 'list',
+            classNames: '!list-outside !ml-5',
+            value: [
+              '**Istanbul Medipol University –** One of Turkey’s largest private medical universities with top-tier hospital training.',
+              '**Istinye University (ISU) –** Known for strong health sciences and partnerships with leading hospitals.',
+              '**Acıbadem Mehmet Ali Aydınlar University –** Affiliated with Acıbadem Healthcare Group; excellent in medicine and health.',
+              '**Istanbul Aydın University –** Wide range of programs and international student support.',
+              '**Altınbaş University –** Offers English programs in medicine, dentistry, and law.',
+              '**Bahçeşehir University (BAU) –** Global campuses, international networks, and strong academic reputation.',
+              '**Yeditepe University –** Leading private university offering Medicine and Pharmacy in English.',
+              '**Biruni University –** Specializes in health sciences with modern facilities.',
+              '**Bezmialem Vakif University –** Historic medical university with strong academic focus.',
+              '**Maltepe University –** Offers affordable programs in various fields including dentistry.',
+              '**Üsküdar University –** Leading university for psychology, neuroscience, and health fields.',
+              '**Okan University –** Known for practical training and good international student services.',
+              '**Istanbul Gelişim University –** Rapidly growing, offers English-medium health programs.',
+              '**Istanbul Kent University –** Affordable options for health and social sciences.',
+              '**Nişantaşı University –** Offers programs in multiple languages with strong student support.',
+              '**Halic University –** Offers medical programs and various student-friendly services.',
+              '**Istanbul Atlas University –** Focused on health and engineering fields.',
+              '**Istanbul Esenyurt University –** Accessible and affordable programs.',
+              '**Ankara Medipol University –** Medipol’s Ankara campus offering top medical training.',
+              '**Istanbul Rumeli University –** Friendly for international students with small class sizes.',
+              '**Istanbul Sabahattin Zaim University –** Affordable tuition and international campus.',
+              '**Istanbul Yeni Yüzyıl University –** Strong in medicine and dentistry.',
+            ]
+          }
+        ],
+      },
+
+      {
+        type: 'contactForm'
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'How We Help',
+          },
+          {
+            type: 'list',
+            classNames: '!list-none !pl-0',
+            subClassNames: '!pl-4',
+            value: [
+              {
+                title: 'University Admission Assistance',
+                subItems: [
+                  'Find the right program based on your goals and language preferences',
+                  'Apply to public or private universities across Turkey',
+                  'Assistance with documentation, translation, and application submission',
+                ],
+              },
+
+
+              {
+                title: 'Study Permit Application',
+                subItems: [
+                  'Complete legal support for applying at Turkish consulates or within Turkey',
+                  'Visa appointment scheduling and preparation',
+                  'Legal translations, apostilles, and document verification',
+                ],
+              },
+
+
+              {
+                title: 'Student Residency Permit',
+                subItems: [
+                  'Online application through Turkey’s official immigration portal (e-ikamet)',
+                  'Residence permit appointment scheduling (Göç İdaresi)',
+                  'Preparation and submission of full document package',
+                  'Health insurance coverage setup (mandatory for all students)',
+                  'Payment of all government fees and tax numbers',
+                ],
+              },
+
+
+              {
+                title: 'Settlement Services',
+                subItems: [
+                  'Assistance with address registration (Nüzus Kaydı)',
+                  'Opening a Turkish bank account',
+                  'Local SIM card, student transportation cards, and integration tips',
+                ],
+              },
+
+            ]
+          },
+        ],
+      },
+
+      {
+        type: 'alert',
+        data: [
+          {
+            type: 'normal', value: '“I wanted to study medicine in Turkey but didn’t know where to start. EvimIstanbul enrolled me at Istinye University and secured my student life and actually my future" ––', classes: 'italic'
+          },
+          {
+            type: 'bold', value: 'Fatemeh M., Iran', classes: 'italic'
+          }
+        ]
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Required Documents for Student Residency',
+          },
+          {
+            type: 'list',
+            value: [
+              'University Acceptance Letter or Student Certificate',
+              'Valid Passport and Visa (if applicable)',
+              'Health Insurance Policy',
+              'Proof of Address (rental contract or dormitory letter)',
+              'Biometric Photos',
+              'Proof of Financial Means (bank statement, scholarship letter, etc.)',
+            ],
+          },
+          {
+            type: 'paragraph',
+            value: 'Our team ensures all documents are translated, notarized, and properly submitted in full compliance with Turkish immigration regulations.'
+          },
+          {
+            type: 'list',
+            classNames: '!list-none !font-normal !pl-0',
+            subClassNames: '!pl-2',
+            value: [
+              {
+                description: 'Timeline',
+                subItems: [
+                  'Study Permit from consulate: 3–6 weeks (if applying from abroad)',
+                  'Student Residency approval: 2–8 weeks depending on region',
+                ]
+              }
+            ]
+          },
+        ],
+      },
+
+      {
+        type: 'alert',
+        data: [
+          {
+            type: 'normal', value: '“They helped me pick the right private university with no exam, got me my visa, and even helped me find housing. The whole process was easy thanks to them.” –– ', classes: 'italic'
+          },
+          {
+            type: 'bold', value: 'Mohammed S., Iraq', classes: 'italic'
+          }
+        ]
+      },
+
+      {
+        type: 'faq',
+        data: [
+          {
+            Q: "Can I study in Turkey without taking an entrance exam?",
+            A: "Yes. Many private universities in Turkey accept international students without requiring the YÖS or SAT exam — especially for programs like Medicine, Dentistry, and Pharmacy.",
+          },
+
+          {
+            Q: "Can I get Turkish citizenship through studying in Turkey?",
+            A: "International students who reside in Turkey continuously for 4 - 5 years or more on valid residence permits—like student residency—may qualify to apply for citizenship through naturalization. This path is a great option for long-term residents aiming to settle permanently in Turkey, combining academic, personal, and future citizenship goals.",
+          },
+
+          {
+            Q: "What documents are required for a student residence permit?",
+            A: "You’ll need a university acceptance letter, passport, biometric photos, valid health insurance, proof of financial means, and a rental contract or dormitory letter.",
+          },
+
+          {
+            Q: "Do I need to speak Turkish to study in Turkey?",
+            A: "Not necessarily. Many universities offer full programs in English. However, learning basic Turkish can improve your daily life and integration.",
+          },
+
+          {
+            Q: "How long does it take to get a student residence permit?",
+            A: "The approval process usually takes 2 to 8 weeks depending on your location in Turkey and the volume of applications.",
+          },
+
+          {
+            Q: "Can I work while studying in Turkey?",
+            A: "Legally, international students can work part-time during their studies, especially at the postgraduate level. However, you must get a work permit from your employer if required.",
+          },
+        ]
+      },
+
+      {
+        type: 'usHelp',
+        data: {
+          description: "EvimIstanbul is more than a consultancy — Your Trusted Partner for Study Permits and International Student Life in Turkey.  Let our experts handle the paperwork while you prepare for your studies. Whether you’re coming for undergraduate, master’s, or medical school, we make sure your permit and residency are processed without delays.",
+          buttonHref: '/'
+        }
+      }
+    ],
+    sidebar: {
+      usefulLinks: {},
+      counseling: {},
+    }
+  },
 ]

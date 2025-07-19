@@ -21,7 +21,7 @@ interface Props {
 
 export default function RichTextRenderer({ content, className }: Props) {
   if (typeof content === "string") {
-    return <p className={className}>{content}</p>;
+    return <p className={classNames(className, ' leading-relaxed text-lg')}>{content}</p>;
   }
 
   let currentLine: React.ReactNode[] = [];

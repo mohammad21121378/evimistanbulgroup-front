@@ -5,11 +5,17 @@ import TitleServiceCard from "@/components/our-services/service-card/TitleServic
 import Table from "@/components/table";
 import { AfterTextBlock, RichTextBlock } from "../types";
 import ListBlockRenderer from "./ListBlockRenderer";
+import Paragraph from "./Paragraph";
 
 interface TitleBlock {
     type: "title";
     value: string;
     options?: string[]
+}
+
+interface Paragraph {
+    type: "paragraph";
+    value: string;
 }
 
 
@@ -41,6 +47,7 @@ export type ContentBlock =
     | RichTextBlock
     | ListBlock
     | TableBlock
+    | Paragraph
     | AfterTextBlock;
 
 interface Props {
@@ -71,6 +78,8 @@ export default function Content({ data }: Props) {
                         return <RichTextRenderer className="!mt-4" key={i} content={block.value} />;
                     case "richText":
                         return <RichTextRenderer key={i} content={block.value} />;
+                    case "paragraph":
+                        return <div><Paragraph key={i} data={block} /></div>;
                     default:
                         return null;
                 }
