@@ -29,6 +29,7 @@ export type DataType = {
         usefulLinks?: {};
         counseling?: {};
         search?: {};
+        medicalImg?: {}
       };
 };
 
