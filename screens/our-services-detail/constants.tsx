@@ -294,7 +294,8 @@ export const servicesData = [
         type: 'usHelp',
         data: {
           description: 'EvimIstanbul is more than just a consultancy — we’re your strategic partner in unlocking global mobility, financial freedom, and a secure future for your entire family. Join the hundreds of international investors who’ve already trusted us to navigate their Turkish citizenship journey with confidence and ease.',
-          buttonHref: '/'
+          buttonHref: '/',
+          buttonLabel: 'Start Your Citizenship Journey Today – Request a Free Consultation'
         }
       }
     ],
@@ -642,7 +643,8 @@ export const servicesData = [
         type: 'usHelp',
         data: {
           description: "EvimIstanbul is more than just a consultancy — we’re your trusted partner for legally living in Turkey. Whether you're here for work, study, family, or a new beginning, we make your residence permit journey smooth, fast, and fully compliant with Turkish law. Join the growing number of expats and international residents who rely on EvimIstanbul for stress-free permit approvals and expert legal support.",
-          buttonHref: '/'
+          buttonHref: '/',
+          buttonLabel: 'Start Your Citizenship Journey Today – Request a Free Consultation'
         }
       }
     ],
@@ -868,7 +870,8 @@ export const servicesData = [
         type: 'usHelp',
         data: {
           description: "EvimIstanbul is more than a consultancy — we are your legal partner in working and living in Turkey. Join hundreds of professionals, remote workers, and entrepreneurs who’ve trusted us for smooth, compliant work permit approvals.",
-          buttonHref: '/'
+          buttonHref: '/',
+          buttonLabel: 'Start Your Application Today  –  Book a Free Consultation Now',
         }
       }
     ],
@@ -1104,9 +1107,9 @@ export const servicesData = [
       {
         type: "userInfo",
         data: {
-          fullName: "OMID GHAFOURI",
-          role: "Director of Client Relations",
-          avatar: "OMID-GHAFOURI.jpg",
+          fullName: "Hamidreza Akhavannia",
+          role: "Client Relationship Manager",
+          avatar: "Hamidreza-Akhavannia.jpg",
           description: `“Renting out your property in Turkey — whether short-term or long-term — comes with legal, financial, and tenant-related challenges. At EvimIstanbul, we simplify the entire rental process for international landlords, from tenant vetting and contracts to income tracking and remote management. You earn — we handle the rest.”`,
         },
       },
@@ -1328,8 +1331,9 @@ export const servicesData = [
       {
         type: 'usHelp',
         data: {
-          description: "Let Us Help You Rent or Earn with Confidence.\n EvimIstanbul is your reliable partner in navigating Turkey’s rental market — whether you're leasing a new home or earning from your investment.",
-          buttonHref: '/'
+          description: "Start Your Rental Process Today –  Book a Free Consultation Now",
+          buttonHref: '/',
+          buttonLabel: ''
         }
       }
     ],
@@ -1741,7 +1745,8 @@ export const servicesData = [
         type: 'usHelp',
         data: {
           description: "EvimIstanbul is more than a consultancy — Your Trusted Partner for Study Permits and International Student Life in Turkey.  Let our experts handle the paperwork while you prepare for your studies. Whether you’re coming for undergraduate, master’s, or medical school, we make sure your permit and residency are processed without delays.",
-          buttonHref: '/'
+          buttonHref: '/',
+          buttonLabel: 'Start Your Study Journey Today – Request a Free Consultation'
         }
       }
     ],
@@ -3307,7 +3312,7 @@ Affordable options, student rentals, and second-home escapes. Ideal for capital 
       counseling: {},
     }
   },
-  
+
   {
     slug: "tours-leisure-experiences-in-turkey",
     sections: [
@@ -3560,4 +3565,220 @@ Affordable options, student rentals, and second-home escapes. Ideal for capital 
       counseling: {},
     }
   },
+
+
+
+
+  {
+    slug: "medical-tourism-in-turkey",
+    sections: [
+
+      {
+        type: "introduction",
+        data: {
+          title: "Medical Tourism in Turkey",
+          subTitle: "High‑Quality, Affordable Healthcare with Full Travel & Treatment Support",
+          description: "Turkey is globally recognized for its top-tier medical infrastructure, internationally accredited hospitals, and affordable treatment options. At **EvimIstanbul Group**, we’ve dedicated a division called **Medical Carelines** — built exclusively to coordinate your complete medical travel experience. From connecting you with vetted specialists and trusted hospitals to managing all logistics like flights, accommodation, and in-hospital support, Medical Carelines ensures every step of your health journey is seamless, safe, and held to the highest international standards.",
+        },
+      },
+
+      {
+        type: "userInfo",
+        data: {
+          fullName: "REZA ABBASZADEH",
+          role: "Executive Board Member & CIO",
+          avatar: "reza-abbaszadeh.png",
+          description: `"At EvimIstanbul Group - Medical Carelines, our mission is to bridge international patients with Turkey’s top medical talent and premier care facilities—ensuring safety, transparency, and comfort at every stage of their treatment journey. Begin your high quality medical journey with trust and ease. Our team will guide you from initial consultation to a safe return home—letting you focus on healing and transformation."`,
+        },
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Medical Carelines by EvimIstanbul Group',
+          },
+          {
+            type: 'richText',
+            value: [
+              {
+                type: 'normal',
+                value: 'In July 2025, Medical Carelines — a trusted name in health tourism of Turkey — was officially acquired by EvimIstanbul Group. Now fully integrated into our operations, Medical Carelines functions as our specialized healthcare travel division, offering full-service medical tourism coordination for international patients.',
+                classes: 'italic'
+              }
+            ]
+          }
+        ],
+      },
+
+      {
+        type: 'contactForm'
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Benefit from Our Medical Tourism Services',
+          },
+          {
+            type: 'list',
+            classNames: '!pl-7 !list-outside',
+            subClassNames: '!pb-0',
+            value: [
+              {
+                title: "Cosmetic & Plastic Surgery",
+                description: "Rhinoplasty (nose job), facelift, liposuction, breast augmentation, tummy tuck, Brazilian butt lift (BBL), body contouring"
+              },
+              {
+                title: "Dental Treatments",
+                description: "Dental implants, crowns, veneers, bridges, full-mouth restorations, Hollywood smile packages"
+              },
+              {
+                title: "Hair Transplantation",
+                description: "FUE, DHI, and Sapphire techniques — performed by top surgeons with natural-looking results"
+              },
+              {
+                title: "Eye & Vision Correction (Ophthalmology)",
+                description: "LASIK, LASEK, cataract surgery, glaucoma treatment, intraocular lenses (IOLs)"
+              },
+              {
+                title: "Aesthetic & Anti-Aging Medicine",
+                description: "Botox, dermal fillers, mesotherapy, PRP therapy, facial rejuvenation"
+              },
+              {
+                title: "Cardiology & Orthopedics",
+                description: "Heart bypass surgery, valve replacement, hip/knee replacement, arthroscopy, spinal surgery"
+              },
+              {
+                title: "Fertility & IVF Treatments",
+                description: "IVF cycles, ICSI, egg/sperm donation coordination, hormonal therapy, surrogacy consultancy"
+              },
+              {
+                title: "Cancer & Oncology Care",
+                description: "Chemotherapy, radiotherapy, immunotherapy, surgical oncology, second-opinion diagnosis"
+              },
+              {
+                title: "Neurology & Neurosurgery",
+                description: "Spine and brain surgery, epilepsy treatment, MS therapy, Parkinson's procedures"
+              },
+              {
+                title: "General Surgery & Internal Medicine",
+                description: "Gallbladder, thyroid, bariatric surgery (gastric sleeve, bypass), diabetes care, liver treatments"
+              },
+              {
+                title: "Wellness & Check-Up Packages",
+                description: "Full-body check-ups, executive health packages, detox retreats, post-COVID health evaluations"
+              },
+            ],
+          },
+        ],
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Quality You Can Trust',
+          },
+          {
+            type: 'list',
+            classNames: '!list-outside !pl-6',
+            value: [
+              "Clinic Accreditation – Every partner is verified, JCI/ISO-certified",
+              "Transparent Pricing – No hidden fees or surprises",
+              "Experienced Doctors – Licensed, trained in recognized institutions",
+              "Continuity of Care – From consultation to recovery and beyond",
+              "Legal & Ethical Standards – Compliance with Turkish MoH & international protocols",
+            ]
+          }
+        ],
+      },
+
+      {
+        type: 'alert',
+        data: [
+          {
+            type: 'normal',
+            value: '“I had dental implants and veneers done in Istanbul. EvimIstanbul arranged everything—it was world-class care at half the price back home.” – ',
+            classes: 'italic'
+          },
+          {
+            type: 'bold',
+            value: 'Maria G., UK',
+          },
+        ]
+      },
+
+      {
+        type: 'faq',
+        data: [
+          {
+            Q: 'Why "Medical Carelines"?',
+            A: "Because Your Health Journey Deserves First-Class Care. The name Medical Carelines represents more than just a brand — it defines an entire philosophy.",
+          },
+          {
+            richText: "We believe that your medical journey should feel as smooth, safe, and supported as boarding a trusted airline. That’s why we built Medical Carelines as a specialized medical travel coordination unit under EvimIstanbul Group, offering door-to-door care — from flight booking and visa assistance to hospital scheduling and hotel accommodation."
+          },
+
+          {
+            list: {
+              classNames: '!list-outside !pl-9',
+              value: [
+                '"Medical" reflects our trusted network of doctors, hospitals, and certified clinics across Turkey.',
+                '"Care" represents our commitment to patient well-being before, during, and after treatment.',
+                '"Lines" is inspired by global airline routes — because we coordinate every part of your journey like a flight path, ensuring smooth landings and successful outcomes.',
+              ]
+            }
+          },
+
+          {
+            richText: "Whether you're coming for a life-changing surgery, cosmetic transformation, or fertility treatment, Medical Carelines is your first-class medical concierge — combining healthcare, hospitality, and logistics under one trusted brand powered by EvimIstanbul Group."
+          },
+
+
+          {
+            Q: "Is medical tourism legal in Turkey?",
+            A: "Yes. Private clinics regulated by the Ministry of Health are internationally accredited and legally operate medical tourism programs.",
+          },
+          {
+            Q: "Can you help with medical visas?",
+            A: "Yes—we handle documentation, appointment letters, and support through the diplomatic process for the correct visa class.",
+          },
+          {
+            Q: "Are costs covered by insurance?",
+            A: "Many international health plans offer reimbursement for overseas procedures. We provide detailed invoices and medical documentation for claims.",
+          },
+          {
+            Q: "Do clinics offer English-speaking staff?",
+            A: "Absolutely. Partner clinics provide English-speaking coordinators, and our team offers 24/7 multilingual assistance.",
+          },
+          {
+            Q: "How soon can I get treatment?",
+            A: "Often within 1–2 weeks of inquiry. We streamline scheduling and hospital coordination based on urgency and availability.",
+          },
+        ]
+      },
+
+      {
+        type: 'usHelp',
+        data: {
+          description: "At EvimIstanbul, we don’t just connect you with doctors — we design your entire medical journey from airport to recovery. Whether it’s a life-changing surgery or a cosmetic boost. Your health deserves world-class care — without breaking the bank.",
+          buttonHref: '/',
+          buttonLabel: 'Ready to Prioritize Your Health  –  Book a Free Consultation Now',
+        },
+      },
+
+    ],
+    sidebar: {
+      usefulLinks: {},
+      counseling: {},
+      medicalImg: {},
+    }
+  },
+
+
 ]

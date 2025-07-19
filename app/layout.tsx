@@ -10,6 +10,8 @@ export const metadata = {
   
   description:
     "EvimIstanbul Group®",
+
+    favion: "/favicon.ico"
 };
 
 type RootLayoutProps = {
