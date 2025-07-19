@@ -20,6 +20,7 @@ export const serviceSections = [
       },
       {
         title: "Study Permit & Student Residency",
+        href: '/study-permit-student-residency-in-turkey',
         description: "Start your academic life in Turkey with official permits, visa, and university coordination.",
       },
     ],
@@ -30,6 +31,7 @@ export const serviceSections = [
     items: [
       {
         title: "Buy Property in Turkey",
+        href: "/buy-property-in-turkey",
         description: "Verified listings for investment, lifestyle, and citizenship anywhere in Turkey.",
 
       },
@@ -51,18 +53,22 @@ export const serviceSections = [
     items: [
       {
         title: "Company Formation",
+        href: '/company-formation-in-turkey',
         description: "Set up a Limited, Joint Stock, or Sole Proprietorship with expert guidance.",
       },
       {
         title: "Foreign Currency Transfer",
+        href: '/foreign-currency-transfer-to-turkey',
         description: "Legally transfer capital into Turkey with bank compliance and Central Bank reporting.",
       },
       {
         title: "Bank Account Opening",
+        href: '/bank-account-opening-in-turkey',
         description: "Personal or corporate, we help you open Turkish bank accounts with full documentation.",
       },
       {
         title: "Investment Opportunities",
+        href: '/investment-opportunities-in-turkey',
         description: "Discover high-return real estate, startup, and business ventures vetted by our experts.",
       },
     ],
@@ -73,14 +79,17 @@ export const serviceSections = [
     items: [
       {
         title: "Medical Tourism Coordination",
+        href: '/medical-tourism-in-turkey',
         description: "Access trusted clinics and top specialists for dental, cosmetic, and surgical treatments.",
       },
       {
         title: "Family Relocation Assistance",
+        href: '/family-relocation-assistance-to-turkey',
         description: "Move your entire family with A to Z support for permits, housing, and full integration.",
       },
       {
         title: "Tours & Leisure Experiences",
+        href: '/tours-leisure-experiences-in-turkey',
         description: "Enjoy curated cultural, luxury, and holiday experiences from city tours to coastal retreats.",
       },
     ],
