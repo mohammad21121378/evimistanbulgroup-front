@@ -2031,9 +2031,6 @@ Affordable options, student rentals, and second-home escapes. Ideal for capital 
     }
   },
 
-
-
-
   {
     slug: "company-formation-in-turkey",
     sections: [
@@ -2349,6 +2346,199 @@ Affordable options, student rentals, and second-home escapes. Ideal for capital 
           description: "Ready to Launch Your Business in Turkey?\nLet’s get started today — and make your Turkish business vision a reality. Whether you’re a solo entrepreneur, tech innovator, or global investor, EvimIstanbul makes your company setup smooth, fast, and 100% compliant. From standard LLCs to tax-free Teknopark registration — we handle every step for you.",
           buttonHref: '/',
           buttonLabel: 'Start Your Business Today –  Book a Free Consultation Now',
+        }
+      }
+    ],
+    sidebar: {
+      usefulLinks: {},
+      counseling: {},
+    }
+  },
+
+  {
+    slug: "foreign-currency-transfer-to-turkey",
+    sections: [
+
+      {
+        type: "introduction",
+        data: {
+          title: "Foreign Currency Transfer to Turkey",
+          subTitle: "Secure, Legal, and Cost-Effective Capital Transfers for Investors and Buyers",
+          description: "Transferring funds into Turkey can feel overwhelming — especially with evolving currency laws, banking restrictions, and strict documentation rules. At EvimIstanbul Group, we at EvimIstanbul Group make the process faster, cheaper, and fully legal. Whether you're investing in real estate, starting a company, or applying for Turkish citizenship, our team ensures your money arrives safely, on time, and fully compliant with Central Bank and Tax Authority (Vergi Dairesi) regulations.",
+        },
+      },
+
+      {
+        type: "userInfo",
+        data: {
+          fullName: "MEISAM KHERADMAND",
+          role: "Chairman of the Board & CEO",
+          avatar: "MEISAM-KHERADMAND-2.png",
+          description: `“We’ve built a trusted network of financial partners and licensed currency channels to help our clients move their capital to Turkey efficiently and legally — whether it’s for property, business, or investment. No delays, no banking headaches — just fast, smart, and compliant solutions.”`,
+        },
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Why You Need Help for Currency Transfer',
+          },
+          {
+            type: 'paragraph',
+            value: 'Sending large amounts (especially over $50,000) to Turkey involves more than a simple bank transfer:'
+          },
+          {
+            type: 'list',
+            classNames: '!pl-6',
+            value: [
+              'Funds must be converted through an official Turkish bank',
+              'You must obtain a Currency Exchange Certificate (Döviz Alım Belgesi)',
+              'Transfer must match legal source-of-funds declaration rules',
+              'For citizenship or company formation, exact exchange methods are required',
+              'Non-compliant transfers may be blocked, taxed, or rejected',
+            ],
+          },
+        ],
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'What We Offer',
+          },
+          {
+            type: 'paragraph',
+            value: 'Unlike traditional exchange bureaus or banks, EvimIstanbul Group uses a hybrid network of licensed financial partners, exchange offices, crypto-legal conversion channels, and SWIFT corridors to help you make an informed decision while preparing to:'
+          },
+          {
+            type: 'list',
+            subClassNames: '!list-outside !pl-10',
+            value: [
+              'Transfer large sums from dozens of countries',
+              'Convert currencies into Turkish Lira with official receipts',
+              'Secure best exchange rates with minimal commissions',
+              'Issue Currency Exchange Certificates accepted by all Turkish authorities',
+              'Prepare proof of funds documentation for immigration, property, or business filings',
+              'Handle cross-border crypto-to-fiat conversions through legal routes',
+              'Ensure full compliance with CBRT (TCMB) and MASAK laws',
+            ]
+          },
+        ],
+      },
+
+      {
+        type: 'contactForm'
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Who Is This For?',
+          },
+          {
+            type: 'list',
+            classNames: '!list-none !pl-0',
+            subClassNames: '!pl-5',
+            parentClassNames: '!font-normal',
+            value: [
+              {
+                title: 'Our solution is ideal for:',
+                subItems: [
+                  'Foreigners buying property in Turkey',
+                  'Investors applying for Turkish Citizenship by Investment',
+                  'Entrepreneurs opening companies in Turkey',
+                  'Students or families moving money for relocation or tuition',
+                  'High-net-worth individuals using crypto or non-traditional assets',
+                  'People sending money from sanctioned or high-risk jurisdictions legally',
+                ]
+              }
+            ]
+          },
+        ],
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Legally Compliant & Hassle-Free',
+          },
+          {
+            type: 'list',
+            classNames: '!list-none !pl-0',
+            subClassNames: '!pl-5',
+            parentClassNames: '!font-normal',
+            value: [
+              {
+                title: 'We manage all steps to keep your money clean and traceable:',
+                subItems: [
+                  'SWIFT transfer compliance',
+                  'Bank coordination for document verification',
+                  'Currency Exchange Certificate issuance for property purchases & CBI',
+                  'Crypto-to-fiat conversion through licensed OTC partners',
+                  'Full money trail documentation for government filings',
+                ]
+              }
+            ]
+          },
+        ],
+      },
+
+      {
+        type: 'alert',
+        data: [
+          {
+            type: 'normal', value: "“Their team helped me convert my crypto to Turkish lira, register it with the Central Bank, and invest in property — all legally and stress-free.” –– ", classes: 'italic'
+          },
+          {
+            type: 'bold', value: 'Mustafa H. – UAE'
+          }
+        ]
+      },
+
+      {
+        type: 'faq',
+        data: [
+          {
+            Q: "Can I use crypto to invest in Turkey?",
+            A: "Yes — we offer legal crypto-to-fiat conversions via registered OTC desks and issue official proof of funds.",
+          },
+
+          {
+            Q: "Will I get a Currency Exchange Certificate?",
+            A: "Yes — we ensure your transfer is converted through the right channels to receive a certified “Döviz Alım Belgesi.”",
+          },
+
+          {
+            Q: "Can I transfer funds from a country under sanctions or banking limits?",
+            A: "In many cases, yes. We work with multi-jurisdictional partners to find legal, alternative solutions.",
+          },
+
+          {
+            Q: "Is there a commission or hidden fee?",
+            A: "No hidden charges. Our commission is fully transparent and far lower than retail banks.",
+          },
+
+          {
+            Q: "How fast is the transfer process?",
+            A: "Typically the same day — including certification and full documentation.",
+          },
+        ]
+      },
+
+      {
+        type: 'usHelp',
+        data: {
+          description: "Transfer Smarter. Invest Faster. Avoid Legal Risks. Stop wasting time with slow banks, blocked wires, or questionable exchanges. Let EvimIstanbul Group guide you to the safest, smartest, and most compliant way to transfer your capital into Turkey.",
+          buttonHref: '/',
+          buttonLabel: 'Get Started Now –  Book a Free Consultation Now',
         }
       }
     ],
