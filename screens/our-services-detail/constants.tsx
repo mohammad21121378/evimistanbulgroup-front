@@ -2774,9 +2774,6 @@ Affordable options, student rentals, and second-home escapes. Ideal for capital 
     }
   },
 
-
-
-
   {
     slug: "investment-opportunities-in-turkey",
     sections: [
@@ -3069,6 +3066,238 @@ Affordable options, student rentals, and second-home escapes. Ideal for capital 
           description: "Let us be your trusted gateway to Turkey’s most rewarding investment opportunities.\n Whether you're looking to earn high returns through real estate, gain equity in fast-growing startups, or launch a profitable business, EvimIstanbul provides the expertise, network, and legal structure you need to invest with clarity and confidence.",
           buttonHref: '/',
           buttonLabel: 'Invest Now  or Never –  Book a Free Consultation Now',
+        },
+      },
+
+    ],
+    sidebar: {
+      usefulLinks: {},
+      counseling: {},
+    }
+  },
+
+  {
+    slug: "family-relocation-assistance-to-turkey",
+    sections: [
+
+      {
+        type: "introduction",
+        data: {
+          title: "Family Relocation Assistance to Turkey",
+          subTitle: "Relocate with Confidence. We Handle Everything.",
+          description: "Moving to Turkey with your family? Whether for work, investment, education, or lifestyle, relocating as a family comes with unique needs. At EvimIstanbul Group, we offer end-to-end support to ensure a smooth, stress-free, and fully legal relocation experience — from paperwork and permits to housing, schools, and integration.",
+        },
+      },
+
+      {
+        type: "userInfo",
+        data: {
+          fullName: "OMID GHAFOURI",
+          role: "Director of Client Relations",
+          avatar: "OMID-GHAFOURI.png",
+          description: `“At EvimIstanbul Group, we don’t just relocate families — we integrate them into a new life. From the first phone call to the school drop-off on your first day, our mission is to make your family’s move to Turkey comfortable, legal, and joyful.”`,
+        },
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Why Choose Turkey for Family Relocation?',
+          },
+          {
+            type: 'list',
+            classNames: '!pl-7 !list-outside',
+            value: [
+              'High quality of life and low cost of living',
+              'Safe, family-friendly cities with strong infrastructure',
+              'Excellent international and private schools',
+              'Access to world-class healthcare',
+              'Warm hospitality and welcoming culture',
+              'Residence permit options for the entire family',
+              'EU-style living without the EU-level cost',
+            ],
+          },
+          {
+            type: 'paragraph',
+            value: 'Whether you’re relocating to Istanbul, Antalya, Izmir, Bodrum, or elsewhere, we tailor every step to your family’s goals.'
+          }
+        ],
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'What’s Included in Our Relocation Services?',
+          },
+          {
+            type: 'list',
+            classNames: '!list-outside !pl-6',
+            subClassNames: '!pb-0',
+            value: [
+              {
+                title: "Residence Permits for All Family Members",
+                description: "We manage your legal permits (short or long-term) for spouse, children, and dependents — with full compliance.",
+              },
+              {
+                title: "Housing Assistance & Neighborhood Tours",
+                description: "We help you rent or buy a family-friendly home — close to schools, clinics, and transportation.",
+              },
+              {
+                title: "School Enrollment Guidance",
+                description: "From international schools to private Turkish institutions, we assist with registration, translation, and interviews.",
+              },
+              {
+                title: "Healthcare System Orientation",
+                description: "We help you get private insurance, choose hospitals, and access family physicians.",
+              },
+              {
+                title: "Banking, Tax ID & SIM Card Setup",
+                description: "Your family will need a Turkish bank account, mobile line, and tax number — we handle all paperwork.",
+              },
+              {
+                title: "Language & Integration Support",
+                description: "We connect you with local language courses, cultural orientation, and community networks.",
+              },
+              {
+                title: "POA (Power of Attorney) & Remote Relocation",
+                description: "Still abroad? We can begin the relocation process on your behalf — even before you arrive.",
+              },
+            ]
+          }
+        ],
+      },
+
+      {
+        type: 'contactForm'
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Who We Help',
+          },
+          {
+            type: 'list',
+            value: [
+              "Investors moving to manage property & business",
+              "Professionals relocating with their spouses and kids",
+              "Families enrolling children in Turkish or international schools",
+              "Medical tourists staying long-term",
+              "Remote workers seeking safe, affordable living abroad",
+            ]
+          },
+        ]
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Why Investment with EvimIstanbul Group?',
+          },
+          {
+            type: 'list',
+            classNames: '!list-outside !pl-6',
+            value: [
+              "**Rigorous Due Diligence:** Legal, financial, and market checks on each project.",
+              "**Multidisciplinary Advisory:** Real estate, legal, tax, and business experts.",
+              "**Integrated Services:** From investment to bank setup, permits, and post-investment support.",
+              "**Transparency from Day One:** Clear terms, no hidden fees, compliance with all regulations.",
+              "**Tailored to Your Goals:** Whether you're aiming for citizenship, rental income, or business diversification.",
+            ]
+          },
+        ],
+      },
+
+      {
+        type: 'alert',
+        data: [
+          {
+            type: 'normal', value: "“I was overwhelmed with the idea of moving my entire family. But the EvimIstanbul team handled every step — from permits to housing and even our kids school registration. We felt welcomed and stress-free.”", classes: 'italic'
+          },
+          {
+            type: 'bold', value: 'Khaled T. – Saudi Arabia'
+          }
+        ]
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Why Families Trust EvimIstanbul Group',
+          },
+          {
+            type: 'list',
+            classNames: '!list-outside !pl-6',
+            value: [
+              'Full Legal Compliance & Residency Expertise',
+              'Personalized Relocation Plans',
+              'Multilingual Team (English, Arabic, Russian, Farsi, French)',
+              'Access to Family-Friendly Properties & Schools',
+              'Local Partnerships with Clinics, Schools, & Communities',
+              'Remote Start Possible — We Prepare Before You Arrive',
+            ]
+          },
+        ],
+      },
+
+      {
+        type: 'alert',
+        data: [
+          {
+            type: 'normal', value: "“We relocated to Istanbul as a family of four. EvimIstanbul helped us find a beautiful apartment, got our residence permits, and even helped us enroll our kids in a bilingual school. Life is smooth now — thanks to their amazing team.”", classes: 'italic'
+          },
+          {
+            type: 'bold', value: 'Sarah A. – UK'
+          }
+        ]
+      },
+
+      {
+        type: 'faq',
+        data: [
+          {
+            Q: "Can my whole family get residence permits together?",
+            A: "Yes. We apply for all family members under one application, ensuring legal unity and streamlined approvals.",
+          },
+
+          {
+            Q: "What schools can my children attend?",
+            A: "We assist with enrollment in top international, bilingual, or Turkish private schools, depending on your preferences.",
+          },
+
+          {
+            Q: "Do I need to live in Turkey before applying for relocation?",
+            A: "No. We can begin the process remotely, prepare housing, and submit paperwork before you arrive.",
+          },
+
+          {
+            Q: "Will we get health insurance?",
+            A: "Yes. Private health insurance is a requirement and part of our relocation setup package.",
+          },
+
+          {
+            Q: "How long does the whole process take?",
+            A: "Typically 2–4 weeks, depending on paperwork and housing needs.",
+          },
+        ]
+      },
+
+      {
+        type: 'usHelp',
+        data: {
+          description: "Don’t navigate the complexities of relocation alone. At EvimIstanbul Group, our experts handle every detail — from legal permits and school enrollments to housing and healthcare — so you can focus on building a new life with peace of mind.",
+          buttonHref: '/',
+          buttonLabel: 'Start Your Family Life in Turkey –  Book a Free Consultation Now',
         },
       },
 
