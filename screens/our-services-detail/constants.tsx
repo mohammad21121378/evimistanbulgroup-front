@@ -250,7 +250,7 @@ export const servicesData = [
             type: 'normal', value: '“The process was smoother than I expected. EvimIstanbul’s legal team handled everything, and I didn’t even have to travel to Turkey during the process.” ––', classes: 'italic'
           },
           {
-            type: 'bold', value: 'Lina M., Egypt', classes: 'italic'
+            type: 'bold', value: 'Lina M., Egypt'
           },
         ]
       },
@@ -1646,7 +1646,7 @@ export const servicesData = [
             type: 'normal', value: '“I wanted to study medicine in Turkey but didn’t know where to start. EvimIstanbul enrolled me at Istinye University and secured my student life and actually my future" ––', classes: 'italic'
           },
           {
-            type: 'bold', value: 'Fatemeh M., Iran', classes: 'italic'
+            type: 'bold', value: 'Fatemeh M., Iran'
           }
         ]
       },
@@ -1697,7 +1697,7 @@ export const servicesData = [
             type: 'normal', value: '“They helped me pick the right private university with no exam, got me my visa, and even helped me find housing. The whole process was easy thanks to them.” –– ', classes: 'italic'
           },
           {
-            type: 'bold', value: 'Mohammed S., Iraq', classes: 'italic'
+            type: 'bold', value: 'Mohammed S., Iraq'
           }
         ]
       },
@@ -1980,7 +1980,7 @@ Affordable options, student rentals, and second-home escapes. Ideal for capital 
             type: 'normal', value: '“The EvimIstanbul helped me purchase a water-view apartment in Istanbul without any stress. Everything from the property visit to title deed transfer was flawless.” – ', classes: 'italic'
           },
           {
-            type: 'bold', value: 'Andrei P., Romania', classes: 'italic'
+            type: 'bold', value: 'Andrei P., Romania'
           }
         ]
       },
@@ -2028,6 +2028,333 @@ Affordable options, student rentals, and second-home escapes. Ideal for capital 
       usefulLinks: {},
       counseling: {},
       search: {},
+    }
+  },
+
+
+
+
+  {
+    slug: "company-formation-in-turkey",
+    sections: [
+
+      {
+        type: "introduction",
+        data: {
+          title: "Company Formation in Turkey",
+          subTitle: "Start, Own, and Grow Your Business Legally with Full Legal Confidence",
+          description: "Looking to launch a business in Turkey as a foreigner? Whether you’re an entrepreneur, freelancer, investor, or international brand — EvimIstanbul Group provides fast, legal, and reliable company formation services tailored to your needs. From legal registration and tax setup to bank accounts and permits, we handle it all — so you can focus on building your future in Turkey.",
+        },
+      },
+
+      {
+        type: "userInfo",
+        data: {
+          fullName: "REZA ABBASZADEH",
+          role: "Executive Board Member & CIO",
+          avatar: "REZA-ABBASZADEH-2.png",
+          description: `“Starting a business in Turkey shouldn’t feel overwhelming. At EvimIstanbul, we help international entrepreneurs set up Limited, Joint Stock, or Sole Proprietorship companies with full legal compliance, tax registration, and strategic guidance. Whether you're launching a startup or expanding globally, we make your Turkish business journey secure.”`,
+        },
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Why Start a Company in Turkey?',
+          },
+          {
+            type: 'list',
+            value: [
+              '100% foreign ownership allowed — no Turkish partner required',
+              'Access to both European and Middle Eastern markets',
+              'Strategic location for global trade and logistics',
+              'Affordable operations and competitive corporate tax (as low as 20%)',
+              'Pathway to Turkish residence permit and work permit',
+              'Opportunity to benefit from incentive zones and free trade areas',
+            ],
+          },
+        ],
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Types of Companies You Can Establish',
+          },
+          {
+            type: 'olList',
+            subClassNames: '!list-outside !pl-10',
+            value: [
+
+              {
+                title: 'Limited Liability Company (LTD Şirketi)',
+                subItems: [
+                  'Most popular choice for foreign investors. Fast to register, flexible, and suitable for most businesses.',
+                  'Requires minimum 1 shareholder (can be foreign) and 10,000 TRY capital.',
+                ],
+              },
+
+              {
+                title: 'Joint Stock Company (A.Ş.)',
+                subItems: [
+                  'Best for larger investments and businesses planning to scale or attract outside shareholders.',
+                  'Mandatory for certain regulated industries (finance, insurance, etc.).',
+                ],
+              },
+
+              {
+                title: 'Sole Proprietorship (Şahıs Şirketi)',
+                subItems: [
+                  'Ideal for freelancers, consultants, and small-scale entrepreneurs. Quickest and cheapest setup.',
+                  'No minimum capital requirement.',
+                ],
+              }
+
+            ]
+          },
+        ],
+      },
+
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Company Formation with Us',
+          },
+          {
+            type: 'list',
+            classNames: '!list-outside !pl-7',
+            value: [
+              'Company name reservation & trade registry',
+              'Legal address setup (virtual or physical)',
+              'Drafting and notarization of Articles of Association',
+              'Tax number & registration with Tax Office',
+              'Registration at the Chamber of Commerce',
+              'Bank account opening (with tax ID & translation)',
+              'Company stamp & official documents',
+              'Assistance with e-signature (e-imza)',
+              'Full legal compliance and coordination',
+            ]
+          },
+          {
+            type: 'list',
+            classNames: '!list-none !pl-0',
+            value: [
+              {
+                title: "Optional Add-ons:",
+                subItems: [
+                  'Work permit application for directors',
+                  'Virtual office & business address',
+                  'Monthly accounting packages',
+                  'Legal contracts and trademark registration',
+                ]
+              }
+            ]
+          },
+        ],
+      },
+
+      {
+        type: 'contactForm'
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Special Offer: Launch Your Tech Startup in Turkey’s Innovation Zones (Teknopark)',
+          },
+          {
+            type: 'paragraph',
+            value: 'Looking to build a tech-based or R&D-driven company in Turkey? EvimIstanbul Group can help you register your company inside a government-approved Technology Development Zone (commonly called a “Teknopark”) — giving you exclusive access to tax-free operations, funding, and Turkey’s leading innovation ecosystem.'
+          },
+          {
+            type: 'paragraph',
+            value: '**What Is a Technology Development Zone (Teknopark)?**'
+          },
+          {
+            type: 'paragraph',
+            value: 'Turkey’s “Teknoparks” are innovation hubs backed by the government, designed to support startups, R&D companies, and tech entrepreneurs. Businesses operating within these zones enjoy major financial incentives and are connected to top universities, investors, and industrial leaders.'
+          },
+          {
+            type: 'paragraph',
+            value: '**Key Benefits of Starting in a Teknopark**'
+          },
+          {
+            type: 'list',
+            classNames: '!list-outside !pl-7',
+            value: [
+              '100% Tax Exemption on Company Profits (for up to 10+ years)',
+              'No Income Tax on Employee Salaries',
+              'VAT & Customs Exemptions on Imported Equipment',
+              'Free or discounted Office Spaces in Prime Innovation Campuses',
+              'Access to Government Grants and TUBITAK R&D Support',
+              'Mentorship, Investor Introductions & Acceleration Programs',
+              'Brand Prestige & Business Credibility',
+            ]
+          },
+          {
+            type: 'paragraph',
+            value: '**We help eligible startups enter Bilişim Vadisi Teknopark, Turkey’s Silicon Valley — home to AI labs, medtech firms, mobility startups, and international tech leaders.**'
+          },
+          {
+            type: 'paragraph',
+            value: '**Who Is This For?**'
+          },
+          {
+            type: 'list',
+            classNames: '!list-outside !pl-7',
+            value: [
+              'AI, fintech, medtech, or health-tech startups',
+              'Software developers & digital entrepreneurs',
+              'Engineering & robotics companies',
+              'University spin-offs & R&D teams',
+              'Global founders seeking tax-advantaged expansion into Turkey',
+            ]
+          },
+          {
+            type: 'paragraph',
+            value: '**What We Do for You**'
+          },
+          {
+            type: 'list',
+            classNames: '!list-outside !pl-7',
+            value: [
+              'Business Structure Setup (Ltd, A.Ş., etc.)',
+              'Full Teknopark Application & Approval Process',
+              'Office Allocation & Legal Address Setup',
+              'Tax Optimization Strategy',
+              'Grant & Incentive Application Support',
+              'Connection with University Labs & Local Ecosystems',
+              'Post-Registration Compliance & Reporting',
+            ]
+          },
+          {
+            type: 'paragraph',
+            value: '**Let’s Build Your Innovation Journey** <br> Don’t just open a company — build a future-proof tech business with elite support and no tax burden.'
+          },
+        ],
+      },
+
+      {
+        type: 'alert',
+        data: [
+          {
+            type: 'normal', value: "“EvimIstanbul helped me set up a tech startup in Istanbul without ever visiting. Everything was handled with transparency and speed. I'm now operating legally and expanding my business.” ––  ", classes: 'italic'
+          },
+          {
+            type: 'bold', value: 'Nour A., Lebanon'
+          }
+        ]
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Required Documents',
+          },
+          {
+            type: 'list',
+            classNames: '!list-outside !pl-7',
+            value: [
+              'Passport copy (notarized & translated)',
+              'Turkish Tax Number (we help you obtain it)',
+              'Power of Attorney (if registering remotely)',
+              'Address and business activity description',
+              '2 biometric photos',
+            ]
+          },
+          {
+            type: 'paragraph',
+            value: 'Remote setup possible — no need to be physically present in Turkey.'
+          },
+        ],
+      },
+
+      {
+        type: 'alert',
+        data: [
+          {
+            type: 'normal', value: "“EvimIstanbul helped me set up a tech startup in Istanbul without ever visiting. Everything was handled with transparency and speed. I'm now operating legally and expanding my business.” ––", classes: 'italic'
+          },
+          {
+            type: 'bold', value: 'Rajiv M. – India'
+          }
+        ]
+      },
+
+      {
+        type: 'faq',
+        data: [
+          {
+            Q: "Can I open a company in Turkey without being in the country?",
+            A: "Yes, with a notarized Power of Attorney, we handle everything remotely.",
+          },
+
+          {
+            Q: "How long does it take to register?",
+            A: "Usually 5–10 business days, depending on your documentation and office type.",
+          },
+
+          {
+            Q: "Do I need a Turkish partner?",
+            A: "No. Foreigners can own 100% of the company.",
+          },
+
+          {
+            Q: "Can I hire employees after forming the company?",
+            A: "Yes. We help you register with the SGK (Social Security) and manage payroll.",
+          },
+
+          {
+            Q: "Will I need an accountant?",
+            A: "Yes. Turkish law requires monthly financial reporting. We provide reliable, English-speaking accounting partners. (English, Arabic, German and Persian Speaking)",
+          },
+
+          {
+            Q: "What is a Teknopark in Turkey?",
+            A: "Teknopark (Technology Development Zone) is a government-supported innovation hub where tech and R&D companies can operate tax-free, access grants, and connect with universities and investors.",
+          },
+
+          {
+            Q: "What are the main financial benefits of entering a Teknopark?",
+            A: "Companies inside Teknoparks enjoy:",
+          },
+          {
+            list: {
+              classNames: '!-mt-6 !pl-6',
+              value: [
+                '100% Corporate Tax Exemption',
+                '100% Income Tax Exemption on Salaries',
+                'VAT and Customs Duty Exemptions on R&D imports',
+                'Eligibility for TÜBİTAK and KOSGEB grants',
+              ]
+            }
+          }
+        ]
+      },
+
+      {
+        type: 'usHelp',
+        data: {
+          description: "Ready to Launch Your Business in Turkey?\nLet’s get started today — and make your Turkish business vision a reality. Whether you’re a solo entrepreneur, tech innovator, or global investor, EvimIstanbul makes your company setup smooth, fast, and 100% compliant. From standard LLCs to tax-free Teknopark registration — we handle every step for you.",
+          buttonHref: '/',
+          buttonLabel: 'Start Your Business Today –  Book a Free Consultation Now',
+        }
+      }
+    ],
+    sidebar: {
+      usefulLinks: {},
+      counseling: {},
     }
   },
 ]
