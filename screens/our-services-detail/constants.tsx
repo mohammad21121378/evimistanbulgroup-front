@@ -2547,4 +2547,230 @@ Affordable options, student rentals, and second-home escapes. Ideal for capital 
       counseling: {},
     }
   },
+  
+  {
+    slug: "bank-account-opening-in-turkey",
+    sections: [
+
+      {
+        type: "introduction",
+        data: {
+          title: "Bank Account Opening in Turkey",
+          subTitle: "Secure, Hassle-Free Turkish Bank Accounts with Full Documentation Support",
+          description: "Whether you're buying property, setting up a business, studying, or relocating in Turkey — having a Turkish bank account is essential for legal compliance and financial convenience. At EvimIstanbul Group, we streamline the entire process for foreign individuals and companies, ensuring your account is set up quickly, securely, and in full compliance with Turkish regulations.",
+        },
+      },
+
+      {
+        type: "userInfo",
+        data: {
+          fullName: "Mohamad Aziz Sultan",
+          role: "Executive Board Member & CMO",
+          avatar: "Mohamad-Aziz-Sultan.jpg",
+          description: `“At EvimIstanbul, we know how frustrating it can be for foreigners to open a bank account in Turkey. That’s why we’ve built strong relationships with major banks and created a fast-track system for both personal and business accounts — with full documentation, legal compliance, and VIP-level support from start to finish.”`,
+        },
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Why You Need a Turkish Bank Account',
+          },
+          {
+            type: 'list',
+            classNames: '!pl-6',
+            value: [
+              'Complete property purchases and real estate investments',
+              'Transfer funds post-currency conversion (bank receipts required)',
+              'Pay for residence, work, or study permits',
+              'Salary payments or business transactions',
+              'Monthly utility and rent payments',
+              'Access to credit cards, e-government portals, and online services',
+            ],
+          },
+        ],
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Who We Help',
+          },
+          {
+            type: 'list',
+            subClassNames: '!list-outside !pl-10',
+            value: [
+              'Foreign individuals (ex-pats, investors, students)',
+              'International businesses and startups',
+              'Companies registered in Turkey (LTD, A.Ş., branch offices)',
+              'Nomads or remote workers eligible for digital nomad residency',
+            ]
+          },
+        ],
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'What We Handle (Full-Service Account Opening)',
+          },
+          {
+            type: 'list',
+            classNames: '!list-outside !pl-6',
+            value: [
+              'Introduce you to reputable Turkish banks (state & private)',
+              'Help choose the right account: Savings, Current, USD/EUR, Business, Digital Nomad',
+              'Prepare and translate all required documents',
+              'Formally submit your application, power of attorney, and KYC forms',
+              'Coordinate e-signature or in-person verification',
+              'Assist with post-opening tasks: Online banking, debit cards, IBAN, SMS banking, and mobile apps',
+              'Exclusive high-limit Credit Card and Loan approval',
+            ]
+          },
+        ],
+      },
+
+      {
+        type: 'contactForm'
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Required Documents',
+          },
+          {
+            type: 'list',
+            classNames: '!list-none !pl-0',
+            subClassNames: '!pl-5',
+            value: [
+              {
+                title: 'Individual Accounts:',
+                subItems: [
+                  'Passport copy (notarized & translated)',
+                  'Turkish tax number (we obtain it)',
+                  'Proof of address (e.g. address registration letter, rental contract, utility bill) ',
+                  'Passport-size photo',
+                  'Power of Attorney (for remote openings)',
+                ]
+              },
+              {
+                title: 'Corporate Accounts:',
+                subItems: [
+                  'Company registration docs (trade registry & tax certificate)',
+                  'Notarized Articles of Association and Company Directory',
+                  'Genealogy of shareholders',
+                  'Director’s passport & tax number',
+                  'KYC and Beneficial Owner forms',
+                  'Signature circular and company seal',
+                ]
+              },
+            ]
+          },
+          {
+            type: 'paragraph',
+            value: 'Which bank and what nationality are 2 important questions here and document may vary.'
+          }
+        ],
+      },
+
+      {
+        type: 'alert',
+        data: [
+          {
+            type: 'normal', value: "“EvimIstanbul helped me open a corporate Turkish bank account from abroad — without me ever visiting. It was fast, clear, and fully compliant.”  – ", classes: 'italic'
+          },
+          {
+            type: 'bold', value: 'Alexey S., Russia'
+          }
+        ]
+      },
+
+      {
+        type: "content",
+        data: [
+          {
+            type: 'title',
+            value: 'Credit Cards & Loans – Our Exclusive Network',
+          },
+          {
+            type: 'paragraph',
+            value: 'Beyond opening your bank account, EvimIstanbul Group helps you access high-limit credit cards and personal or business loans — through our trusted relationships with top Turkish banks.'
+          },
+          {
+            type: 'paragraph',
+            value: "Whether you're a new resident, student, investor, or business owner, we simplify what others find impossible."
+          },
+          {
+            type: 'list',
+            classNames: '!list-none !pl-0',
+            subClassNames: '!pl-8 !list-outside',
+            parentClassNames: '!font-normal',
+            value: [
+              {
+                title: 'What We Offer:',
+                subItems: [
+                  "Credit Cards with High Limits – Even for new foreigners with no Turkish credit history",
+                  "Business Loans – For foreign entrepreneurs with active companies in Turkey",
+                  "Installment-Based Personal Loans – Linked to income or property ownership",
+                  "Vehicle & Mortgage Loans – With fast-track applications and expert documentation support",
+                  "Pre-Approved Bank Relationships – With VakıfBank, Ziraat Bankası, İş Bankası, Garanti BBVA, and others",
+                ]
+              }
+            ]
+          },
+          {
+            type: 'paragraph',
+            value: "“Most foreigners are denied at the bank counter — we turn no into yes through proper legal structure, full application support, and our insider network.” – EvimIstanbul Group"
+          },
+        ],
+      },
+
+      {
+        type: 'faq',
+        data: [
+          {
+            Q: 'Do I need a residence permit to open a bank account?',
+            A: 'No — foreigners can open bank accounts in Turkey without residency permits, but a passport and tax ID are mandatory.',
+          },
+
+          {
+            Q: 'Can I open an account remotely?',
+            A: 'Yes. With Power of Attorney and official translations, we complete the remote opening process for you.',
+          },
+
+          {
+            Q: 'What kind of account should I choose as a freelancer?',
+            A: 'A corporate current account or a specialist digital nomad account may suit your needs best — ask us for guidance.',
+          },
+
+          {
+            Q: 'What’s the bank commission & cost?',
+            A: 'Basic accounts have no monthly fees; premium services and international transfers have transparent rates — we will explain all upfront.',
+          },
+        ]
+      },
+
+      {
+        type: 'usHelp',
+        data: {
+          description: "Don’t let paperwork or bureaucracy delay your plans. EvimIstanbul Group ensures a smooth, legal, and fast bank account setup — helping you fund your vision in Turkey with absolute clarity. Open Your  Bank Account with Confidence in Turkey.",
+          buttonHref: '/',
+          buttonLabel: 'Open  Bank Account Today –  Book a Free Consultation Now',
+        }
+      }
+    ],
+    sidebar: {
+      usefulLinks: {},
+      counseling: {},
+    }
+  },
 ]
