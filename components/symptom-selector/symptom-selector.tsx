@@ -4,6 +4,7 @@ import SymptomSelectorItem from "./symptom-selector-item";
 import { Symptom, SymptomItem, SymptomSelectorProps } from "./types";
 import { useSymptom } from "./useSymptom";
 import DropdownWithChildren from "../dropdown-with-children/DropdownWithChildren";
+import isEqual from "lodash.isequal";
 
 
 const SymptomSelector = ({ symptoms, search = true, multiple = true, title = "Klinik Belirtilen", setSelected, selected = false, defaultIsOpen = false, placeholder = 'Search...', allowForSelectAllChildren = false, parentIsLabel = false, svgtitle, svgArrow=true }: SymptomSelectorProps) => {
@@ -15,17 +16,24 @@ const SymptomSelector = ({ symptoms, search = true, multiple = true, title = "Kl
     const { filtered, selectedSymptoms, setSelectedSymptoms, handleSelect, handleSelectSymptomAndChildren, searchTerm, setSearchTerm } = useSymptom(symptoms, multiple)
 
 
+    // useEffect(() => {
+    //     if (!setSelected) return;
+    //     setSelected(selectedSymptoms)
+    // }, [selectedSymptoms]);
+
+
     useEffect(() => {
         if (!setSelected) return;
-        setSelected(selectedSymptoms)
+        if (!isEqual(selectedSymptoms, selected)) {
+            setSelected(selectedSymptoms);
+        }
     }, [selectedSymptoms]);
-
 
     useEffect(() => {
         if (!selected || selected.length === 0) return;
         const initialSelections = selected.map(item => item.toString());
         setSelectedSymptoms(initialSelections);
-    }, []);
+    }, [selected]);
 
     return (
         <DropdownWithChildren svgArrow={svgArrow} title={title} svg={svgtitle} key={title}>

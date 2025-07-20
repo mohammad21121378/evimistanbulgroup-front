@@ -6,10 +6,10 @@ import {
   InfoWindowF,
   useLoadScript,
 } from "@react-google-maps/api";
-import { useProperties } from "../hooks/useProperties";
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import PropertyListing from "@/components/property-listing";
 import { Loader } from "lucide-react";
+import { PropertyRawType } from "@/types/Property";
 
 const containerStyle = {
   width: "100%",
@@ -17,13 +17,25 @@ const containerStyle = {
   borderRadius: 16
 };
 
-export default function PropertyMap() {
+type Props = {
+  loadingData?: boolean;
+  properties: PropertyRawType[]
+}
+
+function PropertyMap({ loadingData, properties }: Props) {
+  console.log("render");
+
 
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyDMrYr9uVDCqL-7okyHX3RAIHvO5QUHSFI",
   });
 
-  const { properties } = useProperties();
+  function position() {
+    return {
+      lat: 40.7 + Math.random() * 0.2,
+    lng: 29 + Math.random() * 0.2,
+    }
+  }
 
   const [selectedPropertyId, setSelectedPropertyId] = useState<number | null>(null);
   const mapRef = useRef<google.maps.Map | null>(null);
@@ -34,14 +46,14 @@ export default function PropertyMap() {
   };
 
   const handleMapClick = () => {
-    setSelectedPropertyId(null); 
+    setSelectedPropertyId(null);
   };
 
   const handleMarkerClick = (id: number) => {
     setSelectedPropertyId(id);
   };
 
-  if (!isLoaded) {
+  if (!isLoaded || loadingData) {
     return (
       <div
         style={containerStyle}
@@ -74,30 +86,32 @@ export default function PropertyMap() {
       {properties.map((property) => {
         const svgSize = selectedPropertyId === property.id ? 50 : 36
         return (
-        <MarkerF
-          key={property.id}
-          position={{ lat: property.lat, lng: property.lng }}
-          icon={{
-            url: "/images/marker.svg",
-            scaledSize: new google.maps.Size(svgSize , svgSize),
-          }}
-          onClick={(e) => {
-            e.domEvent.stopPropagation();
-            handleMarkerClick(property.id);
-          }}
-        >
-          {selectedPropertyId === property.id && (
-            <InfoWindowF
-              position={{ lat: property.lat, lng: property.lng }}
-            >
-              <div className="max-w-[17.5rem] md:max-h-[22rem] max-h-[24rem]">
-                <PropertyListing scale={.5} size="small" item={property} />
-              </div>
-            </InfoWindowF>
-          )}
-        </MarkerF>
+          <MarkerF
+            key={property.id}
+            position={{ lat: position().lat, lng: position().lng }}
+            icon={{
+              url: "/images/marker.svg",
+              scaledSize: new google.maps.Size(svgSize, svgSize),
+            }}
+            onClick={(e) => {
+              e.domEvent.stopPropagation();
+              handleMarkerClick(property.id);
+            }}
+          >
+            {selectedPropertyId === property.id && (
+              <InfoWindowF
+                position={{ lat: position().lat, lng: position().lng }}
+              >
+                <div className="max-w-[17.5rem] md:max-h-[22rem] max-h-[24rem]">
+                  <PropertyListing scale={.5} size="small" item={property} />
+                </div>
+              </InfoWindowF>
+            )}
+          </MarkerF>
         )
-})}
+      })}
     </GoogleMap>
   );
 }
+
+export default PropertyMap;

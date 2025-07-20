@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 
 interface UsePaginationOptions<T> {
+    limit: number;
+    initialData: T[];
     scrollTo?: {desktop: number; mobile: number;}
-    totalPages?: number
 }
 
-export function useNumberedPagination<T>({
-    scrollTo={desktop: 90, mobile:450},
-    totalPages=100
+export function useNumberedPaginationFakeData<T>({
+    limit,
+    initialData,
+    scrollTo={desktop: 90, mobile:450}
 }: UsePaginationOptions<T>) {
 
     const router = useRouter();
@@ -47,15 +49,26 @@ export function useNumberedPagination<T>({
         });
 
     }, [currentPage]);
-   
+
+    const totalPages = Math.ceil(initialData.length / limit);
+
+    const paginatedItems = initialData.slice(
+        (currentPage - 1) * limit,
+        currentPage * limit
+    );
 
     const goToPage = (page: number) => {
         setCurrentPage(page);
     };
 
+    useEffect(() => {
+        goToPage(1);
+    }, [initialData]);
+
     return {
         currentPage,
         totalPages,
+        items: paginatedItems,
         goToPage,
     };
 }

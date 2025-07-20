@@ -8,32 +8,14 @@ import RangeSlider from "@/components/range-slider/RangeSlider";
 import { iconsforFilters } from "../constants";
 import { featureItems, propertyTypes, bedrooms as bedroomsOptions, bathrooms as bathroomsOptions } from "../constants";
 import originalTurkiye from "@/constants/turkiye.json";
+import { FilterProps } from "../types";
 
 const turkiye = originalTurkiye.map((province) => ({
     ...province,
     children: province.districts,
 }));
 
-type Props = {
-    priceRange: [number, number];
-    setPriceRange: React.Dispatch<React.SetStateAction<[number, number]>>;
-    priceRangeValue: { min: number; max: number };
-
-    locationsSelected: string[];
-    setLocationsSelected: React.Dispatch<React.SetStateAction<string[]>>;
-
-    propertyTypesSelected: string[];
-    setPropertyTypesSelected: React.Dispatch<React.SetStateAction<string[]>>;
-
-    featureSelected: string[];
-    setFeatureSelected: React.Dispatch<React.SetStateAction<string[]>>;
-
-    bedroomsSelected: string[];
-    setBedroomsSelected: React.Dispatch<React.SetStateAction<string[]>>;
-
-    bathroomsSelected: string[];
-    setBathroomsSelected: React.Dispatch<React.SetStateAction<string[]>>;
-
+interface Props extends FilterProps {
     hasSvgItems?: boolean
 };
 
@@ -46,6 +28,11 @@ export default function FieldsFilter({
     setFeatureSelected,
     setBedroomsSelected,
     setBathroomsSelected,
+    locationsSelected,
+    propertyTypesSelected,
+    featureSelected,
+    bedroomsSelected,
+    bathroomsSelected,
     hasSvgItems=true
 }: Props) {
     return (
@@ -58,6 +45,7 @@ export default function FieldsFilter({
                     svgArrow={hasSvgItems}
                     allowForSelectAllChildren
                     setSelected={setLocationsSelected}
+                    selected={locationsSelected}
                 />
             </div>
 
@@ -70,6 +58,7 @@ export default function FieldsFilter({
                     allowForSelectAllChildren={false}
                     multiple={false}
                     setSelected={setPropertyTypesSelected}
+                    selected={propertyTypesSelected}
                 />
             </div>
 
@@ -83,6 +72,7 @@ export default function FieldsFilter({
                     parentIsLabel
                     multiple={false}
                     setSelected={setFeatureSelected}
+                    selected={featureSelected}
                 />
             </div>
 
@@ -115,6 +105,7 @@ export default function FieldsFilter({
                     allowForSelectAllChildren={false}
                     multiple={false}
                     setSelected={setBedroomsSelected}
+                    selected={bedroomsSelected}
                 />
             </div>
 
@@ -127,6 +118,7 @@ export default function FieldsFilter({
                     allowForSelectAllChildren={false}
                     multiple={false}
                     setSelected={setBathroomsSelected}
+                    selected={bathroomsSelected}
                 />
             </div>
 

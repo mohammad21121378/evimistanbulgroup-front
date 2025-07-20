@@ -43,7 +43,7 @@ const Button: React.FC<ButtonProps> = ({
     lg: 'h-14 w-56 text-[1rem]',
     xl: 'h-[3.6rem] w-full max-w-[18.125rem] text-[1rem]',
     '2xl': 'h-14 w-full max-w-[23.125rem] text-[1rem]',
-    full: 'w-full h-14 text-[1rem]',
+    full: 'w-full h-14 min-h-14 text-[1rem]',
     auto: 'h-14 !w-auto px-5',
   };
 

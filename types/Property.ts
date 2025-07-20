@@ -1,19 +1,35 @@
+export type PropertyRawType = {
+  id: number;
+  images: string[];
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  location: string;
+  status: string;
+  features: {
+    id: number;
+    icon: string;
+    name: string;
+    value: string | number;
+  }[];
+};
 export type PropertyType = {
-    item: {
+  item: {
+    id: number;
+    images: string[];
+    title: string;
+    price: number;
+    description: string;
+    category: string;
+    location: string;
+    status: string;
+    features: {
       id: number;
-      images: string[];
-      title: string;
-      price: number;
-      description: string;
-      category: string;
-      location: string;
-      status: string;
-      features: {
-        id: number;
-        icon: string;
-        name: string;
-        value: string | number;
-      }[];
-    };
-    className?: string
+      icon: string;
+      name: string;
+      value: string | number;
+    }[];
   };
+  className?: string
+};

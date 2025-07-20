@@ -1,84 +1,40 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React from "react";
 import cn from "classnames";
 
 import styles from "./hero.module.css";
 
 import PropertyListing from "@/components/property-listing";
-import { Listings } from "@/constants/mock";
 import SortDropdown from "@/components/sort-dropdown";
 import Pagination from "@/components/ui/Pagination";
 import { useNumberedPagination } from "@/hooks/useNumberedPagination";
 
 import ChangeTypeListings from "../change-type-listings";
-import { TypeProp, onChangeType } from "../types";
+import { FilterProps, TypeProp, onChangeType } from "../types";
 import Breadcrumb from "../breadcrumb";
-import { useFilter } from "../hooks/useFilter";
 import FieldsFilter from "../fields-filter";
+import Button from "@/components/ui/Button";
 
-const defaultListing = Listings.flatMap((listingCategory) => listingCategory.items)
-
-type Props = {
+interface Props extends FilterProps {
   type: TypeProp;
   onChange: onChangeType
 }
 
-export default function Hero({ type, onChange }: Props) {
+function Hero({ type, onChange, ...filtersState }: Props) {
 
-  const [applyFilters, setApplyFilters] = React.useState<boolean>(false);
-  const [sortOption, setSortOption] = useState<string>("newest");
-  const [filteredListings, setFilteredListings] = useState(defaultListing)
-
-  const filtersState = useFilter();
+  
 
   const {
-    locationsSelected,
-    propertyTypesSelected,
+    sortOption, 
+    onSort,
+    properties,
+    onFilter,
+    loading,
+    applyFilters,
+    onReset,
+    currentPage, totalPages, goToPage
   } = filtersState;
-
-  const handleApplyFilters = () => {
-    setApplyFilters(true);
-    setFilteredListings(() => {
-      return Listings.flatMap((listingCategory) =>
-        listingCategory.items.filter((item) => {
-
-          const matchesLocation = locationsSelected.length
-            ? locationsSelected.includes(item.location.toLowerCase())
-            : true;
-
-          const matchesPropertyType = propertyTypesSelected.length
-            ? propertyTypesSelected.includes(item.category)
-            : true;
-
-
-          return (
-            matchesLocation &&
-            matchesPropertyType
-          );
-        })
-      )
-    })
-  };
-
-  const handleReset = () => {
-    setApplyFilters(false);
-    setFilteredListings(defaultListing)
-  }
-
-  const sortedListings = useMemo(() => {
-    return [...filteredListings].sort((a, b) => {
-      if (sortOption === "price-asc") return a.price - b.price;
-      if (sortOption === "price-desc") return b.price - a.price;
-      if (sortOption === "newest") return new Date(b.id).getTime() - new Date(a.id).getTime();
-      return 0;
-    })
-  }, [sortOption, filteredListings]);
-
-  const { currentPage, totalPages, items: paginatedListings, goToPage } = useNumberedPagination({
-    limit: 6,
-    initialData: sortedListings,
-  });
 
   return (
     <section className={cn("section", styles.section)}>
@@ -86,7 +42,7 @@ export default function Hero({ type, onChange }: Props) {
         <div className="sm:flex grid justify-between items-center mb-4">
           <Breadcrumb />
           <div className="md:block hidden">
-            <SortDropdown value={sortOption} onChange={setSortOption} />
+            <SortDropdown value={sortOption} onChange={onSort} />
           </div>
         </div>
       </div>
@@ -110,27 +66,24 @@ export default function Hero({ type, onChange }: Props) {
             </div>
             {
               applyFilters &&
-              <button className={cn("label-medium text-orange-600", styles.textButton)} onClick={handleReset}>
+              <button className={cn("label-medium text-orange-600", styles.textButton)} onClick={onReset}>
                 Reset
               </button>
             }
-            <button
-              className={cn("button sticky -bottom-6 z-10", styles.button)}
-              onClick={handleApplyFilters}
-            >
-              Find Now
-            </button>
+            <Button size="full" onClick={onFilter} className={cn("sticky -bottom-6 z-10", styles.button)} loading={loading}>
+            Find Now
+            </Button>
           </div>
           </div>
         </div>
 
         <div className="md:hidden block mb-5">
-          <SortDropdown value={sortOption} onChange={setSortOption} />
+          <SortDropdown value={sortOption} onChange={onSort} />
         </div>
 
         <div className={cn(styles.listings, 'grid sm:grid-cols-2 grid-cols-1 gap-6')}>
 
-          {paginatedListings.map((listing) => (
+          {properties.map((listing) => (
             <div>
               <PropertyListing key={listing.id} item={listing} />
             </div>
@@ -150,3 +103,6 @@ export default function Hero({ type, onChange }: Props) {
     </section>
   );
 }
+
+
+export default Hero;

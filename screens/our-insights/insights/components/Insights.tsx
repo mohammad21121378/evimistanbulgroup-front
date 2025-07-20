@@ -1,15 +1,15 @@
 'use client';
 
 import GuidesAndInsightsListing from '@/components/guides-and-Insights-listing';
-import { useNumberedPagination } from '@/hooks/useNumberedPagination';
 import Pagination from '@/components/ui/Pagination';
 
 import { useMockInsights } from '../hooks/useMockInsights';
+import { useNumberedPaginationFakeData } from '@/hooks/useNumberedPaginationFakeData';
 
 export default function Insights() {
   const mockData = useMockInsights(25);
 
-  const { currentPage, totalPages, items, goToPage } = useNumberedPagination({
+  const { currentPage, totalPages, items, goToPage } = useNumberedPaginationFakeData({
     limit: 12,
     initialData: mockData,
     scrollTo: {desktop: 450, mobile:925}

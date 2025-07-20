@@ -5,19 +5,21 @@ import FiltersBar from "./components/FiltersBar";
 import classNames from "classnames";
 import Breadcrumb from "../breadcrumb";
 import ChangeTypeListings from "../change-type-listings";
-import { TypeProp, onChangeType } from "../types";
+import { FilterProps, TypeProp, onChangeType } from "../types";
+import React from "react";
 
 const PropertyMap = dynamic(
   () => import("./components/PropertyMap"),
   { ssr: false }
 );
 
-type Props = {
+interface Props extends FilterProps {
   type: TypeProp;
   onChange: onChangeType
 }
 
-export default function MapPage({ type, onChange }: Props) {
+function MapPage({ type, onChange, ...filtersState }: Props) {
+
   return (
     <section className={classNames("section !pt-0 mt-36")}>
       <div className="container">
@@ -26,10 +28,13 @@ export default function MapPage({ type, onChange }: Props) {
           <ChangeTypeListings type={type} onChange={onChange} />
         </div>
         <div className="relative w-full h-[35rem]">
-          <FiltersBar />
-          <PropertyMap />
+          <FiltersBar {...filtersState} />
+          <PropertyMap loadingData={filtersState.loading} properties={filtersState.properties} />
         </div>
       </div>
     </section>
   );
 }
+
+
+export default React.memo(MapPage);
