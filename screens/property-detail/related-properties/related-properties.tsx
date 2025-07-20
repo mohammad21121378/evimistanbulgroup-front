@@ -31,7 +31,7 @@ export default function RelatedProperties({ item }: RelatedPropertiesProps) {
           <Heading type="heading-3">Similar Properties</Heading>
           </h2>
 
-          <Link href="/listings" className={cn("button button-primary")}>
+          <Link href="/properties-for-sale-in-turkey" className={cn("button button-primary")}>
           View All Similar Properties {ArrowRight}
           </Link>
         </div>

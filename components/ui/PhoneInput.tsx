@@ -53,6 +53,7 @@ const PhoneInput = <T extends Record<string, any>>({
                     })
                 }
                 disabled={disabled}
+                prefix="+"
                 containerClass="w-full relative !outline-none !outline-0"
                 buttonClass="!bg-slate-200 hover:!bg-slate-200 !border-none !flex items-center !pr-2.5 !pl-2"
                 inputClass="!w-full !h-14 md:!pl-16 !pl-20 !bg-slate-100 !text-gray-600 !rounded-lg focus:!outline-none"

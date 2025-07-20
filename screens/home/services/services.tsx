@@ -55,7 +55,7 @@ export default function Services() {
             </div>
           </div>
 
-          <Link href="/listings" className={cn("button button-primary")}>
+          <Link href="/properties-for-sale-in-turkey" className={cn("button button-primary")}>
             {t("button")} {ArrowRight}
           </Link>
         </div>

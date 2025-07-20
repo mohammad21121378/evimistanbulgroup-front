@@ -103,61 +103,62 @@ export default function Overview({ item }: OverviewProps) {
                   {Plus}
                 </div>
 
-                
-                  <ul className={cn(
-                    styles.list,
-                    { [styles.listOpen]: open === detail.id}
-                    )}>
-                    {detail.features.map((feature) => (
-                      <li
-                        key={feature.id}
-                        className={cn("paragraph-medium", styles.list_item)}
-                      >
-                        {feature.text}
-                      </li>
-                    ))}
-                  </ul>
-                  
+
+                <ul className={cn(
+                  styles.list,
+                  { [styles.listOpen]: open === detail.id }
+                )}>
+                  {detail.features.map((feature) => (
+                    <li
+                      key={feature.id}
+                      className={cn("paragraph-medium", styles.list_item)}
+                    >
+                      {feature.text}
+                    </li>
+                  ))}
+                </ul>
+
               </div>
             ))}
           </div>
         </div>
 
-        <div className={styles.agentAndTabelOfContents}>
+        <div className={`${styles.agentAndTabelOfContents} overflow-visible h-full`}>
 
-          <div className={classNames("py-4 gap-3 flex justify-center items-center", styles.agent)}>
+          <div className=" sticky top-28">
+            <div className={classNames("py-4 gap-3 flex justify-center items-center", styles.agent)}>
 
-            <svg className="size-24" viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M86 43C86 66.7482 66.7482 86 43 86C19.2518 86 0 66.7482 0 43C0 19.2518 19.2518 0 43 0C66.7482 0 86 19.2518 86 43ZM3.44 43C3.44 64.8484 21.1516 82.56 43 82.56C64.8484 82.56 82.56 64.8484 82.56 43C82.56 21.1516 64.8484 3.44 43 3.44C21.1516 3.44 3.44 21.1516 3.44 43Z" fill="#E8E6F9" />
-              <path d="M43 1.72C43 0.77007 43.7705 -0.003591 44.7196 0.0343934C51.5951 0.309538 58.3132 2.23134 64.3047 5.64884C70.7949 9.35078 76.2085 14.68 80.0119 21.1112C83.8153 27.5425 85.8773 34.8538 85.9947 42.3246C86.1121 49.7954 84.2807 57.1679 80.6812 63.7154C77.0816 70.2629 71.8382 75.7596 65.4674 79.6635C59.0967 83.5675 51.8187 85.7441 44.3507 85.9788C36.8826 86.2135 29.4823 84.4982 22.879 81.0019C16.7831 77.7743 11.5607 73.1317 7.64437 67.4741C7.10371 66.693 7.3441 65.6279 8.14615 65.1189C8.9482 64.6099 10.008 64.85 10.5513 65.6291C14.1455 70.783 18.9211 75.0139 24.4887 77.9618C30.5637 81.1783 37.372 82.7564 44.2426 82.5405C51.1132 82.3246 57.809 80.3221 63.67 76.7304C69.5311 73.1388 74.3551 68.0819 77.6667 62.0582C80.9783 56.0344 82.6631 49.2518 82.5551 42.3786C82.4472 35.5055 80.5501 28.7791 77.051 22.8623C73.5518 16.9456 68.5713 12.0427 62.6003 8.63694C57.1281 5.51561 50.997 3.75047 44.7195 3.47738C43.7705 3.4361 43 2.66993 43 1.72Z" fill="#002DD1" />
-              <rect x="7.16602" y="7.16663" width="71.6667" height="71.6667" rx="32" fill="#DBC0DD" />
-              <rect x="7.16602" y="7.16663" width="71.6667" height="71.6667" rx="32" fill="url(#pattern0_6319_9488)" />
-              <defs>
-                <pattern id="pattern0_6319_9488" patternContentUnits="objectBoundingBox" width="1" height="1">
-                  <use href="#image0_6319_9488" transform="scale(0.0015625)" />
-                </pattern>
-                <image
-                  id={`image0_6319_9488`}
-                  href={item.agent && item.agent.image}
-                  width="640" height="640" preserveAspectRatio="none"
-                  className="rounded-full"
-                />
-              </defs>
-            </svg>
+              <svg className="size-24" viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M86 43C86 66.7482 66.7482 86 43 86C19.2518 86 0 66.7482 0 43C0 19.2518 19.2518 0 43 0C66.7482 0 86 19.2518 86 43ZM3.44 43C3.44 64.8484 21.1516 82.56 43 82.56C64.8484 82.56 82.56 64.8484 82.56 43C82.56 21.1516 64.8484 3.44 43 3.44C21.1516 3.44 3.44 21.1516 3.44 43Z" fill="#E8E6F9" />
+                <path d="M43 1.72C43 0.77007 43.7705 -0.003591 44.7196 0.0343934C51.5951 0.309538 58.3132 2.23134 64.3047 5.64884C70.7949 9.35078 76.2085 14.68 80.0119 21.1112C83.8153 27.5425 85.8773 34.8538 85.9947 42.3246C86.1121 49.7954 84.2807 57.1679 80.6812 63.7154C77.0816 70.2629 71.8382 75.7596 65.4674 79.6635C59.0967 83.5675 51.8187 85.7441 44.3507 85.9788C36.8826 86.2135 29.4823 84.4982 22.879 81.0019C16.7831 77.7743 11.5607 73.1317 7.64437 67.4741C7.10371 66.693 7.3441 65.6279 8.14615 65.1189C8.9482 64.6099 10.008 64.85 10.5513 65.6291C14.1455 70.783 18.9211 75.0139 24.4887 77.9618C30.5637 81.1783 37.372 82.7564 44.2426 82.5405C51.1132 82.3246 57.809 80.3221 63.67 76.7304C69.5311 73.1388 74.3551 68.0819 77.6667 62.0582C80.9783 56.0344 82.6631 49.2518 82.5551 42.3786C82.4472 35.5055 80.5501 28.7791 77.051 22.8623C73.5518 16.9456 68.5713 12.0427 62.6003 8.63694C57.1281 5.51561 50.997 3.75047 44.7195 3.47738C43.7705 3.4361 43 2.66993 43 1.72Z" fill="#002DD1" />
+                <rect x="7.16602" y="7.16663" width="71.6667" height="71.6667" rx="32" fill="#DBC0DD" />
+                <rect x="7.16602" y="7.16663" width="71.6667" height="71.6667" rx="32" fill="url(#pattern0_6319_9488)" />
+                <defs>
+                  <pattern id="pattern0_6319_9488" patternContentUnits="objectBoundingBox" width="1" height="1">
+                    <use href="#image0_6319_9488" transform="scale(0.0015625)" />
+                  </pattern>
+                  <image
+                    id={`image0_6319_9488`}
+                    href={item.agent && item.agent.image}
+                    width="640" height="640" preserveAspectRatio="none"
+                    className="rounded-full"
+                  />
+                </defs>
+              </svg>
 
-            <div>
-              <p className="text-xs font-bold mb-2">
-                Property Code: #123678
-              </p>
-              <button className="button button-small">
-                Book A Free Consultation
-              </button>
+              <div>
+                <p className="text-xs font-bold mb-2">
+                  Property Code: #123678
+                </p>
+                <button className="button button-small">
+                  Book A Free Consultation
+                </button>
+              </div>
             </div>
-          </div>
 
-          <div className="md:grid hidden overflow-visible h-full">
-            <div className="sticky ">
+            <div className="md:grid hidden mt-5">
               <TableOfContents hasCustomizeIcon />
+            </div>
               <div className="flex justify-around mt-5 lg:px-10">
                 {
                   [
@@ -178,10 +179,8 @@ export default function Overview({ item }: OverviewProps) {
 
                 }
               </div>
-            </div>
+
           </div>
-
-
         </div>
       </div>
     </section>

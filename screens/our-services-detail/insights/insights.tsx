@@ -17,7 +17,7 @@ export default function Insights() {
             <Heading type="heading-3">Our Guides & Insights</Heading>
           </h2>
 
-          <Link href="/listings" className={cn("button button-primary")}>
+          <Link href="/properties-for-sale-in-turkey" className={cn("button button-primary")}>
             View All Insights {ArrowRight}
           </Link>
           

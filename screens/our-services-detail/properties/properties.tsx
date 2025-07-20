@@ -23,7 +23,7 @@ export default function Properties() {
           </h2>
 
 
-          <Link href="/listings">
+          <Link href="/properties-for-sale-in-turkey">
             <button className={cn("button button-primary")}>
               View All Properties
               {ArrowRight}

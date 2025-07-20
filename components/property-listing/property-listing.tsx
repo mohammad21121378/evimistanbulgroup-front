@@ -19,7 +19,7 @@ export default function PropertyListing({
   scale = 1,
   size = 'default'
 }: PropertyListingProps) {
-  const link = `/listings/${item.category}/${item.title}`;
+  const link = `/properties-for-sale-in-turkey/${item.category}/${item.title}`;
 
   return (
     <div

@@ -24,7 +24,7 @@ export default function HighlightsAndFeatures() {
             </div>
           </div>
 
-          <Link href="/listings" className={cn("button button-primary")}>
+          <Link href="/properties-for-sale-in-turkey" className={cn("button button-primary")}>
             {t("viewAll")} {ArrowRight}
           </Link>
         </div>

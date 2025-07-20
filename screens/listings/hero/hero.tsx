@@ -94,6 +94,7 @@ export default function Hero({ type, onChange }: Props) {
       <div className={cn("container", styles.container)}>
 
         <div className="h-full">
+          <div className="sticky top-28">
           <ChangeTypeListings type={type} onChange={onChange} />
 
           <div className={cn('scrollbar-sm mb-10', styles.filters)}>
@@ -119,6 +120,7 @@ export default function Hero({ type, onChange }: Props) {
             >
               Find Now
             </button>
+          </div>
           </div>
         </div>
 

@@ -32,7 +32,7 @@ export default function Categories() {
             </div>
           </div>
 
-          <Link href="/listings" className="button button-primary">
+          <Link href="/properties-for-sale-in-turkey" className="button button-primary">
             {t("viewAll")} {ArrowRight}
           </Link>
         </div>

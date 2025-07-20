@@ -10,7 +10,7 @@ export default function RealatedInsights() {
   return <GuidesAndInsightsView
     title={"Related Guides and Insights"}
     button={{
-      href: '/listings',
+      href: '/properties-for-sale-in-turkey',
       text: "View All  Similar Guides and Insights"
     }} />
     ;

@@ -37,7 +37,7 @@ export default function LatestListings() {
             </div>
           </div>
 
-          <Link href="/listings">
+          <Link href="/properties-for-sale-in-turkey">
             <button className={cn("button", styles.button)}>
             {t("viewAll")} {ArrowRight}
             </button>
