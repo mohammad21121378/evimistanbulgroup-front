@@ -14,7 +14,7 @@ export function useFilter({ onFilterByChange = false }: Props) {
         max: 5000000
     }
 
-    const { currentPage, totalPages, goToPage: goToPageRaw } = useNumberedPagination({ totalPages: 200 })
+    const {currentPage, totalPages, goToPage: goToPageRaw} = useNumberedPagination({totalPages: 200})
 
     const [properties, setProperties] = useState(Listings.flatMap((listingCategory) => listingCategory.items))
     const [loading, setLoading] = useState(false)
@@ -29,7 +29,7 @@ export function useFilter({ onFilterByChange = false }: Props) {
     const [applyFilters, setApplyFilters] = useState<boolean>(false);
     const [sortOption, setSortOption] = useState<string>("newest");
 
-    const filterData = {
+    const filterData = useMemo(() => ({
         priceRange,
         locationsSelected,
         propertyTypesSelected,
@@ -37,8 +37,15 @@ export function useFilter({ onFilterByChange = false }: Props) {
         bedroomsSelected,
         bathroomsSelected,
         sortOption
-    };
-
+      }), [
+        priceRange,
+        locationsSelected,
+        propertyTypesSelected,
+        featureSelected,
+        bedroomsSelected,
+        bathroomsSelected,
+        sortOption
+      ]);
     const prevFilterRef = useRef<typeof filterData>(filterData);
 
     const fetchFilteredData = async () => {
@@ -70,17 +77,17 @@ export function useFilter({ onFilterByChange = false }: Props) {
 
     useEffect(() => {
         if (!onFilterByChange) return;
-
+    
         if (!isEqual(prevFilterRef.current, filterData)) {
-            prevFilterRef.current = filterData;
-
-            const timeoutId = setTimeout(() => {
-                onFilter();
-            }, 1000);
-
-            return () => clearTimeout(timeoutId);
+          prevFilterRef.current = filterData;
+          
+          const timeoutId = setTimeout(() => {
+            onFilter();
+          }, 1000);
+      
+          return () => clearTimeout(timeoutId);
         }
-    }, [filterData, onFilterByChange]);
+      }, [filterData, onFilterByChange]);
 
     return {
         ...filterData,
@@ -98,8 +105,8 @@ export function useFilter({ onFilterByChange = false }: Props) {
         onReset,
         onSort,
         onFilter,
-        currentPage,
-        totalPages,
+        currentPage, 
+        totalPages, 
         goToPage
 
     };
