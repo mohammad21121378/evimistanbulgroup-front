@@ -5,14 +5,16 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { initialFilterState, priceRangeValue } from "../filter.constants";
 import { useSearchParams } from 'next/navigation';
 import { useSyncLocationFromURL } from "./useSyncLocationFromURL";
+import fetchProperties from "@/helpers/api/property/properties"
 
 type Props = {
   onFilterByChange?: boolean
+  listings?: any[]
 }
 
-export function useFilter({ onFilterByChange = false }: Props) {
+export function useFilter({ onFilterByChange = false,listings }: Props) {
 
-  const { currentPage, totalPages, goToPage: goToPageRaw } = useNumberedPagination({ totalPages: 200 })
+  const { currentPage, totalPages, goToPage: goToPageRaw } = useNumberedPagination({ totalPages: listings?.pagination?.last_page ?? 1 })
 
   const searchParams = useSearchParams();
   // const locationParam = searchParams.get('location');
@@ -24,7 +26,12 @@ export function useFilter({ onFilterByChange = false }: Props) {
 
   const [applyFilters, setApplyFilters] = useState<boolean>(false);
 
-  const [properties, setProperties] = useState(initialFilterState.properties)
+  const [properties, setProperties] = useState(listings?.properties)
+  const [featureItemsDB, setFeatureItemsDB] = useState(listings?.special_features)
+  const [propertyTypesDB, setPropertyTypesDB] = useState(listings?.type_of_properties)
+  const [locationsDB, setlocationsDB] = useState(listings?.locations)
+
+
   const [priceRange, setPriceRange] = useState(initialFilterState.priceRange);
   const [locationsSelected, setLocationsSelected] = useState(initialFilterState.locationsSelected);
   const [propertyTypesSelected, setPropertyTypesSelected] = useState(initialFilterState.propertyTypesSelected);
@@ -32,6 +39,7 @@ export function useFilter({ onFilterByChange = false }: Props) {
   const [bedroomsSelected, setBedroomsSelected] = useState(initialFilterState.bedroomsSelected);
   const [bathroomsSelected, setBathroomsSelected] = useState(initialFilterState.bathroomsSelected);
   const [sortOption, setSortOption] = useState(initialFilterState.sortOption);
+
 
   useSyncLocationFromURL(setLocationsSelected, locationsSelected);
 
@@ -42,7 +50,8 @@ export function useFilter({ onFilterByChange = false }: Props) {
     featureSelected,
     bedroomsSelected,
     bathroomsSelected,
-    sortOption
+    sortOption,
+    currentPage
   }), [
     priceRange,
     locationsSelected,
@@ -50,16 +59,34 @@ export function useFilter({ onFilterByChange = false }: Props) {
     featureSelected,
     bedroomsSelected,
     bathroomsSelected,
-    sortOption
+    sortOption,
+    currentPage
   ]);
 
   const prevFilterRef = useRef<typeof filterData>(filterData);
 
   const fetchFilteredData = async (applyFilters = true) => {
     if (!loading) setLoading(true);
-
+    console.log(priceRange,
+        locationsSelected,
+        propertyTypesSelected,
+        featureSelected,
+        bedroomsSelected,
+        bathroomsSelected,
+        sortOption,currentPage)
     // مهندس اینجا api بزن و properties رو ست کن
 
+
+    const listings = await fetchProperties(15,currentPage,{
+      locationsSelected,
+      propertyTypesSelected,
+      featureSelected,
+      bedroomsSelected,
+      bathroomsSelected,
+      sortOption
+    });
+
+    if(listings.properties) setProperties(listings.properties);
     setTimeout(() => {
       setLoading(false);
       setApplyFilters(applyFilters);
@@ -128,6 +155,9 @@ export function useFilter({ onFilterByChange = false }: Props) {
     onFilter,
     currentPage,
     totalPages,
+    featureItemsDB,
+    propertyTypesDB,
+    locationsDB,
     goToPage
 
   };

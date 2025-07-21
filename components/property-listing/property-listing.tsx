@@ -20,7 +20,7 @@ export default function PropertyListing({
   scale = 1,
   size = 'default'
 }: PropertyListingProps) {
-  const link = `/properties-for-sale-in-turkey/${item.category}/${item.title}`;
+  const link = `${item.url ?? "#"}`;
 
   return (
     <div
@@ -34,7 +34,7 @@ export default function PropertyListing({
         <Link href={link} className={styles.img_holder}>
           <Image
             src={item.images && item.images[0]}
-            alt={item.title}
+            alt={item.images ? item.images[1] : item.title }
             layout="fill"
             objectFit="cover"
             objectPosition="center"
@@ -49,11 +49,12 @@ export default function PropertyListing({
           )}
         </Link>
 
-        <Offers offers={
-          [
-            "Limited-Time Offer",
-            "Special Discount",
-          ]} small={size==='small'} />
+        {item.special_features?.length > 1 && (
+            <Offers
+                offers={item.special_features.map(feature => feature.title)}
+                small={size === 'small'}
+            />
+        )}
 
 
         <div className={styles.listing_wrapper}>
@@ -82,11 +83,24 @@ export default function PropertyListing({
             {item.description}
           </div>
           <p className="text-lg font-medium text-[#1A1A1A]">
-            {formatNumber(item.price)} MIN –– {formatNumber(item.price)} MAX
+            {item.min_price && item.max_price ? (
+                <>
+                  {formatNumber(item.min_price)} MIN –– {formatNumber(item.max_price)} MAX
+                </>
+            ) : item.min_price ? (
+                <>
+                  {formatNumber(item.min_price)}
+                </>
+            ) : item.max_price ? (
+                <>
+                  {formatNumber(item.max_price)}
+                </>
+            ) : null}
+
           </p>
           <div className="flex justify-between items-center">
             <PropertyFeatures features={item.features} className={styles.features} />
-            <div className={cn("text-sm pt-3.5 font-normal text-gray-500")}>12h ago</div>
+            <div className={cn("text-sm pt-3.5 font-normal text-gray-500")}>{item.created_at}</div>
           </div>
         </div>
       </div>

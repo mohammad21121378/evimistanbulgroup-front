@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 8332",
+    "start": "next dev -p 8332",
     "lint": "next lint"
   },
   "dependencies": {
@@ -14,6 +14,7 @@
     "@react-google-maps/api": "^2.20.6",
     "@tippyjs/react": "^4.2.6",
     "@vis.gl/react-google-maps": "^1.1.0",
+    "axios": "^1.10.0",
     "classnames": "^2.5.1",
     "framer-motion": "^11.3.12",
     "lodash.isequal": "^4.5.0",
