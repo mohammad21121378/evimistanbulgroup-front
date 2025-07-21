@@ -6,13 +6,23 @@ import { initialFilterState, priceRangeValue } from "../filter.constants";
 import { useSearchParams } from 'next/navigation';
 import { useSyncLocationFromURL } from "./useSyncLocationFromURL";
 import fetchProperties from "@/helpers/api/property/properties"
+import { PropertyRawType } from "@/types/Property";
 
 type Props = {
   onFilterByChange?: boolean
-  listings?: any[]
+  listings: {
+    properties: PropertyRawType[];
+    pagination: {
+      last_page: number
+    }
+    special_features: string[]
+    type_of_properties: string[]
+    locations: string[]
+  }
 }
 
-export function useFilter({ onFilterByChange = false,listings }: Props) {
+export function useFilter({ onFilterByChange = false, listings }: Props) {
+
   const [totalPagesState, setTotalPagesState] = useState(listings?.pagination?.last_page ?? 1);
 
   const { currentPage, totalPages, goToPage: goToPageRaw } = useNumberedPagination({ totalPages: totalPagesState })
@@ -28,6 +38,7 @@ export function useFilter({ onFilterByChange = false,listings }: Props) {
   const [applyFilters, setApplyFilters] = useState<boolean>(false);
 
   const [properties, setProperties] = useState(listings?.properties)
+
   const [featureItemsDB, setFeatureItemsDB] = useState(listings?.special_features)
   const [propertyTypesDB, setPropertyTypesDB] = useState(listings?.type_of_properties)
   const [locationsDB, setlocationsDB] = useState(listings?.locations)
