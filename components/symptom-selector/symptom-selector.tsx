@@ -12,53 +12,41 @@ const SymptomSelector = ({ symptoms, search = true, multiple = true, title = "Kl
     onToggle,
 }: SymptomSelectorProps) => {
 
-    
-    
+
+
     const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value.toLowerCase());
     };
-    
+
     const { filtered, selectedSymptoms, setSelectedSymptoms, handleSelect, handleSelectSymptomAndChildren, searchTerm, setSearchTerm } = useSymptom(symptoms, multiple)
-    
-    // useEffect(() => {
-    //     if (!setSelected) return;
-    //     if (!isEqual(selectedSymptoms, selected)) {
-    //         setSelected(selectedSymptoms);
-    //     }
-    // }, [selectedSymptoms]);
-    
-    // useEffect(() => {
-    //     console.log(selected);
-    //     if (!selected) return;
-    //     if (selected.length === 0) {
-    //         setSelectedSymptoms([])
-    //         return;
-    //     };
-    //     const initialSelections = selected.map(item => item.toString());
-    //     setSelectedSymptoms(initialSelections);
-    // }, [selected]);
 
     const didMount = useRef(false);
 
-  // ✅ جلوگیری از Loop در اثر تغییر selected
-  useEffect(() => {
-    if (!setSelected) return;
-    if (!isEqual(selectedSymptoms, selected)) {
-      setSelected(selectedSymptoms);
-    }
-  }, [selectedSymptoms]);
+    useEffect(() => {
+        if (!setSelected) return;
+        if (!isEqual(selectedSymptoms, selected)) {
+            setSelected(selectedSymptoms);
+        }
+    }, [selectedSymptoms]);
 
-  // ✅ فقط در mount یا زمانی که selected تغییر واقعی کرده باشد
-  useEffect(() => {
-    if (!selected) return;
+    useEffect(() => {
+        if (!selected) return;
 
-    const initialSelections = selected.map(item => item.toString());
-    if (!isEqual(initialSelections, selectedSymptoms)) {
-      setSelectedSymptoms(initialSelections);
-    }
+        const initialSelections = selected.map(item => item.toString());
+        if (!isEqual(initialSelections, selectedSymptoms)) {
+            const defaultSym = filtered.find((value, index) => value.id === selectedSymptoms[0])
+            console.log("selectedSymptoms:", selectedSymptoms, defaultSym, filtered);
+            
+            if (defaultSym) {
+                handleSelectSymptomAndChildren(defaultSym)
+            }else{
+                // setSelected(selectedSymptoms);
+                setSelectedSymptoms(initialSelections);
+            }
+        }
 
-    didMount.current = true;
-  }, [selected]);
+        didMount.current = true;
+    }, [selected]);
 
     return (
         <DropdownWithChildren svgArrow={svgArrow} title={title} svg={svgtitle} key={title}
