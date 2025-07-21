@@ -66,7 +66,6 @@ export function useFilter({ onFilterByChange = false,listings }: Props) {
 
   const fetchFilteredData = async (applyFilters = true) => {
     if (!loading) setLoading(true);
-    console.log(prevFilterRef)
     console.log(priceRange,
         locationsSelected,
         propertyTypesSelected,
