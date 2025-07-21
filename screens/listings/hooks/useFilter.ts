@@ -64,6 +64,13 @@ export function useFilter({ onFilterByChange = false,listings }: Props) {
   const fetchFilteredData = async (applyFilters = true) => {
     if (!loading) setLoading(true);
 
+    console.log(priceRange,
+        locationsSelected,
+        propertyTypesSelected,
+        featureSelected,
+        bedroomsSelected,
+        bathroomsSelected,
+        sortOption,currentPage)
     // مهندس اینجا api بزن و properties رو ست کن
 
     setTimeout(() => {
