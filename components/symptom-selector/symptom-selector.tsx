@@ -24,6 +24,8 @@ const SymptomSelector = ({ symptoms, search = true, multiple = true, title = "Kl
 
     useEffect(() => {
         if (!setSelected) return;
+        // console.log(selectedSymptoms, selected);
+        
         if (!isEqual(selectedSymptoms, selected)) {
             setSelected(selectedSymptoms);
         }
@@ -34,15 +36,7 @@ const SymptomSelector = ({ symptoms, search = true, multiple = true, title = "Kl
 
         const initialSelections = selected.map(item => item.toString());
         if (!isEqual(initialSelections, selectedSymptoms)) {
-            const defaultSym = filtered.find((value, index) => value.id === selectedSymptoms[0])
-            console.log("selectedSymptoms:", selectedSymptoms, defaultSym, filtered);
-            
-            if (defaultSym) {
-                handleSelectSymptomAndChildren(defaultSym)
-            }else{
-                // setSelected(selectedSymptoms);
-                setSelectedSymptoms(initialSelections);
-            }
+            setSelectedSymptoms(initialSelections);
         }
 
         didMount.current = true;

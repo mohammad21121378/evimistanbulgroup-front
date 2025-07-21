@@ -4,9 +4,9 @@ import isEqual from "lodash.isequal";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { initialFilterState, priceRangeValue } from "../filter.constants";
 import { useSearchParams } from 'next/navigation';
-import { useSyncLocationFromURL } from "./useSyncLocationFromURL";
 import fetchProperties from "@/helpers/api/property/properties"
 import { ListingsType, PropertyRawType } from "@/types/Property";
+import { useSyncFilterFromURL } from "./useSyncFilterFromURL";
 
 type Props = {
   onFilterByChange?: boolean
@@ -20,12 +20,6 @@ export function useFilter({ onFilterByChange = false, listings, typeShowPage }: 
   const [totalPagesState, setTotalPagesState] = useState(listings?.pagination?.last_page ?? 1);
 
   const { currentPage, totalPages, goToPage: goToPageRaw } = useNumberedPagination({ totalPages: totalPagesState })
-
-  const searchParams = useSearchParams();
-  // const locationParam = searchParams.get('location');
-  // const initialLocationsSelected = useMemo(() => {
-  //   return locationParam ? locationParam.split(',') : initialFilterState.locationsSelected;
-  // }, [locationParam]);
 
   const [loading, setLoading] = useState(false)
 
@@ -47,7 +41,10 @@ export function useFilter({ onFilterByChange = false, listings, typeShowPage }: 
   const [sortOption, setSortOption] = useState(initialFilterState.sortOption);
 
 
-  useSyncLocationFromURL(setLocationsSelected, locationsSelected);
+
+  useSyncFilterFromURL('location', setLocationsSelected, locationsSelected);
+  useSyncFilterFromURL('feature', setFeatureSelected, featureSelected);
+useSyncFilterFromURL('types', setPropertyTypesSelected, propertyTypesSelected);
 
   const filterData = useMemo(() => ({
     priceRange,
