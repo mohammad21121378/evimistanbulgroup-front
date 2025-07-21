@@ -4,8 +4,8 @@ type Props = {
 }
 
 export default function Offers({ offers, small }: Props) {
-  const baseTop = small ? 11 : 14.75;
-  const step = small ? 2 : 2.65;
+  const baseTop = small ? 12.75 : 14.75;
+  const step = small ? 2.5 : 2.65;
 
   return (
     <>
