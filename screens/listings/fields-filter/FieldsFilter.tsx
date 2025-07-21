@@ -52,7 +52,7 @@ export default function FieldsFilter({
                     svgtitle={iconsforFilters["Location"]}
                     open={openDropdown === "Location"}
                     onToggle={() => handleToggle("Location")}
-                    symptoms={locationsDB}
+                    symptoms={turkiye}
                     svgArrow={hasSvgItems}
                     allowForSelectAllChildren
                     setSelected={setLocationsSelected}
