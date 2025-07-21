@@ -34,6 +34,7 @@ export default function FieldsFilter({
     bedroomsSelected,
     bathroomsSelected,
     featureItemsDB,
+    locationsDB,
     propertyTypesDB,
     hasSvgItems = true
 }: Props) {
@@ -52,7 +53,7 @@ export default function FieldsFilter({
                     svgtitle={iconsforFilters["Location"]}
                     open={openDropdown === "Location"}
                     onToggle={() => handleToggle("Location")}
-                    symptoms={turkiye}
+                    symptoms={locationsDB}
                     svgArrow={hasSvgItems}
                     allowForSelectAllChildren
                     setSelected={setLocationsSelected}

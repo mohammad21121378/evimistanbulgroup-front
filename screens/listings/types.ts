@@ -36,6 +36,7 @@ export interface FilterProps {
 
     featureItemsDB:any[],
     propertyTypesDB:any[],
+    locationsDB:any[],
 
     currentPage: number; 
     totalPages:number; 
