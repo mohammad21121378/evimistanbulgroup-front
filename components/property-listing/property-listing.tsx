@@ -49,7 +49,7 @@ export default function PropertyListing({
           )}
         </Link>
 
-        {item.special_features?.length > 1 && (
+        {item.special_features && item.special_features?.length > 1 && (
             <Offers
                 offers={item.special_features.map(feature => feature.title)}
                 small={size === 'small'}

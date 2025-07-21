@@ -45,20 +45,14 @@ export default function LatestListings() {
         </div>
 
         <div className={styles.wrapper}>
-          {/* <Dropdown
-            className={styles.dropdown}
-            options={dropdownOptions}
-            value={selectedCategory}
-            onChange={handleDropdownChange}
-          /> */}
           <div className={styles.listings}>
-            {Listings.filter(
+            {/* {Listings.filter(
               (listing) => listing.category === selectedCategory
             ).flatMap((listing) =>
               listing.items.map((item) => (
                 <PropertyListing key={item.id} item={item} />
               ))
-            )}
+            )} */}
           </div>
         </div>
       </div>
