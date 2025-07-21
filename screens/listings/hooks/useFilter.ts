@@ -103,6 +103,7 @@ export function useFilter({ onFilterByChange = false, listings }: Props) {
   const onFilter = async (applyFilters = true) => {
     await fetchFilteredData(applyFilters)
   }
+
   const onSort = (sort: string) => {
     setSortOption(sort)
     onFilter()
@@ -119,9 +120,11 @@ export function useFilter({ onFilterByChange = false, listings }: Props) {
     setSortOption(initialFilterState.sortOption);
     goToPageRaw(1);
 
+    setLoading(true);
+    
     setTimeout(() => {
       onFilter(false);
-    }, 100);
+    }, 1200);
   };
 
   const goToPage = (page: number) => {
