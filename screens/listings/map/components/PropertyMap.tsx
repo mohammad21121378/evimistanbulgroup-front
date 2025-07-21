@@ -29,13 +29,6 @@ function PropertyMap({ loadingData, properties }: Props) {
     googleMapsApiKey: "AIzaSyDMrYr9uVDCqL-7okyHX3RAIHvO5QUHSFI",
   });
 
-  const position = useMemo(() => {
-    return {
-      lat: 40.7 + Math.random() * 0.2,
-      lng: 29 + Math.random() * 0.2,
-    }
-  }, [properties])
-
   const [selectedPropertyId, setSelectedPropertyId] = useState<number | null>(null);
 
   const prevPropertiesRef = useRef<PropertyRawType[] | null>(null);
@@ -51,8 +44,8 @@ function PropertyMap({ loadingData, properties }: Props) {
   const mapRef = useRef<google.maps.Map | null>(null);
 
   const center = {
-    lat: 40.73,
-    lng: 29.0,
+    lat: properties[0]?.latitude,
+    lng: properties[0]?.longitude,
   };
 
   const handleMapClick = () => {
@@ -94,7 +87,7 @@ function PropertyMap({ loadingData, properties }: Props) {
       }}
     >
       {properties.map((property) => {
-        const svgSize = selectedPropertyId === property.id ? 50 : 36
+        const svgSize = selectedPropertyId === property.id ? 50 : 42
         return (
           <MarkerF
             key={property.id}

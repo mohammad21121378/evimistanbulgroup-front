@@ -7,6 +7,8 @@ export type PropertyRawType = {
   category: string;
   location: string;
   status: string;
+  latitude: number;
+  longitude: number;
   features: {
     id: number;
     icon: string;
