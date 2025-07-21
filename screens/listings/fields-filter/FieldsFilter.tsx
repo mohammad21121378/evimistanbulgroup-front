@@ -33,6 +33,8 @@ export default function FieldsFilter({
     featureSelected,
     bedroomsSelected,
     bathroomsSelected,
+    featureItems,
+    propertyTypes,
     hasSvgItems = true
 }: Props) {
 
@@ -40,6 +42,7 @@ export default function FieldsFilter({
 
     const handleToggle = (key: string) => {
         setOpenDropdown(prev => (prev === key ? null : key));
+        console.log(featureItems,propertyTypes)
     };
     return (
         <>

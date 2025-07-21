@@ -34,6 +34,9 @@ export interface FilterProps {
     loading: boolean;
     applyFilters: boolean;
 
+    featureItems:any[],
+    propertyTypes:any[],
+
     currentPage: number; 
     totalPages:number; 
     goToPage: (page: number) => void;

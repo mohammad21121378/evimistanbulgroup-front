@@ -26,6 +26,10 @@ export function useFilter({ onFilterByChange = false,listings }: Props) {
   const [applyFilters, setApplyFilters] = useState<boolean>(false);
 
   const [properties, setProperties] = useState(listings?.properties)
+  const [featureItems, setFeatureItems] = useState(listings?.special_features)
+  const [propertyTypes, setPropertyTypes] = useState(listings?.type_of_properties)
+
+
   const [priceRange, setPriceRange] = useState(initialFilterState.priceRange);
   const [locationsSelected, setLocationsSelected] = useState(initialFilterState.locationsSelected);
   const [propertyTypesSelected, setPropertyTypesSelected] = useState(initialFilterState.propertyTypesSelected);
@@ -129,6 +133,8 @@ export function useFilter({ onFilterByChange = false,listings }: Props) {
     onFilter,
     currentPage,
     totalPages,
+    featureItems,
+    propertyTypes,
     goToPage
 
   };
