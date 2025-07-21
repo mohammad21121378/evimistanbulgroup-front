@@ -33,8 +33,8 @@ export default function FieldsFilter({
     featureSelected,
     bedroomsSelected,
     bathroomsSelected,
-    featureItems,
-    propertyTypes,
+    featureItemsDB,
+    propertyTypesDB,
     hasSvgItems = true
 }: Props) {
 
