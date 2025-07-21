@@ -78,6 +78,7 @@ export function useFilter({ onFilterByChange = false,listings }: Props) {
 
 
     const listings = await fetchProperties(15,currentPage,{
+      priceRange,
       locationsSelected,
       propertyTypesSelected,
       featureSelected,
