@@ -98,7 +98,7 @@ function PropertyMap({ loadingData, properties }: Props) {
         return (
           <MarkerF
             key={property.id}
-            position={{ lat: position.lat, lng: position.lng }}
+            position={{ lat: property.latitude, lng: property.longitude }}
             icon={{
               url: "/images/marker.svg",
               scaledSize: new google.maps.Size(svgSize, svgSize),
@@ -110,7 +110,7 @@ function PropertyMap({ loadingData, properties }: Props) {
           >
             {selectedPropertyId === property.id && (
               <InfoWindowF
-                position={{ lat: position.lat, lng: position.lng }}
+                position={{ lat: property.latitude, lng: property.longitude }}
               >
                 <div className="max-w-[17.5rem] md:max-h-[23rem] max-h-[25.5rem]">
                   <PropertyListing scale={.53} size="small" item={property} />
