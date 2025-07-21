@@ -19,7 +19,7 @@
     gap: 24px;
     position: sticky;
     top: 100px;
-    max-height: 85dvh;
+    max-height: 67dvh;
     overflow-y: auto;
 }
 
@@ -67,6 +67,9 @@
     .filters{
         position: relative;
         top: 0;
+    }
+    .filters {
+        max-height: none;
     }
 }
 

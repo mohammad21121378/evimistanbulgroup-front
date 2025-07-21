@@ -1,7 +1,7 @@
 
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import SymptomSelector from "@/components/symptom-selector/symptom-selector";
 import DropdownWithChildren from "@/components/dropdown-with-children/DropdownWithChildren";
 import RangeSlider from "@/components/range-slider/RangeSlider";
@@ -33,14 +33,22 @@ export default function FieldsFilter({
     featureSelected,
     bedroomsSelected,
     bathroomsSelected,
-    hasSvgItems=true
+    hasSvgItems = true
 }: Props) {
+
+    const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
+    const handleToggle = (key: string) => {
+        setOpenDropdown(prev => (prev === key ? null : key));
+    };
     return (
         <>
             <div className="">
                 <SymptomSelector
                     title={"Location"}
                     svgtitle={iconsforFilters["Location"]}
+                    open={openDropdown === "Location"}
+                    onToggle={() => handleToggle("Location")}
                     symptoms={turkiye}
                     svgArrow={hasSvgItems}
                     allowForSelectAllChildren
@@ -53,6 +61,8 @@ export default function FieldsFilter({
                 <SymptomSelector
                     title={"Type of Property"}
                     svgtitle={iconsforFilters["Type of Property"]}
+                    open={openDropdown === "Type of Property"}
+                    onToggle={() => handleToggle("Type of Property")}
                     symptoms={propertyTypes}
                     svgArrow={hasSvgItems}
                     allowForSelectAllChildren={false}
@@ -66,6 +76,8 @@ export default function FieldsFilter({
                 <SymptomSelector
                     title={"Special Features"}
                     svgtitle={iconsforFilters["Special Features"]}
+                    open={openDropdown === "Special Features"}
+                    onToggle={() => handleToggle("Special Features")}
                     symptoms={featureItems}
                     svgArrow={hasSvgItems}
                     allowForSelectAllChildren={false}
@@ -81,6 +93,8 @@ export default function FieldsFilter({
                 <DropdownWithChildren
                     title="Price Range"
                     svg={iconsforFilters["Price Range"]}
+                    open={openDropdown === "Price Range"}
+                    onToggle={() => handleToggle("Price Range")}
                     svgArrow={hasSvgItems}
                 >
                     <RangeSlider
@@ -100,6 +114,8 @@ export default function FieldsFilter({
                 <SymptomSelector
                     title={"Bedrooms"}
                     svgtitle={iconsforFilters["Bedrooms"]}
+                    open={openDropdown === "Bedrooms"}
+                    onToggle={() => handleToggle("Bedrooms")}
                     symptoms={bedroomsOptions}
                     svgArrow={hasSvgItems}
                     allowForSelectAllChildren={false}
@@ -113,6 +129,8 @@ export default function FieldsFilter({
                 <SymptomSelector
                     title={"Bathrooms"}
                     svgtitle={iconsforFilters["Bathrooms"]}
+                    open={openDropdown === "Bathrooms"}
+                    onToggle={() => handleToggle("Bathrooms")}
                     symptoms={bathroomsOptions}
                     svgArrow={hasSvgItems}
                     allowForSelectAllChildren={false}

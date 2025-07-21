@@ -22,7 +22,9 @@ export type SymptomSelectorProps = {
     allowForSelectAllChildren?: boolean;
     parentIsLabel?: boolean;
     svgtitle?: ReactNode;
-    svgArrow?: boolean
+    svgArrow?: boolean;
+    open: boolean;
+    onToggle: () => void;
 };
 
 export interface SymptomSelectorItemProps {

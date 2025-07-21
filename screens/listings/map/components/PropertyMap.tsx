@@ -6,10 +6,11 @@ import {
   InfoWindowF,
   useLoadScript,
 } from "@react-google-maps/api";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import PropertyListing from "@/components/property-listing";
 import { Loader } from "lucide-react";
 import { PropertyRawType } from "@/types/Property";
+import isEqual from "lodash.isequal";
 
 const containerStyle = {
   width: "100%",
@@ -23,21 +24,30 @@ type Props = {
 }
 
 function PropertyMap({ loadingData, properties }: Props) {
-  console.log("render");
-
 
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyDMrYr9uVDCqL-7okyHX3RAIHvO5QUHSFI",
   });
 
-  function position() {
+  const position = useMemo(() => {
     return {
       lat: 40.7 + Math.random() * 0.2,
-    lng: 29 + Math.random() * 0.2,
+      lng: 29 + Math.random() * 0.2,
     }
-  }
+  }, [properties])
 
   const [selectedPropertyId, setSelectedPropertyId] = useState<number | null>(null);
+
+  const prevPropertiesRef = useRef<PropertyRawType[] | null>(null);
+
+  useEffect(() => {
+    const isSame = isEqual(prevPropertiesRef.current, properties);
+    if (!isSame) {
+      prevPropertiesRef.current = properties;
+      setSelectedPropertyId(null);
+    }
+  }, [properties]);
+
   const mapRef = useRef<google.maps.Map | null>(null);
 
   const center = {
@@ -88,7 +98,7 @@ function PropertyMap({ loadingData, properties }: Props) {
         return (
           <MarkerF
             key={property.id}
-            position={{ lat: position().lat, lng: position().lng }}
+            position={{ lat: position.lat, lng: position.lng }}
             icon={{
               url: "/images/marker.svg",
               scaledSize: new google.maps.Size(svgSize, svgSize),
@@ -100,10 +110,10 @@ function PropertyMap({ loadingData, properties }: Props) {
           >
             {selectedPropertyId === property.id && (
               <InfoWindowF
-                position={{ lat: position().lat, lng: position().lng }}
+                position={{ lat: position.lat, lng: position.lng }}
               >
                 <div className="max-w-[17.5rem] md:max-h-[22rem] max-h-[24rem]">
-                  <PropertyListing scale={.5} size="small" item={property} />
+                  <PropertyListing scale={.565} size="small" item={property} />
                 </div>
               </InfoWindowF>
             )}

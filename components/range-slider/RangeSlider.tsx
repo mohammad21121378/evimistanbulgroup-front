@@ -35,9 +35,10 @@ export default function RangeSlider({
     return (
         <div className={classNames('w-full', className)}>
             {label && <p className="mb-2 text-sm font-medium">{label}</p>}
-            <div className="mb-2 flex justify-between text-sm text-gray-600 font-bold">
-                <span>{unit} {formatNumber(value[0])}</span>
-                <span>{unit} {formatNumber(value[1])}</span>
+            
+            <div className="mb-2 flex justify-between text-[.815rem] text-gray-600 font-medium">
+                <span>{unit}{formatNumber(value[0])}</span>
+                <span>{unit}{formatNumber(value[1])}</span>
             </div>
 
             <ReactSlider

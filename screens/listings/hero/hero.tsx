@@ -50,7 +50,7 @@ function Hero({ type, onChange, ...filtersState }: Props) {
       <div className={cn("container", styles.container)}>
 
         <div className="h-full">
-          <div className="sticky top-28">
+          <div className="sticky top-[6.45rem]">
           <ChangeTypeListings type={type} onChange={onChange} />
 
           <div className={cn('scrollbar-sm mb-10', styles.filters)}>

@@ -7,6 +7,10 @@ export function useChangeTypeListings() {
 
     const onChange = (type: TypeProp) => {
         setType(type)
+        window.scrollTo({
+            top: 70,
+            behavior: "smooth",
+        });
     }
 
     return{

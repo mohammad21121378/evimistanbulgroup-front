@@ -23,7 +23,7 @@ export default function PropertyListing({
 
   return (
     <div
-      className={cn(styles.wrapper, { [styles.small]: size === 'small' }, { 'pl-1 pr-1.5': size === 'small' } )}
+      className={cn(styles.wrapper, { [styles.small]: size === 'small' }, { 'pl-1.5 pr-1': size === 'small' } )}
       style={{ "--scale": scale } as React.CSSProperties}
     >
       <div
@@ -78,7 +78,8 @@ export default function PropertyListing({
           >
             {item.title}
           </Link>
-          <div
+          <Link
+          href={`/properties-for-sale-in-turkey?location=2.14`}
             className={cn(
               "paragraph-medium font-medium flex items-center gap-2.5 underline",
               styles.listing_description
@@ -86,7 +87,7 @@ export default function PropertyListing({
           >
             {Location2}
             {item.location}
-          </div>
+          </Link>
           <div
             className={cn(
               "paragraph-medium line-clamp-2 truncate w-full text-wrap",

@@ -2,112 +2,140 @@ import { Listings } from "@/constants/mock";
 import { useNumberedPagination } from "@/hooks/useNumberedPagination";
 import isEqual from "lodash.isequal";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { initialFilterState, priceRangeValue } from "../filter.constants";
+import { useSearchParams } from 'next/navigation';
 
 type Props = {
-    onFilterByChange?: boolean
+  onFilterByChange?: boolean
 }
 
 export function useFilter({ onFilterByChange = false }: Props) {
 
-    const priceRangeValue = {
-        min: 0,
-        max: 5000000
+  const { currentPage, totalPages, goToPage: goToPageRaw } = useNumberedPagination({ totalPages: 200 })
+
+  const searchParams = useSearchParams();
+  // const locationParam = searchParams.get('location');
+  // const initialLocationsSelected = useMemo(() => {
+  //   return locationParam ? locationParam.split(',') : initialFilterState.locationsSelected;
+  // }, [locationParam]);
+
+  const [loading, setLoading] = useState(false)
+
+  const [applyFilters, setApplyFilters] = useState<boolean>(false);
+
+  const [properties, setProperties] = useState(initialFilterState.properties)
+  const [priceRange, setPriceRange] = useState(initialFilterState.priceRange);
+  const [locationsSelected, setLocationsSelected] = useState(initialFilterState.locationsSelected);
+  const [propertyTypesSelected, setPropertyTypesSelected] = useState(initialFilterState.propertyTypesSelected);
+  const [featureSelected, setFeatureSelected] = useState(initialFilterState.featureSelected);
+  const [bedroomsSelected, setBedroomsSelected] = useState(initialFilterState.bedroomsSelected);
+  const [bathroomsSelected, setBathroomsSelected] = useState(initialFilterState.bathroomsSelected);
+  const [sortOption, setSortOption] = useState(initialFilterState.sortOption);
+
+  useEffect(() => {
+    const locationParam = searchParams.get('location');
+    const locationsFromURL = locationParam ? locationParam.split(',') : [];
+  
+    if (!isEqual(locationsSelected, locationsFromURL)) {
+      setLocationsSelected(locationsFromURL);
     }
-
-    const {currentPage, totalPages, goToPage: goToPageRaw} = useNumberedPagination({totalPages: 200})
-
-    const [properties, setProperties] = useState(Listings.flatMap((listingCategory) => listingCategory.items))
-    const [loading, setLoading] = useState(false)
+  }, [searchParams]);
 
 
-    const [priceRange, setPriceRange] = useState<[number, number]>([priceRangeValue.min, priceRangeValue.max]);
-    const [locationsSelected, setLocationsSelected] = useState<string[]>([]);
-    const [propertyTypesSelected, setPropertyTypesSelected] = useState<string[]>([]);
-    const [featureSelected, setFeatureSelected] = useState<string[]>([]);
-    const [bedroomsSelected, setBedroomsSelected] = useState<string[]>([]);
-    const [bathroomsSelected, setBathroomsSelected] = useState<string[]>([]);
-    const [applyFilters, setApplyFilters] = useState<boolean>(false);
-    const [sortOption, setSortOption] = useState<string>("newest");
+  const filterData = useMemo(() => ({
+    priceRange,
+    locationsSelected,
+    propertyTypesSelected,
+    featureSelected,
+    bedroomsSelected,
+    bathroomsSelected,
+    sortOption
+  }), [
+    priceRange,
+    locationsSelected,
+    propertyTypesSelected,
+    featureSelected,
+    bedroomsSelected,
+    bathroomsSelected,
+    sortOption
+  ]);
 
-    const filterData = useMemo(() => ({
-        priceRange,
-        locationsSelected,
-        propertyTypesSelected,
-        featureSelected,
-        bedroomsSelected,
-        bathroomsSelected,
-        sortOption
-      }), [
-        priceRange,
-        locationsSelected,
-        propertyTypesSelected,
-        featureSelected,
-        bedroomsSelected,
-        bathroomsSelected,
-        sortOption
-      ]);
-    const prevFilterRef = useRef<typeof filterData>(filterData);
+  const prevFilterRef = useRef<typeof filterData>(filterData);
 
-    const fetchFilteredData = async () => {
-        setLoading(true);
+  const fetchFilteredData = async (applyFilters = true) => {
+    if (!loading) setLoading(true);
 
-        // مهندس اینجا api بزن و properties رو ست کن
+    // مهندس اینجا api بزن و properties رو ست کن
 
-        setTimeout(() => {
-            setLoading(false);
-            setApplyFilters(true);
-        }, 500);
-    };
+    setTimeout(() => {
+      setLoading(false);
+      setApplyFilters(applyFilters);
+    }, 500);
+  };
 
-    const onFilter = () => {
-        fetchFilteredData()
+  const onFilter = async (applyFilters = true) => {
+    await fetchFilteredData(applyFilters)
+  }
+  const onSort = (sort: string) => {
+    setSortOption(sort)
+    onFilter()
+  }
+
+  const onReset = async () => {
+
+    setPriceRange(initialFilterState.priceRange);
+    setLocationsSelected(initialFilterState.locationsSelected);
+    setPropertyTypesSelected(initialFilterState.propertyTypesSelected);
+    setFeatureSelected(initialFilterState.featureSelected);
+    setBedroomsSelected(initialFilterState.bedroomsSelected);
+    setBathroomsSelected(initialFilterState.bathroomsSelected);
+    setSortOption(initialFilterState.sortOption);
+    goToPageRaw(1);
+
+    setTimeout(() => {
+      onFilter(false);
+    }, 100);
+  };
+
+  const goToPage = (page: number) => {
+    goToPageRaw(page)
+    onFilter()
+  }
+
+  useEffect(() => {
+    if (!onFilterByChange) return;
+
+    if (!isEqual(prevFilterRef.current, filterData)) {
+      prevFilterRef.current = filterData;
+
+      setLoading(true);
+      const timeoutId = setTimeout(() => {
+        onFilter();
+      }, 1200);
+
+      return () => clearTimeout(timeoutId);
     }
-    const onSort = (sort: string) => {
-        setSortOption(sort)
-        onFilter()
-    }
-    const onReset = () => {
-        setApplyFilters(false)
-    }
+  }, [filterData, onFilterByChange]);
 
-    const goToPage = (page: number) => {
-        goToPageRaw(page)
-        onFilter()
-    }
+  return {
+    ...filterData,
+    setPriceRange,
+    setLocationsSelected,
+    setPropertyTypesSelected,
+    setFeatureSelected,
+    setBedroomsSelected,
+    setBathroomsSelected,
+    priceRangeValue,
+    setSortOption,
+    properties,
+    loading,
+    applyFilters,
+    onReset,
+    onSort,
+    onFilter,
+    currentPage,
+    totalPages,
+    goToPage
 
-    useEffect(() => {
-        if (!onFilterByChange) return;
-    
-        if (!isEqual(prevFilterRef.current, filterData)) {
-          prevFilterRef.current = filterData;
-          
-          const timeoutId = setTimeout(() => {
-            onFilter();
-          }, 1000);
-      
-          return () => clearTimeout(timeoutId);
-        }
-      }, [filterData, onFilterByChange]);
-
-    return {
-        ...filterData,
-        setPriceRange,
-        setLocationsSelected,
-        setPropertyTypesSelected,
-        setFeatureSelected,
-        setBedroomsSelected,
-        setBathroomsSelected,
-        priceRangeValue,
-        setSortOption,
-        properties,
-        loading,
-        applyFilters,
-        onReset,
-        onSort,
-        onFilter,
-        currentPage, 
-        totalPages, 
-        goToPage
-
-    };
+  };
 }

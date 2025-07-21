@@ -5,22 +5,28 @@ type Props = {
     svg?: ReactNode,
     title: string | ReactNode,
     children: ReactNode;
-    svgArrow?: boolean
+    svgArrow?: boolean;
+    open: boolean;
+    onToggle: () => void;
 }
 
 export default function DropdownWithChildren({
     svg,
     title,
     children,
-    svgArrow=true
+    svgArrow=true,
+    open,
+    onToggle,
 }: Props) {
 
-    const [open, setOpen] = useState(false)
+    // const [open, setOpen] = useState(false);
+
+
 
     return (
         <div className="bg-white rounded-xl pointer-events-auto">
 
-            <div className="flex justify-between items-center cursor-pointer py-3 px-4 z-10" onClick={() => setOpen(!open)}>
+            <div className="flex justify-between items-center cursor-pointer py-3 px-4 z-10" onClick={onToggle}>
 
                 <div className="flex items-center gap-2 text-slate-500 font-semibold text-base truncate">
                     <div>
