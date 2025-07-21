@@ -5,6 +5,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { initialFilterState, priceRangeValue } from "../filter.constants";
 import { useSearchParams } from 'next/navigation';
 import { useSyncLocationFromURL } from "./useSyncLocationFromURL";
+import fetchProperties from "@/helpers/api/property/properties"
 
 type Props = {
   onFilterByChange?: boolean
@@ -75,6 +76,16 @@ export function useFilter({ onFilterByChange = false,listings }: Props) {
         sortOption,currentPage)
     // مهندس اینجا api بزن و properties رو ست کن
 
+
+    const listings = await fetchProperties(15,currentPage,{
+      locationsSelected,
+      propertyTypesSelected,
+      featureSelected,
+      bedroomsSelected,
+      bathroomsSelected,
+    });
+
+    if(listings.properties) setProperties(listings.properties);
     setTimeout(() => {
       setLoading(false);
       setApplyFilters(applyFilters);
