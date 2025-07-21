@@ -66,7 +66,7 @@ export default function FieldsFilter({
                     svgtitle={iconsforFilters["Type of Property"]}
                     open={openDropdown === "Type of Property"}
                     onToggle={() => handleToggle("Type of Property")}
-                    symptoms={propertyTypes}
+                    symptoms={propertyTypesDB}
                     svgArrow={hasSvgItems}
                     allowForSelectAllChildren={false}
                     multiple={false}
@@ -81,7 +81,7 @@ export default function FieldsFilter({
                     svgtitle={iconsforFilters["Special Features"]}
                     open={openDropdown === "Special Features"}
                     onToggle={() => handleToggle("Special Features")}
-                    symptoms={featureItems}
+                    symptoms={featureItemsDB}
                     svgArrow={hasSvgItems}
                     allowForSelectAllChildren={false}
                     parentIsLabel
