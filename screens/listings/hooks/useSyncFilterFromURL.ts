@@ -49,7 +49,7 @@ export function useSyncFilterFromURL(
   }, [paramValue]);
 
   const prevValueRef = useRef(currentValue);
-
+ 
   useEffect(() => {
     if (!isEqual(prevValueRef.current, valuesFromURL)) {
       prevValueRef.current = valuesFromURL;
