@@ -103,7 +103,7 @@ export function useFilter({ onFilterByChange = false, listings, typeShowPage }: 
   const fetchFilteredData = async (applyFilters = true, filters = filterData) => {
     if (!loading) setLoading(true);
 
-    const listingsData = await fetchProperties(3, typeShowPage === 'map' ? -1 : filters.currentPage, {
+    const listingsData = await fetchProperties(typeShowPage === 'map' ? -1 : 1, filters.currentPage, {
       priceRange: filters.priceRange,
       locationsSelected: filters.locationsSelected,
       propertyTypesSelected: filters.propertyTypesSelected,
