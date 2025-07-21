@@ -53,7 +53,7 @@ export default function PropertyListing({
           [
             "Limited-Time Offer",
             "Special Discount",
-          ]} />
+          ]} small={size==='small'} />
 
 
         <div className={styles.listing_wrapper}>

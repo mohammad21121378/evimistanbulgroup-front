@@ -1,10 +1,11 @@
 type Props = {
-  offers: string[]
+  offers: string[],
+  small: boolean
 }
 
-export default function Offers({ offers }: Props) {
-  const baseTop = 14.75;
-  const step = 2.65;
+export default function Offers({ offers, small }: Props) {
+  const baseTop = small ? 11 : 14.75;
+  const step = small ? 2 : 2.65;
 
   return (
     <>
