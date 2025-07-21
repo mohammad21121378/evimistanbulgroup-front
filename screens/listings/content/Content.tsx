@@ -16,7 +16,7 @@ export default function Content({ listings }: { listings: ListingsType }) {
         onChange
     } = useChangeTypeListings();
 
-    const filtersState = useFilter({ onFilterByChange: type === 'map', listings });
+    const filtersState = useFilter({ onFilterByChange: type === 'map', listings, typeShowPage: type });
 
     return (<>
         <div className={classNames(

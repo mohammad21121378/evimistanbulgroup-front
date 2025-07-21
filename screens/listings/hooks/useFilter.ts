@@ -11,10 +11,11 @@ import { ListingsType, PropertyRawType } from "@/types/Property";
 type Props = {
   onFilterByChange?: boolean
   listings: ListingsType;
+  typeShowPage: 'list' | 'map'
 
 }
 
-export function useFilter({ onFilterByChange = false, listings }: Props) {
+export function useFilter({ onFilterByChange = false, listings, typeShowPage }: Props) {
 
   const [totalPagesState, setTotalPagesState] = useState(listings?.pagination?.last_page ?? 1);
 
@@ -69,6 +70,7 @@ export function useFilter({ onFilterByChange = false, listings }: Props) {
   ]);
 
   const prevFilterRef = useRef<typeof filterData>(filterData);
+  const prevTypeShowPage = useRef(typeShowPage);
 
   // const fetchFilteredData = async (applyFilters = true) => {
   //   if (!loading) setLoading(true);
@@ -101,7 +103,7 @@ export function useFilter({ onFilterByChange = false, listings }: Props) {
   const fetchFilteredData = async (applyFilters = true, filters = filterData) => {
     if (!loading) setLoading(true);
 
-    const listingsData = await fetchProperties(3, filters.currentPage, {
+    const listingsData = await fetchProperties(3, typeShowPage === 'map' ? -1 : filters.currentPage, {
       priceRange: filters.priceRange,
       locationsSelected: filters.locationsSelected,
       propertyTypesSelected: filters.propertyTypesSelected,
@@ -126,19 +128,27 @@ export function useFilter({ onFilterByChange = false, listings }: Props) {
 
 
   const onFilter = async (applyFilters = true) => {
-    await fetchFilteredData(applyFilters)
+    goToPageRaw(1);
+    const newFilters = {
+      ...filterData,
+      currentPage: 1
+    };
+    await fetchFilteredData(applyFilters, newFilters)
   }
 
   const onSort = (sort: string) => {
     setSortOption(sort);
+    goToPageRaw(1);
 
     const newFilters = {
       ...filterData,
       sortOption: sort,
+      currentPage: 1
     };
 
     fetchFilteredData(true, newFilters);
   };
+
   const onReset = async () => {
     const resetFilters = {
       ...filterData,
@@ -190,6 +200,16 @@ export function useFilter({ onFilterByChange = false, listings }: Props) {
       return () => clearTimeout(timeoutId);
     }
   }, [filterData, onFilterByChange]);
+  
+  useEffect(() => {
+
+    if (!isEqual(prevTypeShowPage.current, typeShowPage)) {
+
+      prevTypeShowPage.current = typeShowPage;
+
+      fetchFilteredData()
+    }
+  }, [typeShowPage]);
 
   return {
     ...filterData,
