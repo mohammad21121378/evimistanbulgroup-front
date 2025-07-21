@@ -83,6 +83,7 @@ export function useFilter({ onFilterByChange = false,listings }: Props) {
       featureSelected,
       bedroomsSelected,
       bathroomsSelected,
+      sortOption
     });
 
     if(listings.properties) setProperties(listings.properties);
