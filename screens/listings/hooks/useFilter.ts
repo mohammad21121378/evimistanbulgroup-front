@@ -13,8 +13,9 @@ type Props = {
 }
 
 export function useFilter({ onFilterByChange = false,listings }: Props) {
+  const [totalPagesState, setTotalPagesState] = useState(listings?.pagination?.last_page ?? 1);
 
-  const { currentPage, totalPages, goToPage: goToPageRaw } = useNumberedPagination({ totalPages: listings?.pagination?.last_page ?? 1 })
+  const { currentPage, totalPages, goToPage: goToPageRaw } = useNumberedPagination({ totalPages: totalPagesState })
 
   const searchParams = useSearchParams();
   // const locationParam = searchParams.get('location');
@@ -88,7 +89,10 @@ export function useFilter({ onFilterByChange = false,listings }: Props) {
       sortOption
     });
 
-    if(listings.properties) setProperties(listings.properties);
+    if(listings.properties) {
+      setProperties(listings.properties)
+      setTotalPagesState(listings?.pagination?.last_page)
+    }
     setTimeout(() => {
       setLoading(false);
       setApplyFilters(applyFilters);
