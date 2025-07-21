@@ -9,6 +9,12 @@ export type PropertyRawType = {
   status: string;
   latitude: number;
   longitude: number;
+  url: string;
+  special_features: {title: string}[];
+  locationID: number;
+  min_price: number;
+  max_price: number;
+  created_at: string;
   features: {
     id: number;
     icon: string;
@@ -17,21 +23,6 @@ export type PropertyRawType = {
   }[];
 };
 export type PropertyType = {
-  item: {
-    id: number;
-    images: string[];
-    title: string;
-    price: number;
-    description: string;
-    category: string;
-    location: string;
-    status: string;
-    features: {
-      id: number;
-      icon: string;
-      name: string;
-      value: string | number;
-    }[];
-  };
+  item: PropertyRawType;
   className?: string
 };
