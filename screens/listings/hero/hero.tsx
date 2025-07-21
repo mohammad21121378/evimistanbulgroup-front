@@ -33,7 +33,9 @@ function Hero({ type, onChange, ...filtersState }: Props) {
     loading,
     applyFilters,
     onReset,
-    currentPage, totalPages, goToPage
+    currentPage, 
+    totalPages, 
+    goToPage
   } = filtersState;
 
   return (

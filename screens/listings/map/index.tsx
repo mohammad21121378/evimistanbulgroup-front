@@ -37,4 +37,4 @@ function MapPage({ type, onChange, ...filtersState }: Props) {
 }
 
 
-export default React.memo(MapPage);
+export default MapPage;

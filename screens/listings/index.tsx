@@ -10,7 +10,7 @@ import { ListingsType } from "@/types/Property";
 
 export default function ListingsPage({ listings }: { listings: ListingsType }) {
     useEffect(() => {
-        console.log('Listings on client:', listings); // این در مرورگر لاگ می‌شه
+        console.log('Listings on client:', listings);
     }, [listings]);
   return (
 

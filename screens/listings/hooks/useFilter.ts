@@ -1,4 +1,4 @@
-import { Listings } from "@/constants/mock";
+// import { Listings } from "@/constants/mock";
 import { useNumberedPagination } from "@/hooks/useNumberedPagination";
 import isEqual from "lodash.isequal";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -72,18 +72,8 @@ export function useFilter({ onFilterByChange = false, listings }: Props) {
 
   const fetchFilteredData = async (applyFilters = true) => {
     if (!loading) setLoading(true);
-    console.log(priceRange,
-      locationsSelected,
-      propertyTypesSelected,
-      featureSelected,
-      bedroomsSelected,
-      bathroomsSelected,
-      sortOption, currentPage)
-    // مهندس اینجا api بزن و properties رو ست کن
 
-
-
-    const listings = await fetchProperties(3, currentPage, {
+    const listingsData = await fetchProperties(3, currentPage, {
       priceRange,
       locationsSelected,
       propertyTypesSelected,
@@ -93,10 +83,17 @@ export function useFilter({ onFilterByChange = false, listings }: Props) {
       sortOption
     });
 
-    if (listings.properties) {
-      setProperties(listings.properties)
-      setTotalPagesState(listings?.pagination?.last_page)
+    console.log("listingsData:", listingsData);
+
+    if (listingsData && listingsData.properties) {
+      setProperties(listingsData.properties)
+      setTotalPagesState(listingsData.pagination?.last_page)
+    } else {
+      setProperties([])
     }
+
+
+
     setTimeout(() => {
       setLoading(false);
       setApplyFilters(applyFilters);
