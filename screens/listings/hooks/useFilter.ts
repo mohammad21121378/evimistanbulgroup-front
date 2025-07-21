@@ -6,19 +6,12 @@ import { initialFilterState, priceRangeValue } from "../filter.constants";
 import { useSearchParams } from 'next/navigation';
 import { useSyncLocationFromURL } from "./useSyncLocationFromURL";
 import fetchProperties from "@/helpers/api/property/properties"
-import { PropertyRawType } from "@/types/Property";
+import { ListingsType, PropertyRawType } from "@/types/Property";
 
 type Props = {
   onFilterByChange?: boolean
-  listings: {
-    properties: PropertyRawType[];
-    pagination: {
-      last_page: number
-    }
-    special_features: string[]
-    type_of_properties: string[]
-    locations: string[]
-  }
+  listings: ListingsType;
+
 }
 
 export function useFilter({ onFilterByChange = false, listings }: Props) {
@@ -80,17 +73,17 @@ export function useFilter({ onFilterByChange = false, listings }: Props) {
   const fetchFilteredData = async (applyFilters = true) => {
     if (!loading) setLoading(true);
     console.log(priceRange,
-        locationsSelected,
-        propertyTypesSelected,
-        featureSelected,
-        bedroomsSelected,
-        bathroomsSelected,
-        sortOption,currentPage)
+      locationsSelected,
+      propertyTypesSelected,
+      featureSelected,
+      bedroomsSelected,
+      bathroomsSelected,
+      sortOption, currentPage)
     // مهندس اینجا api بزن و properties رو ست کن
 
 
 
-    const listings = await fetchProperties(3,currentPage,{
+    const listings = await fetchProperties(3, currentPage, {
       priceRange,
       locationsSelected,
       propertyTypesSelected,
@@ -100,7 +93,7 @@ export function useFilter({ onFilterByChange = false, listings }: Props) {
       sortOption
     });
 
-    if(listings.properties) {
+    if (listings.properties) {
       setProperties(listings.properties)
       setTotalPagesState(listings?.pagination?.last_page)
     }

@@ -26,3 +26,14 @@ export type PropertyType = {
   item: PropertyRawType;
   className?: string
 };
+
+
+export type ListingsType = {
+  properties: PropertyRawType[];
+  pagination: {
+    last_page: number
+  }
+  special_features: string[]
+  type_of_properties: string[]
+  locations: string[]
+}

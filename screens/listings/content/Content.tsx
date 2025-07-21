@@ -7,8 +7,9 @@ import { useChangeTypeListings } from "../hooks/useChangeTypeListings";
 import MapPage from "../map";
 import classNames from "classnames";
 import { useFilter } from "../hooks/useFilter";
+import { ListingsType } from "@/types/Property";
 
-export default function Content({ listings }: { listings: any[] }) {
+export default function Content({ listings }: { listings: ListingsType }) {
 
     const {
         type,
