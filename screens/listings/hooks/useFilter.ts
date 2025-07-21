@@ -8,9 +8,10 @@ import { useSyncLocationFromURL } from "./useSyncLocationFromURL";
 
 type Props = {
   onFilterByChange?: boolean
+  listings?: any[]
 }
 
-export function useFilter({ onFilterByChange = false }: Props) {
+export function useFilter({ onFilterByChange = false,listings }: Props) {
 
   const { currentPage, totalPages, goToPage: goToPageRaw } = useNumberedPagination({ totalPages: 200 })
 
@@ -24,7 +25,7 @@ export function useFilter({ onFilterByChange = false }: Props) {
 
   const [applyFilters, setApplyFilters] = useState<boolean>(false);
 
-  const [properties, setProperties] = useState(initialFilterState.properties)
+  const [properties, setProperties] = useState(listings?.properties)
   const [priceRange, setPriceRange] = useState(initialFilterState.priceRange);
   const [locationsSelected, setLocationsSelected] = useState(initialFilterState.locationsSelected);
   const [propertyTypesSelected, setPropertyTypesSelected] = useState(initialFilterState.propertyTypesSelected);

@@ -16,7 +16,7 @@ export default function ListingsPage({ listings }: { listings: any[] }) {
 
     <Layout>
 
-      <Content />
+      <Content listings={listings} />
 
       <Benefits />
       <FindProperty />

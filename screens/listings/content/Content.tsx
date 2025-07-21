@@ -8,14 +8,14 @@ import MapPage from "../map";
 import classNames from "classnames";
 import { useFilter } from "../hooks/useFilter";
 
-export default function Content() {   
+export default function Content({ listings }: { listings: any[] }) {
 
     const {
         type,
         onChange
     } = useChangeTypeListings();
 
-    const filtersState = useFilter({ onFilterByChange: type === 'map' });
+    const filtersState = useFilter({ onFilterByChange: type === 'map',listings });
 
     return (<>
         <div className={classNames(
