@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next dev -p 8332",
     "lint": "next lint"
+
   },
   "dependencies": {
     "@babel/runtime": "^7.27.6",
