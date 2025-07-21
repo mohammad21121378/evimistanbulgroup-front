@@ -1,5 +1,9 @@
 import ListingsPage from "@/screens/listings";
+import fetchProperties from "@/helpers/api/property/properties"
+export default async function Listings() {
 
-export default function Listings() {
-  return <ListingsPage />;
+  const listings = await fetchProperties;
+
+
+  return <ListingsPage listings={listings} />;
 }
