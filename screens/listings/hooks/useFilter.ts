@@ -4,6 +4,7 @@ import isEqual from "lodash.isequal";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { initialFilterState, priceRangeValue } from "../filter.constants";
 import { useSearchParams } from 'next/navigation';
+import { useSyncLocationFromURL } from "./useSyncLocationFromURL";
 
 type Props = {
   onFilterByChange?: boolean
@@ -32,15 +33,7 @@ export function useFilter({ onFilterByChange = false }: Props) {
   const [bathroomsSelected, setBathroomsSelected] = useState(initialFilterState.bathroomsSelected);
   const [sortOption, setSortOption] = useState(initialFilterState.sortOption);
 
-  useEffect(() => {
-    const locationParam = searchParams.get('location');
-    const locationsFromURL = locationParam ? locationParam.split(',') : [];
-  
-    if (!isEqual(locationsSelected, locationsFromURL)) {
-      setLocationsSelected(locationsFromURL);
-    }
-  }, [searchParams]);
-
+  useSyncLocationFromURL(setLocationsSelected, locationsSelected);
 
   const filterData = useMemo(() => ({
     priceRange,

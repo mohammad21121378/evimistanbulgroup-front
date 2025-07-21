@@ -4,12 +4,16 @@
     background: #FFFFFF;
     border-radius: 12px;
 
-}.symptom-selector {
-     margin-bottom: 24px;
- }
+}
+
+.symptom-selector {
+    margin-bottom: 24px;
+}
+
 .symptom-selector:last-child {
     margin-bottom: 0 !important;
 }
+
 .header {
     padding: 14px 15px;
     cursor: pointer;
@@ -32,13 +36,13 @@
 
 .arrow.open svg {
     transform: rotate(0);
-}.symptom-selector:first-child .header {
+}
 
- }
+.symptom-selector:first-child .header {}
 
- .isLabel{
+.isLabel {
     font-weight: bold;
- }
+}
 
 .dropdown {
     /* padding: 10px 15px; */
@@ -60,8 +64,10 @@
     background: #FFFFFF;
     border: 1px solid #EDEDEE;
     border-radius: 8px;
+    min-height: fit-content;
 
 }
+
 .symptom-list {
     display: flex;
     flex-direction: column;
@@ -77,7 +83,8 @@
 }
 
 .symptom-item input {
-    display: none; /* Hide the default checkbox */
+    display: none;
+    /* Hide the default checkbox */
 }
 
 .checkbox {
@@ -92,12 +99,12 @@
     position: relative;
 }
 
-.symptom-item input:checked + .checkbox {
+.symptom-item input:checked+.checkbox {
     background-color: #000;
     border-color: #000;
 }
 
-.symptom-item input:checked + .checkbox::after {
+.symptom-item input:checked+.checkbox::after {
     border: solid #fff;
     border-width: 0 2px 2px 0;
     content: "";
@@ -118,46 +125,58 @@
     color: #9C9CA3;
     background-color: #9C9CA315;
     padding: 2px 5px;
-    border-radius: 10px;transition: .4s;
+    border-radius: 10px;
+    transition: .4s;
 }
 
-.selected span.count{
+.selected span.count {
     background-color: #000;
     color: #000;
 }
+
 .symptom-selector .dropdown::-webkit-scrollbar {
-    width: 6px; /* عرض اسکرول‌بار */
-    height: 6px; /* ارتفاع اسکرول‌بار (برای حالت افقی) */
+    width: 6px;
+    /* عرض اسکرول‌بار */
+    height: 6px;
+    /* ارتفاع اسکرول‌بار (برای حالت افقی) */
 }
 
 /* پس‌زمینه اسکرول‌بار */
 .symptom-selector .dropdown::-webkit-scrollbar-track {
-    background: #f0f0f0; /* رنگ پس‌زمینه */
-    border-radius: 10px; /* گوشه‌های گرد */
+    background: #f0f0f0;
+    /* رنگ پس‌زمینه */
+    border-radius: 10px;
+    /* گوشه‌های گرد */
 }
 
 /* رنگ نوار اسکرول */
 .symptom-selector .dropdown::-webkit-scrollbar-thumb {
-    background: #9C9CA3; /* رنگ نوار اسکرول */
-    border-radius: 10px; /* گوشه‌های گرد */
+    background: #9C9CA3;
+    /* رنگ نوار اسکرول */
+    border-radius: 10px;
+    /* گوشه‌های گرد */
 }
 
 /* هنگام هاور شدن روی اسکرول‌بار */
 .symptom-selector .dropdown::-webkit-scrollbar-thumb:hover {
-    background: #9C9CA3; /* رنگ نوار در حالت هاور */
-}.input-wrapper {
-     position: sticky;
-     top: 0;
-     z-index: 1;
-     background: #fff;
-     display: flex;
-     align-items: center;
-     width: 100%;
- }
+    background: #9C9CA3;
+    /* رنگ نوار در حالت هاور */
+}
+
+.input-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
 
 .search-input {
     width: 100%;
-    padding: 7px 40px 7px 10px; /* فضایی برای آیکن سمت راست */
+    padding: 7px 40px 7px 10px;
+    /* فضایی برای آیکن سمت راست */
     font-size: 13px !important;
     border-radius: 8px;
     outline: none;
@@ -171,33 +190,46 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    pointer-events: none; /* قابل کلیک نباشد */
+    pointer-events: none;
+    /* قابل کلیک نباشد */
 }
 
-.title{
+.title {
     display: flex;
     justify-content: space-between;
     align-content: center;
     align-items: center;
 }
+
 @media (max-width: 1290px) {
     .title {
-         font-size: 12px;
-     }.dropdown {
-          max-height: 96px!important;
-      }.header {
+        font-size: 12px;
+    }
 
-           padding: 12px 15px 7px;
-       }.search-icon {
+    .dropdown {
+        max-height: 96px !important;
+    }
 
-            top: 3px;
-        }.symptom-item {
-    line-height: 15px;
-                             font-size: 11px;
-                             margin-bottom: 3px;
+    .header {
 
-        }.search-input {
-                                              font-size: 10px !important;                   margin-bottom: 9px;
-             padding: 4px 40px 4px 10px;
-         }
+        padding: 12px 15px 7px;
+    }
+
+    /* .search-icon {
+
+        top: 3px;
+    } */
+
+    .symptom-item {
+        line-height: 15px;
+        font-size: 11px;
+        margin-bottom: 3px;
+
+    }
+
+    /* .search-input {
+        font-size: 10px !important;
+        margin-bottom: 9px;
+        padding: 4px 40px 4px 10px;
+    } */
 }

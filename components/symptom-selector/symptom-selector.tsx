@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./symptom-selector.module.css"
 import SymptomSelectorItem from "./symptom-selector-item";
 import { Symptom, SymptomItem, SymptomSelectorProps } from "./types";
@@ -20,23 +20,45 @@ const SymptomSelector = ({ symptoms, search = true, multiple = true, title = "Kl
     
     const { filtered, selectedSymptoms, setSelectedSymptoms, handleSelect, handleSelectSymptomAndChildren, searchTerm, setSearchTerm } = useSymptom(symptoms, multiple)
     
-    useEffect(() => {
-        if (!setSelected) return;
-        if (!isEqual(selectedSymptoms, selected)) {
-            setSelected(selectedSymptoms);
-        }
-    }, [selectedSymptoms]);
+    // useEffect(() => {
+    //     if (!setSelected) return;
+    //     if (!isEqual(selectedSymptoms, selected)) {
+    //         setSelected(selectedSymptoms);
+    //     }
+    // }, [selectedSymptoms]);
     
-    useEffect(() => {
-        console.log(selected);
-        if (!selected) return;
-        if (selected.length === 0) {
-            setSelectedSymptoms([])
-            return;
-        };
-        const initialSelections = selected.map(item => item.toString());
-        setSelectedSymptoms(initialSelections);
-    }, [selected]);
+    // useEffect(() => {
+    //     console.log(selected);
+    //     if (!selected) return;
+    //     if (selected.length === 0) {
+    //         setSelectedSymptoms([])
+    //         return;
+    //     };
+    //     const initialSelections = selected.map(item => item.toString());
+    //     setSelectedSymptoms(initialSelections);
+    // }, [selected]);
+
+    const didMount = useRef(false);
+
+  // ✅ جلوگیری از Loop در اثر تغییر selected
+  useEffect(() => {
+    if (!setSelected) return;
+    if (!isEqual(selectedSymptoms, selected)) {
+      setSelected(selectedSymptoms);
+    }
+  }, [selectedSymptoms]);
+
+  // ✅ فقط در mount یا زمانی که selected تغییر واقعی کرده باشد
+  useEffect(() => {
+    if (!selected) return;
+
+    const initialSelections = selected.map(item => item.toString());
+    if (!isEqual(initialSelections, selectedSymptoms)) {
+      setSelectedSymptoms(initialSelections);
+    }
+
+    didMount.current = true;
+  }, [selected]);
 
     return (
         <DropdownWithChildren svgArrow={svgArrow} title={title} svg={svgtitle} key={title}
@@ -53,8 +75,7 @@ const SymptomSelector = ({ symptoms, search = true, multiple = true, title = "Kl
                 />
                 <span className={styles["search-icon"]}>
                     <svg
-                        width="20"
-                        height="20"
+                        width="1.25rem"
                         viewBox="0 0 20 20"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"

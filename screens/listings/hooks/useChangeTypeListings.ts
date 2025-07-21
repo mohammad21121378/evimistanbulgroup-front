@@ -6,7 +6,7 @@ export function useChangeTypeListings() {
     const [type, setType] = useState<TypeProp>('list');
 
     const onChange = (type: TypeProp) => {
-        setType(type)
+        setType(type);
         window.scrollTo({
             top: 70,
             behavior: "smooth",

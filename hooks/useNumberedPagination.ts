@@ -1,56 +1,55 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 
-interface UsePaginationOptions<T> {
-    scrollTo?: {desktop: number; mobile: number;}
-    totalPages?: number
+interface UsePaginationOptions {
+    scrollTo?: { desktop: number; mobile: number };
+    totalPages?: number;
 }
 
-export function useNumberedPagination<T>({
-    scrollTo={desktop: 90, mobile:450},
-    totalPages=100
-}: UsePaginationOptions<T>) {
+export function useNumberedPagination({
+    scrollTo = { desktop: 90, mobile: 450 },
+    totalPages = 100
+}: UsePaginationOptions) {
 
     const router = useRouter();
     const searchParams = useSearchParams();
 
     const currentPageFromUrl = parseInt(searchParams.get("page") || "1", 10);
     const [currentPage, setCurrentPage] = useState(currentPageFromUrl);
-    const [loadedPage, setLoadedPage] = useState(false);
+    
+    // const isFirstLoad = useRef(true);
+    //   useEffect(() => {
+    //     if (isFirstLoad.current) {
+    //       isFirstLoad.current = false;
+    //       return;
+    //     }
+
+
+    //   }, [currentPage]);
 
     useEffect(() => {
-        setTimeout(() => {
-            setLoadedPage(true)
-        }, 100)
-    }, []);
-
-    useEffect(() => {
-        setCurrentPage(currentPageFromUrl);
+        if (currentPageFromUrl !== currentPage) {
+            setCurrentPage(currentPageFromUrl);
+        }
     }, [currentPageFromUrl]);
 
     useEffect(() => {
+        const urlPageParam = parseInt(searchParams.get("page") || "1", 10);
+        if (urlPageParam === currentPage) return;
+
         const params = new URLSearchParams(searchParams.toString());
         params.set("page", currentPage.toString());
 
         router.push("?" + params.toString(), { scroll: false });
-
-
-
-        requestAnimationFrame(() => {
-            if (loadedPage) {
-                const scrollTarget = window.innerWidth < 768 ? scrollTo.mobile : scrollTo.desktop;
-                window.scrollTo({
-                    top: scrollTarget,
-                    behavior: "smooth",
-                });
-            }
-        });
-
     }, [currentPage]);
-   
 
     const goToPage = (page: number) => {
-        setCurrentPage(page);
+        if (page !== currentPage) {
+
+            setCurrentPage(page);
+            const scrollTarget = window.innerWidth < 768 ? scrollTo.mobile : scrollTo.desktop;
+            window.scrollTo({ top: scrollTarget, behavior: "smooth" });
+        }
     };
 
     return {
