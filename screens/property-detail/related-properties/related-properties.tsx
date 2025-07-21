@@ -37,9 +37,9 @@ export default function RelatedProperties({ item }: RelatedPropertiesProps) {
         </div>
 
         <div className={styles.properties}>
-          {relatedListings.map((listing) => (
+          {/* {relatedListings.map((listing) => (
             <PropertyListing key={listing.id} item={listing} />
-          ))}
+          ))} */}
         </div>
       </div>
     </section>

@@ -32,9 +32,9 @@ export default function Properties() {
         </div>
 
         <div className={styles.properties}>
-          {relatedListings.map((listing) => (
-            // <PropertyListing key={listing.id} item={listing} />
-          ))}
+          {/* {relatedListings.map((listing) => (
+            <PropertyListing key={listing.id} item={listing} />
+          ))} */}
         </div>
       </div>
     </section>

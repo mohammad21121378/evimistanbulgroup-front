@@ -60,13 +60,13 @@ export default function Hero({ query }: { query: string }) {
       <section className={cn("section", styles.section)}>
         <div className={cn("container", styles.container)}>
           <div className={styles.properties}>
-            {filteredListings.length > 0 ? (
+            {/* {filteredListings.length > 0 ? (
               filteredListings.map((item) => (
                 <PropertyListing key={item.id} item={item} />
               ))
             ) : (
               <p className={cn("paragraph-medium")}>No results found</p>
-            )}
+            )} */}
           </div>
         </div>
       </section>
