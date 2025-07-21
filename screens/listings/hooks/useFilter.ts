@@ -39,6 +39,8 @@ export function useFilter({ onFilterByChange = false,listings }: Props) {
   const [bathroomsSelected, setBathroomsSelected] = useState(initialFilterState.bathroomsSelected);
   const [sortOption, setSortOption] = useState(initialFilterState.sortOption);
 
+  const [currentPageFilter, setCurrentPageFilter] = useState(1);
+
   useSyncLocationFromURL(setLocationsSelected, locationsSelected);
 
   const filterData = useMemo(() => ({
@@ -70,7 +72,7 @@ export function useFilter({ onFilterByChange = false,listings }: Props) {
         featureSelected,
         bedroomsSelected,
         bathroomsSelected,
-        sortOption,currentPage)
+        sortOption,currentPageFilter)
     // مهندس اینجا api بزن و properties رو ست کن
 
     setTimeout(() => {
@@ -105,6 +107,7 @@ export function useFilter({ onFilterByChange = false,listings }: Props) {
 
   const goToPage = (page: number) => {
     goToPageRaw(page)
+    setCurrentPageFilter(page)
     onFilter()
   }
 
