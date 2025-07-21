@@ -112,7 +112,7 @@ function PropertyMap({ loadingData, properties }: Props) {
               <InfoWindowF
                 position={{ lat: position.lat, lng: position.lng }}
               >
-                <div className="max-w-[17.5rem] md:max-h-[22.5rem] max-h-[25rem]">
+                <div className="max-w-[17.5rem] md:max-h-[23rem] max-h-[25.5rem]">
                   <PropertyListing scale={.53} size="small" item={property} />
                 </div>
               </InfoWindowF>
