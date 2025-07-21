@@ -7,10 +7,12 @@ export function useChangeTypeListings() {
 
     const onChange = (type: TypeProp) => {
         setType(type);
-        window.scrollTo({
-            top: 70,
-            behavior: "smooth",
-        });
+        setTimeout(() => {
+            window.scrollTo({
+                top: 70,
+                behavior: "smooth",
+            });
+        }, 650);
     }
 
     return{
