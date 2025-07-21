@@ -65,7 +65,7 @@ export default function PropertyListing({
             {item.title}
           </Link>
           <Link
-            href={`/properties-for-sale-in-turkey?location=2.1`}
+            href={`/properties-for-sale-in-turkey?location=${item.locationID}`}
             className={cn(
               "paragraph-medium font-medium flex items-center gap-2.5 underline",
               styles.listing_description
