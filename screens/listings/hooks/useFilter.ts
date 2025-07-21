@@ -30,7 +30,7 @@ export function useFilter({ onFilterByChange = false,listings }: Props) {
   const [propertyTypesDB, setPropertyTypesDB] = useState(listings?.type_of_properties)
 
 
-  const [priceRange, setPriceRange] = useState(initialFilterState.priceRange);
+  const [priceRange, setPriceRange] = useState(listings?.min_price? [listings.min_price,listings.max_price] :initialFilterState.priceRange);
   const [locationsSelected, setLocationsSelected] = useState(initialFilterState.locationsSelected);
   const [propertyTypesSelected, setPropertyTypesSelected] = useState(initialFilterState.propertyTypesSelected);
   const [featureSelected, setFeatureSelected] = useState(initialFilterState.featureSelected);
