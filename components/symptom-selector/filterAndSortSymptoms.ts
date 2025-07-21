@@ -8,7 +8,6 @@ export function filterAndSortSymptoms(
 
   return symptoms
     .reduce<Symptom[]>((acc, symptom) => {
-        console.log(symptom)
       const matchesSelf = symptom.name.toLowerCase().includes(term);
 
       const childrenArr: SymptomItem[] = Array.isArray(symptom.children)

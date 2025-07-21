@@ -43,7 +43,6 @@ export default function FieldsFilter({
 
     const handleToggle = (key: string) => {
         setOpenDropdown(prev => (prev === key ? null : key));
-        console.log(featureItems,propertyTypes)
     };
     return (
         <>
