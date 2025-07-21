@@ -23,8 +23,6 @@ interface Props extends FilterProps {
 
 function Hero({ type, onChange, ...filtersState }: Props) {
 
-  
-
   const {
     sortOption, 
     onSort,

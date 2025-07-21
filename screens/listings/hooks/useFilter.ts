@@ -70,20 +70,46 @@ export function useFilter({ onFilterByChange = false, listings }: Props) {
 
   const prevFilterRef = useRef<typeof filterData>(filterData);
 
-  const fetchFilteredData = async (applyFilters = true) => {
+  // const fetchFilteredData = async (applyFilters = true) => {
+  //   if (!loading) setLoading(true);
+
+  //   const listingsData = await fetchProperties(3, currentPage, {
+  //     priceRange,
+  //     locationsSelected,
+  //     propertyTypesSelected,
+  //     featureSelected,
+  //     bedroomsSelected,
+  //     bathroomsSelected,
+  //     sortOption
+  //   });
+
+  //   console.log("listingsData:", listingsData);
+
+  //   if (listingsData && listingsData.properties) {
+  //     setProperties(listingsData.properties)
+  //     setTotalPagesState(listingsData.pagination?.last_page)
+  //   } else {
+  //     setProperties([])
+  //   }
+
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //     setApplyFilters(applyFilters);
+  //   }, 500);
+  // };
+
+  const fetchFilteredData = async (applyFilters = true, filters = filterData) => {
     if (!loading) setLoading(true);
 
-    const listingsData = await fetchProperties(3, currentPage, {
-      priceRange,
-      locationsSelected,
-      propertyTypesSelected,
-      featureSelected,
-      bedroomsSelected,
-      bathroomsSelected,
-      sortOption
+    const listingsData = await fetchProperties(3, filters.currentPage, {
+      priceRange: filters.priceRange,
+      locationsSelected: filters.locationsSelected,
+      propertyTypesSelected: filters.propertyTypesSelected,
+      featureSelected: filters.featureSelected,
+      bedroomsSelected: filters.bedroomsSelected,
+      bathroomsSelected: filters.bathroomsSelected,
+      sortOption: filters.sortOption
     });
-
-    console.log("listingsData:", listingsData);
 
     if (listingsData && listingsData.properties) {
       setProperties(listingsData.properties)
@@ -92,45 +118,63 @@ export function useFilter({ onFilterByChange = false, listings }: Props) {
       setProperties([])
     }
 
-
-
     setTimeout(() => {
       setLoading(false);
       setApplyFilters(applyFilters);
     }, 500);
   };
 
+
   const onFilter = async (applyFilters = true) => {
     await fetchFilteredData(applyFilters)
   }
 
   const onSort = (sort: string) => {
-    setSortOption(sort)
-    onFilter()
-  }
+    setSortOption(sort);
 
+    const newFilters = {
+      ...filterData,
+      sortOption: sort,
+    };
+
+    fetchFilteredData(true, newFilters);
+  };
   const onReset = async () => {
+    const resetFilters = {
+      ...filterData,
+      priceRange: initialFilterState.priceRange,
+      locationsSelected: initialFilterState.locationsSelected,
+      propertyTypesSelected: initialFilterState.propertyTypesSelected,
+      featureSelected: initialFilterState.featureSelected,
+      bedroomsSelected: initialFilterState.bedroomsSelected,
+      bathroomsSelected: initialFilterState.bathroomsSelected,
+      sortOption: initialFilterState.sortOption,
+      currentPage: 1,
+    };
 
-    setPriceRange(initialFilterState.priceRange);
-    setLocationsSelected(initialFilterState.locationsSelected);
-    setPropertyTypesSelected(initialFilterState.propertyTypesSelected);
-    setFeatureSelected(initialFilterState.featureSelected);
-    setBedroomsSelected(initialFilterState.bedroomsSelected);
-    setBathroomsSelected(initialFilterState.bathroomsSelected);
-    setSortOption(initialFilterState.sortOption);
+    setPriceRange(resetFilters.priceRange);
+    setLocationsSelected(resetFilters.locationsSelected);
+    setPropertyTypesSelected(resetFilters.propertyTypesSelected);
+    setFeatureSelected(resetFilters.featureSelected);
+    setBedroomsSelected(resetFilters.bedroomsSelected);
+    setBathroomsSelected(resetFilters.bathroomsSelected);
+    setSortOption(resetFilters.sortOption);
     goToPageRaw(1);
 
-    setLoading(true);
-    
-    setTimeout(() => {
-      onFilter(false);
-    }, 1200);
+    fetchFilteredData(false, resetFilters);
   };
 
   const goToPage = (page: number) => {
-    goToPageRaw(page)
-    onFilter()
-  }
+    goToPageRaw(page);
+  
+    const newFilters = {
+      ...filterData,
+      currentPage: page
+    };
+  
+    fetchFilteredData(true, newFilters);
+  };
+  
 
   useEffect(() => {
     if (!onFilterByChange) return;
