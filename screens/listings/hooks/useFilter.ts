@@ -13,7 +13,7 @@ type Props = {
 
 export function useFilter({ onFilterByChange = false,listings }: Props) {
 
-  const { currentPage, totalPages, goToPage: goToPageRaw } = useNumberedPagination({ totalPages: 200 })
+  const { currentPage, totalPages, goToPage: goToPageRaw } = useNumberedPagination({ totalPages: listings?.pagination?.last_page ?? 1 })
 
   const searchParams = useSearchParams();
   // const locationParam = searchParams.get('location');
