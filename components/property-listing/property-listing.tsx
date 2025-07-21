@@ -33,8 +33,8 @@ export default function PropertyListing({
 
         <Link href={link} className={styles.img_holder}>
           <Image
-            src={item.images && item.images[0]}
-            alt={item.images ? item.images[1] : item.title }
+            src={item.images?.[0] ?? '/'}
+            alt={item.images?.[1] ?? item.title }
             layout="fill"
             objectFit="cover"
             objectPosition="center"

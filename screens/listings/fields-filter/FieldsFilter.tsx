@@ -85,7 +85,6 @@ export default function FieldsFilter({
                     svgArrow={hasSvgItems}
                     allowForSelectAllChildren={false}
                     parentIsLabel
-                    multiple={false}
                     setSelected={setFeatureSelected}
                     selected={featureSelected}
                 />
