@@ -22,17 +22,20 @@ export default function SearchBar({
   const t = useTranslations("searchBar");
 
   const propertyOptions = [
-    { value: "Buy Property in Turkey", label: t("options.buyProperty") },
-    { value: "Start a Company in Turkey", label: t("options.startCompany") },
-    { value: "Apply for Turkish Citizenship", label: t("options.applyCitizenship") },
-    { value: "Get a Turkish Residence Permit", label: t("options.getResidence") },
-    { value: "Study in Turkey as an International Student", label: t("options.study") },
-    { value: "Move to Turkey With My Family", label: t("options.moveFamily") },
-    { value: "Open a Bank Account in Turkey", label: t("options.openBank") },
-    { value: "Work Legally in Turkey", label: t("options.work") },
-    { value: "Receive Medical Treatment in Turkey", label: t("options.medical") },
-    { value: "Transfer and Exchange Foreign Income", label: t("options.transferIncome") },
-    { value: "Explore Turkey Through Tours and Leisure Activities", label: t("options.explore") }
+{value: "Get Turkish Citizenship", label: "Get Turkish Citizenship"},
+{value: "Buy Property in Turkey", label: "Buy Property in Turkey"},
+{value: "Sell My Property", label: "Sell My Property"},
+{value: "Rent a Property", label: "Rent a Property"},
+{value: "Apply for a Residence Permit", label: "Apply for a Residence Permit"},
+{value: "Work in Turkey", label: "Work in Turkey"},
+{value: "Study in Turkey", label: "Study in Turkey"},
+{value: "Start a Company / Do Business", label: "Start a Company / Do Business"},
+{value: "Open a Bank Account or Get Credit", label: "Open a Bank Account or Get Credit"},
+{value: "Transfer Money", label: "Transfer Money"},
+{value: "Get Medical Treatment in Turkey", label: "Get Medical Treatment in Turkey"},
+{value: "Relocate with My Family", label: "Relocate with My Family"},
+{value: "Explore Tours & Leisure Activities", label: "Explore Tours & Leisure Activities"},
+{value: "Ask About Something Else", label: "Ask About Something Else"},
   ];
 
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {

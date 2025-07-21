@@ -75,10 +75,10 @@ export default function Services() {
 
           <div className={cn('grid justify-center items-center', styles.neededs)}>
             <div>
-              <div className={cn("heading-6", styles.service_title)}>
+              <div className={cn("heading-6 w-full", styles.service_title)}>
                 {t("custom.title")}
               </div>
-              <div className={cn("text-sm !text-black pt-3", styles.service_subtitle)}>
+              <div className={cn("text-sm !text-black pt-3 whitespace-pre-line w-full text-justify", styles.service_subtitle)}>
                 {t.rich("custom.description", {
                   link: (chunks) => (
                     <Link href="/" className="text-orange-600 font-bold underline">
