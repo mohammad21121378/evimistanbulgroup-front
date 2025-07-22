@@ -69,9 +69,11 @@ export default function DropdownWithChildren({
     return (
         <div className="bg-white rounded-xl pointer-events-auto" ref={wrapperRef}>
 
-            <div className="flex justify-between items-center cursor-pointer py-3 px-4 z-10" onClick={onToggle}>
+            <div className={classNames("flex outline rounded-xl delay-150 outline-1 text-slate-500 transition-all duration-300 outline-transparent justify-between items-center cursor-pointer py-3 px-4 z-10",
+            {" hover:outline-orange-500 hover:text-orange-500 ": !open}
+            )} onClick={onToggle}>
 
-                <div className="flex items-center gap-2 text-slate-500 font-semibold text-base truncate">
+                <div className="flex items-center gap-2  font-semibold text-base truncate">
                     <div>
                         {svg}
                     </div>

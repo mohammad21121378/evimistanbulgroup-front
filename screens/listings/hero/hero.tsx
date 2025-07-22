@@ -41,10 +41,7 @@ function Hero({ type, onChange, ...filtersState }: Props) {
 
   } = filtersState;
 
-  const [parent] = useAutoAnimate({
-    easing: "linear",
-    duration: 500
-  });
+  const [parent] = useAutoAnimate();
 
   return (
     <section className={cn("section", styles.section)}>
@@ -65,18 +62,19 @@ function Hero({ type, onChange, ...filtersState }: Props) {
             <ChangeTypeListings type={type} onChange={onChange} />
 
             <div className={cn('scrollbar-none !overflow-visible mb-10', styles.filters)}
-            
+            ref={parent}
             >
 
               <div className={cn("xl:text-lg md:text-base text-lg truncate font-bold")}>
                 Find Properties for Sale in Turkey
               </div>
 
-              <div className={styles.textfields} ref={parent}>
+              <div className={styles.textfields}>
 
                 <FieldsFilter {...filtersState} />
 
               </div>
+
               {
                 applyFilters &&
                 <button className={cn("label-medium text-orange-600", styles.textButton)} onClick={onReset}>
