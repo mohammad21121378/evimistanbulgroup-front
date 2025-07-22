@@ -17,6 +17,8 @@ import FieldsFilter from "../fields-filter";
 import Button from "@/components/ui/Button";
 import PropertyLoader from "@/components/loaders/PropertyLoader";
 import EmptyContentWithLottie from "@/components/ui/EmptyContentWithLottie";
+import { AnimatePresence, motion } from "framer-motion";
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 
 interface Props extends FilterProps {
   type: TypeProp;
@@ -39,6 +41,12 @@ function Hero({ type, onChange, ...filtersState }: Props) {
 
   } = filtersState;
 
+  const [parent] = useAutoAnimate({
+    disrespectUserMotionPreference: true,
+    easing: "ease-in-out",
+    duration: 500
+  });
+
   return (
     <section className={cn("section", styles.section)}>
       <div className={cn("container")}>
@@ -57,7 +65,8 @@ function Hero({ type, onChange, ...filtersState }: Props) {
 
             <ChangeTypeListings type={type} onChange={onChange} />
 
-            <div className={cn('scrollbar-sm mb-10', styles.filters)}>
+            <div className={cn('scrollbar-none !overflow-visible mb-10', styles.filters)}
+            >
 
               <div className={cn("label-large")}>
                 Find Properties for Sale in Turkey
@@ -74,9 +83,22 @@ function Hero({ type, onChange, ...filtersState }: Props) {
                   Reset
                 </button>
               }
-              <Button size="full" onClick={onFilter} className={cn("sticky -bottom-6 z-10", styles.button)} loading={loading}>
-                Find Now
-              </Button>
+              {/* <div ref={parent}> */}
+              <motion.div
+                layout
+                initial={{ opacity: 0, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -0 }}
+                transition={{
+                  layout: { duration: 0.1, ease: "easeInOut" },
+                  default: { duration: 0.1 }
+                }}
+
+              >
+                <Button size="full" onClick={onFilter} className={cn("z-10", styles.button)} loading={loading}>
+                  Find Now
+                </Button>
+              </motion.div>
             </div>
           </div>
         </div>

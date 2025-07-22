@@ -1,7 +1,156 @@
 
+// "use client";
+
+// import React, { useState } from "react";
+// import SymptomSelector from "@/components/symptom-selector/symptom-selector";
+// import DropdownWithChildren from "@/components/dropdown-with-children/DropdownWithChildren";
+// import RangeSlider from "@/components/range-slider/RangeSlider";
+// import { iconsforFilters } from "../constants";
+// import { featureItems, propertyTypes, bedrooms as bedroomsOptions, bathrooms as bathroomsOptions } from "../constants";
+// import originalTurkiye from "@/constants/turkiye.json";
+// import { FilterProps } from "../types";
+
+// const turkiye = originalTurkiye.map((province) => ({
+//     ...province,
+//     children: province.districts,
+// }));
+
+// interface Props extends FilterProps {
+//     hasSvgItems?: boolean
+// };
+
+// export default function FieldsFilter({
+//     priceRange,
+//     setPriceRange,
+//     priceRangeValue,
+//     setLocationsSelected,
+//     setPropertyTypesSelected,
+//     setFeatureSelected,
+//     setBedroomsSelected,
+//     setBathroomsSelected,
+//     locationsSelected,
+//     propertyTypesSelected,
+//     featureSelected,
+//     bedroomsSelected,
+//     bathroomsSelected,
+//     featureItemsDB,
+//     locationsDB,
+//     propertyTypesDB,
+//     hasSvgItems = true
+// }: Props) {
+
+//     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
+//     const handleToggle = (key: string) => {
+//         setOpenDropdown(prev => (prev === key ? null : key));
+//     };
+//     return (
+//         <>
+//             <div className="">
+//                 <SymptomSelector
+//                     title={"Location"}
+//                     svgtitle={iconsforFilters["Location"]}
+//                     open={openDropdown === "Location"}
+//                     onToggle={() => handleToggle("Location")}
+//                     symptoms={locationsDB}
+//                     svgArrow={hasSvgItems}
+//                     allowForSelectAllChildren
+//                     setSelected={setLocationsSelected}
+//                     selected={locationsSelected}
+//                 />
+//             </div>
+
+//             <div>
+//                 <SymptomSelector
+//                     title={"Type of Property"}
+//                     svgtitle={iconsforFilters["Type of Property"]}
+//                     open={openDropdown === "Type of Property"}
+//                     onToggle={() => handleToggle("Type of Property")}
+//                     symptoms={propertyTypesDB}
+//                     svgArrow={hasSvgItems}
+//                     allowForSelectAllChildren={false}
+//                     multiple={false}
+//                     setSelected={setPropertyTypesSelected}
+//                     selected={propertyTypesSelected}
+//                 />
+//             </div>
+
+//             <div>
+//                 <SymptomSelector
+//                     title={"Special Features"}
+//                     svgtitle={iconsforFilters["Special Features"]}
+//                     open={openDropdown === "Special Features"}
+//                     onToggle={() => handleToggle("Special Features")}
+//                     symptoms={featureItemsDB}
+//                     svgArrow={hasSvgItems}
+//                     allowForSelectAllChildren={false}
+//                     parentIsLabel
+//                     setSelected={setFeatureSelected}
+//                     selected={featureSelected}
+//                 />
+//             </div>
+
+//             <div>
+
+//                 <DropdownWithChildren
+//                     title="Price Range"
+//                     svg={iconsforFilters["Price Range"]}
+//                     open={openDropdown === "Price Range"}
+//                     onToggle={() => handleToggle("Price Range")}
+//                     svgArrow={hasSvgItems}
+//                 >
+//                     <RangeSlider
+//                         label=""
+//                         min={priceRangeValue.min}
+//                         max={priceRangeValue.max}
+//                         value={priceRange}
+//                         onChange={setPriceRange}
+//                         unit="$"
+//                         locale="tr"
+//                     />
+//                 </DropdownWithChildren>
+//             </div>
+
+//             <div>
+
+//                 <SymptomSelector
+//                     title={"Bedrooms"}
+//                     svgtitle={iconsforFilters["Bedrooms"]}
+//                     open={openDropdown === "Bedrooms"}
+//                     onToggle={() => handleToggle("Bedrooms")}
+//                     symptoms={bedroomsOptions}
+//                     svgArrow={hasSvgItems}
+//                     allowForSelectAllChildren={false}
+//                     multiple={false}
+//                     setSelected={setBedroomsSelected}
+//                     selected={bedroomsSelected}
+//                 />
+//             </div>
+
+//             <div>
+//                 <SymptomSelector
+//                     title={"Bathrooms"}
+//                     svgtitle={iconsforFilters["Bathrooms"]}
+//                     open={openDropdown === "Bathrooms"}
+//                     onToggle={() => handleToggle("Bathrooms")}
+//                     symptoms={bathroomsOptions}
+//                     svgArrow={hasSvgItems}
+//                     allowForSelectAllChildren={false}
+//                     multiple={false}
+//                     setSelected={setBathroomsSelected}
+//                     selected={bathroomsSelected}
+//                 />
+//             </div>
+
+//         </>
+//     );
+// }
+
+
+
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SymptomSelector from "@/components/symptom-selector/symptom-selector";
 import DropdownWithChildren from "@/components/dropdown-with-children/DropdownWithChildren";
 import RangeSlider from "@/components/range-slider/RangeSlider";
@@ -9,6 +158,7 @@ import { iconsforFilters } from "../constants";
 import { featureItems, propertyTypes, bedrooms as bedroomsOptions, bathrooms as bathroomsOptions } from "../constants";
 import originalTurkiye from "@/constants/turkiye.json";
 import { FilterProps } from "../types";
+import { AnimatePresence, motion } from "framer-motion";
 
 const turkiye = originalTurkiye.map((province) => ({
     ...province,
@@ -16,8 +166,17 @@ const turkiye = originalTurkiye.map((province) => ({
 }));
 
 interface Props extends FilterProps {
-    hasSvgItems?: boolean
-};
+    hasSvgItems?: boolean;
+}
+
+const dropdownKeys = [
+    "Location",
+    "Type of Property",
+    "Special Features",
+    "Price Range",
+    "Bedrooms",
+    "Bathrooms",
+];
 
 export default function FieldsFilter({
     priceRange,
@@ -36,17 +195,63 @@ export default function FieldsFilter({
     featureItemsDB,
     locationsDB,
     propertyTypesDB,
-    hasSvgItems = true
+    hasSvgItems = true,
 }: Props) {
 
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+    const [hideOthers, setHideOthers] = useState(false);
+    const focusRef = useRef<HTMLDivElement>(null);
 
     const handleToggle = (key: string) => {
-        setOpenDropdown(prev => (prev === key ? null : key));
+        if (openDropdown === key) {
+            setOpenDropdown(null);
+            setHideOthers(true);
+            setTimeout(() => {
+                setHideOthers(false);
+            }, 500);
+        } else {
+            setHideOthers(true);
+            setTimeout(() => {
+                setOpenDropdown(key);
+                setHideOthers(false);
+            }, 500);
+        }
     };
+
+
+    useEffect(() => {
+        if (focusRef.current) {
+            focusRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+    }, [openDropdown]);
+
+    const renderDropdown = (key: string, component: React.ReactNode) => {
+
+        const isVisible = !hideOthers && (openDropdown === null || openDropdown === key);
+        const isFocused = openDropdown === key;
+
+        return (
+            <AnimatePresence key={key}>
+                {isVisible && (
+                    <motion.div
+                        layout
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.95 }}
+                        transition={{ duration: 0.3 }}
+                        ref={isFocused ? focusRef : null}
+                    >
+                        {component}
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        );
+    };
+
     return (
         <>
-            <div className="">
+            {renderDropdown(
+                "Location",
                 <SymptomSelector
                     title={"Location"}
                     svgtitle={iconsforFilters["Location"]}
@@ -58,9 +263,10 @@ export default function FieldsFilter({
                     setSelected={setLocationsSelected}
                     selected={locationsSelected}
                 />
-            </div>
+            )}
 
-            <div>
+            {renderDropdown(
+                "Type of Property",
                 <SymptomSelector
                     title={"Type of Property"}
                     svgtitle={iconsforFilters["Type of Property"]}
@@ -73,9 +279,10 @@ export default function FieldsFilter({
                     setSelected={setPropertyTypesSelected}
                     selected={propertyTypesSelected}
                 />
-            </div>
+            )}
 
-            <div>
+            {renderDropdown(
+                "Special Features",
                 <SymptomSelector
                     title={"Special Features"}
                     svgtitle={iconsforFilters["Special Features"]}
@@ -88,10 +295,10 @@ export default function FieldsFilter({
                     setSelected={setFeatureSelected}
                     selected={featureSelected}
                 />
-            </div>
+            )}
 
-            <div>
-
+            {renderDropdown(
+                "Price Range",
                 <DropdownWithChildren
                     title="Price Range"
                     svg={iconsforFilters["Price Range"]}
@@ -109,10 +316,10 @@ export default function FieldsFilter({
                         locale="tr"
                     />
                 </DropdownWithChildren>
-            </div>
+            )}
 
-            <div>
-
+            {renderDropdown(
+                "Bedrooms",
                 <SymptomSelector
                     title={"Bedrooms"}
                     svgtitle={iconsforFilters["Bedrooms"]}
@@ -125,9 +332,10 @@ export default function FieldsFilter({
                     setSelected={setBedroomsSelected}
                     selected={bedroomsSelected}
                 />
-            </div>
+            )}
 
-            <div>
+            {renderDropdown(
+                "Bathrooms",
                 <SymptomSelector
                     title={"Bathrooms"}
                     svgtitle={iconsforFilters["Bathrooms"]}
@@ -140,8 +348,7 @@ export default function FieldsFilter({
                     setSelected={setBathroomsSelected}
                     selected={bathroomsSelected}
                 />
-            </div>
-
+            )}
         </>
     );
 }

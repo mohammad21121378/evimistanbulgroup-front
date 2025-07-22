@@ -19,8 +19,8 @@
     gap: 24px;
     position: sticky;
     top: 100px;
-    max-height: 67dvh;
-    overflow-y: auto;
+    /* max-height: 67dvh; */
+    /* overflow-y: auto; */
 }
 
 .container .textfield {
@@ -35,6 +35,7 @@
 .textfields {
     display: grid;
     gap: 8px;
+    min-height: 350px;
 }
 
 .textButton {
