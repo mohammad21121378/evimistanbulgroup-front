@@ -14,9 +14,11 @@ interface LightboxImage {
 interface GalleryViewerProps {
   images: LightboxImage[];
   title: string;
+  item:any[]
 }
 
-export default function Gallery({ images, title }: GalleryViewerProps) {
+export default function Gallery({ images, title,item }: GalleryViewerProps) {
+  console.log(item)
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
