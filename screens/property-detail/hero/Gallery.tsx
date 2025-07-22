@@ -6,8 +6,13 @@ import styles from './hero.module.css';
 import LightboxImages from '@/components/light-box-images';
 import { Maximize } from '@/constants/icons';
 
+interface LightboxImage {
+  url: string;
+  alt: string;
+}
+
 interface GalleryViewerProps {
-  images: string[];
+  images: LightboxImage[];
   title: string;
 }
 
@@ -30,8 +35,8 @@ export default function Gallery({ images, title }: GalleryViewerProps) {
       <div className={styles.images}>
         <div className={styles.image} onClick={() => openViewer(0)}>
           <Image
-            src={images[0]}
-            alt={title}
+            src={images[0]?.url}
+            alt={images[0]?.alt}
             layout="fill"
             objectFit="cover"
           />
@@ -42,8 +47,8 @@ export default function Gallery({ images, title }: GalleryViewerProps) {
             {[1, 2].map((i) => (
               <div key={i} className={styles.image} onClick={() => openViewer(i)}>
                 <Image
-                  src={images[i]}
-                  alt={title}
+                  src={images[i].url}
+                  alt={images[i].alt}
                   layout="fill"
                   objectFit="cover"
                 />
@@ -51,14 +56,14 @@ export default function Gallery({ images, title }: GalleryViewerProps) {
             ))}
           </div>
 
-          <div className={styles.image} onClick={() => openViewer(3)}>
+          {images.length > 0 && images[3] && <div className={styles.image} onClick={() => openViewer(3)}>
             <Image
-              src={images[3]}
-              alt={title}
+              src={images[3].url}
+              alt={images[3].alt}
               layout="fill"
               objectFit="cover"
             />
-          </div>
+          </div>}
         </div>
 
         <button className='bg-[#000000CF] hover:bg-black transition-all duration-500 absolute bottom-3 text-white font-medium text-sm right-3 rounded-2xl py-4 px-6 flex gap-1.5 items-center' onClick={() => openViewer(0)}>

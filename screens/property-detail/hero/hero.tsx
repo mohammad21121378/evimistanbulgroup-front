@@ -24,8 +24,8 @@ export default function Hero({ item }: HeroProps) {
         <Breadcrumb
           items={[
             { label: 'Property for Sale in Turkey', href: '/properties-for-sale-in-turkey' },
-            { label: 'Beylikdüzü', href: '/' },
-            { label: '123 Serenity Lane' }
+            { label: 'Beylikdüzü', href: `/properties-for-sale-in-turkey/?location=${item.locationID}` },
+            { label: item.title }
           ]}
         />
         <div className={styles.content}>
@@ -37,10 +37,24 @@ export default function Hero({ item }: HeroProps) {
             </div>
           </div>
 
-          <div className={cn("heading-6", styles.price)}>{formatNumber(item.price)} MIN – {formatNumber(item.price)} MAX</div>
+          <div className={cn("heading-6", styles.price)}>
+            {item.min_price && item.max_price ? (
+                <>
+                  {formatNumber(item.min_price)} MIN –– {formatNumber(item.max_price)} MAX
+                </>
+            ) : item.min_price ? (
+                <>
+                  {formatNumber(item.min_price)}
+                </>
+            ) : item.max_price ? (
+                <>
+                  {formatNumber(item.max_price)}
+                </>
+            ) : null}
+          </div>
         </div>
 
-        <Gallery images={item.images} title={item.title} />
+        <Gallery images={item.gallery} title={item.title} />
       </div>
     </section>
   );

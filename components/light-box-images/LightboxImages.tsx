@@ -4,8 +4,13 @@ import Image from 'next/image';
 import styles from './LightboxImages.module.css'
 import { useEffect, useRef } from 'react';
 
+interface LightboxImage {
+    url: string;
+    alt: string;
+}
+
 interface LightboxProps {
-    images: string[];
+    images: LightboxImage[];
     currentIndex: number;
     onClose: () => void;
     onNext: () => void;
@@ -73,8 +78,8 @@ export default function LightboxImages({
                     </svg>
                 </button>
                 <Image
-                    src={images[currentIndex]}
-                    alt={`Image ${currentIndex}`}
+                    src={images[currentIndex].url}
+                    alt={images[currentIndex].alt}
                     layout="fill"
                     objectFit="contain"
                     className='rounded-lg'
