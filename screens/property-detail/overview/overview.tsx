@@ -81,7 +81,7 @@ export default function Overview({ item }: OverviewProps) {
                       <h2 className={cn("paragraph-x-large", styles.detail_title)}>
                         {detail.title}
                       </h2>
-                      {Plus}
+
                     </div>
 
                     <div
