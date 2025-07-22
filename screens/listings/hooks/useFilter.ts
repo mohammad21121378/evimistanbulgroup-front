@@ -70,8 +70,6 @@ export function useFilter({ onFilterByChange = false, listings, typeShowPage }: 
 
   const fetchFilteredData = async (applyFilters = true, filters = filterData) => {
     if (!loading) setLoading(true);
-
-    console.log("applyFilters''::::::::::::", applyFilters);
     
 
     const listingsData = await fetchProperties(typeShowPage === 'map' ? -1 : 3, filters.currentPage, {
@@ -94,6 +92,10 @@ export function useFilter({ onFilterByChange = false, listings, typeShowPage }: 
     setApplyFilters(applyFilters);
     setTimeout(() => {
       setLoading(false);
+      window.scrollTo({
+        top: 70,
+        behavior: "smooth",
+    });
     }, 500);
   };
 

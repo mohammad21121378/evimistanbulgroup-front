@@ -82,3 +82,10 @@
         grid-template-columns: 1fr;
     } */
 }
+
+
+@media (max-height: 560px) {
+    .textfields {
+        min-height: 210px;
+    }
+}
