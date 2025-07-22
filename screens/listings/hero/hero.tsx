@@ -42,8 +42,7 @@ function Hero({ type, onChange, ...filtersState }: Props) {
   } = filtersState;
 
   const [parent] = useAutoAnimate({
-    disrespectUserMotionPreference: true,
-    easing: "ease-in-out",
+    easing: "linear",
     duration: 500
   });
 
@@ -66,13 +65,14 @@ function Hero({ type, onChange, ...filtersState }: Props) {
             <ChangeTypeListings type={type} onChange={onChange} />
 
             <div className={cn('scrollbar-none !overflow-visible mb-10', styles.filters)}
+            
             >
 
-              <div className={cn("label-large")}>
+              <div className={cn("xl:text-lg md:text-base text-lg truncate font-bold")}>
                 Find Properties for Sale in Turkey
               </div>
 
-              <div className={styles.textfields}>
+              <div className={styles.textfields} ref={parent}>
 
                 <FieldsFilter {...filtersState} />
 
@@ -83,19 +83,22 @@ function Hero({ type, onChange, ...filtersState }: Props) {
                   Reset
                 </button>
               }
-              {/* <div ref={parent}> */}
+
               <motion.div
                 layout
                 initial={{ opacity: 0, y: 0 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -0 }}
+                animate={{ opacity: 1, y: 5 }}
+                exit={{ opacity: 0, y: -5 }}
                 transition={{
-                  layout: { duration: 0.1, ease: "easeInOut" },
-                  default: { duration: 0.1 }
+                  layout: { duration: 0.3, ease: "easeInOut" },
+                  default: { duration: 0.3 }
                 }}
-
               >
-                <Button size="full" onClick={onFilter} className={cn("z-10", styles.button)} loading={loading}>
+                <Button
+                  size="full"
+                  onClick={onFilter}
+                  className={cn("z-10 !max-h-13 !min-h-0", styles.button)}
+                  loading={loading}>
                   Find Now
                 </Button>
               </motion.div>

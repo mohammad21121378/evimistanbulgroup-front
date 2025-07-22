@@ -226,27 +226,31 @@ export default function FieldsFilter({
     }, [openDropdown]);
 
     const renderDropdown = (key: string, component: React.ReactNode) => {
-
         const isVisible = !hideOthers && (openDropdown === null || openDropdown === key);
         const isFocused = openDropdown === key;
 
         return (
-            <AnimatePresence key={key}>
-                {isVisible && (
-                    <motion.div
-                        layout
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.95 }}
-                        transition={{ duration: 0.3 }}
-                        ref={isFocused ? focusRef : null}
-                    >
-                        {component}
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            <motion.div
+                key={key}
+                layout
+                initial={false}
+                animate={{
+                    opacity: isVisible ? 1 : 0,
+                    scale: isVisible ? 1 : 0.95,
+                    pointerEvents: isVisible ? "auto" : "none",
+                    display: isVisible ? "block" : "none",
+                }}
+                style={{
+                    visibility: isVisible ? "visible" : "hidden",
+                }}
+                transition={{ duration: 0.3 }}
+                ref={isFocused ? focusRef : null}
+            >
+                {component}
+            </motion.div>
         );
     };
+
 
     return (
         <>

@@ -44,7 +44,7 @@ export function useFilter({ onFilterByChange = false, listings, typeShowPage }: 
 
   useSyncFilterFromURL('location', setLocationsSelected, locationsSelected);
   useSyncFilterFromURL('feature', setFeatureSelected, featureSelected);
-useSyncFilterFromURL('type', setPropertyTypesSelected, propertyTypesSelected);
+  useSyncFilterFromURL('type', setPropertyTypesSelected, propertyTypesSelected);
 
   const filterData = useMemo(() => ({
     priceRange,
@@ -173,15 +173,15 @@ useSyncFilterFromURL('type', setPropertyTypesSelected, propertyTypesSelected);
 
   const goToPage = (page: number) => {
     goToPageRaw(page);
-  
+
     const newFilters = {
       ...filterData,
       currentPage: page
     };
-  
+
     fetchFilteredData(true, newFilters);
   };
-  
+
 
   useEffect(() => {
     if (!onFilterByChange) return;
@@ -197,7 +197,7 @@ useSyncFilterFromURL('type', setPropertyTypesSelected, propertyTypesSelected);
       return () => clearTimeout(timeoutId);
     }
   }, [filterData, onFilterByChange]);
-  
+
   useEffect(() => {
 
     if (!isEqual(prevTypeShowPage.current, typeShowPage)) {

@@ -24,7 +24,7 @@ const SymptomSelector = ({ symptoms, search = true, multiple = true, title = "Kl
 
     useEffect(() => {
         if (!setSelected) return;
-        console.log(selectedSymptoms, filtered);
+        // console.log(selectedSymptoms, selected);
         
         if (!isEqual(selectedSymptoms, selected)) {
             setSelected(selectedSymptoms);
