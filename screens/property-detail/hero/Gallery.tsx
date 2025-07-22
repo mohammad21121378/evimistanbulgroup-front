@@ -12,7 +12,7 @@ interface LightboxImage {
 }
 
 interface GalleryViewerProps {
-  images: LightboxImage[][];
+  images: LightboxImage[];
   title: string;
 }
 

@@ -10,7 +10,7 @@ interface LightboxImage {
 }
 
 interface LightboxProps {
-    images: LightboxImage[][];
+    images: LightboxImage[];
     currentIndex: number;
     onClose: () => void;
     onNext: () => void;
