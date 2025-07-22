@@ -15,5 +15,5 @@ export default async function Page({ params }: Props) {
   if (!property) {
     notFound(); // نمایش صفحه 404
   }
-  return <PropertyDetailPage item={property} />;
+  return <PropertyDetailPage item={property.property} />;
 }
