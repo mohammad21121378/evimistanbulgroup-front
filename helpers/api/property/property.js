@@ -1,9 +1,9 @@
 import APIRequest from "../api";
 
-export default async function fetchProperty(slug) {
+export default async function fetchProperty(slug,language="en") {
     let property = null;
     try {
-        const response = await APIRequest.post('property',{ slug: slug });
+        const response = await APIRequest.post('property',{ slug: slug,language });
         property = await response.data;
 
     } catch (error) {

@@ -5,12 +5,12 @@ import { notFound } from "next/navigation";
 
 
 type Props = {
-  params: { peroperty: string };
+  params: { peroperty: string,locale: string };
 };
 
 export default async function Page({ params }: Props) {
-  const { peroperty } = params;
-  const property = await fetchProperty(peroperty);
+  const { peroperty,locale } = params;
+  const property = await fetchProperty(peroperty,locale);
 
   if (!property) {
     notFound(); // نمایش صفحه 404

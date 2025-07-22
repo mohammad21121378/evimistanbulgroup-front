@@ -19,7 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a444990-2b63-46d6-b210-f54ec3aa7b85" name="Default Changelist" comment="" />
+    <list default="true" id="8a444990-2b63-46d6-b210-f54ec3aa7b85" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/[locale]/properties-for-sale-in-turkey/[category]/[peroperty]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/properties-for-sale-in-turkey/[category]/[peroperty]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/api/property/property.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/api/property/property.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +74,7 @@
       <workItem from="1753094093790" duration="15055000" />
       <workItem from="1753129989134" duration="1325000" />
       <workItem from="1753167935964" duration="2211000" />
-      <workItem from="1753201814233" duration="1173000" />
+      <workItem from="1753201814233" duration="1491000" />
     </task>
     <servers />
   </component>
