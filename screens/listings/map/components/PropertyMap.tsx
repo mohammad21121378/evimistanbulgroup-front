@@ -32,45 +32,38 @@ function PropertyMap({ loadingData, properties }: Props) {
   const mapRef = useRef<google.maps.Map | null>(null);
   const prevPropertiesRef = useRef<PropertyRawType[] | null>(null);
 
-  // Reset selection if properties change
-  useEffect(() => {
-    const isSame = isEqual(prevPropertiesRef.current, properties);
-    if (!isSame) {
-      prevPropertiesRef.current = properties;
-      setSelectedPropertyId(null);
-    }
-  }, [properties]);
-
-  // Pan to first property when map or data loads
-  useEffect(() => {
-    if (mapRef.current && properties.length > 0) {
-      const first = properties.find(
-        (p) => p.latitude !== null && p.longitude !== null
-      );
-      if (first) {
-        mapRef.current.panTo({ lat: first.latitude!, lng: first.longitude! });
-      }
-    }
-  }, [properties, isLoaded]);
-
   const fallbackCenter = { lat: 41.0082, lng: 28.9784 }; // استانبول
 
-// پیدا کردن اولین پراپرتی معتبر
 const firstValidProperty = properties.find(
   (p) => p.latitude !== null && p.longitude !== null
 );
 
-// پیدا کردن پراپرتی انتخاب شده
 const selectedProperty = properties.find(
   (p) => p.id === selectedPropertyId && p.latitude !== null && p.longitude !== null
 );
 
-// محاسبه مرکز نقشه
-const center = selectedProperty
-  ? { lat: selectedProperty.latitude!, lng: selectedProperty.longitude! }
-  : firstValidProperty
+// مرکز اولیه فقط یکی ست می‌کنیم (برای center prop)
+const initialCenter = firstValidProperty
   ? { lat: firstValidProperty.latitude!, lng: firstValidProperty.longitude! }
   : fallbackCenter;
+
+const [center, setCenter] = useState(initialCenter);
+
+useEffect(() => {
+  if (selectedProperty && mapRef.current) {
+    mapRef.current.panTo({
+      lat: selectedProperty.latitude!,
+      lng: selectedProperty.longitude!,
+    });
+    setCenter({
+      lat: selectedProperty.latitude!,
+      lng: selectedProperty.longitude!,
+    });
+  } else if (mapRef.current) {
+    mapRef.current.panTo(initialCenter);
+    setCenter(initialCenter);
+  }
+}, [selectedPropertyId, properties]);
 
   const handleMapClick = () => {
     setSelectedPropertyId(null);
