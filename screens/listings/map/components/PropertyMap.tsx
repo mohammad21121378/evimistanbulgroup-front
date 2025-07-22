@@ -72,7 +72,7 @@ useEffect(() => {
       lng: selectedProperty.longitude!,
     });
     setCenter({
-      lat: selectedProperty.latitude!,
+      lat: selectedProperty.latitude!, 
       lng: selectedProperty.longitude!,
     });
   }
