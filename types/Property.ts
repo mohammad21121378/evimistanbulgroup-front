@@ -57,7 +57,7 @@ export type PropertyRawType = {
     value: string | number;
   }[];
   agent:{
-    image:string | null,
+    image:string,
     name: string | null,
     email: string | null,
     phone: string | null,
