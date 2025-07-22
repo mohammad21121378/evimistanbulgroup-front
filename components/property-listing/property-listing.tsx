@@ -79,7 +79,8 @@ export default function PropertyListing({
               "paragraph-medium line-clamp-2 truncate w-full text-wrap",
               styles.listing_description
             )}
-            dangerouslySetInnerHTML={{__html:item.description}}
+            dangerouslySetInnerHTML={{ __html: item.description ?? '' }}
+
           >
 
           </div>
