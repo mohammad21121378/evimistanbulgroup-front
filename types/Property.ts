@@ -65,6 +65,7 @@ export type PropertyRawType = {
   key_features_and_highlights: string | null;
   investment_and_payment: string | null;
   amenities_and_services: string | null;
+  property_description: string | null;
   location_and_lifestyle: string | null;
   legal_and_citizenship: string | null;
   virtual_tour_video: string | null;

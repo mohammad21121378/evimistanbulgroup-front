@@ -65,23 +65,34 @@ export default function Overview({ item }: OverviewProps) {
           <div className={cn("paragraph-medium", styles.description)} dangerouslySetInnerHTML={{ __html: item.content ?? '' }}></div>
 
           <div className={styles.details}>
-            {details.map((detail) => (
-              <div key={detail.id} className={styles.detail}>
-                <div
-                  className={cn(styles.detail_head, {
-                    [styles.open]: open === detail.id,
-                  })}
-                  onClick={() => toggleOpen(detail.id)}
-                >
-                  <h2 className={cn("paragraph-x-large", styles.detail_title)}>
-                    {detail.title}
-                  </h2>
+            {details.map((detail) => {
+              const content = item[detail.slug];
 
-                  {Plus}
-                </div>
+              if (!content) return null; // اگر محتوایی وجود نداشت، چیزی رندر نشه
+
+              return (
+                  <div key={detail.id} className={styles.detail}>
+                    <div
+                        className={cn(styles.detail_head, {
+                          [styles.open]: open === detail.id,
+                        })}
+                        onClick={() => toggleOpen(detail.id)}
+                    >
+                      <h2 className={cn("paragraph-x-large", styles.detail_title)}>
+                        {detail.title}
+                      </h2>
+                      {Plus}
+                    </div>
+
+                    <div
+                        className={cn({
+                          [styles.listOpen]: open === detail.id,
+                        })}
+                        dangerouslySetInnerHTML={{ __html: content }}
+                    />
 
 
-                <ul className={cn(
+                    {/*<ul className={cn(
                   styles.list,
                   { [styles.listOpen]: open === detail.id }
                 )}>
@@ -93,10 +104,13 @@ export default function Overview({ item }: OverviewProps) {
                       {feature.text}
                     </li>
                   ))}
-                </ul>
+                </ul>*/}
 
-              </div>
-            ))}
+
+                  </div>
+              );
+            })}
+
           </div>
         </div>
 
