@@ -44,7 +44,7 @@ export function useFilter({ onFilterByChange = false, listings, typeShowPage }: 
 
   useSyncFilterFromURL('location', setLocationsSelected, locationsSelected);
   useSyncFilterFromURL('feature', setFeatureSelected, featureSelected);
-useSyncFilterFromURL('types', setPropertyTypesSelected, propertyTypesSelected);
+useSyncFilterFromURL('type', setPropertyTypesSelected, propertyTypesSelected);
 
   const filterData = useMemo(() => ({
     priceRange,

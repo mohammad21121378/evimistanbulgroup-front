@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 
 type Props = {
     svg?: ReactNode,
@@ -19,12 +19,31 @@ export default function DropdownWithChildren({
     onToggle,
 }: Props) {
 
+    const wrapperRef = useRef<HTMLDivElement>(null);
+
     // const [open, setOpen] = useState(false);
+
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+          if (
+            open &&
+            wrapperRef.current &&
+            !wrapperRef.current.contains(event.target as Node)
+          ) {
+            onToggle(); // بستن باکس
+          }
+        }
+    
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+          document.removeEventListener("mousedown", handleClickOutside);
+        };
+      }, [open, onToggle]);
 
 
 
     return (
-        <div className="bg-white rounded-xl pointer-events-auto">
+        <div className="bg-white rounded-xl pointer-events-auto" ref={wrapperRef}>
 
             <div className="flex justify-between items-center cursor-pointer py-3 px-4 z-10" onClick={onToggle}>
 

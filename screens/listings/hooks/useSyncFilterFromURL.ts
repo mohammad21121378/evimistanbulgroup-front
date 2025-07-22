@@ -51,6 +51,8 @@ export function useSyncFilterFromURL(
   const prevValueRef = useRef(currentValue);
  
   useEffect(() => {
+    console.log(valuesFromURL, paramName);
+    
     if (!isEqual(prevValueRef.current, valuesFromURL)) {
       prevValueRef.current = valuesFromURL;
       setSelected(valuesFromURL);
