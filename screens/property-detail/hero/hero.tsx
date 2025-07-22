@@ -24,6 +24,7 @@ type HeroProps = {
 
 export default function Hero({ item }: HeroProps) {
   console.info("---------------------- " + item)
+  console.error("---------------------- " + item)
   return (
     <section className={cn("section", styles.section)}>
       <div className={cn("container")}>
