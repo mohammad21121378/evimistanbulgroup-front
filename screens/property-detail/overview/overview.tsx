@@ -103,7 +103,7 @@ export default function Overview({ item }: OverviewProps) {
         <div className={`${styles.agentAndTabelOfContents} overflow-visible h-full`}>
 
           <div className=" sticky top-28">
-            <div className={classNames("py-4 gap-3 flex justify-center items-center", styles.agent)}>
+            {item.agent && <div className={classNames("py-4 gap-3 flex justify-center items-center", styles.agent)}>
 
               <svg className="size-24" viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M86 43C86 66.7482 66.7482 86 43 86C19.2518 86 0 66.7482 0 43C0 19.2518 19.2518 0 43 0C66.7482 0 86 19.2518 86 43ZM3.44 43C3.44 64.8484 21.1516 82.56 43 82.56C64.8484 82.56 82.56 64.8484 82.56 43C82.56 21.1516 64.8484 3.44 43 3.44C21.1516 3.44 3.44 21.1516 3.44 43Z" fill="#E8E6F9" />
@@ -131,7 +131,7 @@ export default function Overview({ item }: OverviewProps) {
                   Book A Free Consultation
                 </button>
               </div>
-            </div>
+            </div>}
 
             <div className="md:grid hidden mt-5">
               <TableOfContents hasCustomizeIcon />
