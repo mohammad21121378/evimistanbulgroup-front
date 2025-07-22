@@ -61,7 +61,7 @@ export default function Hero({ item }: HeroProps) {
           </div>
         </div>
 
-        <Gallery  images={item.gallery} title={item.title} />
+        <Gallery  images={item.gallery ?? []} title={item.title} />
       </div>
     </section>
   );
