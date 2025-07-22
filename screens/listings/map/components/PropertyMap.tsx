@@ -49,6 +49,22 @@ const initialCenter = firstValidProperty
 
 const [center, setCenter] = useState(initialCenter);
 
+// useEffect(() => {
+//   if (selectedProperty && mapRef.current) {
+//     mapRef.current.panTo({
+//       lat: selectedProperty.latitude!,
+//       lng: selectedProperty.longitude!,
+//     });
+//     setCenter({
+//       lat: selectedProperty.latitude!,
+//       lng: selectedProperty.longitude!,
+//     });
+//   } else if (mapRef.current) {
+//     mapRef.current.panTo(initialCenter);
+//     setCenter(initialCenter);
+//   }
+// }, [selectedPropertyId, properties]);
+
 useEffect(() => {
   if (selectedProperty && mapRef.current) {
     mapRef.current.panTo({
@@ -59,10 +75,8 @@ useEffect(() => {
       lat: selectedProperty.latitude!,
       lng: selectedProperty.longitude!,
     });
-  } else if (mapRef.current) {
-    mapRef.current.panTo(initialCenter);
-    setCenter(initialCenter);
   }
+  // ❌ else حذف شد تا وقتی deselect شد، مرکز تغییر نکند
 }, [selectedPropertyId, properties]);
 
   const handleMapClick = () => {
