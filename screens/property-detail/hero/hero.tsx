@@ -16,7 +16,7 @@ type HeroProps = {
     title: string;
     location: string;
     locationID: string;
-    gallery: LightboxImage[];
+    gallery: LightboxImage[][];
     min_price: number;
     max_price: number;
   };
