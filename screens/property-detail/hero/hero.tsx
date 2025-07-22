@@ -23,7 +23,7 @@ type HeroProps = {
 };
 
 export default function Hero({ item }: HeroProps) {
-
+  console.info("---------------------- " + item)
   return (
     <section className={cn("section", styles.section)}>
       <div className={cn("container")}>
@@ -60,7 +60,7 @@ export default function Hero({ item }: HeroProps) {
           </div>
         </div>
 
-        <Gallery item={item} images={item.gallery} title={item.title} />
+        <Gallery  images={item.gallery} title={item.title} />
       </div>
     </section>
   );

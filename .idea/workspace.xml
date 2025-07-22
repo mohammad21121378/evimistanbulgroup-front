@@ -23,6 +23,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/property-detail/hero/Gallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/property-detail/hero/Gallery.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/property-detail/hero/hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/property-detail/hero/hero.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/property-detail/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/property-detail/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +76,7 @@
       <workItem from="1753094093790" duration="15055000" />
       <workItem from="1753129989134" duration="1325000" />
       <workItem from="1753167935964" duration="2211000" />
-      <workItem from="1753201814233" duration="3693000" />
+      <workItem from="1753201814233" duration="3785000" />
     </task>
     <servers />
   </component>
