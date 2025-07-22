@@ -9,32 +9,11 @@ import { Plus, Print, Share } from "@/constants/icons";
 import classNames from "classnames";
 import TableOfContents from "@/components/table-of-contents";
 import { details } from "../contsants";
+import { PropertyType } from "@/types/Property";
 
 
 
-type OverviewProps = {
-  item: {
-    id: number;
-    name: string;
-    description: string;
-    image: string;
-    price: number;
-    category: string;
-    location: string;
-    agent: {
-      name: string;
-      email: string;
-      phone: string;
-      image: string;
-    };
-    features: {
-      id: number;
-      icon: string;
-      name: string;
-      value: string | number;
-    }[];
-  };
-};
+type OverviewProps = PropertyType;
 
 export default function Overview({ item }: OverviewProps) {
   const [open, setOpen] = React.useState<number | null>(null);
@@ -58,18 +37,18 @@ export default function Overview({ item }: OverviewProps) {
               className={`${styles.features} sm:col-span-6`}
             />
 
-            <div className="button sm:col-span-4 sm:my-0 my-4 button-red w-full button-small">
+            {item.status === "sold_out" && (<div className="button sm:col-span-4 sm:my-0 my-4 button-red w-full button-small">
               ALREADY SOLD
-            </div>
+            </div> )}
 
             <div className="sm:col-span-2 text-sm text-gray-500 text-center">
-              12h ago
+              {item.created_at}
             </div>
           </div>
 
           <div className="flex flex-wrap gap-2 mt-5 ">
             {
-              ['Best for Investment', 'Best for Investment', 'Best for Investment', 'Best for Investment']
+              item.special_features && item.special_features?.length > 1 && item.special_features
                 .map(item =>
                   <div className="bg-[#002DD1] py-2 px-3 rounded-md flex items-center text-white text-xs font-bold">
                     <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -83,9 +62,7 @@ export default function Overview({ item }: OverviewProps) {
             }
           </div>
 
-          <div className={cn("paragraph-medium", styles.description)}>
-            A spacious and modern home with an open floor plan, large windows, and a beautifully landscaped garden. Perfect for those seeking peace and tranquility.A spacious and modern home with an open floor A spacious and modern home with an open floor plan, large windows, and a beautifully landscaped garden. Perfect for those seeking peace and tranquility.A spacious and modern home with an open floor
-          </div>
+          <div className={cn("paragraph-medium", styles.description)} dangerouslySetInnerHTML={{ __html: item.content ?? '' }}></div>
 
           <div className={styles.details}>
             {details.map((detail) => (
@@ -148,7 +125,7 @@ export default function Overview({ item }: OverviewProps) {
 
               <div>
                 <p className="text-xs font-bold mb-2">
-                  Property Code: #123678
+                  Property Code: #{item.id}
                 </p>
                 <button className="button button-small">
                   Book A Free Consultation

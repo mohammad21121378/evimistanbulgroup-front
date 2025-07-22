@@ -9,19 +9,11 @@ import Link from "next/link";
 
 interface RelatedPropertiesProps {
   item: any;
+  related: any;
 }
 
-export default function RelatedProperties({ item }: RelatedPropertiesProps) {
-  const allListings = Listings.flatMap(
-    (listingCategory) => listingCategory.items,
-  );
+export default function RelatedProperties({ item,related }: RelatedPropertiesProps) {
 
-  const filteredListings = allListings.filter(
-    (listing) => listing.id !== item.id && listing.category === item.category,
-  );
-
-  // Limit to 3 related listings
-  const relatedListings = filteredListings.slice(0, 3);
 
   return (
     <section className={cn("section")}>
@@ -31,15 +23,15 @@ export default function RelatedProperties({ item }: RelatedPropertiesProps) {
           <Heading type="heading-3">Similar Properties</Heading>
           </h2>
 
-          <Link href="/properties-for-sale-in-turkey" className={cn("button button-primary")}>
+          <Link href={`/properties-for-sale-in-turkey/?type=${item.categoryID}`} className={cn("button button-primary")}>
           View All Similar Properties {ArrowRight}
           </Link>
         </div>
 
         <div className={styles.properties}>
-          {/* {relatedListings.map((listing) => (
+          { related.length > 0 && related.map((listing) => (
             <PropertyListing key={listing.id} item={listing} />
-          ))} */}
+          )) }
         </div>
       </div>
     </section>

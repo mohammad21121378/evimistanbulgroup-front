@@ -4,13 +4,13 @@ import Overview from "./overview";
 import RelatedProperties from "./related-properties";
 import RelatedInsights from "./related-insights";
 
-export default function PropertyDetailPage({ item }: any) {
+export default function PropertyDetailPage({ item,related }: any) {
 
   return (
     <Layout>
       <Hero item={item} />
       <Overview item={item} />
-      <RelatedProperties item={item} />
+      <RelatedProperties related={related} item={item} />
       <RelatedInsights />
     </Layout>
   );
