@@ -75,6 +75,7 @@ export type PropertyRawType = {
   meta_title: string | null;
   meta_index: "index" | "noindex" | null;
   meta_follow: "follow" | "nofollow" | null;
+  [key: string]: any;
 };
 
 
