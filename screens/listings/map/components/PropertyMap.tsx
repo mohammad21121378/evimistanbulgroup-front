@@ -53,15 +53,24 @@ function PropertyMap({ loadingData, properties }: Props) {
     }
   }, [properties, isLoaded]);
 
-  const fallbackCenter = { lat: 41.0082, lng: 28.9784 };
+  const fallbackCenter = { lat: 41.0082, lng: 28.9784 }; // استانبول
 
-  const firstValidProperty = properties.find(
-    (p) => p.latitude !== null && p.longitude !== null
-  );
+// پیدا کردن اولین پراپرتی معتبر
+const firstValidProperty = properties.find(
+  (p) => p.latitude !== null && p.longitude !== null
+);
 
-  const center = firstValidProperty
-    ? { lat: firstValidProperty.latitude!, lng: firstValidProperty.longitude! }
-    : fallbackCenter;
+// پیدا کردن پراپرتی انتخاب شده
+const selectedProperty = properties.find(
+  (p) => p.id === selectedPropertyId && p.latitude !== null && p.longitude !== null
+);
+
+// محاسبه مرکز نقشه
+const center = selectedProperty
+  ? { lat: selectedProperty.latitude!, lng: selectedProperty.longitude! }
+  : firstValidProperty
+  ? { lat: firstValidProperty.latitude!, lng: firstValidProperty.longitude! }
+  : fallbackCenter;
 
   const handleMapClick = () => {
     setSelectedPropertyId(null);
