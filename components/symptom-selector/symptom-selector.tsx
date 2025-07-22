@@ -12,8 +12,6 @@ const SymptomSelector = ({ symptoms, search = true, multiple = true, title = "Kl
     onToggle,
 }: SymptomSelectorProps) => {
 
-
-
     const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value.toLowerCase());
     };
@@ -24,8 +22,7 @@ const SymptomSelector = ({ symptoms, search = true, multiple = true, title = "Kl
 
     useEffect(() => {
         if (!setSelected) return;
-        // console.log(selectedSymptoms, selected);
-        
+
         if (!isEqual(selectedSymptoms, selected)) {
             setSelected(selectedSymptoms);
         }
@@ -42,10 +39,48 @@ const SymptomSelector = ({ symptoms, search = true, multiple = true, title = "Kl
         didMount.current = true;
     }, [selected]);
 
+
+    const firstSelectedRef = useRef<HTMLDivElement | null>(null);
+    const refAssigned = useRef(false);
+    const listContainerRef = useRef<HTMLDivElement | null>(null)
+
+    useEffect(() => {
+        if (!open) return;
+        refAssigned.current = false;
+      
+        const timeout = setTimeout(() => {
+          requestAnimationFrame(() => {
+            const container = listContainerRef.current;
+            const selected = firstSelectedRef.current;
+      
+            if (container && selected) {
+              const containerRect = container.getBoundingClientRect();
+              const selectedRect = selected.getBoundingClientRect();
+              const margin = 15;
+      
+              const scrollTo = container.scrollTop + (selectedRect.top - containerRect.top) - margin;
+      
+              container.scrollTo({
+                top: scrollTo,
+                behavior: "smooth",
+              });
+            } else {
+              console.warn("Container or selected not available", { container, selected });
+            }
+          });
+        }, 800);
+      
+        return () => clearTimeout(timeout);
+      }, [open]);
+      
+      
+      
+
     return (
         <DropdownWithChildren svgArrow={svgArrow} title={title} svg={svgtitle} key={title}
             open={open}
             onToggle={onToggle}
+            scrollRef={listContainerRef}
         >
             {search && <div className={styles["input-wrapper"]}>
                 <input
@@ -71,51 +106,90 @@ const SymptomSelector = ({ symptoms, search = true, multiple = true, title = "Kl
             </div>}
             <div className={styles["symptom-list"]}>
                 {filtered
-                    .map((symptom) => (
-                        <div key={symptom.id}>
+                    .map((symptom) => {
+                        return (
+                            <div key={symptom.id} 
+                              >
 
-                            <SymptomSelectorItem
-                                handleSelect={handleSelectSymptomAndChildren}
-                                selectedSymptoms={selectedSymptoms}
-                                symptom={symptom}
-                                isLabel={parentIsLabel}
-                            />
+                                <div 
+                                key={symptom.id}
+                                ref={
+                                !refAssigned.current && selectedSymptoms.includes(symptom.id.toString())
+                                  ? (el) => {
+                                      if (el) {
+                                        firstSelectedRef.current = el;
+                                        refAssigned.current = true;
+                                      }
+                                    }
+                                  : undefined
+                              }>
 
-                            <div className="pl-5 space-y-1 my-1">
 
-                                {Array.isArray(symptom.children) &&
-                                    <>
+                                <SymptomSelectorItem
+                                    handleSelect={handleSelectSymptomAndChildren}
+                                    selectedSymptoms={selectedSymptoms}
+                                    symptom={symptom}
+                                    isLabel={parentIsLabel}
 
-                                        {
-                                            allowForSelectAllChildren &&
+                                />
 
-                                            <SymptomSelectorItem
-                                                key={`all-${symptom.id}`}
-                                                handleSelect={handleSelectSymptomAndChildren}
-                                                selectedSymptoms={selectedSymptoms}
-                                                symptom={symptom}
-                                                itemIsAll
-                                            />
-                                        }
+                                </div>
 
-                                        {
+                                <div className="pl-5 space-y-1 my-1">
 
-                                            symptom.children.sort((a, b) => a.name.localeCompare(b.name)).map((child) => (
+                                    {Array.isArray(symptom.children) &&
+                                        <>
+
+                                            {
+                                                allowForSelectAllChildren &&
+
                                                 <SymptomSelectorItem
-                                                    key={child.id}
-                                                    handleSelect={handleSelect}
+                                                    key={`all-${symptom.id}`}
+                                                    handleSelect={handleSelectSymptomAndChildren}
                                                     selectedSymptoms={selectedSymptoms}
-                                                    symptom={child}
-                                                    parentId={`${symptom.id}`}
+                                                    symptom={symptom}
+                                                    itemIsAll
                                                 />
-                                            ))
-                                        }
+                                            }
 
-                                    </>
-                                }
+                                            {
+
+                                                symptom.children.sort((a, b) => a.name.localeCompare(b.name)).map((child) => {
+
+                                                    return (
+                                                        <div
+                                                            key={child.id}
+                                                            ref={
+                                                                !refAssigned.current && selectedSymptoms.includes(child.id.toString())
+                                                                  ? (el) => {
+                                                                      if (el) {
+                                                                        firstSelectedRef.current = el;
+                                                                        refAssigned.current = true;
+                                                                      }
+                                                                    }
+                                                                  : undefined
+                                                              }
+                                                        >
+                                                            <SymptomSelectorItem
+                                                                key={child.id}
+                                                                handleSelect={handleSelect}
+                                                                selectedSymptoms={selectedSymptoms}
+                                                                symptom={child}
+                                                                parentId={`${symptom.id}`}
+                                                            />
+                                                        </div>
+                                                    )
+                                                })
+                                            }
+
+                                        </>
+                                    }
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        )
+                    }
+                    )
+                }
             </div>
         </DropdownWithChildren>
     );

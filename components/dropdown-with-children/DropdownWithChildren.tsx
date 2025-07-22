@@ -10,6 +10,7 @@ type Props = {
     svgArrow?: boolean;
     open: boolean;
     onToggle: () => void;
+    scrollRef?: React.RefObject<HTMLDivElement>;
 }
 
 export default function DropdownWithChildren({
@@ -19,6 +20,7 @@ export default function DropdownWithChildren({
     svgArrow = true,
     open,
     onToggle,
+    scrollRef
 }: Props) {
 
     const wrapperRef = useRef<HTMLDivElement>(null);
@@ -119,7 +121,8 @@ export default function DropdownWithChildren({
 
             </div>
 
-            <div className={classNames(open ? 'max-h-52 opacity-1 px-3 pb-5' : 'max-h-px opacity-0', 'transition-all overflow-y-auto scrollbar-sm duration-500')}>
+            <div ref={scrollRef} className={classNames(open ? 'max-h-52 opacity-1 px-3 pb-5' : 'max-h-px opacity-0', 'transition-all overflow-y-auto scrollbar-sm duration-500 scroll-mt-2')}
+            >
                 {children}
             </div>
         </div>

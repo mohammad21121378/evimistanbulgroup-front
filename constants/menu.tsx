@@ -20,7 +20,7 @@ export const MenuData = {
 
         byLocation: {
             title: "By Location",
-            seeAllHref: '/properties-for-sale-in-turkey',
+            seeAllHref: '/properties-for-sale-in-turkey?location=all',
             items:
                 [
                     {
@@ -56,7 +56,7 @@ export const MenuData = {
 
         byPropertyType: {
             title: "By Property Type",
-            seeAllHref: "/properties-for-sale-in-turkey",
+            seeAllHref: "/properties-for-sale-in-turkey?type=all",
             items: [
                 {
                     icon: (
@@ -85,7 +85,7 @@ export const MenuData = {
 
         bySpecialFeatures: {
             title: "By Special Features",
-            seeAllHref: '/',
+            seeAllHref: '/properties-for-sale-in-turkey?feature=all',
             items: [
                 {
                     icon: (

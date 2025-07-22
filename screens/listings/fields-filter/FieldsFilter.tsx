@@ -159,6 +159,7 @@ import { featureItems, propertyTypes, bedrooms as bedroomsOptions, bathrooms as 
 import originalTurkiye from "@/constants/turkiye.json";
 import { FilterProps } from "../types";
 import { AnimatePresence, motion } from "framer-motion";
+import { useSearchParams } from "next/navigation";
 
 const turkiye = originalTurkiye.map((province) => ({
     ...province,
@@ -201,9 +202,10 @@ export default function FieldsFilter({
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
     const [hideOthers, setHideOthers] = useState(false);
     const focusRef = useRef<HTMLDivElement>(null);
+    const searchParams = useSearchParams();
 
-    const handleToggle = (key: string) => {
-        if (openDropdown === key) {
+    const handleToggle = (key: string, allowFalse=true) => {
+        if (openDropdown === key && allowFalse ) {
             setOpenDropdown(null);
             setHideOthers(true);
             setTimeout(() => {
@@ -218,6 +220,20 @@ export default function FieldsFilter({
         }
     };
 
+    useEffect(() => {
+        const typeParam = searchParams.get("type");
+        const locationParam = searchParams.get("location");
+        const featureParam = searchParams.get("feature");
+    
+        if (locationParam) {
+          handleToggle("Location", false);
+        } else if (typeParam) {
+          handleToggle("Type of Property", false);
+        } else if (featureParam) {
+          handleToggle("Special Features", false);
+        }
+      }, [searchParams]);
+
 
     useEffect(() => {
         if (focusRef.current) {
@@ -226,6 +242,7 @@ export default function FieldsFilter({
     }, [openDropdown]);
 
     const renderDropdown = (key: string, component: React.ReactNode) => {
+
         const isVisible = !hideOthers && (openDropdown === null || openDropdown === key);
         const isFocused = openDropdown === key;
 
