@@ -79,8 +79,10 @@ export default function PropertyListing({
               "paragraph-medium line-clamp-2 truncate w-full text-wrap",
               styles.listing_description
             )}
+            dangerouslySetInnerHTML={{ __html: item.description ?? '' }}
+
           >
-            {item.description}
+
           </div>
           <p className="text-lg font-medium text-[#1A1A1A]">
             {item.min_price && item.max_price ? (
