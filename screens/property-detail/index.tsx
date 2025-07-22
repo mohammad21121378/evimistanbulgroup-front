@@ -5,6 +5,7 @@ import RelatedProperties from "./related-properties";
 import RelatedInsights from "./related-insights";
 
 export default function PropertyDetailPage({ item }: any) {
+    console.log("---------------------- " + item)
   return (
     <Layout>
       <Hero item={item} />
