@@ -1,6 +1,6 @@
 import { Peroperty } from "@/constants/mock";
 import PropertyDetailPage from "@/screens/property-detail";
-import fetchProperties from "@/helpers/api/property/property";
+import fetchProperty from "@/helpers/api/property/property";
 import { notFound } from "next/navigation";
 
 
