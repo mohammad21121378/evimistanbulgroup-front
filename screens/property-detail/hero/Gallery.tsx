@@ -43,7 +43,8 @@ export default function Gallery({ images, title, }: GalleryViewerProps) {
             />
           </div>}
 
-        {images.length > 0 && images[1] &&<div className={styles.grid_images}>
+        <div className={styles.grid_images}>
+        {images.length > 0 && images[1] &&
           <div className={styles.row_images}>
             {[1, 2].map((i) => (
               <div key={i} className={styles.image} onClick={() => openViewer(i)}>
@@ -55,7 +56,8 @@ export default function Gallery({ images, title, }: GalleryViewerProps) {
                 />
               </div>
             ))}
-          </div>}
+          </div>
+          }
 
           {images.length > 0 && images[3] && <div className={styles.image} onClick={() => openViewer(3)}>
             <Image
