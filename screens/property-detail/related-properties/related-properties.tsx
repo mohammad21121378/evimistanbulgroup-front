@@ -6,10 +6,11 @@ import { Listings } from "@/constants/mock";
 import PropertyListing from "@/components/property-listing";
 import { ArrowRight } from "@/constants/icons";
 import Link from "next/link";
+import {PropertyRawType} from "../../../types/Property";
 
 interface RelatedPropertiesProps {
   item: any;
-  related: any;
+  related: PropertyRawType[];
 }
 
 export default function RelatedProperties({ item,related }: RelatedPropertiesProps) {
