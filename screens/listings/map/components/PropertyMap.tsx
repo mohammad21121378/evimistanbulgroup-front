@@ -53,6 +53,16 @@ function PropertyMap({ loadingData, properties }: Props) {
     }
   }, [properties, isLoaded]);
 
+  const fallbackCenter = { lat: 41.0082, lng: 28.9784 };
+
+  const firstValidProperty = properties.find(
+    (p) => p.latitude !== null && p.longitude !== null
+  );
+
+  const center = firstValidProperty
+    ? { lat: firstValidProperty.latitude!, lng: firstValidProperty.longitude! }
+    : fallbackCenter;
+
   const handleMapClick = () => {
     setSelectedPropertyId(null);
   };
@@ -83,6 +93,7 @@ function PropertyMap({ loadingData, properties }: Props) {
       }}
       mapContainerStyle={containerStyle}
       zoom={11}
+      center={center}
       onClick={handleMapClick}
       options={{
         fullscreenControl: false,
@@ -92,7 +103,7 @@ function PropertyMap({ loadingData, properties }: Props) {
     >
       {properties.map((property) => {
         console.log(property.latitude, property.longitude);
-        
+
         if (property.latitude === null || property.longitude === null) return null;
 
         const isSelected = selectedPropertyId === property.id;
@@ -104,7 +115,10 @@ function PropertyMap({ loadingData, properties }: Props) {
             position={{ lat: property.latitude, lng: property.longitude }}
             icon={{
               url: "/images/marker.svg",
-              scaledSize: new google.maps.Size(svgSize, svgSize),
+              scaledSize:
+                typeof window !== "undefined" && window.google
+                  ? new window.google.maps.Size(svgSize, svgSize)
+                  : undefined,
             }}
             onClick={(e) => {
               e.domEvent.stopPropagation();

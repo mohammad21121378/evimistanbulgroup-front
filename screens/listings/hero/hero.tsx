@@ -100,17 +100,17 @@ function Hero({ type, onChange, ...filtersState }: Props) {
                           <div>
                             <PropertyListing key={listing.id} item={listing} />
                           </div>
-                          <div className="sm:col-span-2 mt-10">
-                            {totalPages && totalPages > 1 && (
-                              <Pagination
-                                currentPage={currentPage}
-                                totalPages={totalPages}
-                                onPageChange={goToPage}
-                              />
-                            )}
-                          </div>
                         </>
                       ))}
+                      <div className="sm:col-span-2 mt-10">
+                        {totalPages && totalPages > 1 && (
+                          <Pagination
+                            currentPage={currentPage}
+                            totalPages={totalPages}
+                            onPageChange={goToPage}
+                          />
+                        )}
+                      </div>
                     </>
                     :
                     <div className="sm:col-span-2">
