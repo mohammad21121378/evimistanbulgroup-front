@@ -34,50 +34,54 @@ function PropertyMap({ loadingData, properties }: Props) {
 
   const fallbackCenter = { lat: 41.0082, lng: 28.9784 }; // استانبول
 
-const firstValidProperty = properties.find(
-  (p) => p.latitude !== null && p.longitude !== null
-);
+  const firstValidProperty = properties.find(
+    (p) => p.latitude !== null && p.longitude !== null
+  );
 
-const selectedProperty = properties.find(
-  (p) => p.id === selectedPropertyId && p.latitude !== null && p.longitude !== null
-);
+  const selectedProperty = properties.find(
+    (p) => p.id === selectedPropertyId && p.latitude !== null && p.longitude !== null
+  );
 
-// مرکز اولیه فقط یکی ست می‌کنیم (برای center prop)
-const initialCenter = firstValidProperty
-  ? { lat: firstValidProperty.latitude!, lng: firstValidProperty.longitude! }
-  : fallbackCenter;
+  // مرکز اولیه فقط یکی ست می‌کنیم (برای center prop)
+  const initialCenter = firstValidProperty
+    ? { lat: firstValidProperty.latitude!, lng: firstValidProperty.longitude! }
+    : fallbackCenter;
 
-const [center, setCenter] = useState(initialCenter);
+  const [center, setCenter] = useState(initialCenter);
 
-// useEffect(() => {
-//   if (selectedProperty && mapRef.current) {
-//     mapRef.current.panTo({
-//       lat: selectedProperty.latitude!,
-//       lng: selectedProperty.longitude!,
-//     });
-//     setCenter({
-//       lat: selectedProperty.latitude!,
-//       lng: selectedProperty.longitude!,
-//     });
-//   } else if (mapRef.current) {
-//     mapRef.current.panTo(initialCenter);
-//     setCenter(initialCenter);
-//   }
-// }, [selectedPropertyId, properties]);
+  // useEffect(() => {
+  //   if (selectedProperty && mapRef.current) {
+  //     mapRef.current.panTo({
+  //       lat: selectedProperty.latitude!,
+  //       lng: selectedProperty.longitude!,
+  //     });
+  //     setCenter({
+  //       lat: selectedProperty.latitude!,
+  //       lng: selectedProperty.longitude!,
+  //     });
+  //   } else if (mapRef.current) {
+  //     mapRef.current.panTo(initialCenter);
+  //     setCenter(initialCenter);
+  //   }
+  // }, [selectedPropertyId, properties]);
 
-useEffect(() => {
-  if (selectedProperty && mapRef.current) {
-    mapRef.current.panTo({
-      lat: selectedProperty.latitude!,
-      lng: selectedProperty.longitude!,
-    });
-    setCenter({
-      lat: selectedProperty.latitude!, 
-      lng: selectedProperty.longitude!,
-    });
-  }
-  // ❌ else حذف شد تا وقتی deselect شد، مرکز تغییر نکند
-}, [selectedPropertyId, properties]);
+  useEffect(() => {
+    mapRef.current?.panTo(initialCenter);
+    setCenter(initialCenter);
+  }, [properties]);
+
+  useEffect(() => {
+    if (selectedProperty && mapRef.current) {
+      mapRef.current.panTo({
+        lat: selectedProperty.latitude!,
+        lng: selectedProperty.longitude!,
+      });
+      setCenter({
+        lat: selectedProperty.latitude!,
+        lng: selectedProperty.longitude!,
+      });
+    }
+  }, [selectedPropertyId]);
 
   const handleMapClick = () => {
     setSelectedPropertyId(null);
