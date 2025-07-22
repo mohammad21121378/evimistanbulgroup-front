@@ -77,23 +77,15 @@ function Hero({ type, onChange, ...filtersState }: Props) {
 
               </div>
 
-              {
-                applyFilters &&
-                <button className={cn("label-medium text-orange-600", styles.textButton)} onClick={onReset}>
-                  Reset
-                </button>
-              }
 
-              <motion.div
-                layout
-                initial={false}
-                animate={{ opacity: 1, y: 5 }}
-                exit={{ opacity: 0, y: -5 }}
-                transition={{
-                  layout: { duration: 0.3, ease: "easeInOut" },
-                  default: { duration: 0.3 }
-                }}
-              >
+              <div
+                >
+                {
+                  applyFilters &&
+                  <button className={cn("text-base font-medium text-center w-full py-2.5 text-orange-600", styles.textButton)} onClick={onReset}>
+                    Reset
+                  </button>
+                }
                 <Button
                   size="full"
                   onClick={onFilter}
@@ -101,7 +93,7 @@ function Hero({ type, onChange, ...filtersState }: Props) {
                   loading={loading}>
                   Find Now
                 </Button>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>

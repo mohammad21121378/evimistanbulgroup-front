@@ -40,7 +40,14 @@ const SymptomSelector = ({ symptoms, search = true, multiple = true, title = "Kl
     // }, [selected]);
 
     useEffect(() => {
-        if (!selected && !didMount.current) return;
+
+        if (selected === undefined || selected === false ) return;
+
+        if (selected.length === 0) {
+            if (!isEqual(selected, selectedSymptoms)) setSelectedSymptoms([])
+        }
+        
+
         const selectedArray = selected as string[];
         const hasDotFormat = selectedArray?.some(id => id.includes('.'));
         if (allowForSelectAllChildren && !hasDotFormat) {
@@ -58,13 +65,14 @@ const SymptomSelector = ({ symptoms, search = true, multiple = true, title = "Kl
             });
 
         } else {
-            if (selected) {
+            let initialSelections: string[] =[];
 
-                const initialSelections = selected.map(item => item.toString());
-                if (!isEqual(initialSelections, selectedSymptoms)) {
-                    didMount.current = true;
-                    setSelectedSymptoms(initialSelections);
-                }
+            if (selected) {
+                initialSelections = selected.map(item => item.toString());
+            }
+            if (!isEqual(initialSelections, selectedSymptoms)) {
+                didMount.current = true;
+                setSelectedSymptoms(initialSelections);
             }
         }
 

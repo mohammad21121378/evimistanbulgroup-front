@@ -3,10 +3,10 @@ import { useNumberedPagination } from "@/hooks/useNumberedPagination";
 import isEqual from "lodash.isequal";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { initialFilterState, priceRangeValue } from "../filter.constants";
-import { useSearchParams } from 'next/navigation';
 import fetchProperties from "@/helpers/api/property/properties"
 import { ListingsType, PropertyRawType } from "@/types/Property";
 import { useSyncFilterFromURL } from "./useSyncFilterFromURL";
+import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 
 type Props = {
   onFilterByChange?: boolean
@@ -16,6 +16,10 @@ type Props = {
 }
 
 export function useFilter({ onFilterByChange = false, listings, typeShowPage }: Props) {
+
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   const [totalPagesState, setTotalPagesState] = useState(listings?.pagination?.last_page ?? 1);
 
@@ -40,12 +44,6 @@ export function useFilter({ onFilterByChange = false, listings, typeShowPage }: 
   const [bathroomsSelected, setBathroomsSelected] = useState(initialFilterState.bathroomsSelected);
   const [sortOption, setSortOption] = useState(initialFilterState.sortOption);
 
-
-
-  useSyncFilterFromURL('location', setLocationsSelected, locationsSelected);
-  useSyncFilterFromURL('feature', setFeatureSelected, featureSelected);
-  useSyncFilterFromURL('type', setPropertyTypesSelected, propertyTypesSelected);
-
   const filterData = useMemo(() => ({
     priceRange,
     locationsSelected,
@@ -69,36 +67,11 @@ export function useFilter({ onFilterByChange = false, listings, typeShowPage }: 
   const prevFilterRef = useRef<typeof filterData>(filterData);
   const prevTypeShowPage = useRef(typeShowPage);
 
-  // const fetchFilteredData = async (applyFilters = true) => {
-  //   if (!loading) setLoading(true);
-
-  //   const listingsData = await fetchProperties(3, currentPage, {
-  //     priceRange,
-  //     locationsSelected,
-  //     propertyTypesSelected,
-  //     featureSelected,
-  //     bedroomsSelected,
-  //     bathroomsSelected,
-  //     sortOption
-  //   });
-
-  //   console.log("listingsData:", listingsData);
-
-  //   if (listingsData && listingsData.properties) {
-  //     setProperties(listingsData.properties)
-  //     setTotalPagesState(listingsData.pagination?.last_page)
-  //   } else {
-  //     setProperties([])
-  //   }
-
-  //   setTimeout(() => {
-  //     setLoading(false);
-  //     setApplyFilters(applyFilters);
-  //   }, 500);
-  // };
-
   const fetchFilteredData = async (applyFilters = true, filters = filterData) => {
     if (!loading) setLoading(true);
+
+    console.log("applyFilters''::::::::::::", applyFilters);
+    
 
     const listingsData = await fetchProperties(typeShowPage === 'map' ? -1 : 3, filters.currentPage, {
       priceRange: filters.priceRange,
@@ -117,9 +90,9 @@ export function useFilter({ onFilterByChange = false, listings, typeShowPage }: 
       setProperties([])
     }
 
+    setApplyFilters(applyFilters);
     setTimeout(() => {
       setLoading(false);
-      setApplyFilters(applyFilters);
     }, 500);
   };
 
@@ -132,6 +105,20 @@ export function useFilter({ onFilterByChange = false, listings, typeShowPage }: 
     };
     await fetchFilteredData(applyFilters, newFilters)
   }
+
+
+  useSyncFilterFromURL('location', setLocationsSelected, locationsSelected, (vals) =>
+    fetchFilteredData(true, { ...filterData, locationsSelected: vals, currentPage: 1 })
+  );
+
+  useSyncFilterFromURL('feature', setFeatureSelected, featureSelected, (vals) =>
+    fetchFilteredData(true, { ...filterData, featureSelected: vals, currentPage: 1 })
+  );
+
+  useSyncFilterFromURL('type', setPropertyTypesSelected, propertyTypesSelected, (vals) =>
+    fetchFilteredData(true, { ...filterData, propertyTypesSelected: vals, currentPage: 1 })
+  );
+
 
   const onSort = (sort: string) => {
     setSortOption(sort);
@@ -147,6 +134,17 @@ export function useFilter({ onFilterByChange = false, listings, typeShowPage }: 
   };
 
   const onReset = async () => {
+
+    const params = new URLSearchParams(searchParams.toString());
+    ['location', 'feature', 'type', 'page'].forEach(key => {
+      params.delete(key);
+    });
+  
+    const queryString = params.toString();
+    const newUrl = queryString ? `${pathname}?${queryString}` : pathname;
+  
+    router.replace(newUrl, { scroll: false });
+
     const resetFilters = {
       ...filterData,
       priceRange: initialFilterState.priceRange,
@@ -167,6 +165,7 @@ export function useFilter({ onFilterByChange = false, listings, typeShowPage }: 
     setBathroomsSelected(resetFilters.bathroomsSelected);
     setSortOption(resetFilters.sortOption);
     goToPageRaw(1);
+
 
     fetchFilteredData(false, resetFilters);
   };

@@ -26,6 +26,7 @@ const Link = ({
   targetLocale = false,
   ...props
 }: CustomLinkProps) => {
+  
   const currentLocale = useLocale();
 
   const resolveHref = (href: string | null | undefined) => {

@@ -38,9 +38,11 @@ import isEqual from 'lodash.isequal';
 export function useSyncFilterFromURL(
   paramName: string,
   setSelected: (value: string[]) => void,
-  currentValue: string[]
+  currentValue: string[],
+  onFilter: (value: string[]) => void
 ) {
   const searchParams = useSearchParams();
+  const isFirst = useRef(true);
 
   const paramValue = useMemo(() => searchParams.get(paramName), [searchParams, paramName]);
 
@@ -49,14 +51,23 @@ export function useSyncFilterFromURL(
   }, [paramValue]);
 
   const prevValueRef = useRef(currentValue);
- 
+
   useEffect(() => {
-    console.log("valuesFromURL", valuesFromURL, paramName);
-    
+
+
     if (!isEqual(prevValueRef.current, valuesFromURL)) {
       prevValueRef.current = valuesFromURL;
+      
       setSelected(valuesFromURL);
+      if (!isFirst.current && valuesFromURL.length) {        
+        onFilter(valuesFromURL)
+      }
     }
-    
-  }, [valuesFromURL, setSelected]);
+
+    if (isFirst.current) {
+      isFirst.current = false;
+    }
+
+
+  }, [valuesFromURL, setSelected, onFilter]);
 }
