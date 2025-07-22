@@ -6,6 +6,7 @@ import { Breadcrumb } from "@/components/breadcrumb/Breadcrumb";
 import Gallery from "./Gallery";
 import { Location2 } from "@/constants/icons";
 import { formatNumber } from "@/utils/formatNumber";
+import Link from "../../../components/ui/Link";
 
 interface LightboxImage {
   url: string;
@@ -39,8 +40,16 @@ export default function Hero({ item }: HeroProps) {
           <div>
             <div className={cn("heading-6")}>{item.title}</div>
             <div className={cn("paragraph-medium", styles.address)}>
-              {Location2}
-              {item.location}
+              <Link
+                  href={`/properties-for-sale-in-turkey?location=${item.locationID}`}
+                  className={cn(
+                      "paragraph-medium font-medium flex items-center gap-2.5 underline",
+                      styles.address
+                  )}
+              >
+                {Location2}
+                {item.location}
+              </Link>
             </div>
           </div>
 
