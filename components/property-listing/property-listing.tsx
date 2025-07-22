@@ -7,6 +7,7 @@ import Link from "../ui/Link";
 import { formatNumber } from "@/utils/formatNumber";
 import { PropertyType } from "@/types/Property";
 import Offers from "./offers";
+import getCategory from "@/utils/getCategory";
 
 interface PropertyListingProps extends PropertyType {
   className?: string;
@@ -22,6 +23,7 @@ export default function PropertyListing({
 }: PropertyListingProps) {
   const link = `${item.url ?? "#"}`;
 
+
   return (
     <div
       className={cn(styles.wrapper, { [styles.small]: size === 'small' }, { 'pl-1.5 pr-1': size === 'small' })}
@@ -31,29 +33,34 @@ export default function PropertyListing({
         className={cn(styles.listing, className, styles.scaled)}
       >
 
-        <Link href={link} className={styles.img_holder}>
+        <div className={styles.img_holder}>
+
+        <Link href={link}>
           <Image
             src={item.images?.[0] ?? '/'}
-            alt={item.images?.[1] ?? item.title }
+            alt={item.images?.[1] ?? item.title}
             layout="fill"
             objectFit="cover"
             objectPosition="center"
           />
-          <div className={cn("paragraph-small", styles.listing_price)}>
+              </Link>
+
+          <Link href={`/properties-for-sale-in-turkey?type=${item.category && getCategory(item.category)}`} noLink={!item.category} className={cn("paragraph-small", styles.listing_price)}>
             {item.category}
-          </div>
+          </Link>
+
           {item.status === "sold_out" && (
             <div className={cn("paragraph-small uppercase", styles.listing_status)}>
               ALREADY SOLD
             </div>
           )}
-        </Link>
+          </div>
 
         {item.special_features && item.special_features?.length > 1 && (
-            <Offers
-                offers={item.special_features.map(feature => feature.title)}
-                small={size === 'small'}
-            />
+          <Offers
+            offers={item.special_features.map(feature => feature.title)}
+            small={size === 'small'}
+          />
         )}
 
 
@@ -86,17 +93,17 @@ export default function PropertyListing({
           </div>
           <p className="text-lg font-medium text-[#1A1A1A]">
             {item.min_price && item.max_price ? (
-                <>
-                  {formatNumber(item.min_price)} MIN –– {formatNumber(item.max_price)} MAX
-                </>
+              <>
+                {formatNumber(item.min_price)} MIN –– {formatNumber(item.max_price)} MAX
+              </>
             ) : item.min_price ? (
-                <>
-                  {formatNumber(item.min_price)}
-                </>
+              <>
+                {formatNumber(item.min_price)}
+              </>
             ) : item.max_price ? (
-                <>
-                  {formatNumber(item.max_price)}
-                </>
+              <>
+                {formatNumber(item.max_price)}
+              </>
             ) : null}
 
           </p>

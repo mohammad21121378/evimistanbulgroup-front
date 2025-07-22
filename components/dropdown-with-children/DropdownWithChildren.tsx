@@ -121,7 +121,7 @@ export default function DropdownWithChildren({
 
             </div>
 
-            <div ref={scrollRef} className={classNames(open ? 'max-h-52 opacity-1 px-3 pb-5' : 'max-h-px opacity-0', 'transition-all overflow-y-auto scrollbar-sm duration-500 scroll-mt-2')}
+            <div ref={scrollRef} className={classNames(open ? 'max-h-52 opacity-1 px-3 pb-5' : 'max-h-px opacity-0', 'transition-all overflow-y-auto scrollbar-sm duration-500')}
             >
                 {children}
             </div>

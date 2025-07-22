@@ -5,21 +5,24 @@ import cn from "classnames";
 import styles from "./categories.module.css";
 import { Heading } from "@/components/typography";
 import Image from "next/image";
-import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "@/constants/icons";
+import Link from "@/components/ui/Link";
+import Button from "@/components/ui/Button";
 
 const categories = [
-  { id: 1, key: "apartment" },
-  { id: 2, key: "villa" },
-  { id: 3, key: "commercial" },
-  { id: 4, key: "penthouse" },
-  { id: 5, key: "landForSale" },
-  { id: 6, key: "hotelForSale" },
+  { id: 176, key: "apartment", },
+  { id: 177, key: "villa" },
+  { id: 178, key: "commercial" },
+  { id: 179, key: "penthouse" },
+  { id: 181, key: "landForSale" },
+  { id: 182, key: "hotelForSale" },
 ];
 
 export default function Categories() {
   const t = useTranslations("Categories");
+
+  const prefixLink = '/properties-for-sale-in-turkey?type='
 
   return (
     <section className="section">
@@ -32,14 +35,14 @@ export default function Categories() {
             </div>
           </div>
 
-          <Link href="/properties-for-sale-in-turkey" className="button button-primary">
+          <Button href={`${prefixLink}all`} flex>
             {t("viewAll")} {ArrowRight}
-          </Link>
+          </Button>
         </div>
 
         <div className={styles.categories}>
           {categories.map((category) => (
-            <div key={category.id} className={styles.category}>
+            <Link href={`${prefixLink}${category.id}`} key={category.id} className={styles.category}>
               <div className={styles.image_container}>
                 <Image
                   src={`/images/categories/${category.key}.jpg`}
@@ -54,7 +57,7 @@ export default function Categories() {
                   {t(`types.${category.key}`)}
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

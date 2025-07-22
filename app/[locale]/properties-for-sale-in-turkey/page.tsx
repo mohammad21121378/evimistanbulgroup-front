@@ -14,15 +14,15 @@ export default async function Listings({ searchParams }: { searchParams: SearchP
 
   const filters: Record<string, string[]> = {};
 
-  if (searchParams.type) {
+  if (searchParams.type && searchParams.type!=='all') {
     filters.propertyTypesSelected = [searchParams.type];
   }
 
-  if (searchParams.feature) {
+  if (searchParams.feature && searchParams.feature!=='all') {
     filters.featureSelected = [searchParams.feature];
   }
 
-  if (searchParams.location) {
+  if (searchParams.location && searchParams.location!=='all') {
     filters.locationsSelected = [searchParams.location];
   }
 

@@ -28,16 +28,49 @@ const SymptomSelector = ({ symptoms, search = true, multiple = true, title = "Kl
         }
     }, [selectedSymptoms]);
 
-    useEffect(() => {
-        if (!selected) return;
+    // useEffect(() => {
+    //     if (!selected) return;
 
-        const initialSelections = selected.map(item => item.toString());
-        if (!isEqual(initialSelections, selectedSymptoms)) {
-            setSelectedSymptoms(initialSelections);
+    //     const initialSelections = selected.map(item => item.toString());
+    //     if (!isEqual(initialSelections, selectedSymptoms)) {
+    //         setSelectedSymptoms(initialSelections);
+    //     }
+
+    //     didMount.current = true;
+    // }, [selected]);
+
+    useEffect(() => {
+        if (!selected && !didMount.current) return;
+        const selectedArray = selected as string[];
+        const hasDotFormat = selectedArray?.some(id => id.includes('.'));
+        if (allowForSelectAllChildren && !hasDotFormat) {
+
+            selectedArray.flatMap(id => {
+                const parent = symptoms.find(symptom => symptom.id.toString() === id);
+                if (parent && Array.isArray(parent.children)) {
+
+                    const parentId = String(parent.id);
+                    const childrenIds = parent.children?.map(child => `${parentId}.${child.id}`) ?? [];
+                    setSelectedSymptoms([parentId, ...childrenIds]);
+
+                    didMount.current = true;
+                }
+            });
+
+        } else {
+            if (selected) {
+
+                const initialSelections = selected.map(item => item.toString());
+                if (!isEqual(initialSelections, selectedSymptoms)) {
+                    didMount.current = true;
+                    setSelectedSymptoms(initialSelections);
+                }
+            }
         }
 
-        didMount.current = true;
+
     }, [selected]);
+
 
 
     const firstSelectedRef = useRef<HTMLDivElement | null>(null);
@@ -46,35 +79,46 @@ const SymptomSelector = ({ symptoms, search = true, multiple = true, title = "Kl
 
     useEffect(() => {
         if (!open) return;
-        refAssigned.current = false;
-      
-        const timeout = setTimeout(() => {
-          requestAnimationFrame(() => {
-            const container = listContainerRef.current;
-            const selected = firstSelectedRef.current;
-      
-            if (container && selected) {
-              const containerRect = container.getBoundingClientRect();
-              const selectedRect = selected.getBoundingClientRect();
-              const margin = 15;
-      
-              const scrollTo = container.scrollTop + (selectedRect.top - containerRect.top) - margin;
-      
-              container.scrollTo({
-                top: scrollTo,
-                behavior: "smooth",
-              });
-            } else {
-              console.warn("Container or selected not available", { container, selected });
-            }
-          });
-        }, 800);
-      
-        return () => clearTimeout(timeout);
-      }, [open]);
-      
-      
-      
+
+        let timeoutId: number;
+        let rafId: number;
+
+        timeoutId = window.setTimeout(() => {
+            rafId = requestAnimationFrame(() => {
+                const container = listContainerRef.current;
+                const selected = firstSelectedRef.current;
+                const margin = 35;
+
+                if (container) {
+                    if (selected) {
+                        const itemOffsetTop = selected.offsetTop;
+                        const visibleHeight = container.clientHeight;
+                        let scrollTo = itemOffsetTop - visibleHeight / 2 + selected.clientHeight / 2;
+                        scrollTo = Math.max(0, scrollTo);
+
+                        container.scrollTo({
+                            top: scrollTo - margin,
+                            behavior: "smooth",
+                        });
+                    } else {
+                        container.scrollTo({
+                            top: 0,
+                            behavior: "smooth",
+                        });
+                    }
+                }
+            });
+        }, 650);
+
+        return () => {
+            clearTimeout(timeoutId);
+            if (rafId) cancelAnimationFrame(rafId);
+        };
+    }, [open]);
+
+
+
+
 
     return (
         <DropdownWithChildren svgArrow={svgArrow} title={title} svg={svgtitle} key={title}
@@ -108,30 +152,31 @@ const SymptomSelector = ({ symptoms, search = true, multiple = true, title = "Kl
                 {filtered
                     .map((symptom) => {
                         return (
-                            <div key={symptom.id} 
-                              >
+                            <div key={symptom.id}
+                            >
 
-                                <div 
-                                key={symptom.id}
-                                ref={
-                                !refAssigned.current && selectedSymptoms.includes(symptom.id.toString())
-                                  ? (el) => {
-                                      if (el) {
-                                        firstSelectedRef.current = el;
-                                        refAssigned.current = true;
-                                      }
-                                    }
-                                  : undefined
-                              }>
+                                <div
+                                    key={`${symptom.id} container`}
+                                    className=" scroll-mt-20"
+                                    ref={
+                                        !refAssigned.current && selectedSymptoms.includes(symptom.id.toString())
+                                            ? (el) => {
+                                                if (el) {
+                                                    firstSelectedRef.current = el;
+                                                    refAssigned.current = true;
+                                                }
+                                            }
+                                            : undefined
+                                    }>
 
 
-                                <SymptomSelectorItem
-                                    handleSelect={handleSelectSymptomAndChildren}
-                                    selectedSymptoms={selectedSymptoms}
-                                    symptom={symptom}
-                                    isLabel={parentIsLabel}
+                                    <SymptomSelectorItem
+                                        handleSelect={handleSelectSymptomAndChildren}
+                                        selectedSymptoms={selectedSymptoms}
+                                        symptom={symptom}
+                                        isLabel={parentIsLabel}
 
-                                />
+                                    />
 
                                 </div>
 
@@ -161,14 +206,14 @@ const SymptomSelector = ({ symptoms, search = true, multiple = true, title = "Kl
                                                             key={child.id}
                                                             ref={
                                                                 !refAssigned.current && selectedSymptoms.includes(child.id.toString())
-                                                                  ? (el) => {
-                                                                      if (el) {
-                                                                        firstSelectedRef.current = el;
-                                                                        refAssigned.current = true;
-                                                                      }
+                                                                    ? (el) => {
+                                                                        if (el) {
+                                                                            firstSelectedRef.current = el;
+                                                                            refAssigned.current = true;
+                                                                        }
                                                                     }
-                                                                  : undefined
-                                                              }
+                                                                    : undefined
+                                                            }
                                                         >
                                                             <SymptomSelectorItem
                                                                 key={child.id}

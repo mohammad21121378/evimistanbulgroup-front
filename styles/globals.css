@@ -17,6 +17,12 @@ html, body {
   }
 }
 
+@media (max-width: 1285px) {
+  html {
+    font-size: 13px;
+  }
+}
+
 @media (max-width: 768px) {
   html {
     font-size: 12px;

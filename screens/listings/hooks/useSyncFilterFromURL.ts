@@ -57,5 +57,6 @@ export function useSyncFilterFromURL(
       prevValueRef.current = valuesFromURL;
       setSelected(valuesFromURL);
     }
+    
   }, [valuesFromURL, setSelected]);
 }

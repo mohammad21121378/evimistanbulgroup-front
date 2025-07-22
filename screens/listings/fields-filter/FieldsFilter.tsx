@@ -156,28 +156,14 @@ import DropdownWithChildren from "@/components/dropdown-with-children/DropdownWi
 import RangeSlider from "@/components/range-slider/RangeSlider";
 import { iconsforFilters } from "../constants";
 import { featureItems, propertyTypes, bedrooms as bedroomsOptions, bathrooms as bathroomsOptions } from "../constants";
-import originalTurkiye from "@/constants/turkiye.json";
 import { FilterProps } from "../types";
-import { AnimatePresence, motion } from "framer-motion";
+import {  motion } from "framer-motion";
 import { useSearchParams } from "next/navigation";
-
-const turkiye = originalTurkiye.map((province) => ({
-    ...province,
-    children: province.districts,
-}));
 
 interface Props extends FilterProps {
     hasSvgItems?: boolean;
+    hasAnimation?: boolean
 }
-
-const dropdownKeys = [
-    "Location",
-    "Type of Property",
-    "Special Features",
-    "Price Range",
-    "Bedrooms",
-    "Bathrooms",
-];
 
 export default function FieldsFilter({
     priceRange,
@@ -197,6 +183,7 @@ export default function FieldsFilter({
     locationsDB,
     propertyTypesDB,
     hasSvgItems = true,
+    hasAnimation = true,
 }: Props) {
 
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -204,8 +191,8 @@ export default function FieldsFilter({
     const focusRef = useRef<HTMLDivElement>(null);
     const searchParams = useSearchParams();
 
-    const handleToggle = (key: string, allowFalse=true) => {
-        if (openDropdown === key && allowFalse ) {
+    const handleToggle = (key: string, allowFalse = true) => {
+        if (openDropdown === key && allowFalse) {
             setOpenDropdown(null);
             setHideOthers(true);
             setTimeout(() => {
@@ -224,15 +211,15 @@ export default function FieldsFilter({
         const typeParam = searchParams.get("type");
         const locationParam = searchParams.get("location");
         const featureParam = searchParams.get("feature");
-    
+
         if (locationParam) {
-          handleToggle("Location", false);
+            handleToggle("Location", false);
         } else if (typeParam) {
-          handleToggle("Type of Property", false);
+            handleToggle("Type of Property", false);
         } else if (featureParam) {
-          handleToggle("Special Features", false);
+            handleToggle("Special Features", false);
         }
-      }, [searchParams]);
+    }, [searchParams]);
 
 
     useEffect(() => {
@@ -251,15 +238,17 @@ export default function FieldsFilter({
                 key={key}
                 layout
                 initial={false}
-                animate={{
-                    opacity: isVisible ? 1 : 0, 
+                animate={hasAnimation && {
+                    opacity: isVisible ? 1 : 0,
                     scale: isVisible ? 1 : 0.95,
                     pointerEvents: isVisible ? "auto" : "none",
                     display: isVisible ? "block" : "none",
                 }}
+
                 style={{
-                    visibility: isVisible ? "visible" : "hidden",
+                    ...(hasAnimation && { visibility: isVisible ? "visible" : "hidden" })
                 }}
+
                 transition={{ duration: 0.3 }}
                 ref={isFocused ? focusRef : null}
             >
