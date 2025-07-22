@@ -18,21 +18,8 @@ export default function RelatedProperties({ item,related }: RelatedPropertiesPro
   return (
     <section className={cn("section")}>
       <div className={cn("container")}>
-        <div className={styles.content}>
-          <h2>
-          <Heading type="heading-3">Similar Properties</Heading>
-          </h2>
 
-          <Link href={`/properties-for-sale-in-turkey/?type=${item.categoryID}`} className={cn("button button-primary")}>
-          View All Similar Properties {ArrowRight}
-          </Link>
-        </div>
 
-        <div className={styles.properties}>
-          { related.length > 0 && related.map((listing) => (
-            <PropertyListing key={listing.id} item={listing} />
-          )) }
-        </div>
       </div>
     </section>
   );
