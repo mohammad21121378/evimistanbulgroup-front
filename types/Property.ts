@@ -56,6 +56,12 @@ export type PropertyRawType = {
     name: string;
     value: string | number;
   }[];
+  agent:{
+    image:string| null,
+    name: string | null,
+    email: string | null,
+    phone: string | null,
+  }[],
   key_features_and_highlights: string | null;
   investment_and_payment: string | null;
   amenities_and_services: string | null;
