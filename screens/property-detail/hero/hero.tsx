@@ -7,12 +7,18 @@ import Gallery from "./Gallery";
 import { Location2 } from "@/constants/icons";
 import { formatNumber } from "@/utils/formatNumber";
 
+interface LightboxImage {
+  url: string;
+  alt: string;
+}
 type HeroProps = {
   item: {
     title: string;
     location: string;
-    images: string[];
-    price: number;
+    locationID: string;
+    gallery: LightboxImage[];
+    min_price: number;
+    max_price: number;
   };
 };
 
@@ -24,7 +30,7 @@ export default function Hero({ item }: HeroProps) {
         <Breadcrumb
           items={[
             { label: 'Property for Sale in Turkey', href: '/properties-for-sale-in-turkey' },
-            { label: 'Beylikdüzü', href: `/properties-for-sale-in-turkey/?location=${item.locationID}` },
+            { label: item.location, href: `/properties-for-sale-in-turkey/?location=${item.locationID}` },
             { label: item.title }
           ]}
         />
