@@ -35,7 +35,7 @@
 .textfields {
     display: grid;
     gap: 8px;
-    min-height: 350px;
+    min-height: 280px;
 }
 
 .textButton {
