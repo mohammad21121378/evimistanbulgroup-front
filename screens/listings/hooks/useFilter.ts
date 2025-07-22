@@ -7,6 +7,7 @@ import fetchProperties from "@/helpers/api/property/properties"
 import { ListingsType, PropertyRawType } from "@/types/Property";
 import { useSyncFilterFromURL } from "./useSyncFilterFromURL";
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
+import {useLocale} from "next-intl";
 
 type Props = {
   onFilterByChange?: boolean
@@ -16,7 +17,7 @@ type Props = {
 }
 
 export function useFilter({ onFilterByChange = false, listings, typeShowPage }: Props) {
-
+  const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -81,7 +82,7 @@ export function useFilter({ onFilterByChange = false, listings, typeShowPage }: 
       bedroomsSelected: filters.bedroomsSelected,
       bathroomsSelected: filters.bathroomsSelected,
       sortOption: filters.sortOption
-    });
+    },locale);
 
     if (listingsData && listingsData.properties) {
       setProperties(listingsData.properties)

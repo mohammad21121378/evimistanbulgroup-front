@@ -1,9 +1,9 @@
 import APIRequest from "../api";
 
-export default async function fetchProperties(limit,page=1,filters={}) {
+export default async function fetchProperties(limit,page=1,filters={},language="en") {
     let properties = null;
     try {
-        const response = await APIRequest.post('recent-properties',{ limit,page,...filters });
+        const response = await APIRequest.post('recent-properties',{ limit,page,language,...filters });
         properties = await response.data;
 
     } catch (error) {

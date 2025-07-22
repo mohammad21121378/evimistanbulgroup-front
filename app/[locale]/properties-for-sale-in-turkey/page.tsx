@@ -9,9 +9,13 @@ type SearchParams = {
   location?: string;
 };
 
-export default async function Listings({ searchParams }: { searchParams: SearchParams }) {
+type Props = {
+  params: { locale: string };
+  searchParams: SearchParams;
+};
+export default async function Listings({ params, searchParams }: Props) {
   const page = parseInt(searchParams.page || "1", 10);
-
+  const { locale } = params;
   const filters: Record<string, string[]> = {};
 
   if (searchParams.type && searchParams.type!=='all') {
@@ -26,7 +30,7 @@ export default async function Listings({ searchParams }: { searchParams: SearchP
     filters.locationsSelected = [searchParams.location];
   }
 
-  const listings = await fetchProperties(3, page, filters) as ListingsType;
+  const listings = await fetchProperties(3, page, filters,locale) as ListingsType;
 
   return <ListingsPage listings={listings} />;
 }
