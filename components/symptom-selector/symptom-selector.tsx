@@ -41,12 +41,12 @@ const SymptomSelector = ({ symptoms, search = true, multiple = true, title = "Kl
 
     useEffect(() => {
 
-        if (selected === undefined || selected === false ) return;
+        if (selected === undefined || selected === false) return;
 
         if (selected.length === 0) {
             if (!isEqual(selected, selectedSymptoms)) setSelectedSymptoms([])
         }
-        
+
 
         const selectedArray = selected as string[];
         const hasDotFormat = selectedArray?.some(id => id.includes('.'));
@@ -65,7 +65,7 @@ const SymptomSelector = ({ symptoms, search = true, multiple = true, title = "Kl
             });
 
         } else {
-            let initialSelections: string[] =[];
+            let initialSelections: string[] = [];
 
             if (selected) {
                 initialSelections = selected.map(item => item.toString());
@@ -88,41 +88,53 @@ const SymptomSelector = ({ symptoms, search = true, multiple = true, title = "Kl
     useEffect(() => {
         if (!open) return;
 
-        let timeoutId: number;
-        let rafId: number;
-
-        timeoutId = window.setTimeout(() => {
-            rafId = requestAnimationFrame(() => {
-                const container = listContainerRef.current;
-                const selected = firstSelectedRef.current;
-                const margin = 35;
-
-                if (container) {
-                    if (selected) {
-                        const itemOffsetTop = selected.offsetTop;
-                        const visibleHeight = container.clientHeight;
-                        let scrollTo = itemOffsetTop - visibleHeight / 2 + selected.clientHeight / 2;
-                        scrollTo = Math.max(0, scrollTo);
-
-                        container.scrollTo({
-                            top: scrollTo - margin,
-                            behavior: "smooth",
-                        });
-                    } else {
-                        container.scrollTo({
-                            top: 0,
-                            behavior: "smooth",
-                        });
-                    }
-                }
+        const container = listContainerRef.current;
+        setTimeout(() => {
+            container?.scrollTo({
+                top: 0,
+                behavior: "smooth",
             });
-        }, 650);
-
-        return () => {
-            clearTimeout(timeoutId);
-            if (rafId) cancelAnimationFrame(rafId);
-        };
+        }, 300);
     }, [open]);
+
+    // useEffect(() => {
+    //     if (!open) return;
+
+    //     let timeoutId: number;
+    //     let rafId: number;
+
+    //     timeoutId = window.setTimeout(() => {
+    //         rafId = requestAnimationFrame(() => {
+    //             const container = listContainerRef.current;
+    //             const selected = firstSelectedRef.current;
+    //             const margin = 35;
+
+    //             if (container) {
+    //                 if (selected) {
+    //                     const itemOffsetTop = selected.offsetTop;
+    //                     const visibleHeight = container.clientHeight;
+    //                     let scrollTo = itemOffsetTop - visibleHeight / 2 + selected.clientHeight / 2;
+    //                     scrollTo = Math.max(0, scrollTo);
+
+    //                     container.scrollTo({
+    //                         top: scrollTo - margin,
+    //                         behavior: "smooth",
+    //                     });
+    //                 } else {
+    //                     container.scrollTo({
+    //                         top: 0,
+    //                         behavior: "smooth",
+    //                     });
+    //                 }
+    //             }
+    //         });
+    //     }, 650);
+
+    //     return () => {
+    //         clearTimeout(timeoutId);
+    //         if (rafId) cancelAnimationFrame(rafId);
+    //     };
+    // }, [open]);
 
 
 
