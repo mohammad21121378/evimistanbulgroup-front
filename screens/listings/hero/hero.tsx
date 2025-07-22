@@ -15,6 +15,8 @@ import { FilterProps, TypeProp, onChangeType } from "../types";
 import Breadcrumb from "../breadcrumb";
 import FieldsFilter from "../fields-filter";
 import Button from "@/components/ui/Button";
+import PropertyLoader from "@/components/loaders/PropertyLoader";
+import EmptyContentWithLottie from "@/components/ui/EmptyContentWithLottie";
 
 interface Props extends FilterProps {
   type: TypeProp;
@@ -24,16 +26,17 @@ interface Props extends FilterProps {
 function Hero({ type, onChange, ...filtersState }: Props) {
 
   const {
-    sortOption, 
+    sortOption,
     onSort,
     properties,
     onFilter,
     loading,
     applyFilters,
     onReset,
-    currentPage, 
-    totalPages, 
-    goToPage
+    currentPage,
+    totalPages,
+    goToPage,
+
   } = filtersState;
 
   return (
@@ -52,29 +55,29 @@ function Hero({ type, onChange, ...filtersState }: Props) {
         <div className="h-full">
           <div className="md:sticky top-[6.45rem]">
 
-          <ChangeTypeListings type={type} onChange={onChange} />
+            <ChangeTypeListings type={type} onChange={onChange} />
 
-          <div className={cn('scrollbar-sm mb-10', styles.filters)}>
+            <div className={cn('scrollbar-sm mb-10', styles.filters)}>
 
-            <div className={cn("label-large")}>
-              Find Properties for Sale in Turkey
+              <div className={cn("label-large")}>
+                Find Properties for Sale in Turkey
+              </div>
+
+              <div className={styles.textfields}>
+
+                <FieldsFilter {...filtersState} />
+
+              </div>
+              {
+                applyFilters &&
+                <button className={cn("label-medium text-orange-600", styles.textButton)} onClick={onReset}>
+                  Reset
+                </button>
+              }
+              <Button size="full" onClick={onFilter} className={cn("sticky -bottom-6 z-10", styles.button)} loading={loading}>
+                Find Now
+              </Button>
             </div>
-
-            <div className={styles.textfields}>
-
-              <FieldsFilter {...filtersState} />
-
-            </div>
-            {
-              applyFilters &&
-              <button className={cn("label-medium text-orange-600", styles.textButton)} onClick={onReset}>
-                Reset
-              </button>
-            }
-            <Button size="full" onClick={onFilter} className={cn("sticky -bottom-6 z-10", styles.button)} loading={loading}>
-            Find Now
-            </Button>
-          </div>
           </div>
         </div>
 
@@ -84,21 +87,39 @@ function Hero({ type, onChange, ...filtersState }: Props) {
 
         <div className={cn(styles.listings, 'grid sm:grid-cols-2 grid-cols-1 gap-6')}>
 
-          {properties.map((listing) => (
-            <div>
-              <PropertyListing key={listing.id} item={listing} />
-            </div>
-          ))}
+          {
+            loading ?
+              <PropertyLoader />
+              :
+              <>
+                {
+                  properties && properties.length ?
+                    <>
+                      {properties.map((listing) => (
+                        <>
+                          <div>
+                            <PropertyListing key={listing.id} item={listing} />
+                          </div>
+                          <div className="sm:col-span-2 mt-10">
+                            {totalPages && totalPages > 1 && (
+                              <Pagination
+                                currentPage={currentPage}
+                                totalPages={totalPages}
+                                onPageChange={goToPage}
+                              />
+                            )}
+                          </div>
+                        </>
+                      ))}
+                    </>
+                    :
+                    <div className="sm:col-span-2">
+                      <EmptyContentWithLottie />
+                    </div>
+                }
+              </>
+          }
 
-          <div className="sm:col-span-2 mt-10">
-            {totalPages > 1 && (
-              <Pagination
-                currentPage={currentPage}
-                totalPages={totalPages}
-                onPageChange={goToPage}
-              />
-            )}
-          </div>
         </div>
       </div>
     </section>

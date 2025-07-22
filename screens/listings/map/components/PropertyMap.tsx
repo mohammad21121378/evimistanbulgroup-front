@@ -91,6 +91,8 @@ function PropertyMap({ loadingData, properties }: Props) {
       }}
     >
       {properties.map((property) => {
+        console.log(property.latitude, property.longitude);
+        
         if (property.latitude === null || property.longitude === null) return null;
 
         const isSelected = selectedPropertyId === property.id;
