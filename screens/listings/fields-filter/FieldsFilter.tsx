@@ -235,7 +235,7 @@ export default function FieldsFilter({
                 layout
                 initial={false}
                 animate={{
-                    opacity: isVisible ? 1 : 0,
+                    opacity: isVisible ? 1 : 0, 
                     scale: isVisible ? 1 : 0.95,
                     pointerEvents: isVisible ? "auto" : "none",
                     display: isVisible ? "block" : "none",
