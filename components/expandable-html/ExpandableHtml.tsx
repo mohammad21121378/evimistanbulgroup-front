@@ -3,9 +3,8 @@
 import { useState, useRef, useLayoutEffect, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import cn from "classnames";
 
-export default function ExpandableHtml({ html }: { html: string }) {
+export default function ExpandableHtml({ html, showAll=false }: { html: string; showAll?: boolean }) {
   const [expanded, setExpanded] = useState(false);
   const [contentHeight, setContentHeight] = useState(0);
   const [shouldShowToggle, setShouldShowToggle] = useState(false);
@@ -21,7 +20,7 @@ export default function ExpandableHtml({ html }: { html: string }) {
 
       const difference = height - COLLAPSED_HEIGHT;
 
-      if (difference > 32) {
+      if (difference > 32 && !showAll) {
         setShouldShowToggle(true);
       } else {
         setShouldShowToggle(false);
@@ -91,7 +90,6 @@ export default function ExpandableHtml({ html }: { html: string }) {
     </div>
     
 
-      <hr className="bg-gray-200 mb-9 mt-5 w-full relative" />
     </>
   );
 }

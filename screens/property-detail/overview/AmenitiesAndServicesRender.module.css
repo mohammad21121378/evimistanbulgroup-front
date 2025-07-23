@@ -1,0 +1,5 @@
+.item svg{
+    width: 34px !important;
+    height: 34px !important;
+    object-fit: cover;
+}

@@ -109,7 +109,7 @@
 }
 
 .container .sticky_logo {
-    color: var(--orange-600);
+    color: var(--orange-500);
 }
 
 @media (max-width: 1024px) {
