@@ -99,7 +99,7 @@ export default function ShareBox({ url, children }: Props) {
                         initial={{ opacity: 0, y: -10, x: '-50%' }}
                         animate={{ opacity: 1, y: 0, x: '-50%' }}
                         exit={{ opacity: 0, y: -10, x: '-50%' }}
-                        className="absolute z-50 mt-2 w-fit px-6 left-1/2 rounded-xl shadow-lg bg-white outline outline-1 outline-gray-300 py-3 flex gap-3"
+                        className="absolute z-50 mt-2 w-fit px-6 left-1/2 rounded-xl shadow-lg bg-white outline outline-1 outline-gray-50 py-3 flex gap-3"
                     >
                         {shareItems.map((item, index) => (
                             item.href ? (
