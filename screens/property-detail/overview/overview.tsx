@@ -98,12 +98,12 @@ export default function Overview({ item }: OverviewProps) {
 
               return (
                 <div key={detail.id} className="mb-6">
-                  <div
+                  <h2
                     className="cursor-pointer font-semibold text-lg text-gray-800 mb-2"
                     onClick={() => toggleOpen(detail.id)}
                   >
                     {detail.title}
-                  </div>
+                  </h2>
 
                   {
                     amenitiesAndServicesContent
