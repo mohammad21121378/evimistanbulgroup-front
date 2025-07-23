@@ -36,7 +36,7 @@ export default function Overview({ item }: OverviewProps) {
             <Heading type="heading-4">Property Overview</Heading>
           </h2>
 
-          <div className="sm:grid sm:grid-cols-12 justify-center grid-cols-1 items-center ">
+          <div className="sm:grid sm:grid-cols-12 justify-center grid-cols-1 items-center mt-4">
 
             <PropertyFeatures
               features={
