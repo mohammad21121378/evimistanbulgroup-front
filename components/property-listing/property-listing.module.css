@@ -62,14 +62,14 @@
     border-radius: 12px;
 }
 
-.listing_price {
-    right: 16px;
-    background-color: var(--orange-600);
-}
-
 .listing_status {
     left: 16px;
     background-color: #FF0000;
+}
+
+.listing_price {
+    right: 16px;
+    background-color: var(--orange-600);
 }
 
 .features {

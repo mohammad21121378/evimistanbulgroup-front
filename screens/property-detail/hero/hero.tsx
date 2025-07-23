@@ -20,12 +20,11 @@ type HeroProps = {
     gallery: LightboxImage[];
     min_price: number;
     max_price: number;
+    status: string
   };
 };
 
 export default function Hero({ item }: HeroProps) {
-  console.info("Gallery data: ", item.gallery);
-  console.info("Full item: ", item);
   return (
     <section className={cn("section", styles.section)}>
       <div className={cn("container")}>
@@ -38,7 +37,7 @@ export default function Hero({ item }: HeroProps) {
         />
         <div className={styles.content}>
           <div>
-            <div className={cn("heading-6")}>{item.title}</div>
+            <h1 className={cn("heading-6")}>{item.title}</h1>
             <div className={cn("paragraph-medium", styles.address)}>
               <Link
                   href={`/properties-for-sale-in-turkey?location=${item.locationID}`}
@@ -56,7 +55,7 @@ export default function Hero({ item }: HeroProps) {
           <div className={cn("heading-6", styles.price)}>
             {item.min_price && item.max_price ? (
                 <>
-                  {formatNumber(item.min_price)} MIN –– {formatNumber(item.max_price)} MAX
+                  {formatNumber(item.min_price)} MIN – {formatNumber(item.max_price)} MAX
                 </>
             ) : item.min_price ? (
                 <>
@@ -70,7 +69,7 @@ export default function Hero({ item }: HeroProps) {
           </div>
         </div>
 
-        <Gallery  images={item.gallery ?? []} title={item.title} />
+        <Gallery  images={item.gallery ?? []} title={item.title}  status={item.status} />
       </div>
     </section>
   );

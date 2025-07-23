@@ -72,3 +72,17 @@
         grid-template-columns: 1fr;
     }
 }
+
+.listing_price, .listing_status {
+    position: absolute;
+    top: 16px;
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.listing_status {
+    left: 16px;
+    background-color: #FF0000;
+}

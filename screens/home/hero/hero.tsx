@@ -18,8 +18,8 @@ export default function Hero() {
     <>
       <div className={styles.img_container}>
         <Image
-          src="/images/header-background.webp"
-          alt="Picture of the author"
+          src="/images/EvimIstanbul Group - Istanbul Turkey.webp"
+          alt="EvimIstanbul Group - Istanbul Turkey"
           layout="fill"
           objectFit="cover"
         />
@@ -43,6 +43,7 @@ export default function Hero() {
           searchTerm={searchTerm}
           onSearchTermChange={setSearchTerm}
         />
+
       </div>
 
       <SuggestedServices />

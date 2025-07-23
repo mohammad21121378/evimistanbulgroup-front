@@ -69,12 +69,12 @@ export default function TableOfContents({ className, transparent=false, hasActiv
     <div
       className={classNames(
         "p-6 sticky top-10 w-full h-fit",
-        {"bg-slate-100 outline outline-1 outline-slate-200 rounded-md shadow": !transparent},
+        {"bg-slate-100 outline outline-1 outline-transparent rounded-lg": !transparent},
         className
       )}
     >
-      <Heading type="heading-6" className="mb-3">Table of Contents</Heading>
-      <ul className="space-y-2 text-lg">
+      <h4 className="text-xl font-bold mb-2.5">Table of Contents</h4>
+      <ul className="space-y-2 text-base">
         {items.map((item) => {
           const isActive = item.id === activeId;
           return (

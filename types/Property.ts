@@ -55,6 +55,7 @@ export type PropertyRawType = {
     icon: string;
     name: string;
     value: string | number;
+    full_name?: string
   }[];
   agent:{
     image:string,

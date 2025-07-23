@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import MenuModal from '../MenuModal';
 import { Template, TitlePos } from '../types';
+import styles from '../MenuModal.module.css';
 
 export default function TemplateDesktop({ title, children, li = true, arrow = false }: Template) {
 
@@ -108,7 +109,7 @@ export default function TemplateDesktop({ title, children, li = true, arrow = fa
 
     const content = (
         <>
-            <span ref={titleRef} className={'cursor-pointer flex items-center gap-1 label-small'}>
+            <span ref={titleRef} className={`cursor-pointer flex items-center gap-1 label-small ${typeof title === 'string' && styles.nav_link}`}>
                 {title}
                 {
                     arrow &&

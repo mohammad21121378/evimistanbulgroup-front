@@ -12,15 +12,14 @@ type LayoutProps = {
 };
 
 export default function Layout({ children }: LayoutProps) {
-  const [showCurtain, setShowCurtain] = React.useState<boolean>(false);
+  const [showCurtain, setShowCurtain] = React.useState(true);
 
   React.useEffect(() => {
-    const curtainShown = localStorage.getItem("curtain-shown");
+    const timer = setTimeout(() => {
+      setShowCurtain(false);
+    }, 2500);
 
-    if (!curtainShown) {
-      setShowCurtain(true);
-      localStorage.setItem("curtain-shown", "true");
-    }
+    return () => clearTimeout(timer);
   }, []);
 
   return (

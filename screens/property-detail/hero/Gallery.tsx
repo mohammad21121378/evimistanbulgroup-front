@@ -5,6 +5,7 @@ import Image from 'next/image';
 import styles from './hero.module.css';
 import LightboxImages from '@/components/light-box-images';
 import { Maximize } from '@/constants/icons';
+import classNames from 'classnames';
 
 interface LightboxImage {
   url: string;
@@ -14,9 +15,10 @@ interface LightboxImage {
 interface GalleryViewerProps {
   images: LightboxImage[];
   title: string;
+  status: string;
 }
 
-export default function Gallery({ images, title, }: GalleryViewerProps) {
+export default function Gallery({ images, title, status }: GalleryViewerProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -68,6 +70,12 @@ export default function Gallery({ images, title, }: GalleryViewerProps) {
             />
           </div>}
         </div>
+
+        {status === "sold_out" && (
+            <div className={classNames("paragraph-small uppercase md:min-w-52 text-center", styles.listing_status)}>
+              ALREADY SOLD
+            </div>
+          )}
 
         <button className='bg-[#000000CF] hover:bg-black transition-all duration-500 absolute bottom-3 text-white font-medium text-sm right-3 rounded-2xl py-4 px-6 flex gap-1.5 items-center' onClick={() => openViewer(0)}>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-image" viewBox="0 0 16 16">

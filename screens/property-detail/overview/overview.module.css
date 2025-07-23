@@ -4,8 +4,8 @@
 
 .container {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 80px;
+    /* grid-template-columns: 2fr 1fr; */
+    /* gap: 80px; */
 }
 
 .description {
@@ -79,9 +79,9 @@
     /* background-color: var(--slate-100);
     border: 1px solid var(--slate-200);
     border-radius: 24px; */
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* gap: 24px; */
 }
 
 .agent{
@@ -121,19 +121,19 @@
 
 @media (max-width: 1024px) {
     .container {
-        gap: 64px;
+        /* gap: 64px; */
     }
 }
 
 @media (max-width: 768px) {
-    .container {
+    /* .container {
         grid-template-columns: 1fr;
         gap: 48px;
-    }
+    } */
 }
 
 @media (max-width: 480px) {
     .agentAndTabelOfContents {
-        padding: 24px;
+        /* padding: 24px; */
     }
 }

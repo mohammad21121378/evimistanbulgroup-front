@@ -1,6 +1,11 @@
 .title {
     text-transform: uppercase;
 }
+.subtitle {
+    margin-top: 20px;
+    color: var(--slate-500);
+}
+
 
 .testimonial {
     margin-top: 50px;
