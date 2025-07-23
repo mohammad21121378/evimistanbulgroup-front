@@ -11,6 +11,8 @@ import TableOfContents from "@/components/table-of-contents";
 import { details } from "../contsants";
 import { PropertyType } from "@/types/Property";
 import ShareBox from "../share-box";
+import ExpandableHtml from "@/components/expandable-html/ExpandableHtml";
+import SingleLocationMap from "@/components/single-location-map";
 
 
 
@@ -60,12 +62,14 @@ export default function Overview({ item }: OverviewProps) {
             {
               item.special_features && item.special_features?.length > 1 && item.special_features
                 .map(item =>
-                  <div className="bg-[#002DD1] py-2 pl-2.5 pr-3.5 rounded-md flex items-center text-white text-xs font-bold">
-                    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <div className="bg-[#002DD1] py-2 pl-2.5 pr-3.5 rounded-md flex gap-2 items-center text-white text-sm font-bold">
+                    <svg width="1.1rem" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" >
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M4.44077 1.59998C4.65294 1.59998 4.85643 1.68426 5.00646 1.83429C5.15649 1.98432 5.24077 2.1878 5.24077 2.39998V3.19998H6.04077C6.25294 3.19998 6.45643 3.28426 6.60646 3.43429C6.75649 3.58432 6.84077 3.7878 6.84077 3.99998C6.84077 4.21215 6.75649 4.41563 6.60646 4.56566C6.45643 4.71569 6.25294 4.79998 6.04077 4.79998H5.24077V5.59998C5.24077 5.81215 5.15649 6.01563 5.00646 6.16566C4.85643 6.31569 4.65294 6.39998 4.44077 6.39998C4.2286 6.39998 4.02512 6.31569 3.87509 6.16566C3.72506 6.01563 3.64077 5.81215 3.64077 5.59998V4.79998H2.84077C2.6286 4.79998 2.42512 4.71569 2.27509 4.56566C2.12506 4.41563 2.04077 4.21215 2.04077 3.99998C2.04077 3.7878 2.12506 3.58432 2.27509 3.43429C2.42512 3.28426 2.6286 3.19998 2.84077 3.19998H3.64077V2.39998C3.64077 2.1878 3.72506 1.98432 3.87509 1.83429C4.02512 1.68426 4.2286 1.59998 4.44077 1.59998ZM4.44077 9.59998C4.65294 9.59998 4.85643 9.68426 5.00646 9.83429C5.15649 9.98432 5.24077 10.1878 5.24077 10.4V11.2H6.04077C6.25294 11.2 6.45643 11.2843 6.60646 11.4343C6.75649 11.5843 6.84077 11.7878 6.84077 12C6.84077 12.2121 6.75649 12.4156 6.60646 12.5657C6.45643 12.7157 6.25294 12.8 6.04077 12.8H5.24077V13.6C5.24077 13.8121 5.15649 14.0156 5.00646 14.1657C4.85643 14.3157 4.65294 14.4 4.44077 14.4C4.2286 14.4 4.02512 14.3157 3.87509 14.1657C3.72506 14.0156 3.64077 13.8121 3.64077 13.6V12.8H2.84077C2.6286 12.8 2.42512 12.7157 2.27509 12.5657C2.12506 12.4156 2.04077 12.2121 2.04077 12C2.04077 11.7878 2.12506 11.5843 2.27509 11.4343C2.42512 11.2843 2.6286 11.2 2.84077 11.2H3.64077V10.4C3.64077 10.1878 3.72506 9.98432 3.87509 9.83429C4.02512 9.68426 4.2286 9.59998 4.44077 9.59998ZM10.0408 1.59998C10.2173 1.59992 10.3889 1.65827 10.5289 1.76593C10.6688 1.87358 10.7692 2.02451 10.8144 2.19518L11.7576 5.75997L14.4408 7.30718C14.5624 7.37739 14.6634 7.47838 14.7336 7.59999C14.8038 7.7216 14.8407 7.85955 14.8407 7.99998C14.8407 8.1404 14.8038 8.27835 14.7336 8.39996C14.6634 8.52157 14.5624 8.62256 14.4408 8.69278L11.7576 10.2408L10.8136 13.8048C10.7683 13.9753 10.6679 14.126 10.5281 14.2336C10.3883 14.3411 10.2168 14.3994 10.0404 14.3994C9.86396 14.3994 9.69249 14.3411 9.55266 14.2336C9.41282 14.126 9.31245 13.9753 9.26717 13.8048L8.32397 10.24L5.64077 8.69278C5.51917 8.62256 5.41818 8.52157 5.34798 8.39996C5.27777 8.27835 5.24081 8.1404 5.24081 7.99998C5.24081 7.85955 5.27777 7.7216 5.34798 7.59999C5.41818 7.47838 5.51917 7.37739 5.64077 7.30718L8.32397 5.75918L9.26797 2.19518C9.31313 2.02464 9.4134 1.87381 9.55316 1.76617C9.69293 1.65852 9.86436 1.6001 10.0408 1.59998Z" fill="white" />
                     </svg>
+<span className="-mt-0.5">
 
                     {item.title}
+</span>
 
                   </div>
                 )
@@ -77,50 +81,48 @@ export default function Overview({ item }: OverviewProps) {
           <div className={styles.details}>
             {details.map((detail) => {
               const content = item[detail.slug];
+              if (!content) return null;
 
-              if (!content) return null; // اگر محتوایی وجود نداشت، چیزی رندر نشه
+              const isLocationAndLifestyle = detail.slug === "location_and_lifestyle";
+              const hasCoordinates = item.latitude && item.longitude;              
 
               return (
-                <div key={detail.id} className={styles.detail}>
+                <div key={detail.id} className="mb-6">
                   <div
-                    className={cn(styles.detail_head, {
-                      [styles.open]: open === detail.id,
-                    })}
+                    className="cursor-pointer font-semibold text-lg text-gray-800 mb-2"
                     onClick={() => toggleOpen(detail.id)}
                   >
-                    <h2 className={cn("paragraph-x-large", styles.detail_title)}>
-                      {detail.title}
-                    </h2>
-
+                    {detail.title}
                   </div>
 
-                  <div
-                    className={cn({
-                      [styles.listOpen]: open === detail.id,
-                    })}
-                    dangerouslySetInnerHTML={{ __html: content }}
-                  />
-
-
-                  {/*<ul className={cn(
-                  styles.list,
-                  { [styles.listOpen]: open === detail.id }
-                )}>
-                  {detail.features.map((feature) => (
-                    <li
-                      key={feature.id}
-                      className={cn("paragraph-medium", styles.list_item)}
-                    >
-                      {feature.text}
-                    </li>
-                  ))}
-                </ul>*/}
-
-
+                  {isLocationAndLifestyle && hasCoordinates && (
+                    <div className="mt-8 mb-4">
+                      <SingleLocationMap
+                        lat={Number(item.latitude)}
+                        lng={Number(item.longitude)}
+                      />
+                    </div>
+                  )}
+                  <ExpandableHtml html={content} />
                 </div>
               );
             })}
 
+            {/* {open === detail.id && ( */}
+            {/* )} */}
+            {/*<ul className={cn(
+            styles.list,
+            { [styles.listOpen]: open === detail.id }
+          )}>
+            {detail.features.map((feature) => (
+              <li
+                key={feature.id}
+                className={cn("paragraph-medium", styles.list_item)}
+              >
+                {feature.text}
+              </li>
+            ))}
+          </ul>*/}
           </div>
         </div>
 
@@ -166,10 +168,10 @@ export default function Overview({ item }: OverviewProps) {
                 Print
               </div>
               <ShareBox url={item.url}>
-              <div className="flex gap-1 font-semibold items-center">
-                {Share}
-                Share
-              </div>
+                <div className="flex gap-1 font-semibold items-center">
+                  {Share}
+                  Share
+                </div>
               </ShareBox>
             </div>
 

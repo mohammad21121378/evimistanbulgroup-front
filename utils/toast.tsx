@@ -14,21 +14,21 @@ const getToastColor = (type: ToastType): ToastColor => {
     case 'success':
       return {
         title: 'successful',
-        titleBg: 'bg-green-600',
-        bodyBg: 'bg-green-500',
+        titleBg: 'bg-green-700',
+        bodyBg: 'bg-green-600',
       };
     case 'error':
       return {
         title: 'Hata',
-        titleBg: 'bg-red-600',
-        bodyBg: 'bg-red-500',
+        titleBg: 'bg-red-700',
+        bodyBg: 'bg-red-600',
       };
     case 'info':
     default:
       return {
         title: 'Bilgilendirme',
-        titleBg: 'bg-blue-600',
-        bodyBg: 'bg-blue-500',
+        titleBg: 'bg-blue-700',
+        bodyBg: 'bg-blue-600',
       };
   }
 };
