@@ -51,7 +51,7 @@ export default function SingleLocationMap({ lat, lng }: Props) {
         position={{ lat, lng }}
         icon={{
           url: "/images/gps-icon.svg",
-          scaledSize: new window.google.maps.Size(60, 60),
+          scaledSize: new window.google.maps.Size(42, 42),
         }}
       />
     </GoogleMap>

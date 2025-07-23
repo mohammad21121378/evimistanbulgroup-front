@@ -6,6 +6,7 @@ import { ArrowRight } from "@/constants/icons";
 import Link from "next/link";
 import { useInsights } from "@/constants/guides-and-Insights.constants";
 import GuidesAndInsightsIisting from "@/components/guides-and-Insights-listing";
+import Button from "@/components/ui/Button";
 
 export default function RelatedInsights() {
 
@@ -17,9 +18,9 @@ export default function RelatedInsights() {
             <Heading type="heading-3">Related Guides and Insights</Heading>
           </h2>
 
-          <Link href="/properties-for-sale-in-turkey" className={cn("button button-primary")}>
+          <Button flex size="auto" href="/our-insights" className={cn("button button-primary")}>
             View All  Similar Guides and Insights {ArrowRight}
-          </Link>
+          </Button>
         </div>
 
         <div className="grid sm:grid-cols-2 grid-cols-1 md:grid-cols-3 gap-4 mt-14">

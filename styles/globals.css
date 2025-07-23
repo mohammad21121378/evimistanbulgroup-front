@@ -128,3 +128,9 @@ html, body {
         var(--orange-600) 100%
     );
 }
+
+.has-iframe iframe{
+  width: 100%;
+  min-height: 30rem;
+  border-radius: 8px;
+}

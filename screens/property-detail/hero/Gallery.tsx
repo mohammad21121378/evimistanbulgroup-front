@@ -48,16 +48,20 @@ export default function Gallery({ images, title, status }: GalleryViewerProps) {
         <div className={styles.grid_images}>
         {images.length > 0 && images[1] &&
           <div className={styles.row_images}>
-            {[1, 2].map((i) => (
+            {[1, 2].map((i) => {
+              if (!images[i]?.url) {
+                return;
+              }
+              return(
               <div key={i} className={styles.image} onClick={() => openViewer(i)}>
                 <Image
-                  src={images[i].url}
-                  alt={images[i].alt}
+                  src={images[i]?.url}
+                  alt={images[i]?.alt}
                   layout="fill"
                   objectFit="cover"
                 />
               </div>
-            ))}
+            )})}
           </div>
           }
 

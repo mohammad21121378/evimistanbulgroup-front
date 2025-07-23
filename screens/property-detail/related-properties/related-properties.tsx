@@ -7,6 +7,7 @@ import PropertyListing from "@/components/property-listing";
 import { ArrowRight } from "@/constants/icons";
 import Link from "next/link";
 import {PropertyRawType} from "../../../types/Property";
+import Button from "@/components/ui/Button";
 
 interface RelatedPropertiesProps {
   item: any;
@@ -15,6 +16,9 @@ interface RelatedPropertiesProps {
 
 export default function RelatedProperties({ item,related }: RelatedPropertiesProps) {
 
+  if (!related || !related.length) {
+    return;
+  }
 
   return (
     <section className={cn("section")}>
@@ -24,13 +28,13 @@ export default function RelatedProperties({ item,related }: RelatedPropertiesPro
           <Heading type="heading-3">Similar Properties</Heading>
           </h2>
 
-          <Link href={`/properties-for-sale-in-turkey/?type=${item.categoryID}`} className={cn("button button-primary")}>
+          <Button flex size="auto" href={`/properties-for-sale-in-turkey/?type=${item.categoryID}`}>
           View All Similar Properties {ArrowRight}
-          </Link>
+          </Button>
         </div>
 
         <div className={styles.properties}>
-          { related.length > 0 && related.map((listing) => (
+          { related.map((listing) => (
             <PropertyListing key={listing.id} item={listing} />
           )) }
         </div>

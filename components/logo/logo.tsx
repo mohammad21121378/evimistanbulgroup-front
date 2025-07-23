@@ -12,7 +12,7 @@ export default function Logo({ className }: LogoProps) {
   const t = useTranslations("Logo");
 
   return (
-    <Link href="/" className={cn(styles.logo, className, 'relative h-10 w-[17.15rem]')}>
+    <Link href="/" className={cn(styles.logo, className, 'relative h-10 w-[16rem]')}>
       <Image
         src="/images/EvimIstanbul Group Official LOGO.png"
         alt="EvimIstanbul Group Official"

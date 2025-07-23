@@ -12,7 +12,7 @@ export default function ExpandableHtml({ html }: { html: string }) {
 
   const contentRef = useRef<HTMLDivElement>(null);
 
-  const COLLAPSED_HEIGHT = 144; // حدود 6 خط * 1.5rem
+  const COLLAPSED_HEIGHT = 144;
 
   useLayoutEffect(() => {
     if (contentRef.current) {
@@ -21,7 +21,6 @@ export default function ExpandableHtml({ html }: { html: string }) {
 
       const difference = height - COLLAPSED_HEIGHT;
 
-      // فقط وقتی بیشتر از 2 خط اضافه هست دکمه نمایش داده شود
       if (difference > 32) {
         setShouldShowToggle(true);
       } else {
@@ -35,10 +34,11 @@ export default function ExpandableHtml({ html }: { html: string }) {
   };
 
   return (
-    <div className="relative w-full rounded-xl outline outline-1 outline-gray-50 bg-white shadow p-4 pb-5 transition-all duration-300">
+    <>
+    <div className="relative w-full rounded-xl outline outline-1 outline-gray-50 bg-white p-4 pb-5 transition-all duration-300">
       <motion.div
         className="overflow-hidden"
-        animate={{ height: expanded ? contentHeight : COLLAPSED_HEIGHT }}
+        animate={{ height: expanded ? contentHeight : (shouldShowToggle ? COLLAPSED_HEIGHT : 'auto') }}
         initial={false}
         transition={{
           type: "spring",
@@ -48,7 +48,7 @@ export default function ExpandableHtml({ html }: { html: string }) {
       >
         <div ref={contentRef}>
           <div
-            className="prose prose-sm max-w-none text-gray-700"
+            className="prose prose-sm max-w-none text-gray-700 has-iframe"
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </div>
@@ -87,6 +87,11 @@ export default function ExpandableHtml({ html }: { html: string }) {
           </button>
         </div>
       )}
+
     </div>
+    
+
+      <hr className="bg-gray-200 mb-9 mt-5 w-full relative" />
+    </>
   );
 }
