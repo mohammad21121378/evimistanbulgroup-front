@@ -22,7 +22,7 @@ export default function ShareBox({ url, children }: Props) {
     const [open, setOpen] = useState(false);
     const boxRef = useRef<HTMLDivElement>(null);
 
-    const fullUrl = "https://evimistanbulgroup.com/en" + url ?? url;
+    const fullUrl = "https://evimistanbulgroup.com/en" + url;
 
     const handleCopy = async () => {
         await navigator.clipboard.writeText(fullUrl);
