@@ -170,7 +170,7 @@ export const amenitiesIcons: Record<string, JSX.Element> = {
 <path d="M16.4434 14.4888H20.71" stroke="#3C3C3C" stroke-width="2"/>
 <path d="M7.19922 11.6443H24.2659" stroke="#3C3C3C" stroke-width="2"/>
 <path d="M20.7101 16.6221V9.51102C20.7101 8.33271 19.7551 7.37769 18.5768 7.37769C17.3984 7.37769 16.4434 8.33271 16.4434 9.51102M16.4434 16.6221V9.51102C16.4434 8.33271 15.4884 7.37769 14.3101 7.37769C13.1318 7.37769 12.1768 8.33271 12.1768 9.51102" stroke="#3C3C3C" stroke-width="2"/>
-<mask id="mask0_6326_10931" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="1" y="12" width="29" height="16">
+<mask id="mask0_6326_10931" style={{maskType:"alpha"}} maskUnits="userSpaceOnUse" x="1" y="12" width="29" height="16">
 <path d="M29.8791 12.978V27.3048H1.42188V12.978H29.8791Z" fill="black"/>
 </mask>
 <g mask="url(#mask0_6326_10931)">
