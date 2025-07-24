@@ -15,7 +15,7 @@ export default function Hero() {
         title="Client Stories & Testimonials" />
 
       <div className="container mt-6">
-        <section className="section">
+        <section className="section !pb-6 !mb-0">
 
           <h2 className="text-3xl font-bold mb-8">
             Real Experiences. Real Results. Trusted by Hundreds Worldwide.
