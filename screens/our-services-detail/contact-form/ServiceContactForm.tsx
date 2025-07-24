@@ -1,62 +1,25 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useForm, Controller } from "react-hook-form";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
+
 import PhoneInput from "@/components/ui/PhoneInput";
-import { phoneValidation } from "@/utils/validation/phoneValidation";
 import Input from "@/components/ui/input";
 import Button from "@/components/ui/Button";
-import { toast } from "@/utils/toast";
+import { useContactForm } from "./useContactForm";
+import { FormData } from "./types";
 
-type FormData = {
-  phone: string;
-  language: string;
-};
 
-const schema = yup.object().shape({
-  phone: yup
-    .string()
-    .required("Phone is required")
-    .test('valid-phone', 'Invalid phone number', (value) => phoneValidation(value)),
-  language: yup.string().required("Language is required"),
-});
 
 export default function ServiceContactForm() {
-  const [languages, setLanguages] = useState<{ value: string; label: string }[]>([]);
 
   const {
     handleSubmit,
     formState: { errors },
     setValue,
     watch,
-    register
-  } = useForm<FormData>({
-    resolver: yupResolver(schema),
-  });
-
-  useEffect(() => {
-    const fetchLanguages = async () => {
-      const response = await new Promise<{ value: string; label: string }[]>((resolve) =>
-        setTimeout(
-          () =>
-            resolve([
-              { value: "english", label: "English" },
-              { value: "spanish", label: "Spanish" },
-              { value: "turkish", label: "Turkish" },
-            ]),
-          500
-        )
-      );
-      setLanguages(response);
-    };
-    fetchLanguages();
-  }, []);
-
-  const onSubmit = (data: FormData) => {
-    toast('success', 'Lorem Ipsum is a fictional text with an incomprehensible simplicity produced by the.')
-  };
+    register,
+    onSubmit,
+    languages
+  } = useContactForm()
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="w-full">
@@ -67,9 +30,15 @@ export default function ServiceContactForm() {
           watchHookForm={watch}
           errors={errors}
           name="phone"
+          height="!h-14"
+          bgDark
+          
         />
 
-        <Input {...register('language')} isSelect error={errors.language?.message} showError={false}>
+        <Input
+        height="h-14"
+          bgDark
+          {...register('language')} isSelect error={errors.language?.message} showError={false}>
           <option value="">Which language do we speak?</option>
           {languages.map((lang) => (
             <option key={lang.value} value={lang.value}>
@@ -78,9 +47,9 @@ export default function ServiceContactForm() {
           ))}
         </Input>
 
-        
+
         <Button size="full">
-        Let's Evaluate Your Options
+          Let's Evaluate Your Options
         </Button>
       </div>
     </form>

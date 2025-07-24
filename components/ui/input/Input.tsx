@@ -3,6 +3,7 @@
 import { forwardRef, useId, useState, ChangeEvent, ReactNode, SelectHTMLAttributes, TextareaHTMLAttributes, InputHTMLAttributes } from "react";
 import styles from "./Input.module.css";
 import ErrorInput from "../ErrorInput";
+import LabelInput from "./LabelInput";
 
 type InputProps = {
   className?: string;
@@ -24,6 +25,9 @@ type InputProps = {
   showError?: boolean;
   maxLength?: number | null;
   parentClassName?: string;
+  bgDark?: boolean;
+  label?: string;
+  placeholderInInput?: boolean 
 } & Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> &
   Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'onChange'> &
   Omit<SelectHTMLAttributes<HTMLSelectElement>, 'onChange'>;
@@ -44,7 +48,8 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElem
       placeholder,
       disabled = false,
       labelClassName,
-      height = "h-14",
+      label,
+      height = "h-12",
       isTextarea = false,
       icon,
       iconRightClassName,
@@ -53,7 +58,9 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElem
       required = false,
       onChange,
       textAreaClasses = false,
-      showError=true,
+      placeholderInInput = true,
+      bgDark = false,
+      showError = true,
       maxLength = null,
       parentClassName,
       ...rest
@@ -66,8 +73,10 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElem
 
     const commonClasses = `
       ${finalHeight} 
-      w-full pl-3 transition outline  outline-1 bg-slate-100 outline-slate-200 rounded-2lg shadow-xs text-gray-500 placeholder-gray-500 focus:outline-orange-500 focus:ring-4 focus:ring-orange-200
+
+      w-full text-sm pl-3 transition outline outline-1  rounded-[.85rem] shadow-xs text-gray-500 placeholder-[#A0A3BD] focus:outline-orange-500 focus:ring-4 focus:ring-orange-200
       ${icon ? "!pl-9" : ""} 
+      ${bgDark ? 'bg-slate-100 outline-slate-200' : 'bg-white outline-[#D9DBE9]'}
       ${iconRight ? "!pr-9" : ""}
       ${disabled ? "bg-gray-100" : ""}
       ${error ? "!outline  outline-1 !outline-red-500 focus:outline-red-500 is-invalid focus:ring-4 focus:ring-red-200" : ""}
@@ -86,12 +95,17 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElem
 
     return (
       <div className={`w-full ${parentClassName || ""}`}>
+
+{
+  label && <LabelInput label={label} id={id} />
+}
+
         <div className={`${finalHeight} relative grid items-center w-full !p-0 ${styles.box} ${boxClasses || ""}`}>
           {icon && <div className="absolute left-3">{icon}</div>}
 
           {isTextarea ? (
             <textarea
-            ref={ref as React.Ref<HTMLTextAreaElement>}
+              ref={ref as React.Ref<HTMLTextAreaElement>}
               id={id}
               disabled={disabled}
               placeholder=""
@@ -118,7 +132,7 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElem
               disabled={disabled}
               required={required}
               onChange={onChange as (e: ChangeEvent<HTMLInputElement>) => void}
-              placeholder=""
+              placeholder={placeholderInInput ? placeholder : ''}
               className={`py-0 ${commonClasses}`}
               {...rest}
               maxLength={maxLength || undefined}
@@ -127,15 +141,15 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElem
 
           <div className={`absolute right-3 ${iconRightClassName || ""}`}>{iconRight}</div>
 
-{
-  placeholder &&
-          <label
-            htmlFor={id}
-            className={`absolute top-[50%] ${textAreaClasses ? "!top-5" : ""} translate-y-[-50%] text-gray-500 ${styles.label} ${icon ? "left-9" : "left-3"} ${labelClassName || ""}`}
-          >
-            <div>{placeholder}</div>
-          </label>
-}
+          {
+            placeholder && !placeholderInInput &&
+            <label
+              htmlFor={id}
+              className={`absolute top-[50%] ${textAreaClasses ? "!top-5" : ""} translate-y-[-50%] text-gray-500 ${styles.label} ${icon ? "left-9" : "left-3"} ${labelClassName || ""}`}
+            >
+              <div>{placeholder}</div>
+            </label>
+          }
         </div>
 
         <div className={`flex ${!error && isTextarea && maxLength ? "!justify-end" : "justify-between"}`}>

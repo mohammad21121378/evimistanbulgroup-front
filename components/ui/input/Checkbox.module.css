@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.5rem;
+}
+
+.box {
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  border: 2px solid #CCCCCC;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  transition: border-color 0.3s;
+}
+
+.box:hover {
+  border-color: #F97316;
+}
+
+.checkIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.text {
+  color: #666666;
+  font-size: 16px;
+  margin-top: -2px;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.error {
+  border-color: #EF4444 !important;
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

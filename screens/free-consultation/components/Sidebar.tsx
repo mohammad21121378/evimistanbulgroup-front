@@ -17,7 +17,7 @@ const Sidebar = ({ isOpen, messages, chatContent }: ChatSidebarProps) => (
         >
           <div
             ref={chatContent}
-            className="h-dvh grid grid-rows-[1fr] box-border overflow-hidden p-5"
+            className="h-dvh grid grid-rows-[1fr] box-border overflow-hidden py-5 px-4"
           >
             <ConsultationForm />
           </div>

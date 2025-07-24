@@ -2,14 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  font-size: 16px;
+html, body {
+  overflow-x: clip;
   scroll-behavior: smooth;
 }
 
-html, body {
-  overflow-x: clip;
+html {
+  font-size: 16px;
 }
+
 
 @media (max-width: 1650px) {
   html {
@@ -76,7 +77,7 @@ html, body {
 }
 .flag-dropdown .search .search-box {
   width: 100%;
-  padding: 12px 8px !important;
+  padding: 10px 8px !important;
   border-radius: 8px !important;
   margin-left: 0 !important;
 }
@@ -87,24 +88,36 @@ html, body {
   text-transform: capitalize !important;
 }
 
+.react-tel-input .selected-flag{
+  position: static !important;
+}
+
 .react-tel-input .flag-dropdown,
 .react-tel-input .flag-dropdown:hover,
 .react-tel-input .flag-dropdown:focus,
 .react-tel-input .selected-flag:hover, 
 .react-tel-input .selected-flag:focus{
   background-color: #F1F5F9 !important;
-  border-radius: 11px 0 0 11px !important;
-  /* padding-left: 5px !important; */
+  border-radius: 16px 0 0 16px !important;
+}
+
+
+.bg-white-phone-input .react-tel-input .flag-dropdown,
+.bg-white-phone-input .react-tel-input .flag-dropdown:hover,
+.bg-white-phone-input .react-tel-input .flag-dropdown:focus,
+.bg-white-phone-input .react-tel-input .selected-flag:hover,
+.bg-white-phone-input .react-tel-input .selected-flag:focus {
+  background-color: white !important; /* یا چیزی که باید باشه در حالت سفید */
 }
 
 .flag-dropdown {
-  border-radius: 10px 0 0 10px !important;
+  border-radius: 16px 0 0 16px !important;
 
 }
 
 .react-tel-input .form-control{
   border: 0 !important;
-  border-radius: 10px !important;
+  border-radius: 16px !important;
 }
 
 .selected-flag .flag{
@@ -133,4 +146,41 @@ html, body {
   width: 100%;
   min-height: 30rem;
   border-radius: 8px;
+}
+
+
+@keyframes slideLeftToRight {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRightToLeft {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-left-to-right {
+  animation: slideLeftToRight .8s ease-in-out;
+}
+
+.animate-right-to-left {
+  animation: slideRightToLeft .8s ease-in-out;
 }

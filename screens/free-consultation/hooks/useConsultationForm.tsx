@@ -1,10 +1,8 @@
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useState } from "react";
 
-
-
-// yup schema
 export const schema = yup.object({
     firstName: yup.string().required("First name is required."),
     lastName: yup.string().required("Last name is required."),
@@ -22,12 +20,15 @@ export type ConsultationFormValues = yup.InferType<typeof schema>;
 
 export const useConsultationForm = () => {
 
+  const [successfulResult, setSuccessfulResult ] = useState(false)
+
   const form = useForm<ConsultationFormValues>({
     resolver: yupResolver(schema)
   });
 
   const onSubmit = (data: ConsultationFormValues) => {
+    setSuccessfulResult(true)
   };
 
-  return { form, onSubmit };
+  return { form, onSubmit, successfulResult };
 };

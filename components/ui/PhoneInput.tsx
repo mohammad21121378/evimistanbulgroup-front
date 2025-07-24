@@ -14,6 +14,8 @@ interface PhoneInputProps<T extends Record<string, any>> {
     defaultCountry?: string;
     placeholder?: string;
     disabled?: boolean;
+    bgDark?: boolean;
+    height?: string;
 }
 
 const PhoneInput = <T extends Record<string, any>>({
@@ -24,21 +26,28 @@ const PhoneInput = <T extends Record<string, any>>({
     defaultCountry = 'us',
     placeholder = 'Enter phone number',
     disabled = false,
+    bgDark = false,
+    height = "!h-12"
 }: PhoneInputProps<T>) => {
 
     const [isFocused, setIsFocused] = useState(false);
     const value = watchHookForm(name);
+    
 
     const error = (errors[name]?.message ?? '') as string;
 
     return (
         <div className={cn(
-            "w-full relative outline outline-1 rounded-2lg transition-all duration-300",
+            "w-full relative outline outline-1 rounded-[.85rem] transition-all duration-300",
+            height,
             {
                 "outline-orange-500 ring-4 ring-orange-100": isFocused && !error,
-                "outline-slate-200": !isFocused && !error,
+                "outline-[#D9DBE9]": !isFocused && !error && !bgDark,
+                "outline-slate-100": !isFocused && !error && bgDark,
                 "outline-red-500": error && !isFocused,
                 "outline-red-500 outline-2 ring-4 ring-red-200": isFocused && error,
+                "!bg-white bg-white-phone-input": !bgDark,
+                "!bg-slate-100": bgDark,
             }
         )
         }>
@@ -54,10 +63,18 @@ const PhoneInput = <T extends Record<string, any>>({
                 }
                 disabled={disabled}
                 prefix="+"
-                containerClass="w-full relative !outline-none !outline-0"
-                buttonClass="!bg-slate-200 hover:!bg-slate-200 !border-none !flex items-center !pr-2.5 !pl-2"
-                inputClass="!w-full !h-14 md:!pl-16 !pl-20 !bg-slate-100 !text-gray-600 !rounded-lg focus:!outline-none"
-                dropdownClass="!z-[1000] w-full [&>input]:!w-full"
+                containerClass="w-full !rounded-xl relative !outline-none !outline-0"
+                dropdownClass="!z-[1000] !top-[85%] !left-0 !outline !outline-1 !outline-[#D9DBE9] !shadow-md !rounded-xl !w-full [&>input]:!w-full "
+                buttonClass={cn(
+                    "!border-none !flex items-center !pr-2.5 !pl-2 !static",
+                    bgDark ? "!bg-slate-200 hover:!bg-slate-200" : "!bg-white hover:!bg-white"
+                )}
+                inputClass={cn(
+                    "!w-full !text-sm !rounded-2xl focus:!outline-none",
+                    height,
+                    bgDark ? "!bg-slate-100 !text-gray-600" : "!bg-white !text-gray-600",
+                    "md:!pl-16 !pl-20"
+                )}
                 dropdownStyle={{ zIndex: 9999 }}
                 placeholder={placeholder}
                 onFocus={() => setIsFocused(true)}

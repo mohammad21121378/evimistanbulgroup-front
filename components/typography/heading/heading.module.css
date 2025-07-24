@@ -1,15 +1,15 @@
 @media (max-width: 1024px) {
     .h3 {
-        font-size: 40px;
-        line-height: 52px;
+        font-size: 36px;
+        line-height: 48px;
         letter-spacing: -0.54px;
     }
 }
 
 @media (max-width: 480px) {
     .h3 {
-        font-size: 32px;
-        line-height: 40px;
+        font-size: 30px;
+        line-height: 38px;
         letter-spacing: -0.48px;
     }
 }

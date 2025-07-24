@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useInView } from 'framer-motion';
 import isEqual from 'lodash.isequal';
 
-export function useChatbot(initialOpen?: boolean, setInitialOpen?: (val:boolean)=>void) {
+export function useSidebar(initialOpen?: boolean, setInitialOpen?: (val:boolean)=>void) {
   const staticRef = useRef<HTMLDivElement>(null);
   const chatContent = useRef<HTMLDivElement>(null);
 

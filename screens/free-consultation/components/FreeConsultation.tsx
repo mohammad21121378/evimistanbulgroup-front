@@ -6,8 +6,9 @@ import { LayoutGroup } from 'framer-motion';
 
 import Sidebar from './Sidebar';
 import ToggleButton from './ToggleButton';
-import { useChatbot } from '../hooks/useChatbot';
+import { useSidebar } from '../hooks/useSidebar';
 import { ChatbotInputProps } from '../types/chatBot';
+import Overlay from '@/components/ui/Overlay';
 
 const FreeConsultation = ({ placeholder, iconRight, initialOpen, setInitialOpen, ...props }: ChatbotInputProps) => {
   const {
@@ -15,15 +16,15 @@ const FreeConsultation = ({ placeholder, iconRight, initialOpen, setInitialOpen,
     sidebarOpen,
     setSidebarOpen,
     messages,
-  } = useChatbot(initialOpen, setInitialOpen);
+  } = useSidebar(initialOpen, setInitialOpen);
 
   return (
     <LayoutGroup>
 
       <Sidebar isOpen={sidebarOpen} messages={messages} chatContent={chatContent} />
       <ToggleButton isOpen={sidebarOpen} onClick={() => setSidebarOpen((prev) => !prev)} />
+      <Overlay isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
-      {sidebarOpen && <div className="overlay FadeInAnimate" onClick={() => setSidebarOpen(false)} />}
 
     </LayoutGroup>
   );
