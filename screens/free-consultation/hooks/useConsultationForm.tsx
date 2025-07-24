@@ -35,6 +35,7 @@ export const useConsultationForm = () => {
   });
 
   const onSubmit = (data: ConsultationFormValues) => {
+      console.log(data)
     setSuccessfulResult(true)
   };
 
