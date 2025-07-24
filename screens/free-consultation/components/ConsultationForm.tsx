@@ -8,6 +8,8 @@ import Checkbox from "@/components/ui/input/Checkbox";
 import PhoneInput from "@/components/ui/PhoneInput";
 import LabelInput from "@/components/ui/input/LabelInput";
 import ErrorInput from "@/components/ui/ErrorInput";
+import Button from "@/components/ui/Button";
+import { ConsultationFormProps } from "../types";
 
 const topics = [
     "Get Turkish Citizenship",
@@ -52,9 +54,10 @@ const contactTimes = [
     "Anytime",
 ];
 
-export default function ConsultationForm() {
+export default function ConsultationForm({...consultationForm}: ConsultationFormProps) {
 
-    const { form, onSubmit, successfulResult } = useConsultationForm();
+    const {form, onSubmit, successfulResult} = consultationForm;
+    
     const {
         register,
         control,
@@ -190,12 +193,9 @@ export default function ConsultationForm() {
                     onChange={(value) => setValue("agree", value, { shouldValidate: true })}
                 />
 
-                <button
-                    type="submit"
-                    className="bg-orange-500 mt-2 text-white w-full py-3 rounded-xl shadow hover:bg-orange-600 transition"
-                >
-                    Submit Request
-                </button>
+                <Button size="full">
+                Submit Request
+                </Button>
             </div>
 
         </form>

@@ -1,30 +1,75 @@
 import { AnimatePresence, motion } from 'framer-motion';
 
-import { ChatSidebarProps } from '../types/chatSidebar';
 import Portal from '@/components/ui/Portal';
 import ConsultationForm from './ConsultationForm';
+import { SidebarProps } from '../types';
+import SuccessfulResult from './SuccessfulResult';
 
-const Sidebar = ({ isOpen, messages, chatContent }: ChatSidebarProps) => (
-  <Portal>
-    <AnimatePresence>
-      {isOpen && (
-        <motion.aside
-          initial={{ x: '100%' }}
-          animate={{ x: 0 }}
-          exit={{ x: '100%' }}
-          transition={{ type: 'spring', stiffness: 1000, damping: 100 }}
-          className="fixed top-0 right-0 h-dvh w-[36.25rem] bg-white z-[101] shadow-lg"
-        >
-          <div
-            ref={chatContent}
-            className="h-dvh grid grid-rows-[1fr] box-border overflow-hidden py-5 px-4"
+export default function Sidebar({ isOpen, onClose, ...consultationForm }: SidebarProps) {
+
+  const { successfulResult } = consultationForm;
+
+  const variants = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -20 },
+  };
+  return (
+
+
+    <Portal>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.aside
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'spring', stiffness: 1000, damping: 100 }}
+            className="fixed top-0 right-0 h-dvh sm:w-[36.25rem] w-[28rem] bg-white z-[101] shadow-lg"
           >
-            <ConsultationForm />
-          </div>
-        </motion.aside>
-      )}
-    </AnimatePresence>
-  </Portal>
-);
-
-export default Sidebar;
+            <div
+              className="h-dvh grid grid-rows-[1fr] box-border overflow-hidden py-5 px-4"
+            >
+              <AnimatePresence mode="wait">
+    {!successfulResult && (
+      <motion.div
+        key="form"
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        className='grid grid-rows-[1fr]'
+        variants={variants}
+        transition={{ duration: 0.4 }}
+      >
+        <ConsultationForm {...consultationForm} />
+      </motion.div>
+    )}
+    {successfulResult && (
+      <motion.div
+        key="success"
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        className='grid grid-rows-[1fr]'
+        variants={variants}
+        transition={{ duration: 0.4 }}
+      >
+        <SuccessfulResult onClose={onClose} />
+      </motion.div>
+    )}
+  </AnimatePresence>
+              {/* {
+                !successfulResult &&
+                <ConsultationForm {...consultationForm} />
+              }
+              {
+                successfulResult &&
+                <SuccessfulResult onClose={onClose} />
+              } */}
+            </div>
+          </motion.aside>
+        )}
+      </AnimatePresence>
+    </Portal>
+  )
+};

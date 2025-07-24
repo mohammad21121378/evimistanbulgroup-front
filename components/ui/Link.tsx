@@ -26,17 +26,6 @@ const Link = ({
   targetLocale = false,
   ...props
 }: CustomLinkProps) => {
-  
-  const currentLocale = useLocale();
-
-  const resolveHref = (href: string | null | undefined) => {
-    if (!href) {
-      return '/';
-    }
-    return href.startsWith('/')
-      ? `/${locale}${href === '/' ? '' : href}`
-      : `/${locale}/${href}`;
-  }
 
   if (noLink) {
     return (
@@ -52,6 +41,17 @@ const Link = ({
         {children}
       </a>
     );
+  }
+
+  const currentLocale = useLocale();
+
+  const resolveHref = (href: string | null | undefined) => {
+    if (!href) {
+      return '/';
+    }
+    return href.startsWith('/')
+      ? `/${locale}${href === '/' ? '' : href}`
+      : `/${locale}/${href}`;
   }
 
   const locale = targetLocale
