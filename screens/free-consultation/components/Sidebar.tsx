@@ -31,7 +31,7 @@ export default function Sidebar({ isOpen, onClose, ...consultationForm }: Sideba
               className="h-dvh grid grid-rows-[1fr] box-border overflow-hidden py-5 px-4"
             >
               <AnimatePresence mode="wait">
-                {successfulResult && (
+                {!successfulResult && (
                   <motion.div
                     key="form"
                     initial="initial"
@@ -44,7 +44,7 @@ export default function Sidebar({ isOpen, onClose, ...consultationForm }: Sideba
                     <ConsultationForm {...consultationForm} />
                   </motion.div>
                 )}
-                {!successfulResult && (
+                {successfulResult && (
                   <motion.div
                     key="success"
                     initial="initial"
