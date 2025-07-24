@@ -1,7 +1,7 @@
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { communicationMethods, contactTimes, languages, topics } from "../constants";
 import {addFormEntrance} from "@/helpers/api/addFormEntrance"
 
@@ -20,7 +20,7 @@ export const schema = yup.object({
 
 export type ConsultationFormValues = yup.InferType<typeof schema>;
 
-export const useConsultationForm = () => {
+export const useConsultationForm = (initialValues?: Partial<ConsultationFormValues>) => {
 
   const [successfulResult, setSuccessfulResult ] = useState(false)
   const [loading, setLoading ] = useState(false)
@@ -32,12 +32,26 @@ export const useConsultationForm = () => {
       language: languages[0],
       communication: communicationMethods[0],
       time: contactTimes[0],
+      ...initialValues,
     }
   });
 
+  useEffect(() => {
+    if (initialValues) {
+      form.reset({
+        topic: topics[0],
+        language: languages[0],
+        communication: communicationMethods[0],
+        time: contactTimes[0],
+        ...initialValues,
+      });
+    }
+  }, [initialValues]);
+  
+
   const onSubmit = async (data: ConsultationFormValues) => {
       setLoading(true)
-      await addFormEntrance(data,"consultation",setSuccessfulResult)
+      await addFormEntrance(data, "consultation", setSuccessfulResult)
       setLoading(false)
   };
 

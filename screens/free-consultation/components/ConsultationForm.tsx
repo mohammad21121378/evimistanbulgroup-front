@@ -2,7 +2,6 @@
 "use client";
 
 import Input from "@/components/ui/input";
-import { useConsultationForm } from "../hooks/useConsultationForm";
 import { Controller } from "react-hook-form";
 import Checkbox from "@/components/ui/input/Checkbox";
 import PhoneInput from "@/components/ui/PhoneInput";
@@ -14,7 +13,7 @@ import { communicationMethods, contactTimes, languages, topics } from "../consta
 
 export default function ConsultationForm({...consultationForm}: ConsultationFormProps) {
 
-    const {form, onSubmit, successfulResult,loading} = consultationForm;
+    const {form, onSubmit, successfulResult, loading} = consultationForm;
     
     const {
         register,
@@ -32,7 +31,7 @@ export default function ConsultationForm({...consultationForm}: ConsultationForm
                 Free Consultation
             </h2>
 
-            <div className="space-y-4 mt-4 px-1 pb-px max-h-[75vh] overflow-y-auto overflow-x-visible scrollbar-sm">
+            <div className="space-y-4 mt-4 px-1 pb-1 max-h-[75vh] overflow-y-auto overflow-x-visible scrollbar-sm">
 
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -42,7 +41,6 @@ export default function ConsultationForm({...consultationForm}: ConsultationForm
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <Input placeholder="Exp. abc@gmail.com" label="Email Address" {...register("email")} error={errors.email?.message} />
-                    {/* <Input placeholder="Phone Number" label="Phone Number" {...register("phone")} error={errors.phone?.message} /> */}
                     <div>
                         <LabelInput label="Phone Number" />
                         <PhoneInput

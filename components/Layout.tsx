@@ -6,6 +6,7 @@ import React from "react";
 import Curtain from "./curtain";
 import Footer from "./footer";
 import Header from "./header";
+import FreeConsultation from '@/screens/free-consultation';
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -28,6 +29,7 @@ export default function Layout({ children }: LayoutProps) {
       <Header />
       {children}
       <Footer />
+      <FreeConsultation />
     </>
   );
 }

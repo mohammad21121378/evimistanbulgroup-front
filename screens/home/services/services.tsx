@@ -15,6 +15,8 @@ import {
 import { Heading } from "@/components/typography";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { useConsultationStore } from "@/stores/consultationStore";
+import Button from "@/components/ui/Button";
 
 const services = [
   { id: 1, icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 17.0598V7.71897C19 7.08754 18.6833 6.49561 18.151 6.13223L11.151 1.3535C10.4606 0.882167 9.53943 0.882168 8.84901 1.3535L1.84901 6.13223C1.31672 6.49561 1 7.08754 1 7.71897V17.0598C1 18.1313 1.89543 19 3 19H7V14C7 12.8954 7.89543 12 9 12H11C12.1046 12 13 12.8954 13 14V19H17C18.1046 19 19 18.1313 19 17.0598Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>, 
@@ -43,6 +45,7 @@ const services = [
 
 export default function Services() {
   const t = useTranslations("Services");
+  const { onOpen } = useConsultationStore();
 
   return (
     <section className={cn("section")}>
@@ -55,9 +58,9 @@ export default function Services() {
             </div>
           </div>
 
-          <Link href="/properties-for-sale-in-turkey" className={cn("button button-primary")}>
+          <Button href="/our-services" size="auto" flex>
             {t("button")} {ArrowRight}
-          </Link>
+          </Button>
         </div>
 
         <div className={styles.services}>
@@ -79,13 +82,10 @@ export default function Services() {
                 {t("custom.title")}
               </div>
               <div className={cn("text-sm !text-black pt-3 whitespace-pre-line w-full text-justify", styles.service_subtitle)}>
-                {t.rich("custom.description", {
-                  link: (chunks) => (
-                    <Link href="/" className="text-orange-600 font-bold underline">
-                      {chunks}
-                    </Link>
-                  ),
-                })}
+                {t("custom.description")}
+                <span className="text-orange-600 font-bold underline pl-1 cursor-pointer" onClick={onOpen}>
+                {t("custom.consultation")}
+                </span>
               </div>
             </div>
           </div>

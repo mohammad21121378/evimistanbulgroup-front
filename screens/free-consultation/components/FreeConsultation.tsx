@@ -11,16 +11,14 @@ import Overlay from '@/components/ui/Overlay';
 import LeftSide from './LeftSide';
 import { useConsultationForm } from '../hooks/useConsultationForm';
 import { FreeConsultationProps } from '../types';
+import { useConsultationStore } from '@/stores/consultationStore';
 
-const FreeConsultation = ({ initialOpen, setInitialOpen}: FreeConsultationProps) => {
+const FreeConsultation = ({}: FreeConsultationProps) => {
 
-  const {
-    chatContent,
-    sidebarOpen,
-    setSidebarOpen,
-  } = useSidebar(initialOpen, setInitialOpen);
+  const { isOpen: sidebarOpen, onClose, initialValues } = useConsultationStore();
+  
 
-  const consultationForm = useConsultationForm();
+  const consultationForm = useConsultationForm(initialValues);
 
   const {
     successfulResult
@@ -29,9 +27,10 @@ const FreeConsultation = ({ initialOpen, setInitialOpen}: FreeConsultationProps)
   return (
     <LayoutGroup>
 
-      <Sidebar onClose={() => setSidebarOpen((pre)=>!pre)} {...consultationForm} isOpen={sidebarOpen} chatContent={chatContent} />
-      <ToggleButton isOpen={sidebarOpen} onClick={() => setSidebarOpen((prev) => !prev)} />
-      <Overlay isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+      <Sidebar onClose={onClose} {...consultationForm} isOpen={sidebarOpen} />
+      <ToggleButton isOpen={sidebarOpen} onClick={onClose} />
+      
+      <Overlay isOpen={sidebarOpen} onClose={onClose} />
       <LeftSide isOpen={!successfulResult && sidebarOpen} />
 
     </LayoutGroup>

@@ -10,9 +10,9 @@ export default function Sidebar({ isOpen, onClose, ...consultationForm }: Sideba
   const { successfulResult } = consultationForm;
 
   const variants = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -20 },
+    initial: { opacity: 0, x: 20 },
+    animate: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: -20 },
   };
   return (
 
@@ -31,41 +31,33 @@ export default function Sidebar({ isOpen, onClose, ...consultationForm }: Sideba
               className="h-dvh grid grid-rows-[1fr] box-border overflow-hidden py-5 px-4"
             >
               <AnimatePresence mode="wait">
-    {!successfulResult && (
-      <motion.div
-        key="form"
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        className='grid grid-rows-[1fr]'
-        variants={variants}
-        transition={{ duration: 0.4 }}
-      >
-        <ConsultationForm {...consultationForm} />
-      </motion.div>
-    )}
-    {successfulResult && (
-      <motion.div
-        key="success"
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        className='grid grid-rows-[1fr]'
-        variants={variants}
-        transition={{ duration: 0.4 }}
-      >
-        <SuccessfulResult onClose={onClose} />
-      </motion.div>
-    )}
-  </AnimatePresence>
-              {/* {
-                !successfulResult &&
-                <ConsultationForm {...consultationForm} />
-              }
-              {
-                successfulResult &&
-                <SuccessfulResult onClose={onClose} />
-              } */}
+                {successfulResult && (
+                  <motion.div
+                    key="form"
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    className='grid grid-rows-[1fr]'
+                    variants={variants}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <ConsultationForm {...consultationForm} />
+                  </motion.div>
+                )}
+                {!successfulResult && (
+                  <motion.div
+                    key="success"
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    className='grid grid-rows-[1fr]'
+                    variants={variants}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <SuccessfulResult onClose={onClose} />
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </motion.aside>
         )}

@@ -2,8 +2,7 @@ import { UseFormReturn } from "react-hook-form";
 import { ConsultationFormValues } from "./hooks/useConsultationForm";
 
 export interface FreeConsultationProps {
-    initialOpen?: boolean;
-    setInitialOpen?: (val:boolean) => void
+    
 }
 
 export interface ToggleButtonProps {
@@ -36,6 +35,5 @@ export interface ConsultationFormProps extends ConsultationFormHook{
 
 export interface SidebarProps extends ConsultationFormHook{
     isOpen: boolean;
-    chatContent: React.RefObject<HTMLDivElement>;
     onClose: () => void;
 }

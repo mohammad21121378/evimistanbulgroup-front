@@ -107,7 +107,8 @@
 
     "custom": {
       "title": "Let’s Talk About Your Needs",
-      "description": "Didn’t find the exact service you’re looking for? Our team is ready to assist with personalized solutions tailored to your needs. Contact us to discuss your goals. <link>Book A Free Consultation</link>"
+      "description": "Didn’t find the exact service you’re looking for? Our team is ready to assist with personalized solutions tailored to your needs. Contact us to discuss your goals.",
+      "consultation": "Book A Free Consultation"    
     }
   },
   "GuidesAndInsights": {
