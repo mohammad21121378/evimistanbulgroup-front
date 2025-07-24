@@ -9,6 +9,7 @@ import GuidesAndInsightsIisting from "@/components/guides-and-Insights-listing";
 import { useInsights } from "@/constants/guides-and-Insights.constants";
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "@/constants/icons";
+import Button from "../ui/Button";
 
 type Props = {
   title?: string;
@@ -38,9 +39,9 @@ export default function GuidesAndInsightsView({
             </div>
           </div>
 
-          <Link href={button?.href ? button?.href : '#'} className={cn("button button-primary")}>
+          <Button href={button?.href ? button?.href : '#'} flex size="auto">
             {button?.text} {ArrowRight}
-          </Link>
+          </Button>
 
         </div>
 

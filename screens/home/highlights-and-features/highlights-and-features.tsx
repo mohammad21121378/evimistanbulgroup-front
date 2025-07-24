@@ -7,6 +7,7 @@ import HighlightsAndFeaturesListing from "@/components/highlights-and-features-l
 import {  useHighlights } from "@/constants/highlights-and-features.constants";
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "@/constants/icons";
+import Button from "@/components/ui/Button";
 
 export default function HighlightsAndFeatures() {
   const t = useTranslations("HighlightsAndFeatures");
@@ -24,9 +25,9 @@ export default function HighlightsAndFeatures() {
             </div>
           </div>
 
-          <Link href="/properties-for-sale-in-turkey" className={cn("button button-primary")}>
+          <Button href="/properties-for-sale-in-turkey" flex size="auto">
             {t("viewAll")} {ArrowRight}
-          </Link>
+          </Button>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20">

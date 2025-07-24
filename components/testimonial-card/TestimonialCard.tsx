@@ -8,6 +8,7 @@ import { ArrowRight, ChevronLeft, ChevronRight } from "@/constants/icons";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import StarRating from "@/components/ui/StarRating";
+import Button from "../ui/Button";
 
 type TestimonialsProps = {
   viewAllLabel?: string;
@@ -32,8 +33,8 @@ export default function TestimonialCard({
   showNavigation = false,
   showViewAllButton = false,
   viewAllHref = "/about",
-  direction=0,
-  showViewAllButtonLabel="View All",
+  direction = 0,
+  showViewAllButtonLabel = "View All",
   onNext,
   onPrev,
   className,
@@ -113,6 +114,7 @@ export default function TestimonialCard({
 
           {(showNavigation || showViewAllButton) && (
             <div className="flex justify-between items-center mt-6">
+              
               {showNavigation && (
                 <div className={styles.btns}>
                   <button
@@ -134,9 +136,9 @@ export default function TestimonialCard({
               )}
 
               {showViewAllButton && (
-                <Link href={viewAllHref} className={cn("button")}>
+                <Button href={viewAllHref} flex size="auto">
                   {showViewAllButtonLabel} {ArrowRight}
-                </Link>
+                </Button>
               )}
             </div>
           )}

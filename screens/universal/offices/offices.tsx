@@ -63,7 +63,7 @@ export default function Offices() {
                 <div key={index} className="relative">
                   <img
                     src={`/images/realestate/${item.src}`}
-                    alt={item.name}
+                    alt={`${item.name} | EvimIstanbul Group`}
                     className="w-full max-h-20"
                   />
                 </div>
@@ -83,7 +83,7 @@ export default function Offices() {
                 <div key={index} className="relative">
                   <img
                     src={`/images/realestate/${item.src}`}
-                    alt={item.name}
+                    alt={`${item.name} | EvimIstanbul Group`}
                     className="w-full max-h-20"
                   />
                 </div>

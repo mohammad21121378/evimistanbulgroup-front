@@ -10,6 +10,7 @@ import PropertyListing from "@/components/property-listing";
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "@/constants/icons";
 import Link from "@/components/ui/Link";
+import Button from "@/components/ui/Button";
 
 export default function LatestListings() {
   const t = useTranslations("LatestListings");
@@ -37,11 +38,9 @@ export default function LatestListings() {
             </div>
           </div>
 
-          <Link href="/properties-for-sale-in-turkey">
-            <button className={cn("button", styles.button)}>
+            <Button href="/properties-for-sale-in-turkey" className={cn( styles.button)} flex size="auto">
             {t("viewAll")} {ArrowRight}
-            </button>
-          </Link>
+            </Button>
         </div>
 
         <div className={styles.wrapper}>

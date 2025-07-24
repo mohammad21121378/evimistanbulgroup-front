@@ -35,7 +35,7 @@ export default function Categories() {
             </div>
           </div>
 
-          <Button href={`${prefixLink}all`} flex>
+          <Button href={`${prefixLink}all`} flex size="auto">
             {t("viewAll")} {ArrowRight}
           </Button>
         </div>
