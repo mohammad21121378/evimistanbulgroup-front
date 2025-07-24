@@ -27,7 +27,8 @@ export default function Header() {
   const locale = useLocale();
   
   const lightHeaderPages = [
-    `/${locale}`
+    `/${locale}`,
+    `/${locale}/client-stories`,
   ];
 
   const nav_links = [

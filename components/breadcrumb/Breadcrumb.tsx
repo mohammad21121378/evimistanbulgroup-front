@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation'
 import Link from '../ui/Link'
+import cn from 'classnames'
 
 type BreadcrumbItem = {
   label: string
@@ -9,7 +10,8 @@ type BreadcrumbItem = {
 }
 
 type BreadcrumbProps = {
-  items?: BreadcrumbItem[]
+  items?: BreadcrumbItem[],
+  lightThem?: boolean
 }
 
 const separator = (
@@ -24,7 +26,7 @@ const separator = (
   </svg>
 )
 
-export const Breadcrumb = ({ items }: BreadcrumbProps) => {
+export const Breadcrumb = ({ items, lightThem }: BreadcrumbProps) => {
   const pathname = usePathname()
 
   const autoItems: BreadcrumbItem[] = pathname
@@ -39,7 +41,7 @@ export const Breadcrumb = ({ items }: BreadcrumbProps) => {
 
   return (
     <nav className="flex items-center text-sm font-medium mb-5 truncate">
-      <Link href="/" className="text-slate-700 hover:text-blue-600 transition-colors">
+      <Link href="/" className={cn("hover:text-blue-600 transition-colors", { "text-slate-700": !lightThem, "text-white font-normal": lightThem })}>
         Home
       </Link>
 
@@ -49,12 +51,24 @@ export const Breadcrumb = ({ items }: BreadcrumbProps) => {
           {item.href ? (
             <Link
               href={item.href}
-              className="text-slate-700 hover:text-blue-600 capitalize truncate transition-colors"
+              className={cn(
+                " hover:text-blue-600 capitalize truncate transition-colors",
+                {
+                  "text-slate-700": !lightThem,
+                  "text-white font-normal": lightThem
+                }
+              )}
             >
               {item.label}
             </Link>
           ) : (
-            <span className="text-[#222222] font-bold capitalize">{item.label}</span>
+            <span className={cn(" font-bold capitalize",
+            {
+              "text-[#222222]": !lightThem,
+              "text-white": lightThem
+            }
+            
+            )}>{item.label}</span>
           )}
         </div>
       ))}

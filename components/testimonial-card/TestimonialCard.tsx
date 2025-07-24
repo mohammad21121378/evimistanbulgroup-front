@@ -96,7 +96,7 @@ export default function TestimonialCard({
           className={styles.testimonial_info}
         >
           <div>
-            <div className={cn("heading-6", styles.text)}>
+            <div className={cn("heading-6 italic", styles.text)}>
               {text}
             </div>
 

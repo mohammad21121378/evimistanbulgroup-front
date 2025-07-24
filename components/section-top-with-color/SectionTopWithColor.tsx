@@ -12,16 +12,20 @@ type Props = {
 
 export default function SectionTopWithColor({ bg, breadcrumb, title }: Props) {
     return (
-        <div className={cn("", bg)}>
+        <div className={cn("relative", bg)}>
+            <div className={styles.overlay} />
             <div className={cn("container")}>
-                <section className={cn("section h-[42rem] grid items-start", styles.section)}>
+
+                <section className={cn("section md:h-[42rem] h-[35rem] grid items-start grid-rows-[auto,1fr]", styles.section)}>
+
                     <Breadcrumb
+                        lightThem
                         items={breadcrumb}
                     />
 
-                    <Heading type="heading-1" className="text-white">
+                    <h1 className="text-white md:text-[7rem] text-[5rem] leading-[105%] mt-auto">
                         {title}
-                    </Heading>
+                    </h1>
                 </section>
             </div>
         </div>

@@ -922,3 +922,27 @@ const Peroperty = {
 }
 
 export { Tabs, Listings, TeamMembers, Peroperty };
+
+
+
+// /lib/reviews.ts
+export const reviews = [
+  {
+    author: 'علی',
+    rating: 5,
+    reviewBody: 'خیلی عالی بود!',
+    datePublished: '2025-07-01',
+  },
+  {
+    author: 'نگار',
+    rating: 4,
+    reviewBody: 'خوب بود اما می‌تونست بهتر باشه.',
+    datePublished: '2025-07-10',
+  },
+  {
+    author: 'سارا',
+    rating: 5,
+    reviewBody: 'فوق‌العاده!',
+    datePublished: '2025-07-20',
+  },
+]
