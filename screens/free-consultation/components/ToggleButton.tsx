@@ -10,8 +10,9 @@ const ToggleButton = ({ isOpen, onClick }: ToggleButtonProps) => (
       onClick={onClick}
       whileHover="hover"
       variants={iconVariants}
+      transition={{ type: 'tween', ease: 'easeOut', duration: 0.4 }}
       initial="initial"
-      className={`fixed z-[100] !rotate-180 overflow-hidden clip-path-custom ${isOpen ? 'sm:right-[36.2rem] right-[27.95rem]' : '-right-full'} top-1/2 -translate-y-1/2 transition-all duration-500`}
+      className={`fixed z-[100] !rotate-180 overflow-hidden clip-path-custom ${isOpen ? 'sm:right-[36.2rem] right-[27.95rem]' : 'right-0'} top-1/2 -translate-y-1/2 transition-all duration-500`}
     >
       <svg className='w-20' viewBox="0 0 70 130">
         <path

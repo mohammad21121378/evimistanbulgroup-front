@@ -15,7 +15,7 @@ import { useConsultationStore } from '@/stores/consultationStore';
 
 const FreeConsultation = ({}: FreeConsultationProps) => {
 
-  const { isOpen: sidebarOpen, onClose, initialValues } = useConsultationStore();
+  const { isOpen: sidebarOpen, onClose, initialValues, onToggle } = useConsultationStore();
   
 
   const consultationForm = useConsultationForm(initialValues);
@@ -28,8 +28,8 @@ const FreeConsultation = ({}: FreeConsultationProps) => {
     <LayoutGroup>
 
       <Sidebar onClose={onClose} {...consultationForm} isOpen={sidebarOpen} />
-      <ToggleButton isOpen={sidebarOpen} onClick={onClose} />
-      
+      <ToggleButton isOpen={sidebarOpen} onClick={onToggle} />
+
       <Overlay isOpen={sidebarOpen} onClose={onClose} />
       <LeftSide isOpen={!successfulResult && sidebarOpen} />
 
