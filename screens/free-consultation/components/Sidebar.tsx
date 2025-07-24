@@ -24,7 +24,7 @@ export default function Sidebar({ isOpen, onClose, ...consultationForm }: Sideba
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
-            transition={{ type: 'tween', ease: 'easeOut', duration: 0.4 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             className="fixed top-0 right-0 h-dvh sm:w-[36.25rem] w-[28rem] bg-white z-[101] shadow-lg"
           >
             <div
