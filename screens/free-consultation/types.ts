@@ -23,6 +23,7 @@ export interface ConsultationFormHook {
     form: UseFormReturn<ConsultationFormValues>;
     onSubmit: (data: ConsultationFormValues) => void;
     successfulResult: boolean;
+    loading: boolean;
 };
 
 // export interface SidebarProps extends ConsultationFormHook{

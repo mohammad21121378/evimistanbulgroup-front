@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 import { communicationMethods, contactTimes, languages, topics } from "../constants";
-
+import {addFormEntrance} from "@/helpers/api/addFormEntrance"
 
 export const schema = yup.object({
     firstName: yup.string().required("First name is required."),
@@ -23,6 +23,7 @@ export type ConsultationFormValues = yup.InferType<typeof schema>;
 export const useConsultationForm = () => {
 
   const [successfulResult, setSuccessfulResult ] = useState(false)
+  const [loading, setLoading ] = useState(false)
 
   const form = useForm<ConsultationFormValues>({
     resolver: yupResolver(schema),
@@ -34,10 +35,11 @@ export const useConsultationForm = () => {
     }
   });
 
-  const onSubmit = (data: ConsultationFormValues) => {
-      console.log(data)
-    setSuccessfulResult(true)
+  const onSubmit = async (data: ConsultationFormValues) => {
+      setLoading(true)
+      await addFormEntrance(data,"consultation",setSuccessfulResult)
+      setLoading(false)
   };
 
-  return { form, onSubmit, successfulResult };
+  return { form, onSubmit, successfulResult,loading };
 };

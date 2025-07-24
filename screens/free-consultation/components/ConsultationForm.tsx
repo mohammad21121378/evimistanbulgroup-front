@@ -14,7 +14,7 @@ import { communicationMethods, contactTimes, languages, topics } from "../consta
 
 export default function ConsultationForm({...consultationForm}: ConsultationFormProps) {
 
-    const {form, onSubmit, successfulResult} = consultationForm;
+    const {form, onSubmit, successfulResult,loading} = consultationForm;
     
     const {
         register,
@@ -151,7 +151,7 @@ export default function ConsultationForm({...consultationForm}: ConsultationForm
                     onChange={(value) => setValue("agree", value, { shouldValidate: true })}
                 />
 
-                <Button size="full">
+                <Button size="full" loading={loading}>
                 Submit Request
                 </Button>
             </div>
