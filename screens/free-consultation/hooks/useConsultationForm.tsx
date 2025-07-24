@@ -2,6 +2,8 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
+import { communicationMethods, contactTimes, languages, topics } from "../constants";
+
 
 export const schema = yup.object({
     firstName: yup.string().required("First name is required."),
@@ -23,7 +25,13 @@ export const useConsultationForm = () => {
   const [successfulResult, setSuccessfulResult ] = useState(false)
 
   const form = useForm<ConsultationFormValues>({
-    resolver: yupResolver(schema)
+    resolver: yupResolver(schema),
+    defaultValues: {
+      topic: topics[0],
+      language: languages[0],
+      communication: communicationMethods[0],
+      time: contactTimes[0],
+    }
   });
 
   const onSubmit = (data: ConsultationFormValues) => {
