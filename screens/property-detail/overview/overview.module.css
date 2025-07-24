@@ -13,6 +13,11 @@
     color: var(--slate-500);
 }
 
+
+.description p{
+    margin-bottom: 12px;
+}
+
 .features {
     /* margin-top: 24px; */
 }

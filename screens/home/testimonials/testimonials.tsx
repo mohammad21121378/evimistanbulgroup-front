@@ -10,6 +10,7 @@ import { Heading } from "@/components/typography";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import StarRating from "@/components/ui/StarRating";
+import TestimonialCard from "@/components/testimonial-card";
 
 
 
@@ -96,77 +97,16 @@ export default function Testimonials() {
         </div>
 
 
-        <div className={styles.testimonial}>
-          <AnimatePresence mode="wait" custom={direction}>
-            <motion.div
-              key={testimonials[current].id}
-              variants={variants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              custom={direction}
-              className={styles.testimonial_image}
-            >
-              <Image
-                src={testimonials[current].image}
-                alt={testimonials[current].name}
-                layout="fill"
-                objectFit="cover"
-              />
-            </motion.div>
-          </AnimatePresence>
+        <TestimonialCard
+          {...testimonials[current]}
+          direction={direction}
+          onNext={nextSlide}
+          onPrev={prevSlide}
+          showNavigation={true}
+          showViewAllButton={true}
+          showViewAllButtonLabel={t("viewAll")}
+        />
 
-          <AnimatePresence mode="wait" custom={direction}>
-            <motion.div
-              key={"text-" + testimonials[current].id}
-              variants={variants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              custom={direction}
-              className={styles.testimonial_info}
-            >
-              <div>
-                <div className={cn("heading-6", styles.text)}>
-                  {t("list." + current + ".text")}
-                </div>
-
-                <div className={cn("paragraph-medium", styles.testimonial_name)}>
-                  –– {t("list." + current + ".name")}
-                </div>
-
-                {
-                  testimonials[current].rating &&
-                  <div className="mt-6">
-                    <StarRating rating={testimonials[current].rating} />
-                  </div>
-                }
-              </div>
-
-              <div className="flex justify-between items-center ">
-                <div className={styles.btns}>
-                  <button
-                    className={cn("button-stroke-small", styles.btn)}
-                    onClick={prevSlide}
-                  >
-                    {ChevronLeft}
-                  </button>
-
-                  <button
-                    className={cn("button-stroke-small", styles.btn)}
-                    onClick={nextSlide}
-                  >
-                    {ChevronRight}
-                  </button>
-                </div>
-
-                <Link href="/about" className={cn("button ")}>
-                  {t("viewAll")} {ArrowRight}
-                </Link>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
       </div>
     </section>
   );
