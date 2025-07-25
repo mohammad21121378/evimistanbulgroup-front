@@ -1,5 +1,5 @@
 import { PageMeta } from "@/types/Seo";
-import {fetchProperty} from "@/helpers/api/property/property"
+import fetchProperty from "@/helpers/api/property/property"
 import { buildMetadataFromPage } from "@/lib/metadata";
 
 
