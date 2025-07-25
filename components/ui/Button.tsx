@@ -59,7 +59,7 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   const outlineColors: Record<Color, string> = {
-    blue: 'outline-blue-700 hover:bg-blue-700 hover:text-white text-blue-700 font-bold',
+    blue: 'outline-blue-700 hover:bg-blue-700 hover:text-white text-blue-700 font-semibold',
     red: 'outline-red-600 bg-red-600 hover:bg-red-700 text-white',
     green: 'outline-green-600 bg-green-600 hover:bg-green-700 text-white',
     light: 'text-blue-500 bg-transportant !outline-0',

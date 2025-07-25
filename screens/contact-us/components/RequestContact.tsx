@@ -18,7 +18,7 @@ export default function RequestContact() {
   return (
     <div className='container'>
 
-      <section className='section'>
+      <section className='section !pt-0'>
         <Heading type='heading-4' className='mb-5 mt-8'>
         Contact Form
         </Heading>

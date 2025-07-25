@@ -33,7 +33,7 @@ export default function OfferServices() {
             <div className="container">
                 <div className="grid md:grid-cols-2 gap-12">
                     {
-                        offerServices.map(item => <FeatureCard {...item} buttonLabel={buttonLabel} />)
+                        offerServices.map((item, key) => <FeatureCard key={key} {...item} buttonLabel={buttonLabel} />)
                     }
                 </div>
             </div>

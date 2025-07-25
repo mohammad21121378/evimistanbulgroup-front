@@ -8,8 +8,6 @@ import { useConsultationStore } from '@/stores/consultationStore';
 
 export default function Hero() {
 
-  const { onOpen } = useConsultationStore()
-
   const offices = [
     {
       title: 'EvimIstanbul Group Sarıyer ',
@@ -38,16 +36,13 @@ export default function Hero() {
           items={[{ label: 'Contact Us' }]}
         />
 
-        <Heading type='heading-4' className='-mb-5 mt-8'>
+        <Heading type='heading-4' className='mb-5 mt-8'>
           Our Offices
         </Heading>
 
         {offices.map((office, i) => (
           <OfficeCard key={i} {...office} isReverse={i % 2 !== 0} />
         ))}
-        <Button className='mt-10' onClick={onOpen} color='blue' outline size='full'>
-          Book A Free Consultation Now
-        </Button>
       </section>
 
     </div>
