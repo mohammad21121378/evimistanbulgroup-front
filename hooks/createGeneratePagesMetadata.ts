@@ -13,14 +13,20 @@ export function createGenerateMetadata(baseSlug: string) {
         const pageSlug = slug || baseSlug
         const { data: page } = await fetchPageContent(pageSlug, locale);
 
-        const fullSlug = slug ? `${baseSlug}/${slug}` : `${baseSlug}`;
+        const fullSlug =
+            baseSlug === "home"
+                ? ""
+                : slug
+                ? `${baseSlug}/${slug}`
+                : `${baseSlug}`;
 
         const meta: PageMeta = {
             meta_title: page?.meta_title || "",
             meta_description: page?.meta_description || "",
             meta_follow: page?.meta_follow || "follow",
             meta_index: page?.meta_index || "index",
-            url: `https://evimistanbulgroup.com/${locale}/${fullSlug}`,
+            url: `https://evimistanbulgroup.com/${locale}${fullSlug ? `/${fullSlug}` : ""}`,
+
             updated_at: page?.updated_at || new Date().toISOString(),
             image:
                 page?.image ||

@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a444990-2b63-46d6-b210-f54ec3aa7b85" name="Default Changelist" comment="" />
+    <list default="true" id="8a444990-2b63-46d6-b210-f54ec3aa7b85" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/hooks/createGeneratePagesMetadata.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/createGeneratePagesMetadata.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,7 +78,7 @@
       <workItem from="1753201814233" duration="13132000" />
       <workItem from="1753263212323" duration="2644000" />
       <workItem from="1753365613906" duration="4980000" />
-      <workItem from="1753438746493" duration="14351000" />
+      <workItem from="1753438746493" duration="14450000" />
     </task>
     <servers />
   </component>
