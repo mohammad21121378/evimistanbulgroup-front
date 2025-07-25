@@ -100,7 +100,7 @@ export default function Testimonials() {
   useEffect(() => {
     const getTestimonials = async () => {
       try {
-        const testimonials = await fetchTestimonials(4, 0,locale) as TestimonialObject[];
+        const testimonials = await fetchTestimonials(4, 0,locale) as TestimonialObject;
         const testimonialsData=testimonials?.testimonial
         setTestimonials(testimonialsData);
       } catch (err) {
