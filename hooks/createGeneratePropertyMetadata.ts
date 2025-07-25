@@ -10,7 +10,7 @@ type GenerateMetadataProps = {
 export function createGeneratePropertyMetadata() {
     return async function generateMetadata({ params }: GenerateMetadataProps) {
         const { locale,peroperty } = params;
-        const { data: property } = await fetchProperty(peroperty, locale);
+        const { properties: property } = await fetchProperty(peroperty, locale);
 
         const meta: PageMeta = {
             meta_title: property?.meta_title || "",
