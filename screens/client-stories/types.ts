@@ -9,6 +9,7 @@ export interface TestimonialData {
     text: string;
     span: string;
     datePublished: string;
+    image: string;
     media: TestimonialMedia[];
     rating: number;
 }
