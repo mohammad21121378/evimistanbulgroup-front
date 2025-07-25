@@ -13,11 +13,12 @@ export const useContactForm = () => {
   });
 
   const onSubmit = (data: ContactFormValues) => {
-      setLoading(true); 
-      setTimeout(() => {
-          setSuccessfulResult(true); 
-        setLoading(false); 
-    }, 2000);
+      setLoading(true);
+
+      setLoading(true)
+      await addFormEntrance(data, "contact-us", setSuccessfulResult)
+      setLoading(false)
+
   };
 
   return { methods, onSubmit, loading, successfulResult };
