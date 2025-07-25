@@ -13,20 +13,24 @@ import Offices from "../universal/offices";
 import HighlightsAndFeatures from "./highlights-and-features";
 import GuidesAndInsights from "./guides-and-Insights";
 
+
+
 export default function HomePage() {
   return (
-    <Layout>
-      <Hero />
-      <Offices />
-      <LatestListings />
-      <Categories />
-      <HighlightsAndFeatures />
-      <Services />
-      <GuidesAndInsights />
-      <Partners />
-      <Benefits />
-      <Testimonials />
-      <Newsletter />
-    </Layout>
+    <>
+      <Layout>
+        <Hero />
+        <Offices />
+        <LatestListings />
+        <Categories />
+        <HighlightsAndFeatures />
+        <Services />
+        <GuidesAndInsights />
+        <Partners />
+        <Benefits />
+        <Testimonials />
+        <Newsletter />
+      </Layout>
+    </>
   );
 }

@@ -27,10 +27,10 @@ export default function RequestContact() {
             successfulResult && (
               <motion.div
                 key="success"
-                initial={{ opacity: 0, y: 20, scale: 0.85 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: 20, scale: 0.85 }}
-                transition={{ duration: 0.4 }}
+                initial={{ opacity: 0, x: -200, scale: 0.85 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                exit={{ opacity: 0, x: 20, scale: 0.85 }}
+                transition={{ duration: 0.4, delay:.4 }}
               >
                 <SuccessAlert
                   message="Your message has been successfully received. Our team will get back to you as soon as possible — typically within 24 hours."
@@ -43,9 +43,9 @@ export default function RequestContact() {
             !successfulResult && (
               <motion.div
                 key="form"
-                initial={{ opacity: 0, y: -20, scale: 0.85 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: 20, scale: 0.85 }}
+                initial={{ opacity: 0, x: -20, scale: 0.85 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                exit={{ opacity: 0, x: 200, scale: 0.85 }}
                 transition={{ duration: 0.4 }}
               >
                 <ContactForm methods={methods} loading={loading} onSubmit={onSubmit} />

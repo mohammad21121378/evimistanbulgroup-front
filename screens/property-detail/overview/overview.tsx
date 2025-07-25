@@ -78,7 +78,12 @@ export default function Overview({ item }: OverviewProps) {
             }
           </div>
 
-          <div className={cn("paragraph-medium", styles.description)} dangerouslySetInnerHTML={{ __html: item.content ?? '' }}></div>
+          {
+            item.content &&
+            <div className={cn("paragraph-medium", styles.description)}>
+              <ExpandableHtml html={item.content} />
+            </div>
+          }
 
           <div className={styles.details}>
             {details.map((detail) => {
@@ -88,7 +93,7 @@ export default function Overview({ item }: OverviewProps) {
               const isLocationAndLifestyle = detail.slug === "location_and_lifestyle";
               const isAmenitiesAndServices = detail.slug === "amenities_and_services";
               const isVirtualTourVideo = detail.slug === "virtual_tour_video";
-              const hasCoordinates = item.latitude && item.longitude;              
+              const hasCoordinates = item.latitude && item.longitude;
 
               let amenitiesAndServicesContent: null | ReactNode = null;
 

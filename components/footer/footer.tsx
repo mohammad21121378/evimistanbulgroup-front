@@ -1,96 +1,103 @@
-import React from "react";
-import styles from "./footer.module.css";
-import cn from "classnames";
-import Logo from "../logo";
-import { Heading } from "../typography";
-import Link from "next/link";
-import { Facebook, Instagram, Linkedin, Youtube } from "@/constants/icons";
-import { useTranslations } from "next-intl";
+'use client'
+
+import Image from 'next/image'
+import Link from 'next/link'
+import { FaInstagram, FaFacebookF, FaTiktok, FaYoutube, FaLinkedinIn, FaGoogle, FaTelegramPlane } from 'react-icons/fa'
+import { HiOutlineMail } from 'react-icons/hi'
 
 export default function Footer() {
-  const t = useTranslations("Footer");
-
-  const links = [
-    { id: 1, title: t("links.benefits"), url: "#" },
-    { id: 6, title: t("links.home"), url: "#" },
-    { id: 2, title: t("links.offices"), url: "#" },
-    { id: 7, title: t("links.aboutUs"), url: "#" },
-    { id: 3, title: t("links.services"), url: "#" },
-    { id: 8, title: t("links.listings"), url: "#" },
-    { id: 4, title: t("links.testimonials"), url: "#" },
-    { id: 9, title: t("links.agents"), url: "#" },
-    { id: 5, title: t("links.newsletter"), url: "#" },
-  ];
-
-  const socials = [
-    { id: 1, icon: Instagram, title: t("socials.instagram"), url: "#" },
-    { id: 2, icon: Facebook, title: t("socials.facebook"), url: "#" },
-    { id: 3, icon: Linkedin, title: t("socials.linkedin"), url: "#" },
-    { id: 4, icon: Youtube, title: t("socials.youtube"), url: "#" },
-  ];
-
   return (
-    <footer className={cn("section", styles.section)}>
-      <div className={cn("container", styles.container)}>
-        <div className={styles.content}>
-          <Logo className="!text-white !text-3xl" />
+    <footer className="bg-[rgb(194,68,14)] text-white text-sm mt-20">
+      <div className="container py-10">
+        {/* Top Section */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+          {/* Logo and Title */}
+          <div className="flex items-start gap-6">
+            <Image src="/images/EvimIstanbul LOGO Official.PNG" alt="logo" width={100} height={100} className="min-w-[100px]" />
+            <div className="text-left mt-2">
+              <h2 className="text-xl font-semibold leading-tight">
+                From Dreams to Deeds,<br />
+                From Keys to Citizenship!
+              </h2>
+            </div>
+          </div>
 
-          <div>
-            <Heading type="heading-3" className={styles.title}>
-              {t("slogan")}
-            </Heading>
-            <a href="mailto:HEAVESHOMES@INFO.COM" className={cn("subheading-small block", styles.email)}>
-              HEAVESHOMES@INFO.COM
-            </a>
+          {/* CTA Button */}
+          <Link
+            href="#"
+            className="mt-4 md:mt-0 inline-block border border-white rounded-lg px-6 py-3 font-semibold text-white hover:bg-white hover:text-[#C2440E] transition"
+          >
+            Book A Free Consultation
+          </Link>
+        </div>
+
+        {/* Navigation Menu */}
+        <nav className="flex flex-wrap justify-center md:justify-start gap-6 mt-8 font-medium">
+          {["Properties", "Our Services", "Our Insights", "About Us", "Client Stories", "Contact Us"].map((item, idx) => (
+            <Link key={idx} href="#" className="hover:underline">
+              {item}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Divider */}
+        <div className="h-px bg-white/30 my-6" />
+
+        {/* Middle Section */}
+        <div className="flex flex-col md:flex-row justify-between gap-10 text-white/90">
+          {/* Contact Info */}
+          <div className="text-sm">
+            <p className="mb-1">Bilişim Vadisi İstanbul, 7A Office Block, Floor 2,<br />
+              Kemerburgaz Caddesi NO 7, Ayazağa Mahallesi, Istanbul, Turkey</p>
+            <p className="mt-2">+90 (534) 811 11 93</p>
+            <p>contact@evimistanbulgroup.com</p>
+          </div>
+
+          {/* Description */}
+          <div className="text-sm max-w-2xl">
+            <strong className="text-white">EvimIstanbul Group®</strong> Is An AI-Powered International Platform Offering Trusted Real Estate,
+            Investment, Legal Residency, And Lifestyle Solutions In Turkey. From Citizenship And
+            Property Services To Medical Tourism And Business Setup, We Connect You To The
+            Opportunities That Matter — Securely, Transparently, And With Expert Care.
           </div>
         </div>
 
-        <div className={styles.divider} />
-
-        <div className={styles.content}>
-          <div className={styles.business_info}>
-            <div>
-              <div className={cn("paragraph-small", styles.address)}>
-                {t("address")}
-              </div>
-              <div className={cn("paragraph-small", styles.phone)}>
-                {t("phone")}
-              </div>
-            </div>
-
-            <div className={styles.socials}>
-              {socials.map((social) => (
-                <a
-                  key={social.id}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.social}
-                  aria-label={social.title}
-                >
-                  {social.icon}
-                </a>
-              ))}
-            </div>
-
-            <div className={cn("paragraph-small", styles.copyright)}>
-              {t("copyright")}
-            </div>
+        {/* Social + Logos */}
+        <div className="mt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+          {/* Social Icons */}
+          <div className="flex gap-5 text-xl text-white">
+            <FaInstagram />
+            <FaFacebookF />
+            <FaTiktok />
+            <HiOutlineMail />
+            <FaLinkedinIn />
+            <FaGoogle />
+            <FaTelegramPlane />
           </div>
 
-          <div className={styles.links}>
-            {links.map((link) => (
-              <Link
-                key={link.id}
-                href={link.url}
-                className={cn("label-medium", styles.link)}
-              >
-                {link.title}
+          <div className="flex items-center gap-4">
+            <Image src="/images/documents/ISO 27001 Information Security.webp" alt="ISO 27001 Information Security | Evimistanbul Group" width={50} height={50} />
+            <Image src="/images/documents/Iso 15504.webp" alt="Iso 15504 | Evimistanbul Group" width={50} height={50} />
+            <Image src="/images/documents/Iso 10002.webp" alt="ISO 10002 | Evimistanbul Group" width={50} height={50} />
+            <Image src="/images/documents/Bilisim Vadisi.webp" alt="Bilisim Vadisi | Evimistanbul Group" width={70} height={50} />
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="h-px bg-white/30 my-6" />
+
+        {/* Bottom Section */}
+        <div className="flex flex-col md:flex-row justify-between items-center text-xs text-white/80 gap-3">
+          <p>© 2025 EvimIstanbul Group® | All rights reserved.</p>
+          <div className="flex gap-4">
+            {["Legal & Corporate", "Terms & Conditions", "Privacy Policy", "FAQs"].map((item, idx) => (
+              <Link key={idx} href="#" className="hover:underline">
+                {item}
               </Link>
             ))}
           </div>
         </div>
       </div>
     </footer>
-  );
+  )
 }
