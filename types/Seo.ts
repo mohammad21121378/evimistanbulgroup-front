@@ -1,18 +1,18 @@
 type OpenGraphType =
-  | "website"
-  | "article"
-  | "book"
-  | "profile"
-  | "music.song"
-  | "music.album"
-  | "music.playlist"
-  | "music.radio_station"
-  | "video.movie"
-  | "video.episode"
-  | "video.tv_show"
-  | "video.other";
+    | "website"
+    | "article"
+    | "book"
+    | "profile"
+    | "music.song"
+    | "music.album"
+    | "music.playlist"
+    | "music.radio_station"
+    | "video.movie"
+    | "video.episode"
+    | "video.tv_show"
+    | "video.other";
 
-  
+
 
 export interface PageMeta {
     meta_title: string;
@@ -24,8 +24,4 @@ export interface PageMeta {
     image: string;
     language: string;
     type: OpenGraphType;
-  }
-
-export interface PageMetaProp {
-    page: PageMeta
 }
