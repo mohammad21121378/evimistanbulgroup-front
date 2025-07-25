@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React,{ useEffect, useState } from "react";
 import styles from "./testimonials.module.css";
 import cn from "classnames";
 import Image from "next/image";
@@ -8,9 +8,10 @@ import { ArrowRight, ChevronLeft, ChevronRight } from "@/constants/icons";
 import { AnimatePresence, motion } from "framer-motion";
 import { Heading } from "@/components/typography";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import {useLocale, useTranslations} from "next-intl";
 import StarRating from "@/components/ui/StarRating";
 import TestimonialCard from "@/components/testimonial-card";
+import fetchTestimonials from "@/helpers/api/testimonials/testimonials";
 
 
 
@@ -51,8 +52,9 @@ const testimonials = [
 
 export default function Testimonials() {
   const t = useTranslations("testimonials");
-
+  const locale = useLocale();
   const [direction, setDirection] = React.useState(0);
+  const [testimonials, setTestimonials] = React.useState([]);
   const [current, setCurrent] = React.useState(0);
 
   const nextSlide = () => {
@@ -87,6 +89,20 @@ export default function Testimonials() {
   };
 
 
+  useEffect(() => {
+    const getTestimonials = async () => {
+      try {
+        const testimonials = await fetchTestimonials(4, 0,locale);
+        const testimonialsData=testimonials?.testimonial
+        setTestimonials(testimonialsData);
+      } catch (err) {
+        console.error("Failed to load testimonials:", err);
+      }
+    };
+
+    getTestimonials();
+  }, []);
+
   return (
     <section className={cn("section")}>
       <div className={cn("container")}>
@@ -97,7 +113,7 @@ export default function Testimonials() {
         </div>
 
 
-        <TestimonialCard
+        {testimonials && testimonials.length> 0 &&<TestimonialCard
           {...testimonials[current]}
           direction={direction}
           onNext={nextSlide}
@@ -105,7 +121,7 @@ export default function Testimonials() {
           showNavigation={true}
           showViewAllButton={true}
           showViewAllButtonLabel={t("viewAll")}
-        />
+        />}
 
       </div>
     </section>
