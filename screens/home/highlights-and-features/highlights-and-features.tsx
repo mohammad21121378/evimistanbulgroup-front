@@ -25,7 +25,7 @@ export default function HighlightsAndFeatures() {
             </div>
           </div>
 
-          <Button href="/properties-for-sale-in-turkey" flex size="auto">
+          <Button href="/properties-for-sale-in-turkey?feature=all" flex size="auto">
             {t("viewAll")} {ArrowRight}
           </Button>
         </div>

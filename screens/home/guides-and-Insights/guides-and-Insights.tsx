@@ -11,7 +11,7 @@ export default function GuidesAndInsights() {
     title={t("title")}
     description={t("description")}
     button={{
-      href: '/properties-for-sale-in-turkey',
+      href: '/our-insights',
       text: t("button")
     }} />
     ;

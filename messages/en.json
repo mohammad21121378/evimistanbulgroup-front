@@ -176,22 +176,26 @@
       {
         "title": "Thinking of Starting a Business in Turkey?",
         "description": "As a foreigner, you can legally establish a company in Turkey in just a few days. We handle all paperwork, tax registration, office place and business setup from A to Z.",
-        "button": "Learn how it works"
+        "button": "Learn how it works",
+        "link": "company-formation-in-turkey"
       },
       {
         "title": "Want to Study in Turkey?",
         "description": "We don’t just help you get into a university — we handle your student visa, residence permit, bank account, and housing setup so you can legally live and study in Turkey from day one.",
-        "button": "Learn how it works"
+        "button": "Learn how it works",
+        "link": "study-permit-student-residency-in-turkey"
       },
       {
         "title": "Need Medical Treatment in Turkey?",
         "description": "From advanced treatments and cosmetic procedures to check-ups and surgeries — we handle it all. You’ll get fast-track access to Turkey’s best hospitals, translation support, accommodation, and even a residence permit if needed. Travel for health, return with peace of mind.",
-        "button": "Learn how it works"
+        "button": "Learn how it works",
+        "link": "medical-tourism-in-turkey"
       },
       {
         "title": "Relocating to Turkey With Your Family?",
         "description": "We turn relocation into a smooth, guided journey — from finding your dream home to enrolling your children in school, getting your family residence permits, and settling into a safe, welcoming community. You focus on your future, we handle the rest.",
-        "button": "Learn how it works"
+        "button": "Learn how it works",
+        "link": "family-relocation-assistance-to-turkey"
       }
     ]
   },

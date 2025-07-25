@@ -35,7 +35,7 @@ export default function Newsletter() {
                   </div>
                 </div>
                 <div className={styles.wrapper}>
-                  <Link href="/about" className={cn("button", styles.button)}>
+                  <Link href={`/our-services/${item.link}`} className={cn("button", styles.button)}>
                     {item.button}
                   </Link>
                 </div>

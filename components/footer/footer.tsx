@@ -30,9 +30,9 @@ export default function Footer() {
     <footer className="bg-orange-700 text-white text-sm mt-20">
       <div className="container py-10">
 
-        <div className="flex flex-col md:flex-row md:justify-between justify-center items-start md:items-center gap-x-6 gap-y-8">
+        <div className="grid md:grid-cols-2 grid-cols-1 md:justify-between justify-center items-start md:items-center gap-x-6 gap-y-8">
 
-          <div className="flex md:justify-between justify-center md:w-auto w-full items-center gap-6">
+          <div className="flex md:justify-start justify-center md:w-auto w-full items-center gap-6">
 
             <Image src="/images/EvimIstanbul LOGO Official With Border.webp" alt="logo" width={140} height={140} className="!size-36" />
 
@@ -45,7 +45,7 @@ export default function Footer() {
 
           </div>
 
-          <Button onClick={onOpen} size='2xl' color='white' outline className='md:mx-0 mx-auto'>
+          <Button onClick={onOpen} size='full' color='white' outline className='mx-auto'>
             Book A Free Consultation
           </Button>
         </div>
@@ -77,7 +77,7 @@ export default function Footer() {
         </div>
 
         <div className="lg:mt-6 mt-8 grid grid-cols-1 lg:grid-cols-2 gap-5 gap-y-8 items-center ">
- 
+
           <SocialMedia />
 
           <div className="sm:flex grid grid-cols-2 items-center gap-4 w-full lg:justify-start justify-center">

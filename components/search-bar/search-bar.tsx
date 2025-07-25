@@ -48,7 +48,7 @@ export default function SearchBar({
               {t("label")}
             </h6>
             <select
-              className={cn("label-medium", styles.input, "!max-w-xs w-full underline underline-offset-2 cursor-pointer")}
+              className={cn("label-medium", styles.input, "!max-w-xs w-full underline underline-offset-2 bg-white cursor-pointer")}
               value={selected}
               onChange={handleSelectChange}
             >

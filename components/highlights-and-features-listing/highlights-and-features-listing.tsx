@@ -1,8 +1,10 @@
 
 import Image from "next/image";
+import Link from "../ui/Link";
 
 type HighlightsAndFeaturesListingProps = {
     item: {
+        id: string;
         image: string;
         title: string;
         bgColor: string;
@@ -12,7 +14,7 @@ type HighlightsAndFeaturesListingProps = {
 export default function HighlightsAndFeaturesListing({item}: HighlightsAndFeaturesListingProps) {
     return (
 
-        <div className="rounded-md overflow-hidden">
+        <Link href={`/properties-for-sale-in-turkey?feature=${item.id}`} className="rounded-md overflow-hidden">
             <div className="relative w-full h-52">
                 <Image
                     src={`/images/highlights/${item.image}`}
@@ -26,6 +28,6 @@ export default function HighlightsAndFeaturesListing({item}: HighlightsAndFeatur
                 {item.title}
             </div>
 
-        </div>
+        </Link>
     );
 }
