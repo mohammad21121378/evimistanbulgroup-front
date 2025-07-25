@@ -33,7 +33,7 @@ export default function Hero({current_testimonials,total}:HeroProps) {
         </section>
 
         <div className="space-y-10 my-14">
-          {testimonials.map((t:TestimonialData) => (
+          {testimonials.map((t:Testimonial) => (
             <TestimonialCard {...t} className="items-center" />
           ))}
         </div>
