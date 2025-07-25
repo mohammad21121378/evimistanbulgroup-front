@@ -23,7 +23,7 @@ export function createGeneratePropertyMetadata() {
                 property?.images[0] ||
                 "https://evimistanbulgroup.com/_next/image?url=%2Fimages%2FEvimIstanbul%20Group%20Official%20LOGO.png&w=2048&q=75",
             language: property?.language,
-            type: "place",
+            type: "website",
         };
 
         return buildMetadataFromPage(meta);
