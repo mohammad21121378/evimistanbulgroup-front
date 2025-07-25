@@ -11,6 +11,7 @@ import { useTranslations } from "next-intl";
 import { ArrowRight } from "@/constants/icons";
 import Link from "@/components/ui/Link";
 import Button from "@/components/ui/Button";
+import classNames from "classnames";
 
 export default function LatestListings() {
   const t = useTranslations("LatestListings");
@@ -30,9 +31,9 @@ export default function LatestListings() {
       <div className={cn("container")}>
         <div className={styles.content}>
           <div>
-            <Heading type="heading-3" className={styles.title}>
+          <h2 className={classNames("heading-3", styles.title)}>
               {t("heading")}
-            </Heading>
+            </h2>
             <div className={cn("paragraph-large", styles.subtitle)}>
               {t("subheading")}
             </div>

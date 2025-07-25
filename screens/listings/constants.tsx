@@ -122,6 +122,14 @@ export const propertyTypes = [
       id: 8,
       name: "8",
     },
+    {
+      id: 9,
+      name: "9",
+    },
+    {
+      id: 10,
+      name: "10",
+    },
   ];
   
   export const bathrooms = [

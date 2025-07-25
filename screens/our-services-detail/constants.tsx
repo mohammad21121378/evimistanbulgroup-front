@@ -1,3 +1,5 @@
+import { insightLinks } from "./insight-links";
+
 export const servicesData = [
   {
     slug: "turkish-citizenship-investment",
@@ -300,7 +302,11 @@ export const servicesData = [
       }
     ],
     sidebar: {
-      usefulLinks: {},
+      usefulLinks: [
+        insightLinks["Citizenship & Residency in Turkey"],
+        insightLinks["Investment & Finance in Turkey"],
+        insightLinks["Property & Real Estate in Turkey"],
+      ],
       counseling: {},
     }
   },
@@ -649,7 +655,13 @@ export const servicesData = [
       }
     ],
     sidebar: {
-      usefulLinks: {},
+      usefulLinks: [
+        insightLinks["Citizenship & Residency in Turkey"],
+        insightLinks["Investment & Finance in Turkey"],
+        insightLinks["Business & Company in Turkey"],
+        insightLinks["Education & Student Life in Turkey"],
+        insightLinks["Property & Real Estate in Turkey"],
+      ],
       counseling: {},
     }
   },
@@ -876,7 +888,10 @@ export const servicesData = [
       }
     ],
     sidebar: {
-      usefulLinks: {},
+      usefulLinks: [
+        insightLinks["Citizenship & Residency in Turkey"],
+        insightLinks["Business & Company in Turkey"],
+      ],
       counseling: {},
     }
   },
@@ -1086,7 +1101,12 @@ export const servicesData = [
       }
     ],
     sidebar: {
-      usefulLinks: {},
+      usefulLinks: [
+        insightLinks["Citizenship & Residency in Turkey"],
+        insightLinks["Property & Real Estate in Turkey"],
+        insightLinks["Cities & Neighborhoods in Turkey"],
+        insightLinks["Investment & Finance in Turkey"],
+      ],
       counseling: {},
     }
   },
@@ -1338,7 +1358,12 @@ export const servicesData = [
       }
     ],
     sidebar: {
-      usefulLinks: {},
+      usefulLinks: [
+        insightLinks["Citizenship & Residency in Turkey"],
+        insightLinks["Property & Real Estate in Turkey"],
+        insightLinks["Cities & Neighborhoods in Turkey"],
+        insightLinks["Investment & Finance in Turkey"],
+      ],
       counseling: {},
     }
   },
@@ -1751,7 +1776,10 @@ export const servicesData = [
       }
     ],
     sidebar: {
-      usefulLinks: {},
+      usefulLinks: [
+        insightLinks["Citizenship & Residency in Turkey"],
+        insightLinks["Education & Student Life in Turkey"],
+      ],
       counseling: {},
     }
   },
@@ -2030,7 +2058,12 @@ Affordable options, student rentals, and second-home escapes. Ideal for capital 
       }
     ],
     sidebar: {
-      usefulLinks: {},
+      usefulLinks: [
+        insightLinks["Citizenship & Residency in Turkey"],
+        insightLinks["Property & Real Estate in Turkey"],
+        insightLinks["Cities & Neighborhoods in Turkey"],
+        insightLinks["Investment & Finance in Turkey"],
+      ],
       counseling: {},
       search: {},
     }
@@ -2355,7 +2388,11 @@ Affordable options, student rentals, and second-home escapes. Ideal for capital 
       }
     ],
     sidebar: {
-      usefulLinks: {},
+      usefulLinks: [
+        insightLinks["Citizenship & Residency in Turkey"],
+        insightLinks["Investment & Finance in Turkey"],
+        insightLinks["Business & Company in Turkey"],
+      ],
       counseling: {},
     }
   },
@@ -2548,7 +2585,12 @@ Affordable options, student rentals, and second-home escapes. Ideal for capital 
       }
     ],
     sidebar: {
-      usefulLinks: {},
+      usefulLinks: [
+        insightLinks["Citizenship & Residency in Turkey"],
+        insightLinks["Investment & Finance in Turkey"],
+        insightLinks["Business & Company in Turkey"],
+        insightLinks["Property & Real Estate in Turkey"],
+      ],
       counseling: {},
     }
   },
@@ -2774,7 +2816,12 @@ Affordable options, student rentals, and second-home escapes. Ideal for capital 
       }
     ],
     sidebar: {
-      usefulLinks: {},
+      usefulLinks: [
+        insightLinks["Citizenship & Residency in Turkey"],
+        insightLinks["Investment & Finance in Turkey"],
+        insightLinks["Business & Company in Turkey"],
+        insightLinks["Property & Real Estate in Turkey"],
+      ],
       counseling: {},
     }
   },
@@ -3076,7 +3123,12 @@ Affordable options, student rentals, and second-home escapes. Ideal for capital 
 
     ],
     sidebar: {
-      usefulLinks: {},
+      usefulLinks: [
+        insightLinks["Citizenship & Residency in Turkey"],
+        insightLinks["Investment & Finance in Turkey"],
+        insightLinks["Business & Company in Turkey"],
+        insightLinks["Property & Real Estate in Turkey"],
+      ],
       counseling: {},
     }
   },
@@ -3308,7 +3360,12 @@ Affordable options, student rentals, and second-home escapes. Ideal for capital 
 
     ],
     sidebar: {
-      usefulLinks: {},
+      usefulLinks: [
+        insightLinks["Citizenship & Residency in Turkey"],
+        insightLinks["Investment & Finance in Turkey"],
+        insightLinks["Business & Company in Turkey"],
+        insightLinks["Property & Real Estate in Turkey"],
+      ],
       counseling: {},
     }
   },
@@ -3561,7 +3618,12 @@ Affordable options, student rentals, and second-home escapes. Ideal for capital 
 
     ],
     sidebar: {
-      usefulLinks: {},
+      usefulLinks: [
+        insightLinks["Citizenship & Residency in Turkey"],
+        insightLinks["Investment & Finance in Turkey"],
+        insightLinks["Business & Company in Turkey"],
+        insightLinks["Property & Real Estate in Turkey"],
+      ],
       counseling: {},
     }
   },
@@ -3774,7 +3836,11 @@ Affordable options, student rentals, and second-home escapes. Ideal for capital 
 
     ],
     sidebar: {
-      usefulLinks: {},
+      usefulLinks: [
+        insightLinks["Medical Tourism & Healthcare in Turkey"],
+        insightLinks["Travel Guide & Things to Do in Turkey"],
+        insightLinks["Citizenship & Residency in Turkey"],
+      ],
       counseling: {},
       medicalImg: {},
     }

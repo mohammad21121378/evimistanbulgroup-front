@@ -17,9 +17,9 @@ export default function Partners() {
     <section className={cn("section")}>
       <div className={cn("container", styles.container)}>
         <div className={styles.content}>
-          <Heading type="heading-3" className={cn("h2", styles.title)}>
+          <h2 className={cn("h2 heading-3", styles.title)}>
             {t("title")}
-          </Heading>
+          </h2>
           <p className={cn("paragraph-2x-large font-bold", styles.text)}>
             {t("subtitle")}
           </p>

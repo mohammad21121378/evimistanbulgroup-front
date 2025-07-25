@@ -14,7 +14,7 @@ export default function Section({ title, children, className, titleClassName, ch
         <div className={classNames(className, 'py-2 px-3')}>
             {
                 title ?
-                <h6 className={`text-orange-500 font-bold text-left uppercase text-xs pb-1.5`}>{title}</h6>
+                <div className={`text-orange-500 font-bold text-left uppercase text-xs pb-1.5`}>{title}</div>
                 : ''
             }
 

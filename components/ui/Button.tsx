@@ -14,7 +14,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   outline?: boolean;
   onClick?: () => void;
-  gradient?: Gradient;
+  gradient?: Gradient | false;
   flex?: boolean;
   roundedFull?: boolean;
   href?: string | false;
@@ -66,7 +66,7 @@ const Button: React.FC<ButtonProps> = ({
     gray: 'outline-gray-400 bg-gray-400 hover:bg-gray-500 text-white',
     grayCustom: 'bg-gray-100 outline outline-dashed outline-gray-400 text-gray-400 hover:bg-gray-200',
     white: 'text-white bg-transparent !outline-1 outline-white hover:text-black font-semibold hover:bg-white',
-    orange: 'outline-orange-600 bg-orange-600 hover:bg-orange-700 hover:outline-orange-700 text-white',
+    orange: 'outline-orange-600 text-orange-600 bg-transparent hover:bg-orange-600 hover:outline-orange-600 font-semibold hover:text-white',
   };
 
   const gradientColors: Record<Gradient, string> = {

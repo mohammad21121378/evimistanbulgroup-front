@@ -33,7 +33,7 @@ export default function GuidesAndInsightsView({
         <div className={styles.content}>
           
           <div className={styles.title_container}>
-            <Heading type="heading-3">{title}</Heading>
+          <h2 className="heading-3">{title}</h2>
             <div className={cn("paragraph-large", styles.subtitle)}>
               {description}
             </div>

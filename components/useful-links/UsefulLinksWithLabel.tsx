@@ -4,12 +4,12 @@ import Link from "../ui/Link";
 
 interface UsefulLinksProps {
   title?: string;
-  links: string[];
+  links: { label: string; link: string }[];
   className?: string;
   inline?: boolean;
 }
 
-export default function UsefulLinks({
+export default function UsefulLinksWithLabel({
   title = "Useful links",
   links,
   className = "",
@@ -23,10 +23,10 @@ export default function UsefulLinks({
         {links.map((item, index) => (
           <Link
             key={index}
-            href={item}
+            href={item.link}
             className="font-extralight hover:text-orange-500 pr-1.5 transition-all duration-300 text-base underline"
           >
-            {item}
+            {item.label}
           </Link>
         ))}
       </div>

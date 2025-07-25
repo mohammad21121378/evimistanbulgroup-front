@@ -31,9 +31,9 @@ export default function FeatureItem ({
           {icon}
         </div>
       )}
-      <h6 className={cn(styles.featureItem_title, 'font-semibold text-lg')}>
+      <div className={cn(styles.featureItem_title, 'font-semibold text-lg')}>
         {title}
-      </h6>
+      </div>
       <div className={cn("text-sm font-normal text-gray-500 leading-7", styles.featureItem_description)}>
         {description}
       </div>

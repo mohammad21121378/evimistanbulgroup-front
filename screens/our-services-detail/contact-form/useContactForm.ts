@@ -5,6 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { phoneValidation } from "@/utils/validation/phoneValidation";
 import { toast } from "@/utils/toast";
 import { FormData } from "./types";
+import { useConsultationStore } from "@/stores/consultationStore";
 
 const schema = yup.object().shape({
     phone: yup
@@ -16,37 +17,23 @@ const schema = yup.object().shape({
 
 
 export function useContactForm() {
-    const [languages, setLanguages] = useState<{ value: string; label: string }[]>([]);
+
+    const { onOpen, setInitialValues } = useConsultationStore();
 
     const form= useForm<FormData>({
         resolver: yupResolver(schema),
     });
 
-    useEffect(() => {
-        const fetchLanguages = async () => {
-            const response = await new Promise<{ value: string; label: string }[]>((resolve) =>
-                setTimeout(
-                    () =>
-                        resolve([
-                            { value: "english", label: "English" },
-                            { value: "spanish", label: "Spanish" },
-                            { value: "turkish", label: "Turkish" },
-                        ]),
-                    500
-                )
-            );
-            setLanguages(response);
-        };
-        fetchLanguages();
-    }, []);
-
     const onSubmit = (data: FormData) => {
-        toast('success', 'Lorem Ipsum is a fictional text with an incomprehensible simplicity produced by the.')
+        setInitialValues({
+            phone: data.phone,
+            language: data.language,
+        });
+        onOpen()
     };
     
     return {
         ...form,
-        onSubmit,
-        languages
+        onSubmit
     }
 }

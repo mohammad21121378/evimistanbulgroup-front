@@ -15,8 +15,6 @@ type Props = {
   searchParams: SearchParams;
 };
 
-
-
 export const generateMetadata = createGenerateMetadata("properties-for-sale-in-turkey");
 
 

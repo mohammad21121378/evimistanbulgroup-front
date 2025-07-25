@@ -6,8 +6,8 @@ import cn from "classnames";
 import { Heading } from "@/components/typography";
 import Image from "next/image";
 import { Checkmark } from "@/constants/icons";
-import Link from "next/link";
 import { useTranslations } from "next-intl";
+import Button from "@/components/ui/Button";
 
 export default function Benefits() {
   const t = useTranslations("Benefits");
@@ -50,7 +50,7 @@ export default function Benefits() {
             />
           </div>
           <div className={styles.content}>
-            <Heading type="heading-3">{benefit.title}</Heading>
+          <h2 className="heading-3 whitespace-pre-line">{benefit.title}</h2>
             <div className={cn("paragraph-large", styles.subtitle)}>
               {benefit.description}
             </div>
@@ -66,9 +66,9 @@ export default function Benefits() {
               ))}
             </ul>
 
-            <Link href="/about" className={cn("button", styles.button)}>
+            <Button href="/client-stories" className={cn(styles.button)}>
               {t("learnMore")}
-            </Link>
+            </Button>
           </div>
         </div>
       ))}

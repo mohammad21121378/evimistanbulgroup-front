@@ -29,7 +29,9 @@ export default function Categories() {
       <div className="container">
         <div className={styles.content}>
           <div className={styles.title_container}>
-            <Heading type="heading-3">{t("heading")}</Heading>
+
+          <h2 className="heading-3">{t("heading")}</h2>
+          
             <div className={cn("paragraph-large", styles.subtitle)}>
               {t("subtitle")}
             </div>

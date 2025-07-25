@@ -92,17 +92,18 @@ export default function PropertyListing({
 
           </div>
           <p className="text-lg font-medium text-[#1A1A1A]">
+
             {item.min_price && item.max_price ? (
               <>
-                {formatNumber(item.min_price)} MIN –– {formatNumber(item.max_price)} MAX
+                ${formatNumber(item.min_price)} MIN – ${formatNumber(item.max_price)} MAX
               </>
             ) : item.min_price ? (
               <>
-                {formatNumber(item.min_price)}
+                ${formatNumber(item.min_price)}
               </>
             ) : item.max_price ? (
               <>
-                {formatNumber(item.max_price)}
+                ${formatNumber(item.max_price)}
               </>
             ) : null}
 

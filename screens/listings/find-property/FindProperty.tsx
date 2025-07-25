@@ -3,9 +3,9 @@ import SvgForBg from "./SvgForBg";
 export default function FindProperty() {
     return (
         <div className="bg-[#002DD1] pt-20 pb-24 mt-16 space-y-6 text-white text-center relative">
-            <h6 className="heading-6 text-orange-500">
+            <div className="heading-6 text-orange-500">
                 Let Us Help.
-            </h6>
+            </div>
 
             <h5 className="heading-5">
                 Can’t Find the Right Property?

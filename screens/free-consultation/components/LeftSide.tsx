@@ -21,7 +21,7 @@ const LeftSide = ({ isOpen }: LeftSideProps) => {
 
                             <div className='px-5'>
                                 <img
-                                    src='/images/EvimIstanbul LOGO Official.PNG' className=' size-24 rounded-full shadow-lg' alt='EvimIstanbul' />
+                                    src='/images/EvimIstanbul LOGO Official.webp' className=' size-24 rounded-full shadow-lg' alt='EvimIstanbul' />
                             </div>
 
                             <hr className='bg-[#E3E4EF] my-5' />

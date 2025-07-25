@@ -115,7 +115,7 @@ export default function Testimonials() {
     <section className={cn("section")}>
       <div className={cn("container")}>
 
-        <Heading type="heading-3">{t("title")}</Heading>
+      <h2 className="heading-3">{t("title")}</h2>
         <div className={cn("paragraph-large", styles.subtitle)}>
           Real experiences from global clients who’ve invested, relocated, or started a new life in Turkey with EvimIstanbul Group.
         </div>

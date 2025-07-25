@@ -52,7 +52,7 @@ export default function Services() {
       <div className={cn("container")}>
         <div className={styles.content}>
           <div className={styles.title_container}>
-            <Heading type="heading-3">{t("title")}</Heading>
+          <h2 className="heading-3">{t("title")}</h2>
             <div className={cn("paragraph-large", styles.subtitle)}>
               {t("subtitle")}
             </div>

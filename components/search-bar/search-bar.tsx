@@ -44,9 +44,9 @@ export default function SearchBar({
         <div className={styles.input_group}>
           <div className={styles.icon}>{Ques}</div>
           <div className="relative">
-            <h6 className="text-slate-500 font-normal -mt-3 mb-1 pl-1">
+            <div className="text-slate-500 font-normal -mt-3 mb-1 pl-1">
               {t("label")}
-            </h6>
+            </div>
             <select
               className={cn("label-medium", styles.input, "!max-w-xs w-full underline underline-offset-2 bg-white cursor-pointer")}
               value={selected}

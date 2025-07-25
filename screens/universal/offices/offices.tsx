@@ -42,9 +42,12 @@ export default function Offices() {
 
   return (
     <section className={cn("section")}>
+      
       <div className={cn("container")}>
         <div className={styles.title_container}>
-          <Heading type="heading-3">{t("heading")}</Heading>
+          <h2 className="heading-3">{t("heading")}</h2>
+          
+          
           <div className={cn("paragraph-large", styles.subtitle)}>
             {t("subheading")}
           </div>

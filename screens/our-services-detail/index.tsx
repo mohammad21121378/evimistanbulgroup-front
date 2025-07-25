@@ -46,8 +46,8 @@ export default function OurServicesDetails({ data }: Props) {
 
               <ServiceSidebar
                 showConsultationBox={!!data.sidebar?.counseling}
-                showLinks={!!data.sidebar?.usefulLinks}
-                // showSearch={!!data.sidebar?.search}
+                links={data.sidebar?.usefulLinks}
+                showSearch={!!data.sidebar?.search}
                 showMedicalImg={!!data.sidebar?.medicalImg}
               />
 
