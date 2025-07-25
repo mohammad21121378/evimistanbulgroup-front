@@ -12,6 +12,7 @@ import {useLocale, useTranslations} from "next-intl";
 import StarRating from "@/components/ui/StarRating";
 import TestimonialCard from "@/components/testimonial-card";
 import fetchTestimonials from "@/helpers/api/testimonials/testimonials";
+import {TestimonialData} from "../../client-stories/types";
 
 
 
@@ -49,6 +50,13 @@ const testimonials = [
     rating: 5
   },
 ];
+
+interface TestimonialObject{
+  testimonial:TestimonialData[],
+  pagination:{
+    total:number
+  }
+}
 
 export default function Testimonials() {
   const t = useTranslations("testimonials");
@@ -92,7 +100,7 @@ export default function Testimonials() {
   useEffect(() => {
     const getTestimonials = async () => {
       try {
-        const testimonials = await fetchTestimonials(4, 0,locale);
+        const testimonials = await fetchTestimonials(4, 0,locale) as TestimonialObject[];
         const testimonialsData=testimonials?.testimonial
         setTestimonials(testimonialsData);
       } catch (err) {
