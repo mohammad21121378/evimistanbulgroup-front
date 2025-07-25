@@ -14,8 +14,6 @@ export const useContactForm = () => {
   });
 
   const onSubmit = async (data: ContactFormValues) => {
-      setLoading(true);
-
       setLoading(true)
       await addFormEntrance(data, "contact-us", setSuccessfulResult)
       setLoading(false)
