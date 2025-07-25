@@ -1,9 +1,15 @@
 import { useState } from "react";
 import { testimonials } from "../constants";
+import { TestimonialData } from "../types";
 import fetchTestimonials from "@/helpers/api/testimonials/testimonials";
 import { useLocale, useTranslations } from "next-intl";
 
-export function useTestimonials(limit = 5,testimonials,total) {
+interface  Props {
+    limit:number,
+    total:number,
+    testimonials:TestimonialData[]
+}
+export function useTestimonials(limit = 5,testimonials,total):Props {
   const locale = useLocale();
   const [visibleCount, setVisibleCount] = useState(limit);
   const [visibleTestimonials, setVisibleTestimonials] = useState(testimonials);
