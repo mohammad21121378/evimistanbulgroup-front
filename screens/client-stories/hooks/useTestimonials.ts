@@ -19,7 +19,7 @@ export function useTestimonials({limit = 5,testimonials,total}:Props) {
 
   const loadMore = async () => {
       setLoading(true);
-      const newTestimonials = await fetchTestimonials(limit, visibleCount + limit,locale);
+      const newTestimonials = await fetchTestimonials(limit, visibleCount,locale);
       setVisibleTestimonials((prev) => [...prev, ...newTestimonials.testimonial]);
       setLoading(false)
       setVisibleCount((prev) => prev + limit);
