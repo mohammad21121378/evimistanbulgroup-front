@@ -77,7 +77,7 @@ export default function Footer() {
         </div>
 
         <div className="lg:mt-6 mt-8 grid grid-cols-1 lg:grid-cols-2 gap-5 gap-y-8 items-center ">
-
+ 
           <SocialMedia />
 
           <div className="sm:flex grid grid-cols-2 items-center gap-4 w-full lg:justify-start justify-center">
