@@ -10,7 +10,7 @@ type GenerateMetadataProps = {
 export function createGenerateMetadata(baseSlug: string) {
     return async function generateMetadata({ params }: GenerateMetadataProps) {
         const { locale,slug } = params;
-        const pageSlug = slug | baseSlug
+        const pageSlug = slug || baseSlug
         const { data: page } = await fetchPageContent(pageSlug, locale);
 
         const fullSlug = slug ? `${baseSlug}/${slug}` : `${baseSlug}`;
