@@ -4,7 +4,7 @@ import { buildMetadataFromPage } from "@/lib/metadata";
 
 
 type GenerateMetadataProps = {
-    params: { locale: string };
+    params: { locale: string,slug:string | null };
 };
 
 export function createGenerateMetadata(slug: string) {
