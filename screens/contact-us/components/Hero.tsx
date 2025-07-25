@@ -1,7 +1,6 @@
 'use client';
 
 import { Breadcrumb } from '@/components/breadcrumb/Breadcrumb';
-import ContactForm from './ContactForm';
 import OfficeCard from './OfficeCard';
 import { Heading } from '@/components/typography';
 import Button from '@/components/ui/Button';
@@ -9,7 +8,7 @@ import { useConsultationStore } from '@/stores/consultationStore';
 
 export default function Hero() {
 
-  const {onOpen} = useConsultationStore() 
+  const { onOpen } = useConsultationStore()
 
   const offices = [
     {
@@ -47,7 +46,7 @@ export default function Hero() {
           <OfficeCard key={i} {...office} isReverse={i % 2 !== 0} />
         ))}
         <Button className='mt-10' onClick={onOpen} color='blue' outline size='full'>
-        Book A Free Consultation Now
+          Book A Free Consultation Now
         </Button>
       </section>
 
