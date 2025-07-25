@@ -3,7 +3,7 @@ interface TestimonialMedia {
     alt:string,
 }
 
-export interface Testimonial {
+interface TestimonialData {
     id: number;
     author: string;
     reviewBody: string;
@@ -11,5 +11,9 @@ export interface Testimonial {
     datePublished: string;
     media: TestimonialMedia[];
     rating: number;
+}
+
+export interface Testimonial {
+    testimonials: TestimonialData[];
   }
   
