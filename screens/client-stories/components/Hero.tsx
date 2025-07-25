@@ -11,7 +11,7 @@ interface HeroProps {
   total: number;
 }
 export default function Hero({current_testimonials,total}:HeroProps) {
-  const { testimonials, hasMore, loadMore, loading } = useTestimonials(4,current_testimonials,total);
+  const { testimonials, hasMore, loadMore, loading } = useTestimonials({limit:4, testimonials:current_testimonials, total});
 
   return (
     <>
