@@ -1,9 +1,9 @@
 import Layout from "@/components/Layout";
 import Hero from "./components/Hero";
-import {Testimonial} from "./types";
+import {TestimonialData} from "./types";
 
 interface ClientStoriesProps {
-    testimonials: Testimonial[];
+    testimonials: TestimonialData[];
     total: number;
 }
 export default function ClientStories({testimonials,total}:ClientStoriesProps) {
