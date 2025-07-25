@@ -37,7 +37,7 @@ interface ContactFormProps {
                     height={inputHeight}
                         setValueHookForm={setValue}
                         watchHookForm={watch}
-                        errors={errors}
+                        errors={errors} 
                         name="phone"
                     />
                     <ErrorInput error={errors.phone?.message} />
