@@ -7,6 +7,12 @@ type Props = {
   params: { slug: string };
 };
 
+import {createGenerateMetadata} from "@/hooks/createGeneratePagesMetadata"
+
+
+export const generateMetadata = createGenerateMetadata("our-services");
+
+
 export function generateStaticParams() {
   return servicesData.map(service => ({ slug: service.slug }));
 }

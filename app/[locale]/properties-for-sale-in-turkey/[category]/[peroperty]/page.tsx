@@ -2,11 +2,15 @@ import { Peroperty } from "@/constants/mock";
 import PropertyDetailPage from "@/screens/property-detail";
 import fetchProperty from "@/helpers/api/property/property";
 import { notFound } from "next/navigation";
+import {createGeneratePropertyMetadata} from "@/hooks/createGeneratePropertyMetadata"
 
 
 type Props = {
   params: { peroperty: string,locale: string };
 };
+
+export const generateMetadata = createGeneratePropertyMetadata();
+
 
 export default async function Page({ params }: Props) {
   const { peroperty,locale } = params;

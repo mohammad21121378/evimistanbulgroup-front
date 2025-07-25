@@ -18,7 +18,7 @@ export function buildMetadataFromPage(page: PageMeta): Metadata {
           url: page.image,
           width: 512,
           height: 512,
-          alt: "Evim Istanbul group",
+          alt: page.meta_title,
           type: "image/jpeg",
         },
       ],
@@ -27,6 +27,9 @@ export function buildMetadataFromPage(page: PageMeta): Metadata {
       card: "summary_large_image",
       title: page.meta_title,
       description: page.meta_description,
+    },
+    alternates: {
+      canonical: page.url,
     },
   };
 }
