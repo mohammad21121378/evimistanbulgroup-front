@@ -4,7 +4,7 @@ import Hero from "./components/Hero";
 export default function ClientStories({testimonials,total}) {
     return (
         <Layout>
-            <Hero testimonials={testimonials} total={total}/>
+            <Hero current_testimonials={testimonials} total={total}/>
         </Layout>
     )
 }
