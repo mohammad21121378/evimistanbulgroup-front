@@ -20,6 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a444990-2b63-46d6-b210-f54ec3aa7b85" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/[locale]/properties-for-sale-in-turkey/[category]/[peroperty]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/properties-for-sale-in-turkey/[category]/[peroperty]/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hooks/createGeneratePagesMetadata.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/createGeneratePagesMetadata.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,18 +50,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Avalcard/AvalCard-UI/src/app/(main)/about-us/page.jsx" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/hooks" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="K:\web\projects\react_project\evim\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="K:\web\projects\react_project\evim\hooks" />
       <recent name="K:\web\projects\react_project\evim\components\testimonial-card" />
       <recent name="K:\web\projects\react_project\evim\helpers\api\testimonials" />
       <recent name="K:\web\projects\react_project\evim\helpers\api\property" />
       <recent name="K:\web\projects\react_project\evim\helpers" />
-      <recent name="K:\web\projects\react_project\evim" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -78,7 +80,7 @@
       <workItem from="1753201814233" duration="13132000" />
       <workItem from="1753263212323" duration="2644000" />
       <workItem from="1753365613906" duration="4980000" />
-      <workItem from="1753438746493" duration="13057000" />
+      <workItem from="1753438746493" duration="13631000" />
     </task>
     <servers />
   </component>

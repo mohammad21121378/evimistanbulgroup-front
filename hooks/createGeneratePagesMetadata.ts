@@ -20,12 +20,12 @@ export function createGenerateMetadata(baseSlug: string) {
             meta_description: page?.meta_description || "",
             meta_follow: page?.meta_follow || "follow",
             meta_index: page?.meta_index || "index",
-            url: page?.url || `https://evimistanbulgroup.com/${locale}/${fullSlug}`,
+            url: `https://evimistanbulgroup.com/${locale}/${fullSlug}`,
             updated_at: page?.updated_at || new Date().toISOString(),
             image:
                 page?.image ||
                 "https://evimistanbulgroup.com/_next/image?url=%2Fimages%2FEvimIstanbul%20Group%20Official%20LOGO.png&w=2048&q=75",
-            language: page?.language || (locale === "tr" ? "tr_TR" : "en_US"),
+            language: page?.language ,
             type: "website",
         };
 
