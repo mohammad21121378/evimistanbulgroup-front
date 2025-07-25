@@ -12,7 +12,7 @@ type Props = {
 type GenerateMetadataProps = {
   params: { locale: string,slug:string | null };
 };
-return async function generateMetadata({ params }: GenerateMetadataProps) {
+export async function generateMetadata({ params }: GenerateMetadataProps) {
   const { locale,slug } = params;
   const { data: page } = await fetchPageContent(slug, locale);
   if(page){
