@@ -30,21 +30,21 @@ type TestimonialsProps = {
 };
 
 export default function TestimonialCard({
-  showNavigation = false,
-  showViewAllButton = false,
-  viewAllHref = "/about",
-  direction = 0,
-  showViewAllButtonLabel = "View All",
-  onNext,
-  onPrev,
-  className,
-  id,
-  image,
-  name,
-  span,
-  text,
-  rating,
-}: TestimonialsProps) {
+                                          showNavigation = false,
+                                          showViewAllButton = false,
+                                          viewAllHref = "/about",
+                                          direction = 0,
+                                          showViewAllButtonLabel = "View All",
+                                          onNext,
+                                          onPrev,
+                                          className,
+                                          id,
+                                          image,
+                                          name,
+                                          span,
+                                          text,
+                                          rating,
+                                        }: TestimonialsProps) {
   const variants = {
     enter: (direction: number) => ({
       opacity: 0,
@@ -66,84 +66,84 @@ export default function TestimonialCard({
   };
 
   return (
-    <div className={`${styles.testimonial} ${className}`}>
-      <AnimatePresence mode="wait" custom={direction}>
-        <motion.div
-          key={id}
-          variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          custom={direction}
-          className={styles.testimonial_image}
-        >
-          <Image
-            src={image}
-            alt={name}
-            layout="fill"
-            objectFit="cover"
-          />
-        </motion.div>
-      </AnimatePresence>
+      <div className={`${styles.testimonial} ${className}`}>
+        <AnimatePresence mode="wait" custom={direction}>
+          <motion.div
+              key={id}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              custom={direction}
+              className={styles.testimonial_image}
+          >
+            <Image
+                src={image}
+                alt={name}
+                layout="fill"
+                objectFit="cover"
+            />
+          </motion.div>
+        </AnimatePresence>
 
-      <AnimatePresence mode="wait" custom={direction}>
-        <motion.div
-          key={"text-" + id}
-          variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          custom={direction}
-          className={styles.testimonial_info}
-        >
-          <div>
-            <div className={cn("heading-6 italic", styles.text)}>
-              {text}
-            </div>
+        <AnimatePresence mode="wait" custom={direction}>
+          <motion.div
+              key={"text-" + id}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              custom={direction}
+              className={styles.testimonial_info}
+          >
+            <div>
+              <div className={cn("heading-6 italic", styles.text)} dangerouslySetInnerHTML={{__html:text}}>
 
-            <div className={cn("paragraph-medium", styles.testimonial_name)}>
-              –– {name}
-            </div>
-
-            {rating && (
-              <div className="mt-6">
-                <StarRating rating={rating} />
               </div>
-            )}
-          </div>
 
-          {(showNavigation || showViewAllButton) && (
-            <div className="flex justify-between items-center mt-6">
-              
-              {showNavigation && (
-                <div className={styles.btns}>
-                  <button
-                    className={cn("button-stroke-small", styles.btn)}
-                    onClick={onPrev}
-                    aria-label="Previous testimonial"
-                  >
-                    {ChevronLeft}
-                  </button>
+              <div className={cn("paragraph-medium", styles.testimonial_name)}>
+                –– {name},{span}
+              </div>
 
-                  <button
-                    className={cn("button-stroke-small", styles.btn)}
-                    onClick={onNext}
-                    aria-label="Next testimonial"
-                  >
-                    {ChevronRight}
-                  </button>
-                </div>
-              )}
-
-              {showViewAllButton && (
-                <Button href={viewAllHref} flex size="auto">
-                  {showViewAllButtonLabel} {ArrowRight}
-                </Button>
+              {rating && (
+                  <div className="mt-6">
+                    <StarRating rating={rating} />
+                  </div>
               )}
             </div>
-          )}
-        </motion.div>
-      </AnimatePresence>
-    </div>
+
+            {(showNavigation || showViewAllButton) && (
+                <div className="flex justify-between items-center mt-6">
+
+                  {showNavigation && (
+                      <div className={styles.btns}>
+                        <button
+                            className={cn("button-stroke-small", styles.btn)}
+                            onClick={onPrev}
+                            aria-label="Previous testimonial"
+                        >
+                          {ChevronLeft}
+                        </button>
+
+                        <button
+                            className={cn("button-stroke-small", styles.btn)}
+                            onClick={onNext}
+                            aria-label="Next testimonial"
+                        >
+                          {ChevronRight}
+                        </button>
+                      </div>
+                  )}
+
+                  {showViewAllButton && (
+                      <Button href={viewAllHref} flex size="auto">
+                        {showViewAllButtonLabel} {ArrowRight}
+                      </Button>
+                  )}
+                </div>
+            )}
+          </motion.div>
+        </AnimatePresence>
+      </div>
   );
 }
