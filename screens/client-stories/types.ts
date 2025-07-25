@@ -1,8 +1,15 @@
+interface TestimonialMedia {
+    url:string,
+    alt:string,
+}
+
 export interface Testimonial {
     id: number;
-    name: string;
-    image: string;
-    text: string;
-    stars: number;
+    author: string;
+    reviewBody: string;
+    job: string;
+    datePublished: string;
+    media: TestimonialMedia[];
+    rating: number;
   }
   

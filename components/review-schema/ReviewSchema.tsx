@@ -1,8 +1,9 @@
 'use client'
 
 import { reviews } from "@/constants/mock"
+import {Testimonial} from "../../screens/client-stories/types";
 
-export default function ReviewSchema({testimonials}) {
+export default function ReviewSchema({testimonials}:Testimonial) {
   const averageRating =
       testimonials.reduce((sum, review) => sum + review.rating, 0) /
       testimonials.length

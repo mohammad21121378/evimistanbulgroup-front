@@ -1,7 +1,12 @@
 import Layout from "@/components/Layout";
 import Hero from "./components/Hero";
+import {Testimonial} from "./types";
 
-export default function ClientStories({testimonials,total}) {
+interface ClientStoriesProps {
+    testimonials: Testimonial[];
+    total: number;
+}
+export default function ClientStories({testimonials,total}:ClientStoriesProps) {
     return (
         <Layout>
             <Hero current_testimonials={testimonials} total={total}/>

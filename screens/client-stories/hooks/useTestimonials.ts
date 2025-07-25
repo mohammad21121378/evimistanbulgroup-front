@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Testimonial } from "../types";
 import { testimonials } from "../constants";
 import fetchTestimonials from "@/helpers/api/testimonials/testimonials";
 import { useLocale, useTranslations } from "next-intl";

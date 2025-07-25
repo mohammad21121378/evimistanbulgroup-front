@@ -3,8 +3,14 @@ import TestimonialCard from "@/components/testimonial-card";
 import { useTestimonials } from "../hooks/useTestimonials";
 import Button from "@/components/ui/Button";
 import SectionTopWithColor from "@/components/section-top-with-color";
+import {Testimonial} from "../types";
 
-export default function Hero({current_testimonials,total}) {
+
+interface HeroProps {
+  current_testimonials: Testimonial[];
+  total: number;
+}
+export default function Hero({current_testimonials,total}:HeroProps) {
   const { testimonials, hasMore, loadMore, loading } = useTestimonials(4,current_testimonials,total);
 
   return (
