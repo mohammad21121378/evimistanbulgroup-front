@@ -29,6 +29,7 @@ type TestimonialsProps = {
   rating?: number;
 };
 
+
 export default function TestimonialCard({
                                           showNavigation = false,
                                           showViewAllButton = false,
