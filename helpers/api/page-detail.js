@@ -1,9 +1,9 @@
 import APIRequest from "./api";
 
-export async function fetchPageContent(slug) {
+export async function fetchPageContent(slug,language="en") {
     let category = null;
     try {
-        const response = await APIRequest.post('page-content' , {slug:slug});
+        const response = await APIRequest.post('page-content' , {slug:slug,language:language});
          category = await response.data;
 
     } catch (error) {
