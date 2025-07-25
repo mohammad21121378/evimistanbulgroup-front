@@ -3,7 +3,10 @@ import ClientStories from "@/screens/client-stories";
 import Head from "next/head";
 import fetchTestimonials from "@/helpers/api/testimonials/testimonials";
 
-export default async function Page({params}) {
+type Props = {
+    params: { locale: string };
+};
+export default async function Page({params}: Props) {
     const { locale } = params;
     const testimonials = await fetchTestimonials(4, 0,locale);
 
