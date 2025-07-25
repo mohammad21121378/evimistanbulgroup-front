@@ -13,7 +13,7 @@ export const useContactForm = () => {
     resolver: yupResolver(contactSchema),
   });
 
-  const onSubmit = (data: ContactFormValues) => {
+  const onSubmit = async (data: ContactFormValues) => {
       setLoading(true);
 
       setLoading(true)
