@@ -72,7 +72,7 @@ export function useFilter({ onFilterByChange = false, listings, typeShowPage }: 
     if (!loading) setLoading(true);
     
 
-    const listingsData = await fetchProperties(typeShowPage === 'map' ? -1 : 3, filters.currentPage, {
+    const listingsData = await fetchProperties(typeShowPage === 'map' ? -1 : 12, filters.currentPage, {
       priceRange: filters.priceRange,
       locationsSelected: filters.locationsSelected,
       propertyTypesSelected: filters.propertyTypesSelected,

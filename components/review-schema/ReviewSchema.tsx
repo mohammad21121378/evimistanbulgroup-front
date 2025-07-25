@@ -2,15 +2,15 @@
 
 import { reviews } from "@/constants/mock"
 
-export default function ReviewSchema() {
+export default function ReviewSchema({testimonials}) {
   const averageRating =
-    reviews.reduce((sum, review) => sum + review.rating, 0) /
-    reviews.length
+      testimonials.reduce((sum, review) => sum + review.rating, 0) /
+      testimonials.length
 
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: 'نام محصول یا مقاله',
+    '@type': 'Service',
+    name: 'Evim istanbul group',
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: averageRating.toFixed(1),

@@ -4,8 +4,8 @@ import { useTestimonials } from "../hooks/useTestimonials";
 import Button from "@/components/ui/Button";
 import SectionTopWithColor from "@/components/section-top-with-color";
 
-export default function Hero() {
-  const { testimonials, hasMore, loadMore, loading } = useTestimonials(2);
+export default function Hero({testimonials,total}) {
+  const { testimonials, hasMore, loadMore, loading } = useTestimonials(4,testimonials,total);
 
   return (
     <>

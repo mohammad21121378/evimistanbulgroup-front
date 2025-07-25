@@ -30,7 +30,7 @@ export default async function Listings({ params, searchParams }: Props) {
     filters.locationsSelected = [searchParams.location];
   }
 
-  const listings = await fetchProperties(3, page, filters,locale) as ListingsType;
+  const listings = await fetchProperties(12, page, filters,locale) as ListingsType;
 
   return <ListingsPage listings={listings} />;
 }

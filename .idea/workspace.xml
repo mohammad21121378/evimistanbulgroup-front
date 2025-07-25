@@ -21,7 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8a444990-2b63-46d6-b210-f54ec3aa7b85" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/contact-us/hooks/useContactForm.ts" beforeDir="false" afterPath="$PROJECT_DIR$/screens/contact-us/hooks/useContactForm.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/[locale]/client-stories/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/client-stories/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/[locale]/properties-for-sale-in-turkey/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/properties-for-sale-in-turkey/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/review-schema/ReviewSchema.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/review-schema/ReviewSchema.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/client-stories/components/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/client-stories/components/Hero.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/client-stories/hooks/useTestimonials.ts" beforeDir="false" afterPath="$PROJECT_DIR$/screens/client-stories/hooks/useTestimonials.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/client-stories/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/client-stories/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/listings/hooks/useFilter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/screens/listings/hooks/useFilter.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,13 +55,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../faculty" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/helpers/api/testimonials" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="K:\web\projects\react_project\evim\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="K:\web\projects\react_project\evim\helpers\api\testimonials" />
       <recent name="K:\web\projects\react_project\evim\helpers\api\property" />
       <recent name="K:\web\projects\react_project\evim\helpers" />
       <recent name="K:\web\projects\react_project\evim" />
@@ -77,7 +84,7 @@
       <workItem from="1753201814233" duration="13132000" />
       <workItem from="1753263212323" duration="2644000" />
       <workItem from="1753365613906" duration="4980000" />
-      <workItem from="1753438746493" duration="105000" />
+      <workItem from="1753438746493" duration="2380000" />
     </task>
     <servers />
   </component>
@@ -101,9 +108,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="581" y="96" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1753387434060" />
-    <state x="479" y="0" width="962" height="1040" key="find.popup" timestamp="1753369927311">
+    <state x="479" y="0" width="962" height="1040" key="find.popup" timestamp="1753441046667">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="479" y="0" width="962" height="1040" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1753369927311" />
+    <state x="479" y="0" width="962" height="1040" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1753441046667" />
   </component>
 </project>

@@ -1,14 +1,19 @@
 import ReviewSchema from "@/components/review-schema/ReviewSchema";
 import ClientStories from "@/screens/client-stories";
 import Head from "next/head";
+import fetchTestimonials from "@/helpers/api/testimonials/testimonials";
 
-export default function Page() {
-  return (
+export default async function Page({params}) {
+    const { locale } = params;
+    const testimonials = await fetchTestimonials(4, 0,locale);
+
+
+    return (
     <>
       <Head>
-        <ReviewSchema />
+        <ReviewSchema testimonials={testimonials?.testimonial} />
       </Head>
-      <ClientStories />
+      <ClientStories total={testimonials?.pagination?.total} testimonials={testimonials?.testimonial} />
     </>)
 }
 
