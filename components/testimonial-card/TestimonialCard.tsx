@@ -32,7 +32,7 @@ type TestimonialsProps = {
 export default function TestimonialCard({
                                           showNavigation = false,
                                           showViewAllButton = false,
-                                          viewAllHref = "/about",
+                                          viewAllHref = "/client-stories",
                                           direction = 0,
                                           showViewAllButtonLabel = "View All",
                                           onNext,
