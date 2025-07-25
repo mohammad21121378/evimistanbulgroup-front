@@ -9,14 +9,15 @@ type Props = {
 export default async function Page({params}: Props) {
     const { locale } = params;
     const testimonials = await fetchTestimonials(4, 0,locale);
-
+    const testimonialsData=testimonials?.testimonial
+    const total=testimonials?.pagination?.total
 
     return (
     <>
       <Head>
-        <ReviewSchema testimonials={testimonials?.testimonial} />
+        <ReviewSchema testimonials={testimonialsData} />
       </Head>
-      <ClientStories total={testimonials?.pagination?.total} testimonials={testimonials?.testimonial} />
+      <ClientStories total={total} testimonials={testimonialsData} />
     </>)
 }
 
