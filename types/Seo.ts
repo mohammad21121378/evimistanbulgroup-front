@@ -3,6 +3,7 @@ type OpenGraphType =
   | "article"
   | "book"
   | "profile"
+  | "place"
   | "music.song"
   | "music.album"
   | "music.playlist"
