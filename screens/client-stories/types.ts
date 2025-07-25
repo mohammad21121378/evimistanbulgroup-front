@@ -5,9 +5,9 @@ interface TestimonialMedia {
 
 export interface TestimonialData {
     id: number;
-    author: string;
-    reviewBody: string;
-    job: string;
+    name: string;
+    text: string;
+    span: string;
     datePublished: string;
     media: TestimonialMedia[];
     rating: number;
