@@ -3,7 +3,7 @@ import TestimonialCard from "@/components/testimonial-card";
 import { useTestimonials } from "../hooks/useTestimonials";
 import Button from "@/components/ui/Button";
 import SectionTopWithColor from "@/components/section-top-with-color";
-import {Testimonial} from "../types";
+import {Testimonial, TestimonialData} from "../types";
 
 
 interface HeroProps {
@@ -33,7 +33,7 @@ export default function Hero({current_testimonials,total}:HeroProps) {
         </section>
 
         <div className="space-y-10 my-14">
-          {testimonials.map((t) => (
+          {testimonials.map((t:TestimonialData) => (
             <TestimonialCard {...t} className="items-center" />
           ))}
         </div>

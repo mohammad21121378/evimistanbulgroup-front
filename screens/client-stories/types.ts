@@ -3,7 +3,7 @@ interface TestimonialMedia {
     alt:string,
 }
 
-interface TestimonialData {
+export interface TestimonialData {
     id: number;
     author: string;
     reviewBody: string;
