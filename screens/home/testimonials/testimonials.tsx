@@ -61,9 +61,9 @@ interface TestimonialObject{
 export default function Testimonials() {
   const t = useTranslations("testimonials");
   const locale = useLocale();
-  const [direction, setDirection] = React.useState(0);
-  const [testimonials, setTestimonials] = React.useState([]);
-  const [current, setCurrent] = React.useState(0);
+  const [direction, setDirection] = useState(0);
+  const [testimonials, setTestimonials] = useState<TestimonialData[]>([]);
+  const [current, setCurrent] = useState(0);
 
   const nextSlide = () => {
     setDirection(1);
