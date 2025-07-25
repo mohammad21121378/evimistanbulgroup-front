@@ -16,6 +16,7 @@ interface PhoneInputProps<T extends Record<string, any>> {
     disabled?: boolean;
     bgDark?: boolean;
     height?: string;
+    inputClass?: string;
 }
 
 const PhoneInput = <T extends Record<string, any>>({
@@ -27,7 +28,8 @@ const PhoneInput = <T extends Record<string, any>>({
     placeholder = 'Enter phone number',
     disabled = false,
     bgDark = false,
-    height = "!h-12"
+    height = "!h-12",
+    inputClass
 }: PhoneInputProps<T>) => {
 
     const [isFocused, setIsFocused] = useState(false);
@@ -70,7 +72,8 @@ const PhoneInput = <T extends Record<string, any>>({
                     bgDark ? "!bg-slate-200 hover:!bg-slate-200" : "!bg-white hover:!bg-white"
                 )}
                 inputClass={cn(
-                    "!w-full !text-sm !rounded-2xl focus:!outline-none",
+                    inputClass,
+                    "!w-full !rounded-2xl focus:!outline-none",
                     height,
                     bgDark ? "!bg-slate-100 !text-gray-600" : "!bg-white !text-gray-600",
                     "md:!pl-16 !pl-20"

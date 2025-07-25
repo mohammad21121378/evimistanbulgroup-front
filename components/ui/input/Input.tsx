@@ -57,7 +57,7 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElem
       children,
       required = false,
       onChange,
-      textAreaClasses = false,
+      textAreaClasses = isTextarea,
       placeholderInInput = true,
       bgDark = false,
       showError = true,

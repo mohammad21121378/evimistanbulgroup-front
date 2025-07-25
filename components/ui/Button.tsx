@@ -41,7 +41,7 @@ const Button: React.FC<ButtonProps> = ({
     sm: 'h-[2rem] w-[8rem] text-[.875rem]',
     md: 'h-14 w-[9.5rem] text-[1rem]',
     lg: 'h-14 w-56 text-[1rem]',
-    xl: 'h-[3.6rem] w-full max-w-[18.125rem] text-[1rem]',
+    xl: 'h-14 w-full max-w-[18.125rem] text-[1rem]',
     '2xl': 'h-14 w-full max-w-[23.125rem] text-[1rem]',
     full: 'w-full h-14 min-h-14 text-[1rem]',
     auto: 'h-14 !w-auto px-5',
@@ -59,7 +59,7 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   const outlineColors: Record<Color, string> = {
-    blue: 'outline-blue-600 hover:bg-blue-600 hover:text-white text-blue-600',
+    blue: 'outline-blue-700 hover:bg-blue-700 hover:text-white text-blue-700 font-bold',
     red: 'outline-red-600 bg-red-600 hover:bg-red-700 text-white',
     green: 'outline-green-600 bg-green-600 hover:bg-green-700 text-white',
     light: 'text-blue-500 bg-transportant !outline-0',

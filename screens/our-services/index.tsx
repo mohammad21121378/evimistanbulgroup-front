@@ -4,7 +4,7 @@ import Services from "./services";
 import ServiceLayout from "@/components/our-services/ServiceLayout";
 import ServiceSidebar from "@/components/our-services/service-sidebar";
 import WhyUs from "./why-us/WhyUs";
-import OfferServices from "./offer-services";
+import OfferServices from "@/components/offer-services";
 
 export default function OurServices() {
   return (

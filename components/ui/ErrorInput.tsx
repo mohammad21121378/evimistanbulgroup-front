@@ -11,7 +11,7 @@ export default function ErrorInput({ error }: Props) {
         <AnimatePresence>
             {error && typeof error === 'string' ? (
                 <motion.div
-                    className="text-red-500 flex items-center flex-nowrap gap-1 text-xs mt-0.5 truncate whitespace-nowrap"
+                    className="text-red-500 flex items-center flex-nowrap gap-1 text-xs mt-1 truncate whitespace-nowrap"
                     title={error}
                     initial={{ x: -50, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}

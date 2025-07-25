@@ -1,5 +1,6 @@
 .card:nth-child(odd) {
     border-right: 1px solid #E2E8F0;
+    padding-right: 25px;
 }
 
 .title {
@@ -49,6 +50,7 @@
     }
     .card:nth-child(odd) {
         border-right: none;
+        padding-right: 0;
     }
 }
 
