@@ -7,7 +7,7 @@ import {Testimonial, TestimonialData} from "../types";
 
 
 interface HeroProps {
-  current_testimonials: Testimonial[];
+  current_testimonials: TestimonialData[];
   total: number;
 }
 export default function Hero({current_testimonials,total}:HeroProps) {
@@ -33,7 +33,7 @@ export default function Hero({current_testimonials,total}:HeroProps) {
         </section>
 
         <div className="space-y-10 my-14">
-          {testimonials.map((t:Testimonial) => (
+          {testimonials.map((t:TestimonialData) => (
             <TestimonialCard {...t} className="items-center" />
           ))}
         </div>
