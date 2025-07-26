@@ -13,7 +13,7 @@ type GuidesAndInsightsListingProps = {
     slug: string;
     timeToRead: number;
     title: string;
-    excerpt: string;
+    excerpt: string | null;
     created_at: string;
     media: {
         alt:string,
