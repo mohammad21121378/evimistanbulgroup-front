@@ -65,9 +65,9 @@ export default function Content() {
                     </p>
 
 <div className="grid sm:grid-cols-3 grid-cols-1 lg:px-10 lg:gap-10 px-5 gap-5 mt-12">
-    <img src="/images/documents/spice-certificate.webp" alt="ISO/IEC 27001:2022" className="h-full object-cover rounded-xl shadow" />
-    <img src="/images/documents/iso27001-certificate.webp" alt="TS ISO/IEC 15504 SPICE" className="h-full object-cover rounded-xl shadow" />
-    <img src="/images/documents/iso10002-certificate.webp" alt="TS ISO 10002:2018" className="h-full object-cover rounded-xl shadow" />
+    <img src="/images/documents/spice-certificate.webp" alt="TS ISO/IEC 15504 SPICE | Evimistanbul Group" className="h-full object-cover rounded-xl shadow" />
+    <img src="/images/documents/iso27001-certificate.webp" alt="ISO/IEC 27001:2022 | Evimistanbul Group" className="h-full object-cover rounded-xl shadow" />
+    <img src="/images/documents/iso10002-certificate.webp" alt="TS ISO 10002:2018 | Evimistanbul Group" className="h-full object-cover rounded-xl shadow" />
 </div>
                 </SectionCard>
 
