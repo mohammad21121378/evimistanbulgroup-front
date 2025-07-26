@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import {Article} from "../../../../types/Article";
+import {useLocale} from "next-intl";
+import { fetchRecentArticles } from "@/helpers/api/recent-articles";
+import { fetchCategoryDetail } from "@/helpers/api/category-detail";
 
 interface UsePaginationOptions<T> {
     limit: number;
@@ -20,9 +23,10 @@ export function useInsightPagination<T>({
 
     const router = useRouter();
     const searchParams = useSearchParams();
-
+    const locale = useLocale();
     const currentPageFromUrl = parseInt(searchParams.get("page") || "1", 10);
     const [currentPage, setCurrentPage] = useState(currentPageFromUrl);
+    const [articles, setArticles] = useState(initialData);
     const [loadedPage, setLoadedPage] = useState(false);
 
     useEffect(() => {
@@ -55,15 +59,28 @@ export function useInsightPagination<T>({
 
     }, [currentPage]);
 
-    const totalPages = total_page || Math.ceil(initialData.length / limit);
+    const totalPages = total_page || Math.ceil(articles.length / limit);
 
-    const paginatedItems = initialData.slice(
+   /* const paginatedItems = articles.slice(
         (currentPage - 1) * limit,
         currentPage * limit
-    );
+    );*/
 
-    const goToPage = (page: number) => {
+    const paginatedItems = articles;
+
+    const goToPage = async (page: number) => {
         setCurrentPage(page);
+        if(category){
+            const { data: categoryData } = await fetchCategoryDetail(category,limit,page, locale);
+
+            if(categoryData.articles) setArticles(categoryData.articles);
+        } else{
+            const articlesData = await fetchRecentArticles(limit,page, locale);
+            if(articlesData.articles) setArticles(articlesData.articles);
+        }
+
+
+
         document.title = `${document.title.split(' - ')[0]} - ${page}`;
     };
 
