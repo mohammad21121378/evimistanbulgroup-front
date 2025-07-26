@@ -79,7 +79,7 @@ export default function InsightDetails({articleData}: InsightDetailsProps) {
               resourceRef={resourceRef}
             />
 
-            <ArticleRightSidebar />
+            <ArticleRightSidebar article={article} />
 
           </div>
         </div>
