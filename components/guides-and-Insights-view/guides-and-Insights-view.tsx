@@ -39,16 +39,19 @@ export default function GuidesAndInsightsView({
 
 
   useEffect(() => {
-    const getArticles = async () => {
-      try {
-        const result = await fetchRecentArticles(3, 1, locale) as ArticleResponse;
-        setArticles(result.articles);
-      } catch (error) {
-        console.error("", error);
-      }
-    };
+    if(!initArticles){
+      const getArticles = async () => {
+        try {
+          const result = await fetchRecentArticles(3, 1, locale) as ArticleResponse;
+          setArticles(result.articles);
+        } catch (error) {
+          console.error("", error);
+        }
+      };
 
-    getArticles();
+      getArticles();
+    }
+
   }, [locale]);
   return (
     <section className={cn("section")}>
