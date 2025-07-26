@@ -11,6 +11,7 @@ type Props = {
 
 
 export const generateMetadata = createGenerateMetadata("our-services");
+export const dynamic = 'force-dynamic';
 
 
 export function generateStaticParams() {

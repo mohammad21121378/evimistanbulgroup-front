@@ -9,8 +9,8 @@ type Props = {
 
 // import {createGenerateMetadata} from "@/hooks/createGeneratePagesMetadata"
 
-
- export const generateMetadata = createGenerateMetadata("faqs");
+export const dynamic = 'force-dynamic';
+export const generateMetadata = createGenerateMetadata("faqs");
 
 
 export function generateStaticParams() {
