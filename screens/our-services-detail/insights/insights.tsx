@@ -46,7 +46,7 @@ export default function Insights() {
         </div>
 
         <div className="grid sm:grid-cols-2 grid-cols-1 md:grid-cols-3 gap-4 mt-14">
-          {articles?.map((item, index) => (
+          {articles.length > 0 && articles?.map((item, index) => (
             <GuidesAndInsightsIisting key={index} {...item} />
           ))}
         </div>
