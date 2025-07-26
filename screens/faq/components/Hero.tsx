@@ -16,7 +16,7 @@ export default function Hero() {
     <>
       <SectionTopWithColor
         bg="bg-[#002DD1]"
-        breadcrumb={[{ label: 'Frequently Asked Questions (FAQs)' }]}
+        breadcrumb={[{ label: 'Frequently Asked Questions' }]}
         title="Frequently Asked Questions (FAQs)" />
 
 

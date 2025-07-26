@@ -21,7 +21,7 @@ export default function FaqDetails({ data }: Props) {
         data.title &&
         <SectionTopWithColor
           bg="bg-[#002DD1]"
-          breadcrumb={[{ label: 'Frequently Asked Questions (FAQs)', href: '/faqs' }, { label: data.title }]}
+          breadcrumb={[{ label: 'Frequently Asked Questions', href: '/faqs' }, { label: data.title }]}
           title={`${data.title} | FAQs`} />
       }
 
