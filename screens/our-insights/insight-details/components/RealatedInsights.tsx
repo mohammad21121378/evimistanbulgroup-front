@@ -6,7 +6,7 @@ import GuidesAndInsightsView from "@/components/guides-and-Insights-view";
 import {Article} from "../../../../types/Article";
 
 
-interface RealatedInsights {
+interface RealatedInsightsProps {
     article:Article;
     related_articles:Article[];
 }
