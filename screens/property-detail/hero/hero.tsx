@@ -50,6 +50,7 @@ export default function Hero({ item }: HeroProps) {
                   )}
               >
 
+
                 {Location2}
                 <div className="flex items-center">
                   <Link
