@@ -3,7 +3,7 @@ import Insights from "./Insights";
 import {Article} from "../../../../types/Article";
 
 type Props = {
-    category?: string | null;
+    category?: string | undefined;
     last_page: number;
     articles: Article[];
 }
