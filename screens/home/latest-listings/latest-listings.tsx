@@ -13,6 +13,12 @@ import Link from "@/components/ui/Link";
 import Button from "@/components/ui/Button";
 import classNames from "classnames";
 import fetchProperties from "@/helpers/api/property/properties";
+import {PropertyRawType} from "../../../types/Property";
+
+
+interface PropertyResponse {
+  properties:PropertyRawType[]
+}
 
 export default function LatestListings() {
   const t = useTranslations("LatestListings");
@@ -22,7 +28,7 @@ export default function LatestListings() {
   useEffect(() => {
     const getArticles = async () => {
       try {
-        const listings = await fetchProperties(3, 1, {},locale);
+        const listings = await fetchProperties(3, 1, {},locale) as PropertyResponse;
 
         setListings(listings?.properties);
       } catch (error) {
