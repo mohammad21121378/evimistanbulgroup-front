@@ -23,11 +23,11 @@ export default function RelatedInsights() {
           </Button>
         </div>
 
-        <div className="grid sm:grid-cols-2 grid-cols-1 md:grid-cols-3 gap-4 mt-14">
+        {/*<div className="grid sm:grid-cols-2 grid-cols-1 md:grid-cols-3 gap-4 mt-14">
           {useInsights()?.map((item, index) => (
             <GuidesAndInsightsIisting key={index} {...item} />
           ))}
-        </div>
+        </div>*/}
       </div>
     </section>
   );
