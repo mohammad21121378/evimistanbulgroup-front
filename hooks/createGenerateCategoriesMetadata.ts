@@ -16,11 +16,12 @@ export function createGenerateCategoriesMetadata() {
 
         const categoryQuery = searchParams?.page;
         if (categoryQuery) {
-            const categorySuffix = typeof categoryQuery === "string" ? categoryQuery : categoryQuery[0];
-            const categoryNumber = parseInt(categorySuffix, 10);
+            const pageSuffix = typeof categoryQuery === "string" ? categoryQuery.trim() : categoryQuery[0].trim();
+            const pageNumber = parseInt(pageSuffix, 10);
 
-            if (!isNaN(categoryNumber) && categoryNumber > 1) {
-                metaTitle += ` - ${categoryNumber}`;
+
+            if (!isNaN(pageNumber) && pageNumber > 1) {
+                metaTitle += ` - ${pageNumber}`;
             }
         }
 

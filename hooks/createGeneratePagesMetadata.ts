@@ -27,7 +27,6 @@ export function createGenerateMetadata(baseSlug: string) {
             const pageSuffix = typeof pageQuery === "string" ? pageQuery.trim() : pageQuery[0].trim();
             const pageNumber = parseInt(pageSuffix, 10);
 
-            console.info("pageQuery:", pageQuery, "pageSuffix:", pageSuffix, "pageNumber:", pageNumber);
 
             if (!isNaN(pageNumber) && pageNumber > 1) {
                 metaTitle += ` - ${pageNumber}`;
