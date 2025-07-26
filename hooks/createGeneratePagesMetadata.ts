@@ -24,13 +24,16 @@ export function createGenerateMetadata(baseSlug: string) {
 
         const pageQuery = searchParams?.page;
         if (pageQuery) {
-            const pageSuffix = typeof pageQuery === "string" ? pageQuery : pageQuery[0];
+            const pageSuffix = typeof pageQuery === "string" ? pageQuery.trim() : pageQuery[0].trim();
             const pageNumber = parseInt(pageSuffix, 10);
+
+            console.info("pageQuery:", pageQuery, "pageSuffix:", pageSuffix, "pageNumber:", pageNumber);
 
             if (!isNaN(pageNumber) && pageNumber > 1) {
                 metaTitle += ` - ${pageNumber}`;
             }
         }
+
 
         const meta: PageMeta = {
             meta_title: metaTitle,
