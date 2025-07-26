@@ -18,7 +18,7 @@ interface ArticleResponse {
 }
 export default async function Page({ params }: Props) {
   const { locale,article } = params;
-  const { data: articleData } = await fetchArticle(article, locale) as ArticleResponse;
+  const articleData = await fetchArticle(article, locale) as ArticleResponse;
 
   return <InsightDetails articleData={articleData} />;
 }
