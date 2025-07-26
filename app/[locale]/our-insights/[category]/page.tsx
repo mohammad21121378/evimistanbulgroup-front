@@ -10,6 +10,7 @@ type SearchParams = {
 interface Props {
   params: {
     category: string;
+    locale: string;
   };
   searchParams: SearchParams;
 }
