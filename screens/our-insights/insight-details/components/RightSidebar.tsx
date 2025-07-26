@@ -18,11 +18,11 @@ export default function RightSidebar({article}: Props) {
 
             </div>
 
-            {/*<UsefulLinks
+            <UsefulLinks
                 className="md:mt-5 mt-8"
-                links={article.resource}
+                text={article.resource}
                 inline
-            />*/}
+            />
         </div>
     );
 }

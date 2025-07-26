@@ -4,7 +4,8 @@ import Link from "../ui/Link";
 
 interface UsefulLinksProps {
   title?: string;
-  links: string[];
+  text: string | null;
+  links: string[] | null;
   className?: string;
   inline?: boolean;
 }
@@ -12,6 +13,7 @@ interface UsefulLinksProps {
 export default function UsefulLinks({
   title = "Useful links",
   links,
+  text=null,
   className = "",
   inline = false,
 }: UsefulLinksProps) {
@@ -19,7 +21,7 @@ export default function UsefulLinks({
     <div className={classNames("p-6 bg-slate-100 rounded-lg", className)}>
       <div className="text-base font-medium mb-3">{title}</div>
 
-      <div className={classNames({ "": inline, "flex flex-col gap-1": !inline })}>
+        {links && <div className={classNames({ "": inline, "flex flex-col gap-1": !inline })}>
         {links.map((item, index) => (
           <Link
             key={index}
@@ -29,7 +31,9 @@ export default function UsefulLinks({
             {item}
           </Link>
         ))}
-      </div>
+      </div>}
+        {text && <div className="font-extralight  pr-1.5 transition-all duration-300 text-base"
+                      dangerouslySetInnerHTML={{__html:text}}></div>}
     </div>
   );
 }
