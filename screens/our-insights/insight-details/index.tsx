@@ -17,8 +17,11 @@ import ArticleRightSidebar from "./components/RightSidebar";
 import {Article} from "../../../types/Article";
 
 interface InsightDetailsProps {
-  article:Article
-  related_articles:Article[]
+  articleData:{
+    article:Article
+    related_articles:Article[]
+  }
+
 }
 
 export default function InsightDetails({articleData}: InsightDetailsProps) {
