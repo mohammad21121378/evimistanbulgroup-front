@@ -37,7 +37,7 @@ const GuidesAndInsightsListing: FC<GuidesAndInsightsListingProps> = ({
     return (
         <div className={cn("rounded-xl overflow-hidden flex flex-col bg-white h-full", styles.item)}>
             <Link
-                href={`/our-insights/${CatSlug}/${slug}`} className="h-52 w-full relative">
+                href={`/our-insights/${CatSlug}/${slug}`} className="h-44 w-full relative">
                 <Image src={media.url} alt={media.alt} fill className="object-cover" />
             </Link>
             <div className="p-4 flex flex-col gap-3 flex-1">
