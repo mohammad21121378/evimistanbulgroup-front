@@ -14,7 +14,6 @@ type GuidesAndInsightsListingProps = {
     timeToRead: number;
     title: string;
     excerpt: string;
-    imageSrc: string;
     created_at: string;
     media: {
         alt:string,

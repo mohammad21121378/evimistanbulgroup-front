@@ -15,6 +15,7 @@ export interface Article {
     excerpt?: string;
     resource?: string;
     url: string;
+    slug: string;
     title: string;
     media?: {
         alt: string;
