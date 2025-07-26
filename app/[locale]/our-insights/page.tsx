@@ -1,11 +1,27 @@
 import OurInsights from "@/screens/our-insights/pages";
 import {createGenerateMetadata} from "@/hooks/createGeneratePagesMetadata"
+import { fetchPageContent } from "@/helpers/api/page-detail";
+import { fetchRecentArticles } from "@/helpers/api/recent-articles";
 
 
 export const generateMetadata = createGenerateMetadata("our-insights");
+type SearchParams = {
+    page?: string;
+    type?: string;
+    feature?: string;
+    location?: string;
+};
 
+type Props = {
+    params: { locale: string };
+    searchParams: SearchParams;
+};
 
-export default function Home() {
+export default async function Home({ params, searchParams }: Props) {
+    const { page } = searchParams;
+    const { locale } = params;
+    const { data: pageData } = await fetchPageContent("our-insights", locale);
+    const { data: articles } = await fetchRecentArticles(14,page || 1, locale);
 
-    return <OurInsights />
+    return <OurInsights articles={articles} page={pageData}/>
 }

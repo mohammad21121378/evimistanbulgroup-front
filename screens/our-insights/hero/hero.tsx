@@ -5,11 +5,17 @@ import classNames from "classnames";
 
 const ROOT_TITLE = 'Our Guides & Insights';
 
-interface HeroProps {
-    category?: string;
+interface Page {
+    content: string;
+    title: string;
 }
 
-export default function Hero({ category }: HeroProps) {
+interface HeroProps {
+    page: Page;
+    category?: boolean;
+}
+
+export default function Hero({ page,category }: HeroProps) {
 
     let breadCrumb: { label: string, href?: string }[];
 
@@ -20,7 +26,7 @@ export default function Hero({ category }: HeroProps) {
                 href: "/our-insights"
             },
             {
-                label: category,
+                label: page.title,
             }
         ];
     } else {
@@ -39,25 +45,11 @@ export default function Hero({ category }: HeroProps) {
                 <Breadcrumb items={breadCrumb} />
 
                 <Heading type="heading-3" className="text-center mb-10 mt-3 capitalize" >
-                    {category ? category : ROOT_TITLE}
+                    {category ? page.title : ROOT_TITLE}
                 </Heading>
 
-                <div className={classNames(styles.description, 'space-y-3')}>
-                    <p className="paragraph-2x-large font-bold">
-                        Your All-in-One Knowledge Hub for Real Estate, Citizenship, Healthcare, and Lifestyle in Turkey
-                    </p>
+                <div dangerouslySetInnerHTML={{__html:page.content}} className={classNames(styles.description, 'space-y-3 paragraph-2x-large font-bold')}>
 
-                    <p className="paragraph-large">
-                        Looking to buy property in Turkey, gain Turkish citizenship by investment, start a company, pursue your studies, receive medical treatment, enjoy leisure travel, or relocate with your family? You’re in the right place — welcome to EvimIstanbul®.
-                    </p>
-
-                    <p className="paragraph-large">
-                        EvimIstanbul Insights is your trusted resource for expert-written guides covering every step of your journey — from real estate acquisition and legal residency to business setup, student life, medical tourism, and holiday experiences in Turkey.
-                    </p>
-
-                    <p className="paragraph-large">
-                        Our multilingual consultants, legal advisors, and market experts offer region-specific insights and practical advice across Istanbul, Antalya, Izmir, Bodrum, and beyond. Whether you’re an investor, expat, student, or visitor, our content empowers you to make confident decisions and build a successful future in Turkey.
-                    </p>
                 </div>
             </div>
         </section>
