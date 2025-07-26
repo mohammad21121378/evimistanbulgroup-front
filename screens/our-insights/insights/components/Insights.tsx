@@ -11,7 +11,7 @@ import {Article} from "../../../../types/Article";
 interface Props {
     articles:Article[];
     last_page:number;
-    category:string | null;
+    category:string | undefined;
 }
 
 export default function Insights({articles,last_page,category}:Props) {
