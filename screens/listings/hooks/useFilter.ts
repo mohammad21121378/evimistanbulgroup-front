@@ -180,7 +180,13 @@ export function useFilter({ onFilterByChange = false, listings, typeShowPage }: 
       ...filterData,
       currentPage: page
     };
-    document.title = `${document.title.split(' - ')[0]} - ${page}`;
+    const baseTitle = document.title.split(' - ')[0];
+
+    if (page > 1) {
+      document.title = `${baseTitle} - ${page}`;
+    } else {
+      document.title = baseTitle;
+    }
     fetchFilteredData(true, newFilters);
   };
 

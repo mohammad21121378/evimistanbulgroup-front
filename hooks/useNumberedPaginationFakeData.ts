@@ -61,7 +61,14 @@ export function useNumberedPaginationFakeData<T>({
 
     const goToPage = (page: number) => {
         setCurrentPage(page);
-        document.title = `${document.title.split(' - ')[0]} - ${page}`;
+
+        const baseTitle = document.title.split(' - ')[0];
+
+        if (page > 1) {
+            document.title = `${baseTitle} - ${page}`;
+        } else {
+            document.title = baseTitle;
+        }
     };
 
     useEffect(() => {

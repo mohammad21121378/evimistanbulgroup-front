@@ -80,8 +80,13 @@ export function useInsightPagination<T>({
         }
 
 
+        const baseTitle = document.title.split(' - ')[0];
 
-        document.title = `${document.title.split(' - ')[0]} - ${page}`;
+        if (page > 1) {
+            document.title = `${baseTitle} - ${page}`;
+        } else {
+            document.title = baseTitle;
+        }
     };
 
     useEffect(() => {
