@@ -18,7 +18,7 @@ export default async function Home({ params, searchParams }: Props) {
     const { page } = searchParams;
     const { locale } = params;
     const { data: pageData } = await fetchPageContent("our-insights", locale);
-    const articles = await fetchRecentArticles(2,page || 1, locale);
+    const articles = await fetchRecentArticles(20,page || 1, locale);
 
     return <OurInsights articles={articles} page={pageData}/>
 }
