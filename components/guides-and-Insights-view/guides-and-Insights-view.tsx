@@ -1,15 +1,16 @@
 "use client";
 
-import React from "react";
+import React,{useEffect,useState} from "react";
 import cn from "classnames";
 import styles from "./guides-and-Insights-view.module.css";
 import { Heading } from "@/components/typography";
 import Link from "next/link";
 import GuidesAndInsightsIisting from "@/components/guides-and-Insights-listing";
 import { useInsights } from "@/constants/guides-and-Insights.constants";
-import { useTranslations } from "next-intl";
+import {useLocale, useTranslations} from "next-intl";
 import { ArrowRight } from "@/constants/icons";
 import Button from "../ui/Button";
+import { fetchRecentArticles } from "@/helpers/api/recent-articles";
 
 type Props = {
   title?: string;
@@ -26,7 +27,22 @@ export default function GuidesAndInsightsView({
   button,
 }: Props) {
   const t = useTranslations("GuidesAndInsights");
+  const [articles, setArticles] = useState([]);
+  const locale = useLocale();
 
+
+  useEffect(() => {
+    const getArticles = async () => {
+      try {
+        const result = await fetchRecentArticles(4, 1, locale);
+        setArticles(result);
+      } catch (error) {
+        console.error("", error);
+      }
+    };
+
+    getArticles();
+  }, [locale]);
   return (
     <section className={cn("section")}>
       <div className="container">
@@ -46,7 +62,7 @@ export default function GuidesAndInsightsView({
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-12">
-          {useInsights()?.map((item, index) => (
+          {articles?.map((item, index) => (
             <GuidesAndInsightsIisting key={index} {...item} />
           ))}
         </div>
