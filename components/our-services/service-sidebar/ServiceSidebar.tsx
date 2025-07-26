@@ -47,6 +47,7 @@ export default function ServiceSidebar({
 
       {showLinks && links && links.length && (
         <UsefulLinksWithLabel
+          truncate
           title="Useful Guides & Insights"
           links={links}
         />
@@ -54,8 +55,9 @@ export default function ServiceSidebar({
 
       {showLinks && servicesLinks && servicesLinks.length && (
         <UsefulLinksWithLabel
-        truncate
+          truncate
           childClassName={'list-disc !list-inside text-blue-700 !font-medium'}
+          linkClassName={'hover:!text-blue-900'}
           title="Related Services"
           links={servicesLinks}
         />

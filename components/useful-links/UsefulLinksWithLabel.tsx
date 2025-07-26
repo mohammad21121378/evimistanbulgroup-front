@@ -7,6 +7,7 @@ interface UsefulLinksProps {
   links: { label: string; link: string }[];
   className?: string;
   childClassName?: string;
+  linkClassName?: string;
   inline?: boolean;
   truncate?: boolean;
 }
@@ -16,6 +17,7 @@ export default function UsefulLinksWithLabel({
   links,
   className = "",
   childClassName = "",
+  linkClassName = "",
   inline = false,
   truncate=false
 }: UsefulLinksProps) {
@@ -29,7 +31,7 @@ export default function UsefulLinksWithLabel({
           <Link
             key={index}
             href={item.link}
-            className={classNames("hover:text-orange-500 pr-1.5 transition-all duration-300 xl:text-base text-sm underline", {"truncate": truncate})}
+            className={classNames("hover:text-orange-500 pr-1.5 transition-all duration-300 xl:text-base text-sm underline", {"truncate": truncate}, linkClassName)}
           >
             {item.label}
           </Link>

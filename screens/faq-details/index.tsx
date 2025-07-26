@@ -5,7 +5,6 @@ import ServiceSidebar from "@/components/our-services/service-sidebar";
 
 import { DataType } from "./types";
 import SectionTopWithColor from "@/components/section-top-with-color";
-import Markdown from "markdown-to-jsx";
 import Alert from "./components/Alert";
 import ListContent from "./components/ListContent";
 
@@ -24,7 +23,6 @@ export default function FaqDetails({ data }: Props) {
           breadcrumb={[{ label: 'Frequently Asked Questions', href: '/faqs' }, { label: data.title }]}
           title={`${data.title} | FAQs`} />
       }
-
 
 
       <section className="section !pb-0">
