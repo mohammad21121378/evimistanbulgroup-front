@@ -27,7 +27,7 @@ export default function UsefulLinksWithLabel({
 
       <ul className={classNames({ "": inline, "flex flex-col gap-1": !inline }, childClassName, "font-extralight")}>
         {links.map((item, index) => (
-          <li className={classNames({"truncate": truncate})}>
+          <li key={index} className={classNames({"truncate": truncate})}>
           <Link
             key={index}
             href={item.link}
