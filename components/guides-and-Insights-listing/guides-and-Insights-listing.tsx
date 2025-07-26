@@ -16,6 +16,10 @@ type GuidesAndInsightsListingProps = {
     excerpt: string;
     imageSrc: string;
     created_at: string;
+    media: {
+        alt:string,
+        url:string,
+    };
 };
 
 const GuidesAndInsightsListing: FC<GuidesAndInsightsListingProps> = ({
@@ -25,7 +29,7 @@ const GuidesAndInsightsListing: FC<GuidesAndInsightsListingProps> = ({
     title,
     slug,
     excerpt,
-    imageSrc,
+    media,
     created_at,
 }) => {
 
@@ -35,7 +39,7 @@ const GuidesAndInsightsListing: FC<GuidesAndInsightsListingProps> = ({
         <div className={cn("rounded-xl overflow-hidden flex flex-col bg-white h-full", styles.item)}>
             <Link
                 href={`/our-insights/${CatSlug}/${title}`} className="h-52 w-full relative">
-                <Image src={imageSrc} alt={title} fill className="object-cover" />
+                <Image src={media.url} alt={media.alt} fill className="object-cover" />
             </Link>
             <div className="p-4 flex flex-col gap-3 flex-1">
                 <div className="flex items-center justify-start gap-4 font-medium text-sm text-gray-500">
@@ -45,10 +49,10 @@ const GuidesAndInsightsListing: FC<GuidesAndInsightsListingProps> = ({
                     >
                         {CatName}
                     </Link>
-                    <span>{timeToRead}</span>
+                    <span>{timeToRead} min read</span>
                 </div>
                 <Link href={`/our-insights/${CatSlug}/${slug}`} className="text-xl font-bold hover:text-orange-600">{title}</Link>
-                <p className="text-sm text-gray-500 mb-2">{excerpt}</p>
+                <div className="text-sm text-gray-500 mb-2" dangerouslySetInnerHTML={{__html:excerpt}}></div>
 
                 <div className="mt-auto flex items-center justify-between">
                     <Link href={`/our-insights/${CatSlug}/${slug}`} className={cn("text-sm text-black font-medium rounded-md pt-2 pb-2.5 px-4 flex items-center gap-1 border", styles.button)}>
