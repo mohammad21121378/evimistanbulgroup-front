@@ -8,8 +8,8 @@ import { useTranslations } from 'next-intl';
 import Link from '../ui/Link';
 
 type GuidesAndInsightsListingProps = {
-    CatSlug: string;
-    CatName: string;
+    CatSlug: string | null;
+    CatName: string | null;
     slug: string;
     timeToRead: number;
     title: string;
