@@ -16,7 +16,7 @@ interface Props {
 
 export default function Insights({articles,last_page,category}:Props) {
   const { currentPage, totalPages, items, goToPage } = useInsightPagination({
-    limit: 12,
+    limit: 2,
     initialData: articles,
     total_page:last_page,
     category,
