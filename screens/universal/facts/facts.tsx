@@ -10,21 +10,21 @@ const facts = [
     icon: HappyHeart,
     title: "98%",
     description:
-      "With a client satisfaction rate of 98%, our commitment to exceptional service and personalized support is evident in every interaction.",
+      "With a 98% client satisfaction rate, we don’t just meet expectations — we redefine them. Our clients consistently choose us for our precision, trust, and end-to-end excellence in real estate and citizenship services.",
   },
   {
     id: 2,
     icon: Building,
-    title: "300+",
+    title: "500+",
     description:
-      "We have over 300 clients, ranging from small businesses to Fortune 500 companies, who trust us to manage their digital marketing needs.",
+      "With over 500 vetted properties across Turkey’s most sought-after regions, we offer one of the largest exclusive portfolios tailored for investors, families, and international buyers seeking high-value opportunities.",
   },
   {
     id: 3,
     icon: Medal,
-    title: 15,
+    title: "10+",
     description:
-      "Our team of 15 experts is dedicated to providing the highest quality service and support to our clients.",
+      "Our team combines over 10 years of cross-border real estate, legal, and investment experience — delivering a seamless, multilingual, and fully compliant journey from property search to title deed.",
   },
 ];
 
@@ -32,7 +32,7 @@ export default function Facts() {
   return (
     <section className={cn("section")}>
       <div className={cn("container")}>
-        <div className={cn("subheading-small", styles.title)}>Facts</div>
+        <div className={cn("subheading-large", styles.title)}>Facts</div>
 
         <div className={styles.facts}>
           {facts.map((fact) => (

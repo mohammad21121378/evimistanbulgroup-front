@@ -1,5 +1,5 @@
 .leadership {
-    margin-top: 80px;
+    margin-top: 60px;
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -58,12 +58,12 @@
 
 @media (max-width: 768px) {
     .leadership {
-        margin-top: 48px;
+        margin-top: 38px;
     }
 
     .leader {
         grid-template-columns: 1fr;
-        gap: 48px;
+        gap: 38px;
     }
 }
 

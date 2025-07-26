@@ -8,21 +8,19 @@ import Offices from "../universal/offices";
 import Facts from "../universal/facts";
 import Gallery from "./gallery";
 import Newsletter from "../universal/newsletter";
+import MoreInfo from "./more-info";
+import OtherAgent from "./outher-agent";
 
 export default function AboutPage() {
   return (
     <Layout>
       <Hero />
-
-      
-
       <Mission />
       <Values />
       <Leadership />
-      <Offices />
+      <OtherAgent />
       <Facts />
-      <Gallery />
-      <Newsletter />
+      <MoreInfo />
     </Layout>
   );
 }
