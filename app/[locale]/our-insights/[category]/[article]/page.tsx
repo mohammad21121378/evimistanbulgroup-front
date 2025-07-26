@@ -1,6 +1,6 @@
 import InsightDetails from "@/screens/our-insights/insight-details";
 import {createGenerateArticleMetadata} from "@/hooks/createGenerateArticleMetadata"
-import fetchArticle from "@/helpers/api/article"
+import {fetchArticle} from "@/helpers/api/article"
 
 interface Props {
   params: {

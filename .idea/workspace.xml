@@ -20,14 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a444990-2b63-46d6-b210-f54ec3aa7b85" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/banner-for-group/BannerForGroup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/banner-for-group/BannerForGroup.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/guides-and-Insights-view/guides-and-Insights-view.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/guides-and-Insights-view/guides-and-Insights-view.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/our-insights/insight-details/components/Content.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/our-insights/insight-details/components/Content.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/our-insights/insight-details/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/our-insights/insight-details/components/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/our-insights/insight-details/components/RealatedInsights.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/our-insights/insight-details/components/RealatedInsights.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/our-insights/insight-details/components/RightSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/our-insights/insight-details/components/RightSidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/our-insights/insight-details/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/our-insights/insight-details/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/[locale]/our-insights/[category]/[article]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/our-insights/[category]/[article]/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +82,7 @@
       <workItem from="1753263212323" duration="2644000" />
       <workItem from="1753365613906" duration="4980000" />
       <workItem from="1753438746493" duration="15129000" />
-      <workItem from="1753523434236" duration="16666000" />
+      <workItem from="1753523434236" duration="16803000" />
     </task>
     <servers />
   </component>
