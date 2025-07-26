@@ -40,9 +40,9 @@ export default function InsightDetails({articleData}: InsightDetailsProps) {
   useScrollbarTracker();
 
   const breadCrumb = [
-    { label: "Our insights", link: "/our-insights" },
-    { label: article.CatName, link: `/our-insights/${article.CatSlug}` },
-    { label: article.title, link: "#" },
+    { label: "Our insights", href: "/our-insights" },
+    { label: article.CatName, href: `/our-insights/${article.CatSlug}` },
+    { label: article.title, href: "#" },
   ];
 
   return (
