@@ -25,11 +25,11 @@ export default function Insights({articles,last_page,category}:Props) {
 
   return (
     <section>
-      <div className="grid sm:grid-cols-2 grid-cols-1 gap-5">
+      {/*<div className="grid sm:grid-cols-2 grid-cols-1 gap-5">
         {items.map((item, index) => (
-          /*<GuidesAndInsightsListing key={index} {...item} />*/
+          <GuidesAndInsightsListing key={index} {...item} />
         ))}
-      </div>
+      </div>*/}
 
       <div className="sm:col-span-2 mt-10">
         {totalPages > 1 && (
