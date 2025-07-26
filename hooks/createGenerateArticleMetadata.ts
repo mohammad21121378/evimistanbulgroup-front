@@ -1,5 +1,5 @@
 import { PageMeta } from "@/types/Seo";
-import fetchArticle from "@/helpers/api/article"
+import {fetchArticle} from "@/helpers/api/article"
 import { buildMetadataFromPage } from "@/lib/metadata";
 
 
@@ -10,7 +10,7 @@ type GenerateMetadataProps = {
 export function createGenerateArticleMetadata() {
     return async function generateMetadata({ params }: GenerateMetadataProps) {
         const { locale,article } = params;
-        const { data: articleData } = await fetchArticle(article, locale);
+        const articleData = await fetchArticle(article, locale);
 
         const meta: PageMeta = {
             meta_title: articleData?.meta_title || "",
