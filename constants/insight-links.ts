@@ -33,4 +33,8 @@ export const insightLinks = {
         label: "Education & Student Life in Turkey",
         link: `${prefix}/education-student-life`,
     },
+    "Relocation & Expat Life in Turkey":{
+        label: "Relocation & Expat Life in Turkey",
+        link: `${prefix}/Relocation & Expat Life in Turkey`,
+    },
 }

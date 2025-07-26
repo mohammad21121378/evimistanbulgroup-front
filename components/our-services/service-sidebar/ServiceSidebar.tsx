@@ -7,13 +7,15 @@ interface SidebarProps {
   showLinks?: boolean;
   showSearch?: boolean;
   showMedicalImg?: boolean;
-  links?: { label: string; link: string }[]
+  links?: { label: string; link: string }[];
+  servicesLinks?: { label: string; link: string }[];
 }
 
 export default function ServiceSidebar({
   showConsultationBox = true,
   showLinks = true,
   links,
+  servicesLinks,
   showSearch = false,
   showMedicalImg = false
 }: SidebarProps) {
@@ -47,6 +49,15 @@ export default function ServiceSidebar({
         <UsefulLinksWithLabel
           title="Useful Guides & Insights"
           links={links}
+        />
+      )}
+
+      {showLinks && servicesLinks && servicesLinks.length && (
+        <UsefulLinksWithLabel
+        truncate
+          childClassName={'list-disc !list-inside text-blue-700 !font-medium'}
+          title="Related Services"
+          links={servicesLinks}
         />
       )}
 

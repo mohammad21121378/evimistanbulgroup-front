@@ -29,7 +29,8 @@ export default function Header() {
   const lightHeaderPages = [
     `/${locale}`,
     `/${locale}/client-stories`,
-    `/${locale}/faq`,
+    `/${locale}/faqs`,
+    `/${locale}/faqs/*`,
   ];
 
   const nav_links = [
@@ -76,7 +77,14 @@ export default function Header() {
   };
 
   const isBlackHeader = blackHeaderPages.includes(pathname);
-  const islightHeader = lightHeaderPages.includes(pathname);
+  const islightHeader = lightHeaderPages.some((path) => {
+    if (path.endsWith("/*")) {
+      const base = path.replace("/*", "");
+      return pathname.startsWith(base);
+    }
+    return pathname === path;
+  });
+  
 
   return (
     <header

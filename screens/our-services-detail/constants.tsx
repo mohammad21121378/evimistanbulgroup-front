@@ -1,4 +1,4 @@
-import { insightLinks } from "./insight-links";
+import { insightLinks } from "@/constants/insight-links";
 
 export const servicesData = [
   {

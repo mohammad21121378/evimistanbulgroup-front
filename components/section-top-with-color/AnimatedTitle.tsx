@@ -32,13 +32,15 @@ const AnimatedTitle = ({ title }: AnimatedTitleProps) => {
     },
   }
 
+  const lines = title.split('\n')
   const words = title.split(' ')
   let charIndex = 0
 
   return (
     <div className="title-wrapper relative inline-block overflow-hidden mt-auto xl:pr-28">
+
       <motion.h1
-        className="font-bold md:text-[7rem] sm:text-[5rem] text-[4rem] leading-[105%] mt-auto text-white relative z-10"
+        className="font-bold md:text-[7rem] sm:text-[5rem] text-[4rem] leading-[105%] mt-auto text-white relative z-10 md:hidden"
         variants={container}
         initial="hidden"
         animate={start ? 'show' : 'hidden'}
@@ -76,6 +78,47 @@ const AnimatedTitle = ({ title }: AnimatedTitleProps) => {
             )}
           </span>
         ))}
+      </motion.h1>
+
+      <motion.h1
+        className="font-bold md:text-[7rem] sm:text-[5rem] text-[4rem] leading-[105%] mt-auto text-white relative z-10 hidden md:block"
+        variants={container}
+        initial="hidden"
+        animate={start ? 'show' : 'hidden'}
+      >        
+        {lines.map((line, li) => {
+          const words = line.split(' ')
+          return (
+            <div key={li} className="block">
+              {words.map((word, wi) => (
+                <span key={wi} className="inline-block whitespace-nowrap md:pb-2.5">
+                  {word.split('').map((char, ci) => {
+                    const delay = 0.1 * charIndex++
+                    return (
+                      <motion.span
+                        key={ci}
+                        variants={letter}
+                        className="inline-block relative fade-loop"
+                        style={{ animationDelay: `${4 + delay}s` }}
+                      >
+                        {char}
+                      </motion.span>
+                    )
+                  })}
+                  {wi < words.length - 1 && (
+                    <motion.span
+                      variants={letter}
+                      className="inline-block"
+                      style={{ width: '0.25em' }}
+                    >
+                      &nbsp;
+                    </motion.span>
+                  )}
+                </span>
+              ))}
+            </div>
+          )
+        })}
       </motion.h1>
     </div>
   )
