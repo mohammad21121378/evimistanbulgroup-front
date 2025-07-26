@@ -5,7 +5,7 @@ import {Article} from "../../../../types/Article";
 interface UsePaginationOptions<T> {
     limit: number;
     total_page: number;
-    category: string | null;
+    category: string | undefined;
     initialData: Article[];
     scrollTo?: {desktop: number; mobile: number;}
 }
