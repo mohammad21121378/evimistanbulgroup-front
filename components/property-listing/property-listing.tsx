@@ -79,26 +79,28 @@ export default function PropertyListing({
             )}
           >
             {Location2}
-            <Link
-                href={`/properties-for-sale-in-turkey?location=${item.locationID}`}
-                className={cn(
-                    "paragraph-medium font-medium  underline",
-                    styles.listing_description
-                )}
-            >
+            <div>
+              <Link
+                  href={`/properties-for-sale-in-turkey?location=${item.locationID}`}
+                  className={cn(
+                      "paragraph-medium font-medium  underline",
+                      styles.listing_description
+                  )}
+              >
 
-              {item.location}
-            </Link>,
-            <Link
-                href={`/properties-for-sale-in-turkey?location=${item.parentLocationID}`}
-                className={cn(
-                    "paragraph-medium font-medium  underline",
-                    styles.listing_description
-                )}
-            >
+                {item.location}
+              </Link>,
+              <Link
+                  href={`/properties-for-sale-in-turkey?location=${item.parentLocationID}`}
+                  className={cn(
+                      "paragraph-medium font-medium  underline",
+                      styles.listing_description
+                  )}
+              >
 
-              {item.parentLocation}
-            </Link>
+                {item.parentLocation}
+              </Link>
+            </div>
           </div>
           <div
             className={cn(
