@@ -16,7 +16,9 @@ type HeroProps = {
   item: {
     title: string;
     location: string;
+    parentLocation: string;
     locationID: string;
+    parentLocationID: string;
     gallery: LightboxImage[];
     min_price: number;
     max_price: number;
@@ -31,6 +33,7 @@ export default function Hero({ item }: HeroProps) {
         <Breadcrumb
           items={[
             { label: 'Property for Sale in Turkey', href: '/properties-for-sale-in-turkey' },
+            { label: item.parentLocation, href: `/properties-for-sale-in-turkey/?location=${item.parentLocationID}` },
             { label: item.location, href: `/properties-for-sale-in-turkey/?location=${item.locationID}` },
             { label: item.title }
           ]}
@@ -39,16 +42,41 @@ export default function Hero({ item }: HeroProps) {
           <div>
             <h1 className={cn("heading-6")}>{item.title}</h1>
             <div className={cn("paragraph-medium", styles.address)}>
-              <Link
-                  href={`/properties-for-sale-in-turkey?location=${item.locationID}`}
+              <div
+
                   className={cn(
                       "paragraph-medium font-medium flex items-center gap-2.5 underline",
                       styles.address
                   )}
               >
+
+
                 {Location2}
-                {item.location}
-              </Link>
+                <div className="flex items-center">
+                  <Link
+                      href={`/properties-for-sale-in-turkey?location=${item.locationID}`}
+                      className={cn(
+                          "paragraph-medium font-medium  underline",
+                          styles.address
+                      )}
+                  >
+
+                    {item.location}
+                  </Link>,
+                  <Link
+                      href={`/properties-for-sale-in-turkey?location=${item.parentLocationID}`}
+                      className={cn(
+                          "paragraph-medium font-medium  underline",
+                          styles.address
+                      )}
+                  >
+
+                    {item.parentLocation}
+                  </Link>
+                </div>
+
+
+              </div>
             </div>
           </div>
 

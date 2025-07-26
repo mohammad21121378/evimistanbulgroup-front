@@ -34,6 +34,8 @@ export type PropertyRawType = {
   images: [string | null, string | null]; // [url, alt]
   location: string;
   locationID: number;
+  parentLocation: string;
+  parentLocationID: number;
   types: {
    id: number;
     title: string,
