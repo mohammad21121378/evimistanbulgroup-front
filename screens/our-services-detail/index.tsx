@@ -35,14 +35,14 @@ export default function OurServicesDetails({ data }: Props) {
 
       <section className="section">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-[3fr_1fr] gap-16">
-            <div className="space-y-16">
+          <div className="grid grid-cols-1 md:grid-cols-12 xl:grid-cols-11 gap-16">
+            <div className="space-y-16 md:col-span-8 xl:col-span-8">
 
               <RenderComponents mainSections={mainSections} components={components} />
 
             </div>
 
-            <aside className="">
+            <aside className="md:col-span-4 xl:col-span-3">
 
               <ServiceSidebar
                 showConsultationBox={!!data.sidebar?.counseling}

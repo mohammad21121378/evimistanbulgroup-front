@@ -1,3 +1,5 @@
+'use client'
+
 import Button from "@/components/ui/Button";
 import UsefulLinksWithLabel from "@/components/useful-links/UsefulLinksWithLabel";
 import { useConsultationStore } from "@/stores/consultationStore";
