@@ -22,6 +22,10 @@ type Props = {
   };
 }
 
+type ArticleResponse = {
+  articles: Article[];
+};
+
 export default function GuidesAndInsightsView({
   title,
   description,
@@ -35,7 +39,7 @@ export default function GuidesAndInsightsView({
   useEffect(() => {
     const getArticles = async () => {
       try {
-        const result = await fetchRecentArticles(3, 1, locale) as Article[];
+        const result = await fetchRecentArticles(3, 1, locale) as ArticleResponse;
         setArticles(result.articles);
       } catch (error) {
         console.error("", error);
