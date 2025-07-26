@@ -71,16 +71,35 @@ export default function PropertyListing({
           >
             {item.title}
           </Link>
-          <Link
-            href={`/properties-for-sale-in-turkey?location=${item.locationID}`}
+          <div
+
             className={cn(
               "paragraph-medium font-medium flex items-center gap-2.5 underline",
               styles.listing_description
             )}
           >
             {Location2}
-            {item.location}
-          </Link>
+            <Link
+                href={`/properties-for-sale-in-turkey?location=${item.locationID}`}
+                className={cn(
+                    "paragraph-medium font-medium  underline",
+                    styles.listing_description
+                )}
+            >
+
+              {item.location}
+            </Link>,
+            <Link
+                href={`/properties-for-sale-in-turkey?location=${item.parentLocationID}`}
+                className={cn(
+                    "paragraph-medium font-medium  underline",
+                    styles.listing_description
+                )}
+            >
+
+              {item.parentLocation}
+            </Link>
+          </div>
           <div
             className={cn(
               "paragraph-medium line-clamp-2 truncate w-full text-wrap",
