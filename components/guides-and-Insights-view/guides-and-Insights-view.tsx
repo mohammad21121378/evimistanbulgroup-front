@@ -11,6 +11,7 @@ import {useLocale, useTranslations} from "next-intl";
 import { ArrowRight } from "@/constants/icons";
 import Button from "../ui/Button";
 import { fetchRecentArticles } from "@/helpers/api/recent-articles";
+import {Article} from "../../types/Article";
 
 type Props = {
   title?: string;
@@ -27,14 +28,14 @@ export default function GuidesAndInsightsView({
   button,
 }: Props) {
   const t = useTranslations("GuidesAndInsights");
-  const [articles, setArticles] = useState([]);
+  const [articles, setArticles] = useState<Article[]>([]);
   const locale = useLocale();
 
 
   useEffect(() => {
     const getArticles = async () => {
       try {
-        const result = await fetchRecentArticles(3, 1, locale);
+        const result = await fetchRecentArticles(3, 1, locale) as Article[];
         setArticles(result.articles);
       } catch (error) {
         console.error("", error);
