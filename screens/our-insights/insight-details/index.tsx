@@ -85,7 +85,7 @@ export default function InsightDetails({articleData}: InsightDetailsProps) {
         </div>
       </div>
 
-      {articleData.related_articles.length > 0 && <RealatedInsights />}
+      {articleData.related_articles.length > 0 && <RealatedInsights article={article} related_articles={articleData.related_articles} />}
 
     </Layout>
   );
