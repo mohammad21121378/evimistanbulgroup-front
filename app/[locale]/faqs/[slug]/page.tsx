@@ -13,9 +13,9 @@ type Props = {
  export const generateMetadata = createGenerateMetadata("faqs");
 
 
-// export function generateStaticParams() {
-//   return servicesData.map(service => ({ slug: service.slug }));
-// }
+export function generateStaticParams() {
+  return faqsData.map(page => ({ slug: page.slug }));
+}
 
 export default function ServicePage({ params }: Props) {
 

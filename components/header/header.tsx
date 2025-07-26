@@ -31,6 +31,7 @@ export default function Header() {
     `/${locale}/client-stories`,
     `/${locale}/faqs`,
     `/${locale}/faqs/*`,
+    `/${locale}/our-story`,
   ];
 
   const nav_links = [

@@ -13,6 +13,9 @@ export default function AboutPage() {
   return (
     <Layout>
       <Hero />
+
+      
+
       <Mission />
       <Values />
       <Leadership />

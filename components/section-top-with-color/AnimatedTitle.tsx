@@ -1,13 +1,17 @@
 'use client'
 
+import classNames from 'classnames'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
 interface AnimatedTitleProps {
   title: string
+  noneAnimate?: boolean;
+  className?: string;
+  titleSm?: boolean
 }
 
-const AnimatedTitle = ({ title }: AnimatedTitleProps) => {
+const AnimatedTitle = ({ title, noneAnimate, className, titleSm }: AnimatedTitleProps) => {
   const [start, setStart] = useState(false)
 
   useEffect(() => {
@@ -37,10 +41,15 @@ const AnimatedTitle = ({ title }: AnimatedTitleProps) => {
   let charIndex = 0
 
   return (
-    <div className="title-wrapper relative inline-block overflow-hidden mt-auto xl:pr-28">
+    <div className={classNames("title-wrapper relative inline-block overflow-hidden mt-auto xl:pr-28", className)}>
 
       <motion.h1
-        className="font-bold md:text-[7rem] sm:text-[5rem] text-[4rem] leading-[105%] mt-auto text-white relative z-10 md:hidden"
+        className={classNames("font-bold  leading-[105%] mt-auto text-white relative z-10 md:hidden",
+        {
+          "xl:text-[7rem] md:text-[6.6rem] sm:text-[5rem] text-[4rem]": !titleSm,
+          "xl:text-[6rem] md:text-[5.7rem] sm:text-[5rem] text-[4rem]": titleSm,
+        }
+        )}
         variants={container}
         initial="hidden"
         animate={start ? 'show' : 'hidden'}
@@ -57,7 +66,7 @@ const AnimatedTitle = ({ title }: AnimatedTitleProps) => {
                 <motion.span
                 key={ci}
                 variants={letter} 
-                className="inline-block relative fade-loop"
+                className={classNames("inline-block relative ", { "fade-loop":  !noneAnimate})}
                 style={{ animationDelay: `${4 + delay}s` }}
               >
                 {char}
@@ -81,7 +90,12 @@ const AnimatedTitle = ({ title }: AnimatedTitleProps) => {
       </motion.h1>
 
       <motion.h1
-        className="font-bold md:text-[7rem] sm:text-[5rem] text-[4rem] leading-[105%] mt-auto text-white relative z-10 hidden md:block"
+        className={classNames("font-bold  leading-[105%] mt-auto text-white relative z-10 hidden md:block",
+        {
+          "xl:text-[7rem] md:text-[6.6rem] sm:text-[5rem] text-[4rem]": !titleSm,
+          "xl:text-[6rem] md:text-[5.7rem] sm:text-[5rem] text-[4rem]": titleSm,
+        }
+        )}
         variants={container}
         initial="hidden"
         animate={start ? 'show' : 'hidden'}
@@ -98,7 +112,7 @@ const AnimatedTitle = ({ title }: AnimatedTitleProps) => {
                       <motion.span
                         key={ci}
                         variants={letter}
-                        className="inline-block relative fade-loop"
+                        className={classNames("inline-block relative ", { "fade-loop":  !noneAnimate})}
                         style={{ animationDelay: `${4 + delay}s` }}
                       >
                         {char}
