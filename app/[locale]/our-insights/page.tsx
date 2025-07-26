@@ -6,10 +6,7 @@ import { fetchRecentArticles } from "@/helpers/api/recent-articles";
 
 export const generateMetadata = createGenerateMetadata("our-insights");
 type SearchParams = {
-    page?: string;
-    type?: string;
-    feature?: string;
-    location?: string;
+    page?: number;
 };
 
 type Props = {
