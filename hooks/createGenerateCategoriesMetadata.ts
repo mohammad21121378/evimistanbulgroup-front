@@ -10,7 +10,7 @@ type GenerateMetadataProps = {
 export function createGenerateCategoriesMetadata() {
     return async function generateMetadata({ params, searchParams }: GenerateMetadataProps) {
         const { locale, category } = params;
-        const { data: categoryData } = await fetchCategoryDetail(category, locale);
+        const { data: categoryData } = await fetchCategoryDetail(category,1,1, locale);
 
         let metaTitle = categoryData?.meta_title || "";
 
