@@ -1,9 +1,9 @@
 import APIRequest from "./api";
 
-export async function fetchArticle(slug) {
+export async function fetchArticle(slug,language="en") {
     let article = null;
     try {
-        const response = await APIRequest.post('article',{ slug: slug });
+        const response = await APIRequest.post('article',{ slug: slug,language:language });
         article = await response.data;
 
     } catch (error) {

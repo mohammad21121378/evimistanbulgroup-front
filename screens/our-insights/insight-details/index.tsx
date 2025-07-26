@@ -14,10 +14,11 @@ import { Breadcrumb } from "@/components/breadcrumb/Breadcrumb";
 import Layout from "@/components/Layout";
 import RealatedInsights from "./components/RealatedInsights";
 import ArticleRightSidebar from "./components/RightSidebar";
+import {Article} from "../../../types/Article";
 
-export default function InsightDetails() {
+export default function InsightDetails({articleData}: Article) {
 
-  const article = fakeArticleData.article;
+  const article = articleData;
 
   const [showResourceBox, setShowResourceBox] = useState(false);
   const resourceRef = useRef(null);
@@ -31,8 +32,9 @@ export default function InsightDetails() {
   useScrollbarTracker();
 
   const breadCrumb = [
-    { label: "Basin Merkezi", link: "/basin-merkezi" },
-    { label: article.subCatName.title, link: article.subCatName.url },
+    { label: "Home", link: "/" },
+    { label: "Our insights", link: "/our-insights" },
+    { label: article.CatName, link: `/our-insights/${article.CatSlug}` },
     { label: article.title, link: "#" },
   ];
 
@@ -51,7 +53,7 @@ export default function InsightDetails() {
 
           <ArticleHeader
             article={article}
-            readingTime={readingTime}
+
           />
 
           <hr className="text-slate-700 my-8" />

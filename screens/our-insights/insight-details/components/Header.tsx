@@ -9,10 +9,9 @@ import Link from '@/components/ui/Link';
 
 interface Props {
     article: Article;
-    readingTime: number;
 }
 
-export default function Header({ article, readingTime }: Props) {
+export default function Header({ article }: Props) {
     return (
         <div className="mt-4 text-[#111111] font-medium">
             <div className="relative bigInsightItem">
@@ -28,14 +27,14 @@ export default function Header({ article, readingTime }: Props) {
 
                 <ul className="inline-flex flex-wrap sm:list-disc items-center md:gap-8 gap-3 text-sm">
                     <Link
-                        href={`/our-insights/${article.category[0]?.url}`}
+                        href={`/our-insights/${article.CatSlug}`}
                         className={`px-2 py-1 rounded font-medium text-white bg-blue-700 text-base w-fit`}
                     >
-                        {article.category[0]?.title}
+                        {article.CatName}
                     </Link>
-                    <li>{readingTime} min read</li>
+                    <li>{article.timeToRead} min read</li>
                     <li>{article.created_at}</li>
-                    <li className=''>Posted by: <Link className='text-orange-500 underline capitalize font-bold' href={article.author.url ?? '/'} > {article.author?.name} {article.author?.last_name} </Link></li>
+                    <li className=''>Posted by: <Link className='text-orange-500 underline capitalize font-bold' href={"/our-story"} >Evim istanbul group</Link></li>
                 </ul>
 
                 <ArticleShare article={article} />
