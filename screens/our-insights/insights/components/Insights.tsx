@@ -27,7 +27,7 @@ export default function Insights({articles,last_page,category}:Props) {
     <section>
       <div className="grid sm:grid-cols-2 grid-cols-1 gap-5">
         {items.map((item, index) => (
-          <GuidesAndInsightsListing key={index} {...item} />
+          /*<GuidesAndInsightsListing key={index} {...item} />*/
         ))}
       </div>
 
