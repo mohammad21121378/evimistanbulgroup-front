@@ -51,7 +51,7 @@ export default function Hero({ item }: HeroProps) {
               >
 
                 {Location2}
-                <div>
+                <div className="flex items-center">
                   <Link
                       href={`/properties-for-sale-in-turkey?location=${item.locationID}`}
                       className={cn(
