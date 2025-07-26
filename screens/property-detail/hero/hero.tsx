@@ -42,16 +42,40 @@ export default function Hero({ item }: HeroProps) {
           <div>
             <h1 className={cn("heading-6")}>{item.title}</h1>
             <div className={cn("paragraph-medium", styles.address)}>
-              <Link
-                  href={`/properties-for-sale-in-turkey?location=${item.locationID}`}
+              <div
+
                   className={cn(
                       "paragraph-medium font-medium flex items-center gap-2.5 underline",
                       styles.address
                   )}
               >
+
                 {Location2}
-                {item.location}
-              </Link>
+                <div>
+                  <Link
+                      href={`/properties-for-sale-in-turkey?location=${item.locationID}`}
+                      className={cn(
+                          "paragraph-medium font-medium  underline",
+                          styles.address
+                      )}
+                  >
+
+                    {item.location}
+                  </Link>,
+                  <Link
+                      href={`/properties-for-sale-in-turkey?location=${item.parentLocationID}`}
+                      className={cn(
+                          "paragraph-medium font-medium  underline",
+                          styles.address
+                      )}
+                  >
+
+                    {item.parentLocation}
+                  </Link>
+                </div>
+
+
+              </div>
             </div>
           </div>
 
