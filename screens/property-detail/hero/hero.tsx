@@ -16,7 +16,9 @@ type HeroProps = {
   item: {
     title: string;
     location: string;
+    parentLocation: string;
     locationID: string;
+    parentLocationID: string;
     gallery: LightboxImage[];
     min_price: number;
     max_price: number;
@@ -31,6 +33,7 @@ export default function Hero({ item }: HeroProps) {
         <Breadcrumb
           items={[
             { label: 'Property for Sale in Turkey', href: '/properties-for-sale-in-turkey' },
+            { label: item.parentLocation, href: `/properties-for-sale-in-turkey/?location=${item.parentLocationID}` },
             { label: item.location, href: `/properties-for-sale-in-turkey/?location=${item.locationID}` },
             { label: item.title }
           ]}
