@@ -34,7 +34,7 @@ export default function GuidesAndInsightsView({
   useEffect(() => {
     const getArticles = async () => {
       try {
-        const result = await fetchRecentArticles(4, 1, locale);
+        const result = await fetchRecentArticles(3, 1, locale);
         setArticles(result.articles);
       } catch (error) {
         console.error("", error);

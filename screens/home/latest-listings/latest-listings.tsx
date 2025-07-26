@@ -1,30 +1,37 @@
 "use client";
 
-import React from "react";
+import React, {useEffect, useState} from "react";
 import cn from "classnames";
 import styles from "./latest-listings.module.css";
 import { Heading } from "@/components/typography";
 import { Listings, Tabs } from "@/constants/mock";
 import { Dropdown } from "@/components/elements";
 import PropertyListing from "@/components/property-listing";
-import { useTranslations } from "next-intl";
+import {useLocale, useTranslations} from "next-intl";
 import { ArrowRight } from "@/constants/icons";
 import Link from "@/components/ui/Link";
 import Button from "@/components/ui/Button";
 import classNames from "classnames";
+import fetchProperties from "@/helpers/api/property/properties";
 
 export default function LatestListings() {
   const t = useTranslations("LatestListings");
-  const [selectedCategory, setSelectedCategory] = React.useState(Tabs[0].name);
+  const [listings, setListings] = useState([]);
+  const locale = useLocale();
 
-  const dropdownOptions = Tabs.map((tab) => ({
-    value: tab.name,
-    label: tab.name,
-  }));
+  useEffect(() => {
+    const getArticles = async () => {
+      try {
+        const listings = await fetchProperties(3, 1, {},locale);
 
-  const handleDropdownChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedCategory(e.target.value);
-  };
+        setListings(listings?.properties);
+      } catch (error) {
+        console.error("", error);
+      }
+    };
+
+    getArticles();
+  }, [locale]);
 
   return (
     <section className={cn("section")}>
@@ -46,13 +53,11 @@ export default function LatestListings() {
 
         <div className={styles.wrapper}>
           <div className={styles.listings}>
-            {/* {Listings.filter(
-              (listing) => listing.category === selectedCategory
-            ).flatMap((listing) =>
-              listing.items.map((item) => (
-                <PropertyListing key={item.id} item={item} />
-              ))
-            )} */}
+             {
+               listings.map((item) => (
+                 <PropertyListing key={item.id} item={item} />
+             ))
+             }
           </div>
         </div>
       </div>
