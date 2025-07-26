@@ -19,7 +19,7 @@ interface Props {
 export default function InsightDetailsCategory({ categoryData,category }: Props) {
   return (
     <Layout>
-      <Hero category={true}  />
+      <Hero page={categoryData} category={true}  />
 
       <CategoriesAndInsights last_page={categoryData.pagination.last_page} articles={categoryData.articles} category={category}  />
     </Layout>
