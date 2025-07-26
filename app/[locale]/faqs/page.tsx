@@ -1,14 +1,13 @@
 import ReviewSchema from "@/components/review-schema/ReviewSchema";
 import Faq from "@/screens/faq";
 import Head from "next/head";
-import fetchTestimonials from "@/helpers/api/testimonials/testimonials";
 import { createGenerateMetadata } from "@/hooks/createGeneratePagesMetadata"
 
 type Props = {
   params: { locale: string };
 };
 
-// export const generateMetadata = createGenerateMetadata("faq");
+ export const generateMetadata = createGenerateMetadata("faqs");
 
 export default async function Page({ params }: Props) {
   // const { locale } = params;

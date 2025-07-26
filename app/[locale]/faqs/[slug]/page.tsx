@@ -1,6 +1,6 @@
 import FaqDetails from "@/screens/faq-details";
 import { faqsData } from "@/screens/faq-details/constants";
-
+import { createGenerateMetadata } from "@/hooks/createGeneratePagesMetadata"
 import { notFound } from "next/navigation";
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
 // import {createGenerateMetadata} from "@/hooks/createGeneratePagesMetadata"
 
 
-// export const generateMetadata = createGenerateMetadata("our-services");
+ export const generateMetadata = createGenerateMetadata("faqs");
 
 
 // export function generateStaticParams() {
