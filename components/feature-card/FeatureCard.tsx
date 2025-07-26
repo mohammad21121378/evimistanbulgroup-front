@@ -1,7 +1,11 @@
+'use client'
+
 import React from "react";
 import styles from "./FeatureCard.module.css";
 import cn from "classnames";
 import Link from "../ui/Link";
+import { slideUpAnimation, viewportMargin } from "@/constants/animation";
+import { motion } from "framer-motion";
 
 type FeatureCardProps = {
   icon?: React.ReactNode;
@@ -21,7 +25,11 @@ export default function FeatureCard({
   className,
 }: FeatureCardProps) {
   return (
-    <div className={cn(styles.card, className)}>
+    <motion.div
+      variants={slideUpAnimation}
+      initial="hidden"
+      whileInView="show"
+      viewport={viewportMargin} className={cn(styles.card, className)}>
       {icon && <div className={cn("gradient-bubble", styles.icon)}>{icon}</div>}
 
       <div>
@@ -33,11 +41,11 @@ export default function FeatureCard({
         <div className={styles.buttonWrapper}>
           <Link href={buttonHref} className={cn("", styles.button)}>
             <button className="button button-small !min-w-56 mt-12">
-            {buttonLabel}
+              {buttonLabel}
             </button>
           </Link>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
