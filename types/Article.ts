@@ -23,9 +23,9 @@ export interface Article {
     }
     author: User;
     created_at: string;
-    CatName: string | null;
+    CatName: string;
     timeToRead: number;
-    CatSlug: string | null;
+    CatSlug: string;
     category: CategoryArticle[];
     table_of_content?: TableOfContentItem[];
 }
