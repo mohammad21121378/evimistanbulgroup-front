@@ -86,7 +86,7 @@ export function useInsightPagination<T>({
 
     useEffect(() => {
         goToPage(1);
-    }, [initialData]);
+    }, [category]);
 
     return {
         currentPage,
