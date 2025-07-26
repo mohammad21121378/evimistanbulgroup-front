@@ -21,7 +21,7 @@ export default function OurInsights({articles,page}:Props) {
     return (
         <Layout>
             <Hero page={page} />
-            <CategoriesAndInsights category={false} last_page={articles?.pagination?.last_page} articles={articles.articles} />
+            <CategoriesAndInsights  last_page={articles?.pagination?.last_page} articles={articles.articles} />
         </Layout>
     );
 }
