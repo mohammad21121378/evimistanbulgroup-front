@@ -2,6 +2,7 @@ import InsightDetails from "@/screens/our-insights/insight-details";
 import {createGenerateArticleMetadata} from "@/hooks/createGenerateArticleMetadata"
 import {fetchArticle} from "@/helpers/api/article"
 import {Article} from "../../../../../types/Article";
+import {notFound} from "next/navigation";
 
 interface Props {
   params: {
@@ -19,6 +20,7 @@ interface ArticleResponse {
 export default async function Page({ params }: Props) {
   const { locale,article } = params;
   const articleData = await fetchArticle(article, locale) as ArticleResponse;
+  if(articleData.article)  return notFound()
 
   return <InsightDetails articleData={articleData} />;
 }
