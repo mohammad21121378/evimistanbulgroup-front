@@ -26,6 +26,7 @@ type HeroProps = {
   };
 };
 
+
 export default function Hero({ item }: HeroProps) {
   return (
     <section className={cn("section", styles.section)}>
