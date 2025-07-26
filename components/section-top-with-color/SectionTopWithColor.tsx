@@ -16,7 +16,7 @@ export default function SectionTopWithColor({ bg, breadcrumb, title }: Props) {
             <div className={styles.overlay} />
             <div className={cn("container")}>
 
-                <section className={cn("section md:h-[40rem] h-[35rem] grid items-start grid-rows-[auto,1fr]", styles.section)}>
+                <section className={cn("section md:h-[40rem] sm:h-[35rem] h-[30rem] grid items-start grid-rows-[auto,1fr]", styles.section)}>
 
                     <Breadcrumb
                         lightThem

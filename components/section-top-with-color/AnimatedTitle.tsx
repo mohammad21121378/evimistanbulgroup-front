@@ -11,7 +11,7 @@ const AnimatedTitle = ({ title }: AnimatedTitleProps) => {
   const [start, setStart] = useState(false)
 
   useEffect(() => {
-    const timer = setTimeout(() => setStart(true), 2500)
+    const timer = setTimeout(() => setStart(true), 2000)
     return () => clearTimeout(timer)
   }, [])
 
@@ -38,7 +38,7 @@ const AnimatedTitle = ({ title }: AnimatedTitleProps) => {
   return (
     <div className="title-wrapper relative inline-block overflow-hidden mt-auto xl:pr-28">
       <motion.h1
-        className="font-bold md:text-[7rem] text-[5rem] leading-[105%] mt-auto text-white relative z-10"
+        className="font-bold md:text-[7rem] sm:text-[5rem] text-[4rem] leading-[105%] mt-auto text-white relative z-10"
         variants={container}
         initial="hidden"
         animate={start ? 'show' : 'hidden'}

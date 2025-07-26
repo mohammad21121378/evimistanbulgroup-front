@@ -29,6 +29,7 @@ export default function Header() {
   const lightHeaderPages = [
     `/${locale}`,
     `/${locale}/client-stories`,
+    `/${locale}/faq`,
   ];
 
   const nav_links = [
