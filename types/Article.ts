@@ -22,6 +22,9 @@ export interface Article {
     }
     author: User;
     created_at: string;
+    CatName: string | null;
+    timeToRead: number;
+    CatSlug: string | null;
     category: CategoryArticle[];
     table_of_content?: TableOfContentItem[];
 }
