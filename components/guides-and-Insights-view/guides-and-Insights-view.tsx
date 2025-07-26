@@ -62,7 +62,7 @@ export default function GuidesAndInsightsView({
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-12">
-          {articles.length > 0 articles?.map((item, index) => (
+          {articles.length > 0 && articles?.map((item, index) => (
             <GuidesAndInsightsIisting key={index} {...item} />
           ))}
         </div>
