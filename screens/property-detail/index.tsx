@@ -11,7 +11,7 @@ export default function PropertyDetailPage({ item,related }: any) {
       <Hero item={item} />
       <Overview item={item} />
       <RelatedProperties related={related} item={item} />
-      <RelatedInsights />
+    {/*  <RelatedInsights />*/}
     </Layout>
   );
 }
