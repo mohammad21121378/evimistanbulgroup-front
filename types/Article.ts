@@ -12,6 +12,7 @@ export interface CategoryArticle {
 
 export interface Article {
     content: string;
+    excerpt?: string;
     resource?: string;
     url: string;
     title: string;

@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
+import {Article} from "../../../../types/Article";
 
 interface UsePaginationOptions<T> {
     limit: number;
     total_page: number;
-    initialData: T[];
+    category: string | null;
+    initialData: Article[];
     scrollTo?: {desktop: number; mobile: number;}
 }
 
-export function useNumberedPaginationFakeData<T>({
+export function useInsightPagination<T>({
     limit,
     initialData,
     total_page,
+    category,
     scrollTo={desktop: 90, mobile:450}
 }: UsePaginationOptions<T>) {
 

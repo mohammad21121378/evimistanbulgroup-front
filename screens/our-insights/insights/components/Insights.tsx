@@ -4,14 +4,22 @@ import GuidesAndInsightsListing from '@/components/guides-and-Insights-listing';
 import Pagination from '@/components/ui/Pagination';
 
 import { useMockInsights } from '../hooks/useMockInsights';
-import { useNumberedPaginationFakeData } from '@/hooks/useNumberedPaginationFakeData';
+import { useInsightPagination } from '../hooks/useInsightPagination';
+import {Article} from "../../../../types/Article";
 
-export default function Insights() {
-  const mockData = useMockInsights(25);
 
-  const { currentPage, totalPages, items, goToPage } = useNumberedPaginationFakeData({
+interface Props {
+    articles:Article[];
+    last_page:number;
+    category:string | null;
+}
+
+export default function Insights({articles,last_page,category}:Props) {
+  const { currentPage, totalPages, items, goToPage } = useInsightPagination({
     limit: 12,
-    initialData: mockData,
+    initialData: articles,
+    total_page:last_page,
+    category,
     scrollTo: {desktop: 450, mobile:925}
   });
 
