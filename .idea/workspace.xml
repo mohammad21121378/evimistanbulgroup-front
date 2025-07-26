@@ -20,7 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a444990-2b63-46d6-b210-f54ec3aa7b85" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/guides-and-Insights-view/guides-and-Insights-view.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/guides-and-Insights-view/guides-and-Insights-view.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +82,7 @@
       <workItem from="1753263212323" duration="2644000" />
       <workItem from="1753365613906" duration="4980000" />
       <workItem from="1753438746493" duration="15129000" />
-      <workItem from="1753523434236" duration="13802000" />
+      <workItem from="1753523434236" duration="13909000" />
     </task>
     <servers />
   </component>
@@ -103,6 +102,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="402" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1753553473474">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="402" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1753553473474" />
     <state x="477" y="263" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1753460371080">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
