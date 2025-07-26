@@ -22,7 +22,7 @@ interface PropertyResponse {
 
 export default function LatestListings() {
   const t = useTranslations("LatestListings");
-  const [listings, setListings] = useState([]);
+  const [listings, setListings] = useState<PropertyRawType[]>([]);
   const locale = useLocale();
 
   useEffect(() => {
