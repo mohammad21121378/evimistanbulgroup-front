@@ -1,6 +1,6 @@
 import FaqDetails from "@/screens/faq-details";
 import { faqsData } from "@/screens/faq-details/constants";
-import { createGenerateMetadata } from "@/hooks/createGeneratePagesMetadata"
+import { createStaticMetadataGenerator } from "@/hooks/createStaticMetadataGenerator"
 import { notFound } from "next/navigation";
 
 type Props = {
@@ -9,8 +9,7 @@ type Props = {
 
 // import {createGenerateMetadata} from "@/hooks/createGeneratePagesMetadata"
 
-export const dynamic = 'force-dynamic';
-export const generateMetadata = createGenerateMetadata("faqs");
+export const generateMetadata = createStaticMetadataGenerator("faqs");
 
 
 export function generateStaticParams() {

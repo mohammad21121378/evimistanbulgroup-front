@@ -2,7 +2,7 @@ import OurServicesDetails from "@/screens/our-services-detail";
 import { servicesData } from "@/screens/our-services-detail/constants";
 
 import { notFound } from "next/navigation";
-import {createGenerateMetadata} from "@/hooks/createGeneratePagesMetadata"
+import {createStaticMetadataGenerator} from "@/hooks/createStaticMetadataGenerator"
 
 type Props = {
   params: { slug: string };
@@ -10,8 +10,7 @@ type Props = {
 
 
 
-export const generateMetadata = createGenerateMetadata("our-services");
-export const dynamic = 'force-dynamic';
+export const generateMetadata = createStaticMetadataGenerator("our-services");
 
 
 export function generateStaticParams() {
