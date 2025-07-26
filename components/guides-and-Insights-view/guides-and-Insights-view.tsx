@@ -16,6 +16,7 @@ import {Article} from "../../types/Article";
 type Props = {
   title?: string;
   description?: string;
+  initArticles?: Article[];
   button?: {
     text?: string;
     href?: string;
@@ -30,9 +31,10 @@ export default function GuidesAndInsightsView({
   title,
   description,
   button,
+  initArticles
 }: Props) {
   const t = useTranslations("GuidesAndInsights");
-  const [articles, setArticles] = useState<Article[]>([]);
+  const [articles, setArticles] = useState<Article[]>(initArticles??[]);
   const locale = useLocale();
 
 

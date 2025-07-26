@@ -16,9 +16,14 @@ import RealatedInsights from "./components/RealatedInsights";
 import ArticleRightSidebar from "./components/RightSidebar";
 import {Article} from "../../../types/Article";
 
-export default function InsightDetails({articleData}: Article) {
+interface InsightDetailsProps {
+  article:Article
+  related_articles:Article[]
+}
 
-  const article = articleData;
+export default function InsightDetails({articleData}: InsightDetailsProps) {
+
+  const article = articleData.article;
 
   const [showResourceBox, setShowResourceBox] = useState(false);
   const resourceRef = useRef(null);
@@ -77,7 +82,7 @@ export default function InsightDetails({articleData}: Article) {
         </div>
       </div>
 
-        <RealatedInsights />
+      {articleData.related_articles.length > 0 && <RealatedInsights />}
 
     </Layout>
   );

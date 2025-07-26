@@ -34,7 +34,7 @@ export default function Header({ article }: Props) {
                     </Link>
                     <li>{article.timeToRead} min read</li>
                     <li>{article.created_at}</li>
-                    <li className=''>Posted by: <Link className='text-orange-500 underline capitalize font-bold' href={"/our-story"} >Evim istanbul group</Link></li>
+                    <li className=''>Posted by: <Link className='text-orange-500 underline capitalize font-bold' href={"/our-story"} >EvimIstanbul Group</Link></li>
                 </ul>
 
                 <ArticleShare article={article} />
