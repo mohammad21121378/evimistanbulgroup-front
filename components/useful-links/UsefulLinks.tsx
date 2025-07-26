@@ -4,8 +4,8 @@ import Link from "../ui/Link";
 
 interface UsefulLinksProps {
   title?: string;
-  text: string | null;
-  links: string[] | null;
+  text?: string;
+  links?: string[];
   className?: string;
   inline?: boolean;
 }
@@ -13,7 +13,7 @@ interface UsefulLinksProps {
 export default function UsefulLinks({
   title = "Useful links",
   links,
-  text=null,
+  text,
   className = "",
   inline = false,
 }: UsefulLinksProps) {
