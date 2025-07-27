@@ -1,9 +1,6 @@
 import React from "react";
 import styles from "./values.module.css";
 import cn from "classnames";
-import { Bag } from "@/constants/icons";
-
-import { ShieldCheck, Globe, Lock, Users } from "lucide-react";
 
 const values = [
   {

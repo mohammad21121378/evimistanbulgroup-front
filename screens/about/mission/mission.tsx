@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./mission.module.css";
 import cn from "classnames";
-import { Heading } from "@/components/typography";
 
 export default function Mission() {
   return (
