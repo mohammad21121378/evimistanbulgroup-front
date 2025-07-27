@@ -22,7 +22,7 @@ const leadership = [
   },
   {
     id: 3,
-    avatar: "omid-ghafouri.png",
+    avatar: "OMID-GHAFOURI.png",
     fullName: "Omid Ghafouri",
     role: "Director of Client Relations",
     description:
