@@ -23,7 +23,7 @@ export default function Properties() {
       try {
         const listings = await fetchProperties(3, 1, {},locale) as PropertyResponse;
 
-        setListings(listings?.properties);
+        setListings(listings ? listings.properties : []);
       } catch (error) {
         console.error("", error);
       }

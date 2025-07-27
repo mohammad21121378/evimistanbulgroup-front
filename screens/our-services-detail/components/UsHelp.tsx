@@ -1,4 +1,6 @@
-import Link from "@/components/ui/Link";
+'use client'
+
+import { useConsultationStore } from "@/stores/consultationStore";
 
 type Props = {
     data: {
@@ -9,6 +11,8 @@ type Props = {
 }
 
 export default function UsHelp({ data }: Props) {
+
+    const {onOpen} = useConsultationStore()
 
     return (
         <section className="section !pt-0">
@@ -23,8 +27,7 @@ export default function UsHelp({ data }: Props) {
                         {data.description}
                     </p>
 
-                    <Link href={data.buttonHref}>
-                        <button className="button mt-14 !text-base">
+                        <button className="button mt-14 !text-base" onClick={onOpen}>
                             {
                                 data.buttonLabel ? data.buttonLabel :
                                     <>
@@ -32,7 +35,6 @@ export default function UsHelp({ data }: Props) {
                                     </>
                             }
                         </button>
-                    </Link>
                 </div>
             </div>
         </section>
