@@ -264,5 +264,111 @@
     "installment": "Installment Available",
     "citizenship": "Approved for Citizenship",
     "earlyStage": "Early-Stage Project"
+  },
+  "PrivacyPolicy":
+  {
+    "title": "Privacy Policy",
+    "effectiveDate": "Effective Date: 01.08.2025",
+    "intro": "Welcome to EvimIstanbul Group®. Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your personal data in accordance with:\n\n   • KVKK (Türkiye’s Personal Data Protection Law)\n   • GDPR (European Union Law)\n   • CCPA (in other US states with laws/frameworks such as CPRA, VCDPA, etc.)\n\nBy using this website and submitting any form, you expressly agree to this Privacy Policy in its entirety.",
+    "sections": [
+      {
+        "title": "1. What Data We Collect",
+        "items": [
+          "Data submitted through forms on our website. We only collect the data you voluntarily provide, which may include:",
+          "Name, email, phone number",
+          "Preferences related to services or property interests",
+          "Metadata (e.g. region or IP) often shared automatically by your browser",
+          "Messages or inquiries submitted through third-party ad selectors",
+          "Browsing behavior through cookies (see Section 6)"
+        ]
+      },
+      {
+        "title": "2. Why We Collect It",
+        "items": [
+          "We collect your data in order to:",
+          "Respond to your messages and provide consultations",
+          "Match your relevant services and property offers",
+          "Improve your experience with content & usability",
+          "Comply with regulatory obligations (if applicable)",
+          "Display more relevant content and advertising through third-party ad networks"
+        ]
+      },
+      {
+        "title": "3. Legal Basis for Data Processing",
+        "items": [
+          "We process your data under the following lawful grounds:",
+          "Legitimate business interest (service improvement & analytics)",
+          "Consent (when you have voluntarily agreed to accept cookies)",
+          "Contractual necessity for form submission and contact for business operations",
+          "Legal obligations under Turkish law and applicable laws"
+        ]
+      },
+      {
+        "title": "4. Data Sharing for Advertising",
+        "items": [
+          "We may share anonymized usage data with third parties.",
+          "These include web analytics and ad personalization services (e.g., Google Ads, Meta, or others), which may temporarily or permanently store anonymous data through cookies or similar technologies to display relevant ads based on your interests.",
+          "You can disable targeting and personalization via your browser or the respective ad network’s opt-out tools (see Section 6)."
+        ]
+      },
+      {
+        "title": "5. Data Security",
+        "items": [
+          "We use secured digital infrastructure, including encrypted servers, firewalls, and access controls, to protect your data.",
+          "However, no technology is 100% secure, and by using this website, you acknowledge and accept this inherent risk."
+        ]
+      },
+      {
+        "title": "6. Your Rights",
+        "items": [
+          "Depending on jurisdiction, you may have the right to:",
+          "Request access, correction, or deletion of your data",
+          "Withdraw your consent",
+          "Restrict data portability (where applicable)",
+          "File complaints with KVKK, GDPR regulators, or relevant state bodies",
+          "Please contact us through the options in Section 11 if you wish to exercise these rights."
+        ]
+      },
+      {
+        "title": "7. Cookies & Tracking",
+        "items": [
+          "We use cookies for functional, performance, and advertising cookies. These may come from:",
+          "Our own website (first-party cookies)",
+          "External services like Google or Meta (third-party cookies)",
+          "You can clear or customize cookies anytime via your browser settings or opt-out tools like:",
+          "https://optout.aboutads.info",
+          "https://tools.google.com/dlpage/gaoptout"
+        ]
+      },
+      {
+        "title": "8. Disclaimers & Limitation of Liability",
+        "items": [
+          "All content provided is for basic informational only. Submission of data via forms does not create a client relationship unless explicitly confirmed in writing.",
+          "We do not accept any loss, damage, data breach, or misuse – direct or indirect – arising from the use of our website, forms, or related services.",
+          "If you do not agree with these terms, please do not use our site or services."
+        ]
+      },
+      {
+        "title": "9. Jurisdiction",
+        "items": [
+          "This policy is governed by the laws of the Republic of Türkiye. Any disputes will be resolved by the İstanbul courts."
+        ]
+      },
+      {
+        "title": "10. Changes to this Policy",
+        "items": [
+          "We may update this Privacy Policy at any time without prior notice. Continued use of the website constitutes your acceptance of the updated terms."
+        ]
+      },
+      {
+        "title": "11. Contact",
+        "items": [
+          "If you have any questions or concerns, please contact us:",
+          "📩 info@evimistanbulgroup.com",
+          "📍 Ayazaga, Vadi Istanbul Park, Şişli/İstanbul, Kemerburgaz Cd. 2/3, Blok No 7B, K:2, 34396 Şişli / İstanbul – Türkiye"
+        ]
+      }
+    ]
   }
+  
 }

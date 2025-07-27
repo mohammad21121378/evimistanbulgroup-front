@@ -1,0 +1,22 @@
+.warpper{
+    font-size: 1.32rem;
+    line-height: 1.68;
+}
+
+.warpper ul{
+    list-style: disc;
+    list-style-position: outside;
+    padding-left: 20px;
+    margin-left: 20px;
+}
+
+
+.warpper strong{
+    font-size: 1.4rem;
+    margin-top: 32px;
+    display: block;
+}
+
+.warpper a:hover{
+    text-decoration: underline;
+}

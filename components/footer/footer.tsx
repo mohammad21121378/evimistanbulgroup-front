@@ -20,8 +20,8 @@ export default function Footer() {
     { label: "Contact Us", href: `/contact-us` },
   ];
   const legalLinks = [
-    { label: 'Legal & Corporate', href: `/legal-and-corporate` },
-    { label: 'Terms & Conditions', href: `/terms-and-conditions` },
+    { label: 'Legal & Corporate', href: `/legal-corporate` },
+    { label: 'Terms & Conditions', href: `/terms-conditions` },
     { label: 'Privacy Policy', href: `/privacy-policy` },
     { label: 'FAQs', href: `/faqs` },
   ]

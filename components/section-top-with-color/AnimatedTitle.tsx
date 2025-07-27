@@ -41,10 +41,10 @@ const AnimatedTitle = ({ title, noneAnimate, className, titleSm }: AnimatedTitle
   let charIndex = 0
 
   return (
-    <div className={classNames("title-wrapper relative inline-block overflow-hidden mt-auto xl:pr-28", className)}>
+    <div className={classNames("title-wrapper relative inline-block overflow-hidden mt-auto xl:pr-28 text-white", className)}>
 
       <motion.h1
-        className={classNames("font-bold  leading-[105%] mt-auto text-white relative z-10 md:hidden",
+        className={classNames("font-bold  leading-[105%] mt-auto  relative z-10 md:hidden",
         {
           "xl:text-[7rem] md:text-[6.6rem] sm:text-[5rem] text-[4rem]": !titleSm,
           "xl:text-[6rem] md:text-[5.7rem] sm:text-[5rem] text-[4rem]": titleSm,
@@ -90,7 +90,7 @@ const AnimatedTitle = ({ title, noneAnimate, className, titleSm }: AnimatedTitle
       </motion.h1>
 
       <motion.h1
-        className={classNames("font-bold  leading-[105%] mt-auto text-white relative z-10 hidden md:block",
+        className={classNames("font-bold  leading-[105%] mt-auto  relative z-10 hidden md:block",
         {
           "xl:text-[7rem] md:text-[6.6rem] sm:text-[5rem] text-[4rem]": !titleSm,
           "xl:text-[6rem] md:text-[5.7rem] sm:text-[5rem] text-[4rem]": titleSm,
