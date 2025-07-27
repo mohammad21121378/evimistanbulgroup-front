@@ -11,7 +11,7 @@ interface AnimatedCounterProps {
 export default function AnimatedCounter({
   to,
   format = false,
-  speed = to > 100 ? 162 : (to >50 ? 22 : 4),
+  speed = to > 100 ? 162 : (to >50 ? 24 : 4),
 }: AnimatedCounterProps) {
 
   const ref = useRef(null);
