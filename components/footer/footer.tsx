@@ -15,7 +15,7 @@ export default function Footer() {
     { label: "Properties", href: `/properties-for-sale-in-turkey` },
     { label: "Our Services", href: `/our-services` },
     { label: "Our Insights", href: `/our-insights` },
-    { label: "About Us", href: `/about` },
+    { label: "About Us", href: `/our-story` },
     { label: "Client Stories", href: `/client-stories` },
     { label: "Contact Us", href: `/contact-us` },
   ];
@@ -67,8 +67,8 @@ export default function Footer() {
               Bilişim Vadisi İstanbul, 7A Office Block, Floor 2,<br />
               Kemerburgaz Caddesi NO 7, Ayazağa Mahallesi, Istanbul, Turkey
             </p>
-            <a href='+905348111193' className="mt-6 block hover:underline ">+90 (534) 811 11 93</a>
-            <a href='contact@evimistanbulgroup.com' className="mt-px block hover:underline ">contact@evimistanbulgroup.com</a>
+            <a href='tel:+905348111193' className="mt-6 w-fit md:mx-0 mx-auto block hover:underline ">+90 (534) 811 11 93</a>
+            <a href='mailto:contact@evimistanbulgroup.com' className="mt-px w-fit md:mx-0 mx-auto block hover:underline ">contact@evimistanbulgroup.com</a>
           </div>
 
           <div className="text-base max-w-2xl md:text-left text-center">

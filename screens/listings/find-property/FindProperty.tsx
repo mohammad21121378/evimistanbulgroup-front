@@ -1,6 +1,10 @@
+'use client'
+
+import { useConsultationStore } from "@/stores/consultationStore";
 import SvgForBg from "./SvgForBg";
 
 export default function FindProperty() {
+    const { onOpen } = useConsultationStore();
     return (
         <div className="bg-[#002DD1] pt-20 pb-24 mt-16 space-y-6 text-white text-center relative">
             <div className="heading-6 text-orange-500">
@@ -15,7 +19,7 @@ export default function FindProperty() {
                 Not all of our properties are listed online — and some of the best offers go fast. If you’re looking for something specific, contact us directly and our team will handpick options tailored to your needs, budget, and goals.
             </p>
 
-            <button className="button">
+            <button className="button" onClick={onOpen}>
                 Book A Free Consultation
             </button>
 

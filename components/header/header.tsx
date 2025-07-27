@@ -32,6 +32,7 @@ export default function Header() {
     `/${locale}/faqs`,
     `/${locale}/faqs/*`,
     `/${locale}/our-story`,
+    `/${locale}/legal-corporate`,
   ];
 
   const nav_links = [

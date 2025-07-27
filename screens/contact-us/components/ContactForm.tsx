@@ -53,7 +53,7 @@ interface ContactFormProps {
                     Submit
                 </Button>
                 <div className='text-slate-500 flex order-1 md:order-2 items-center gap-1.5 text-base text-center md:text-left md:justify-start justify-center'>
-                    By submitting, you agree to our <Link className='font-bold underline '>Terms</Link> and <Link className='font-bold underline '>Privacy Policy.</Link>
+                    By submitting, you agree to our <Link className='font-bold underline' href={"/terms-conditions"}>Terms</Link> and <Link href="/privacy-policy" className='font-bold underline '>Privacy Policy.</Link>
                 </div>
             </div>
         </form>

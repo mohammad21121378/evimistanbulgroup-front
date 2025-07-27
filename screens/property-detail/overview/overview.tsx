@@ -1,11 +1,11 @@
 "use client";
 
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect } from "react";
 import styles from "./overview.module.css";
 import cn from "classnames";
 import { Heading } from "@/components/typography";
 import PropertyFeatures from "@/components/property-features";
-import { Plus, Print, Share } from "@/constants/icons";
+import { Print, Share } from "@/constants/icons";
 import classNames from "classnames";
 import TableOfContents from "@/components/table-of-contents";
 import { details } from "../contsants";
@@ -13,19 +13,22 @@ import { PropertyType } from "@/types/Property";
 import ShareBox from "../share-box";
 import ExpandableHtml from "@/components/expandable-html/ExpandableHtml";
 import SingleLocationMap from "@/components/single-location-map";
-import { amenitiesIcons } from "../amenitiesIcons";
 import AmenitiesAndServicesRender from "./AmenitiesAndServicesRender";
-
-
+import { useConsultationStore } from "@/stores/consultationStore";
 
 type OverviewProps = PropertyType;
 
 export default function Overview({ item }: OverviewProps) {
   const [open, setOpen] = React.useState<number | null>(null);
+  const { onOpen, setInitialValues } = useConsultationStore();
 
   const toggleOpen = (id: number) => {
     setOpen((prevId) => (prevId === id ? null : id));
   };
+
+  useEffect(()=>{
+    setInitialValues({propertyId: item.id, topic: "Buy Property in Turkey"})
+  }, [item])
 
   return (
     <section className={cn("section", styles.section)}>
@@ -177,7 +180,7 @@ export default function Overview({ item }: OverviewProps) {
                 <p className="text-[.81rem] font-bold mb-2">
                   Property Code: #{item.id}
                 </p>
-                <button className="button button-small text-[.81rem]">
+                <button className="button button-small text-[.81rem]" onClick={onOpen}>
                   Book A Free Consultation
                 </button>
               </div>

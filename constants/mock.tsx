@@ -923,9 +923,6 @@ const Peroperty = {
 
 export { Tabs, Listings, TeamMembers, Peroperty };
 
-
-
-// /lib/reviews.ts
 export const reviews = [
   {
     author: 'علی',

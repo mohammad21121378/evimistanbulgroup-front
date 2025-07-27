@@ -3,13 +3,9 @@
 import React, {useEffect, useState} from "react";
 import cn from "classnames";
 import styles from "./latest-listings.module.css";
-import { Heading } from "@/components/typography";
-import { Listings, Tabs } from "@/constants/mock";
-import { Dropdown } from "@/components/elements";
 import PropertyListing from "@/components/property-listing";
 import {useLocale, useTranslations} from "next-intl";
 import { ArrowRight } from "@/constants/icons";
-import Link from "@/components/ui/Link";
 import Button from "@/components/ui/Button";
 import classNames from "classnames";
 import fetchProperties from "@/helpers/api/property/properties";
@@ -28,9 +24,9 @@ export default function LatestListings() {
   useEffect(() => {
     const getArticles = async () => {
       try {
-        const listings = await fetchProperties(3, 1, {},locale) as PropertyResponse;
+        const listingsData = await fetchProperties(3, 1, {},locale) as PropertyResponse;
 
-        setListings(listings?.properties);
+        setListings(listingsData ? listingsData?.properties : []);
       } catch (error) {
         console.error("", error);
       }

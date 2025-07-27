@@ -10,6 +10,7 @@ import ErrorInput from "@/components/ui/ErrorInput";
 import Button from "@/components/ui/Button";
 import { ConsultationFormProps } from "../types";
 import { communicationMethods, contactTimes, languages, topics } from "../constants";
+import Link from "@/components/ui/Link";
 
 export default function ConsultationForm({...consultationForm}: ConsultationFormProps) {
 
@@ -134,13 +135,13 @@ export default function ConsultationForm({...consultationForm}: ConsultationForm
                     label={
                         <>
                             I agree to the{" "}
-                            <a href="#" className="underline">
+                            <Link href="/trems-conditions" className="underline hover:text-orange-600">
                                 Terms & Conditions
-                            </a>{" "}
+                            </Link>{" "}
                             and the{" "}
-                            <a href="#" className="underline">
+                            <Link href="/privacy-policy" className="underline hover:text-orange-600">
                                 Privacy Policy
-                            </a>
+                            </Link>
                             .
                         </>
                     }

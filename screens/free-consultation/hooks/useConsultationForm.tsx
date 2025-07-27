@@ -1,5 +1,5 @@
 import * as yup from "yup";
-import { useForm } from "react-hook-form";
+import { Resolver, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useEffect, useState } from "react";
 import { communicationMethods, contactTimes, languages, topics } from "../constants";
@@ -15,6 +15,8 @@ export const schema = yup.object({
     communication: yup.string().required("Please select a communication method."),
     time: yup.string().required("Please select a preferred time."),
     agree: yup.boolean().oneOf([true], "You must agree to the terms.").required(),
+    propertyId: yup.number().nullable().optional().default(undefined),
+
   });
   
 
@@ -26,12 +28,13 @@ export const useConsultationForm = (initialValues?: Partial<ConsultationFormValu
   const [loading, setLoading ] = useState(false)
 
   const form = useForm<ConsultationFormValues>({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(schema) as Resolver<ConsultationFormValues>,
     defaultValues: {
       topic: topics[0],
       language: languages[0],
       communication: communicationMethods[0],
       time: contactTimes[0],
+      propertyId: undefined,
       ...initialValues,
     }
   });
@@ -43,6 +46,7 @@ export const useConsultationForm = (initialValues?: Partial<ConsultationFormValu
         language: languages[0],
         communication: communicationMethods[0],
         time: contactTimes[0],
+        propertyId: undefined,
         ...initialValues,
       });
     }
@@ -50,7 +54,7 @@ export const useConsultationForm = (initialValues?: Partial<ConsultationFormValu
   
 
   const onSubmit = async (data: ConsultationFormValues) => {
-      setLoading(true)
+      setLoading(true)      
       await addFormEntrance(data, "consultation", setSuccessfulResult)
       setLoading(false)
   };
