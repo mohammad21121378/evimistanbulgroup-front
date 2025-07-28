@@ -19,7 +19,7 @@ export default function Properties() {
   const [listings, setListings] = useState<PropertyRawType[]>([]);
   const locale = useLocale();
   useEffect(() => {
-    const getArticles = async () => {
+    const getProperties = async () => {
       try {
         const listings = await fetchProperties(3, 1, {},locale) as PropertyResponse;
 
@@ -29,7 +29,7 @@ export default function Properties() {
       }
     };
 
-    getArticles();
+    getProperties();
   }, [locale]);
   return (
     <section className={cn("section")}>
