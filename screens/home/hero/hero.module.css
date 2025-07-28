@@ -93,10 +93,6 @@
         align-items: stretch;
         gap: 48px;
     }
-
-    .sub_title{
-        font-size: 26px;
-    }
 }
 
 @media (max-width: 480px) {
