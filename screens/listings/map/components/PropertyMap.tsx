@@ -47,7 +47,7 @@ function PropertyMap({ loadingData, properties }: Props) {
 
   const istanbulProperty = properties?.find(
     (p) =>
-      (p.city?.toLowerCase() === "istanbul") &&
+      (p.parentLocation?.toLowerCase() === "Istanbul".toLowerCase()) &&
       p.latitude !== null &&
       p.longitude !== null
   );
@@ -65,7 +65,7 @@ function PropertyMap({ loadingData, properties }: Props) {
       mapRef.current?.panTo(initialCenter);
       setCenter(initialCenter);
 
-  }, [properties]);
+  }, [initialCenter]);
 
   useEffect(() => {
     if (selectedProperty && mapRef.current) {
