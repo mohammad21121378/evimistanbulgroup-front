@@ -7,9 +7,10 @@ import { viewportMargin } from "@/constants/animation";
 
 const animationVariants = (index: number) => {
     return {
-        hidden: { opacity: 0},
+        hidden: { opacity: 0, scale: .9},
         visible: {
             opacity: 1,
+            scale:1,
             transition: {
                 delay: 2.7 + (0.1 * (index)),
                 duration: .8,

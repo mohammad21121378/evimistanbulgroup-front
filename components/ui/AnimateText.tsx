@@ -18,7 +18,7 @@ const AnimatedText = ({ title, noneAnimate, simpleFade=false }: AnimatedTextProp
   const [start, setStart] = useState(false)
 
   useEffect(() => {
-    const timer = setTimeout(() => setStart(true), 2000)
+    const timer = setTimeout(() => setStart(true), 1800)
     return () => clearTimeout(timer)
   }, [])
 
@@ -31,13 +31,14 @@ const AnimatedText = ({ title, noneAnimate, simpleFade=false }: AnimatedTextProp
 
   const letter = {
     hidden: simpleFade
-      ? { opacity: 0 }
+      ? { opacity: 0, scale: .85 }
       : { y: -80, opacity: 0, skewY: 10 },
   
     show: simpleFade
       ? {
           opacity: 1,
-          transition: { duration: 0.6, ease: 'easeOut' },
+          scale: 1,
+          transition: { duration: 0.2, ease: 'easeOut' },
         }
       : {
           y: 0,
