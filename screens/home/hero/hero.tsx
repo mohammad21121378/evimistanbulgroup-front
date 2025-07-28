@@ -34,14 +34,13 @@ export default function Hero() {
   
   const animationVariants = (index: number) => {
     return {
-      hidden: { opacity: 0, scale: .99 },
+      hidden: { opacity: 0, scale: .9 },
       show: {
         opacity: 1,
         scale: 1,
         transition: {
-          delay: isMobile ? 0 : index * .25,
-          duration: .5,
-          ease: [0.65, 0, 0.35, 1],
+          delay: 0,
+          duration: .8
         }
       },
     }
