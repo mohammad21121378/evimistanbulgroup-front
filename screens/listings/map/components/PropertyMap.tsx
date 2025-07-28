@@ -10,6 +10,7 @@ import React, { useEffect, useRef, useState } from "react";
 import PropertyListing from "@/components/property-listing";
 import { Loader } from "lucide-react";
 import { PropertyRawType } from "@/types/Property";
+import isEqual from "lodash.isequal";
 
 const containerStyle = {
   width: "100%",
@@ -29,6 +30,7 @@ function PropertyMap({ loadingData, properties }: Props) {
 
   const [selectedPropertyId, setSelectedPropertyId] = useState<number | null>(null);
   const mapRef = useRef<google.maps.Map | null>(null);
+  const initialCenterRef = useRef(null);
 
   const fallbackCenter = { lat: 41.0082, lng: 28.9784 };
 
@@ -62,8 +64,10 @@ function PropertyMap({ loadingData, properties }: Props) {
 
   useEffect(() => {
 
+    if (!isEqual(center, initialCenter)) {      
       mapRef.current?.panTo(initialCenter);
       setCenter(initialCenter);
+    }
 
   }, [initialCenter]);
 
