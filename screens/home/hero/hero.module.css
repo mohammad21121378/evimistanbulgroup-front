@@ -104,4 +104,8 @@
     .stack {
         grid-template-columns: 1fr;
     }
+
+    .title{
+        font-size: 3.65rem !important;
+    }
 }

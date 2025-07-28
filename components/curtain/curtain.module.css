@@ -12,8 +12,10 @@
     position: absolute;
     top: 50%;
     width: 100%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    text-align: center;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
     z-index: 101;
     color: var(--white);
     font-size: 86px;
