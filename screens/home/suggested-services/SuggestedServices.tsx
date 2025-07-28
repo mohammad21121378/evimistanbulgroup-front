@@ -11,7 +11,7 @@ const animationVariants = (index: number) => {
         visible: {
             opacity: 1,
             transition: {
-                delay: 2.7 + (0.6 * (index)),
+                delay: 2.7 + (0.35 * (index)),
                 duration: .7,
                 ease: [0.65, 0, 0.35, 1],
             }
