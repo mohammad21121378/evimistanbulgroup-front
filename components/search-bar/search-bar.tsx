@@ -4,12 +4,12 @@ import React, { ChangeEvent, useState } from "react";
 import cn from "classnames";
 import styles from "./search-bar.module.css";
 import { Ques, Filter } from "@/constants/icons";
-import Link from "next/link";
 import { useTranslations } from "next-intl";
 import Button from "../ui/Button";
-import FreeConsultation from "@/screens/free-consultation";
 import { useConsultationStore } from "@/stores/consultationStore";
 import { topics } from "@/screens/free-consultation/constants";
+import { motion } from 'framer-motion'
+import { viewportMargin } from "@/constants/animation";
 
 type SearchBarProps = {
   placeholder: string;
@@ -23,9 +23,9 @@ export default function SearchBar({
   onSearchTermChange,
 }: SearchBarProps) {
 
-  const [ selected, setSelected] = useState<string>(topics[0]);
+  const [selected, setSelected] = useState<string>(topics[0]);
   const { onOpen, setInitialValues } = useConsultationStore();
-  
+
   const t = useTranslations("searchBar");
 
   const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
@@ -38,8 +38,25 @@ export default function SearchBar({
     onOpen();
   };
 
+  const animationVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 3.2,
+        duration: 1.5,
+        ease: [0.65, 0, 0.35, 1],
+      }
+    },
+  }
+
   return (
-    <>
+    <motion.div
+      viewport={viewportMargin}
+      variants={animationVariants}
+      initial="hidden"
+      animate="visible"
+    >
       <div className={styles.search_bar}>
         <div className={styles.input_group}>
           <div className={styles.icon}>{Ques}</div>
@@ -68,6 +85,6 @@ export default function SearchBar({
           {t("consultationButton")}
         </Button>
       </div>
-    </>
+    </motion.div>
   );
 }

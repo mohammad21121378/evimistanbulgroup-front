@@ -19,5 +19,32 @@ export const slideUpAnimation = {
         },
     },
 };
- 
+
+export const viewportMarginSm = { once: true, margin: "0px 0px -75px 0px" }
 export const viewportMargin = { once: true, margin: "0px 0px -150px 0px" }
+
+
+export const slideUpAndFadeinAnimation = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            delay: 0.3,
+            duration: 1,
+            ease: [0.65, 0, 0.35, 1],
+        },
+    },
+};
+
+export const fadeinAnimation = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: .7,
+            ease: [0.65, 0, 0.35, 1],
+        },
+    },
+};

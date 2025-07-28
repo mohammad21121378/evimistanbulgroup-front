@@ -1,30 +1,57 @@
-import classNames from 'classnames'
-import AnimatedText from '../ui/AnimateText';
+'use client'
 
-interface AnimatedTitleProps {
+import { useMediaQuery } from 'react-responsive';
+import classNames from 'classnames'
+import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
+
+interface AnimatedTextProps {
   title: string
   noneAnimate?: boolean;
-  className?: string;
-  titleSm?: boolean
 }
 
-const AnimatedTitle = ({ title, noneAnimate, className, titleSm }: AnimatedTitleProps) => {
+const AnimatedText = ({ title, noneAnimate }: AnimatedTextProps) => {
+
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
+  const [start, setStart] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setStart(true), 2000)
+    return () => clearTimeout(timer)
+  }, [])
+
+  const container = {
+    hidden: {},
+    show: {
+      transition: { staggerChildren: 0.06 },
+    },
+  }
+
+  const letter = {
+    hidden: { y: -80, opacity: 0, skewY: 10 },
+    show: {
+      y: 0,
+      opacity: 1,
+      skewY: 0,
+      transition: { type: 'spring', stiffness: 600, damping: 25 },
+    },
+  }
+
+  const lines = title.split('\n')
+  const words = title.split(' ')
+  let charIndex = 0;
+
+
 
   return (
-    <div className={classNames("title-wrapper relative inline-block overflow-hidden mt-auto xl:pr-28 text-white", className)}>
-
-      <h1
-        className={classNames("font-bold  leading-[105%] mt-auto relative z-10 ",
-          {
-            "xl:text-[7rem] md:text-[6.6rem] sm:text-[5rem] text-[4rem]": !titleSm,
-            "xl:text-[6rem] md:text-[5.7rem] sm:text-[5rem] text-[4rem]": titleSm,
-          }
-        )}
+      <motion.span
+        variants={container}
+        initial="hidden"
+        animate={start ? 'show' : 'hidden'}
       >
 
-        <AnimatedText title={title} noneAnimate={noneAnimate} />
-
-        {/* {
+        {
           isMobile ?
             <>
               {words.map((word, wi) => (
@@ -97,12 +124,10 @@ const AnimatedTitle = ({ title, noneAnimate, className, titleSm }: AnimatedTitle
                 )
               })}
             </>
-        } */}
+        }
 
-      </h1>
-
-    </div>
+      </motion.span>
   )
 }
 
-export default AnimatedTitle
+export default AnimatedText
