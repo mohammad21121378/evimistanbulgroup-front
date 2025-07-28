@@ -29,8 +29,6 @@ function PropertyMap({ loadingData, properties }: Props) {
 
   const [selectedPropertyId, setSelectedPropertyId] = useState<number | null>(null);
   const mapRef = useRef<google.maps.Map | null>(null);
-  const prevPropertiesRef = useRef<PropertyRawType[] | null>(null);
-  const initialMap = useRef(null)
 
   const fallbackCenter = { lat: 41.0082, lng: 28.9784 };
 
@@ -42,7 +40,21 @@ function PropertyMap({ loadingData, properties }: Props) {
     (p) => p.id === selectedPropertyId && p.latitude !== null && p.longitude !== null
   );
 
-  const initialCenter = firstValidProperty
+  // const initialCenter = firstValidProperty
+  //   ? { lat: firstValidProperty.latitude!, lng: firstValidProperty.longitude! }
+  //   : fallbackCenter;
+
+
+  const istanbulProperty = properties?.find(
+    (p) =>
+      (p.city?.toLowerCase() === "istanbul") &&
+      p.latitude !== null &&
+      p.longitude !== null
+  );
+  
+  const initialCenter = istanbulProperty
+    ? { lat: istanbulProperty.latitude!, lng: istanbulProperty.longitude! }
+    : firstValidProperty
     ? { lat: firstValidProperty.latitude!, lng: firstValidProperty.longitude! }
     : fallbackCenter;
 

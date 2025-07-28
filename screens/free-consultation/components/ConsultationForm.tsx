@@ -137,7 +137,7 @@ export default function ConsultationForm({...consultationForm}: ConsultationForm
                     label={
                         <>
                             I agree to the{" "}
-                            <Link href="/trems-conditions" className="underline hover:text-orange-600" onClick={onClose}>
+                            <Link href="/terms-conditions" className="underline hover:text-orange-600" onClick={onClose}>
                                 Terms & Conditions
                             </Link>{" "}
                             and the{" "}
