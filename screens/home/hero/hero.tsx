@@ -39,7 +39,7 @@ export default function Hero() {
         opacity: 1,
         scale: 1,
         transition: {
-          delay: isMobile ? 0 : index * .5,
+          delay: isMobile ? 0 : index * .25,
           duration: .5,
           ease: [0.65, 0, 0.35, 1],
         }

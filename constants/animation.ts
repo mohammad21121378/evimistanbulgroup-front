@@ -43,7 +43,7 @@ export const fadeinAnimation = {
         opacity: 1,
         y: 0,
         transition: {
-            duration: .7,
+            duration: .5,
             ease: [0.65, 0, 0.35, 1],
         },
     },
