@@ -40,9 +40,9 @@ const OfficeCard = ({
             </div>
 
             <div className={`md:col-span-6 md:gap-y-0 grid h-full items-start ${isReverse ? 'md:order-1' : 'md:order-3'}`}>
-                <Heading type="heading-4" className="font-bold uppercase">
+                <h2 className="font-bold heading-4 uppercase">
                     {title}
-                </Heading>
+                </h2>
 
                 <p className="text-xl font-bold text-orange-600 mt-1 uppercase">{subtitle}</p>
 

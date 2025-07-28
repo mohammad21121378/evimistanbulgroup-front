@@ -10,9 +10,9 @@ export default function MoreInfo() {
     return (
         <section className="section !pt-8">
             <div className="container">
-                <div className="text-4xl font-bold uppercase">
+                <h2 className="text-4xl font-bold uppercase">
                     Start Your Journey with Confidence
-                </div>
+                </h2>
 
                 <p className="text-gray-500 mt-8 text-2xl">
                     Whether you're buying a home, relocating your family, applying for a residence permit, or investing for citizenship — EvimIstanbul Group is ready to be your partner at every stage.

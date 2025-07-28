@@ -11,9 +11,9 @@ export default function FindProperty() {
                 Let Us Help.
             </div>
 
-            <h5 className="heading-5">
+            <h2 className="heading-5">
                 Can’t Find the Right Property?
-            </h5>
+            </h2>
 
             <p className="paragraph-medium container mx-auto px-20 2xl:px-48 relative z-10">
                 Not all of our properties are listed online — and some of the best offers go fast. If you’re looking for something specific, contact us directly and our team will handpick options tailored to your needs, budget, and goals.

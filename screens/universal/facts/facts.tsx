@@ -36,7 +36,7 @@ export default function Facts() {
   return (
     <section className={cn("section")}>
       <div className={cn("container")}>
-        <div className={cn("subheading-large", styles.title)}>Facts</div>
+        <h2 className={cn("subheading-large", styles.title)}>Facts</h2>
 
         <div className={styles.facts}>
           {facts.map((fact) => (

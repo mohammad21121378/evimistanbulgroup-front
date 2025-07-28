@@ -12,14 +12,28 @@
 
 .sortItem{
     background: #fff;
-    padding: 10px 15px;
+    padding: 5px 15px;
     font-size: 20px;
-    border-radius: 8px;
     transition: .3s;
     text-wrap: nowrap;
     font-weight: 400;
-    margin: 2px 0;
+    margin: 6px 0;
+    @apply hover:text-orange-500 truncate
 
+}
+
+.activeItem{
+    @apply text-orange-500 font-bold relative pl-5;
+}
+
+.activeItem::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 8px;
+    top: 0;
+    @apply bg-orange-500 rounded-r-md;
 }
 
 .sortMobile{

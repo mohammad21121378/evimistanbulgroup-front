@@ -3,10 +3,10 @@
 }
 
 .columns {
-    margin-top: 80px;
+    margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 80px;
+    gap: 40px 80px;
     align-items: stretch;
 }
 
@@ -16,6 +16,19 @@
     align-items: flex-start;
     gap: 48px;
     height: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.column:nth-child(odd) {
+    border-right: 1px solid #E2E8F0;
+    padding-right: 25px;
+}
+
+@media (max-width: 768px) {
+    .column:nth-child(odd) {
+        border-right: none;
+        padding-right: 0;
+    }
 }
 
 .subtitle {

@@ -36,9 +36,9 @@ export default function Hero() {
           items={[{ label: 'Contact Us' }]}
         />
 
-        <Heading type='heading-4' className='mb-5 mt-8'>
+        <h1 className='mb-5 mt-8 heading-4'>
           Our Offices
-        </Heading>
+        </h1>
 
         {offices.map((office, i) => (
           <OfficeCard key={i} {...office} isReverse={i % 2 !== 0} />

@@ -58,7 +58,7 @@ export default function Values() {
   return (
     <section className={cn("section")}>
       <div className={cn("container")}>
-        <div className={cn("subheading-large")}>OUR VALUES</div>
+        <h2 className={cn("subheading-large")}>OUR VALUES</h2>
 
         <div className={styles.values}>
           {values.map((value) => (

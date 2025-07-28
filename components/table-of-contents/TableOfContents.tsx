@@ -73,7 +73,7 @@ export default function TableOfContents({ className, transparent=false, hasActiv
         className
       )}
     >
-      <h4 className="text-xl font-bold mb-2.5">Table of Contents</h4>
+      <strong className="text-xl font-bold mb-2.5 block">Table of Contents</strong>
       <ul className="space-y-2 text-base">
         {items.map((item) => {
           const isActive = item.id === activeId;

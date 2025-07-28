@@ -8,7 +8,7 @@ export default function Mission() {
       <div className="container">
         <div className={cn("gap-10", styles.container)}>
           <div className="grid grid-rows-[auto,1fr]">
-            <div className={cn("subheading-large")}>ABOUT US</div>
+            <h2 className={cn("subheading-large")}>ABOUT US</h2>
             <div className="bg-slate-200 mt-10 mb-20 rounded-lg"></div>
           </div>
 
