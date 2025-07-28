@@ -68,7 +68,7 @@ export default function ImageModal({
           exit={{ opacity: 0 }}
         >
           <motion.div
-            className="relative max-w-5xl w-[90%] rounded-2xl overflow-hidden shadow-xl"
+            className="relative max-w-5xl w-[90%] rounded-2xl overflow-hidden"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
