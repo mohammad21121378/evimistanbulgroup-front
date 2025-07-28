@@ -31,7 +31,7 @@ const AnimatedText = ({ title, noneAnimate, simpleFade=false }: AnimatedTextProp
 
   const letter = {
     hidden: simpleFade
-      ? { opacity: 0, scale: .85 }
+      ? { opacity: 0, scale: .1 }
       : { y: -80, opacity: 0, skewY: 10 },
   
     show: simpleFade
