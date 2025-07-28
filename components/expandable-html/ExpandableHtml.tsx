@@ -34,7 +34,7 @@ export default function ExpandableHtml({ html, showAll=false }: { html: string; 
 
   return (
     <>
-    <div className="relative w-full rounded-xl outline outline-1 outline-gray-50 bg-white p-4 pb-5 transition-all duration-300">
+    <div className="relative w-full rounded-xl bg-white p-4 pb-5 transition-all duration-300">
       <motion.div
         className="overflow-hidden"
         animate={{ height: expanded ? contentHeight : (shouldShowToggle ? COLLAPSED_HEIGHT : 'auto') }}

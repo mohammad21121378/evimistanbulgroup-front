@@ -53,7 +53,10 @@ interface TableBlock {
     };
 }
 
-
+interface IframeBlock {
+    type: "iframe";
+    value: string;
+}
 
 export type ContentBlock =
     | TitleBlock
@@ -63,6 +66,7 @@ export type ContentBlock =
     | ParagraphType
     | AfterTextBlock
     | LinkType
+    | IframeBlock
     ;
 
 interface Props {
@@ -95,8 +99,6 @@ export default function Content({ data }: Props) {
                         return <RichTextRenderer key={i} content={block.value} />;
                     case "paragraph":
                         return <div><Paragraph key={i} data={block} /></div>;
-                    // case "link":
-                    //     return <Link href={block.value.link} isExternal={block.value.isExternal} className="text-orange-500 hover:text-orange-600 text-lg font-bold flex items-center gap-2 w-fit">{block.value.title} {ArrowRight2}</Link>;
                     case "link": {
                         const isPrevLink = data[i - 1]?.type === "link";
                         return (
@@ -110,6 +112,14 @@ export default function Content({ data }: Props) {
                             </Link>
                         );
                     }
+                    case "iframe":
+                        return (
+                            <div
+                                key={i}
+                                className="has-iframe"
+                                dangerouslySetInnerHTML={{ __html: block.value }}
+                            />
+                        );
                     default:
                         return null;
                 }

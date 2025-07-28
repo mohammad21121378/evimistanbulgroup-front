@@ -26,7 +26,7 @@ export default function UsefulLinks({
           <Link
             key={index}
             href={item}
-            className="font-extralight hover:text-orange-500 pr-1.5 transition-all duration-300 text-base underline"
+            className="font-extralight hover:!text-orange-500 pr-1.5 transition-all duration-300 text-base underline"
           >
             {item}
           </Link>

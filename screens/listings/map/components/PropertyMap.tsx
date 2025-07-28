@@ -73,6 +73,10 @@ function PropertyMap({ loadingData, properties }: Props) {
   }, [initialCenter]);
 
   useEffect(() => {
+    setSelectedPropertyId(null)
+  }, [properties]);
+  
+  useEffect(() => {
     if (selectedProperty && mapRef.current) {
       mapRef.current.panTo({
         lat: selectedProperty.latitude!,

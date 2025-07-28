@@ -11,7 +11,7 @@
 
 .filters {
     background-color: var(--slate-100);
-    padding:  16px 22px;
+    padding:  16px 0;
     border-radius: 20px;
     border: 1px solid var(--slate-200);
     display: flex;
@@ -19,8 +19,23 @@
     gap: 18px;
     position: sticky;
     top: 105px;
-    /* max-height: 67dvh; */
-    /* overflow-y: auto; */
+    
+    overflow-y: hidden !important;
+}
+
+.textfields {
+    display: grid;
+    gap: 8px;
+    max-height: 56dvh; 
+    overflow-y: auto !important;
+    overflow-x: visible !important;
+    padding: 4px 20px;
+}
+
+@media (max-height: 574px) {
+    .textfields {
+        max-height: 48dvh; 
+    }
 }
 
 .container .textfield {
@@ -30,12 +45,6 @@
 
 .container .dropdown {
     background-color: var(--white);
-}
-
-.textfields {
-    display: grid;
-    gap: 8px;
-    min-height: 335px;
 }
 
 .textButton {
@@ -83,9 +92,9 @@
     } */
 }
 
-
+/* 
 @media (max-height: 560px) {
     .textfields {
         min-height: 210px;
     }
-}
+} */

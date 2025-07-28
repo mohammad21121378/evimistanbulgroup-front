@@ -9,7 +9,6 @@ import ArticleSidebar from "./components/Sidebar";
 import { useReadingTime } from "./hooks/useReadingTime";
 import { useScrollbarTracker } from "./hooks/useScrollbarTracker";
 
-import { insight as fakeArticleData } from "./constants/insight";
 import { Breadcrumb } from "@/components/breadcrumb/Breadcrumb";
 import Layout from "@/components/Layout";
 import RealatedInsights from "./components/RealatedInsights";
@@ -42,7 +41,7 @@ export default function InsightDetails({articleData}: InsightDetailsProps) {
   const breadCrumb = [
     { label: "Our insights", href: "/our-insights" },
     { label: article.CatName, href: `/our-insights/${article.CatSlug}` },
-    { label: article.title, href: "#" },
+    { label: article.title },
   ];
 
   return (

@@ -1,5 +1,5 @@
 .section {
-    padding-top: 156px;
+    padding-top: 144px;
 }
 
 .content {
@@ -18,8 +18,8 @@
 }
 
 .images {
-    margin-top: 48px;
-    height: 600px;
+    margin-top: 28px;
+    height: 500px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;

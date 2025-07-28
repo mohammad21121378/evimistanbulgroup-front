@@ -10,7 +10,7 @@ export default function Categories({ category = "View all", categories = categor
     const [sort, setSort] = useState('View all');
 
     return (
-        <div className="sticky top-24 z-10">
+        <div className="sticky top-28 z-10">
 
             <div className={`${styles.sortItems} grid-cols-1 md:text-left text-center`}>
 
@@ -28,7 +28,7 @@ export default function Categories({ category = "View all", categories = categor
                     categories?.map(item => (
                         <Link key={item.id} href={item.id === 'View all' ? `/our-insights/` : `/our-insights/${item.slug}`} >
                             <div
-                                className={`${styles.sortItem} truncate ${category === item.slug && 'text-white bg-orange-500 font-bold'} hover:bg-orange-500 hover:text-white`}
+                                className={`${styles.sortItem} truncate ${category === item.slug && 'text-white !bg-orange-500 font-bold'} hover:bg-orange-500 hover:text-white`}
                                 onClick={() => setSort(item.id)}
                             >
                                 {item.title}

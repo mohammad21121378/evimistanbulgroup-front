@@ -18,7 +18,7 @@ export default function Header({ article }: Props) {
                 <img
                     src={article.media?.url}
                     alt={article.media?.alt}
-                    className="w-100 rounded-xl"
+                    className="w-100 rounded-xl h-[57.5vh] object-cover object-center"
                 />
             </div>
             <h1 className={classNames(classes.titleBig, '')}>{article.title}</h1>
@@ -38,6 +38,7 @@ export default function Header({ article }: Props) {
                 </ul>
 
                 <ArticleShare article={article} />
+                
             </div>
         </div>
     );

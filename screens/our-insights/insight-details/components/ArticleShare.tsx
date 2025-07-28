@@ -4,17 +4,18 @@ import { Article } from "@/types/Article";
 import styles from "./styles.module.css";
 import CopyToClipboard from "../utils/copyToClipboard";
 import CopyToClipboardIcon from "@/components/copy-to-clipboard-icon";
+import ShareBox from "@/screens/property-detail/share-box";
 
 type Props = {
     article: Article
 }
 
 export default function ArticleShare({ article }: Props) {
-    
+
     return (
         <div className="md:mt-0 mt-3 flex items-center gap-2 text-slate-500">
-            <div className="text-sm font-medium ">Share Post: </div>
-            <ul className={styles.share}>
+            <div className="text-base font-medium text-gray-700">Share Post: </div>
+            {/* <ul className={styles.share}>
                 <li>
                     <a
                         rel="nofollow"
@@ -55,7 +56,10 @@ export default function ArticleShare({ article }: Props) {
                 <li>
                     <CopyToClipboardIcon url={article.url} />
                 </li>
-            </ul>
+            </ul> */}
+
+            <ShareBox nonePrefix url={article.url} inline />
+
         </div>
     )
 }

@@ -3670,6 +3670,10 @@ Affordable options, student rentals, and second-home escapes. Ideal for capital 
                 classes: 'italic'
               }
             ]
+          },
+          {
+            type: 'iframe',
+            value: `<iframe width="560" height="315" src="https://www.youtube.com/embed/yaxgGpObfA0?si=-KEEzOFUVE0edi2s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
           }
         ],
       },

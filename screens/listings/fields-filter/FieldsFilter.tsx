@@ -194,16 +194,16 @@ export default function FieldsFilter({
     const handleToggle = (key: string, allowFalse = true) => {
         if (openDropdown === key && allowFalse) {
             setOpenDropdown(null);
-            setHideOthers(true);
-            setTimeout(() => {
-                setHideOthers(false);
-            }, 500);
+            // setHideOthers(true);
+            // setTimeout(() => {
+            //     setHideOthers(false);
+            // }, 500);
         } else {
             setHideOthers(true);
-            setTimeout(() => {
-                setOpenDropdown(key);
-                setHideOthers(false);
-            }, 500);
+            setOpenDropdown(key);
+            // setTimeout(() => {
+            //     setHideOthers(false);
+            // }, 500);
         }
     };
 

@@ -107,7 +107,7 @@ export default function Overview({ item }: OverviewProps) {
               return (
                 <div key={detail.id} className="mb-6">
                   <h2
-                    className="cursor-pointer font-semibold text-lg text-gray-800 mb-2"
+                    className="font-semibold text-lg text-gray-800 mb-2"
                     onClick={() => toggleOpen(detail.id)}
                   >
                     {detail.title}
@@ -155,7 +155,7 @@ export default function Overview({ item }: OverviewProps) {
 
         <div className={`md:col-span-3 w-full overflow-visible h-full`}>
 
-          <div className=" sticky top-28">
+          <div className=" sticky top-48">
             {item.agent && <div className={classNames("p-4 w-full gap-3 flex justify-center items-center bg-slate-100", styles.agent)}>
 
               <svg className="size-20" viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -34,7 +34,9 @@ export default function DropdownWithChildren({
                 wrapperRef.current &&
                 !wrapperRef.current.contains(event.target as Node)
             ) {
-                onToggle(); // بستن باکس
+                setTimeout(() => {
+                    onToggle();
+                }, 100);
             }
         }
 
