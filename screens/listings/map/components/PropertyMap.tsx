@@ -6,14 +6,14 @@ import {
   InfoWindowF,
   useLoadScript,
 } from "@react-google-maps/api";
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PropertyListing from "@/components/property-listing";
 import { Loader } from "lucide-react";
 import { PropertyRawType } from "@/types/Property";
 
 const containerStyle = {
   width: "100%",
-  height: "36rem",
+  height: "35rem",
   borderRadius: 16,
 };
 
@@ -30,8 +30,9 @@ function PropertyMap({ loadingData, properties }: Props) {
   const [selectedPropertyId, setSelectedPropertyId] = useState<number | null>(null);
   const mapRef = useRef<google.maps.Map | null>(null);
   const prevPropertiesRef = useRef<PropertyRawType[] | null>(null);
+  const initialMap = useRef(null)
 
-  const fallbackCenter = { lat: 41.0082, lng: 28.9784 }; // استانبول
+  const fallbackCenter = { lat: 41.0082, lng: 28.9784 };
 
   const firstValidProperty = properties.find(
     (p) => p.latitude !== null && p.longitude !== null
@@ -48,8 +49,10 @@ function PropertyMap({ loadingData, properties }: Props) {
   const [center, setCenter] = useState(initialCenter);
 
   useEffect(() => {
-    mapRef.current?.panTo(initialCenter);
-    setCenter(initialCenter);
+
+      mapRef.current?.panTo(initialCenter);
+      setCenter(initialCenter);
+
   }, [properties]);
 
   useEffect(() => {

@@ -18,7 +18,7 @@
     flex-direction: column;
     gap: 18px;
     position: sticky;
-    top: 100px;
+    top: 105px;
     /* max-height: 67dvh; */
     /* overflow-y: auto; */
 }

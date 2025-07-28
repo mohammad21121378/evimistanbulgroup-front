@@ -11,10 +11,12 @@ import Button from "@/components/ui/Button";
 import { ConsultationFormProps } from "../types";
 import { communicationMethods, contactTimes, languages, topics } from "../constants";
 import Link from "@/components/ui/Link";
+import { useConsultationStore } from "@/stores/consultationStore";
 
 export default function ConsultationForm({...consultationForm}: ConsultationFormProps) {
 
     const {form, onSubmit, successfulResult, loading} = consultationForm;
+    const {onClose} = useConsultationStore()
     
     const {
         register,
@@ -135,11 +137,11 @@ export default function ConsultationForm({...consultationForm}: ConsultationForm
                     label={
                         <>
                             I agree to the{" "}
-                            <Link href="/trems-conditions" className="underline hover:text-orange-600">
+                            <Link href="/trems-conditions" className="underline hover:text-orange-600" onClick={onClose}>
                                 Terms & Conditions
                             </Link>{" "}
                             and the{" "}
-                            <Link href="/privacy-policy" className="underline hover:text-orange-600">
+                            <Link href="/privacy-policy" className="underline hover:text-orange-600" onClick={onClose}>
                                 Privacy Policy
                             </Link>
                             .

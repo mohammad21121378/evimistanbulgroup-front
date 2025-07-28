@@ -26,7 +26,7 @@ export default function Partners() {
           <p className={cn("paragraph-large", styles.text)}>
             {t("description")}
           </p>
-          <Button href="/client-stories" className={cn(styles.button)} flex>
+          <Button href="/our-story" className={cn(styles.button)} flex>
             {t("button")} {ArrowRight}
           </Button>
         </div>
