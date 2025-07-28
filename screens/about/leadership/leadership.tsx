@@ -59,7 +59,7 @@ export default function Leadership() {
   return (
     <section className={cn("section")}>
       <div className={cn("container")}>
-        <div className={cn("subheading-large")}>LEADERSHIP TEAM</div>
+        <h2 className={cn("subheading-large")}>LEADERSHIP TEAM</h2>
 
         <div className={styles.leadership}>
           {leadership.map((leader) => (

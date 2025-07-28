@@ -32,7 +32,7 @@ export default function OtherAgent() {
     return (
         <section className={cn("section")}>
             <div className={cn("container")}>
-                <div className={cn("subheading-large")}>Our Agents</div>
+                <h3 className={cn("subheading-large")}>Our Agents</h3>
                 <div className="grid md:grid-cols-4 grid-cols-2 gap-6 mt-11">
                     {teamMembers.map((member) => (
                         <TeamCard

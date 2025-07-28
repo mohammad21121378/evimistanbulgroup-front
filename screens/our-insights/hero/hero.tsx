@@ -44,11 +44,11 @@ export default function Hero({ page,category }: HeroProps) {
 
                 <Breadcrumb items={breadCrumb} />
 
-                <Heading type="heading-3" className="text-center mb-10 mt-3 capitalize" >
+                <h1 className="text-center heading-3 mb-6 mt-10 capitalize" >
                     {category ? page.title : ROOT_TITLE}
-                </Heading>
+                </h1>
 
-                <div dangerouslySetInnerHTML={{__html:page.content}} className={classNames(styles.description, 'space-y-3 paragraph-2x-large font-bold')}>
+                <div dangerouslySetInnerHTML={{__html:page.content}} className={classNames('text-gray-500 text-center text-xl leading-relaxed md:px-16', styles.description)}>
 
                 </div>
             </div>

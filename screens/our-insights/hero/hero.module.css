@@ -4,11 +4,26 @@
     padding-bottom: 35px;
 }
 
-.description{
-    text-align: center;
-    color: #11111199;
-
+.description br:not(:first-child){
+    margin-bottom: 12px;
 }
+
+.description h2{
+    font-size:24px;
+    font-weight: 600;
+}
+.description h2 strong{
+    font-weight: 600;
+}
+
+.description p{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* .description>p{
+    margin-top: -16px;
+} */
 
 .article_content{
 
@@ -20,7 +35,8 @@
     font-size:26px;font-weight: 700;
 }
 .article_content h3{
-    font-size: 22px;font-weight: 700;
+    font-size: 22px;
+    font-weight: 700;
 }
 .article_content h4{
     font-size: 20px;font-weight: 700;
