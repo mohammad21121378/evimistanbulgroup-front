@@ -2,7 +2,7 @@ import { Listings } from "@/constants/mock";
 
 export const priceRangeValue = {
     min: 0,
-    max: 5000000
+    max: 10000000
 };
 
 export const initialFilterState = {
