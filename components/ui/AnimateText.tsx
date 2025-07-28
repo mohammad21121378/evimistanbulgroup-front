@@ -8,9 +8,10 @@ import { useEffect, useState } from 'react'
 interface AnimatedTextProps {
   title: string
   noneAnimate?: boolean;
+  simpleFade?: boolean;
 }
 
-const AnimatedText = ({ title, noneAnimate }: AnimatedTextProps) => {
+const AnimatedText = ({ title, noneAnimate, simpleFade=false }: AnimatedTextProps) => {
 
   const isMobile = useMediaQuery({ maxWidth: 768 });
 
@@ -29,14 +30,22 @@ const AnimatedText = ({ title, noneAnimate }: AnimatedTextProps) => {
   }
 
   const letter = {
-    hidden: { y: -80, opacity: 0, skewY: 10 },
-    show: {
-      y: 0,
-      opacity: 1,
-      skewY: 0,
-      transition: { type: 'spring', stiffness: 600, damping: 25 },
-    },
-  }
+    hidden: simpleFade
+      ? { opacity: 0 }
+      : { y: -80, opacity: 0, skewY: 10 },
+  
+    show: simpleFade
+      ? {
+          opacity: 1,
+          transition: { duration: 0.6, ease: 'easeOut' },
+        }
+      : {
+          y: 0,
+          opacity: 1,
+          skewY: 0,
+          transition: { type: 'spring', stiffness: 600, damping: 25 },
+        },
+  };
 
   const lines = title.split('\n')
   const words = title.split(' ')

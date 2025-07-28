@@ -62,7 +62,7 @@ export default function Hero() {
 
 
           <HeroTitle size="hero-lg" className={styles.title}>
-            <AnimatedText title={t("title")} />
+            <AnimatedText simpleFade title={t("title")} />
           </HeroTitle>
 
 
