@@ -43,9 +43,8 @@ export default function SearchBar({
     visible: {
       opacity: 1,
       transition: {
-        delay: 3.2,
-        duration: 1.5,
-        ease: [0.65, 0, 0.35, 1],
+        delay: 2.7,
+        duration: .9
       }
     },
   }

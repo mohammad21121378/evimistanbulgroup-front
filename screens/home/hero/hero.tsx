@@ -21,27 +21,26 @@ export default function Hero() {
   const [searchTerm, setSearchTerm] = React.useState("");
   
   const variantsSubtitle = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, scale: .99 },
     visible: {
       opacity: 1,
-      y: 0,
+      scale: 1,
       transition: {
-        delay: 2.500,
-        duration: 2,
-        ease: [0.65, 0, 0.35, 1],
+        delay: 2.7,
+        duration: .9,
       },
     },
   };
   
   const animationVariants = (index: number) => {
     return {
-      hidden: { opacity: 0, x: 60 },
+      hidden: { opacity: 0, scale: .99 },
       show: {
         opacity: 1,
-        x: 0,
+        scale: 1,
         transition: {
-          delay: isMobile ? 0 : index * .7,
-          duration: .7,
+          delay: isMobile ? 0 : index * .5,
+          duration: .5,
           ease: [0.65, 0, 0.35, 1],
         }
       },
