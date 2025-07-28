@@ -10,41 +10,43 @@ import { useTranslations } from "next-intl";
 import SuggestedServices from "../suggested-services";
 import classNames from "classnames";
 import AnimatedText from "@/components/ui/AnimateText";
-import { fadeinAnimation, slideUpAndFadeinAnimation, viewportMargin, viewportMarginSm } from "@/constants/animation";
+import { fadeinAnimation, viewportMargin, viewportMarginSm } from "@/constants/animation";
 import { motion } from 'framer-motion'
+import { useMediaQuery } from "react-responsive";
 
-const variantsSubtitle = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 2.500,
-      duration: 2,
-      ease: [0.65, 0, 0.35, 1],
-    },
-  },
-};
-
-const animationVariants = (index: number) => {
-  return {
-    hidden: { opacity: 0, x: 60 },
-    show: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        delay: index * .7,
-        duration: .7,
-        ease: [0.65, 0, 0.35, 1],
-      }
-    },
-  }
-};
 
 export default function Hero() {
   const t = useTranslations("home.hero");
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   const [searchTerm, setSearchTerm] = React.useState("");
-
+  
+  const variantsSubtitle = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 2.500,
+        duration: 2,
+        ease: [0.65, 0, 0.35, 1],
+      },
+    },
+  };
+  
+  const animationVariants = (index: number) => {
+    return {
+      hidden: { opacity: 0, x: 60 },
+      show: {
+        opacity: 1,
+        x: 0,
+        transition: {
+          delay: isMobile ? 0 : index * .7,
+          duration: .7,
+          ease: [0.65, 0, 0.35, 1],
+        }
+      },
+    }
+  };
   return (
     <>
       <div className={styles.img_container}>
