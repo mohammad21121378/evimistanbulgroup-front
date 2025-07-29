@@ -9,6 +9,8 @@ import { routing } from '@/i18n/routing';
 import { ReactNode } from "react";
 import { setRequestLocale } from 'next-intl/server';
 import { getMessages } from 'next-intl/server';
+import SchemaJsonLd from "@/components/schema-json-ld";
+import { schema } from "@/constants/schama-for-head";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dm-sans" });
@@ -52,6 +54,7 @@ export default async function LocaleLayout({ children, params: { locale } }: Loc
 
   return (
     <html lang={locale} dir={isRTL ? "rtl" : "ltr"}>
+      <SchemaJsonLd data={schema} />
       <body
         className={cn(
           inter.variable,
