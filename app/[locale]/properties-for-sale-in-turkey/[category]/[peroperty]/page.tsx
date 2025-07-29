@@ -30,7 +30,7 @@ export default async function Page({ params }: Props) {
     "url": property.property.full_url,
     "datePosted": property.property.created_at_formated,
     "mainEntityOfPage": property.property.full_url,
-    "image": property.property.gallery,
+    "image": property.property.gallery.map(img => img.url),
     "offers": {
       "@type": "Offer",
       "price": property.property.max_price,
