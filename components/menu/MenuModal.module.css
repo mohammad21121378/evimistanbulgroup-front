@@ -1,17 +1,17 @@
 .modal {
     position: absolute;
-    top: 8vh;
+    top: calc(100% - 10px);
     left: 50%;
     transform: translateX(-50%);
     display: inline-flex;
     padding: 10px;
-    transition: top .5s, opacity .5s;
+    transition: top .4s, opacity .4s;
     opacity: 1;
     z-index: 999999999;
 }
 
 .modal.show{
-    top: calc(100% + 10px);
+    top: calc(100% + 12px);
 }
 
 
@@ -104,7 +104,7 @@
     position: absolute;
     z-index: 99999999999999;
     transition: .2s;
-    animation: FadeInAnimate .5s ease-in-out forwards;   
+    animation: FadeInAnimate .4s ease-in-out forwards;   
 }
 
 @keyframes FadeInAnimate {

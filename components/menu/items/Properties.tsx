@@ -6,6 +6,6 @@ export default function Properties() {
     const { properties } = MenuData;
 
     return (
-        <TemplateItemWithItems title="Properties" items={properties} />
+        <TemplateItemWithItems href="/properties-for-sale-in-turkey" title="Properties" items={properties} />
     );
 }

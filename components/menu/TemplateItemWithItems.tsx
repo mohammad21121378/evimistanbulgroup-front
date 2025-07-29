@@ -25,6 +25,7 @@ type Props = {
   items: MenuData;
   title: string | JSX.Element;
   width?: number;
+  href?: string;
   sectionClassName?: string;
   contentClassName?: string;
   arrow?: boolean;
@@ -36,6 +37,7 @@ type Props = {
 export default function TemplateItemWithItems({
   items,
   title,
+  href,
   width = 33.75,
   contentClassName,
   sectionClassName,
@@ -52,7 +54,7 @@ export default function TemplateItemWithItems({
   const seeAllRightClasses = seeAllRight ? 'text-right justify-end' : ''
 
   return (
-    <TemplateItem title={title} arrow={arrow}>
+    <TemplateItem href={href} title={title} arrow={arrow}>
       <div
         className={classNames(
           contentClassName,

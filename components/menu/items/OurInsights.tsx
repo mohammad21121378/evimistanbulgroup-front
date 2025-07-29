@@ -7,6 +7,6 @@ export default function OurInsights() {
     const { ourInsights } = MenuData;
 
     return (
-        <TemplateItemWithItems title="Our Insights" seeAllRight items={ourInsights} width={37.5}  />
+        <TemplateItemWithItems href="/our-insights" title="Our Insights" seeAllRight items={ourInsights} width={37.5}  />
     );
 }

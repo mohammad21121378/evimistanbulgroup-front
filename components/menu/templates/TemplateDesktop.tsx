@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import MenuModal from '../MenuModal';
 import { Template, TitlePos } from '../types';
 import styles from '../MenuModal.module.css';
+import Link from '@/components/ui/Link';
 
-export default function TemplateDesktop({ title, children, li = true, arrow = false }: Template) {
+export default function TemplateDesktop({ title, href, children, li = true, arrow = false }: Template) {
 
     const wrapperRef = useRef<HTMLDivElement | null>(null);
     const titleRef = useRef<HTMLDivElement | null>(null);
@@ -132,5 +133,5 @@ export default function TemplateDesktop({ title, children, li = true, arrow = fa
         ref: wrapperRef
     };
 
-    return li ? <div {...wrapperProps}>{content}</div> : <div {...wrapperProps}>{content}</div>;
+    return li ? <div {...wrapperProps}><Link noLink={!href} href={href}>{content}</Link></div> : <div {...wrapperProps}><Link noLink={!href} href={href}>{content}</Link></div>;
 }

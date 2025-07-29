@@ -8,6 +8,7 @@ export default function AboutUs() {
     return (
         <TemplateItemWithItems
             title="About Us"
+            href="/our-story"
             items={aboutUs}
             width={14.375}
             singleColumn

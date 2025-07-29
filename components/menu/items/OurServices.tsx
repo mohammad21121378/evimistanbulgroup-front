@@ -6,6 +6,6 @@ export default function OurServices() {
     const { ourServices } = MenuData;
 
     return (
-        <TemplateItemWithItems title="Our Services" seeAllRight items={ourServices} />
+        <TemplateItemWithItems href="/our-services" title="Our Services" seeAllRight items={ourServices} />
     );
 }

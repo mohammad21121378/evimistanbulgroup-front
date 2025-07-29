@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 
 export interface Template {
     title: string | JSX.Element; 
+    href?: string; 
     children:ReactNode; 
     li?: boolean; 
     arrow?: boolean
