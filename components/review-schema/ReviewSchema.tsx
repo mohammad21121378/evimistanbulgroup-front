@@ -11,7 +11,7 @@ export default function ReviewSchema({ testimonials }: Testimonial) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'Evim istanbul group',
+    name: 'Evimistanbul group',
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: averageRating.toFixed(1),

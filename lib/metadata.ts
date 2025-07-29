@@ -12,7 +12,7 @@ export function buildMetadataFromPage(page: PageMeta): Metadata {
       title: page.meta_title,
       description: page.meta_description,
       url: page.url,
-      siteName: "Evim Istanbul group",
+      siteName: "EvimIstanbul group",
       images: [
         {
           url: page.image,

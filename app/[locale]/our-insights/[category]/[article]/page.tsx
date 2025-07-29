@@ -42,7 +42,7 @@ export default async function Page({ params }: Props) {
     },
     "publisher": {
         "@type": "Organization",
-        "name": "Evim istanbul group team",
+        "name": "Evimistanbul group team",
         "logo": {
             "@type": "ImageObject",
             "url": "https://evimistanbulgroup.com/_next/image?url=%2Fimages%2FEvimIstanbul%20Group%20Official%20LOGO.png&w=2048&q=75"
