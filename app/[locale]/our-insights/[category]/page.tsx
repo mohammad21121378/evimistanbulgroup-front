@@ -19,7 +19,7 @@ export const generateMetadata = createGenerateCategoriesMetadata();
 export default async function Page({ params,searchParams }: Props) {
   const { page } = searchParams;
   const { locale, category } = params;
-  const { data: categoryData } = await fetchCategoryDetail(category,20,page, locale);
+  const { data: categoryData } = await fetchCategoryDetail(category,20,page??1, locale);
 
   if (!categoryData) return notFound();
 

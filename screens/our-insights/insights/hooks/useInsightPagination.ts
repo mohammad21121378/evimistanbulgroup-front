@@ -42,8 +42,15 @@ export function useInsightPagination<T>({
     useEffect(() => {
         const params = new URLSearchParams(searchParams.toString());
         params.set("page", currentPage.toString());
-
+        if (currentPage === 1) {
+            params.delete("page");
+        } else {
+            params.set("page", currentPage.toString());
+        }
+    
         router.push("?" + params.toString(), { scroll: false });
+
+        // router.push("?" + params.toString(), { scroll: false });
 
 
 

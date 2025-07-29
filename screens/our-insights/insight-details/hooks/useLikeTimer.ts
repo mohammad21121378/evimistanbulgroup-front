@@ -7,7 +7,7 @@ export function useLikeTimer(readingTime: number) {
   useEffect(() => {
     const timer = setInterval(() => {
       setElapsedTime((prev) => prev + 1);
-    }, 60000); // هر دقیقه
+    }, 60000);
 
     return () => clearInterval(timer);
   }, []);

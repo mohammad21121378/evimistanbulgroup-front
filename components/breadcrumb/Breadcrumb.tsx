@@ -44,19 +44,19 @@ export const Breadcrumb = ({ items, lightThem, className }: BreadcrumbProps) => 
   const finalItems = items ?? autoItems
 
   return (
-    <nav className={classNames("flex items-center text-sm font-medium mb-5 truncate", className)}>
+    <nav className={classNames("flex items-center text-sm font-medium mb-5 !truncate", className)}>
       <Link href="/" className={cn("hover:text-orange-600 transition-colors", { "text-slate-700": !lightThem, "text-white font-normal": lightThem })}>
         Home
       </Link>
 
       {finalItems.map((item, index) => (
-        <div key={index} className="flex items-center ">
+        <div key={index} className="flex items-center">
           {separator}
           {item.href ? (
             <Link
               href={item.href}
               className={cn(
-                " hover:text-orange-600 capitalize truncate transition-colors",
+                " hover:text-orange-600 capitalize transition-colors",
                 {
                   "text-slate-700": !lightThem,
                   "text-white font-normal": lightThem

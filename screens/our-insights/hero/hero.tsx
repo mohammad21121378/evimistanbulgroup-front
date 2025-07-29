@@ -44,7 +44,7 @@ export default function Hero({ page,category }: HeroProps) {
 
                 <Breadcrumb items={breadCrumb} />
 
-                <h1 className="text-center heading-3 mb-6 mt-10 capitalize" >
+                <h1 className="text-center font-bold heading-3 mb-6 mt-10 capitalize" >
                     {category ? page.title : ROOT_TITLE}
                 </h1>
 

@@ -8,7 +8,6 @@ import styles from "./hero.module.css";
 import PropertyListing from "@/components/property-listing";
 import SortDropdown from "@/components/sort-dropdown";
 import Pagination from "@/components/ui/Pagination";
-import { useNumberedPagination } from "@/hooks/useNumberedPagination";
 
 import ChangeTypeListings from "../change-type-listings";
 import { FilterProps, TypeProp, onChangeType } from "../types";
@@ -17,8 +16,6 @@ import FieldsFilter from "../fields-filter";
 import Button from "@/components/ui/Button";
 import PropertyLoader from "@/components/loaders/PropertyLoader";
 import EmptyContentWithLottie from "@/components/ui/EmptyContentWithLottie";
-import { AnimatePresence, motion } from "framer-motion";
-import { useAutoAnimate } from "@formkit/auto-animate/react";
 
 interface Props extends FilterProps {
   type: TypeProp;
@@ -38,7 +35,6 @@ function Hero({ type, onChange, ...filtersState }: Props) {
     currentPage,
     totalPages,
     goToPage,
-
   } = filtersState;
 
   return (
@@ -59,15 +55,15 @@ function Hero({ type, onChange, ...filtersState }: Props) {
 
             <ChangeTypeListings type={type} onChange={onChange} />
 
-            <div className={cn('scrollbar-sm mb-10', styles.filters)}
+            <div className={cn('overflow-hidden mb-10', styles.filters)}
             
             >
 
-              <div className={cn("xl:text-lg md:text-base text-lg truncate font-bold px-5")}>
+              <div className={cn("xl:text-lg md:text-base  text-lg truncate font-bold px-5")}>
                 Find Properties for Sale in Turkey
               </div>
 
-              <div className={styles.textfields}>
+              <div className={`scrollbar-sm ${styles.textfields}`}>
 
                 <FieldsFilter hasAnimation={false} {...filtersState}  />
 
