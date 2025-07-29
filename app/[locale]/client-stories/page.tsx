@@ -18,9 +18,7 @@ export default async function Page({params}: Props) {
 
     return (
     <>
-      <Head>
         <ReviewSchema testimonials={testimonialsData} />
-      </Head>
       <ClientStories total={total} testimonials={testimonialsData} />
     </>)
 }

@@ -28,5 +28,6 @@ export interface Article {
     CatSlug: string;
     category: CategoryArticle[];
     table_of_content?: TableOfContentItem[];
-    additional_images?: {src: string; alt: string}[]
+    additional_images?: {src: string; alt: string}[];
+    meta_description?: string;
 }

@@ -13,10 +13,10 @@ export default function FancyProgressBar({ bg = "bg-orange-600" }) {
         <motion.div
           className={`fixed top-0 left-0 h-[.325rem] z-[99999] animate-pulse bg-gradient-to-r from-orange-700 via-orange-500 to-orange-400 rounded-e-sm`}
           initial={{ width: '0%' }}
-          animate={{ width: ['0%', '74%', '82%', '90%', '94%', '97%', '98%', '100%'] }}
+          animate={{ width: ['0%', '64%', '76%', '80%', '90%', '94%', '96%', '100%'] }}
           exit={{ opacity: 0 }}
           transition={{
-            duration: 15,
+            duration: 18,
             times: [0, 0.14, 0.285, 0.43, 0.57, 0.71, 0.86, 1],
             ease: 'linear'
           }}

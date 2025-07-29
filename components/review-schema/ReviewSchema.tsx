@@ -1,12 +1,13 @@
 'use client'
 
 import { reviews } from "@/constants/mock"
-import {Testimonial} from "../../screens/client-stories/types";
+import { Testimonial } from "../../screens/client-stories/types";
+import SchemaJsonLd from "../schema-json-ld";
 
-export default function ReviewSchema({testimonials}:Testimonial) {
+export default function ReviewSchema({ testimonials }: Testimonial) {
   const averageRating =
-      testimonials.reduce((sum, review) => sum + review.rating, 0) /
-      testimonials.length
+    testimonials.reduce((sum, review) => sum + review.rating, 0) /
+    testimonials.length
 
   const schema = {
     '@context': 'https://schema.org',
@@ -35,9 +36,6 @@ export default function ReviewSchema({testimonials}:Testimonial) {
   }
 
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
+    <SchemaJsonLd data={schema} />
   )
 }
