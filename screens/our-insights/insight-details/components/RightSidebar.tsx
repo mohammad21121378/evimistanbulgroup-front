@@ -11,12 +11,6 @@ type Props = {
 
 export default function RightSidebar({ article }: Props) {
 
-    const additionalImages = article.additional_images?.length
-        ? article.additional_images
-        : [
-              { src: '/images/video.webp', alt: 'video' },
-              { src: '/images/video.webp', alt: 'video' },
-          ];
 
     const { onOpen } = useConsultationStore();
     return (
@@ -39,16 +33,8 @@ export default function RightSidebar({ article }: Props) {
                     inline
                 />
 
-                {
-                    additionalImages.map((img) =>
-
-                        <ImageModal
-                            src={img.src}
-                            className="w-full rounded-md"
-                            alt={img.alt}
-                        />
-                    )
-                }
+                {article.banner_1 &&<div className="w-full rounded-md " dangerouslySetInnerHTML={{__html:article.banner_1}}></div>}
+                {article.banner_2 &&<div className="w-full rounded-md " dangerouslySetInnerHTML={{__html:article.banner_2}}></div>}
             </div>
         </div>
     );
