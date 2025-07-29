@@ -3,13 +3,13 @@ interface SchemaJsonLdProps {
   }
   
   export default function SchemaJsonLd({ data }: SchemaJsonLdProps) {
-    const jsonItems = Array.isArray(data) ? data : [data];
+    const jsonItems = Array.isArray(data) ? data : [data];    
   
     return (
         <head>
         {jsonItems.map((item, index) => (
           <script
-            key={index}
+            key={item['@type']}
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(item) }}
           />

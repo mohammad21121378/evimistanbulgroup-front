@@ -1,9 +1,7 @@
 import Layout from "@/components/Layout";
 import LatestListings from "./latest-listings";
 import Benefits from "./benefits";
-import Showcase from "./showcase";
 import Categories from "./categories";
-import Team from "./team";
 import Services from "./services";
 import Partners from "./partners";
 import Testimonials from "./testimonials";
@@ -12,10 +10,9 @@ import Hero from "./hero";
 import Offices from "../universal/offices";
 import HighlightsAndFeatures from "./highlights-and-features";
 import GuidesAndInsights from "./guides-and-Insights";
+import { TestimonialObject } from "./testimonials/testimonials";
 
-
-
-export default function HomePage() {
+export default function HomePage({testimonials}: {testimonials: TestimonialObject}) {
   return (
     <>
       <Layout>
@@ -28,7 +25,7 @@ export default function HomePage() {
         <GuidesAndInsights />
         <Partners />
         <Benefits />
-        <Testimonials />
+        <Testimonials testimonials={testimonials} />
         <Newsletter />
       </Layout>
     </>

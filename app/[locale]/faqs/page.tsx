@@ -17,9 +17,6 @@ export default async function Page({ params }: Props) {
 
   return (
     <>
-      {/* <Head>
-        <ReviewSchema testimonials={testimonialsData} />
-      </Head> */}
       <Faq />
     </>)
 }
