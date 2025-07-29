@@ -12,6 +12,8 @@ export interface CategoryArticle {
 
 export interface Article {
     content: string;
+    banner_1: string | null;
+    banner_2: string | null;
     excerpt: string;
     resource?: string;
     url: string;
