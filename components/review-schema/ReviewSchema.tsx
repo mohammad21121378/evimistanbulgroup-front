@@ -1,6 +1,5 @@
 'use client'
 
-import { reviews } from "@/constants/mock"
 import { Testimonial } from "../../screens/client-stories/types";
 import SchemaJsonLd from "../schema-json-ld";
 
@@ -16,7 +15,7 @@ export default function ReviewSchema({ testimonials }: Testimonial) {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: averageRating.toFixed(1),
-      reviewCount: reviews.length,
+      reviewCount: testimonials.length,
     },
     review: testimonials.map((r) => ({
       '@type': 'Review',
