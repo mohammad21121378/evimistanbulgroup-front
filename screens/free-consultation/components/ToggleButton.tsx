@@ -37,7 +37,7 @@ const ToggleButton = ({ isOpen, onClick }: ToggleButtonProps) => (
               className={`left-2.5 z-10 absolute top-0 text-lg my-auto bottom-0  text-white  ${isOpen ? 'animate-left-to-right' : ' animate-right-to-left'}`}
             />
             :
-            <div className={`-left-[1.175rem] z-10 absolute rotate-90 top-1/2 -translate-y-1/2 bottom-0  text-white w-5 [animation-delay:.3s]`}>
+            <div className={`-left-[1.17rem] z-10 absolute rotate-90 top-1/2 -translate-y-1/2 bottom-0  text-white w-[1.168rem] [animation-delay:.3s]`}>
               <Lottie animationData={arrowAnimation}  />
             </div>
         }
