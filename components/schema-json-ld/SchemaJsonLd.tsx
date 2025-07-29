@@ -1,5 +1,3 @@
-import Head from "next/head";
-
 interface SchemaJsonLdProps {
     data: object | object[];
   }
@@ -8,7 +6,7 @@ interface SchemaJsonLdProps {
     const jsonItems = Array.isArray(data) ? data : [data];    
   
     return (
-        <Head>
+        <head>
         {jsonItems.map((item, index) => (
           <script
             key={item['@type']}
@@ -16,7 +14,7 @@ interface SchemaJsonLdProps {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(item) }}
           />
         ))}
-      </Head>
+      </head>
     );
   }
   
