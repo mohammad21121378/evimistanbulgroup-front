@@ -30,7 +30,7 @@ export default function TemplateItem(props: Template) {
 
     useEffect(() => {
         const handleResize = () => {
-            setIsDesktop(window.innerWidth > 992);
+            setIsDesktop(window.innerWidth > 1024);
         };
 
         handleResize();

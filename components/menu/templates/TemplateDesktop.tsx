@@ -133,5 +133,5 @@ export default function TemplateDesktop({ title, href, children, li = true, arro
         ref: wrapperRef
     };
 
-    return li ? <div {...wrapperProps}><Link noLink={!href} href={href}>{content}</Link></div> : <div {...wrapperProps}><Link noLink={!href} href={href}>{content}</Link></div>;
+    return li ? <div {...wrapperProps}><Link className='transition-none' noLink={!href} href={href}>{content}</Link></div> : <div {...wrapperProps}><Link noLink={!href} href={href}>{content}</Link></div>;
 }

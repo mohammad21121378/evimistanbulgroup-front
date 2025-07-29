@@ -112,7 +112,7 @@ export default function Header() {
           animate={mobile && visibleNav ? "visible" : "hidden"}
           variants={mobile ? navVariants : {}}
         >
-          <div className={cn(styles.nav_links, '', {
+          <div className={cn(styles.nav_links, 'transition-all duration-300', {
             [styles.black_link]: isBlackHeader && !(mobile && visibleNav),
             '!text-white' : islightHeader || sticky || visibleNav,
             '!text-black' : !sticky && !islightHeader,
