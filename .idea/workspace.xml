@@ -22,7 +22,7 @@
     <list default="true" id="8a444990-2b63-46d6-b210-f54ec3aa7b85" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/our-insights/insight-details/components/RightSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/our-insights/insight-details/components/RightSidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/types/Article.ts" beforeDir="false" afterPath="$PROJECT_DIR$/types/Article.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/our-insights/insight-details/components/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/screens/our-insights/insight-details/components/styles.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +87,7 @@
       <workItem from="1753523434236" duration="22826000" />
       <workItem from="1753610019050" duration="4253000" />
       <workItem from="1753693439749" duration="984000" />
-      <workItem from="1753777095658" duration="3508000" />
+      <workItem from="1753777095658" duration="3679000" />
     </task>
     <servers />
   </component>

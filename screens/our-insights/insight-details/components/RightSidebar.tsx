@@ -4,6 +4,7 @@ import UsefulLinks from "@/components/useful-links";
 import { Article } from "../../../../types/Article";
 import { useConsultationStore } from "@/stores/consultationStore";
 import ImageModal from "@/components/image-modal/ImageModal";
+import classes from "./styles.module.css";
 
 type Props = {
     article: Article;
@@ -33,8 +34,8 @@ export default function RightSidebar({ article }: Props) {
                     inline
                 />
 
-                {article.banner_1 &&<div className="w-full rounded-md " dangerouslySetInnerHTML={{__html:article.banner_1}}></div>}
-                {article.banner_2 &&<div className="w-full rounded-md " dangerouslySetInnerHTML={{__html:article.banner_2}}></div>}
+                {article.banner_1 &&<div className={`${classes.rightSideBarImage} w-full rounded-md `} dangerouslySetInnerHTML={{__html:article.banner_1}}></div>}
+                {article.banner_2 &&<div className={`${classes.rightSideBarImage} w-full rounded-md `} dangerouslySetInnerHTML={{__html:article.banner_2}}></div>}
             </div>
         </div>
     );
