@@ -20,25 +20,6 @@ export default function ServicePage({ params }: Props) {
   const faq = faqsData.find(s => s.slug === params.slug);
   if (!faq) return notFound();
 
-  // const faqSchema = {
-  //   "@context": "https://schema.org",
-  //   "@type": "FAQPage",
-  //   "mainEntity": faq.list.map((item) => {
-  //     const match = item.match(/\*\*(.+?)\*\*\s*[-–—]\s*(.+)/s);
-  //     if (!match) return null;
-  
-  //     const [, question, answer] = match;
-  //     return {
-  //       "@type": "Question",
-  //       "name": question.trim(),
-  //       "acceptedAnswer": {
-  //         "@type": "Answer",
-  //         "text": answer.trim(),
-  //       },
-  //     };
-  //   }).filter(Boolean)
-  // };
-
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",

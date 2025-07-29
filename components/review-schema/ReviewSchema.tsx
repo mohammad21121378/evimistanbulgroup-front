@@ -18,14 +18,14 @@ export default function ReviewSchema({ testimonials }: Testimonial) {
       ratingValue: averageRating.toFixed(1),
       reviewCount: reviews.length,
     },
-    review: reviews.map((r) => ({
+    review: testimonials.map((r) => ({
       '@type': 'Review',
       author: {
         '@type': 'Person',
-        name: r.author,
+        name: r.name,
       },
       datePublished: r.datePublished,
-      reviewBody: r.reviewBody,
+      reviewBody: r.text,
       reviewRating: {
         '@type': 'Rating',
         ratingValue: r.rating,
