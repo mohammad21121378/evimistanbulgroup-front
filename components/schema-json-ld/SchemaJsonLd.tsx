@@ -33,7 +33,7 @@ export default function SchemaJsonLd({ data }: SchemaJsonLdProps) {
       {jsonItems.map((item, index) => (
         <Script
           key={index}
-          id={`schema-${index}`}
+          id={`schema-${item['@type']}-${index}`}
           type="application/ld+json"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
