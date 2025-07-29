@@ -12,7 +12,7 @@ export default function ContentTopPage({ title, subTitle, description }: Props) 
     return (
         <section className="section !pt-8 !pb-6 text-center">
             
-            <h1 className="heading-1">
+            <h1 className="heading-1 font-bold">
                 { title ? <AnimatedText title={title} /> : '' }
             </h1>
 

@@ -1,6 +1,7 @@
 import styles from "./hero.module.css"
 import { Breadcrumb } from "@/components/breadcrumb/Breadcrumb";
 import { Heading } from "@/components/typography";
+import AnimatedText from "@/components/ui/AnimateText";
 import classNames from "classnames";
 
 const ROOT_TITLE = 'Our Guides & Insights';
@@ -44,7 +45,9 @@ export default function Hero({ page,category }: HeroProps) {
 
                 <Breadcrumb items={breadCrumb} />
 
-                <h1 className="text-center font-bold heading-3 mb-6 mt-10 capitalize" >
+                <h1 className="text-center heading-3 mb-6 mt-10 capitalize" >
+                {category ? <AnimatedText title={page.title} /> : <AnimatedText title={ROOT_TITLE} />}
+
                     {category ? page.title : ROOT_TITLE}
                 </h1>
 
