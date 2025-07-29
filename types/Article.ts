@@ -23,6 +23,7 @@ export interface Article {
     }
     author: User;
     created_at: string;
+    updated_at: string;
     CatName: string;
     timeToRead: number;
     CatSlug: string;

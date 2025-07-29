@@ -36,20 +36,20 @@ export default async function Page({ params }: Props) {
     "description": articleRaw.meta_description ?? articleRaw.content,
     "image": articleRaw.media?.url,
     "author": {
-        "@type": "Person",
-        "name": articleRaw.author?.name + " " + articleRaw.author?.last_name,
-        "url": articleRaw.author?.url
+        "@type": "Organization",
+        "name": "Evimistanbul group team",
+        "url": "https://evimistanbulgroup.com/en/our-story"
     },
     "publisher": {
         "@type": "Organization",
-        "name": "Evim istanbul group team",
+        "name": "Evimistanbul group team",
         "logo": {
             "@type": "ImageObject",
             "url": "https://evimistanbulgroup.com/_next/image?url=%2Fimages%2FEvimIstanbul%20Group%20Official%20LOGO.png&w=2048&q=75"
         }
     },
     "datePublished": articleRaw.created_at,
-    "dateModified": articleRaw.created_at
+    "dateModified": articleRaw.updated_at
 };
 
   return (

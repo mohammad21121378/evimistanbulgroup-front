@@ -8,7 +8,7 @@ export const generateMetadata = createGenerateMetadata("our-story");
 const schema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Evim istanbul group",
+  "name": "Evimistanbul group",
   "image": "https://evimistanbulgroup.com/_next/image?url=%2Fimages%2FEvimIstanbul%20Group%20Official%20LOGO.png&w=2048&q=75",
   "@id": "",
   "url": "https://evimistanbulgroup.com/en/our-story",

@@ -2,22 +2,22 @@ export const schema = [
     {
         "@context": "https://schema.org/",
         "@type": "WebSite",
-        "name": "doktorify",
+        "name": "Evimistanbul group",
         "url": "https://evimistanbulgroup.com/",
 
         "copyrightHolder": {
             "@type": "Corporation",
             "id": "https://evimistanbulgroup.com/#corporation",
-            "name": "Doktorify",
-            "alternateName": "© 2024 Evim istanbul group All rights reserved.",
-            "legalName": "Evim istanbul group",
+            "name": "Evimistanbul group",
+            "alternateName": "© 2024 Evimistanbul group All rights reserved.",
+            "legalName": "Evimistanbul group",
             "url": "https://evimistanbulgroup.com/"
         },
         "publisher": {
             "@context": "https://schema.org/",
             "@type": "Person",
             "name": "Reza Abbaszadeh",
-            "url": "https://doktorify.com/",
+            "url": "https://abbaszadehholdings.com/",
             "image": "https://evimistanbulgroup.com/_next/image?url=%2Fimages%2Fowners%2Freza-abbaszadeh.png&w=256&q=75",
             "sameAs": [
                 "https://www.facebook.com/abbaszadehco",

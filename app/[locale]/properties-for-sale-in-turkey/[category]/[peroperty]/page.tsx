@@ -30,19 +30,19 @@ export default async function Page({ params }: Props) {
     "url": property.property.full_url,
     "datePosted": property.property.created_at_formated,
     "mainEntityOfPage": property.property.full_url,
-    "image": property.property.gallery,
+    "image": property.property.galleryForSchema,
     "offers": {
       "@type": "Offer",
       "price": property.property.max_price,
       "priceCurrency": property.property.currency_symbol,
       "availability": "https://schema.org/InStock"
     },
-    "seller": {
+   /* "seller": {
       "@type": "RealEstateAgent",
       "name": "Evim Istanbul Group",
       "url": "https://evimistanbulgroup.com/our-story",
       "telephone": "+90 (534) 811 11 93"
-    }
+    }*/
   };
 
   return (
