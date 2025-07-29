@@ -36,9 +36,9 @@ export default async function Page({ params }: Props) {
     "description": articleRaw.meta_description ?? articleRaw.content,
     "image": articleRaw.media?.url,
     "author": {
-        "@type": "Person",
-        "name": articleRaw.author?.name + " " + articleRaw.author?.last_name,
-        "url": articleRaw.author?.url
+        "@type": "Organization",
+        "name": "Evimistanbul group team",
+        "url": "https://evimistanbulgroup.com/en/our-story"
     },
     "publisher": {
         "@type": "Organization",
@@ -49,7 +49,7 @@ export default async function Page({ params }: Props) {
         }
     },
     "datePublished": articleRaw.created_at,
-    "dateModified": articleRaw.created_at
+    "dateModified": articleRaw.updated_at
 };
 
   return (

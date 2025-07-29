@@ -92,7 +92,7 @@ export default function Footer() {
         <div className="h-px bg-white my-6" />
 
         <div className="grid md:grid-cols-2 grid-cols-1 md:justify-between justify-center md:text-left text-center items-center text-base text-white gap-3">
-          <p className='md:order-1 order-2'>© 2025 EvimIstanbul Group® | All rights reserved.</p>
+          <p className='md:order-1 order-2' id="corporation">© 2025 EvimIstanbul Group® | All rights reserved.</p>
           <div className="flex gap-4 h-full md:justify-end justify-center items-center md:order-2 order-1">
             {legalLinks.map((link, idx) => (
               <Link key={idx} href={link.href} className="hover:underline transition-all duration-300 text-base">
