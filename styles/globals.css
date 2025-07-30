@@ -257,6 +257,8 @@ html {
 }
 .animate-pulse-custom {
   animation: pulse 2.5s infinite;
+  will-change: transform;
+  transform-origin: center;
 }
 
 @keyframes fade {
