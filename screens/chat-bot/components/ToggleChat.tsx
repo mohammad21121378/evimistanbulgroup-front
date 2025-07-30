@@ -17,6 +17,7 @@ export default function ToggleButton({ toggleChat, isOpen }: Props) {
                     exit={{ opacity: 0, width: '0', height: '0', }}
                     transition={{ duration: .2 }}
                     className="
+                    overflow-hidden
                     rounded-full 
                     bg-gradient-to-tr  
                     from-orange-500 

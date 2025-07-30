@@ -243,18 +243,33 @@ html {
 
 @keyframes pulse {
   0% {
-    transform: scale(1);
-    opacity: .9;
+    transform: scale(.95);
+    opacity: .92;
   }
   50% {
-    transform: scale(1.05);
+    transform: scale(1);
     opacity: 1;
   }
   100% {
-    transform: scale(1);
-    opacity: .9;
+    transform: scale(.95);
+    opacity: .92;
   }
 }
 .animate-pulse-custom {
   animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: .8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .8;
+  }
+}
+.animate-fade-custom {
+  animation: fade 1.2s ease-in-out infinite;
 }

@@ -41,9 +41,9 @@ export default function ChatBot() {
                 {isOpen && (
 
                     <motion.div
-                        initial={{ opacity: 0, width: '3.5rem', height: '3.5rem', }}
+                        initial={{ opacity: 0, width: '0', height: '0', }}
                         animate={{ opacity: 1, width: '35rem', height: '45rem', }}
-                        exit={{ opacity: 0, width: '3.5rem', height: '3.5rem', }}
+                        exit={{ opacity: 0, width: '', height: '0', }}
                         transition={{ type: 'spring', damping: 25, stiffness: 300 }}
                         className=" fixed z-[99999999] left-8 bottom-8  h-[28rem] bg-white border border-zinc-300  rounded-2xl shadow-xl flex flex-col overflow-hidden"
                     >
@@ -57,7 +57,7 @@ export default function ChatBot() {
                             </div>
                         </div>
 
-                        <div className="flex-1 overflow-y-auto px-4 space-y-2 bg-zinc-50 py-8 " ref={messagesRef}>
+                        <div className="flex-1 overflow-y-auto overflow-x-hidden px-4 space-y-2 bg-zinc-50 py-8 " ref={messagesRef}>
 
                             <IntroductionMessage />
 
@@ -73,7 +73,7 @@ export default function ChatBot() {
                                     exit={{ opacity: 0, x: -40 }}
                                     transition={{ duration: .5 }}
                                 >
-                                    <Button onClick={onOpenConsultation} size='auto' className='!h-12 animate-pulse-custom !text-sm font-bold !rounded-md !w-[88%] mx-auto'>
+                                    <Button onClick={onOpenConsultation} size='auto' className='!h-12 animate-fade-custom !text-sm font-bold !rounded-md !w-[88%] !min-w-[88%] !max-w-none mx-auto'>
                                         Book A Free Consultation
                                     </Button>
                                 </motion.div>
