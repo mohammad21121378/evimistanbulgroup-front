@@ -45,7 +45,7 @@ export default function Hero({ page,category }: HeroProps) {
 
                 <Breadcrumb items={breadCrumb} />
 
-                <h1 className="text-center heading-3 mb-6 mt-10" >
+                <h1 className="text-center text-6xl font-bold mb-6 mt-10" >
                 {category ? <AnimatedText title={page.title} /> : <AnimatedText title={ROOT_TITLE} />}
 
                     {/* {category ? page.title : ROOT_TITLE} */}
