@@ -120,7 +120,7 @@ export default function ChatListing({ msg }: Prop) {
                         transition={{ delay: 2, duration: 0.5 }}
                         className='pt-4 '
                         >
-                            <Link href="/properties-for-sale-in-turkey" className='flex gap-1 capitalize items-center text-center justify-center pb-1 hover:text-orange-500 text-gray-600 font-bold'>
+                            <Link  href="/properties-for-sale-in-turkey" className='flex gap-1 capitalize items-center text-center justify-center pb-1 hover:text-orange-500 text-gray-600 font-bold'>
                                 See more properties <FaChevronRight />
                             </Link>
                             <hr className='bg-gray-200 mt-1 mb-3' />

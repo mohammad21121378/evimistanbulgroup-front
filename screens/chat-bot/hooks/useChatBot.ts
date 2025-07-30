@@ -95,6 +95,7 @@ export function useChatBot() {
         setMessages(prev => [...prev, userMessage]);
         setMessages(prev => [...prev, { role: 'assistant', content: '...' }]);
         setInput('');
+        scrollToBottom();
 
         const updatedMessages = [...messages, userMessage];
         const botResponseData = await sendAIMessage(updatedMessages,locale);
