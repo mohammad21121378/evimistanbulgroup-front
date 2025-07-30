@@ -102,6 +102,7 @@ export function useChatBot() {
 
         const dummyProperties: PropertyRawType[] = includesProperty ? botResponseData.property : [];
 
+
         scrollToBottom();
 
             setMessages(prev => prev.slice(0, -1));
