@@ -1,6 +1,5 @@
 'use client';
 
-import Portal from '@/components/ui/globals/Portal';
 import { motion, AnimatePresence } from 'framer-motion';
 
 type Props = {
@@ -23,11 +22,10 @@ export default function ConfirmDialog({
   cancelText = "Vazgeç",
 }: Props) {
   return (
-    <Portal>
       <AnimatePresence>
         {show && (
           <motion.div
-            className="fixed inset-0 bg-black bg-opacity-40 z-50 flex items-center justify-center"
+            className="absolute inset-0 bg-black bg-opacity-40 z-[9999] flex items-center justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -59,6 +57,5 @@ export default function ConfirmDialog({
           </motion.div>
         )}
       </AnimatePresence>
-    </Portal>
   );
 }
