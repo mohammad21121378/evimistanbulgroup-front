@@ -62,11 +62,11 @@ export default function Footer({ sendMessage, input, setInput, isTyping, activel
                                 exit={{ opacity: 0, x: -10 }}
                                 transition={{ duration: .3 }}
                                 type="button"
-                                onClick={() => setShowConfirm(true)}
+                                onClick={() => setShowConfirm(isTyping ? false : true)}
                                 className={classNames("h-12 w-14 outline outline-1 outline-gray-600 transition-all duraction-300 text-center text-white rounded-lg  bg-gray-600",
                                     {
                                         "cursor-wait": isTyping,
-                                        "hover:text-gray-600 hover:bg-transparent": !isTyping,
+                                        "hover:text-gray-600 hover:bg-white": !isTyping,
                                     })}>
                                 <GiBroom className={classNames(
                                     "size-7 mx-auto",
@@ -91,7 +91,7 @@ export default function Footer({ sendMessage, input, setInput, isTyping, activel
                         {
                             "cursor-wait": isTyping,
                             "cursor-not-allowed opacity-60": activelimitation,
-                            " hover:bg-transparent hover:text-orange-600": !isTyping && !activelimitation,
+                            " hover:bg-white hover:text-orange-600": !isTyping && !activelimitation,
 
                         })}>
                         <LucideSend className={classNames(
