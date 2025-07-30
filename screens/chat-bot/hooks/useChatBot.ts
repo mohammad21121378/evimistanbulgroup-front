@@ -96,7 +96,8 @@ export function useChatBot() {
         setMessages(prev => [...prev, { role: 'assistant', content: '...' }]);
         setInput('');
 
-        const botResponseData = await sendAIMessage(messages,locale);
+        const updatedMessages = [...messages, userMessage];
+        const botResponseData = await sendAIMessage(updatedMessages,locale);
         const botResponse = botResponseData.text ?? '' ;
         const includesProperty = botResponseData.property && botResponseData.property.length > 0;
 
