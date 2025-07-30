@@ -9,16 +9,17 @@ interface AnimatedTextProps {
   title: string
   noneAnimate?: boolean;
   simpleFade?: boolean;
+  delay?: number
 }
 
-const AnimatedText = ({ title, noneAnimate, simpleFade=false }: AnimatedTextProps) => {
+const AnimatedText = ({ title, noneAnimate, simpleFade=false, delay= 1800}: AnimatedTextProps) => {
 
   const isMobile = useMediaQuery({ maxWidth: 768 });
 
   const [start, setStart] = useState(false)
 
   useEffect(() => {
-    const timer = setTimeout(() => setStart(true), 1800)
+    const timer = setTimeout(() => setStart(true), delay)
     return () => clearTimeout(timer)
   }, [])
 

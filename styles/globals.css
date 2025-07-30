@@ -240,3 +240,21 @@ html {
 .animate-bounce-sm {
   animation: bounce 2.5s infinite;
 }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: .9;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: .9;
+  }
+}
+.animate-pulse-custom {
+  animation: pulse 1.5s ease-in-out infinite;
+}

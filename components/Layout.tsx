@@ -7,6 +7,7 @@ import Curtain from "./curtain";
 import Footer from "./footer";
 import Header from "./header";
 import FreeConsultation from '@/screens/free-consultation';
+import ChatBot from '@/screens/chat-bot';
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -30,6 +31,7 @@ export default function Layout({ children }: LayoutProps) {
       {children}
       <Footer />
       <FreeConsultation />
+      <ChatBot />
     </>
   );
 }

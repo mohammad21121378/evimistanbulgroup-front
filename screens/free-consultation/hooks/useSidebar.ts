@@ -55,7 +55,7 @@ export function useSidebar(initialOpen?: boolean, setInitialOpen?: (val:boolean)
       id: messages.length + 1,
       text: query,
       user_id: 1,
-      sender: 'user',
+      role: 'user',
       role: 'assistant',
       time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false }),
     };

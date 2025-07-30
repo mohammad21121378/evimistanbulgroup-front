@@ -4,7 +4,7 @@ import fetchTestimonials from "@/helpers/api/testimonials/testimonials";
 import { TestimonialObject } from "@/screens/home/testimonials/testimonials";
 import ReviewSchema from "@/components/review-schema/ReviewSchema";
 
-export const generateMetadata = createGenerateMetadata("home");
+// export const generateMetadata = createGenerateMetadata("home");
 
 type Props = {
   params: { locale: string };
