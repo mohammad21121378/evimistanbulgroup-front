@@ -1,5 +1,8 @@
 import "@/styles/index.css";
 import 'react-phone-input-2/lib/style.css';
+import 'tippy.js/dist/tippy.css'; 
+import 'tippy.js/animations/scale-subtle.css';
+import 'tippy.js/themes/light.css';
 
 import { ReactNode } from "react";
 import { Providers } from "./providers";

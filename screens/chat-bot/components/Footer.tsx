@@ -33,7 +33,7 @@ export default function Footer({ sendMessage, input, setInput, isTyping, activel
                 <button type="submit" className={classNames("h-12 w-14 outline outline-1 outline-orange-600 text-center text-white rounded-lg  bg-orange-600",
                     {
                         "cursor-wait": isTyping,
-                        "cursor-not-allowed": activelimitation
+                        "cursor-not-allowed opacity-60": activelimitation
                     })}>
                     <LucideSend className={classNames(
                         "mx-auto w-7",

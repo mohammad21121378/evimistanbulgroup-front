@@ -256,7 +256,7 @@ html {
   }
 }
 .animate-pulse-custom {
-  animation: pulse 1.5s ease-in-out infinite;
+  animation: pulse 2.5s ease-in-out infinite;
 }
 
 @keyframes fade {
