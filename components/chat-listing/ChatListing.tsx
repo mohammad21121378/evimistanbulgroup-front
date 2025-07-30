@@ -118,7 +118,7 @@ export default function ChatListing({ msg }: Prop) {
                         <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ delay: msg.properties.length * .5, duration: 0.5 }}
+                        transition={{ delay: (msg.properties.length+1) * .5, duration: 0.5 }}
                         className='pt-4 '
                         >
                             <Link  href="/properties-for-sale-in-turkey" className='flex gap-1 capitalize items-center text-center justify-center pb-1 hover:text-orange-500 text-gray-600 font-bold'>
