@@ -6,6 +6,7 @@ import { Location2 } from '@/constants/icons';
 import Link from '../ui/Link';
 import { formatNumber } from '@/utils/formatNumber';
 import { FaChevronRight } from 'react-icons/fa6';
+import Markdown from 'markdown-to-jsx';
 
 type Prop = {
     msg: ChatItem
@@ -25,7 +26,9 @@ export default function ChatListing({ msg }: Prop) {
                                 <span>.</span><span>.</span><span>.</span>
                             </span>
                         ) : (
-                            msg.content
+                            <Markdown className="text-lg leading-relaxed" options={{ forceInline: true }}>
+                                {msg.content}
+                            </Markdown>
                         )}
                     </div>
                     <div className={styles.icon}></div>
@@ -92,7 +95,7 @@ export default function ChatListing({ msg }: Prop) {
                                             </div>
 
 
-                                            <p className="text-sm text-gray-600 line-clamp-2 mt-1" dangerouslySetInnerHTML={{__html:item.description ?? ""}}></p>
+                                            <p className="text-sm text-gray-600 line-clamp-2 mt-1" dangerouslySetInnerHTML={{ __html: item.description ?? "" }}></p>
                                         </div>
 
                                         <div className="mt-2.5 text-sm font-medium text-[#1A1A1A]">
@@ -116,19 +119,19 @@ export default function ChatListing({ msg }: Prop) {
                         }
 
                         <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: (msg.properties.length+1) * .5, duration: 0.5 }}
-                        className='pt-4 '
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: (msg.properties.length + 1) * .5, duration: 0.5 }}
+                            className='pt-4 '
                         >
-                            <Link  href="/properties-for-sale-in-turkey" className='flex gap-1 capitalize items-center text-center justify-center pb-1 hover:text-orange-500 text-gray-600 font-bold'>
+                            <Link href="/properties-for-sale-in-turkey" className='flex gap-1 capitalize items-center text-center justify-center pb-1 hover:text-orange-500 text-gray-600 font-bold'>
                                 See more properties <FaChevronRight />
                             </Link>
                             <hr className='bg-gray-200 mt-1 mb-3' />
                         </motion.div>
 
                     </>
-                    : 
+                    :
                     <></>
             }
 

@@ -82,7 +82,8 @@
 .typing-loader span {
     animation: blink 1.4s infinite both;
     font-weight: bold;
-    font-size: 28px;
+    font-size: 32px;
+    @apply text-gray-700
 }
 .typing-loader span:nth-child(2) {
     animation-delay: 0.2s;
