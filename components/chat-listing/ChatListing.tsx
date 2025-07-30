@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import { Location2 } from '@/constants/icons';
 import Link from '../ui/Link';
 import { formatNumber } from '@/utils/formatNumber';
-import { FaArrowRight, FaArrowRotateRight, FaChevronRight } from 'react-icons/fa6';
+import { FaChevronRight } from 'react-icons/fa6';
 
 type Prop = {
     msg: ChatItem
@@ -118,7 +118,7 @@ export default function ChatListing({ msg }: Prop) {
                         <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ delay: 2, duration: 0.5 }}
+                        transition={{ delay: msg.properties.length * .5, duration: 0.5 }}
                         className='pt-4 '
                         >
                             <Link  href="/properties-for-sale-in-turkey" className='flex gap-1 capitalize items-center text-center justify-center pb-1 hover:text-orange-500 text-gray-600 font-bold'>
