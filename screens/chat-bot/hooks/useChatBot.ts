@@ -66,6 +66,7 @@ export function useChatBot() {
     const [isTyping, setIsTyping] = useState(false);
     const [activelimitation, setActivelimitation] = useState(false);
     const [activeCleanButton, setActiveCleanButton] = useState(false);
+    const [activeConsultation, setActiveConsultation] = useState(false);
 
 
     const toggleChat = () => {
@@ -121,7 +122,7 @@ export function useChatBot() {
                     setIsTyping(false);
             
                     const botMessagesCount = messages.filter(msg => msg.role === 'assistant').length;
-                    if (botMessagesCount >= 3) setActivelimitation(true);
+                    if (botMessagesCount >= 3) setActiveConsultation(true);
             
                     
                     if (includesProperty) {
@@ -165,6 +166,7 @@ export function useChatBot() {
         setInput('');
         setIsTyping(false);
         setActivelimitation(false);
+        setActiveConsultation(false);
         setActiveCleanButton(false);
         
         requestAnimationFrame(() => {
@@ -187,7 +189,8 @@ export function useChatBot() {
         activelimitation,
         onOpenConsultation,
         activeCleanButton,
-        onClean
+        onClean,
+        activeConsultation
     }
 
 }

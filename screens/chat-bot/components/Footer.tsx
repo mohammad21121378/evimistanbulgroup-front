@@ -66,6 +66,8 @@ export default function Footer({ sendMessage, input, setInput, isTyping, activel
                     value={input}
                     onChange={e => setInput(e.target.value)}
                     disabled={activelimitation}
+                    autoCapitalize="none"
+                    autoComplete="none"
                 />
 
                 <button type="submit" className={classNames("h-12 w-14 outline outline-1 outline-orange-600 transition-all duraction-300 text-center text-white rounded-lg  bg-orange-600",
