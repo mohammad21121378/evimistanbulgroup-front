@@ -121,7 +121,7 @@ export default function ChatListing({ msg }: Prop) {
                         className='pt-6 '
                         >
                             <Link href="/properties-for-sale-in-turkey" className='flex gap-1 capitalize items-center text-center justify-center pb-1 hover:text-orange-500 text-gray-600 font-bold'>
-                                see more properties <FaChevronRight />
+                                See more properties <FaChevronRight />
                             </Link>
                             <hr className='bg-gray-200 mt-1 mb-5' />
                         </motion.div>
