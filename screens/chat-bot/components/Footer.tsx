@@ -78,7 +78,7 @@ export default function Footer({ sendMessage, input, setInput, isTyping, activel
 
 
                     <Input
-                        placeholder="text for send message ..."
+                        placeholder="Need help? Write to EvimGPT and get instant answers..."
                         className="!rounded-lg"
                         value={input}
                         onChange={e => setInput(e.target.value)}

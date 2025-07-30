@@ -42,6 +42,7 @@ export default function ChatListing({ msg }: Prop) {
                         {
                             msg.properties?.map((item, index) =>
                             (
+                                <div key={index} className='block'>
                                 <motion.div
                                     key={item.id}
                                     initial={{ opacity: 0, y: 30 }}
@@ -115,6 +116,7 @@ export default function ChatListing({ msg }: Prop) {
                                         </div>
                                     </div>
                                 </motion.div>
+                                </div>
                             ))
                         }
 
