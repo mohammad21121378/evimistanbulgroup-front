@@ -21,8 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8a444990-2b63-46d6-b210-f54ec3aa7b85" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/our-insights/insight-details/components/RightSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/our-insights/insight-details/components/RightSidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/our-insights/insight-details/components/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/screens/our-insights/insight-details/components/styles.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/chat-bot/hooks/useChatBot.ts" beforeDir="false" afterPath="$PROJECT_DIR$/screens/chat-bot/hooks/useChatBot.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,21 +49,21 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/screens/our-insights/hooks" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/helpers/api" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="K:\web\projects\react_project\evim\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="K:\web\projects\react_project\evim\screens\our-insights\insights\hooks" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="K:\web\projects\react_project\evim\helpers\api" />
       <recent name="K:\web\projects\react_project\evim\screens\our-insights\hooks" />
       <recent name="K:\web\projects\react_project\evim\hooks" />
       <recent name="K:\web\projects\react_project\evim\components\testimonial-card" />
       <recent name="K:\web\projects\react_project\evim\helpers\api\testimonials" />
-      <recent name="K:\web\projects\react_project\evim\helpers\api\property" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="K:\web\projects\react_project\evim\screens\our-insights\insights\hooks" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -87,7 +86,10 @@
       <workItem from="1753523434236" duration="22826000" />
       <workItem from="1753610019050" duration="4253000" />
       <workItem from="1753693439749" duration="984000" />
-      <workItem from="1753777095658" duration="3679000" />
+      <workItem from="1753777095658" duration="5050000" />
+      <workItem from="1753880620501" duration="6000" />
+      <workItem from="1753880673123" duration="306000" />
+      <workItem from="1753889788391" duration="2635000" />
     </task>
     <servers />
   </component>
@@ -115,14 +117,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="477" y="263" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1753460371080" />
-    <state x="581" y="96" key="FileChooserDialogImpl" timestamp="1753459669842">
+    <state x="581" y="96" key="FileChooserDialogImpl" timestamp="1753896496591">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="581" y="96" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1753459669842" />
-    <state x="479" y="0" width="962" height="1040" key="find.popup" timestamp="1753795496353">
+    <state x="581" y="96" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1753896496591" />
+    <state x="479" y="0" width="962" height="1040" key="find.popup" timestamp="1753897060616">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="479" y="0" width="962" height="1040" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1753795496353" />
+    <state x="479" y="0" width="962" height="1040" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1753897060616" />
     <state x="364" y="228" key="run.anything.popup" timestamp="1753441828471">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -3,7 +3,8 @@ import { defaulMessage } from "../constants";
 import { ChatItem } from "@/types/Chat";
 import { useConsultationStore } from "@/stores/consultationStore";
 import { PropertyRawType } from "@/types/Property";
-
+import {useLocale} from "next-intl";
+import {sendAIMessage} from "@/helpers/api/sendAIMessage"
 const generateDummyProperties = (count: number): PropertyRawType[] => {
     return Array.from({ length: count }, (_, i) => ({
         id: i + 1,
@@ -54,7 +55,7 @@ const generateDummyProperties = (count: number): PropertyRawType[] => {
 
 
 export function useChatBot() {
-
+    const locale = useLocale();
     const { onOpen } = useConsultationStore()
 
 
@@ -90,19 +91,18 @@ export function useChatBot() {
         if (!input.trim() || isTyping || activelimitation) return;
 
         const userMessage: ChatItem = { role: 'user', content: input };
-        const botResponse = "Welcome to Ovim Istanbul! Whether you're buying, renting, or just browsing, I’m here to help. What are you looking for?";
-        const includesProperty = /property/i.test(input);
-
-        const dummyProperties: PropertyRawType[] = includesProperty ? generateDummyProperties(3) : [];
-
         setIsTyping(true);
         setMessages(prev => [...prev, userMessage]);
-        setInput('');
-        scrollToBottom();
-
         setMessages(prev => [...prev, { role: 'assistant', content: '...' }]);
+        setInput('');
 
-        setTimeout(() => {
+        const botResponseData = await sendAIMessage(messages,locale);
+        const botResponse = botResponseData.text ?? '' ;
+        const includesProperty = botResponseData.property && botResponseData.property.length > 0;
+
+        const dummyProperties: PropertyRawType[] = includesProperty ? botResponseData.property : [];
+
+        scrollToBottom();
 
             setMessages(prev => prev.slice(0, -1));
             if (!activeCleanButton) setActiveCleanButton(true)
@@ -132,8 +132,6 @@ export function useChatBot() {
                     scrollToBottom();
                 }
             }, 15);
-
-        }, 1000);
     };
 
     const scrollToBottom = () => {
