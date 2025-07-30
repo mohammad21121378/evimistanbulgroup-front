@@ -1,10 +1,12 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { defaulMessage } from "../constants";
 import { ChatItem } from "@/types/Chat";
 import { useConsultationStore } from "@/stores/consultationStore";
 import { PropertyRawType } from "@/types/Property";
 import {useLocale} from "next-intl";
 import {sendAIMessage} from "@/helpers/api/sendAIMessage"
+
+const LOCAL_STORAGE_KEY = "chat_messages";
 
 export function useChatBot() {
     const locale = useLocale();
@@ -21,6 +23,24 @@ export function useChatBot() {
     const [activeCleanButton, setActiveCleanButton] = useState(false);
     const [activeConsultation, setActiveConsultation] = useState(false);
 
+
+    useEffect(() => {
+        const saved = localStorage.getItem(LOCAL_STORAGE_KEY);
+        if (saved) {
+            try {
+                setMessages(JSON.parse(saved));
+                setActiveCleanButton(true);
+            } catch {
+                setMessages(defaulMessage as ChatItem[]);
+            }
+        } else {
+            setMessages(defaulMessage as ChatItem[]);
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(messages));
+    }, [messages]);
 
     const toggleChat = () => {
         if (!isOpen) {
@@ -121,13 +141,10 @@ export function useChatBot() {
         setActivelimitation(false);
         setActiveConsultation(false);
         setActiveCleanButton(false);
+
+        localStorage.removeItem(LOCAL_STORAGE_KEY);
         
-        requestAnimationFrame(() => {
-            messagesRef.current?.scrollTo({
-                top: messagesRef.current.scrollHeight,
-                behavior: 'smooth',
-            });
-        });
+        scrollToBottom()
     };
 
     return {
