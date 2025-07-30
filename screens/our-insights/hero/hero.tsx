@@ -45,10 +45,10 @@ export default function Hero({ page,category }: HeroProps) {
 
                 <Breadcrumb items={breadCrumb} />
 
-                <h1 className="text-center heading-3 mb-6 mt-10 capitalize" >
+                <h1 className="text-center text-6xl font-bold mb-6 mt-10" >
                 {category ? <AnimatedText title={page.title} /> : <AnimatedText title={ROOT_TITLE} />}
 
-                    {category ? page.title : ROOT_TITLE}
+                    {/* {category ? page.title : ROOT_TITLE} */}
                 </h1>
 
                 <div dangerouslySetInnerHTML={{__html:page.content}} className={classNames('text-gray-500 text-center text-xl leading-relaxed md:px-16', styles.description)}>
