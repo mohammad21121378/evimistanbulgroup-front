@@ -83,7 +83,7 @@
     animation: blink 1.4s infinite both;
     font-weight: bold;
     font-size: 48px;
-    line-height: 16px;
+    line-height: 14px;
     @apply text-gray-600
 }
 .typing-loader span:nth-child(2) {
