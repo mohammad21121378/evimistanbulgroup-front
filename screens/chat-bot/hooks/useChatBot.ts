@@ -29,7 +29,7 @@ export function useChatBot() {
         if (saved) {
             try {
                 setMessages(JSON.parse(saved));
-                setActiveCleanButton(true);
+                setActiveCleanButton(messages.length > 1);
             } catch {
                 setMessages(defaulMessage as ChatItem[]);
             }
