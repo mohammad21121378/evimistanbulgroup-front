@@ -15,10 +15,13 @@ type Props = {
     m?: string;
 };
 
-export default function MenuItem({ icon, external = false, title, description, active, href = "/", className, }: Props) {
+export default function MenuItem({ icon, external = false, title, description, active, href, className, }: Props) {
+
+    console.log(title, href);
+    
     
     const content = (
-        <div className={`flex items-start gap-1.5 w-full rounded-md px-1.5 ${className} ${styles.menuItem} py-1.5`} style={{ background: active ? '#fff' : '' }}>
+        <div className={`flex items-start ${icon && 'gap-1.5 w-full'} -ml-px rounded-md px-0 ${className} ${styles.menuItem} py-1`} style={{ background: active ? '#fff' : '' }}>
             <div style={{ color: 'inherit !important' }}>
                 {icon}
             </div>
@@ -39,7 +42,7 @@ export default function MenuItem({ icon, external = false, title, description, a
 
     return (
         typeof href === 'string' ?
-            <Link href={href} className="svgNotHover duration-500 text-[#111B29] hover:!fill-orange-500 hover:text-orange-500">
+            <Link href={href} noLink={!href} className="svgNotHover duration-500 text-[#111B29] hover:!fill-orange-500 hover:text-orange-500">
                 {content}
             </Link>
             :

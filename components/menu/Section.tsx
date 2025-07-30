@@ -11,14 +11,14 @@ type Props = {
 export default function Section({ title, children, className, titleClassName, childrenClassName }: Props) {
     
     return (
-        <div className={classNames(className, 'py-2 px-3')}>
+        <div className={classNames(className, 'pt-2 pb-1 px-2.5 ')}>
             {
                 title ?
-                <div className={`text-orange-500 font-bold text-left uppercase text-xs pb-1.5`}>{title}</div>
+                <div className={`text-orange-500 font-bold text-left uppercase text-xs pl-px pb-1.5`}>{title}</div>
                 : ''
             }
 
-            <div className={` ${childrenClassName}`}>
+            <div className={` ${childrenClassName} `}>
                 {children}
             </div>
         </div>

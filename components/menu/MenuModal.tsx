@@ -8,9 +8,10 @@ type Props = {
     titleCenter?: number | null;
     titlePos: TitlePos;
     onClick?: () => void;
+    svgColor?: string
   };
 
-const MenuModal = ({ show: showProps, children, titleCenter, titlePos, onClick }: Props) => {
+const MenuModal = ({ show: showProps, children, titleCenter, titlePos, onClick, svgColor }: Props) => {
 
     const modalRef = useRef<HTMLDivElement | null>(null);
     const [adjust, setAdjust] = useState<Adjust>(false);
@@ -81,7 +82,7 @@ const MenuModal = ({ show: showProps, children, titleCenter, titlePos, onClick }
                 ${adjust === 'right' ? styles.adjustRight : ''}
             `}
             style={{
-                left: adjust === 'left' ? 300 : ((adjust === 'right') ? (-60) : ''),
+                left: adjust === 'left' ? 300 : ((adjust === 'right') ? (-15) : ''),
                 transform: adjust ? `none !imporatnt` : ''
             }}
             onClick={onClick}
@@ -102,11 +103,11 @@ const MenuModal = ({ show: showProps, children, titleCenter, titlePos, onClick }
                         fillRule="evenodd"
                         clipRule="evenodd"
                         d="M0 13.7254H26.2354C26.058 13.2894 25.8132 12.8809 25.5011 12.5207L15.7371 1.25218C14.2904 -0.417393 11.945 -0.417395 10.4983 1.25218L0.734338 12.5207C0.422218 12.8809 0.177439 13.2894 0 13.7254Z"
-                        fill="#F2F4F7"
+                        fill={svgColor?svgColor:"#F2F4F7"}
                     />
                 </svg>
             }
-            <div className={styles.content}>{children}</div>
+            <div className={`overflow-hidden ${styles.content}`}>{children}</div>
         </div>
     );
 };

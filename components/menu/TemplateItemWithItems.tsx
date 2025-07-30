@@ -31,7 +31,8 @@ type Props = {
   arrow?: boolean;
   menuItemClassName?: string;
   singleColumn?: boolean;
-  seeAllRight?: boolean
+  seeAllRight?: boolean;
+  svgColor?: string;
 };
 
 export default function TemplateItemWithItems({
@@ -44,7 +45,8 @@ export default function TemplateItemWithItems({
   arrow = true,
   menuItemClassName,
   singleColumn = false,
-  seeAllRight=false
+  seeAllRight=false,
+  svgColor
 }: Props) {
 
   const allSections = Object.values(items);
@@ -54,7 +56,7 @@ export default function TemplateItemWithItems({
   const seeAllRightClasses = seeAllRight ? 'text-right justify-end' : ''
 
   return (
-    <TemplateItem href={href} title={title} arrow={arrow}>
+    <TemplateItem svgColor={svgColor} href={href} title={title} arrow={arrow}>
       <div
         className={classNames(
           contentClassName,
@@ -68,7 +70,7 @@ export default function TemplateItemWithItems({
             <Section key={idx} title={item.title} className={sectionClassName}>
               {item.items.map((child, idx2) => (
                 <div key={idx + '-' + idx2}>
-                  <MenuItem className={menuItemClassName} {...child} />
+                  <MenuItem className={menuItemClassName} {...child} href={child.href ?? false} />
                 </div>
               ))}
               {item.seeAllHref && <SeeAll className={seeAllRightClasses} href={item.seeAllHref} />}

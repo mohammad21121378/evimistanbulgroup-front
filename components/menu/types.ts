@@ -5,7 +5,8 @@ export interface Template {
     href?: string; 
     children:ReactNode; 
     li?: boolean; 
-    arrow?: boolean
+    arrow?: boolean;
+    svgColor?: string 
 }
 
 

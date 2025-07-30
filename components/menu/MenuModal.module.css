@@ -89,7 +89,7 @@
 
 .content {
     box-shadow: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 16px;
     z-index: 9999;
 }
@@ -100,9 +100,9 @@
 }
 
 .svgIcon{
-    top: -2px;
+    top: -3px;
     position: absolute;
-    z-index: 99999999999999;
+    z-index: 9999999999999;
     transition: .2s;
     animation: FadeInAnimate .5s ease-in-out forwards;   
 }
@@ -141,10 +141,11 @@
     @apply hover:!text-orange-500 transition-all duration-300;
 }
 
+
 @media (max-width: 1150px) {
     .contentContainer{
-        overflow: hidden;
-        max-width: 850px !important;
+        /* overflow: hidden; */
+        max-width: 870px !important;
     }
 }
 

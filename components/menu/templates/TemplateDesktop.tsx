@@ -4,7 +4,7 @@ import { Template, TitlePos } from '../types';
 import styles from '../MenuModal.module.css';
 import Link from '@/components/ui/Link';
 
-export default function TemplateDesktop({ title, href, children, li = true, arrow = false }: Template) {
+export default function TemplateDesktop({ title, href, children, li = true, arrow = false, svgColor }: Template) {
 
     const wrapperRef = useRef<HTMLDivElement | null>(null);
     const titleRef = useRef<HTMLDivElement | null>(null);
@@ -110,7 +110,7 @@ export default function TemplateDesktop({ title, href, children, li = true, arro
 
     const content = (
         <>
-            <span ref={titleRef} className={`cursor-pointer flex items-center gap-1 label-small ${typeof title === 'string' && styles.nav_link}`}>
+            <Link ref={titleRef} className={`cursor-pointer transition-none flex items-center gap-1 label-small ${typeof title === 'string' && styles.nav_link}`} noLink={!href} href={href}>
                 {title}
                 {
                     arrow &&
@@ -118,9 +118,9 @@ export default function TemplateDesktop({ title, href, children, li = true, arro
                         <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                     </svg>
                 }
-            </span>
+            </Link>
 
-            <MenuModal show={show} titleCenter={titleCenter} titlePos={titlePos} onClick={() => setShow(false)}>
+            <MenuModal svgColor={svgColor} show={show} titleCenter={titleCenter} titlePos={titlePos} onClick={() => setShow(false)}>
                 {children}
             </MenuModal>
         </>
@@ -133,5 +133,5 @@ export default function TemplateDesktop({ title, href, children, li = true, arro
         ref: wrapperRef
     };
 
-    return li ? <div {...wrapperProps}><Link className='transition-none' noLink={!href} href={href}>{content}</Link></div> : <div {...wrapperProps}><Link noLink={!href} href={href}>{content}</Link></div>;
+    return li ? <div {...wrapperProps}>{content}</div> : <div {...wrapperProps}>{content}</div>;
 }
