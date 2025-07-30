@@ -28,8 +28,10 @@ export function useChatBot() {
         const saved = localStorage.getItem(LOCAL_STORAGE_KEY);
         if (saved) {
             try {
-                setMessages(JSON.parse(saved));
-                setActiveCleanButton(messages.length > 1);
+                const jSONSaved = JSON.parse(saved); 
+                setMessages(jSONSaved);
+                setActiveCleanButton(jSONSaved.length > 1);
+                setActiveConsultation(jSONSaved.length >= 3);
             } catch {
                 setMessages(defaulMessage as ChatItem[]);
             }
