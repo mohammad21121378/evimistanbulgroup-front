@@ -91,7 +91,8 @@ export default function ChatListing({ msg }: Prop) {
                                                 </div>
                                             </div>
 
-                                            <p className="text-sm text-gray-600 line-clamp-2 mt-1">{item.description}</p>
+
+                                            <p className="text-sm text-gray-600 line-clamp-2 mt-1" dangerouslySetInnerHTML={{__html:item.description ?? ""}}></p>
                                         </div>
 
                                         <div className="mt-2.5 text-sm font-medium text-[#1A1A1A]">
