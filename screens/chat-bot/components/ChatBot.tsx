@@ -26,7 +26,9 @@ export default function ChatBot() {
         messagesRef,
         isTyping,
         activelimitation,
-        onOpenConsultation
+        onOpenConsultation,
+        activeCleanButton,
+        onClean
     } = useChatBot();
 
 
@@ -40,9 +42,9 @@ export default function ChatBot() {
                 {isOpen && (
 
                     <motion.div
-                        initial={{ opacity: 0, width: '0', height: '0', }}
+                        initial={{ opacity: 0, width: 0, height: 0, }}
                         animate={{ opacity: 1, width: '35rem', height: '45rem', }}
-                        exit={{ opacity: 0, width: '', height: '0', }}
+                        exit={{ opacity: 0, width: 0, height: 0, }}
                         transition={{ type: 'spring', damping: 25, stiffness: 300 }}
                         className=" fixed z-[99999999] left-8 bottom-8  h-[28rem] bg-white border border-zinc-300  rounded-2xl shadow-xl flex flex-col overflow-hidden"
                     >
@@ -83,7 +85,7 @@ export default function ChatBot() {
                         </div>
 
 
-                        <Footer sendMessage={sendMessage} input={input} setInput={setInput} isTyping={isTyping} activelimitation={activelimitation} />
+                        <Footer activeCleanButton={activeCleanButton} onClean={onClean} sendMessage={sendMessage} input={input} setInput={setInput} isTyping={isTyping} activelimitation={activelimitation} />
 
                     </motion.div>
                 )}

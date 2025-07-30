@@ -2,8 +2,55 @@ import { useRef, useState } from "react"
 import { defaulMessage } from "../constants";
 import { ChatItem } from "@/types/Chat";
 import { useConsultationStore } from "@/stores/consultationStore";
+import { PropertyRawType } from "@/types/Property";
 
-
+const generateDummyProperties = (count: number): PropertyRawType[] => {
+    return Array.from({ length: count }, (_, i) => ({
+        id: i + 1,
+        title: `Sample Property ${i + 1}`,
+        slug: `sample-property-${i + 1}`,
+        url: `/properties/sample-property-${i + 1}`,
+        content: null,
+        description: `A great property located in Istanbul A great property located in Istanbul A great property located in Istanbul #${i + 1}.`,
+        created_at: new Date().toISOString(),
+        images: [`/images/properties/commercial/downtown-office.webp`, `Sample Image ${i + 1}`],
+        location: 'Istanbul',
+        locationID: 1,
+        parentLocation: 'Turkey',
+        parentLocationID: 0,
+        types: [{ id: 1, title: 'Apartment' }],
+        special_features: [{ id: 1, title: 'Sea View' }],
+        category: 'Residential',
+        status: "available",
+        min_price: 100000 + i * 10000,
+        max_price: 150000 + i * 10000,
+        latitude: 41.0082,
+        longitude: 28.9784,
+        features: [
+            { id: 1, icon: 'bed', name: 'Bedrooms', value: 2 },
+            { id: 2, icon: 'bath', name: 'Bathrooms', value: 1 },
+        ],
+        agent: {
+            image: '/images/agent.jpg',
+            name: 'John Doe',
+            email: 'john@example.com',
+            phone: '+905551112233',
+        },
+        key_features_and_highlights: null,
+        investment_and_payment: null,
+        amenities_and_services: null,
+        property_description: null,
+        location_and_lifestyle: null,
+        legal_and_citizenship: null,
+        virtual_tour_video: null,
+        floor_plans_and_gallery: null,
+        contact_and_request_info: null,
+        meta_description: null,
+        meta_title: null,
+        meta_index: "index",
+        meta_follow: "follow",
+    }));
+};
 
 
 export function useChatBot() {
@@ -18,6 +65,7 @@ export function useChatBot() {
     const [input, setInput] = useState('')
     const [isTyping, setIsTyping] = useState(false);
     const [activelimitation, setActivelimitation] = useState(false);
+    const [activeCleanButton, setActiveCleanButton] = useState(false);
 
 
     const toggleChat = () => {
@@ -34,70 +82,98 @@ export function useChatBot() {
 
     const onOpenConsultation = () => {
         toggleChat();
-        onOpen()    }
+        onOpen()
+    }
 
     const sendMessage = async () => {
         if (!input.trim() || isTyping || activelimitation) return;
 
-
         const userMessage: ChatItem = { role: 'user', content: input };
-        setIsTyping(true)
+        const botResponse = "Welcome to Ovim Istanbul! Whether you're buying, renting, or just browsing, I’m here to help. What are you looking for?";
+        const includesProperty = /property/i.test(input);
+
+        const dummyProperties: PropertyRawType[] = includesProperty ? generateDummyProperties(3) : [];
+
+        setIsTyping(true);
         setMessages(prev => [...prev, userMessage]);
         setInput('');
+        scrollToBottom();
 
+        setMessages(prev => [...prev, { role: 'assistant', content: '...' }]);
+
+        setTimeout(() => {
+
+            setMessages(prev => prev.slice(0, -1));
+            if (!activeCleanButton) setActiveCleanButton(true)
+
+            let i = 0;
+            let currentText = '';
+
+            const interval = setInterval(() => {
+                currentText += botResponse[i++];
+
+                updateBotMessage(currentText);
+            
+                scrollToBottom();
+            
+                if (i >= botResponse.length) {
+                    clearInterval(interval);
+                    setIsTyping(false);
+            
+                    const botMessagesCount = messages.filter(msg => msg.role === 'assistant').length;
+                    if (botMessagesCount >= 3) setActivelimitation(true);
+            
+                    
+                    if (includesProperty) {
+                        updateBotMessage(currentText, dummyProperties);
+                    }
+                    
+                    scrollToBottom();
+                }
+            }, 15);
+
+        }, 1000);
+    };
+
+    const scrollToBottom = () => {
         requestAnimationFrame(() => {
             messagesRef.current?.scrollTo({
                 top: messagesRef.current.scrollHeight,
                 behavior: 'smooth',
             });
         });
-
-        const loadingMessage: ChatItem = { role: 'assistant', content: '...' };
-        setMessages(prev => [...prev, loadingMessage]);
-
-        setTimeout(() => {
-            const finalText = "Welcome to Ovim Istanbul! Whether you're buying, renting, or just browsing, I’m here to help. What are you looking for?";
-            let currentText = '';
-            setMessages(prev => prev.slice(0, -1));
-
-            let i = 0;
-            const typingInterval = setInterval(() => {
-                currentText += finalText[i];
-                i++;
-
-                setMessages(prev => {
-                    const lastBotMessage = prev[prev.length - 1];
-                    if (lastBotMessage?.role === 'assistant') {
-                        return [...prev.slice(0, -1), { role: 'assistant', content: currentText }];
-                    } else {
-                        return [...prev, { role: 'assistant', content: currentText }];
-                    }
-                });
-
-                messagesRef.current?.scrollTo({
-                    top: messagesRef.current.scrollHeight,
-                    behavior: 'smooth',
-                });
-
-                if (i >= finalText.length) {
-                    clearInterval(typingInterval);
-                    setIsTyping(false);
-
-                    const botMessagesCount = messages.filter(msg => msg.role === 'assistant').length;
-                    if (botMessagesCount >= 3) {setActivelimitation(true)};
-
-                    requestAnimationFrame(() => {
-                        messagesRef.current?.scrollTo({
-                            top: messagesRef.current.scrollHeight,
-                            behavior: 'smooth',
-                        });
-                    });
-                }
-
-            }, 15);
-        }, 1000);
     };
 
+    const updateBotMessage = (
+        text: string,
+        properties?: PropertyRawType[]
+    ) => {
+        setMessages(prev => {
+            const last = prev[prev.length - 1];
+            const newMessage: ChatItem = { role: 'assistant', content: text };
+            if (properties) newMessage.properties = properties;
+    
+            return last?.role === 'assistant'
+                ? [...prev.slice(0, -1), newMessage]
+                : [...prev, newMessage];
+        });
+    };
+
+    const onClean = () => {
+        if(isTyping) return;
+        setMessages(defaulMessage as ChatItem[]);
+        setInput('');
+        setIsTyping(false);
+        setActivelimitation(false);
+        setActiveCleanButton(false);
+        
+        requestAnimationFrame(() => {
+            messagesRef.current?.scrollTo({
+                top: messagesRef.current.scrollHeight,
+                behavior: 'smooth',
+            });
+        });
+    };
 
     return {
         isOpen,
@@ -109,7 +185,9 @@ export function useChatBot() {
         messagesRef,
         isTyping,
         activelimitation,
-        onOpenConsultation
+        onOpenConsultation,
+        activeCleanButton,
+        onClean
     }
 
 }

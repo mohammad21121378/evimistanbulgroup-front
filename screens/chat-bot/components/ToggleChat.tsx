@@ -17,7 +17,7 @@ export default function ToggleButton({ toggleChat, isOpen }: Props) {
             {!isOpen && (
                 <Tippy
                     content={
-                        <div className="text-left max-w-xs p-2.5">
+                        <div className="text-left max-w-xs p-2.5 pt-1.5">
 
                             <p className="font-bold text-xl flex items-center gap-0 ">
                                 <span className='w-16 -ml-5'>
@@ -26,7 +26,7 @@ export default function ToggleButton({ toggleChat, isOpen }: Props) {
                                 Say Hello to EvimGPT
                             </p>
 
-                            <p className="text-lg mt-1.5 pl-2.5 font-medium ">
+                            <p className="text-base mt-0 pl-11 font-medium pb-1 leading-snug ">
                                 Chat with Turkey’s first AI-Powered property search assistant and browse homes stress free!
                             </p>
                         </div>
@@ -34,8 +34,9 @@ export default function ToggleButton({ toggleChat, isOpen }: Props) {
                     theme='light'
                     placement="top"
                     animation="scale-subtle"
-                    duration={[200, 150]}
-                    delay={[300, null]}
+                    duration={200}
+                    delay={[100, null]}
+                    interactive={true}
                 >
                     <motion.button
                         onClick={toggleChat}

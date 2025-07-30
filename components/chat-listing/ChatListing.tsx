@@ -1,57 +1,136 @@
-import classNames from 'classnames';
+import cn from 'classnames';
 import styles from './ChatListing.module.css'
+import { ChatItem } from '@/types/Chat';
+import { motion } from 'framer-motion'
+import { Location2 } from '@/constants/icons';
+import Link from '../ui/Link';
+import { formatNumber } from '@/utils/formatNumber';
+import { FaArrowRight, FaArrowRotateRight, FaChevronRight } from 'react-icons/fa6';
 
 type Prop = {
-    msg: {
-        role: string;
-        content: string;
-    }
+    msg: ChatItem
 }
 
 export default function ChatListing({ msg }: Prop) {
     return (
-        <div className={classNames(
-            styles.parentBox,
-            { [styles.userSender]: msg.role === 'user' }
-        )}>
-            <div className={styles.box}>
-                <div className={styles.textBox} aria-label="GPT response">
-                    {msg.content === '...' ? (
-                        <span className={styles["typing-loader"]}>
-                            <span>.</span><span>.</span><span>.</span>
-                        </span>
-                    ) : (
-                        msg.content
-                    )}
+        <>
+            <div className={cn(
+                styles.parentBox,
+                { [styles.userSender]: msg.role === 'user' }
+            )}>
+                <div className={styles.box}>
+                    <div className={styles.textBox} aria-label="GPT response">
+                        {msg.content === '...' ? (
+                            <span className={styles["typing-loader"]}>
+                                <span>.</span><span>.</span><span>.</span>
+                            </span>
+                        ) : (
+                            msg.content
+                        )}
+                    </div>
+                    <div className={styles.icon}></div>
                 </div>
-                <div className={styles.icon}></div>
             </div>
-        </div>
+
+            {
+                msg.properties
+                    ?
+                    <>
+                        {
+                            msg.properties?.map((item, index) =>
+                            (
+                                <motion.div
+                                    key={item.id}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: (index + 1) * 0.5, duration: 0.5 }}
+                                    className="flex bg-white rounded-2xl shadow-md overflow-hidden mb-5"
+                                >
+                                    <Link href={`${item.url}`} className="w-40 h-full object-cover flex-shrink-0 bg-gray-100">
+                                        <img
+                                            src={item.images[0] || '/placeholder.jpg'}
+                                            alt={item.images[1] || 'Property Image'}
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </Link>
+
+                                    <div className="px-4 py-2.5 flex flex-col justify-between text-left w-full">
+                                        <div>
+
+                                            <Link href={`${item.url}`} className="text-lg font-semibold text-orange-600">{item.title}</Link>
+
+                                            <div
+
+                                                className={cn(
+                                                    "paragraph-medium font-medium flex items-center gap-1 mt-1 underline text-gray-500",
+
+                                                )}
+                                            >
+                                                {Location2}
+                                                <div>
+                                                    <Link
+                                                        href={`/properties-for-sale-in-turkey?location=${item.locationID}`}
+                                                        className={cn(
+                                                            "paragraph-medium font-medium  underline",
+
+                                                        )}
+                                                    >
+
+                                                        {item.location}
+                                                    </Link>,
+                                                    <Link
+                                                        href={`/properties-for-sale-in-turkey?location=${item.parentLocationID}`}
+                                                        className={cn(
+                                                            "paragraph-medium font-medium  underline",
+
+                                                        )}
+                                                    >
+
+                                                        {item.parentLocation}
+                                                    </Link>
+                                                </div>
+                                            </div>
+
+                                            <p className="text-sm text-gray-600 line-clamp-2 mt-1">{item.description}</p>
+                                        </div>
+
+                                        <div className="mt-3 text-sm font-medium text-[#1A1A1A]">
+                                            {item.min_price && item.max_price ? (
+                                                <>
+                                                    ${formatNumber(item.min_price)} MIN – ${formatNumber(item.max_price)} MAX
+                                                </>
+                                            ) : item.min_price ? (
+                                                <>
+                                                    ${formatNumber(item.min_price)}
+                                                </>
+                                            ) : item.max_price ? (
+                                                <>
+                                                    ${formatNumber(item.max_price)}
+                                                </>
+                                            ) : null}
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            ))
+                        }
+
+                        <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 2, duration: 0.5 }}
+                        className='pt-6 '
+                        >
+                            <Link href="/properties-for-sale-in-turkey" className='flex gap-1 capitalize items-center text-center justify-center pb-1 hover:text-orange-500 text-gray-600 font-bold'>
+                                see more properties <FaChevronRight />
+                            </Link>
+                            <hr className='bg-gray-200 mt-1 mb-5' />
+                        </motion.div>
+
+                    </>
+                    : 
+                    <></>
+            }
+
+        </>
     );
 }
-
-
-{/* <div class="_948d9e0a _6eaadaa8 f78bf4dd">
-<div class="c10ad9ac"><div class="_48df1e90 _2ec67beb" aria-label="GPT response">Alright! Let's start a new conversation. What can I help you with?</div><div class="_32e50f9f"></div></div></div> */}
-
-
-// type Prop = {
-//     msg: {
-//         role: string;
-//         text: string;
-//     }
-// }
-
-// export default function ChatListing({msg}: Prop) {
-//     return (
-//         <div
-//             className={`max-w-[80%] text-sm px-3 py-2 rounded-xl
-//             ${msg.role === 'user'
-//                 ? 'bg-blue-500 text-white self-end ml-auto'
-//                 : 'bg-zinc-200 -700 text-zinc-800  self-start'
-//                 }`}
-//         >
-//             {msg.text}
-//         </div>
-//     );
-// }
