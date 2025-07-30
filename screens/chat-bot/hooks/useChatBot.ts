@@ -5,54 +5,6 @@ import { useConsultationStore } from "@/stores/consultationStore";
 import { PropertyRawType } from "@/types/Property";
 import {useLocale} from "next-intl";
 import {sendAIMessage} from "@/helpers/api/sendAIMessage"
-const generateDummyProperties = (count: number): PropertyRawType[] => {
-    return Array.from({ length: count }, (_, i) => ({
-        id: i + 1,
-        title: `Sample Property ${i + 1}`,
-        slug: `sample-property-${i + 1}`,
-        url: `/properties/sample-property-${i + 1}`,
-        content: null,
-        description: `A great property located in Istanbul A great property located in Istanbul A great property located in Istanbul #${i + 1}.`,
-        created_at: new Date().toISOString(),
-        images: [`/images/properties/commercial/downtown-office.webp`, `Sample Image ${i + 1}`],
-        location: 'Istanbul',
-        locationID: 1,
-        parentLocation: 'Turkey',
-        parentLocationID: 0,
-        types: [{ id: 1, title: 'Apartment' }],
-        special_features: [{ id: 1, title: 'Sea View' }],
-        category: 'Residential',
-        status: "available",
-        min_price: 100000 + i * 10000,
-        max_price: 150000 + i * 10000,
-        latitude: 41.0082,
-        longitude: 28.9784,
-        features: [
-            { id: 1, icon: 'bed', name: 'Bedrooms', value: 2 },
-            { id: 2, icon: 'bath', name: 'Bathrooms', value: 1 },
-        ],
-        agent: {
-            image: '/images/agent.jpg',
-            name: 'John Doe',
-            email: 'john@example.com',
-            phone: '+905551112233',
-        },
-        key_features_and_highlights: null,
-        investment_and_payment: null,
-        amenities_and_services: null,
-        property_description: null,
-        location_and_lifestyle: null,
-        legal_and_citizenship: null,
-        virtual_tour_video: null,
-        floor_plans_and_gallery: null,
-        contact_and_request_info: null,
-        meta_description: null,
-        meta_title: null,
-        meta_index: "index",
-        meta_follow: "follow",
-    }));
-};
-
 
 export function useChatBot() {
     const locale = useLocale();

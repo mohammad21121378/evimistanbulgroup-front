@@ -382,7 +382,7 @@ export const MenuData = {
                     title: (
                         <div
                           onClick={() => useConsultationStore.getState().onOpen()}
-                          className="bg-[linear-gradient(95.51deg,_#EA580C_0%,_#F97316_97.26%)] underline-offset-2 cursor-pointer -ml-[5rem] w-[calc(100%+10rem)] -mt-[1.65rem] !py-3.5 underline text-white font-bold relative"
+                          className="bg-[linear-gradient(95.51deg,_#EA580C_0%,_#F97316_97.26%)] underline-offset-2 cursor-pointer -ml-[6.5rem] w-[calc(100%+14rem)] -mt-[1.65rem] !py-[.915rem] underline text-white font-bold relative"
                         >
                           Book A Free Consultation
                         </div>
@@ -394,11 +394,11 @@ export const MenuData = {
                     href: '/contact-us'
                 },
                 {
-                    title: 'FAQs',
+                    title: 'Frequently Asked Questions ',
                     href: '/faqs'
                 },
                 {
-                    title: <div className="flex items-center gap-2.5 pt-4 -mb-5 rounded-b-md -ml-[3.75rem] w-[calc(100%+7.545rem)] text-center justify-center !pb-4 bg-[#A7AEBA29]"> {socialMedia} </div>,
+                    title: <div className="flex items-center gap-1.5 pt-3.5 -mb-5 rounded-b-md -ml-[3.75rem] w-[calc(100%+7.545rem)] text-center justify-center !pb-3.5 bg-[#A7AEBA29]"> {socialMedia} </div>,
                     href: false
                 },
             ]
