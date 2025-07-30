@@ -261,13 +261,13 @@ html {
 
 @keyframes fade {
   0% {
-    opacity: .8;
+    opacity: .5;
   }
   50% {
     opacity: 1;
   }
   100% {
-    opacity: .8;
+    opacity: .5;
   }
 }
 .animate-fade-custom {
