@@ -537,9 +537,9 @@ useEffect(() => {
   }
 
   return (
-    <div className="relative grid grid-cols-11 gap-4">
+    <div className="flex fixe h-[85rem] inset-0">
 
-      <div className="col-span-5 max-h-[90vh] overflow-auto scrollbar-sm space-y-2">
+      <div className="w-1/2 max-h-[90vh] overflow-auto scrollbar-sm space-y-2">
         <div className="flex items-center justify-between p-2 bg-white rounded-xl shadow">
           <div className="flex gap-2">
             <button onClick={() => setShowHeatmap((s) => !s)} className="px-3 py-1 border rounded">
@@ -553,7 +553,7 @@ useEffect(() => {
             {filteredProperties.length} مورد نمایش داده می‌شود
           </div>
         </div>
-        <div className="space-y-1 p-2">
+        <div className="space-y-1 p-2 grid grid-cols-2">
           {filteredProperties.map((property) => (
             <div
               key={property.id}
@@ -571,7 +571,7 @@ useEffect(() => {
         </div>
       </div>
 
-      <div className="col-span-6 relative">
+      <div className="w-1/2 relative">
 
         <div className="absolute top-20 left-4 z-20 flex gap-2">
           <Autocomplete onLoad={(auto) => setSearchBox(auto)} onPlaceChanged={onPlaceChanged}>
