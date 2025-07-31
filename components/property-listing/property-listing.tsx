@@ -11,6 +11,7 @@ import getCategory from "@/utils/getCategory";
 
 interface PropertyListingProps extends PropertyType {
   wrapperClassName?: string;
+  imgLinkClassName?: string;
   className?: string;
   scale?: number;
   size?: 'default' | 'small'
@@ -20,6 +21,7 @@ export default function PropertyListing({
   item,
   className,
   wrapperClassName,
+  imgLinkClassName,
   scale = 1,
   size = 'default'
 }: PropertyListingProps) {
@@ -37,15 +39,15 @@ export default function PropertyListing({
 
         <div className={styles.img_holder}>
 
-        <Link href={link}>
-          <Image
-            src={item.images?.[0] ?? '/'}
-            alt={item.images?.[1] ?? item.title}
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
-          />
-              </Link>
+          <Link href={link} className={imgLinkClassName}>
+            <Image
+              src={item.images?.[0] ?? '/'}
+              alt={item.images?.[1] ?? item.title}
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+            />
+          </Link>
 
           <Link href={`/properties-for-sale-in-turkey?type=${item.category && getCategory(item.category)}`} noLink={!item.category} className={cn("paragraph-small", styles.listing_price)}>
             {item.category}
@@ -56,7 +58,7 @@ export default function PropertyListing({
               ALREADY SOLD
             </div>
           )}
-          </div>
+        </div>
 
         {item.special_features && item.special_features?.length > 1 && (
           <Offers
@@ -83,21 +85,21 @@ export default function PropertyListing({
             {Location2}
             <div>
               <Link
-                  href={`/properties-for-sale-in-turkey?location=${item.locationID}`}
-                  className={cn(
-                      "paragraph-medium font-medium  underline",
-                      styles.listing_description
-                  )}
+                href={`/properties-for-sale-in-turkey?location=${item.locationID}`}
+                className={cn(
+                  "paragraph-medium font-medium  underline",
+                  styles.listing_description
+                )}
               >
 
                 {item.location}
               </Link>,
               <Link
-                  href={`/properties-for-sale-in-turkey?location=${item.parentLocationID}`}
-                  className={cn(
-                      "paragraph-medium font-medium  underline",
-                      styles.listing_description
-                  )}
+                href={`/properties-for-sale-in-turkey?location=${item.parentLocationID}`}
+                className={cn(
+                  "paragraph-medium font-medium  underline",
+                  styles.listing_description
+                )}
               >
 
                 {item.parentLocation}

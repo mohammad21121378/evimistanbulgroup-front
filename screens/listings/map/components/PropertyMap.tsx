@@ -588,7 +588,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
                 }`}
               onClick={() => { setSelectedPropertyId(property.id); setZoom(15) }}
             >
-              <PropertyListing wrapperClassName="!w-full !h-[22.1rem]" size="small" scale={.68} item={property} />
+              <PropertyListing imgLinkClassName={selectedPropertyId === property.id ? "" : "cursor-progress"} wrapperClassName="!w-full !h-[22.1rem]" size="small" scale={.68} item={property} />
             </div>
           ))}
         </div>
