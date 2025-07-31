@@ -192,7 +192,7 @@ declare global {
 }
 
 const DEFAULT_CENTER = { lat: 41.0082, lng: 28.9784 }; // Istanbul fallback
-const DEFAULT_ZOOM = 11;
+const DEFAULT_ZOOM = 30;
 
 type Props = {
   loadingData?: boolean;
