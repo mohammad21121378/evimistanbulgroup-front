@@ -16,12 +16,6 @@ export function useChangeTypeListings() {
                 behavior: "smooth",
             });
 
-            setTimeout(() => {
-                setTimeout(() => {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }, 0);
-            }, 0);
-
         } else {
             document.documentElement.classList.remove('no-scroll');
             document.body.classList.remove('no-scroll');
