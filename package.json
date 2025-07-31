@@ -11,8 +11,9 @@
   "dependencies": {
     "@babel/runtime": "^7.27.6",
     "@formkit/auto-animate": "^0.8.2",
+    "@googlemaps/markerclusterer": "^2.6.2",
     "@hookform/resolvers": "^5.1.1",
-    "@react-google-maps/api": "^2.20.6",
+    "@react-google-maps/api": "^2.20.7",
     "@tippyjs/react": "^4.2.6",
     "@vis.gl/react-google-maps": "^1.1.0",
     "axios": "^1.10.0",
