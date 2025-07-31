@@ -192,7 +192,7 @@ declare global {
 }
 
 const DEFAULT_CENTER = { lat: 41.0082, lng: 28.9784 };
-const DEFAULT_ZOOM = 1000;
+const DEFAULT_ZOOM = 1;
 
 type Props = {
   loadingData?: boolean;
@@ -538,14 +538,14 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
         <div className="flex items-center justify-between p-2 bg-white rounded-xl shadow">
           <div className="flex gap-2">
             <button onClick={() => setShowHeatmap((s) => !s)} className="px-3 py-1 border rounded">
-              {showHeatmap ? "پنهان‌سازی Heatmap" : "نمایش Heatmap"}
+              {showHeatmap ? "Hide Heatmap" : "Heatmap Display"}
             </button>
             <button onClick={clearAllShapes} className="px-3 py-1 border rounded">
-              پاک کردن شکل‌ها
+            Erase shapes
             </button>
           </div>
-          <div className="text-sm text-gray-600">
-            {filteredProperties.length} مورد نمایش داده می‌شود
+          <div className="text-sm text-gray-600 font-bold">
+            {filteredProperties.length} The item is displayed
           </div>
         </div>
         <div className="space-y-1 p-2 grid grid-cols-2 gap-2">

@@ -9,14 +9,14 @@ export function useChangeTypeListings() {
         setType(type);
 
         if (type === 'map') {
+            document.documentElement.classList.add('no-scroll');
+            document.body.classList.add('no-scroll');
             window.scrollTo({
                 top: 0,
                 behavior: "smooth",
             });
-            
+
             setTimeout(() => {
-                document.documentElement.classList.add('no-scroll');
-                document.body.classList.add('no-scroll');
                 setTimeout(() => {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 }, 0);
