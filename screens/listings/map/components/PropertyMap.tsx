@@ -193,7 +193,8 @@ declare global {
 
 const containerStyle = {
   width: "100%",
-  height: "35rem",
+  height: "90vh",
+  position: "fixed",
   borderRadius: 16,
 };
 
