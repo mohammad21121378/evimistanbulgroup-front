@@ -184,6 +184,7 @@ import PropertyListing from "@/components/property-listing";
 import { MarkerClusterer as GCMarkerClusterer } from "@googlemaps/markerclusterer";
 import { onChangeType } from "../../types";
 import { FaChevronLeft } from "react-icons/fa6";
+import EmptyContentWithLottie from "@/components/ui/EmptyContentWithLottie";
 
 declare global {
   namespace google.maps {
@@ -268,6 +269,16 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
 
   const [clusterer, setClusterer] = useState<google.maps.MarkerClusterer | null>(null);
   const hoverTimerRef = useRef<number | null>(null);
+
+  const drawingManagerRef = useRef<google.maps.drawing.DrawingManager | null>(null);
+
+  // آرایهٔ اشکال روی نقشه
+  const shapesRef = useRef<ShapeInfo[]>([]);
+
+  // کنترل حالت رسم (null => غیرفعال)
+  const [drawingMode, setDrawingMode] = useState<
+    google.maps.drawing.OverlayType | null
+  >(window.google.maps.drawing.OverlayType.CIRCLE);
 
   useEffect(() => {
     return () => {
@@ -465,6 +476,9 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
   };
 
   const onOverlayComplete = (e: google.maps.drawing.OverlayCompleteEvent) => {
+    shapesRef.current.forEach(({ shape }) => shape.setMap(null));
+  shapesRef.current = [];
+
     const overlay = e.overlay;
     let shapeType: ShapeInfo["type"];
     if (e.type === window.google.maps.drawing.OverlayType.POLYGON) shapeType = "polygon";
@@ -574,42 +588,49 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
         <hr className="bg-gray-200" />
 
         <div className="space-y-1 p-2 grid grid-cols-2 gap-2 overflow-auto scrollbar-sm max-h-[calc(100vh-14.5rem)]">
-          {filteredProperties.map((property) => (
-            <div
-              key={property.id}
+          {
+            filteredProperties.length ?
+              filteredProperties.map((property) => (
+                <div
+                  key={property.id}
 
-              onMouseEnter={() => {
-                if (hoverTimerRef.current) {
-                  clearTimeout(hoverTimerRef.current);
-                }
-                hoverTimerRef.current = window.setTimeout(() => {
-                  setSelectedPropertyId(property.id);
-                  if (mapRef.current) {
-                    mapRef.current?.setZoom(15);
-                  }else{ 
+                  onMouseEnter={() => {
+                    if (hoverTimerRef.current) {
+                      clearTimeout(hoverTimerRef.current);
+                    }
+                    hoverTimerRef.current = window.setTimeout(() => {
+                      setSelectedPropertyId(property.id);
+                      if (mapRef.current) {
+                        mapRef.current?.setZoom(15);
+                      } else {
+                        setZoom(15);
+
+                      }
+                      hoverTimerRef.current = null;
+                    }, 400);
+                  }}
+
+                  onMouseLeave={() => {
+                    if (hoverTimerRef.current) {
+                      clearTimeout(hoverTimerRef.current);
+                      hoverTimerRef.current = null;
+                    }
+                    setSelectedPropertyId(null);
                     setZoom(15);
+                  }}
 
-                  }
-                  hoverTimerRef.current = null;
-                }, 400);
-              }}
-
-              onMouseLeave={() => {
-                if (hoverTimerRef.current) {
-                  clearTimeout(hoverTimerRef.current);
-                  hoverTimerRef.current = null;
-                }
-                setSelectedPropertyId(null);
-                setZoom(15);
-              }}
-
-              className={` pb-1.5 p-1 bg-white rounded-xl shadow flex gap-2 cursor-pointer ${selectedPropertyId === property.id ? "ring-2 ring-orange-500" : "cursor-progress"
-                }`}
-              onClick={() => { setSelectedPropertyId(property.id); setZoom(15) }}
-            >
-              <PropertyListing imgLinkClassName={selectedPropertyId === property.id ? "" : "cursor-progress"} wrapperClassName="!w-full !h-[22.1rem]" size="small" scale={.68} item={property} />
-            </div>
-          ))}
+                  className={` pb-1.5 p-1 bg-white rounded-xl shadow flex gap-2 cursor-pointer ${selectedPropertyId === property.id ? "ring-2 ring-orange-500" : "cursor-progress"
+                    }`}
+                  onClick={() => { setSelectedPropertyId(property.id); setZoom(15) }}
+                >
+                  <PropertyListing imgLinkClassName={selectedPropertyId === property.id ? "" : "cursor-progress"} wrapperClassName="!w-full !h-[22.1rem]" size="small" scale={.68} item={property} />
+                </div>
+              ))
+              :
+              <div className="sm:col-span-2">
+                <EmptyContentWithLottie />
+              </div>
+          }
         </div>
       </div>
 
@@ -697,7 +718,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
 
           {/* Drawing tools */}
           <DrawingManager
-            onLoad={() => { }}
+            onLoad={dm => (drawingManagerRef.current = dm)}
             onOverlayComplete={onOverlayComplete}
             options={{
               drawingControl: true,
