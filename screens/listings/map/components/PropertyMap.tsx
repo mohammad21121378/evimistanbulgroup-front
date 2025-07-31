@@ -586,7 +586,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
                   setSelectedPropertyId(property.id);
                   if (mapRef.current) {
                     mapRef.current?.setZoom(15);
-                  }else{
+                  }else{ 
                     setZoom(15);
 
                   }
