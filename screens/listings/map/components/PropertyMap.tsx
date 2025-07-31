@@ -240,7 +240,7 @@ function pointInShape(
 const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: "AIzaSyDMrYr9uVDCqL-7okyHX3RAIHvO5QUHSFI",
-    libraries: ["drawing", "places", "geometry"],
+    libraries: ["drawing", "places", "geometry", "visualization"],
   });
 
   const mapRef = useRef<google.maps.Map | null>(null);
@@ -252,6 +252,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
   const [filteredProperties, setFilteredProperties] = useState<PropertyRawType[]>(properties);
 
   const [clusterer, setClusterer] = useState<google.maps.MarkerClusterer | null>(null);
+
   const handleClustererLoad = useCallback(
     (c: google.maps.MarkerClusterer) => {
       setClusterer(c);
@@ -457,7 +458,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
 
   return (
     <div className="relative flex flex-col md:flex-row gap-4">
-      <div className="w-full md:w-1/3 max-h-[35rem] overflow-auto space-y-2">
+      <div className="w-full md:w-1/3 max-h-[35rem] overflow-auto scrollbar-sm space-y-2">
         <div className="flex items-center justify-between p-2 bg-white rounded-xl shadow">
           <div className="flex gap-2">
             <button onClick={() => setShowHeatmap((s) => !s)} className="px-3 py-1 border rounded">
@@ -482,7 +483,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
               onClick={() => setSelectedPropertyId(property.id)}
             >
               <div className="flex-1">
-                <PropertyListing item={property} />
+                <PropertyListing scale={.9} item={property} />
               </div>
             </div>
           ))}
@@ -490,7 +491,8 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
       </div>
 
       <div className="flex-1 relative">
-        <div className="absolute top-4 left-4 z-20 flex gap-2">
+
+        <div className="absolute top-20 left-4 z-20 flex gap-2">
           <Autocomplete onLoad={(auto) => setSearchBox(auto)} onPlaceChanged={onPlaceChanged}>
             <input
               type="text"
