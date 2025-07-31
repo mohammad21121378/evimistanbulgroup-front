@@ -279,4 +279,5 @@ html {
 
 .no-scroll, .no-scroll html, .no-scroll body {
   overflow: hidden !important;
+  scrollbar-gutter: stabel;
 }

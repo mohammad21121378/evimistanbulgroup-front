@@ -192,7 +192,7 @@ declare global {
 }
 
 const DEFAULT_CENTER = { lat: 41.0082, lng: 28.9784 };
-const DEFAULT_ZOOM = 100;
+const DEFAULT_ZOOM = 1000;
 
 type Props = {
   loadingData?: boolean;
@@ -574,7 +574,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
               className="w-60 px-3 py-2 rounded shadow border"
             />
           </Autocomplete>
-          <button
+          {/* <button
             onClick={() => {
               if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition((pos) => {
@@ -586,7 +586,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
             className="px-3 py-2 bg-white rounded shadow"
           >
             موقعیت من
-          </button>
+          </button> */}
         </div>
 
         <GoogleMap

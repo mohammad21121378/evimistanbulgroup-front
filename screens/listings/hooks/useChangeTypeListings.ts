@@ -13,6 +13,7 @@ export function useChangeTypeListings() {
                 top: 0,
                 behavior: "smooth",
             });
+            
             setTimeout(() => {
                 document.documentElement.classList.add('no-scroll');
                 document.body.classList.add('no-scroll');
