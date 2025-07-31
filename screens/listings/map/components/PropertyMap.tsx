@@ -192,7 +192,7 @@ declare global {
 }
 
 const DEFAULT_CENTER = { lat: 41.0082, lng: 28.9784 };
-const DEFAULT_ZOOM = 2;
+const DEFAULT_ZOOM = 1;
 
 type Props = {
   loadingData?: boolean;
@@ -307,7 +307,6 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
     const clusterer = new GCMarkerClusterer({
       map: mapRef.current,
       markers,
-      
       renderer: {
         render: ({ count, position }) => {
           return new window.google.maps.Marker({
@@ -321,32 +320,12 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
       },
     });
 
-    
-
     clustererRef.current = clusterer as any;
     
     return () => {
       clusterer.clearMarkers();
     };
   }, [filteredProperties, selectedPropertyId]);
-  
-  const clustererOptions = {
-    maxZoom: 5, // تا این زوم همچنان کلاسترها حفظ بشن (اعداد دیده بمونن)
-    zoomOnClick: false, // کلیک روی کلاستر زوم نکنه
-    minimumClusterSize: 2,
-    // اگر بخوای renderer سفارشی با SVG عددی داشته باشی:
-    renderer: {
-      render: ({ count, position }: { count: number; position: google.maps.LatLng }) => {
-        return new window.google.maps.Marker({
-          position,
-          icon: {
-            url: makeClusterSvg(count),
-            scaledSize: new window.google.maps.Size(38, 38),
-          },
-        });
-      },
-    },
-  };
 
   useEffect(() => {
     if (!selectedProperty || !mapRef.current) return;
@@ -414,23 +393,23 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
   //   setFilteredProperties(filtered);
   // }, [shapes, properties]);
 
-  // useEffect(() => {
-  //   if (shapes.length === 0) {
-  //     setFilteredProperties(properties);
-  //     return;
-  //   }
+  useEffect(() => {
+    if (shapes.length === 0) {
+      setFilteredProperties(properties);
+      return;
+    }
 
-  //   const filtered = properties.filter((p) => {
-  //     const { latitude, longitude } = p;
-  //     if (latitude == null || longitude == null) return false; // اینجا narrow می‌کنه
+    const filtered = properties.filter((p) => {
+      const { latitude, longitude } = p;
+      if (latitude == null || longitude == null) return false; // اینجا narrow می‌کنه
 
-  //     return shapes.some((shapeInfo) =>
-  //       pointInShape({ lat: latitude, lng: longitude }, shapeInfo)
-  //     );
-  //   });
+      return shapes.some((shapeInfo) =>
+        pointInShape({ lat: latitude, lng: longitude }, shapeInfo)
+      );
+    });
 
-  //   setFilteredProperties(filtered);
-  // }, [shapes, properties /* اگر متغیر checked هم اینجا استفاده می‌شه، حتماً اضافه‌اش کن */]);
+    setFilteredProperties(filtered);
+  }, [shapes, properties /* اگر متغیر checked هم اینجا استفاده می‌شه، حتماً اضافه‌اش کن */]);
 
   const onMapLoad = useCallback((map: google.maps.Map) => {
     mapRef.current = map;
@@ -619,9 +598,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
           options={{ fullscreenControl: true, streetViewControl: true, clickableIcons: true }}
         >
 
-          <MarkerClusterer
-          options={clustererOptions}
-          >
+          <MarkerClusterer>
             {(clusterer) => (
               <>
                 {filteredProperties.map((property) => {
@@ -716,6 +693,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
                   >
                     remove
                   </button>
+                  {/* می‌شه دکمه export به geojson هم گذاشت */}
                 </div>
               </div>
             ))}
