@@ -431,14 +431,14 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
       const pos = { lat: selectedProperty.latitude, lng: selectedProperty.longitude };
       mapRef.current.panTo(pos);
       setCenter(pos);
-      setZoom(20);
+      setZoom(15);
     }
   }, [selectedProperty]);
 
   const handleMarkerClick = (id: number, e: google.maps.MapMouseEvent) => {
     e.domEvent.stopPropagation();
     setSelectedPropertyId(id);
-    setZoom(20);
+    setZoom(15);
   };
 
   const handleMapClick = () => {
