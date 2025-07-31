@@ -564,7 +564,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
 
         <hr className="bg-gray-200" />
 
-        <div className="space-y-1 p-2 grid grid-cols-2 gap-2 overflow-auto scrollbar-sm max-h-[calc(100vh-13.5rem)]">
+        <div className="space-y-1 p-2 grid grid-cols-2 gap-2 overflow-auto scrollbar-sm max-h-[calc(100vh-14.25rem)]">
           {filteredProperties.map((property) => (
             <div
               key={property.id}
