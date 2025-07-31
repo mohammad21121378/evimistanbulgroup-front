@@ -451,7 +451,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
     if (!place.geometry || !place.geometry.location) return;
     const loc = place.geometry.location;
     mapRef.current?.panTo({ lat: loc.lat(), lng: loc.lng() });
-    mapRef.current?.setZoom(14);
+    mapRef.current?.setZoom(15);
   };
 
   const onOverlayComplete = (e: google.maps.drawing.OverlayCompleteEvent) => {
@@ -569,7 +569,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
           {filteredProperties.map((property) => (
             <div
               key={property.id}
-              onMouseEnter={() => setSelectedPropertyId(property.id)}
+              onMouseEnter={() => {setSelectedPropertyId(property.id); setZoom(15)}}
               onMouseLeave={() => setSelectedPropertyId(null)}
               className={` pb-1.5 p-1 bg-white rounded-xl shadow flex gap-2 cursor-pointer ${selectedPropertyId === property.id ? "ring-2 ring-orange-500" : ""
                 }`}
