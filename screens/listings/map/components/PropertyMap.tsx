@@ -192,9 +192,9 @@ declare global {
 }
 
 const containerStyle = {
-  width: "100%",
-  height: "90vh",
-  borderRadius: 16,
+  width: "55%",
+  height: "80vh",
+  borderRadius: 0,
 };
 
 const DEFAULT_CENTER = { lat: 41.0082, lng: 28.9784 }; // Istanbul fallback
@@ -539,7 +539,7 @@ useEffect(() => {
   return (
     <div className="relative grid grid-cols-11 gap-4">
 
-      <div className="col-span-5 max-h-[90rem] overflow-auto scrollbar-sm space-y-2">
+      <div className="col-span-5 max-h-[90vh] overflow-auto scrollbar-sm space-y-2">
         <div className="flex items-center justify-between p-2 bg-white rounded-xl shadow">
           <div className="flex gap-2">
             <button onClick={() => setShowHeatmap((s) => !s)} className="px-3 py-1 border rounded">
@@ -602,40 +602,8 @@ useEffect(() => {
           center={center}
           zoom={zoom}
           onClick={handleMapClick}
-          options={{ fullscreenControl: false, streetViewControl: false, clickableIcons: false }}
+          options={{ fullscreenControl: true, streetViewControl: true, clickableIcons: true }}
         >
-          {/* <MarkerClusterer onLoad={handleClustererLoad}>
-            {clusterer &&
-              filteredProperties.map((property) => {
-                if (property.latitude == null || property.longitude == null) return null;
-                const isSelected = selectedPropertyId === property.id;
-                const svgSize = isSelected ? 50 : 42;
-                return (
-                  <MarkerF
-                    key={property.id}
-                    position={{ lat: property.latitude, lng: property.longitude }}
-                    clusterer={clusterer}
-                    icon={{
-                      url: "/images/marker.svg",
-                      scaledSize: getScaledSize(svgSize),
-                    }}
-                    onClick={(e) => handleMarkerClick(property.id, e)}
-                  >
-                    {isSelected && (
-                      <InfoWindowF
-                        onCloseClick={() => setSelectedPropertyId(null)}
-                      >
-                        <div className="max-w-[17.5rem] md:max-h-[23rem] max-h-[25.5rem]">
-                          <PropertyListing scale={0.53} size="small" item={property} />
-                        </div>
-                      </InfoWindowF>
-                    )}
-                  </MarkerF>
-                );
-              })}
-          </MarkerClusterer>
-          
-          */}
 
 <MarkerClusterer>
       {(clusterer) => (
