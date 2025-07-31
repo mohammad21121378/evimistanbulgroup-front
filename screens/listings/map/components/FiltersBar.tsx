@@ -6,8 +6,7 @@ import { FilterProps } from "../../types";
 export default function FiltersBar({...filtersState}: FilterProps) {
   
   return (
-    <div className="absolute -top-16 left-0 mt-2 z-50  hidden grid-cols-6 gap-2 w-full px-2 pointer-events-none"> 
-    {/* // md:grid */}
+    <div className="w-full mt-2 z-50 md:grid hidden grid-cols-6 gap-2 h-[7rem] px-2 pointer-events-none">
       <FieldsFilter hasSvgItems={false} hasAnimation={false} {...filtersState} />
     </div>
   );
