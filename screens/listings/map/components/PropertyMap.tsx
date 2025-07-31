@@ -421,6 +421,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
     () => properties.find((p) => p.id === selectedPropertyId),
     [selectedPropertyId, properties]
   );
+
   useEffect(() => {
     if (
       selectedProperty &&
@@ -511,8 +512,6 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
     return <div>Failed to load map</div>;
   }
 
-
-
   const containerStyle = {
     width: "100%",
     height: "100%",
@@ -570,7 +569,9 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
             <div
               key={property.id}
               onMouseEnter={() => {setSelectedPropertyId(property.id); setZoom(15)}}
-              onMouseLeave={() => {setSelectedPropertyId(null); setZoom(15)}}
+              onMouseLeave={() => {setTimeout(() => {
+                setSelectedPropertyId(null); setZoom(15)
+              }, 100);}}
               className={` pb-1.5 p-1 bg-white rounded-xl shadow flex gap-2 cursor-pointer ${selectedPropertyId === property.id ? "ring-2 ring-orange-500" : ""
                 }`}
               onClick={() => {setSelectedPropertyId(property.id); setZoom(15)}}
