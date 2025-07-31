@@ -374,7 +374,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
     filteredProperties.forEach((p) => {
       if (p.latitude !== null && p.longitude !== null) {
         bounds.extend({ lat: p.latitude, lng: p.longitude });
-      }  
+      }
     });
     if (!bounds.isEmpty()) {
       mapRef.current.fitBounds(bounds, 80);
@@ -568,13 +568,21 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
           {filteredProperties.map((property) => (
             <div
               key={property.id}
-              onMouseEnter={() => {setSelectedPropertyId(property.id); setZoom(15)}}
-              onMouseLeave={() => {setTimeout(() => {
+
+              onMouseEnter={() => {
+                setTimeout(() => {
+                  setSelectedPropertyId(property.id); setZoom(15)
+                }, 150)
+              }
+              }
+
+              onMouseLeave={() => {
                 setSelectedPropertyId(null); setZoom(15)
-              }, 100);}}
+              }}
+
               className={` pb-1.5 p-1 bg-white rounded-xl shadow flex gap-2 cursor-pointer ${selectedPropertyId === property.id ? "ring-2 ring-orange-500" : ""
                 }`}
-              onClick={() => {setSelectedPropertyId(property.id); setZoom(15)}}
+              onClick={() => { setSelectedPropertyId(property.id); setZoom(15) }}
             >
               <PropertyListing wrapperClassName="!w-full !h-[22.1rem]" size="small" scale={.68} item={property} />
             </div>
