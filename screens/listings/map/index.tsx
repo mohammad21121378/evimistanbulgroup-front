@@ -30,7 +30,7 @@ function MapPage({ type, onChange, ...filtersState }: Props) {
       </div> */}
         <div className="relative w-full">
           <FiltersBar {...filtersState} />
-          <PropertyMap loadingData={filtersState.loading} properties={filtersState.properties} />
+          <PropertyMap onChangeType={onChange} loadingData={filtersState.loading} properties={filtersState.properties} />
         </div>
     </section>
   );

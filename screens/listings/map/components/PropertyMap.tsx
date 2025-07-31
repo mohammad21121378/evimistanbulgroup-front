@@ -182,6 +182,8 @@ import { Loader } from "lucide-react";
 import { PropertyRawType } from "@/types/Property";
 import PropertyListing from "@/components/property-listing";
 import { MarkerClusterer as GCMarkerClusterer } from "@googlemaps/markerclusterer";
+import { onChangeType } from "../../types";
+import { FaChevronLeft } from "react-icons/fa6";
 
 declare global {
   namespace google.maps {
@@ -195,6 +197,7 @@ const DEFAULT_ZOOM = 10;
 type Props = {
   loadingData?: boolean;
   properties: PropertyRawType[];
+  onChangeType: onChangeType
 };
 
 type ShapeInfo = {
@@ -247,7 +250,8 @@ function pointInShape(
   return false;
 }
 
-const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
+const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType }) => {
+
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: "AIzaSyDMrYr9uVDCqL-7okyHX3RAIHvO5QUHSFI",
     libraries: ["drawing", "places", "geometry", "visualization"],
@@ -278,9 +282,9 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
 
   useEffect(() => {
     if (!mapRef.current || !window.google) return;
-    
+
     clustererRef.current?.clearMarkers();
-    
+
     const markers = filteredProperties
       .filter((p) => p.latitude !== null && p.longitude !== null)
       .map((p) => {
@@ -296,12 +300,12 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
 
         marker.addListener("click", (e: google.maps.MapMouseEvent) => {
           setSelectedPropertyId(p.id);
-          
+
         });
 
         return marker;
       });
-      
+
     const clusterer = new GCMarkerClusterer({
       map: mapRef.current,
       markers,
@@ -319,7 +323,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
     });
 
     clustererRef.current = clusterer as any;
-    
+
     return () => {
       clusterer.clearMarkers();
     };
@@ -332,7 +336,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
       null
       : null;
   }, [selectedPropertyId]);
-  
+
   const firstValidProperty = useMemo(
     () => properties.find((p) => p.latitude !== null && p.longitude !== null),
     [properties]
@@ -530,11 +534,12 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
   }
 
   return (
-    <div className="flex fixed h-[calc(100vh-10rem)] z-40 right-0 left-0 bottom-0 w-full" style={{borderTop: '1px solid rgb(216 216 216 / 46%)'}}>
+    <div className="flex fixed h-[calc(100vh-10rem)] z-40 right-0 left-0 bottom-0 w-full" style={{ borderTop: '1px solid rgb(216 216 216 / 46%)' }}>
 
       <div className="w-[45%] h-[calc(100vh-10rem)] bg-white overflow-auto scrollbar-sm space-y-2">
-        {/* <div className="flex items-center justify-between p-2 bg-white font-medium">
-          <div className="flex gap-2">
+
+        <div className="flex items-center justify-between p-2 bg-white font-medium">
+          {/* <div className="flex gap-2">
             <button onClick={() => setShowHeatmap((s) => !s)} className="px-3 py-1 border rounded">
               {showHeatmap ? "Hide Heatmap" : "Heatmap Display"}
             </button>
@@ -544,9 +549,21 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
           </div>
           <div className="text-sm text-gray-600 font-bold">
             {filteredProperties.length} The item is displayed
+          </div> */}
+
+          <div className="flex items-center text-lg gap-0.5 mt-1 text-gray-700 transition-all hover:text-orange-600 cursor-pointer font-bold" onClick={() => onChangeType('list')}>
+            <FaChevronLeft className="text-base" />
+
+            <div>
+              Return to property list
+            </div>
           </div>
-        </div> */}
-        <div className="space-y-1 p-2 grid grid-cols-2 gap-2"> 
+
+        </div>
+
+        <hr className="bg-gray-200" />
+
+        <div className="space-y-1 p-2 grid grid-cols-2 gap-2">
           {filteredProperties.map((property) => (
             <div
               key={property.id}
@@ -556,7 +573,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
                 }`}
               onClick={() => setSelectedPropertyId(property.id)}
             >
-                <PropertyListing wrapperClassName="!w-full !h-[22.1rem]" size="small" scale={.68} item={property} />
+              <PropertyListing wrapperClassName="!w-full !h-[22.1rem]" size="small" scale={.68} item={property} />
             </div>
           ))}
         </div>
