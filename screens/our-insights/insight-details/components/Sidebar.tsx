@@ -24,8 +24,6 @@ export default function ArticleSidebar({
                                 const id =
                                     slugifyHeading(item.heading)
 
-                                console.log(id, activeSection, id === activeSection);
-
                                 return (
                                     <div
                                         key={item.heading}

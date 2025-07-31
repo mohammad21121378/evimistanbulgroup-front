@@ -14,7 +14,6 @@ export default async function fetchProperty(slug,language="en") {
             console.error(error);
         }
     }
-    console.log(property)
     return property;
 
 }

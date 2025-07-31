@@ -8,7 +8,6 @@ type AdditionalGalleryProps = {
 };
 
 export default function AdditionalGallery({ images }: AdditionalGalleryProps) {
-  console.log(images);
   return (
     <section className={cn("section")}>
       <div className={cn("container")}>

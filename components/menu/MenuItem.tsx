@@ -17,8 +17,6 @@ type Props = {
 
 export default function MenuItem({ icon, external = false, title, description, active, href, className, }: Props) {
 
-    console.log(title, href);
-    
     
     const content = (
         <div className={`flex items-start ${icon && 'gap-1.5 w-full'} -ml-px rounded-md px-0 ${className} ${styles.menuItem} py-1`} style={{ background: active ? '#fff' : '' }}>

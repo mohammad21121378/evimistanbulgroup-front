@@ -31,8 +31,6 @@ const scrollToSection = (heading: string) => {
     const id = slugifyHeading(heading)
     const section = document.getElementById(id);
 
-    console.log(id, section);
-
     
     if (section) {
         window.scrollTo({

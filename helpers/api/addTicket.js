@@ -29,7 +29,6 @@ export async function fetchAddTicket(subject,department,message,file) {
             console.error(error);
         }
     }
-    console.log(ticket)
     return ticket;
 
 }

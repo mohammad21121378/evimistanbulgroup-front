@@ -30,7 +30,6 @@ export async function fetchUpdatePassword(data,setPasswordInCorrect,setShowFeedb
             console.error(error);
         }
     }
-    console.log(user)
     return user;
 
 }

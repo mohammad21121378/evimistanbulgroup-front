@@ -21,7 +21,6 @@ export async function fetchGetTicketDetail(id) {
             console.error(error);
         }
     }
-    console.log(ticket)
     return ticket;
 
 }

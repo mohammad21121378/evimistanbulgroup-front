@@ -7,7 +7,6 @@ import { Hero as HeroTitle } from "@/components/typography";
 import Image from "next/image";
 import SearchBar from "@/components/search-bar";
 import { Listings } from "@/constants/mock";
-import PropertyListing from "@/components/property-listing";
 
 export default function Hero({ query }: { query: string }) {
   const [searchTerm, setSearchTerm] = React.useState(query || "");
@@ -51,7 +50,6 @@ export default function Hero({ query }: { query: string }) {
           placeholder="Enter an address, neighborhood, city or ZIP code"
           searchTerm={searchTerm}
           onSearchTermChange={(term) => {
-            console.log("Search term changed to:", term);
             setSearchTerm(term);
           }}
         />

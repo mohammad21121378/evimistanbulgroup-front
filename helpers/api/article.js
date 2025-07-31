@@ -14,7 +14,6 @@ export async function fetchArticle(slug,language="en") {
             console.error(error);
         }
     }
-    console.log(article)
     return article;
 
 }

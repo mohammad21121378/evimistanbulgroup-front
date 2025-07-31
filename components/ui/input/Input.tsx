@@ -71,8 +71,6 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElem
     const [charCount, setCharCount] = useState(0);
     const finalHeight = textAreaClasses ? "h-auto" : height;
 
-    console.log("valllll", rest.value);
-    
 
     const commonClasses = `
       ${finalHeight} 

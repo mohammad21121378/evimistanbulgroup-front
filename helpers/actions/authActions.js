@@ -69,7 +69,6 @@ export const checkLoginStatus = () => async (dispatch) => {
                     Authorization: `${token}`,
                 },
             });
-            console.log(response)
             if(response.message && response.message == "Unauthenticated."){
 
                 Cookies.remove('token', {  path: '/' })

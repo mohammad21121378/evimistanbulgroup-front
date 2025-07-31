@@ -5,13 +5,9 @@ import React from "react";
 import Benefits from "./benefits";
 import FindProperty from "./find-property";
 import Content from "./content";
-import { useEffect } from 'react';
 import { ListingsType } from "@/types/Property";
 
 export default function ListingsPage({ listings }: { listings: ListingsType }) {
-    useEffect(() => {
-        console.log('Listings on client:', listings);
-    }, [listings]);
   return (
 
     <Layout>
