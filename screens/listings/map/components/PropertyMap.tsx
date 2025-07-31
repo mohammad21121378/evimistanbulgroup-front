@@ -546,7 +546,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
             {filteredProperties.length} The item is displayed
           </div>
         </div> */}
-        <div className="space-y-1 p-2 grid grid-cols-2 gap-2">
+        <div className="space-y-1 p-2 grid grid-cols-2 gap-2"> 
           {filteredProperties.map((property) => (
             <div
               key={property.id}
