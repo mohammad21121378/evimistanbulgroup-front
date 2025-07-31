@@ -191,12 +191,6 @@ declare global {
   }
 }
 
-const containerStyle = {
-  width: "100%",
-  height: "80vh",
-  borderRadius: 0,
-};
-
 const DEFAULT_CENTER = { lat: 41.0082, lng: 28.9784 }; // Istanbul fallback
 const DEFAULT_ZOOM = 11;
 
@@ -521,6 +515,14 @@ useEffect(() => {
     return <div>Failed to load map</div>;
   }
 
+  
+
+const containerStyle = {
+  width: "100%",
+  height: "100%",
+  borderRadius: 0,
+};
+
   if (!isLoaded || loadingData) {
     return (
       <div
@@ -537,9 +539,9 @@ useEffect(() => {
   }
 
   return (
-    <div className="flex fixe h-[85rem] right-0 left-0 bottom-0">
+    <div className="flex fixed h-[85vh] z-50 right-0 left-0 bottom-0 w-full">
 
-      <div className="w-1/2 max-h-[90vh] overflow-auto scrollbar-sm space-y-2">
+      <div className="w-1/3 max-h-[80vh] overflow-auto scrollbar-sm space-y-2">
         <div className="flex items-center justify-between p-2 bg-white rounded-xl shadow">
           <div className="flex gap-2">
             <button onClick={() => setShowHeatmap((s) => !s)} className="px-3 py-1 border rounded">
@@ -564,14 +566,14 @@ useEffect(() => {
               onClick={() => setSelectedPropertyId(property.id)}
             >
               <div className="flex-1">
-                <PropertyListing scale={.9} item={property} />
+                <PropertyListing scale={.7} item={property} />
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="w-1/2 relative">
+      <div className="w-2/3 relative">
 
         <div className="absolute top-20 left-4 z-20 flex gap-2">
           <Autocomplete onLoad={(auto) => setSearchBox(auto)} onPlaceChanged={onPlaceChanged}>
@@ -598,7 +600,7 @@ useEffect(() => {
 
         <GoogleMap
           onLoad={onMapLoad}
-          mapContainerStyle={{...containerStyle, position: "fixed", bottom: 0, right:0}}
+          mapContainerStyle={containerStyle}
           center={center}
           zoom={zoom}
           onClick={handleMapClick}

@@ -27,11 +27,11 @@ function MapPage({ type, onChange, ...filtersState }: Props) {
         <div className="grid md:grid-cols-[1fr,2fr] grid-cols-1 gap-x-12 pt-4">
           <ChangeTypeListings type={type} onChange={onChange} />
         </div>
+      </div>
         <div className="relative w-full h-[35rem]">
           <FiltersBar {...filtersState} />
           <PropertyMap loadingData={filtersState.loading} properties={filtersState.properties} />
         </div>
-      </div>
     </section>
   );
 }
