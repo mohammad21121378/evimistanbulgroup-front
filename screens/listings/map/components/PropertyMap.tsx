@@ -541,7 +541,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
   return (
     <div className="flex fixed h-[calc(100vh-6.2rem)] z-[999] right-0 left-0 bottom-0 w-full">
 
-      <div className="w-[40%] h-[calc(100vh-6.2rem)] bg-white overflow-auto scrollbar-sm space-y-2">
+      <div className="w-[45%] h-[calc(100vh-6.2rem)] bg-white overflow-auto scrollbar-sm space-y-2">
         <div className="flex items-center justify-between p-2 bg-white rounded-xl shadow">
           <div className="flex gap-2">
             <button onClick={() => setShowHeatmap((s) => !s)} className="px-3 py-1 border rounded">
@@ -571,7 +571,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
         </div>
       </div>
 
-      <div className="w-[60%] relative">
+      <div className="w-[55%] relative">
 
         <div className="absolute top-20 left-4 z-20 flex gap-2">
           <Autocomplete onLoad={(auto) => setSearchBox(auto)} onPlaceChanged={onPlaceChanged}>
