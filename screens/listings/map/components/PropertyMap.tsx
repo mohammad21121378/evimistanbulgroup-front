@@ -278,68 +278,68 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
     return new window.google.maps.Size(size, size);
   };
 
-useEffect(() => {
-  if (!mapRef.current || !window.google) return;
+  useEffect(() => {
+    if (!mapRef.current || !window.google) return;
 
-  // پاک کردن cluster قبلی
-  clustererRef.current?.clearMarkers();
+    // پاک کردن cluster قبلی
+    clustererRef.current?.clearMarkers();
 
-  // ساخت markerهای خام (بدون JSX)
-  const markers = filteredProperties
-    .filter((p) => p.latitude !== null && p.longitude !== null)
-    .map((p) => {
-      const isSelected = selectedPropertyId === p.id;
-      const size = isSelected ? 50 : 42;
-      const marker = new window.google.maps.Marker({
-        position: { lat: p.latitude!, lng: p.longitude! },
-        icon: {
-          url: "/images/marker.svg",
-          scaledSize: new window.google.maps.Size(size, size),
+    // ساخت markerهای خام (بدون JSX)
+    const markers = filteredProperties
+      .filter((p) => p.latitude !== null && p.longitude !== null)
+      .map((p) => {
+        const isSelected = selectedPropertyId === p.id;
+        const size = isSelected ? 50 : 42;
+        const marker = new window.google.maps.Marker({
+          position: { lat: p.latitude!, lng: p.longitude! },
+          icon: {
+            url: "/images/marker.svg",
+            scaledSize: new window.google.maps.Size(size, size),
+          },
+        });
+
+        marker.addListener("click", (e: google.maps.MapMouseEvent) => {
+          setSelectedPropertyId(p.id);
+          // جلوگیری از پروپاگیشن اگر لازم بود
+        });
+
+        return marker;
+      });
+
+    // ساخت clusterer با renderer سفارشی
+    const clusterer = new GCMarkerClusterer({
+      map: mapRef.current,
+      markers,
+      renderer: {
+        render: ({ count, position }) => {
+          return new window.google.maps.Marker({
+            position,
+            icon: {
+              url: makeClusterSvg(count),
+              scaledSize: new window.google.maps.Size(38, 38),
+            },
+            // عدد داخل SVG هست، پس label نذار
+          });
         },
-      });
-
-      marker.addListener("click", (e: google.maps.MapMouseEvent) => {
-        setSelectedPropertyId(p.id);
-        // جلوگیری از پروپاگیشن اگر لازم بود
-      });
-
-      return marker;
+      },
     });
 
-  // ساخت clusterer با renderer سفارشی
-  const clusterer = new GCMarkerClusterer({
-    map: mapRef.current,
-    markers,
-    renderer: {
-      render: ({ count, position }) => {
-        return new window.google.maps.Marker({
-          position,
-          icon: {
-            url: makeClusterSvg(count),
-            scaledSize: new window.google.maps.Size(38, 38),
-          },
-          // عدد داخل SVG هست، پس label نذار
-        });
-      },
-    },
-  });
+    clustererRef.current = clusterer as any;
 
-  clustererRef.current = clusterer as any;
+    // cleanup: وقتی اثر دوباره اجرا شد یا کامپوننت آن‌مونت می‌شه
+    return () => {
+      clusterer.clearMarkers();
+    };
+  }, [filteredProperties, selectedPropertyId]);
 
-  // cleanup: وقتی اثر دوباره اجرا شد یا کامپوننت آن‌مونت می‌شه
-  return () => {
-    clusterer.clearMarkers();
-  };
-}, [filteredProperties, selectedPropertyId]);
-
-useEffect(() => {
-  if (!selectedProperty || !mapRef.current) return;
-  const existingMarker = clustererRef.current
-    ? // پیدا کردن مارکری که position و id مناسبی داره
+  useEffect(() => {
+    if (!selectedProperty || !mapRef.current) return;
+    const existingMarker = clustererRef.current
+      ? // پیدا کردن مارکری که position و id مناسبی داره
       null
-    : null;
-  // به‌جای این، بهتره نگهداری نگاشت property.id -> marker داشته باشی
-}, [selectedPropertyId]);
+      : null;
+    // به‌جای این، بهتره نگهداری نگاشت property.id -> marker داشته باشی
+  }, [selectedPropertyId]);
 
   // Compute initial center
   const firstValidProperty = useMemo(
@@ -405,16 +405,16 @@ useEffect(() => {
       setFilteredProperties(properties);
       return;
     }
-  
+
     const filtered = properties.filter((p) => {
       const { latitude, longitude } = p;
       if (latitude == null || longitude == null) return false; // اینجا narrow می‌کنه
-  
+
       return shapes.some((shapeInfo) =>
         pointInShape({ lat: latitude, lng: longitude }, shapeInfo)
       );
     });
-  
+
     setFilteredProperties(filtered);
   }, [shapes, properties /* اگر متغیر checked هم اینجا استفاده می‌شه، حتماً اضافه‌اش کن */]);
 
@@ -515,13 +515,13 @@ useEffect(() => {
     return <div>Failed to load map</div>;
   }
 
-  
 
-const containerStyle = {
-  width: "100%",
-  height: "100%",
-  borderRadius: 0,
-};
+
+  const containerStyle = {
+    width: "100%",
+    height: "100%",
+    borderRadius: 0,
+  };
 
   if (!isLoaded || loadingData) {
     return (
@@ -539,7 +539,7 @@ const containerStyle = {
   }
 
   return (
-    <div className="flex fixed h-[85vh] z-50 right-0 left-0 bottom-0 w-full">
+    <div className="flex fixed h-[calc(100vh-6rem)] z-50 right-0 left-0 bottom-0 w-full">
 
       <div className="w-1/3 max-h-[80vh] overflow-auto scrollbar-sm space-y-2">
         <div className="flex items-center justify-between p-2 bg-white rounded-xl shadow">
@@ -555,7 +555,7 @@ const containerStyle = {
             {filteredProperties.length} مورد نمایش داده می‌شود
           </div>
         </div>
-        <div className="space-y-1 p-2 grid grid-cols-2">
+        <div className="space-y-1 p-2 grid grid-cols-2 gap-2">
           {filteredProperties.map((property) => (
             <div
               key={property.id}
@@ -565,9 +565,7 @@ const containerStyle = {
                 }`}
               onClick={() => setSelectedPropertyId(property.id)}
             >
-              <div className="flex-1">
-                <PropertyListing scale={.7} item={property} />
-              </div>
+                <PropertyListing scale={.6} item={property} />
             </div>
           ))}
         </div>
@@ -607,37 +605,37 @@ const containerStyle = {
           options={{ fullscreenControl: true, streetViewControl: true, clickableIcons: true }}
         >
 
-<MarkerClusterer>
-      {(clusterer) => (
-        <>
-          {filteredProperties.map((property) => {
-            if (property.latitude == null || property.longitude == null) return null;
-            const isSelected = selectedPropertyId === property.id;
-            const svgSize = isSelected ? 50 : 42;
-            return (
-              <MarkerF
-                key={property.id}
-                position={{ lat: property.latitude, lng: property.longitude }}
-                clusterer={clusterer}
-                icon={{
-                  url: "/images/marker.svg",
-                  scaledSize: getScaledSize(svgSize),
-                }}
-                onClick={(e) => handleMarkerClick(property.id, e)}
-              >
-                {isSelected && (
-                  <InfoWindowF onCloseClick={() => setSelectedPropertyId(null)}>
-                    <div className="max-w-[17.5rem] md:max-h-[23rem] max-h-[25.5rem]">
-                      <PropertyListing scale={0.53} size="small" item={property} />
-                    </div>
-                  </InfoWindowF>
-                )}
-              </MarkerF>
-            );
-          })}
-        </>
-      )}
-    </MarkerClusterer>
+          <MarkerClusterer>
+            {(clusterer) => (
+              <>
+                {filteredProperties.map((property) => {
+                  if (property.latitude == null || property.longitude == null) return null;
+                  const isSelected = selectedPropertyId === property.id;
+                  const svgSize = isSelected ? 50 : 42;
+                  return (
+                    <MarkerF
+                      key={property.id}
+                      position={{ lat: property.latitude, lng: property.longitude }}
+                      clusterer={clusterer}
+                      icon={{
+                        url: "/images/marker.svg",
+                        scaledSize: getScaledSize(svgSize),
+                      }}
+                      onClick={(e) => handleMarkerClick(property.id, e)}
+                    >
+                      {isSelected && (
+                        <InfoWindowF onCloseClick={() => setSelectedPropertyId(null)}>
+                          <div className="max-w-[17.5rem] md:max-h-[23rem] max-h-[25.5rem]">
+                            <PropertyListing scale={0.53} size="small" item={property} />
+                          </div>
+                        </InfoWindowF>
+                      )}
+                    </MarkerF>
+                  );
+                })}
+              </>
+            )}
+          </MarkerClusterer>
 
 
           {/* Heatmap */}
