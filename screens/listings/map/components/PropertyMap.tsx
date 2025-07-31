@@ -239,7 +239,7 @@ function pointInShape(
 
 const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: "YOUR_API_KEY",
+    googleMapsApiKey: "AIzaSyDMrYr9uVDCqL-7okyHX3RAIHvO5QUHSFI",
     libraries: ["drawing", "places", "geometry"],
   });
 
