@@ -256,15 +256,24 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
   });
 
   const mapRef = useRef<google.maps.Map | null>(null);
+  const clustererRef = useRef<GCMarkerClusterer | null>(null);
+
   const [selectedPropertyId, setSelectedPropertyId] = useState<number | null>(null);
   const [shapes, setShapes] = useState<ShapeInfo[]>([]);
   const [activeShapeId, setActiveShapeId] = useState<string | null>(null);
   const [showHeatmap, setShowHeatmap] = useState(false);
   const [searchBox, setSearchBox] = useState<google.maps.places.Autocomplete | null>(null);
   const [filteredProperties, setFilteredProperties] = useState<PropertyRawType[]>(properties);
-  const clustererRef = useRef<GCMarkerClusterer | null>(null);
-
   const [clusterer, setClusterer] = useState<google.maps.MarkerClusterer | null>(null);
+  const [drawingManager, setDrawingManager] = useState<google.maps.drawing.DrawingManager | null>(null);
+
+  const togglePolygonMode = () => {
+    if (!drawingManager) return;
+    const mode = window.google.maps.drawing.OverlayType.POLYGON;
+    drawingManager.setDrawingMode(
+      drawingManager.getDrawingMode() === mode ? null : mode
+    );
+  };
 
   const handleClustererLoad = useCallback(
     (c: google.maps.MarkerClusterer) => {
@@ -473,6 +482,8 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
   };
 
   const onOverlayComplete = (e: google.maps.drawing.OverlayCompleteEvent) => {
+    shapes.forEach((s) => s.shape.setMap(null));
+  setShapes([]);
     const overlay = e.overlay;
     let shapeType: ShapeInfo["type"];
     if (e.type === window.google.maps.drawing.OverlayType.POLYGON) shapeType = "polygon";
@@ -608,6 +619,14 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
           >
             موقعیت من
           </button> */}
+          <button
+    onClick={togglePolygonMode}
+    className="px-3 py-2 bg-white rounded shadow"
+  >
+    {drawingManager?.getDrawingMode() === window.google.maps.drawing.OverlayType.POLYGON
+      ? "Cancel Drawing"
+      : "Draw"}
+  </button>
         </div>
 
         <GoogleMap
@@ -670,7 +689,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
           )}
 
           {/* Drawing tools */}
-          <DrawingManager
+          {/* <DrawingManager
             onLoad={() => { }}
             onOverlayComplete={onOverlayComplete}
             options={{
@@ -696,7 +715,22 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
                 draggable: false,
               },
             }}
-          />
+          /> */}
+
+<DrawingManager
+  onLoad={(dm) => {
+    setDrawingManager(dm);
+    dm.setDrawingMode(null); // پیش‌فرض غیرفعال
+  }}
+  onOverlayComplete={onOverlayComplete}
+  options={{
+    drawingControl: false,      // نوار پیش‌فرض رو مخفی کن
+    polygonOptions: {           // فقط پلی‌گان با قابلیت ویرایش
+      editable: true,
+      draggable: false,
+    },
+  }}
+/>
         </GoogleMap>
 
         {/* Shape list / actions */}
