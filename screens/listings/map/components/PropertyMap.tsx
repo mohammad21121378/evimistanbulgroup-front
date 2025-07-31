@@ -307,6 +307,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
     const clusterer = new GCMarkerClusterer({
       map: mapRef.current,
       markers,
+      
       renderer: {
         render: ({ count, position }) => {
           return new window.google.maps.Marker({
@@ -320,12 +321,32 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
       },
     });
 
+    
+
     clustererRef.current = clusterer as any;
     
     return () => {
       clusterer.clearMarkers();
     };
   }, [filteredProperties, selectedPropertyId]);
+  
+  const clustererOptions = {
+    maxZoom: 5, // تا این زوم همچنان کلاسترها حفظ بشن (اعداد دیده بمونن)
+    zoomOnClick: false, // کلیک روی کلاستر زوم نکنه
+    minimumClusterSize: 2,
+    // اگر بخوای renderer سفارشی با SVG عددی داشته باشی:
+    renderer: {
+      render: ({ count, position }: { count: number; position: google.maps.LatLng }) => {
+        return new window.google.maps.Marker({
+          position,
+          icon: {
+            url: makeClusterSvg(count),
+            scaledSize: new window.google.maps.Size(38, 38),
+          },
+        });
+      },
+    },
+  };
 
   useEffect(() => {
     if (!selectedProperty || !mapRef.current) return;
@@ -598,7 +619,9 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
           options={{ fullscreenControl: true, streetViewControl: true, clickableIcons: true }}
         >
 
-          <MarkerClusterer>
+          <MarkerClusterer
+          options={clustererOptions}
+          >
             {(clusterer) => (
               <>
                 {filteredProperties.map((property) => {
@@ -679,7 +702,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
         {/* Shape list / actions */}
         {shapes.length > 0 && (
           <div className="absolute bottom-4 left-4 z-30 bg-white p-3 rounded-xl shadow flex flex-col gap-2 max-w-[300px]">
-            <div className="font-semibold">شکل‌های فعال:</div>
+            <div className="font-semibold">Active shapes:</div>
             {shapes.map((s) => (
               <div
                 key={s.id}
@@ -691,9 +714,8 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
                     onClick={() => removeShape(s.id)}
                     className="text-red-500 text-xs px-2 py-1 border rounded"
                   >
-                    حذف
+                    remove
                   </button>
-                  {/* می‌شه دکمه export به geojson هم گذاشت */}
                 </div>
               </div>
             ))}
