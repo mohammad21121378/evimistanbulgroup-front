@@ -178,8 +178,6 @@ import {
   MarkerClusterer,
 } from "@react-google-maps/api";
 
-
-
 import { Loader } from "lucide-react";
 import { PropertyRawType } from "@/types/Property";
 import PropertyListing from "@/components/property-listing";
@@ -655,8 +653,6 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
               drawingControlOptions: {
                 position: google.maps.ControlPosition.TOP_CENTER,
                 drawingModes: [
-                  google.maps.drawing.OverlayType.POLYGON,
-                  google.maps.drawing.OverlayType.RECTANGLE,
                   google.maps.drawing.OverlayType.CIRCLE,
                 ],
               },
@@ -693,7 +689,6 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
                   >
                     remove
                   </button>
-                  {/* می‌شه دکمه export به geojson هم گذاشت */}
                 </div>
               </div>
             ))}
