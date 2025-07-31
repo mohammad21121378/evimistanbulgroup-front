@@ -570,10 +570,10 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
             <div
               key={property.id}
               onMouseEnter={() => {setSelectedPropertyId(property.id); setZoom(15)}}
-              onMouseLeave={() => setSelectedPropertyId(null)}
+              onMouseLeave={() => {setSelectedPropertyId(null); setZoom(10)}}
               className={` pb-1.5 p-1 bg-white rounded-xl shadow flex gap-2 cursor-pointer ${selectedPropertyId === property.id ? "ring-2 ring-orange-500" : ""
                 }`}
-              onClick={() => setSelectedPropertyId(property.id)}
+              onClick={() => {setSelectedPropertyId(property.id); setZoom(15)}}
             >
               <PropertyListing wrapperClassName="!w-full !h-[22.1rem]" size="small" scale={.68} item={property} />
             </div>
