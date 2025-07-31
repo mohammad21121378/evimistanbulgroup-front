@@ -280,54 +280,54 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
     return new window.google.maps.Size(size, size);
   };
 
-  useEffect(() => {
-    if (!mapRef.current || !window.google) return;
+  // useEffect(() => {
+  //   if (!mapRef.current || !window.google) return;
 
-    clustererRef.current?.clearMarkers();
+  //   // clustererRef.current?.clearMarkers();
 
-    // const markers = filteredProperties
-    //   .filter((p) => p.latitude !== null && p.longitude !== null)
-    //   .map((p) => {
-    //     const isSelected = selectedPropertyId === p.id;
-    //     const size = isSelected ? 50 : 42;
-    //     const marker = new window.google.maps.Marker({
-    //       position: { lat: p.latitude!, lng: p.longitude! },
-    //       icon: {
-    //         url: "/images/marker.svg",
-    //         scaledSize: new window.google.maps.Size(size, size),
-    //       },
-    //     });
+  //   // const markers = filteredProperties
+  //   //   .filter((p) => p.latitude !== null && p.longitude !== null)
+  //   //   .map((p) => {
+  //   //     const isSelected = selectedPropertyId === p.id;
+  //   //     const size = isSelected ? 50 : 42;
+  //   //     const marker = new window.google.maps.Marker({
+  //   //       position: { lat: p.latitude!, lng: p.longitude! },
+  //   //       icon: {
+  //   //         url: "/images/marker.svg",
+  //   //         scaledSize: new window.google.maps.Size(size, size),
+  //   //       },
+  //   //     });
 
-    //     marker.addListener("click", (e: google.maps.MapMouseEvent) => {
-    //       setSelectedPropertyId(p.id);
+  //   //     marker.addListener("click", (e: google.maps.MapMouseEvent) => {
+  //   //       setSelectedPropertyId(p.id);
 
-    //     });
+  //   //     });
 
-    //     return marker;
-    //   });
+  //   //     return marker;
+  //   //   });
 
-    const clusterer = new GCMarkerClusterer({
-      map: mapRef.current,
-      // markers,
-      // renderer: {
-      //   render: ({ count, position }) => {
-      //     return new window.google.maps.Marker({
-      //       position,
-      //       icon: {
-      //         url: makeClusterSvg(count),
-      //         scaledSize: new window.google.maps.Size(38, 38),
-      //       },
-      //     });
-      //   },
-      // },
-    });
+  //   // const clusterer = new GCMarkerClusterer({
+  //     // map: mapRef.current,
+  //     // markers,
+  //     // renderer: {
+  //     //   render: ({ count, position }) => {
+  //     //     return new window.google.maps.Marker({
+  //     //       position,
+  //     //       icon: {
+  //     //         url: makeClusterSvg(count),
+  //     //         scaledSize: new window.google.maps.Size(38, 38),
+  //     //       },
+  //     //     });
+  //     //   },
+  //     // },
+  //   // });
 
-    clustererRef.current = clusterer as any;
+  //   clustererRef.current = clusterer as any;
 
-    return () => {
-      clusterer.clearMarkers();
-    };
-  }, [filteredProperties, selectedPropertyId]);
+  //   return () => {
+  //     clusterer.clearMarkers();
+  //   };
+  // }, [filteredProperties, selectedPropertyId]);
 
   useEffect(() => {
     if (!selectedProperty || !mapRef.current) return;
@@ -374,7 +374,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
     filteredProperties.forEach((p) => {
       if (p.latitude !== null && p.longitude !== null) {
         bounds.extend({ lat: p.latitude, lng: p.longitude });
-      }
+      }  
     });
     if (!bounds.isEmpty()) {
       mapRef.current.fitBounds(bounds, 80);
