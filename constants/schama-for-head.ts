@@ -45,11 +45,12 @@ export const schema = [
         "url": "https://evimistanbulgroup.com/",
         "logo": "https://evimistanbulgroup.com/_next/image?url=%2Fimages%2FEvimIstanbul%20Group%20Official%20LOGO.png&w=2048&q=75",
         "sameAs": [
-            "https://www.facebook.com/evimistanbulgroup",
-            "https://twitter.com/evimistanbulgroup",
-            "https://www.linkedin.com/company/evimistanbulgroup",
+            "https://www.facebook.com/EvimIstanbulGroup/",
+            "https://x.com/EvimIstGroup",
+            "https://www.linkedin.com/showcase/evimistanbulgroup/",
             "https://www.youtube.com/@evimistanbulgroup",
-            "https://www.instagram.com/evimistanbulgroup.official/"
+            "https://www.instagram.com/evimistanbulgroup",
+            "https://t.me/evimistgroup"
         ]
     }
 ]

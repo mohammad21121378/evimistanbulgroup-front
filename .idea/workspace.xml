@@ -20,7 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a444990-2b63-46d6-b210-f54ec3aa7b85" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/components/chat-listing/ChatListing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/chat-listing/ChatListing.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/schama-for-head.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/schama-for-head.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +49,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/helpers/api" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="K:\web\projects\react_project\evim\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -88,7 +89,8 @@
       <workItem from="1753777095658" duration="5050000" />
       <workItem from="1753880620501" duration="6000" />
       <workItem from="1753880673123" duration="306000" />
-      <workItem from="1753889788391" duration="4890000" />
+      <workItem from="1753889788391" duration="5988000" />
+      <workItem from="1753964463692" duration="159000" />
     </task>
     <servers />
   </component>
@@ -120,10 +122,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="581" y="96" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1753896496591" />
-    <state x="479" y="0" width="962" height="1040" key="find.popup" timestamp="1753897060616">
+    <state x="479" y="0" width="962" height="1040" key="find.popup" timestamp="1753964511396">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="479" y="0" width="962" height="1040" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1753897060616" />
+    <state x="479" y="0" width="962" height="1040" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1753964511396" />
     <state x="364" y="228" key="run.anything.popup" timestamp="1753441828471">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
