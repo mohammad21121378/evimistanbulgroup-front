@@ -581,7 +581,12 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
               }}
 
               onMouseLeave={() => {
-                setSelectedPropertyId(null); setZoom(15)
+                if (hoverTimerRef.current) {
+                  clearTimeout(hoverTimerRef.current);
+                  hoverTimerRef.current = null;
+                }
+                setSelectedPropertyId(null);
+                setZoom(15);
               }}
 
               className={` pb-1.5 p-1 bg-white rounded-xl shadow flex gap-2 cursor-pointer ${selectedPropertyId === property.id ? "ring-2 ring-orange-500" : "cursor-progress"
