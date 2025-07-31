@@ -6,7 +6,7 @@ import SvgForBg from "./SvgForBg";
 export default function FindProperty() {
     const { onOpen } = useConsultationStore();
     return (
-        <div className="bg-[#002DD1] pt-20 pb-24 mt-16 space-y-6 text-white text-center relative">
+        <div className="bg-[#002DD1] pt-20 pb-24 mt-16 space-y-6 text-white text-center z-10 relative">
             <div className="heading-6 text-orange-500">
                 Let Us Help.
             </div>

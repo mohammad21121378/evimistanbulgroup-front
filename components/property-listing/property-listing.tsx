@@ -10,6 +10,7 @@ import Offers from "./offers";
 import getCategory from "@/utils/getCategory";
 
 interface PropertyListingProps extends PropertyType {
+  wrapperClassName?: string;
   className?: string;
   scale?: number;
   size?: 'default' | 'small'
@@ -18,6 +19,7 @@ interface PropertyListingProps extends PropertyType {
 export default function PropertyListing({
   item,
   className,
+  wrapperClassName,
   scale = 1,
   size = 'default'
 }: PropertyListingProps) {
@@ -26,7 +28,7 @@ export default function PropertyListing({
 
   return (
     <div
-      className={cn(styles.wrapper, { [styles.small]: size === 'small' }, { 'pl-1.5 pr-1': size === 'small' })}
+      className={cn(styles.wrapper, wrapperClassName, { [styles.small]: size === 'small' }, { 'pl-1.5 pr-1': size === 'small' })}
       style={{ "--scale": scale } as React.CSSProperties}
     >
       <div

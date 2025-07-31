@@ -14,8 +14,7 @@ export default function ListingsPage({ listings }: { listings: ListingsType }) {
 
       <Content listings={listings} />
 
-      <Benefits />
-      <FindProperty />
+      
 
     </Layout>
   );

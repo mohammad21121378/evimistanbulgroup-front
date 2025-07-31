@@ -8,6 +8,8 @@ import MapPage from "../map";
 import classNames from "classnames";
 import { useFilter } from "../hooks/useFilter";
 import { ListingsType } from "@/types/Property";
+import Benefits from "../benefits";
+import FindProperty from "../find-property";
 
 export default function Content({ listings }: { listings: ListingsType }) {
 
@@ -24,6 +26,8 @@ export default function Content({ listings }: { listings: ListingsType }) {
             { 'fade-in-animate': type === 'list' },
         )}>
             <Hero type={type} onChange={onChange} {...filtersState} />
+            <Benefits />
+      <FindProperty />
         </div>
 
         <div className={classNames(
