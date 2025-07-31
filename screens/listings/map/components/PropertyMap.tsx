@@ -584,7 +584,12 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
                 }
                 hoverTimerRef.current = window.setTimeout(() => {
                   setSelectedPropertyId(property.id);
-                  setZoom(15);
+                  if (mapRef.current) {
+                    mapRef.current?.setZoom(15);
+                  }else{
+                    setZoom(15);
+
+                  }
                   hoverTimerRef.current = null;
                 }, 400);
               }}
