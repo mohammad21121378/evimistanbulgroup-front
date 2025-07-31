@@ -577,14 +577,14 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
                 hoverTimerRef.current = window.setTimeout(() => {
                   setSelectedPropertyId(property.id);
                   setZoom(15);
-                }, 300);
+                }, 400);
               }}
 
               onMouseLeave={() => {
                 setSelectedPropertyId(null); setZoom(15)
               }}
 
-              className={` pb-1.5 p-1 bg-white rounded-xl shadow flex gap-2 cursor-pointer ${selectedPropertyId === property.id ? "ring-2 ring-orange-500" : ""
+              className={` pb-1.5 p-1 bg-white rounded-xl shadow flex gap-2 cursor-pointer ${selectedPropertyId === property.id ? "ring-2 ring-orange-500" : "cursor-progress"
                 }`}
               onClick={() => { setSelectedPropertyId(property.id); setZoom(15) }}
             >
