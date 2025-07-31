@@ -309,10 +309,10 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
         render: ({ count, position }) => {
           return new window.google.maps.Marker({
             position,
-            icon: {
-              url: makeClusterSvg(count),
-              scaledSize: new window.google.maps.Size(38, 38),
-            },
+            // icon: {
+            //   url: makeClusterSvg(count),
+            //   scaledSize: new window.google.maps.Size(38, 38),
+            // },
           });
         },
       },
@@ -565,14 +565,14 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
       <div className="w-[55%] relative">
 
         <div className="absolute top-20 left-4 z-20 flex gap-2">
-          <Autocomplete onLoad={(auto) => setSearchBox(auto)} onPlaceChanged={onPlaceChanged}>
+          {/* <Autocomplete onLoad={(auto) => setSearchBox(auto)} onPlaceChanged={onPlaceChanged}>
             <input
               type="text"
               placeholder="Ssearch location..."
               className="w-60 px-3 py-2 rounded shadow border"
             />
           </Autocomplete>
-          {/* <button
+          <button
             onClick={() => {
               if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition((pos) => {
