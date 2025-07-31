@@ -556,7 +556,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
                 }`}
               onClick={() => setSelectedPropertyId(property.id)}
             >
-                <PropertyListing wrapperClassName="!w-full !h-[21.5rem]" size="small" scale={.68} item={property} />
+                <PropertyListing wrapperClassName="!w-full !h-[22.1rem]" size="small" scale={.68} item={property} />
             </div>
           ))}
         </div>
