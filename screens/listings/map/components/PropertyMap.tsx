@@ -309,17 +309,17 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
     const clusterer = new GCMarkerClusterer({
       map: mapRef.current,
       markers,
-      renderer: {
-        render: ({ count, position }) => {
-          return new window.google.maps.Marker({
-            position,
-            // icon: {
-            //   url: makeClusterSvg(count),
-            //   scaledSize: new window.google.maps.Size(38, 38),
-            // },
-          });
-        },
-      },
+      // renderer: {
+      //   render: ({ count, position }) => {
+      //     return new window.google.maps.Marker({
+      //       position,
+      //       icon: {
+      //         url: makeClusterSvg(count),
+      //         scaledSize: new window.google.maps.Size(38, 38),
+      //       },
+      //     });
+      //   },
+      // },
     });
 
     clustererRef.current = clusterer as any;
@@ -534,9 +534,9 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
   }
 
   return (
-    <div className="flex fixed h-[calc(100vh-10rem)] z-40 right-0 left-0 bottom-0 w-full" style={{ borderTop: '1px solid rgb(216 216 216 / 46%)' }}>
+    <div className="flex fixed h-[calc(100vh-10.2rem)] z-40 right-0 left-0 bottom-0 w-full" style={{ borderTop: '1px solid rgb(216 216 216 / 46%)' }}>
 
-      <div className="w-[45%] h-[calc(100vh-10rem)] bg-white space-y-2 overflow-hidden">
+      <div className="w-[45%] h-[calc(100vh-10.2rem)] bg-white space-y-2 overflow-hidden">
 
         <div className="flex items-center justify-between p-2 bg-white font-medium">
           {/* <div className="flex gap-2">
@@ -565,7 +565,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
 
         <hr className="bg-gray-200" />
 
-        <div className="space-y-1 p-2 grid grid-cols-2 gap-2 overflow-auto scrollbar-sm max-h-[calc(100vh-14.25rem)]">
+        <div className="space-y-1 p-2 grid grid-cols-2 gap-2 overflow-auto scrollbar-sm max-h-[calc(100vh-14.5rem)]">
           {filteredProperties.map((property) => (
             <div
               key={property.id}
