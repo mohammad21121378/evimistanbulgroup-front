@@ -577,7 +577,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
                 hoverTimerRef.current = window.setTimeout(() => {
                   setSelectedPropertyId(property.id);
                   setZoom(15);
-                }, 150);
+                }, 300);
               }}
 
               onMouseLeave={() => {
