@@ -311,19 +311,37 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
     }
   }, [filteredProperties]);
 
+  // useEffect(() => {
+  //   if (shapes.length === 0) {
+  //     setFilteredProperties(properties);
+  //     return;
+  //   }
+  //   const filtered = properties.filter((p) => {
+  //     if (p.latitude === null || p.longitude === null) return false;
+  //     return shapes.some((shapeInfo) =>
+  //       pointInShape({ lat: p.latitude, lng: p.longitude }, shapeInfo)
+  //     );
+  //   });
+  //   setFilteredProperties(filtered);
+  // }, [shapes, properties]);
+
   useEffect(() => {
     if (shapes.length === 0) {
       setFilteredProperties(properties);
       return;
     }
+  
     const filtered = properties.filter((p) => {
-      if (p.latitude === null || p.longitude === null) return false;
+      const { latitude, longitude } = p;
+      if (latitude == null || longitude == null) return false; // اینجا narrow می‌کنه
+  
       return shapes.some((shapeInfo) =>
-        pointInShape({ lat: p.latitude, lng: p.longitude }, shapeInfo)
+        pointInShape({ lat: latitude, lng: longitude }, shapeInfo)
       );
     });
+  
     setFilteredProperties(filtered);
-  }, [shapes, properties]);
+  }, [shapes, properties /* اگر متغیر checked هم اینجا استفاده می‌شه، حتماً اضافه‌اش کن */]);
 
   const onMapLoad = useCallback((map: google.maps.Map) => {
     mapRef.current = map;
