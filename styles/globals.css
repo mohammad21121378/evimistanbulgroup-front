@@ -275,3 +275,8 @@ html {
 .animate-fade-custom {
   animation: fade 1.2s ease-in-out infinite;
 }
+
+
+.no-scroll, .no-scroll html, .no-scroll body {
+  overflow: hidden !important;
+}

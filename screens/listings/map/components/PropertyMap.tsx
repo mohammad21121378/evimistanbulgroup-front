@@ -191,8 +191,8 @@ declare global {
   }
 }
 
-const DEFAULT_CENTER = { lat: 41.0082, lng: 28.9784 }; // Istanbul fallback
-const DEFAULT_ZOOM = 30;
+const DEFAULT_CENTER = { lat: 41.0082, lng: 28.9784 };
+const DEFAULT_ZOOM = 100;
 
 type Props = {
   loadingData?: boolean;
@@ -280,11 +280,9 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
 
   useEffect(() => {
     if (!mapRef.current || !window.google) return;
-
-    // پاک کردن cluster قبلی
+    
     clustererRef.current?.clearMarkers();
-
-    // ساخت markerهای خام (بدون JSX)
+    
     const markers = filteredProperties
       .filter((p) => p.latitude !== null && p.longitude !== null)
       .map((p) => {
@@ -300,13 +298,12 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
 
         marker.addListener("click", (e: google.maps.MapMouseEvent) => {
           setSelectedPropertyId(p.id);
-          // جلوگیری از پروپاگیشن اگر لازم بود
+          
         });
 
         return marker;
       });
-
-    // ساخت clusterer با renderer سفارشی
+      
     const clusterer = new GCMarkerClusterer({
       map: mapRef.current,
       markers,
@@ -318,15 +315,13 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
               url: makeClusterSvg(count),
               scaledSize: new window.google.maps.Size(38, 38),
             },
-            // عدد داخل SVG هست، پس label نذار
           });
         },
       },
     });
 
     clustererRef.current = clusterer as any;
-
-    // cleanup: وقتی اثر دوباره اجرا شد یا کامپوننت آن‌مونت می‌شه
+    
     return () => {
       clusterer.clearMarkers();
     };
@@ -335,13 +330,11 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
   useEffect(() => {
     if (!selectedProperty || !mapRef.current) return;
     const existingMarker = clustererRef.current
-      ? // پیدا کردن مارکری که position و id مناسبی داره
+      ?
       null
       : null;
-    // به‌جای این، بهتره نگهداری نگاشت property.id -> marker داشته باشی
   }, [selectedPropertyId]);
-
-  // Compute initial center
+  
   const firstValidProperty = useMemo(
     () => properties.find((p) => p.latitude !== null && p.longitude !== null),
     [properties]
@@ -577,7 +570,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
           <Autocomplete onLoad={(auto) => setSearchBox(auto)} onPlaceChanged={onPlaceChanged}>
             <input
               type="text"
-              placeholder="جستجوی مکان..."
+              placeholder="Ssearch location..."
               className="w-60 px-3 py-2 rounded shadow border"
             />
           </Autocomplete>

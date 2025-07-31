@@ -7,15 +7,35 @@ export function useChangeTypeListings() {
 
     const onChange = (type: TypeProp) => {
         setType(type);
-        setTimeout(() => {
+
+        if (type === 'map') {
             window.scrollTo({
-                top: 70,
+                top: 0,
                 behavior: "smooth",
             });
-        }, 650);
+            setTimeout(() => {
+                document.documentElement.classList.add('no-scroll');
+                document.body.classList.add('no-scroll');
+                setTimeout(() => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 0);
+            }, 0);
+
+        } else {
+            document.documentElement.classList.remove('no-scroll');
+            document.body.classList.remove('no-scroll');
+            setTimeout(() => {
+                window.scrollTo({
+                    top: 70,
+                    behavior: "smooth",
+                });
+            }, 650);
+        }
+
+
     }
 
-    return{
+    return {
         type,
         onChange
     };
