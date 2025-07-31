@@ -190,7 +190,7 @@ declare global {
 }
 
 const DEFAULT_CENTER = { lat: 41.0082, lng: 28.9784 };
-const DEFAULT_ZOOM = 1;
+const DEFAULT_ZOOM = 5;
 
 type Props = {
   loadingData?: boolean;
