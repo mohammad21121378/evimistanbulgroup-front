@@ -192,7 +192,7 @@ declare global {
 }
 
 const DEFAULT_CENTER = { lat: 41.0082, lng: 28.9784 };
-const DEFAULT_ZOOM = 17;
+const DEFAULT_ZOOM = 4;
 
 type Props = {
   loadingData?: boolean;
@@ -414,23 +414,23 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
   //   setFilteredProperties(filtered);
   // }, [shapes, properties]);
 
-  useEffect(() => {
-    if (shapes.length === 0) {
-      setFilteredProperties(properties);
-      return;
-    }
+  // useEffect(() => {
+  //   if (shapes.length === 0) {
+  //     setFilteredProperties(properties);
+  //     return;
+  //   }
 
-    const filtered = properties.filter((p) => {
-      const { latitude, longitude } = p;
-      if (latitude == null || longitude == null) return false; // اینجا narrow می‌کنه
+  //   const filtered = properties.filter((p) => {
+  //     const { latitude, longitude } = p;
+  //     if (latitude == null || longitude == null) return false; // اینجا narrow می‌کنه
 
-      return shapes.some((shapeInfo) =>
-        pointInShape({ lat: latitude, lng: longitude }, shapeInfo)
-      );
-    });
+  //     return shapes.some((shapeInfo) =>
+  //       pointInShape({ lat: latitude, lng: longitude }, shapeInfo)
+  //     );
+  //   });
 
-    setFilteredProperties(filtered);
-  }, [shapes, properties /* اگر متغیر checked هم اینجا استفاده می‌شه، حتماً اضافه‌اش کن */]);
+  //   setFilteredProperties(filtered);
+  // }, [shapes, properties /* اگر متغیر checked هم اینجا استفاده می‌شه، حتماً اضافه‌اش کن */]);
 
   const onMapLoad = useCallback((map: google.maps.Map) => {
     mapRef.current = map;
