@@ -37,8 +37,8 @@ export default function HighlightsAndFeatures() {
             <motion.div
               initial="hidden"
               whileInView="show"
-              variants={fadeinAnimationWithDelay(index * .5)}
-              viewport={{once: false, amount:.2}}
+              variants={fadeinAnimationWithDelay(index * .4)}
+              viewport={{once: true, amount:.2}}
             >
               <HighlightsAndFeaturesListing key={index} item={item} />
             </motion.div>

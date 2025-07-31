@@ -57,7 +57,7 @@ export const fadeinAnimationWithDelay = (delay: number) => {
         scale: 1,
         transition: {
             delay: delay,
-            duration: .5,
+            duration: .4,
         },
     },}
 };
