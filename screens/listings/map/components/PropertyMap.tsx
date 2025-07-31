@@ -449,7 +449,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
         <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-slate-50 to-slate-400" />
         <div className="relative z-10 flex items-center gap-2.5">
           <Loader className="animate-spin" />
-          <p className="text-lg text-gray-600 font-medium">در حال بارگذاری نقشه...</p>
+          <p className="text-lg text-gray-600 font-medium">Loading map...</p>
         </div>
       </div>
     );
@@ -471,18 +471,18 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
             {filteredProperties.length} مورد نمایش داده می‌شود
           </div>
         </div>
-        <div className="space-y-1">
+        <div className="space-y-1 p-2">
           {filteredProperties.map((property) => (
             <div
               key={property.id}
               onMouseEnter={() => setSelectedPropertyId(property.id)}
               onMouseLeave={() => setSelectedPropertyId(null)}
-              className={`p-2 bg-white rounded-xl shadow flex gap-2 cursor-pointer ${selectedPropertyId === property.id ? "ring-2 ring-indigo-500" : ""
+              className={` p-2 bg-white rounded-xl shadow flex gap-2 cursor-pointer ${selectedPropertyId === property.id ? "ring-2 ring-orange-500" : ""
                 }`}
               onClick={() => setSelectedPropertyId(property.id)}
             >
               <div className="flex-1">
-                <PropertyListing size="small" scale={0.5} item={property} />
+                <PropertyListing item={property} />
               </div>
             </div>
           ))}
