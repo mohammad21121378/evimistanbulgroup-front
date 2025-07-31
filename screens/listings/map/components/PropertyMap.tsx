@@ -535,7 +535,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
   return (
     <div className="flex fixed h-[calc(100vh-10rem)] z-40 right-0 left-0 bottom-0 w-full" style={{ borderTop: '1px solid rgb(216 216 216 / 46%)' }}>
 
-      <div className="w-[45%] h-[calc(100vh-10rem)] bg-white overflow-auto scrollbar-sm space-y-2">
+      <div className="w-[45%] h-[calc(100vh-10rem)] bg-white space-y-2 overflow-hidden">
 
         <div className="flex items-center justify-between p-2 bg-white font-medium">
           {/* <div className="flex gap-2">
@@ -550,19 +550,21 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
             {filteredProperties.length} The item is displayed
           </div> */}
 
-          <div className="flex items-center text-lg gap-0.5 mt-1 text-gray-700 transition-all hover:text-orange-600 cursor-pointer font-bold" onClick={() => onChangeType('list')}>
-            <FaChevronLeft className="text-base" />
+          <div className="flex items-center text-base gap-0.5 mt-1 pl-1 text-gray-700 transition-all hover:text-orange-600 cursor-pointer font-bold" onClick={() => onChangeType('list')}>
+
+            <FaChevronLeft className="text-sm" />
 
             <div>
               Return to property list
             </div>
+
           </div>
 
         </div>
 
         <hr className="bg-gray-200" />
 
-        <div className="space-y-1 p-2 grid grid-cols-2 gap-2">
+        <div className="space-y-1 p-2 grid grid-cols-2 gap-2 overflow-auto scrollbar-sm max-h-[calc(100vh-12.4rem)]">
           {filteredProperties.map((property) => (
             <div
               key={property.id}
