@@ -4,17 +4,7 @@ import React from "react";
 import styles from "./services.module.css";
 import cn from "classnames";
 import { motion } from 'framer-motion'
-import {
-  ArrowRight,
-  Bag,
-  BubbleChart,
-  Building,
-  DoubleBed,
-  House,
-  TrendUp,
-} from "@/constants/icons";
-import { Heading } from "@/components/typography";
-import Link from "next/link";
+import { ArrowRight } from "@/constants/icons";
 import { useTranslations } from "next-intl";
 import { useConsultationStore } from "@/stores/consultationStore";
 import Button from "@/components/ui/Button";
@@ -67,6 +57,18 @@ const services = [
   },
 ];
 
+const slideUpAndFadeinAnimation = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0,
+      duration: .5,
+    },
+  },
+};
+
 export default function Services() {
   const t = useTranslations("Services");
   const { onOpen } = useConsultationStore();
@@ -74,6 +76,7 @@ export default function Services() {
   return (
     <section className={cn("section")}>
       <div className={cn("container")}>
+
         <div className={styles.content}>
           <div className={styles.title_container}>
             <h2 className="heading-3">{t("title")}</h2>
@@ -90,14 +93,14 @@ export default function Services() {
         <div className={styles.services}>
           {services.map((service, index) => (
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: .5, delay: index*.5 }}
+              key={service.id}
+              initial="hidden"
+              whileInView="visible"
+              variants={slideUpAndFadeinAnimation}
               viewport={viewportMargin}
-              key={service.id} 
-              className={styles.service}>
-              <div className={cn("gradient-bubble")}>{service.icon}</div>
+              className={styles.service}
+            >
+              <div className="gradient-bubble">{service.icon}</div>
               <div className={cn("heading-6", styles.service_title)}>
                 {t(`${service.key}.title`)}
               </div>
@@ -107,7 +110,12 @@ export default function Services() {
             </motion.div>
           ))}
 
-          <div className={cn('grid justify-center items-center', styles.neededs)}>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={slideUpAndFadeinAnimation}
+            viewport={viewportMargin} className={cn('grid justify-center items-center', styles.neededs)}>
             <div>
               <div className={cn("heading-6 w-full", styles.service_title)}>
                 {t("custom.title")}
@@ -119,7 +127,7 @@ export default function Services() {
                 </span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

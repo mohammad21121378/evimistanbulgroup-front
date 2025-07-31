@@ -48,3 +48,16 @@ export const fadeinAnimation = {
         },
     },
 };
+
+export const fadeinAnimationWithDelay = (delay: number) => {
+    return{
+    hidden: { opacity: 0, scale: .9 },
+    show: {
+        opacity: 1,
+        scale: 1,
+        transition: {
+            delay: delay,
+            duration: .5,
+        },
+    },}
+};
