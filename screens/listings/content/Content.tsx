@@ -13,29 +13,10 @@ import FindProperty from "../find-property";
 
 export default function Content({ listings }: { listings: ListingsType }) {
 
-    const {
-        type,
-        onChange
-    } = useChangeTypeListings();
-
-    const filtersState = useFilter({ onFilterByChange: type === 'map', listings, typeShowPage: type });
+    
 
     return (<>
-        <div className={classNames(
-            { 'hidden': type !== 'list' },
-            { 'fade-in-animate': type === 'list' },
-        )}>
-            <Hero type={type} onChange={onChange} {...filtersState} />
-            <Benefits />
-      <FindProperty />
-        </div>
-
-        <div className={classNames(
-            { 'hidden': type === 'list' },
-            { 'fade-in-animate': type !== 'list' },
-        )}>
-            <MapPage type={type} onChange={onChange} {...filtersState}  />
-        </div>
+        
     </>
     );
 }
