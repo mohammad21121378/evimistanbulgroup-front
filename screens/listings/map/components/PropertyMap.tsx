@@ -192,7 +192,7 @@ declare global {
 }
 
 const containerStyle = {
-  width: "55%",
+  width: "100%",
   height: "80vh",
   borderRadius: 0,
 };
@@ -537,7 +537,7 @@ useEffect(() => {
   }
 
   return (
-    <div className="flex fixe h-[85rem] inset-0">
+    <div className="flex fixe h-[85rem] right-0 left-0 bottom-0">
 
       <div className="w-1/2 max-h-[90vh] overflow-auto scrollbar-sm space-y-2">
         <div className="flex items-center justify-between p-2 bg-white rounded-xl shadow">
