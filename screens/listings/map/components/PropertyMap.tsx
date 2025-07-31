@@ -522,7 +522,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
   if (!isLoaded || loadingData) {
     return (
       <div
-        className="flex fixed h-[calc(100vh-6rem)] bottom-0 left-0 right-0 items-center justify-center bg-slate-100 rounded-2xl overflow-hidden"
+        className="flex fixed h-[calc(100vh-10.2rem)] bottom-0 left-0 right-0 items-center justify-center bg-slate-100 rounded-2xl overflow-hidden"
       >
         <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-slate-50 to-slate-400" />
         <div className="relative z-10 flex items-center gap-2.5">
