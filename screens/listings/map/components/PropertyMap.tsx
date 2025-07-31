@@ -270,16 +270,6 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
   const [clusterer, setClusterer] = useState<google.maps.MarkerClusterer | null>(null);
   const hoverTimerRef = useRef<number | null>(null);
 
-  const drawingManagerRef = useRef<google.maps.drawing.DrawingManager | null>(null);
-
-  // آرایهٔ اشکال روی نقشه
-  const shapesRef = useRef<ShapeInfo[]>([]);
-
-  // کنترل حالت رسم (null => غیرفعال)
-  const [drawingMode, setDrawingMode] = useState<
-    google.maps.drawing.OverlayType | null
-  >(window.google.maps.drawing.OverlayType.CIRCLE);
-
   useEffect(() => {
     return () => {
       if (hoverTimerRef.current) {
@@ -476,9 +466,6 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
   };
 
   const onOverlayComplete = (e: google.maps.drawing.OverlayCompleteEvent) => {
-    shapesRef.current.forEach(({ shape }) => shape.setMap(null));
-  shapesRef.current = [];
-
     const overlay = e.overlay;
     let shapeType: ShapeInfo["type"];
     if (e.type === window.google.maps.drawing.OverlayType.POLYGON) shapeType = "polygon";
@@ -718,7 +705,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
 
           {/* Drawing tools */}
           <DrawingManager
-            onLoad={dm => (drawingManagerRef.current = dm)}
+            onLoad={() => { }}
             onOverlayComplete={onOverlayComplete}
             options={{
               drawingControl: true,
