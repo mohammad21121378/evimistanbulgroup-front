@@ -267,83 +267,6 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
   const [clusterer, setClusterer] = useState<google.maps.MarkerClusterer | null>(null);
   const [drawingManager, setDrawingManager] = useState<google.maps.drawing.DrawingManager | null>(null);
 
-  const [isDrawing, setIsDrawing] = useState(false);
-// مسیر موقت هنگام رسم
-const drawingPathRef = useRef<google.maps.MVCArray<google.maps.LatLng> | null>(null);
-// پلی‌لاین موقت روی نقشه
-const tempPolylineRef = useRef<google.maps.Polyline | null>(null);
-
-useEffect(() => {
-  const map = mapRef.current;
-  if (!map) return;
-  
-  let mouseMoveListener: google.maps.MapsEventListener;
-  let mouseUpListener: google.maps.MapsEventListener;
-  let mouseDownListener: google.maps.MapsEventListener;
-
-  if (isDrawing) {
-    // شروع رسم: یک MVCArray جدید و یک Polyline موقت
-    drawingPathRef.current = new window.google.maps.MVCArray<google.maps.LatLng>();
-    tempPolylineRef.current = new window.google.maps.Polyline({
-      map,
-      path: drawingPathRef.current,
-      clickable: false,
-      strokeColor: "#FF0000",
-      strokeOpacity: 0.8,
-      strokeWeight: 2,
-    });
-
-    mouseDownListener = window.google.maps.event.addListener(map, "mousedown", (e: any) => {
-      // وقتی ماوس پایین می‌ره، اولین نقطه رو اضافه کن
-      drawingPathRef.current!.clear();
-      drawingPathRef.current!.push(e.latLng);
-      
-      // شروع به گوش دادن mousemove
-      mouseMoveListener = window.google.maps.event.addListener(map, "mousemove", (ev: any) => {
-        drawingPathRef.current!.push(ev.latLng);
-      });
-    });
-
-    mouseUpListener = window.google.maps.event.addListener(map, "mouseup", () => {
-      // قطع گوش دادن mousemove
-      if (mouseMoveListener) window.google.maps.event.removeListener(mouseMoveListener);
-
-      // مسیرِ نهایی رو بگیر
-      const pathArray = drawingPathRef.current!.getArray();
-      // تبدیل به Polygon و اضافه به shapes
-      const poly = new window.google.maps.Polygon({
-        paths: pathArray,
-        editable: true,
-        draggable: false,
-        map,
-      });
-      const id = crypto.randomUUID();
-      setShapes([{ shape: poly, type: "polygon", id }]);
-      
-      // پاکسازی polyline موقت و خروج از مد
-      tempPolylineRef.current!.setMap(null);
-      tempPolylineRef.current = null;
-      drawingPathRef.current = null;
-      setIsDrawing(false);
-    });
-
-  } else {
-    // اگر از حالت رسم خارج شدیم، حتماً تمیزکاری کن
-    if (tempPolylineRef.current) {
-      tempPolylineRef.current.setMap(null);
-      tempPolylineRef.current = null;
-    }
-  }
-
-  // پاک کردن لیسنرها وقتی unmount یا isDrawing تغییر کرد
-  return () => {
-    [mouseDownListener, mouseMoveListener, mouseUpListener].forEach((l) => {
-      if (l) window.google.maps.event.removeListener(l);
-    });
-  };
-}, [isDrawing]);
-
-
   const togglePolygonMode = () => {
     if (!drawingManager) return;
     const mode = window.google.maps.drawing.OverlayType.POLYGON;
@@ -559,8 +482,6 @@ useEffect(() => {
   };
 
   const onOverlayComplete = (e: google.maps.drawing.OverlayCompleteEvent) => {
-    shapes.forEach((s) => s.shape.setMap(null));
-  setShapes([]);
     const overlay = e.overlay;
     let shapeType: ShapeInfo["type"];
     if (e.type === window.google.maps.drawing.OverlayType.POLYGON) shapeType = "polygon";
@@ -697,15 +618,6 @@ useEffect(() => {
             موقعیت من
           </button> */}
           
-
-  <div className="absolute top-4 right-4 z-30">
-  <button
-    onClick={() => setIsDrawing((d) => !d)}
-    className="px-3 py-2 bg-white rounded shadow"
-  >
-    {isDrawing ? "Cancel Drawing" : "Draw"}
-  </button>
-</div>
         </div>
 
         <GoogleMap
@@ -768,7 +680,7 @@ useEffect(() => {
           )}
 
           {/* Drawing tools */}
-          {/* <DrawingManager
+          <DrawingManager
             onLoad={() => { }}
             onOverlayComplete={onOverlayComplete}
             options={{
@@ -794,22 +706,7 @@ useEffect(() => {
                 draggable: false,
               },
             }}
-          /> */}
-
-<DrawingManager
-  onLoad={(dm) => {
-    setDrawingManager(dm);
-    dm.setDrawingMode(null); // پیش‌فرض غیرفعال
-  }}
-  onOverlayComplete={onOverlayComplete}
-  options={{
-    drawingControl: false,      // نوار پیش‌فرض رو مخفی کن
-    polygonOptions: {           // فقط پلی‌گان با قابلیت ویرایش
-      editable: true,
-      draggable: false,
-    },
-  }}
-/>
+          />
         </GoogleMap>
 
         {/* Shape list / actions */}
