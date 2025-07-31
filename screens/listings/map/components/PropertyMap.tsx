@@ -530,22 +530,22 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
   }
 
   return (
-    <div className="flex fixed h-[calc(100vh-13.01rem)] z-[999] right-0 left-0 bottom-0 w-full" style={{borderTop: '1px solid #d1d5db'}}>
+    <div className="flex fixed h-[calc(100vh-10rem)] z-40 right-0 left-0 bottom-0 w-full" style={{borderTop: '1px solid #d1d5dbae'}}>
 
-      <div className="w-[45%] h-[calc(100vh-13.01rem)] bg-white overflow-auto scrollbar-sm space-y-2">
-        <div className="flex items-center justify-between p-2 bg-white rounded-xl shadow">
+      <div className="w-[45%] h-[calc(100vh-10rem)] bg-white overflow-auto scrollbar-sm space-y-2">
+        {/* <div className="flex items-center justify-between p-2 bg-white font-medium">
           <div className="flex gap-2">
             <button onClick={() => setShowHeatmap((s) => !s)} className="px-3 py-1 border rounded">
               {showHeatmap ? "Hide Heatmap" : "Heatmap Display"}
             </button>
             <button onClick={clearAllShapes} className="px-3 py-1 border rounded">
-            Erase shapes
+              Erase shapes
             </button>
           </div>
           <div className="text-sm text-gray-600 font-bold">
             {filteredProperties.length} The item is displayed
           </div>
-        </div>
+        </div> */}
         <div className="space-y-1 p-2 grid grid-cols-2 gap-2">
           {filteredProperties.map((property) => (
             <div
