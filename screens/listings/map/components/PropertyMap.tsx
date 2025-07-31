@@ -285,30 +285,30 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
 
     clustererRef.current?.clearMarkers();
 
-    const markers = filteredProperties
-      .filter((p) => p.latitude !== null && p.longitude !== null)
-      .map((p) => {
-        const isSelected = selectedPropertyId === p.id;
-        const size = isSelected ? 50 : 42;
-        const marker = new window.google.maps.Marker({
-          position: { lat: p.latitude!, lng: p.longitude! },
-          icon: {
-            url: "/images/marker.svg",
-            scaledSize: new window.google.maps.Size(size, size),
-          },
-        });
+    // const markers = filteredProperties
+    //   .filter((p) => p.latitude !== null && p.longitude !== null)
+    //   .map((p) => {
+    //     const isSelected = selectedPropertyId === p.id;
+    //     const size = isSelected ? 50 : 42;
+    //     const marker = new window.google.maps.Marker({
+    //       position: { lat: p.latitude!, lng: p.longitude! },
+    //       icon: {
+    //         url: "/images/marker.svg",
+    //         scaledSize: new window.google.maps.Size(size, size),
+    //       },
+    //     });
 
-        marker.addListener("click", (e: google.maps.MapMouseEvent) => {
-          setSelectedPropertyId(p.id);
+    //     marker.addListener("click", (e: google.maps.MapMouseEvent) => {
+    //       setSelectedPropertyId(p.id);
 
-        });
+    //     });
 
-        return marker;
-      });
+    //     return marker;
+    //   });
 
     const clusterer = new GCMarkerClusterer({
       map: mapRef.current,
-      markers,
+      // markers,
       // renderer: {
       //   render: ({ count, position }) => {
       //     return new window.google.maps.Marker({
