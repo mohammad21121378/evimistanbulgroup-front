@@ -269,6 +269,14 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
   const [clusterer, setClusterer] = useState<google.maps.MarkerClusterer | null>(null);
   const hoverTimerRef = useRef<number | null>(null);
 
+  useEffect(() => {
+    return () => {
+      if (hoverTimerRef.current) {
+        clearTimeout(hoverTimerRef.current);
+      }
+    };
+  }, []);
+
   const handleClustererLoad = useCallback(
     (c: google.maps.MarkerClusterer) => {
       setClusterer(c);
@@ -577,6 +585,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
                 hoverTimerRef.current = window.setTimeout(() => {
                   setSelectedPropertyId(property.id);
                   setZoom(15);
+                  hoverTimerRef.current = null;
                 }, 400);
               }}
 
