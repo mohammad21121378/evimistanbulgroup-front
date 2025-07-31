@@ -192,7 +192,7 @@ declare global {
 }
 
 const DEFAULT_CENTER = { lat: 41.0082, lng: 28.9784 };
-const DEFAULT_ZOOM = 4;
+const DEFAULT_ZOOM = 2;
 
 type Props = {
   loadingData?: boolean;
@@ -256,24 +256,15 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
   });
 
   const mapRef = useRef<google.maps.Map | null>(null);
-  const clustererRef = useRef<GCMarkerClusterer | null>(null);
-
   const [selectedPropertyId, setSelectedPropertyId] = useState<number | null>(null);
   const [shapes, setShapes] = useState<ShapeInfo[]>([]);
   const [activeShapeId, setActiveShapeId] = useState<string | null>(null);
   const [showHeatmap, setShowHeatmap] = useState(false);
   const [searchBox, setSearchBox] = useState<google.maps.places.Autocomplete | null>(null);
   const [filteredProperties, setFilteredProperties] = useState<PropertyRawType[]>(properties);
-  const [clusterer, setClusterer] = useState<google.maps.MarkerClusterer | null>(null);
-  const [drawingManager, setDrawingManager] = useState<google.maps.drawing.DrawingManager | null>(null);
+  const clustererRef = useRef<GCMarkerClusterer | null>(null);
 
-  const togglePolygonMode = () => {
-    if (!drawingManager) return;
-    const mode = window.google.maps.drawing.OverlayType.POLYGON;
-    drawingManager.setDrawingMode(
-      drawingManager.getDrawingMode() === mode ? null : mode
-    );
-  };
+  const [clusterer, setClusterer] = useState<google.maps.MarkerClusterer | null>(null);
 
   const handleClustererLoad = useCallback(
     (c: google.maps.MarkerClusterer) => {
@@ -617,7 +608,6 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
           >
             موقعیت من
           </button> */}
-          
         </div>
 
         <GoogleMap
