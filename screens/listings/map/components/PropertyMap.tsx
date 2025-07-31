@@ -179,6 +179,7 @@ import {
 } from "@react-google-maps/api";
 
 
+
 import { Loader } from "lucide-react";
 import { PropertyRawType } from "@/types/Property";
 import PropertyListing from "@/components/property-listing";
@@ -209,6 +210,23 @@ type ShapeInfo = {
   type: "polygon" | "circle" | "rectangle";
   id: string;
 };
+
+function makeClusterSvg(count: number) {
+  const baseCircle = `
+    <circle cx="19" cy="19" r="19" fill="#fff"/>
+    <circle cx="19" cy="19" r="17" fill="#169AAC"/>
+  `;
+  const label = `
+    <text x="50%" y="50%" dy=".35em" text-anchor="middle" font-size="12" font-family="Arial" fill="white" font-weight="bold">
+      ${count}
+    </text>
+  `;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="none">
+    ${baseCircle}
+    ${label}
+  </svg>`;
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+}
 
 function pointInShape(
   latLng: google.maps.LatLngLiteral,
@@ -250,6 +268,7 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
   const [showHeatmap, setShowHeatmap] = useState(false);
   const [searchBox, setSearchBox] = useState<google.maps.places.Autocomplete | null>(null);
   const [filteredProperties, setFilteredProperties] = useState<PropertyRawType[]>(properties);
+  const clustererRef = useRef<GCMarkerClusterer | null>(null);
 
   const [clusterer, setClusterer] = useState<google.maps.MarkerClusterer | null>(null);
 
@@ -265,7 +284,68 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties }) => {
     return new window.google.maps.Size(size, size);
   };
 
+useEffect(() => {
+  if (!mapRef.current || !window.google) return;
 
+  // پاک کردن cluster قبلی
+  clustererRef.current?.clearMarkers();
+
+  // ساخت markerهای خام (بدون JSX)
+  const markers = filteredProperties
+    .filter((p) => p.latitude !== null && p.longitude !== null)
+    .map((p) => {
+      const isSelected = selectedPropertyId === p.id;
+      const size = isSelected ? 50 : 42;
+      const marker = new window.google.maps.Marker({
+        position: { lat: p.latitude!, lng: p.longitude! },
+        icon: {
+          url: "/images/marker.svg",
+          scaledSize: new window.google.maps.Size(size, size),
+        },
+      });
+
+      marker.addListener("click", (e: google.maps.MapMouseEvent) => {
+        setSelectedPropertyId(p.id);
+        // جلوگیری از پروپاگیشن اگر لازم بود
+      });
+
+      return marker;
+    });
+
+  // ساخت clusterer با renderer سفارشی
+  const clusterer = new GCMarkerClusterer({
+    map: mapRef.current,
+    markers,
+    renderer: {
+      render: ({ count, position }) => {
+        return new window.google.maps.Marker({
+          position,
+          icon: {
+            url: makeClusterSvg(count),
+            scaledSize: new window.google.maps.Size(38, 38),
+          },
+          // عدد داخل SVG هست، پس label نذار
+        });
+      },
+    },
+  });
+
+  clustererRef.current = clusterer as any;
+
+  // cleanup: وقتی اثر دوباره اجرا شد یا کامپوننت آن‌مونت می‌شه
+  return () => {
+    clusterer.clearMarkers();
+  };
+}, [filteredProperties, selectedPropertyId]);
+
+useEffect(() => {
+  if (!selectedProperty || !mapRef.current) return;
+  const existingMarker = clustererRef.current
+    ? // پیدا کردن مارکری که position و id مناسبی داره
+      null
+    : null;
+  // به‌جای این، بهتره نگهداری نگاشت property.id -> marker داشته باشی
+}, [selectedPropertyId]);
 
   // Compute initial center
   const firstValidProperty = useMemo(
