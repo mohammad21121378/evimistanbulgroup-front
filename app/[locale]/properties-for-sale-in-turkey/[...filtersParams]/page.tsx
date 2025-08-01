@@ -125,32 +125,19 @@ type SearchParams = {
 };
 
 type Props = {
-  params: { locale: string };
+  params: { locale: string, filtersParam: string[] };
   searchParams: SearchParams;
-  filtersParam: string[]
+  
 };
 
 export const generateMetadata = createGenerateMetadata("properties-for-sale-in-turkey");
 
 
-export default async function Listings({ params, searchParams, filtersParam }: Props) {
+export default async function Listings({ params, searchParams }: Props) {
   const page = parseInt(searchParams.page || "1", 10);
-  const { locale } = params;
-  const filters: Record<string, string[]> = {};
+  const { locale, filtersParam } = params;
 
-  if (searchParams.type && searchParams.type!=='all') {
-    filters.propertyTypesSelected = [searchParams.type];
-  }
-
-  if (searchParams.feature && searchParams.feature!=='all') {
-    filters.featureSelected = [searchParams.feature];
-  }
-
-  if (searchParams.location && searchParams.location!=='all') {
-    filters.locationsSelected = [searchParams.location];
-  }
-
-  const listings = await fetchProperties(12, page, filters, locale) as ListingsType;
+  const listings = await fetchProperties(12, page, filtersParam, locale) as ListingsType;
 
   return <ListingsPage listings={listings} />;
 }
