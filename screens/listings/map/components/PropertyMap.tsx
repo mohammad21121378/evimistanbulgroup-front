@@ -185,6 +185,7 @@ import { MarkerClusterer as GCMarkerClusterer } from "@googlemaps/markerclustere
 import { onChangeType } from "../../types";
 import { FaChevronLeft } from "react-icons/fa6";
 import EmptyContentWithLottie from "@/components/ui/EmptyContentWithLottie";
+import PropertyLoader from "@/components/loaders/PropertyLoader";
 
 declare global {
   namespace google.maps {
@@ -528,19 +529,19 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
     borderRadius: 0,
   };
 
-  if (!isLoaded || loadingData) {
-    return (
-      <div
-        className="flex fixed h-[calc(100vh-10.2rem)] bottom-0 left-0 right-0 items-center justify-center bg-slate-100 rounded-2xl overflow-hidden"
-      >
-        <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-slate-50 to-slate-400" />
-        <div className="relative z-10 flex items-center gap-2.5">
-          <Loader className="animate-spin" />
-          <p className="text-lg text-gray-600 font-medium">Loading map...</p>
-        </div>
-      </div>
-    );
-  }
+  // if (!isLoaded || loadingData) {
+  //   return (
+  //     <div
+  //       className="flex fixed h-[calc(100vh-10.2rem)] bottom-0 left-0 right-0 items-center justify-center bg-slate-100 rounded-2xl overflow-hidden"
+  //     >
+  //       <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-slate-50 to-slate-400" />
+  //       <div className="relative z-10 flex items-center gap-2.5">
+  //         <Loader className="animate-spin" />
+  //         <p className="text-lg text-gray-600 font-medium">Loading map...</p>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="flex fixed h-[calc(100vh-10.2rem)] z-40 right-0 left-0 bottom-0 w-full" style={{ borderTop: '1px solid rgb(216 216 216 / 46%)' }}>
@@ -574,185 +575,204 @@ const PropertyMap: React.FC<Props> = ({ loadingData, properties, onChangeType })
 
         <hr className="bg-gray-200" />
 
-        <div className="space-y-1 p-2 grid grid-cols-2 gap-2 overflow-auto scrollbar-sm max-h-[calc(100vh-14.5rem)]">
+        <div className="space-y-1 p-2 grid grid-cols-2 gap-3 overflow-auto scrollbar-sm max-h-[calc(100vh-14.5rem)]">
           {
-            filteredProperties.length ?
-              filteredProperties.map((property) => (
-                <div
-                  key={property.id}
-
-                  onMouseEnter={() => {
-                    if (hoverTimerRef.current) {
-                      clearTimeout(hoverTimerRef.current);
-                    }
-                    hoverTimerRef.current = window.setTimeout(() => {
-                      setSelectedPropertyId(property.id);
-                      if (mapRef.current) {
-                        mapRef.current?.setZoom(15);
-                      } else {
-                        setZoom(15);
-
-                      }
-                      hoverTimerRef.current = null;
-                    }, 400);
-                  }}
-
-                  onMouseLeave={() => {
-                    if (hoverTimerRef.current) {
-                      clearTimeout(hoverTimerRef.current);
-                      hoverTimerRef.current = null;
-                    }
-                    setSelectedPropertyId(null);
-                    setZoom(15);
-                  }}
-
-                  className={` pb-1.5 p-1 bg-white rounded-xl shadow flex gap-2 cursor-pointer ${selectedPropertyId === property.id ? "ring-2 ring-orange-500" : "cursor-progress"
-                    }`}
-                  onClick={() => { setSelectedPropertyId(property.id); setZoom(15) }}
-                >
-                  <PropertyListing imgLinkClassName={selectedPropertyId === property.id ? "" : "cursor-progress"} wrapperClassName="!w-full !h-[22.1rem]" size="small" scale={.68} item={property} />
-                </div>
-              ))
+            !isLoaded || loadingData ?
+              <PropertyLoader />
               :
-              <div className="sm:col-span-2">
-                <EmptyContentWithLottie />
-              </div>
+              filteredProperties.length ?
+                filteredProperties.map((property) => (
+                  <div
+                    key={property.id}
+
+                    onMouseEnter={() => {
+                      if (hoverTimerRef.current) {
+                        clearTimeout(hoverTimerRef.current);
+                      }
+                      hoverTimerRef.current = window.setTimeout(() => {
+                        setSelectedPropertyId(property.id);
+                        if (mapRef.current) {
+                          mapRef.current?.setZoom(15);
+                        } else {
+                          setZoom(15);
+
+                        }
+                        hoverTimerRef.current = null;
+                      }, 400);
+                    }}
+
+                    onMouseLeave={() => {
+                      if (hoverTimerRef.current) {
+                        clearTimeout(hoverTimerRef.current);
+                        hoverTimerRef.current = null;
+                      }
+                      setSelectedPropertyId(null);
+                      setZoom(15);
+                    }}
+
+                    className={` pb-1.5 p-1 bg-white rounded-xl shadow flex gap-2 cursor-pointer ${selectedPropertyId === property.id ? "ring-2 ring-orange-500" : "cursor-progress"
+                      }`}
+                    onClick={() => { setSelectedPropertyId(property.id); setZoom(15) }}
+                  >
+                    <PropertyListing imgLinkClassName={selectedPropertyId === property.id ? "" : "cursor-progress"} wrapperClassName="!w-full !h-[22.1rem]" size="small" scale={.68} item={property} />
+                  </div>
+                ))
+                :
+                <div className="sm:col-span-2">
+                  <EmptyContentWithLottie />
+                </div>
           }
         </div>
       </div>
 
       <div className="w-[55%] relative">
 
-        <div className="absolute top-20 left-4 z-20 flex gap-2">
-          {/* <Autocomplete onLoad={(auto) => setSearchBox(auto)} onPlaceChanged={onPlaceChanged}>
-            <input
-              type="text"
-              placeholder="Ssearch location..."
-              className="w-60 px-3 py-2 rounded shadow border"
-            />
-          </Autocomplete>
-          <button
-            onClick={() => {
-              if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition((pos) => {
-                  mapRef.current?.panTo({ lat: pos.coords.latitude, lng: pos.coords.longitude });
-                  mapRef.current?.setZoom(14);
-                });
-              }
-            }}
-            className="px-3 py-2 bg-white rounded shadow"
-          >
-            موقعیت من
-          </button> */}
-        </div>
-
-        <GoogleMap
-          onLoad={onMapLoad}
-          mapContainerStyle={containerStyle}
-          center={center}
-          zoom={zoom}
-          onClick={handleMapClick}
-          options={{ fullscreenControl: true, streetViewControl: true, clickableIcons: true }}
-        >
-
-          <MarkerClusterer>
-            {(clusterer) => (
-              <>
-                {filteredProperties.map((property) => {
-                  if (property.latitude == null || property.longitude == null) return null;
-                  const isSelected = selectedPropertyId === property.id;
-                  const svgSize = isSelected ? 50 : 42;
-                  return (
-                    <MarkerF
-                      key={property.id}
-                      position={{ lat: property.latitude, lng: property.longitude }}
-                      clusterer={clusterer}
-                      icon={{
-                        url: "/images/marker.svg",
-                        scaledSize: getScaledSize(svgSize),
-                      }}
-                      onClick={(e) => handleMarkerClick(property.id, e)}
-                    >
-                      {isSelected && (
-                        <InfoWindowF onCloseClick={() => setSelectedPropertyId(null)}>
-                          <div className="max-w-[17.5rem] md:max-h-[23rem] max-h-[25.5rem]">
-                            <PropertyListing scale={0.53} size="small" item={property} />
-                          </div>
-                        </InfoWindowF>
-                      )}
-                    </MarkerF>
-                  );
-                })}
-              </>
-            )}
-          </MarkerClusterer>
-
-
-          {/* Heatmap */}
-          {showHeatmap && filteredProperties.length > 0 && (
-            <HeatmapLayerF
-              data={filteredProperties
-                .filter((p) => p.latitude !== null && p.longitude !== null)
-                .map(
-                  (p) => new google.maps.LatLng(p.latitude as number, p.longitude as number)
-                )}
-              options={{
-                radius: 30,
-                opacity: 0.7,
-              }}
-            />
-          )}
-
-          {/* Drawing tools */}
-          <DrawingManager
-            onLoad={() => { }}
-            onOverlayComplete={onOverlayComplete}
-            options={{
-              drawingControl: true,
-              drawingControlOptions: {
-                position: google.maps.ControlPosition.TOP_CENTER,
-                drawingModes: [
-                  google.maps.drawing.OverlayType.CIRCLE,
-                ],
-              },
-              polygonOptions: {
-                editable: true,
-                draggable: false,
-              },
-              rectangleOptions: {
-                editable: true,
-                draggable: false,
-              },
-              circleOptions: {
-                editable: true,
-                draggable: false,
-              },
-            }}
-          />
-        </GoogleMap>
-
-        {/* Shape list / actions */}
-        {shapes.length > 0 && (
-          <div className="absolute bottom-4 left-4 z-30 bg-white p-3 rounded-xl shadow flex flex-col gap-2 max-w-[300px]">
-            <div className="font-semibold">Active shapes:</div>
-            {shapes.map((s) => (
-              <div
-                key={s.id}
-                className="flex items-center justify-between bg-slate-50 px-2 py-1 rounded"
-              >
-                <div className="text-sm">{s.type}</div>
-                <div className="flex gap-1">
-                  <button
-                    onClick={() => removeShape(s.id)}
-                    className="text-red-500 text-xs px-2 py-1 border rounded"
-                  >
-                    remove
-                  </button>
-                </div>
+        {
+          !isLoaded || loadingData ?
+            <div
+              className="flex absolute top-0 bottom-0 left-0 right-0 items-center justify-center bg-slate-100 rounded-2xl overflow-hidden"
+            >
+              <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-slate-50 to-slate-400" />
+              <div className="relative z-10 flex items-center gap-2.5">
+                <Loader className="animate-spin" />
+                <p className="text-lg text-gray-600 font-medium">Loading map...</p>
               </div>
-            ))}
-          </div>
-        )}
+            </div>
+            :
+            <>
+              <div className="absolute top-20 left-4 z-20 flex gap-2">
+                {/* <Autocomplete onLoad={(auto) => setSearchBox(auto)} onPlaceChanged={onPlaceChanged}>
+              <input
+                type="text"
+                placeholder="Ssearch location..."
+                className="w-60 px-3 py-2 rounded shadow border"
+              />
+            </Autocomplete>
+            <button
+              onClick={() => {
+                if (navigator.geolocation) {
+                  navigator.geolocation.getCurrentPosition((pos) => {
+                    mapRef.current?.panTo({ lat: pos.coords.latitude, lng: pos.coords.longitude });
+                    mapRef.current?.setZoom(14);
+                  });
+                }
+              }}
+              className="px-3 py-2 bg-white rounded shadow"
+            >
+              موقعیت من
+            </button> */}
+              </div>
+
+              <GoogleMap
+                onLoad={onMapLoad}
+                mapContainerStyle={containerStyle}
+                center={center}
+                zoom={zoom}
+                onClick={handleMapClick}
+                options={{ fullscreenControl: true, streetViewControl: true, clickableIcons: true }}
+              >
+
+                <MarkerClusterer>
+                  {(clusterer) => (
+                    <>
+                      {filteredProperties.map((property) => {
+                        if (property.latitude == null || property.longitude == null) return null;
+                        const isSelected = selectedPropertyId === property.id;
+                        const svgSize = isSelected ? 50 : 42;
+                        return (
+                          <MarkerF
+                            key={property.id}
+                            position={{ lat: property.latitude, lng: property.longitude }}
+                            clusterer={clusterer}
+                            icon={{
+                              url: "/images/marker.svg",
+                              scaledSize: getScaledSize(svgSize),
+                            }}
+                            onClick={(e) => handleMarkerClick(property.id, e)}
+                          >
+                            {isSelected && (
+                              <InfoWindowF onCloseClick={() => setSelectedPropertyId(null)}>
+                                <div className="max-w-[17.5rem] md:max-h-[23rem] max-h-[25.5rem]">
+                                  <PropertyListing scale={0.53} size="small" item={property} />
+                                </div>
+                              </InfoWindowF>
+                            )}
+                          </MarkerF>
+                        );
+                      })}
+                    </>
+                  )}
+                </MarkerClusterer>
+
+
+                {/* Heatmap */}
+                {showHeatmap && filteredProperties.length > 0 && (
+                  <HeatmapLayerF
+                    data={filteredProperties
+                      .filter((p) => p.latitude !== null && p.longitude !== null)
+                      .map(
+                        (p) => new google.maps.LatLng(p.latitude as number, p.longitude as number)
+                      )}
+                    options={{
+                      radius: 30,
+                      opacity: 0.7,
+                    }}
+                  />
+                )}
+
+                {/* Drawing tools */}
+                <DrawingManager
+                  onLoad={() => { }}
+                  onOverlayComplete={onOverlayComplete}
+                  options={{
+                    drawingControl: true,
+                    drawingControlOptions: {
+                      position: google.maps.ControlPosition.TOP_CENTER,
+                      drawingModes: [
+                        google.maps.drawing.OverlayType.CIRCLE,
+                      ],
+                    },
+                    polygonOptions: {
+                      editable: true,
+                      draggable: false,
+                    },
+                    rectangleOptions: {
+                      editable: true,
+                      draggable: false,
+                    },
+                    circleOptions: {
+                      editable: true,
+                      draggable: false,
+                    },
+                  }}
+                />
+              </GoogleMap>
+
+              {/* Shape list / actions */}
+              {shapes.length > 0 && (
+                <div className="absolute bottom-4 left-4 z-30 bg-white p-3 rounded-xl shadow flex flex-col gap-2 max-w-[300px]">
+                  <div className="font-semibold">Active shapes:</div>
+                  {shapes.map((s) => (
+                    <div
+                      key={s.id}
+                      className="flex items-center justify-between bg-slate-50 px-2 py-1 rounded"
+                    >
+                      <div className="text-sm">{s.type}</div>
+                      <div className="flex gap-1">
+                        <button
+                          onClick={() => removeShape(s.id)}
+                          className="text-red-500 text-xs px-2 py-1 border rounded"
+                        >
+                          remove
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </>
+        }
+
       </div>
     </div>
   );

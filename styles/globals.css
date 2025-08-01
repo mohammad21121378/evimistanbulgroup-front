@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
+html,
+body {
   overflow-x: clip;
   scroll-behavior: smooth;
 }
@@ -36,7 +37,7 @@ html {
   }
 }
 
-.border-r{
+.border-r {
   border-right-width: 1px solid #E2E8F0 !important;
 }
 
@@ -55,48 +56,54 @@ html {
 
 @keyframes FadeInAnimate {
   0% {
-      opacity: 0;
+    opacity: 0;
   }
 
   100% {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
 .selected-flag .flag .arrow {
-  display: none !important; /* حذف آیکن پیش‌فرض */
+  display: none !important;
+  /* حذف آیکن پیش‌فرض */
 }
+
 .flag-dropdown .search {
   width: 100%;
   display: flex;
   align-items: center;
   padding-right: 10px;
 }
+
 .flag-dropdown .search .search-emoji {
   display: none;
 }
+
 .flag-dropdown .search .search-box {
   width: 100%;
   padding: 10px 8px !important;
   border-radius: 8px !important;
   margin-left: 0 !important;
 }
+
 .flag-dropdown .search .search-box:focus {
   border-color: #3b82f6 !important;
 }
+
 .flag-dropdown .search .search-box::placeholder {
   text-transform: capitalize !important;
 }
 
-.react-tel-input .selected-flag{
+.react-tel-input .selected-flag {
   position: static !important;
 }
 
 .react-tel-input .flag-dropdown,
 .react-tel-input .flag-dropdown:hover,
 .react-tel-input .flag-dropdown:focus,
-.react-tel-input .selected-flag:hover, 
-.react-tel-input .selected-flag:focus{
+.react-tel-input .selected-flag:hover,
+.react-tel-input .selected-flag:focus {
   background-color: #F1F5F9 !important;
   border-radius: 16px 0 0 16px !important;
 }
@@ -107,7 +114,8 @@ html {
 .bg-white-phone-input .react-tel-input .flag-dropdown:focus,
 .bg-white-phone-input .react-tel-input .selected-flag:hover,
 .bg-white-phone-input .react-tel-input .selected-flag:focus {
-  background-color: white !important; /* یا چیزی که باید باشه در حالت سفید */
+  background-color: white !important;
+  /* یا چیزی که باید باشه در حالت سفید */
 }
 
 .flag-dropdown {
@@ -115,34 +123,30 @@ html {
 
 }
 
-.react-tel-input .form-control{
+.react-tel-input .form-control {
   border: 0 !important;
   border-radius: 16px !important;
 }
 
-.selected-flag .flag{
+.selected-flag .flag {
   transform: scale(1.1) !important;
   margin-left: -2px;
   margin-top: -1px;
 }
 
 .bg-gradient-custom {
-  background: linear-gradient(
-        90deg,
-        var(--orange-600) 0%,
-        var(--orange-500) 100%
-    );
+  background: linear-gradient(90deg,
+      var(--orange-600) 0%,
+      var(--orange-500) 100%);
 }
 
 .bg-gradient-custom:hover {
-  background: linear-gradient(
-        90deg,
-        var(--orange-500) 0%,
-        var(--orange-600) 100%
-    );
+  background: linear-gradient(90deg,
+      var(--orange-500) 0%,
+      var(--orange-600) 100%);
 }
 
-.has-iframe iframe{
+.has-iframe iframe {
   width: 100%;
   min-height: 30rem;
   border-radius: 8px;
@@ -154,9 +158,11 @@ html {
     transform: translateX(0);
     opacity: 0;
   }
+
   50% {
     transform: translateX(8px);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -168,9 +174,11 @@ html {
     transform: translateX(0);
     opacity: 0;
   }
+
   50% {
     transform: translateX(-8px);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -198,18 +206,22 @@ html {
     opacity: 1;
     transform: scale(1) translateY(0);
   }
+
   5% {
     opacity: 0.6;
     transform: scale(0.96) translateY(5px);
   }
+
   10% {
     opacity: 0.6;
     transform: scale(0.96) translateY(5px);
   }
+
   15% {
     opacity: 1;
     transform: scale(1) translateY(0);
   }
+
   100% {
     opacity: 1;
     transform: scale(1) translateY(0);
@@ -225,59 +237,127 @@ html {
 
 
 @keyframes bounce {
-  0%, 100% {
-      opacity: 1;
-      transform: translateY(-8%);
-      animation-timing-function: cubic-bezier(0.8,0,1,1);
-  }
-  50% {
-      transform: none;
-      opacity: .5;
 
-      animation-timing-function: cubic-bezier(0,0,0.2,1);
+  0%,
+  100% {
+    opacity: 1;
+    transform: translateY(-8%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+
+  50% {
+    transform: none;
+    opacity: .5;
+
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
+
 .animate-bounce-sm {
   animation: bounce 2.5s infinite;
 }
 
-@keyframes pulse {
+@keyframes pulseCustom {
   0% {
     transform: scale(1);
     opacity: .92;
   }
+
   50% {
     transform: scale(1.08);
     opacity: 1;
   }
+
   100% {
     transform: scale(1);
     opacity: .92;
   }
 }
+
 .animate-pulse-custom {
-  animation: pulse 2.5s infinite;
+  animation: pulseCustom 2.5s infinite;
   will-change: transform;
   transform-origin: center;
+}
+
+@keyframes pulseLegend {
+  0% {
+    opacity: .075;
+  }
+
+  50% {
+    opacity: .35;
+  }
+
+  100% {
+    opacity: .075;
+  }
+}
+
+.animate-pulse-loader {
+  animation: pulseLegend 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 @keyframes fade {
   0% {
     opacity: .5;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     opacity: .5;
   }
 }
+
 .animate-fade-custom {
   animation: fade 1.2s ease-in-out infinite;
 }
 
 
-.no-scroll, .no-scroll html, .no-scroll body {
+.no-scroll,
+.no-scroll html,
+.no-scroll body {
   overflow: hidden !important;
   scrollbar-gutter: stabel;
+}
+
+@keyframes placeHolderAnimationComposited {
+  0% {
+    transform: translateX(-468px);
+  }
+
+  100% {
+    transform: translateX(468px);
+  }
+}
+
+.animate-shimmer{
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-shimmer::after {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderAnimationComposited;
+  animation-timing-function: linear;
+  min-width: 468px;
+  content: "";
+  background: linear-gradient(
+  to right,
+  #f1f5f9 8%,
+  rgba(148, 163, 184, 0.18) 18%,  /* slate-400 با شفافیت */
+  #f1f5f9 33%
+) 0% 0% / 936px 104px #f1f5f9;
+
+
 }
