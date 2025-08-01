@@ -53,10 +53,9 @@ export default function ToggleButton({ toggleChat, isOpen }: Props) {
                             text-white 
                             animate-pulse-custom
                             flex items-center justify-center shadow-xl hover:shadow-xl 
-                            fixed left-8 bottom-10 
+                            fixed left-6 bottom-8 
                             z-50 font-bold gap-1
                             pb-1
-                            shadow
                         "
                     >
                         <div>

@@ -23,6 +23,8 @@
 //   }[];
 // };
 
+import { SeoFilters } from "@/utils/seoFilters";
+
 export type PropertyRawType = {
   id: number;
   title: string;
@@ -95,5 +97,5 @@ export type ListingsType = {
   }
   special_features: string[]
   type_of_properties: string[]
-  locations: string[]
+  locations: string[];
 }

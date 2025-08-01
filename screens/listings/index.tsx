@@ -11,15 +11,23 @@ import Hero from "./hero";
 import MapPage from "./map";
 import { useFilter } from "./hooks/useFilter";
 import { useChangeTypeListings } from "./hooks/useChangeTypeListings";
+import { SeoFilters } from "@/utils/seoFilters";
 
-export default function ListingsPage({ listings }: { listings: ListingsType }) {
+
+type Props = { 
+  listings: ListingsType;
+  initialSeoFilters?: SeoFilters;
+
+}
+
+export default function ListingsPage({ listings, initialSeoFilters }: Props) {
 
   const {
     type,
     onChange
   } = useChangeTypeListings();
 
-  const filtersState = useFilter({ onFilterByChange: type === 'map', listings, typeShowPage: type });
+  const filtersState = useFilter({ onFilterByChange: type === 'map', listings, typeShowPage: type, initialSeoFilters });
 
   return (
 

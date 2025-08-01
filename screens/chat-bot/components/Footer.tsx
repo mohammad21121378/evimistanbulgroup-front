@@ -70,7 +70,7 @@ export default function Footer({ sendMessage, input, setInput, isTyping, activel
                                     })}>
                                 <GiBroom className={classNames(
                                     "size-7 mx-auto",
-                                    { "animate-pulse-custom": isTyping },
+                                    { "animate-pulse": isTyping },
                                 )} />
                             </motion.button>
                         </Tippy>
@@ -97,7 +97,7 @@ export default function Footer({ sendMessage, input, setInput, isTyping, activel
                         <LucideSend className={classNames(
                             "mx-auto w-7",
                             {
-                                "animate-pulse-custom": isTyping,
+                                "animate-pulse": isTyping,
 
                             },
                         )} />

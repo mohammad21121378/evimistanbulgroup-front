@@ -13,5 +13,6 @@ export const initialFilterState = {
     bedroomsSelected: [] as string[],
     bathroomsSelected: [] as string[],
     sortOption: "newest",
-    properties: Listings.flatMap((listingCategory) => listingCategory.items)
+    properties: Listings.flatMap((listingCategory) => listingCategory.items),
+    currentPage: 1
 };

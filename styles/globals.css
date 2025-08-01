@@ -260,22 +260,22 @@ html {
 @keyframes pulseCustom {
   0% {
     transform: scale(1);
-    opacity: .92;
+    opacity: .85;
   }
 
   50% {
-    transform: scale(1.08);
+    transform: scale(1.05);
     opacity: 1;
   }
 
   100% {
     transform: scale(1);
-    opacity: .92;
+    opacity: .85;
   }
 }
 
 .animate-pulse-custom {
-  animation: pulseCustom 2.5s infinite;
+  animation: pulseCustom 3s infinite;
   will-change: transform;
   transform-origin: center;
 }

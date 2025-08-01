@@ -8,17 +8,14 @@ export function useChangeTypeListings() {
     const onChange = (type: TypeProp) => {
         setType(type);
 
-        if (type === 'map') {
-            document.documentElement.classList.add('no-scroll');
-            document.body.classList.add('no-scroll');
+        if (type === 'map') {            
+            
             window.scrollTo({
                 top: 0,
                 behavior: "smooth",
             });
-
+            
         } else {
-            document.documentElement.classList.remove('no-scroll');
-            document.body.classList.remove('no-scroll');
             setTimeout(() => {
                 window.scrollTo({
                     top: 70,
@@ -26,12 +23,16 @@ export function useChangeTypeListings() {
                 });
             }, 650);
         }
-
-
+        
+        
     }
-
+    
     return {
         type,
         onChange
     };
 }
+// document.documentElement.classList.add('no-scroll');
+// document.body.classList.add('no-scroll');
+// document.documentElement.classList.remove('no-scroll');
+// document.body.classList.remove('no-scroll');
