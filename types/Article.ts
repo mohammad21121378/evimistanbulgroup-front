@@ -14,6 +14,14 @@ export interface Article {
     content: string;
     banner_1: string | null;
     banner_2: string | null;
+    banner_1_media: {
+        alt: string | null;
+        url: string | null
+    };
+    banner_2_media: {
+        alt: string | null;
+        url: string | null
+    };
     excerpt: string;
     resource?: string;
     url: string;
