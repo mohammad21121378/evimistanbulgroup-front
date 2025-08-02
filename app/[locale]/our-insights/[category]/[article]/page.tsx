@@ -21,7 +21,7 @@ interface ArticleResponse {
 export default async function Page({ params }: Props) {
   const { locale,article } = params;
   const articleData = await fetchArticle(article, locale) as ArticleResponse;
-  if(!articleData.article)  return notFound()
+  if(!articleData?.article)  return notFound()
 
   const { article : articleRaw } = articleData;
 

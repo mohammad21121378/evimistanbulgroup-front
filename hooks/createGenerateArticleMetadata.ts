@@ -10,8 +10,9 @@ type GenerateMetadataProps = {
 export function createGenerateArticleMetadata() {
     return async function generateMetadata({ params }: GenerateMetadataProps) {
         const { locale,article } = params;
-        const {article:articleData} = await fetchArticle(article, locale);
-        if(articleData){
+        const articleDataObj = await fetchArticle(article, locale);
+        if(articleDataObj?.article){
+            const  articleData=articleDataObj.article
             const meta: PageMeta = {
                 meta_title: articleData?.meta_title || "",
                 meta_description: articleData?.meta_description || "",
