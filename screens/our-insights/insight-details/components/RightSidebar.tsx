@@ -34,8 +34,46 @@ export default function RightSidebar({ article }: Props) {
                     inline
                 />
 
-                {article.banner_1 &&<div className={`${classes.rightSideBarImage} w-full rounded-md `} dangerouslySetInnerHTML={{__html:article.banner_1}}></div>}
-                {article.banner_2 &&<div className={`${classes.rightSideBarImage} w-full rounded-md `} dangerouslySetInnerHTML={{__html:article.banner_2}}></div>}
+                {article.banner_1_media?.url && (
+                    <div className={`${classes.rightSideBarImage} w-full rounded-md`}>
+                        {article.banner_1 ? (
+                            <a href={article.banner_1} target="_blank" rel="noopener noreferrer">
+                                <img
+                                    src={article.banner_1_media.url}
+                                    alt={article.banner_1_media.alt}
+                                    className="w-full rounded-md"
+                                />
+                            </a>
+                        ) : (
+                            <img
+                                src={article.banner_1_media.url}
+                                alt={article.banner_1_media.alt}
+                                className="w-full rounded-md"
+                            />
+                        )}
+                    </div>
+                )}
+
+                {article.banner_2_media?.url && (
+                    <div className={`${classes.rightSideBarImage} w-full rounded-md`}>
+                        {article.banner_2 ? (
+                            <a href={article.banner_2} target="_blank" rel="noopener noreferrer">
+                                <img
+                                    src={article.banner_2_media.url}
+                                    alt={article.banner_2_media.alt}
+                                    className="w-full rounded-md"
+                                />
+                            </a>
+                        ) : (
+                            <img
+                                src={article.banner_2_media.url}
+                                alt={article.banner_2_media.alt}
+                                className="w-full rounded-md"
+                            />
+                        )}
+                    </div>
+                )}
+
             </div>
         </div>
     );
