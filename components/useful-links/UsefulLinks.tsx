@@ -32,7 +32,7 @@ export default function UsefulLinks({
           </Link>
         ))}
       </div>}
-        {text && <div className="font-extralight  pr-1.5 transition-all duration-300 text-base"
+        {text && <div className="font-extralight  pr-1.5 transition-all duration-300 text-base has-a"
                       dangerouslySetInnerHTML={{__html:text}}></div>}
     </div>
   );

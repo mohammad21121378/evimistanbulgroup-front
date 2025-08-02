@@ -11,7 +11,7 @@ export default function SvgForBg({ className }: { className?: string }) {
   }, []);
 
   return (
-    <div className={classNames(className, 'opacity-10 xl:w-[28rem] w-[20rem]')}>
+    <div className={classNames(className, 'opacity-10 xl:w-[28rem] w-[22rem]')}>
       <Lottie
         lottieRef={lottieRef}
         animationData={error}

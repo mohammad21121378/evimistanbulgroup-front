@@ -389,3 +389,8 @@ html {
   margin-bottom: 8px;
   font-weight: bold;
 }
+
+.has-a:hover{
+  color: var(--orange-600);
+  transition: .3s;
+}

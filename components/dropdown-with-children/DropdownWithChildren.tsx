@@ -80,8 +80,8 @@ export default function DropdownWithChildren({
             {"  hover:text-orange-500": !open}
             )} onClick={onToggle}>
 
-                <div className="flex items-center gap-2  font-semibold text-base truncate">
-                    <div>
+                <div className="flex items-center gap-1.5  font-semibold text-base truncate">
+                    <div className="text-lg min-w-6 flex justify-center">
                         {svg}
                     </div>
 

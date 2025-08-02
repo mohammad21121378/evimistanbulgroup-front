@@ -52,7 +52,7 @@ const GuidesAndInsightsListing: FC<GuidesAndInsightsListingProps> = ({
                     <span>{timeToRead} min read</span>
                 </div>
                 <Link href={`/our-insights/${CatSlug}/${slug}`} className="text-xl font-bold hover:text-orange-600">{title}</Link>
-                <div className="text-sm text-gray-500 mb-2" dangerouslySetInnerHTML={{__html:excerpt}}></div>
+                <div className="text-sm text-gray-500 mb-2 line-clamp-2" dangerouslySetInnerHTML={{__html:excerpt}}></div>
 
                 <div className="mt-auto flex items-center justify-between">
                     <Link href={`/our-insights/${CatSlug}/${slug}`} className={cn("text-sm text-black font-medium rounded-md pt-2 pb-2.5 px-4 flex items-center gap-1 border", styles.button)}>
