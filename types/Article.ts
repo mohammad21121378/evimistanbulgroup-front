@@ -19,8 +19,8 @@ export interface Article {
         url: string | undefined
     };
     banner_2_media: {
-        alt: string | null;
-        url: string | null
+        alt: string | undefined;
+        url: string | undefined
     };
     excerpt: string;
     resource?: string;
