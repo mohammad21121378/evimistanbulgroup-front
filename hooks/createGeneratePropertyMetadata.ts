@@ -18,7 +18,7 @@ export function createGeneratePropertyMetadata() {
         const propertyData = await fetchProperty(peropertyParam, locale);
 
 
-        if(propertyData.property){
+        if(propertyData?.property){
             const meta: PageMeta = {
                 meta_title: propertyData.property?.meta_title || "",
                 meta_description: propertyData.property?.meta_description || "",

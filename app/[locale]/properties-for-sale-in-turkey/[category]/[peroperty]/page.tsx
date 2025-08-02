@@ -18,7 +18,7 @@ export default async function Page({ params }: Props) {
   const { peroperty, locale } = params;
   const property = await fetchProperty(peroperty, locale);
 
-  if (!property.property) {
+  if (!property?.property) {
     notFound();
   }
 
