@@ -161,6 +161,21 @@ export function useFilter({ onFilterByChange = false, listings, typeShowPage, in
       setProperties([])
     }
 
+    if(listingsData.meta){
+      document.title = listingsData.meta.meta_title;
+      const metaDescriptionTag = document.querySelector('meta[name="description"]');
+
+      if (metaDescriptionTag) {
+        metaDescriptionTag.setAttribute('content', listingsData.meta.meta_description);
+      } else {
+        // اگر تگ متا دیسکریپشن وجود نداشت، می‌تونی ایجادش کنی:
+        const meta = document.createElement('meta');
+        meta.name = "description";
+        meta.content = listingsData.meta.meta_description;
+        document.head.appendChild(meta);
+      }
+    }
+
     setApplyFilters(applyFilters);
 
     setTimeout(() => {
