@@ -139,5 +139,10 @@ export default async function Listings({ params, searchParams }: Props) {
 
   const listings = await fetchProperties(12, page, filtersParam, locale) as ListingsType;
 
-  return <ListingsPage listings={listings} />;
+  return (
+      <div>
+        <pre>{JSON.stringify(filtersParam, null, 2)}</pre>
+        <ListingsPage listings={listings} />
+      </div>
+  );
 }
