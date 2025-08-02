@@ -115,7 +115,7 @@
 import ListingsPage from "@/screens/listings";
 import fetchProperties from "@/helpers/api/property/properties";
 import { ListingsType } from "@/types/Property";
-import {createGenerateMetadata} from "@/hooks/createGeneratePagesMetadata"
+import {createGeneratePropertyListMetadata} from "@/hooks/createGeneratePropertyListMetadata"
 import { decodeSlugToFilters } from "@/utils/seoFilters";
 
 type SearchParams = {
@@ -131,7 +131,7 @@ type Props = {
   
 };
 
-export const generateMetadata = createGenerateMetadata("properties-for-sale-in-turkey");
+export const generateMetadata = createGeneratePropertyListMetadata();
 
 
 export default async function Listings({ params, searchParams }: Props) {
