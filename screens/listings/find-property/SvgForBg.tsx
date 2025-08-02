@@ -7,11 +7,11 @@ export default function SvgForBg({ className }: { className?: string }) {
   const lottieRef = useRef<any>(null);
 
   useEffect(() => {
-    lottieRef.current?.setSpeed(.9);
+    lottieRef.current?.setSpeed(.5);
   }, []);
 
   return (
-    <div className={classNames(className, 'opacity-10 w-96')}>
+    <div className={classNames(className, 'opacity-10 xl:w-[28rem] w-[20rem]')}>
       <Lottie
         lottieRef={lottieRef}
         animationData={error}
