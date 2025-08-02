@@ -19,6 +19,7 @@ export const generateMetadata = createGenerateMetadata("properties-for-sale-in-t
 
 
 export default async function Listings({ params, searchParams }: Props) {
+  
   const page = parseInt(searchParams.page || "1", 10);
   const { locale } = params;
   const filters: Record<string, string[]> = {};

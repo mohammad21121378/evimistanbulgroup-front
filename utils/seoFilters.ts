@@ -14,17 +14,6 @@ export type SeoFilters = {
   priceRange?: [number, number]
 };
 
-
-function unescapeSlugName(slugPart: string): string {
-  // اول -- را موقتاً به placeholder تبدیل می‌کنیم تا از تبدیل تصادفی جلوگیری شود،
-  // سپس - به فاصله، و بعد placeholder را به - برمی‌گردانیم.
-  return slugPart
-    .replace(/--/g, "\0")
-    .replace(/-/g, " ")
-    .replace(/\0/g, "-")
-    .trim();
-}
-
 export function decodeSlugToFilters(slugSegments: string[], locationsDB?:any[], featureItemsDB?:any[], propertyTypesDB?:any[] ): SeoFilters {
   
   
@@ -60,15 +49,15 @@ export function decodeSlugToFilters(slugSegments: string[], locationsDB?:any[], 
       }
     }
 
-    else if (segment.startsWith("loc-") && locationsDB) {
+    else if (segment.startsWith("loc-")) {
       filters.locationsSelected = parseGroupedSelection(segment.replace("loc-", ""), locationsDB);
     }
    
-    else if (segment.startsWith("feat-") && featureItemsDB) {
+    else if (segment.startsWith("feat-")) {
       filters.featureSelected = parseGroupedSelection(segment.replace("feat-", ""), featureItemsDB);
     }
    
-    else if (segment.startsWith("type-") && propertyTypesDB) {
+    else if (segment.startsWith("type-")) {
       filters.propertyTypesSelected = parseGroupedSelection(segment.replace("type-", ""), propertyTypesDB);
     }
   });

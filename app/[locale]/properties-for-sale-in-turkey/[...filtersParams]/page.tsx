@@ -116,6 +116,7 @@ import ListingsPage from "@/screens/listings";
 import fetchProperties from "@/helpers/api/property/properties";
 import { ListingsType } from "@/types/Property";
 import {createGenerateMetadata} from "@/hooks/createGeneratePagesMetadata"
+import { decodeSlugToFilters } from "@/utils/seoFilters";
 
 type SearchParams = {
   page?: string;
@@ -125,7 +126,7 @@ type SearchParams = {
 };
 
 type Props = {
-  params: { locale: string, filtersParam: string[] };
+  params: { locale: string, filtersParams: string[] };
   searchParams: SearchParams;
   
 };
@@ -134,9 +135,12 @@ export const generateMetadata = createGenerateMetadata("properties-for-sale-in-t
 
 
 export default async function Listings({ params, searchParams }: Props) {
+
   const page = parseInt(searchParams.page || "1", 10);
-  const { locale, filtersParam } = params;
-  const listings = await fetchProperties(12, page, filtersParam, locale) as ListingsType;
+
+  const { locale, filtersParams } = params;
+  
+  const listings = await fetchProperties(12, page, decodeSlugToFilters(filtersParams), locale) as ListingsType;
 
   return (
       <div>

@@ -32,11 +32,11 @@ const LeftSide = ({ isOpen }: LeftSideProps) => {
                                     Need a help?
                                 </div>
 
-                                <Link isExternal href={'tel:+905348111193'} className='text-[#64748B] font-medium text-base block my-1'>
+                                <Link isExternal href={'tel:+905348111193'} className='text-[#64748B] hover:text-orange-600 font-medium text-base block my-1'>
                                     +90 (534) 811 11 93
                                 </Link>
 
-                                <Link isExternal href={'mailto:help@evimistanbulgroup.com'} className='text-[#64748B] font-medium text-base'>
+                                <Link isExternal href={'mailto:help@evimistanbulgroup.com'} className='text-[#64748B] hover:text-orange-600 font-medium text-base'>
                                     help@evimistanbulgroup.com
                                 </Link>
                             </div>
@@ -49,7 +49,7 @@ const LeftSide = ({ isOpen }: LeftSideProps) => {
                                 Chat with us
                             </div>
 
-                            <Link isExternal href={'#'} className=' block my-2.5'>
+                            <Link isExternal href={'https://wa.me/905348111193'} className=' block my-2.5'>
                                 <svg className=" w-12 cursor-pointer hover:scale-105 transition-all duration-300" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M23.8322 0H23.7238C10.6215 0 0 10.6247 0 23.7308V23.8392C0 36.9453 10.6215 47.57 23.7238 47.57H23.8322C36.9345 47.57 47.556 36.9453 47.556 23.8392V23.7308C47.556 10.6247 36.9345 0 23.8322 0Z" fill="#00E510" />
                                     <path d="M28.403 30.7435C22.3166 30.7435 17.3649 25.7887 17.3633 19.7006C17.3649 18.1573 18.6212 16.9023 20.1607 16.9023C20.319 16.9023 20.4756 16.9157 20.6255 16.9423C20.9554 16.9973 21.2687 17.109 21.5569 17.2773C21.5986 17.3023 21.6269 17.3423 21.6335 17.389L22.2767 21.4439C22.285 21.4922 22.27 21.5388 22.2383 21.5738C21.8835 21.9672 21.4303 22.2505 20.9254 22.3922L20.6822 22.4605L20.7738 22.6955C21.6035 24.8087 23.293 26.497 25.4073 27.3303L25.6422 27.4236L25.7105 27.1803C25.8521 26.6753 26.1354 26.222 26.5286 25.867C26.5569 25.8404 26.5952 25.827 26.6336 25.827C26.6419 25.827 26.6502 25.827 26.6602 25.8287L30.7139 26.472C30.7622 26.4803 30.8022 26.507 30.8272 26.5487C30.9938 26.837 31.1054 27.152 31.1621 27.482C31.1887 27.6286 31.2004 27.7836 31.2004 27.9453C31.2004 29.4869 29.9458 30.7419 28.403 30.7435Z" fill="#FDFDFD" />

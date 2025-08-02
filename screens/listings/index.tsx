@@ -4,7 +4,6 @@ import Layout from "@/components/Layout";
 import React from "react";
 import Benefits from "./benefits";
 import FindProperty from "./find-property";
-import Content from "./content";
 import { ListingsType } from "@/types/Property";
 import classNames from "classnames";
 import Hero from "./hero";
