@@ -73,7 +73,7 @@ export default function ChatListing({ msg }: Prop) {
                                                 {Location2}
                                                 <div>
                                                     <Link
-                                                        href={`/properties-for-sale-in-turkey?location=${item.locationID}`}
+                                                        href={`/properties-for-sale-in-turkey/${item.locationID}`}
                                                         className={cn(
                                                             "paragraph-medium font-medium  underline",
 
@@ -83,7 +83,7 @@ export default function ChatListing({ msg }: Prop) {
                                                         {item.location}
                                                     </Link>,
                                                     <Link
-                                                        href={`/properties-for-sale-in-turkey?location=${item.parentLocationID}`}
+                                                        href={`/properties-for-sale-in-turkey/${item.parentLocationID}`}
                                                         className={cn(
                                                             "paragraph-medium font-medium  underline",
 

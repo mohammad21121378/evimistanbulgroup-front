@@ -35,8 +35,8 @@ export default function Hero({ item }: HeroProps) {
         className="!mb-3"
           items={[
             { label: 'Property for Sale in Turkey', href: '/properties-for-sale-in-turkey' },
-            { label: item.parentLocation, href: `/properties-for-sale-in-turkey/?location=${item.parentLocationID}` },
-            { label: item.location, href: `/properties-for-sale-in-turkey/?location=${item.locationID}` },
+            { label: item.parentLocation, href: `/properties-for-sale-in-turkey/${item.parentLocationID}` },
+            { label: item.location, href: `/properties-for-sale-in-turkey/${item.locationID}` },
             { label: item.title }
           ]}
         />
@@ -61,7 +61,7 @@ export default function Hero({ item }: HeroProps) {
                   {Location2}
                   <div className="flex items-center">
                     <Link
-                      href={`/properties-for-sale-in-turkey?location=${item.locationID}`}
+                      href={`/properties-for-sale-in-turkey/${item.locationID}`}
                       className={cn(
                         "paragraph-medium font-medium  underline",
                         styles.address
@@ -71,7 +71,7 @@ export default function Hero({ item }: HeroProps) {
                       {item.location}
                     </Link>,
                     <Link
-                      href={`/properties-for-sale-in-turkey?location=${item.parentLocationID}`}
+                      href={`/properties-for-sale-in-turkey/${item.parentLocationID}`}
                       className={cn(
                         "paragraph-medium font-medium  underline",
                         styles.address

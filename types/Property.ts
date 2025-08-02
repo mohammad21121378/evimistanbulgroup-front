@@ -49,6 +49,7 @@ export type PropertyRawType = {
     [key: string]: any; 
   }[];
   category: string | null;
+  categorySlug: string | null;
   status: "sold_out" | "available";
   min_price: number;
   max_price: number;

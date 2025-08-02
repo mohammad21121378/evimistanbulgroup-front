@@ -49,7 +49,7 @@ export default function PropertyListing({
             />
           </Link>
 
-          <Link href={`/properties-for-sale-in-turkey?type=${item.category && getCategory(item.category)}`} noLink={!item.category} className={cn("paragraph-small", styles.listing_price)}>
+          <Link href={`/properties-for-sale-in-turkey/type-${item.categorySlug}`} noLink={!item.category} className={cn("paragraph-small", styles.listing_price)}>
             {item.category}
           </Link>
 
@@ -85,7 +85,7 @@ export default function PropertyListing({
             {Location2}
             <div>
               <Link
-                href={`/properties-for-sale-in-turkey?location=${item.locationID}`}
+                href={`/properties-for-sale-in-turkey/${item.locationID}`}
                 className={cn(
                   "paragraph-medium font-medium  underline",
                   styles.listing_description
@@ -95,7 +95,7 @@ export default function PropertyListing({
                 {item.location}
               </Link>,
               <Link
-                href={`/properties-for-sale-in-turkey?location=${item.parentLocationID}`}
+                href={`/properties-for-sale-in-turkey/${item.parentLocationID}`}
                 className={cn(
                   "paragraph-medium font-medium  underline",
                   styles.listing_description
