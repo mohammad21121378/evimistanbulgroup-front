@@ -12,7 +12,7 @@ type LayoutProps = {
   hideFooter?: boolean
 };
 
-export default function Layout({ children,hideFooter }: LayoutProps) {
+export default function Layout({ children, hideFooter }: LayoutProps) {
   const [showCurtain, setShowCurtain] = React.useState(true);
 
   React.useEffect(() => {
@@ -30,7 +30,7 @@ export default function Layout({ children,hideFooter }: LayoutProps) {
       {children}
       {
         !hideFooter &&
-      <Footer />
+        <Footer />
       }
       <FreeConsultation />
       <ChatBot />

@@ -11,11 +11,12 @@ export default function SvgForBg({ className }: { className?: string }) {
   }, []);
 
   return (
-    <div className={classNames(className, 'opacity-15 xl:w-[28rem] w-[22rem]')}>
+    <div className={classNames(className, ' xl:w-[28rem] w-[22rem]')}>
       <Lottie
         lottieRef={lottieRef}
         animationData={error}
         loop
+        className="opacity-15"
         autoplay
       />
     </div>

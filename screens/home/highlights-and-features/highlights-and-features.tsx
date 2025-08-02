@@ -9,7 +9,7 @@ import { useHighlights } from "@/constants/highlights-and-features.constants";
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "@/constants/icons";
 import Button from "@/components/ui/Button";
-import { fadeinAnimation, fadeinAnimationWithDelay, viewportMargin } from "@/constants/animation";
+import { fadeinAnimationWithDelay } from "@/constants/animation";
 
 export default function HighlightsAndFeatures() {
   const t = useTranslations("HighlightsAndFeatures");

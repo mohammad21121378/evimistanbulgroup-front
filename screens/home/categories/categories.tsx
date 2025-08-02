@@ -11,18 +11,18 @@ import Link from "@/components/ui/Link";
 import Button from "@/components/ui/Button";
 
 const categories = [
-  { id: 176, key: "apartment", },
-  { id: 177, key: "villa" },
-  { id: 178, key: "commercial" },
-  { id: 179, key: "penthouse" },
-  { id: 181, key: "landForSale" },
-  { id: 182, key: "hotelForSale" },
+  { id: 'type-apartment', key: "apartment", },
+  { id: 'type-villa', key: "villa" },
+  { id: 'type-commercial', key: "commercial" },
+  { id: 'type-penthouse', key: "penthouse" },
+  { id: 'type-land-for-sale', key: "landForSale" },
+  { id: 'type-hotel-for-sale', key: "hotelForSale" },
 ];
 
 export default function Categories() {
   const t = useTranslations("Categories");
 
-  const prefixLink = '/properties-for-sale-in-turkey?type='
+  const prefixLink = '/properties-for-sale-in-turkey/'
 
   return (
     <section className="section">

@@ -1,0 +1,23 @@
+.glass-bg {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(148, 163, 184, 0.5);
+    border-right: 0;
+    border-left: 0;
+    background-color: rgba(229, 236, 246, 0.35);
+    box-shadow: 0 8px 32px rgba(31, 41, 55, 0.05);
+    color: #000;
+    z-index: 1;
+}
+
+.glass-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(229, 236, 246, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: inherit;
+    z-index: -1;
+    transition: .3s;
+}
