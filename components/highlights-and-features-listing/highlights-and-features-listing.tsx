@@ -13,7 +13,7 @@ type HighlightsAndFeaturesListingProps = {
 
 export default function HighlightsAndFeaturesListing({ item }: HighlightsAndFeaturesListingProps) {
   return (
-    <Link href={`/properties-for-sale-in-turkey?feature=${item.id}`} className={`rounded-xl overflow-hidden shadow-lg hover:shadow-none transition-all duration-300 block ${styles.box}`}>
+    <Link href={`/properties-for-sale-in-turkey/${item.id}`} className={`rounded-xl overflow-hidden shadow-lg hover:shadow-none transition-all duration-300 block ${styles.box}`}>
         
       <div className="relative w-full h-52 overflow-hidden rounded-t-xl">
         <Image
