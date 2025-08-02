@@ -16,7 +16,7 @@
     border: 1px solid var(--slate-200);
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 10px;
     position: sticky;
     top: 105px;
     
@@ -29,7 +29,7 @@
     max-height: 56dvh; 
     overflow-y: auto !important;
     overflow-x: visible !important;
-    padding: 4px 20px;
+    padding: 4px 8px 4px 20px;
 }
 
 @media (max-height: 574px) {

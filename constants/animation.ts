@@ -49,15 +49,60 @@ export const fadeinAnimation = {
     },
 };
 
-export const fadeinAnimationWithDelay = (delay: number) => {
-    return{
-    hidden: { opacity: 0, scale: .9 },
-    show: {
-        opacity: 1,
-        scale: 1,
-        transition: {
-            delay: delay,
-            duration: .4,
+export const fadeinAnimationWithDelay = (delay: number = 0) => {
+    return {
+        hidden: { opacity: 0, scale: .9 },
+        show: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+                delay: delay,
+                duration: .4,
+            },
         },
-    },}
+    }
+};
+
+export const blurAndFadeAnimate = (delay: number = 0) => {
+    return {
+        hidden: { opacity: 0, scale: .9, blur: 30 },
+        show: {
+            opacity: 1,
+            scale: 1,
+            blur: 0,
+            transition: {
+                delay: delay * .6,
+                duration: .6,
+            },
+        },
+    }
+};
+
+export const slideUpAndFadeinAnimation2 = (delay: number = 0) => {
+    return {
+        hidden: { opacity: 0, y: 40 },
+        show: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                delay: delay * .4,
+                duration: .5,
+            },
+        }
+    }
+};
+
+export const slideSideAnimation = (delay: number = 0) => {
+    return {
+        hidden: { opacity: 0, x: -40, blur: 30 },
+        show: {
+            opacity: 1,
+            x: 0,
+            blur: 0,
+            transition: {
+                delay: delay * .4,
+                duration: .5,
+            },
+        }
+    }
 };

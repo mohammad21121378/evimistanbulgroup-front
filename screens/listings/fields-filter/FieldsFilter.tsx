@@ -199,7 +199,7 @@ export default function FieldsFilter({
             //     setHideOthers(false);
             // }, 500);
         } else {
-            setHideOthers(true);
+            // setHideOthers(true);
             setOpenDropdown(key);
             // setTimeout(() => {
             //     setHideOthers(false);

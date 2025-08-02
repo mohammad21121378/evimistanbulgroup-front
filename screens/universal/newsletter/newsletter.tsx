@@ -5,8 +5,9 @@ import styles from "./newsletter.module.css";
 import cn from "classnames";
 import { Bag, Notification } from "@/constants/icons";
 import { useTranslations } from "next-intl";
-import Link from "@/components/ui/Link";
 import Button from "@/components/ui/Button";
+import {motion} from 'framer-motion'
+import { slideUpAndFadeinAnimation2, viewportMargin } from "@/constants/animation";
 
 const icons = [Bag, 
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -36,7 +37,12 @@ export default function Newsletter() {
           {icons.map((Icon, index) => {
             const item = t.raw(`items.${index}`);
             return (
-              <div key={index} className={styles.column}>
+              <motion.div 
+              initial="hidden"
+              whileInView="show"
+              variants={slideUpAndFadeinAnimation2()}
+              viewport={viewportMargin}
+              key={index} className={styles.column}>
                 <div className={cn("gradient-bubble")}>
                   {Icon}
                 </div>
@@ -53,7 +59,7 @@ export default function Newsletter() {
                     {item.button}
                   </Button>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

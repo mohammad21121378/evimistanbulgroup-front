@@ -8,7 +8,7 @@ import { ArrowRight } from "@/constants/icons";
 import { useTranslations } from "next-intl";
 import { useConsultationStore } from "@/stores/consultationStore";
 import Button from "@/components/ui/Button";
-import { viewportMargin } from "@/constants/animation";
+import { slideUpAndFadeinAnimation2, viewportMargin } from "@/constants/animation";
 
 const services = [
   {
@@ -57,17 +57,7 @@ const services = [
   },
 ];
 
-const slideUpAndFadeinAnimation = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0,
-      duration: .5,
-    },
-  },
-};
+
 
 export default function Services() {
   const t = useTranslations("Services");
@@ -95,8 +85,8 @@ export default function Services() {
             <motion.div
               key={service.id}
               initial="hidden"
-              whileInView="visible"
-              variants={slideUpAndFadeinAnimation}
+              whileInView="show"
+              variants={slideUpAndFadeinAnimation2()}
               viewport={viewportMargin}
               className={styles.service}
             >
@@ -113,8 +103,8 @@ export default function Services() {
 
           <motion.div
             initial="hidden"
-            whileInView="visible"
-            variants={slideUpAndFadeinAnimation}
+            whileInView="show"
+            variants={slideUpAndFadeinAnimation2()}
             viewport={viewportMargin} className={cn('grid justify-center items-center', styles.neededs)}>
             <div>
               <div className={cn("heading-6 w-full", styles.service_title)}>
