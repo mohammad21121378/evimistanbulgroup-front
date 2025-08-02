@@ -49,7 +49,7 @@ export default function PropertyListing({
             />
           </Link>
 
-          <Link href={`/properties-for-sale-in-turkey?type=${item.category && getCategory(item.category)}`} noLink={!item.category} className={cn("paragraph-small", styles.listing_price)}>
+          <Link href={`/properties-for-sale-in-turkey/type-${item.categorySlug}`} noLink={!item.category} className={cn("paragraph-small", styles.listing_price)}>
             {item.category}
           </Link>
 

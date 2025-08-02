@@ -28,7 +28,7 @@ export default function RelatedProperties({ item,related }: RelatedPropertiesPro
           <Heading type="heading-3">Similar Properties</Heading>
           </h2>
 
-          <Button flex size="auto" href={`/properties-for-sale-in-turkey/?type=${item.categoryID}`}>
+          <Button flex size="auto" href={`/properties-for-sale-in-turkey/type-${item.categorySlug}`}>
           View All Similar Properties {ArrowRight}
           </Button>
         </div>
