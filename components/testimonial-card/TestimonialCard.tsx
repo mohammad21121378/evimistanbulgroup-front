@@ -103,7 +103,7 @@ export default function TestimonialCard({
               </div>
 
               <div className={cn("paragraph-medium", styles.testimonial_name)}>
-                –– {name},{span}
+                –– {name},  {span}
               </div>
 
               {rating && (

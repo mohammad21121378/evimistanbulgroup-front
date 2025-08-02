@@ -16,7 +16,7 @@ export default function RightSidebar({ article }: Props) {
     const { onOpen } = useConsultationStore();
     return (
         <div className="md:col-span-3 md:pt-14 pt-2 overflow-visible lg:pl-9 rounded-md ">
-            <div className="sticky top-28 space-y-5 md:max-h-[85dvh] rounded-md overflow-y-auto p-1 pr-1.5 scrollbar-sm">
+            <div className="sticky top-28 space-y-5 md:max-h-[85dvh] rounded-md overflow-y-auto p-1 pr-1.5 scrollbar-none">
 
                 <div className="bg-slate-100 outline w-full text-center outline-1 outline-orange-500 p-3.5 rounded-lg grid justify-center text-base font-medium">
 
