@@ -136,12 +136,10 @@ export const generateMetadata = createGenerateMetadata("properties-for-sale-in-t
 export default async function Listings({ params, searchParams }: Props) {
   const page = parseInt(searchParams.page || "1", 10);
   const { locale, filtersParam } = params;
-  console.log(filtersParam)
   const listings = await fetchProperties(12, page, filtersParam, locale) as ListingsType;
 
   return (
       <div>
-        <pre>{JSON.stringify(filtersParam, null, 2)}</pre>
         <ListingsPage listings={listings} />
       </div>
   );
