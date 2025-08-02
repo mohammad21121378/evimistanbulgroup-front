@@ -16,6 +16,7 @@ import OurInsights from "@/components/menu/items/OurInsights";
 import AboutUs from "@/components/menu/items/AboutUs";
 import ContactUs from "@/components/menu/items/ContactUs";
 import Button from "../ui/Button";
+import LanguageSelector from "../language-selector";
 
 const blackHeaderPages = [
   '/'
@@ -24,9 +25,9 @@ const blackHeaderPages = [
 
 export default function Header() {
   const t = useTranslations("Header");
-  
+
   const locale = useLocale();
-  
+
   const lightHeaderPages = [
     `/${locale}`,
     `/${locale}/client-stories`,
@@ -55,7 +56,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  React.useEffect(() => { 
+  React.useEffect(() => {
     const handleResize = () => {
       setMobile(window.innerWidth <= 768);
     };
@@ -87,7 +88,7 @@ export default function Header() {
     }
     return pathname === path;
   });
-  
+
 
   return (
     <header
@@ -114,9 +115,9 @@ export default function Header() {
         >
           <div className={cn(styles.nav_links, 'transition-all duration-300', {
             [styles.black_link]: isBlackHeader && !(mobile && visibleNav),
-            '!text-white' : islightHeader || sticky || visibleNav,
-            '!text-black' : !sticky && !islightHeader,
-            })}>
+            '!text-white': islightHeader || sticky || visibleNav,
+            '!text-black': !sticky && !islightHeader,
+          })}>
             {nav_links.map((link, index) => (
               <Link
                 key={index}
@@ -131,18 +132,18 @@ export default function Header() {
             <Properties />
             <OurServices />
             <OurInsights />
-            <AboutUs/>
+            <AboutUs />
           </div>
         </motion.nav>
 
         <div className={styles.button_wrapper}>
 
           <ContactUs title={<div
-            className={cn("button-stroke-small", styles.button, {
+            className={cn("button-stroke-small !pt-px !rounded-xl", styles.button, {
               [styles.black_button]: isBlackHeader && !(mobile && visibleNav),
               [styles.sticky_button]: sticky,
-              '!text-white' : islightHeader || sticky || visibleNav,
-            '!text-black hover:!text-white' : !sticky && !islightHeader,
+              '!text-white': islightHeader || sticky || visibleNav,
+              '!text-black hover:!text-white': !sticky && !islightHeader,
             })}
           >
             {t("contactUs")}
@@ -153,14 +154,19 @@ export default function Header() {
             burgerClassName={cn(styles.burger, {
               [styles.black_burger]: isBlackHeader && !(mobile && visibleNav),
               [styles.sticky_burger]: sticky,
-              '!text-white' : islightHeader || sticky || visibleNav,
-            '!text-black' : !sticky && !islightHeader,
-              
+              '!text-white': islightHeader || sticky || visibleNav,
+              '!text-black': !sticky && !islightHeader,
+
             })}
             visibleNav={visibleNav}
             setVisibleNav={setVisibleNav}
           />
         </div>
+
+        <LanguageSelector className={cn("rounded-xl", {
+              '!text-white': islightHeader || sticky || visibleNav,
+            })} />
+
       </div>
     </header>
   );

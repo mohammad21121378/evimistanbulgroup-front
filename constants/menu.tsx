@@ -14,7 +14,7 @@ export const MenuData = {
             title: "search property",
             items: [
                 {
-                    title: <button className="button button-small !bg-none !text-orange-600 hover:!bg-orange-600 hover:!text-white"> ALL  Properties {ArrowRight}</button>,
+                    title: <button className="button button-small !bg-none !text-orange-600 hover:!bg-orange-600 hover:!text-white lg:mb-1.5"> ALL  Properties {ArrowRight}</button>,
                     href: '/properties-for-sale-in-turkey'
                 }
             ]
@@ -230,6 +230,10 @@ export const MenuData = {
                     ),
                     title: "Tours & Leisure",
                     href: "/our-services/tours-leisure-experiences-in-turkey"
+                },
+                {
+                    title: <div className="text-[rgba(242,244,247,1)] pointer-events-none opacity-0 lg:-mt-[3px] lg:block hidden">empty</div>,
+                    href: false
                 },
             ]
         },

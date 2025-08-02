@@ -76,7 +76,7 @@
 .button-stroke-small {
     background: none;
     border: none;
-    box-shadow: 0 0 0 1.5px var(--slate-200) inset;
+    
     color: var(--black);
     background: var(--white);
     height: 48px;
@@ -86,6 +86,12 @@
     line-height: 20px;
     letter-spacing: -0.08px;
     flex-shrink: 0;
+}
+
+.only-stroke-for-button,
+.button-stroke-small
+{
+    box-shadow: 0 0 0 1.5px var(--slate-200) inset;
 }
 
 .button-stroke-small svg {
