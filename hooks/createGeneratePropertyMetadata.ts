@@ -14,22 +14,24 @@ export function createGeneratePropertyMetadata() {
         console.log(peropertyParam);
         
         
-        const { property: property } = await fetchProperty(peropertyParam, locale);
+        const propertyData = await fetchProperty(peropertyParam, locale);
+        if(propertyData.property){
+            const meta: PageMeta = {
+                meta_title: propertyData.property?.meta_title || "",
+                meta_description: propertyData.property?.meta_description || "",
+                meta_follow: propertyData.property?.meta_follow || "follow",
+                meta_index: propertyData.property?.meta_index || "index",
+                url: propertyData.property?.full_url ,
+                updated_at: propertyData.property?.updated_at || new Date().toISOString(),
+                image:
+                    propertyData.property?.images[0] ||
+                    "https://evimistanbulgroup.com/_next/image?url=%2Fimages%2FEvimIstanbul%20Group%20Official%20LOGO.png&w=2048&q=75",
+                language: propertyData.property?.language,
+                type: "website",
+            };
 
-        const meta: PageMeta = {
-            meta_title: property?.meta_title || "",
-            meta_description: property?.meta_description || "",
-            meta_follow: property?.meta_follow || "follow",
-            meta_index: property?.meta_index || "index",
-            url: property?.full_url ,
-            updated_at: property?.updated_at || new Date().toISOString(),
-            image:
-                property?.images[0] ||
-                "https://evimistanbulgroup.com/_next/image?url=%2Fimages%2FEvimIstanbul%20Group%20Official%20LOGO.png&w=2048&q=75",
-            language: property?.language,
-            type: "website",
-        };
+            return buildMetadataFromPage(meta);
+        }
 
-        return buildMetadataFromPage(meta);
     };
 }
