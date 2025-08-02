@@ -39,6 +39,7 @@ export default function ListingsPage({ listings, initialSeoFilters }: Props) {
       )}>
         <Hero type={type} onChange={onChange} {...filtersState} />
         <Benefits />
+        
         <FindProperty />
       </div>
 

@@ -79,21 +79,21 @@ export default function LightboxGallery({ images }: Props) {
 
                             <button
                                 onClick={() => setIndex((index - 1 + images.length) % images.length)}
-                                className="absolute left-4 top-1/2 -translate-y-1/2 text-white text-lg text-center bg-black/40 hover:bg-black/60 rounded-xl size-12"
+                                className="absolute left-4 top-1/2 -translate-y-1/2 text-white text-lg transition-all duration-300 text-center bg-black/40 hover:bg-black/60 rounded-xl size-12"
                             >
                                 <FaChevronLeft className="mx-auto" />
                             </button>
 
                             <button
                                 onClick={() => setIndex((index + 1) % images.length)}
-                                className="absolute right-4 top-1/2 -translate-y-1/2 text-white text-lg text-center bg-black/40 hover:bg-black/60 rounded-xl size-12"
+                                className="absolute right-4 top-1/2 -translate-y-1/2 text-white text-lg transition-all duration-300 text-center bg-black/40 hover:bg-black/60 rounded-xl size-12"
                             >
                                 <FaChevronRight className="mx-auto" />
                             </button>
 
                             <button
                                 onClick={() => setIndex(null)}
-                                className="absolute top-4 right-4 text-white text-xl bg-black/50 hover:bg-black/70 rounded-xl size-12"
+                                className="absolute top-0 right-4 text-white text-lg transition-all duration-300 bg-black/50 hover:bg-black/70 rounded-xl size-12"
                             >
                                 <FaX className="mx-auto" />
                             </button>
