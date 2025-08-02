@@ -1,5 +1,6 @@
 'use client'
 
+import SectionWithGlass from "@/components/section-with-glass";
 import { useConsultationStore } from "@/stores/consultationStore";
 
 type Props = {
@@ -16,14 +17,14 @@ export default function UsHelp({ data }: Props) {
 
     return (
         <section className="section !pt-0">
-            <div className="bg-[#002DD1] py-16">
+            <SectionWithGlass className="py-16">
                 <div className="container space-y-14 text-center">
 
                     <h2 className="text-5xl font-bold text-orange-600">
                         Let Us Help.
                     </h2>
 
-                    <p className="font-medium text-xl text-white whitespace-pre-line">
+                    <p className="font-medium text-xl text-gray-700 whitespace-pre-line">
                         {data.description}
                     </p>
 
@@ -36,7 +37,7 @@ export default function UsHelp({ data }: Props) {
                             }
                         </button>
                 </div>
-            </div>
+            </SectionWithGlass>
         </section>
     );
 }
