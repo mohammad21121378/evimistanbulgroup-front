@@ -15,6 +15,8 @@ import ExpandableHtml from "@/components/expandable-html/ExpandableHtml";
 import SingleLocationMap from "@/components/single-location-map";
 import AmenitiesAndServicesRender from "./AmenitiesAndServicesRender";
 import { useConsultationStore } from "@/stores/consultationStore";
+import LightboxGallery from "@/components/lightbox-gallery";
+import { parseSectionsFromHtmlForHasImages } from "../utils/parseSectionsFromHtmlForHasImages";
 
 type OverviewProps = PropertyType;
 
@@ -26,8 +28,8 @@ export default function Overview({ item }: OverviewProps) {
     setOpen((prevId) => (prevId === id ? null : id));
   };
 
-  useEffect(()=>{
-    setInitialValues({propertyId: item.id, topic: "Buy Property in Turkey"})
+  useEffect(() => {
+    setInitialValues({ propertyId: item.id, topic: "Buy Property in Turkey" })
   }, [item])
 
   return (
@@ -93,15 +95,23 @@ export default function Overview({ item }: OverviewProps) {
               const content = item[detail.slug];
               if (!content) return null;
 
+
               const isLocationAndLifestyle = detail.slug === "location_and_lifestyle";
               const isAmenitiesAndServices = detail.slug === "amenities_and_services";
               const isVirtualTourVideo = detail.slug === "virtual_tour_video";
+              const isFloorPlansAndGallery = detail.slug === "floor_plans_and_gallery";
+              let floorPlansAndGalleryContent;
+
               const hasCoordinates = item.latitude && item.longitude;
 
               let amenitiesAndServicesContent: null | ReactNode = null;
 
               if (isAmenitiesAndServices && item.amenities && item.amenities.length) {
                 amenitiesAndServicesContent = <AmenitiesAndServicesRender amenities={item.amenities} />
+              }
+
+              if (isFloorPlansAndGallery) {
+                floorPlansAndGalleryContent = parseSectionsFromHtmlForHasImages(content);
               }
 
               return (
@@ -125,9 +135,26 @@ export default function Overview({ item }: OverviewProps) {
                       />
                     </div>
                   )}
+
                   {
-                    !amenitiesAndServicesContent &&
-                    <ExpandableHtml html={content} showAll={!!isVirtualTourVideo} />
+                    floorPlansAndGalleryContent &&
+                    <div className="space-y-8 px-4">
+                      {floorPlansAndGalleryContent.map(({ title, images }, idx) => (
+                        <section key={idx}>
+                          <h3 className="text-lg font-bold mb-3">{title}</h3>
+                          {images.length > 0 ? (
+                            <LightboxGallery images={images} />
+                          ) : (
+                            <p className="text-gray-500">No images available.</p>
+                          )}
+                        </section>
+                      ))}
+                    </div>
+                  }
+
+                  {
+                    !amenitiesAndServicesContent && !isFloorPlansAndGallery &&
+                    <ExpandableHtml html={content} showAll={!!isVirtualTourVideo || !!isFloorPlansAndGallery} className={isFloorPlansAndGallery ? 'has-images-raw-html' : ''} />
                   }
                   <hr className="bg-gray-200 mb-9 mt-5 w-full relative" />
 

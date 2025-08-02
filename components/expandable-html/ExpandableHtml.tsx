@@ -3,8 +3,9 @@
 import { useState, useRef, useLayoutEffect, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import classNames from "classnames";
 
-export default function ExpandableHtml({ html, showAll=false }: { html: string; showAll?: boolean }) {
+export default function ExpandableHtml({ html, showAll=false, className }: { html: string; showAll?: boolean; className?: string }) {
   const [expanded, setExpanded] = useState(false);
   const [contentHeight, setContentHeight] = useState(0);
   const [shouldShowToggle, setShouldShowToggle] = useState(false);
@@ -34,7 +35,7 @@ export default function ExpandableHtml({ html, showAll=false }: { html: string; 
 
   return (
     <>
-    <div className="relative w-full rounded-xl bg-white p-4 pb-5 transition-all duration-300">
+    <div className={classNames("relative w-full rounded-xl bg-white p-4 pb-5 transition-all duration-300", className)}>
       <motion.div
         className="overflow-hidden"
         animate={{ height: expanded ? contentHeight : (shouldShowToggle ? COLLAPSED_HEIGHT : 'auto') }}

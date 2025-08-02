@@ -334,7 +334,7 @@ html {
   }
 }
 
-.animate-shimmer{
+.animate-shimmer {
   position: relative;
   overflow: hidden;
 }
@@ -352,12 +352,40 @@ html {
   animation-timing-function: linear;
   min-width: 468px;
   content: "";
-  background: linear-gradient(
-  to right,
-  #f1f5f9 8%,
-  rgba(148, 163, 184, 0.18) 18%,  /* slate-400 با شفافیت */
-  #f1f5f9 33%
-) 0% 0% / 936px 104px #f1f5f9;
+  background: linear-gradient(to right,
+      #f1f5f9 8%,
+      rgba(148, 163, 184, 0.18) 18%,
+      /* slate-400 با شفافیت */
+      #f1f5f9 33%) 0% 0% / 936px 104px #f1f5f9;
 
 
+}
+
+.has-images-raw-html img {
+  display: inline-flex;
+  width: 100%;
+  max-width: calc(24%);
+  border-radius: 16px;
+  height: 13rem;
+  max-height: 13rem;
+  margin-right: 1%;
+  object-fit: cover;
+  cursor: zoom-in;
+  transition: all .3s;
+}
+.has-images-raw-html img:hover {
+  transform: scale(1.02) translateY(-8px);
+}
+
+@media (max-width: 768px) {
+  .has-images-raw-html img {
+    max-width: calc(49%);
+    margin-right: 1%;
+  }
+}
+
+.has-images-raw-html h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  font-weight: bold;
 }
