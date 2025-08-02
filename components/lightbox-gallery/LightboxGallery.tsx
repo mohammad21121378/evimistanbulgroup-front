@@ -63,7 +63,7 @@ export default function LightboxGallery({ images }: Props) {
                             initial={{ scale: 0.8, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.8, opacity: 0 }}
-                            transition={{ type: "spring", stiffness: 70 }}
+                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
                             onClick={(e) => e.stopPropagation()}
                         >
                             <motion.img
@@ -71,7 +71,7 @@ export default function LightboxGallery({ images }: Props) {
                                 initial={{ scale: 0.8, opacity: 0 }}
                                 animate={{ scale: 1, opacity: 1 }}
                                 exit={{ scale: 0.8, opacity: 0 }}
-                                transition={{ duration: .3 }}
+                                transition={{ duration: .2 }}
                                 src={images[index]}
                                 className="max-h-[80vh] object-contain mx-auto rounded-lg"
                                 alt={` ${images[index]} | Evimistanbul Group`}

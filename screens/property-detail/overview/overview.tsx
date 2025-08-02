@@ -138,7 +138,7 @@ export default function Overview({ item }: OverviewProps) {
 
                   {
                     floorPlansAndGalleryContent &&
-                    <div className="space-y-8 px-4">
+                    <div className="space-y-8 px-4 scroll-mt-60" id="additional-media">
                       {floorPlansAndGalleryContent.map(({ title, images }, idx) => (
                         <section key={idx}>
                           <h3 className="text-lg font-bold mb-3">{title}</h3>
