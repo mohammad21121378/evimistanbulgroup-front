@@ -20,7 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a444990-2b63-46d6-b210-f54ec3aa7b85" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/[locale]/properties-for-sale-in-turkey/[category]/[peroperty]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[locale]/properties-for-sale-in-turkey/[category]/[peroperty]/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hooks/createGeneratePropertyMetadata.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/createGeneratePropertyMetadata.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +93,7 @@
       <workItem from="1753964463692" duration="1380000" />
       <workItem from="1754075732456" duration="33000" />
       <workItem from="1754130649335" duration="5218000" />
-      <workItem from="1754159450644" duration="1565000" />
+      <workItem from="1754159450644" duration="1682000" />
     </task>
     <servers />
   </component>

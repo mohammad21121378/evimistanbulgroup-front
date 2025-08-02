@@ -1,6 +1,7 @@
 import { PageMeta } from "@/types/Seo";
 import fetchProperty from "@/helpers/api/property/property"
 import { buildMetadataFromPage } from "@/lib/metadata";
+import {notFound} from "next/navigation";
 
 
 type GenerateMetadataProps = {
@@ -15,6 +16,10 @@ export function createGeneratePropertyMetadata() {
         
         
         const propertyData = await fetchProperty(peropertyParam, locale);
+
+        if (!propertyData.property) {
+            return ;
+        }
         if(propertyData.property){
             const meta: PageMeta = {
                 meta_title: propertyData.property?.meta_title || "",
